@@ -1,0 +1,403 @@
+
+_zombieSpritesTable: ;FD:64EB
+;idle
+	dw BANK(zombie_front_spritesheet), zombie_front_idle_anim_pointers ;$EB, $65
+	dw BANK(zombie_overhead_front_spritesheet), zombie_overhead_front_idle_anim_pointers ;$2B, $66
+	dw BANK(zombie_front_right_spritesheet), zombie_front_right_idle_anim_pointers ;$F3, $65
+	dw BANK(zombie_overhead_front_right_spritesheet), zombie_overhead_front_right_idle_anim_pointers ;$33, $66
+	dw BANK(zombie_right_spritesheet), zombie_right_idle_anim_pointers ;$FB, $65
+	dw BANK(zombie_overhead_right_spritesheet), zombie_overhead_right_idle_anim_pointers ;$3B, $66
+	dw BANK(zombie_back_right_spritesheet), zombie_back_right_idle_anim_pointers ;$03, $66
+	dw BANK(zombie_overhead_back_right_spritesheet), zombie_overhead_back_right_idle_anim_pointers ;$43, $66
+	dw BANK(zombie_back_spritesheet), zombie_back_idle_anim_pointers ;$0B, $66
+	dw BANK(zombie_overhead_back_spritesheet), zombie_overhead_back_idle_anim_pointers ;$4B, $66
+	dw BANK(zombie_back_left_spritesheet), zombie_back_left_idle_anim_pointers ;$13, $66
+	dw BANK(zombie_overhead_back_left_spritesheet), zombie_overhead_back_left_idle_anim_pointers ;$53, $66
+	dw BANK(zombie_left_spritesheet), zombie_left_idle_anim_pointers ;$1B, $66
+	dw BANK(zombie_overhead_left_spritesheet), zombie_overhead_left_idle_anim_pointers ;$5B, $66
+	dw BANK(zombie_front_left_spritesheet), zombie_front_left_idle_anim_pointers ;$23, $66
+	dw BANK(zombie_overhead_front_left_spritesheet), zombie_overhead_front_left_idle_anim_pointers ;$63, $66
+
+;walk
+	dw BANK(zombie_front_spritesheet), zombie_front_walk_anim_pointers
+	dw BANK(zombie_overhead_front_spritesheet), zombie_overhead_front_walk_anim_pointers
+	dw BANK(zombie_front_right_spritesheet), zombie_front_right_walk_anim_pointers
+	dw BANK(zombie_overhead_front_right_spritesheet), zombie_overhead_front_right_walk_anim_pointers
+	dw BANK(zombie_right_spritesheet), zombie_right_walk_anim_pointers
+	dw BANK(zombie_overhead_right_spritesheet), zombie_overhead_right_walk_anim_pointers
+	dw BANK(zombie_back_right_spritesheet), zombie_back_right_walk_anim_pointers
+	dw BANK(zombie_overhead_back_right_spritesheet), zombie_overhead_back_right_walk_anim_pointers
+	dw BANK(zombie_back_spritesheet), zombie_back_walk_anim_pointers
+	dw BANK(zombie_overhead_back_spritesheet), zombie_overhead_back_walk_anim_pointers
+	dw BANK(zombie_back_left_spritesheet), zombie_back_left_walk_anim_pointers
+	dw BANK(zombie_overhead_back_left_spritesheet), zombie_overhead_back_left_walk_anim_pointers
+	dw BANK(zombie_left_spritesheet), zombie_left_walk_anim_pointers
+	dw BANK(zombie_overhead_left_spritesheet), zombie_overhead_left_walk_anim_pointers
+	dw BANK(zombie_front_left_spritesheet), zombie_front_left_walk_anim_pointers
+	dw BANK(zombie_overhead_front_left_spritesheet), zombie_overhead_front_left_walk_anim_pointers
+
+;dead
+	dw BANK(zombie_front_spritesheet), zombie_front_dead_anim_pointers
+	dw BANK(zombie_overhead_front_spritesheet), zombie_overhead_front_dead_anim_pointers
+	dw BANK(zombie_front_right_spritesheet), zombie_front_right_dead_anim_pointers
+	dw BANK(zombie_overhead_front_right_spritesheet), zombie_overhead_front_right_dead_anim_pointers
+	dw BANK(zombie_right_spritesheet), zombie_right_dead_anim_pointers
+	dw BANK(zombie_overhead_right_spritesheet), zombie_overhead_right_dead_anim_pointers
+	dw BANK(zombie_back_right_spritesheet), zombie_back_right_dead_anim_pointers
+	dw BANK(zombie_overhead_back_right_spritesheet), zombie_overhead_back_right_dead_anim_pointers
+	dw BANK(zombie_back_spritesheet), zombie_back_dead_anim_pointers
+	dw BANK(zombie_overhead_back_spritesheet), zombie_overhead_back_dead_anim_pointers
+	dw BANK(zombie_back_left_spritesheet), zombie_back_left_dead_anim_pointers
+	dw BANK(zombie_overhead_back_left_spritesheet), zombie_overhead_back_left_dead_anim_pointers
+	dw BANK(zombie_left_spritesheet), zombie_left_dead_anim_pointers
+	dw BANK(zombie_overhead_left_spritesheet), zombie_overhead_left_dead_anim_pointers
+	dw BANK(zombie_front_left_spritesheet), zombie_front_left_dead_anim_pointers
+	dw BANK(zombie_overhead_front_left_spritesheet), zombie_overhead_front_left_dead_anim_pointers
+
+;attack
+	dw BANK(zombie_front_spritesheet), zombie_front_attack_anim_pointers
+	dw BANK(zombie_overhead_front_spritesheet), zombie_overhead_front_attack_anim_pointers
+	dw BANK(zombie_front_right_spritesheet), zombie_front_right_attack_anim_pointers
+	dw BANK(zombie_overhead_front_right_spritesheet), zombie_overhead_front_right_attack_anim_pointers
+	dw BANK(zombie_right_spritesheet), zombie_right_attack_anim_pointers
+	dw BANK(zombie_overhead_right_spritesheet), zombie_overhead_right_attack_anim_pointers
+	dw BANK(zombie_back_right_spritesheet), zombie_back_right_attack_anim_pointers
+	dw BANK(zombie_overhead_back_right_spritesheet), zombie_overhead_back_right_attack_anim_pointers
+	dw BANK(zombie_back_spritesheet), zombie_back_attack_anim_pointers
+	dw BANK(zombie_overhead_back_spritesheet), zombie_overhead_back_attack_anim_pointers
+	dw BANK(zombie_back_left_spritesheet), zombie_back_left_attack_anim_pointers
+	dw BANK(zombie_overhead_back_left_spritesheet), zombie_overhead_back_left_attack_anim_pointers
+	dw BANK(zombie_left_spritesheet), zombie_left_attack_anim_pointers
+	dw BANK(zombie_overhead_left_spritesheet), zombie_overhead_left_attack_anim_pointers
+	dw BANK(zombie_front_left_spritesheet), zombie_front_left_attack_anim_pointers
+	dw BANK(zombie_overhead_front_left_spritesheet), zombie_overhead_front_left_attack_anim_pointers
+
+;65EB
+
+;idle 1
+zombie_front_idle_anim_pointers: ;$EB, $65
+	dw zombie_front_spritesheet+IDLE_FRAME_1
+	dw zombie_front_spritesheet+IDLE_FRAME_1
+	dw zombie_front_spritesheet+IDLE_FRAME_1
+	dw zombie_front_spritesheet+IDLE_FRAME_2
+
+zombie_front_right_idle_anim_pointers: ;$F3, $65
+	dw zombie_front_right_spritesheet+IDLE_FRAME_1
+	dw zombie_front_right_spritesheet+IDLE_FRAME_1
+	dw zombie_front_right_spritesheet+IDLE_FRAME_1
+	dw zombie_front_right_spritesheet+IDLE_FRAME_2
+
+zombie_right_idle_anim_pointers: ;$FB, $65
+	dw zombie_right_spritesheet+IDLE_FRAME_1
+	dw zombie_right_spritesheet+IDLE_FRAME_1
+	dw zombie_right_spritesheet+IDLE_FRAME_1
+	dw zombie_right_spritesheet+IDLE_FRAME_2
+
+zombie_back_right_idle_anim_pointers: ;$03, $66
+	dw zombie_back_right_spritesheet+IDLE_FRAME_1
+	dw zombie_back_right_spritesheet+IDLE_FRAME_1
+	dw zombie_back_right_spritesheet+IDLE_FRAME_1
+	dw zombie_back_right_spritesheet+IDLE_FRAME_2
+
+zombie_back_idle_anim_pointers: ;$0B, $66
+	dw zombie_back_spritesheet+IDLE_FRAME_1
+	dw zombie_back_spritesheet+IDLE_FRAME_1
+	dw zombie_back_spritesheet+IDLE_FRAME_1
+	dw zombie_back_spritesheet+IDLE_FRAME_2
+
+zombie_back_left_idle_anim_pointers: ;$13, $66
+	dw zombie_back_left_spritesheet+IDLE_FRAME_1
+	dw zombie_back_left_spritesheet+IDLE_FRAME_1
+	dw zombie_back_left_spritesheet+IDLE_FRAME_1
+	dw zombie_back_left_spritesheet+IDLE_FRAME_2
+
+zombie_left_idle_anim_pointers: ;$1B, $66
+	dw zombie_left_spritesheet+IDLE_FRAME_1
+	dw zombie_left_spritesheet+IDLE_FRAME_1
+	dw zombie_left_spritesheet+IDLE_FRAME_1
+	dw zombie_left_spritesheet+IDLE_FRAME_2
+
+zombie_front_left_idle_anim_pointers: ;$23, $66
+	dw zombie_front_left_spritesheet+IDLE_FRAME_1
+	dw zombie_front_left_spritesheet+IDLE_FRAME_1
+	dw zombie_front_left_spritesheet+IDLE_FRAME_1
+	dw zombie_front_left_spritesheet+IDLE_FRAME_2
+
+;idle overhead
+zombie_overhead_front_idle_anim_pointers: ;$2B, $66
+	dw zombie_overhead_front_spritesheet+IDLE_FRAME_1
+	dw zombie_overhead_front_spritesheet+IDLE_FRAME_1
+	dw zombie_overhead_front_spritesheet+IDLE_FRAME_1
+	dw zombie_overhead_front_spritesheet+IDLE_FRAME_2
+
+zombie_overhead_front_right_idle_anim_pointers: ;$33, $66
+	dw zombie_overhead_front_right_spritesheet+IDLE_FRAME_1
+	dw zombie_overhead_front_right_spritesheet+IDLE_FRAME_1
+	dw zombie_overhead_front_right_spritesheet+IDLE_FRAME_1
+	dw zombie_overhead_front_right_spritesheet+IDLE_FRAME_2
+
+zombie_overhead_right_idle_anim_pointers: ;$3B, $66
+	dw zombie_overhead_right_spritesheet+IDLE_FRAME_1
+	dw zombie_overhead_right_spritesheet+IDLE_FRAME_1
+	dw zombie_overhead_right_spritesheet+IDLE_FRAME_1
+	dw zombie_overhead_right_spritesheet+IDLE_FRAME_2
+
+zombie_overhead_back_right_idle_anim_pointers: ;$43, $66
+	dw zombie_overhead_back_right_spritesheet+IDLE_FRAME_1
+	dw zombie_overhead_back_right_spritesheet+IDLE_FRAME_1
+	dw zombie_overhead_back_right_spritesheet+IDLE_FRAME_1
+	dw zombie_overhead_back_right_spritesheet+IDLE_FRAME_2
+
+zombie_overhead_back_idle_anim_pointers: ;$4B, $66
+	dw zombie_overhead_back_spritesheet+IDLE_FRAME_1
+	dw zombie_overhead_back_spritesheet+IDLE_FRAME_1
+	dw zombie_overhead_back_spritesheet+IDLE_FRAME_1
+	dw zombie_overhead_back_spritesheet+IDLE_FRAME_2
+
+zombie_overhead_back_left_idle_anim_pointers: ;$53, $66
+	dw zombie_overhead_back_left_spritesheet+IDLE_FRAME_1
+	dw zombie_overhead_back_left_spritesheet+IDLE_FRAME_1
+	dw zombie_overhead_back_left_spritesheet+IDLE_FRAME_1
+	dw zombie_overhead_back_left_spritesheet+IDLE_FRAME_2
+
+zombie_overhead_left_idle_anim_pointers: ;$5B, $66
+	dw zombie_overhead_left_spritesheet+IDLE_FRAME_1
+	dw zombie_overhead_left_spritesheet+IDLE_FRAME_1
+	dw zombie_overhead_left_spritesheet+IDLE_FRAME_1
+	dw zombie_overhead_left_spritesheet+IDLE_FRAME_2
+
+zombie_overhead_front_left_idle_anim_pointers: ;$63, $66
+	dw zombie_overhead_front_left_spritesheet+IDLE_FRAME_1
+	dw zombie_overhead_front_left_spritesheet+IDLE_FRAME_1
+	dw zombie_overhead_front_left_spritesheet+IDLE_FRAME_1
+	dw zombie_overhead_front_left_spritesheet+IDLE_FRAME_2
+
+;walk 666B
+zombie_front_walk_anim_pointers:
+	dw zombie_front_spritesheet+WALK_FRAME_1
+	dw zombie_front_spritesheet+WALK_FRAME_2
+	dw zombie_front_spritesheet+WALK_FRAME_3
+	dw zombie_front_spritesheet+WALK_FRAME_4
+	dw zombie_front_spritesheet+WALK_FRAME_1
+	dw zombie_front_spritesheet+WALK_FRAME_2
+	dw zombie_front_spritesheet+WALK_FRAME_3
+	dw zombie_front_spritesheet+WALK_FRAME_4
+
+zombie_front_right_walk_anim_pointers:
+	dw zombie_front_right_spritesheet+WALK_FRAME_1
+	dw zombie_front_right_spritesheet+WALK_FRAME_2
+	dw zombie_front_right_spritesheet+WALK_FRAME_3
+	dw zombie_front_right_spritesheet+WALK_FRAME_4
+	dw zombie_front_right_spritesheet+WALK_FRAME_1
+	dw zombie_front_right_spritesheet+WALK_FRAME_2
+	dw zombie_front_right_spritesheet+WALK_FRAME_3
+	dw zombie_front_right_spritesheet+WALK_FRAME_4
+
+zombie_right_walk_anim_pointers:
+	dw zombie_right_spritesheet+WALK_FRAME_1
+	dw zombie_right_spritesheet+WALK_FRAME_2
+	dw zombie_right_spritesheet+WALK_FRAME_3
+	dw zombie_right_spritesheet+WALK_FRAME_4
+	dw zombie_right_spritesheet+WALK_FRAME_1
+	dw zombie_right_spritesheet+WALK_FRAME_2
+	dw zombie_right_spritesheet+WALK_FRAME_3
+	dw zombie_right_spritesheet+WALK_FRAME_4
+
+zombie_back_right_walk_anim_pointers:
+	dw zombie_back_right_spritesheet+WALK_FRAME_1
+	dw zombie_back_right_spritesheet+WALK_FRAME_2
+	dw zombie_back_right_spritesheet+WALK_FRAME_3
+	dw zombie_back_right_spritesheet+WALK_FRAME_4
+	dw zombie_back_right_spritesheet+WALK_FRAME_1
+	dw zombie_back_right_spritesheet+WALK_FRAME_2
+	dw zombie_back_right_spritesheet+WALK_FRAME_3
+	dw zombie_back_right_spritesheet+WALK_FRAME_4
+
+zombie_back_walk_anim_pointers:
+	dw zombie_back_spritesheet+WALK_FRAME_1
+	dw zombie_back_spritesheet+WALK_FRAME_2
+	dw zombie_back_spritesheet+WALK_FRAME_3
+	dw zombie_back_spritesheet+WALK_FRAME_4
+	dw zombie_back_spritesheet+WALK_FRAME_1
+	dw zombie_back_spritesheet+WALK_FRAME_2
+	dw zombie_back_spritesheet+WALK_FRAME_3
+	dw zombie_back_spritesheet+WALK_FRAME_4
+
+zombie_back_left_walk_anim_pointers:
+	dw zombie_back_left_spritesheet+WALK_FRAME_1
+	dw zombie_back_left_spritesheet+WALK_FRAME_2
+	dw zombie_back_left_spritesheet+WALK_FRAME_3
+	dw zombie_back_left_spritesheet+WALK_FRAME_4
+	dw zombie_back_left_spritesheet+WALK_FRAME_1
+	dw zombie_back_left_spritesheet+WALK_FRAME_2
+	dw zombie_back_left_spritesheet+WALK_FRAME_3
+	dw zombie_back_left_spritesheet+WALK_FRAME_4
+
+zombie_left_walk_anim_pointers:
+	dw zombie_left_spritesheet+WALK_FRAME_1
+	dw zombie_left_spritesheet+WALK_FRAME_2
+	dw zombie_left_spritesheet+WALK_FRAME_3
+	dw zombie_left_spritesheet+WALK_FRAME_4
+	dw zombie_left_spritesheet+WALK_FRAME_1
+	dw zombie_left_spritesheet+WALK_FRAME_2
+	dw zombie_left_spritesheet+WALK_FRAME_3
+	dw zombie_left_spritesheet+WALK_FRAME_4
+
+zombie_front_left_walk_anim_pointers:
+	dw zombie_front_left_spritesheet+WALK_FRAME_1
+	dw zombie_front_left_spritesheet+WALK_FRAME_2
+	dw zombie_front_left_spritesheet+WALK_FRAME_3
+	dw zombie_front_left_spritesheet+WALK_FRAME_4
+	dw zombie_front_left_spritesheet+WALK_FRAME_1
+	dw zombie_front_left_spritesheet+WALK_FRAME_2
+	dw zombie_front_left_spritesheet+WALK_FRAME_3
+	dw zombie_front_left_spritesheet+WALK_FRAME_4
+
+;walk overhead
+zombie_overhead_front_walk_anim_pointers:
+	dw zombie_overhead_front_spritesheet+WALK_FRAME_1
+	dw zombie_overhead_front_spritesheet+WALK_FRAME_2
+	dw zombie_overhead_front_spritesheet+WALK_FRAME_3
+	dw zombie_overhead_front_spritesheet+WALK_FRAME_4
+
+zombie_overhead_front_right_walk_anim_pointers:
+	dw zombie_overhead_front_right_spritesheet+WALK_FRAME_1
+	dw zombie_overhead_front_right_spritesheet+WALK_FRAME_2
+	dw zombie_overhead_front_right_spritesheet+WALK_FRAME_3
+	dw zombie_overhead_front_right_spritesheet+WALK_FRAME_4
+
+zombie_overhead_right_walk_anim_pointers:
+	dw zombie_overhead_right_spritesheet+WALK_FRAME_1
+	dw zombie_overhead_right_spritesheet+WALK_FRAME_2
+	dw zombie_overhead_right_spritesheet+WALK_FRAME_3
+	dw zombie_overhead_right_spritesheet+WALK_FRAME_4
+
+zombie_overhead_back_right_walk_anim_pointers:
+	dw zombie_overhead_back_right_spritesheet+WALK_FRAME_1
+	dw zombie_overhead_back_right_spritesheet+WALK_FRAME_2
+	dw zombie_overhead_back_right_spritesheet+WALK_FRAME_3
+	dw zombie_overhead_back_right_spritesheet+WALK_FRAME_4
+
+zombie_overhead_back_walk_anim_pointers:
+	dw zombie_overhead_back_spritesheet+WALK_FRAME_1
+	dw zombie_overhead_back_spritesheet+WALK_FRAME_2
+	dw zombie_overhead_back_spritesheet+WALK_FRAME_3
+	dw zombie_overhead_back_spritesheet+WALK_FRAME_4
+
+zombie_overhead_back_left_walk_anim_pointers:
+	dw zombie_overhead_back_left_spritesheet+WALK_FRAME_1
+	dw zombie_overhead_back_left_spritesheet+WALK_FRAME_2
+	dw zombie_overhead_back_left_spritesheet+WALK_FRAME_3
+	dw zombie_overhead_back_left_spritesheet+WALK_FRAME_4
+
+zombie_overhead_left_walk_anim_pointers:
+	dw zombie_overhead_left_spritesheet+WALK_FRAME_1
+	dw zombie_overhead_left_spritesheet+WALK_FRAME_2
+	dw zombie_overhead_left_spritesheet+WALK_FRAME_3
+	dw zombie_overhead_left_spritesheet+WALK_FRAME_4
+
+zombie_overhead_front_left_walk_anim_pointers:
+	dw zombie_overhead_front_left_spritesheet+WALK_FRAME_1
+	dw zombie_overhead_front_left_spritesheet+WALK_FRAME_2
+	dw zombie_overhead_front_left_spritesheet+WALK_FRAME_3
+	dw zombie_overhead_front_left_spritesheet+WALK_FRAME_4
+
+;dead
+zombie_front_dead_anim_pointers:
+	dw zombie_front_spritesheet+ZOMBIE_DEAD_FRAME
+
+zombie_front_right_dead_anim_pointers:
+	dw zombie_front_right_spritesheet+ZOMBIE_DEAD_FRAME
+
+zombie_right_dead_anim_pointers:
+	dw zombie_right_spritesheet+ZOMBIE_DEAD_FRAME
+
+zombie_back_right_dead_anim_pointers:
+	dw zombie_back_right_spritesheet+ZOMBIE_DEAD_FRAME
+
+zombie_back_dead_anim_pointers:
+	dw zombie_back_spritesheet+ZOMBIE_DEAD_FRAME
+
+zombie_back_left_dead_anim_pointers:
+	dw zombie_back_left_spritesheet+ZOMBIE_DEAD_FRAME
+
+zombie_left_dead_anim_pointers:
+	dw zombie_left_spritesheet+ZOMBIE_DEAD_FRAME
+
+zombie_front_left_dead_anim_pointers:
+	dw zombie_front_left_spritesheet+ZOMBIE_DEAD_FRAME
+
+;overhead
+zombie_overhead_front_dead_anim_pointers:
+	dw zombie_overhead_front_spritesheet+ZOMBIE_DEAD_FRAME
+
+zombie_overhead_front_right_dead_anim_pointers:
+	dw zombie_overhead_front_right_spritesheet+ZOMBIE_DEAD_FRAME
+
+zombie_overhead_right_dead_anim_pointers:
+	dw zombie_overhead_right_spritesheet+ZOMBIE_DEAD_FRAME
+
+zombie_overhead_back_right_dead_anim_pointers:
+	dw zombie_overhead_back_right_spritesheet+ZOMBIE_DEAD_FRAME
+
+zombie_overhead_back_dead_anim_pointers:
+	dw zombie_overhead_back_spritesheet+ZOMBIE_DEAD_FRAME
+
+zombie_overhead_back_left_dead_anim_pointers:
+	dw zombie_overhead_back_left_spritesheet+ZOMBIE_DEAD_FRAME
+
+zombie_overhead_left_dead_anim_pointers:
+	dw zombie_overhead_left_spritesheet+ZOMBIE_DEAD_FRAME
+
+zombie_overhead_front_left_dead_anim_pointers:
+	dw zombie_overhead_front_left_spritesheet+ZOMBIE_DEAD_FRAME
+
+;attack
+zombie_front_attack_anim_pointers:
+	dw zombie_front_spritesheet+ZOMBIE_ATTACK_FRAME
+
+zombie_front_right_attack_anim_pointers:
+	dw zombie_front_right_spritesheet+ZOMBIE_ATTACK_FRAME
+
+zombie_right_attack_anim_pointers:
+	dw zombie_right_spritesheet+ZOMBIE_ATTACK_FRAME
+
+zombie_back_right_attack_anim_pointers:
+	dw zombie_back_right_spritesheet+ZOMBIE_ATTACK_FRAME
+
+zombie_back_attack_anim_pointers:
+	dw zombie_back_spritesheet+ZOMBIE_ATTACK_FRAME
+
+zombie_back_left_attack_anim_pointers:
+	dw zombie_back_left_spritesheet+ZOMBIE_ATTACK_FRAME
+
+zombie_left_attack_anim_pointers:
+	dw zombie_left_spritesheet+ZOMBIE_ATTACK_FRAME
+
+zombie_front_left_attack_anim_pointers:
+	dw zombie_front_left_spritesheet+ZOMBIE_ATTACK_FRAME
+
+;overhead
+zombie_overhead_front_attack_anim_pointers:
+	dw zombie_overhead_front_spritesheet+ZOMBIE_ATTACK_FRAME
+
+zombie_overhead_front_right_attack_anim_pointers:
+	dw zombie_overhead_front_right_spritesheet+ZOMBIE_ATTACK_FRAME
+
+zombie_overhead_right_attack_anim_pointers:
+	dw zombie_overhead_right_spritesheet+ZOMBIE_ATTACK_FRAME
+
+zombie_overhead_back_right_attack_anim_pointers:
+	dw zombie_overhead_back_right_spritesheet+ZOMBIE_ATTACK_FRAME
+
+zombie_overhead_back_attack_anim_pointers:
+	dw zombie_overhead_back_spritesheet+ZOMBIE_ATTACK_FRAME
+
+zombie_overhead_back_left_attack_anim_pointers:
+	dw zombie_overhead_back_left_spritesheet+ZOMBIE_ATTACK_FRAME
+
+zombie_overhead_left_attack_anim_pointers:
+	dw zombie_overhead_left_spritesheet+ZOMBIE_ATTACK_FRAME
+
+zombie_overhead_front_left_attack_anim_pointers:
+	dw zombie_overhead_front_left_spritesheet+ZOMBIE_ATTACK_FRAME

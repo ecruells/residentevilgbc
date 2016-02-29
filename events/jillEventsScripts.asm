@@ -1,0 +1,4379 @@
+event_4D65:
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db MAIN_HALL_1F, $00
+
+	db BARRY_EVENT_DATA
+	dw $0080
+	dw $FBC8
+	db FACING_NORTH
+	db $00
+	db GUN_AIM_ANIM, $08
+	db $00, $00
+
+	db JILL_EVENT_DATA
+	dw $FF80
+	dw $FBC8
+	db FACING_NORTH
+	db $00
+	db GUN_AIM_ANIM, $08
+	db $00, $00
+
+	db WESKER_EVENT_DATA
+	dw $0000
+	dw $FBC8
+	db FACING_NORTH
+	db $00
+	db GUN_AIM_ANIM, $08
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db CHANGE_NPC2_ANIM
+	db GUN_AIM_ANIM, $10
+
+	db CHANGE_NPC2_ANIM
+	db IDLE_ANIM, $00
+
+	db CHANGE_NPC4_ANIM
+	db GUN_AIM_ANIM, $10
+
+	db CHANGE_NPC4_ANIM
+	db IDLE_ANIM, $00
+
+	db CHANGE_NPC1_ANIM
+	db GUN_AIM_ANIM, $10
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $18
+
+	db CHANGE_NPC1_FACING, $82
+
+	db CHANGE_NPC4_FACING, $02
+
+	db MOVE_WALK_NPC1, $14
+
+	db MOVE_WALK_NPC4, $14
+
+	db EVENT_WAIT, $0A
+
+	db CHANGE_ROOM_SCREEN, $01
+
+	db MOVE_WALK_NPC2, $0F
+
+	db CHANGE_NPC2_ANIM
+	db IDLE_ANIM, $00
+
+	db MOVE_WALK_NPC1, $37
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $00
+
+	db MOVE_WALK_NPC4, $0F
+
+	db CHANGE_NPC4_ANIM
+	db IDLE_ANIM, $00
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4225
+
+	db EVENT_WAIT, $96
+
+	db MOVE_WALK_NPC4, $04
+
+	db CHANGE_NPC1_FACING, $82
+
+	db MOVE_WALK_NPC1, $04
+
+	db SHOW_WESKER_MESSAGE
+	dw text_pointer_4228
+
+	db EVENT_WAIT, $96
+
+	db MOVE_WALK_NPC1, $03
+
+	db CHANGE_NPC4_FACING, $86
+
+	db CHANGE_NPC4_ANIM
+	db IDLE_ANIM, $00
+
+	db CHANGE_ROOM_SCREEN, $02
+
+	db CHANGE_NPC1_FACING, $88
+
+	db MOVE_RUN_NPC1, $03
+
+	db CHANGE_ROOM_SCREEN, $06
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $00
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_422B
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_NPC1_FACING, $04
+
+	db MOVE_RUN_NPC1, $02
+
+	db SHOW_WESKER_MESSAGE
+	dw text_pointer_422E
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4231
+
+	db EVENT_WAIT, $96
+
+	db PLAY_SFX, FIREGUN_SFX
+
+	db CHANGE_NPC1_FACING, $84
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4234
+
+	db EVENT_WAIT, $96
+
+	db SHOW_WESKER_MESSAGE
+	dw text_pointer_4237
+
+	db EVENT_WAIT, $96
+
+	db SHOW_WESKER_MESSAGE
+	dw text_pointer_423A
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_423D
+
+	db EVENT_WAIT, $96
+
+	db SHOW_WESKER_MESSAGE
+	dw text_pointer_4240
+
+	db EVENT_WAIT, $96
+
+	db MOVE_WALK_NPC1, $32
+
+	db CHANGE_NPC1_FACING, $82
+
+	db CHANGE_ROOM_SCREEN, $01
+
+	db CHANGE_NPC4_FACING, $04
+
+	db SHOW_WESKER_MESSAGE
+	dw text_pointer_4243
+
+	db EVENT_WAIT, $96
+
+	db MOVE_RUN_NPC4, $05
+
+	db MOVE_RUN_NPC4, $05
+
+	db MOVE_RUN_NPC4, $05
+
+	db MOVE_RUN_NPC4, $05
+
+	db MOVE_RUN_NPC4, $05
+
+	db MOVE_RUN_NPC4, $05
+
+	db CHANGE_NPC4_FACING, $02
+
+	db MOVE_RUN_NPC4, $05
+
+	db MOVE_RUN_NPC4, $05
+
+	db MOVE_RUN_NPC4, $05
+
+	db MOVE_RUN_NPC4, $05
+
+	db MOVE_RUN_NPC4, $05
+
+	db MOVE_RUN_NPC4, $05
+
+	db MOVE_RUN_NPC4, $05
+
+	db MOVE_RUN_NPC4, $05
+
+	db MOVE_RUN_NPC4, $05
+
+	db MOVE_RUN_NPC4, $05
+
+	db MOVE_RUN_NPC1, $05
+
+	db MOVE_RUN_NPC1, $05
+
+	db MOVE_RUN_NPC1, $05
+
+	db MOVE_RUN_NPC1, $05
+
+	db MOVE_RUN_NPC1, $05
+
+	db MOVE_RUN_NPC1, $05
+
+	db CHANGE_NPC1_FACING, $02
+
+	db MOVE_RUN_NPC1, $05
+
+	db MOVE_RUN_NPC1, $05
+
+	db CHANGE_ROOM_SCREEN, $05
+
+	db MOVE_RUN_NPC1, $05
+
+	db CHANGE_NPC1_FACING, $82
+
+	db MOVE_RUN_NPC1, $05
+
+	db MOVE_RUN_NPC1, $05
+
+	db MOVE_RUN_NPC1, $05
+
+	db MOVE_RUN_NPC1, $05
+
+	db MOVE_RUN_NPC1, $05
+
+	db MOVE_RUN_NPC1, $05
+
+	db MOVE_RUN_NPC1, $05
+
+	db EVENT_WAIT, $96
+
+	db SHOW_DOOR_ANIMATION, $40
+
+	db JILL_EVENT_DATA
+	dw $FC70
+	dw $0000
+	db FACING_WEST
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_ROOM
+	db DINNING_ROOM_1F, $FF
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_4E79:
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db DINNING_ROOM_1F, $00
+
+	db JILL_EVENT_DATA
+	dw $FC70
+	dw $FF98
+	db FACING_WEST
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db BARRY_EVENT_DATA
+	dw $FC70
+	dw $0060
+	db FACING_WEST
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db MOVE_WALK_NPC4, $14
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4246
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_NPC4_FACING, $82
+
+	db MOVE_WALK_NPC4, $1E
+
+	db CHANGE_NPC4_FACING, $02
+
+	db MOVE_WALK_NPC4, $3C
+
+	db CHANGE_ROOM_SCREEN, $01
+
+	db MOVE_WALK_NPC4, $3C
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_4EAF:
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db DINNING_ROOM_1F, $02
+
+	db JILL_EVENT_DATA
+	dw $01F8
+	dw $0100
+	db FACING_SOUTH_WEST
+	db $00
+	db IDLE_ANIM, $18
+	db $00, $00
+
+	db BARRY_EVENT_DATA
+	dw $0390
+	dw $FFE8
+	db FACING_SOUTH_WEST
+	db $00
+	db KNIFE_AIM_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db MOVE_WALK_NPC1, $0A
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4249
+
+	db EVENT_WAIT, $96
+
+	db MOVE_WALK_NPC1, $14
+
+	db CHANGE_ROOM_SCREEN, $03
+
+	db MOVE_WALK_NPC1, $0C
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $18
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_424C
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_424F
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4252
+
+	db EVENT_WAIT, $96
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_4EF1:
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db DINNING_ROOM_1F, $02
+
+	db JILL_EVENT_DATA
+	dw $02C0
+	dw $0150
+	db FACING_SOUTH
+	db $00
+	db IDLE_ANIM, $18
+	db $00, $00
+
+	db BARRY_EVENT_DATA
+	dw $0390
+	dw $FF60
+	db FACING_SOUTH_WEST
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db MOVE_RUN_NPC1, $16
+
+	db CHANGE_NPC1_FACING, $82
+
+	db MOVE_RUN_NPC1, $04
+
+	db CHANGE_ROOM_SCREEN, $03
+
+	db ZOMBIE_EVENT_DATA
+	dw $0310
+	dw $0150
+	db FACING_SOUTH_WEST
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db CHANGE_NPC1_FACING, $02
+
+	db MOVE_WALK_NPC1, $14
+
+	db CHANGE_NPC1_FACING, $86
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $18
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4255
+
+	db PLAY_SFX, OPEN_DOOR_SFX
+
+	db EVENT_WAIT, $32
+
+	db PLAY_SFX, CLOSE_DOOR_SFX
+
+	db MOVE_WALK_NPC6, $0A
+
+	db CHANGE_NPC6_FACING, $02
+
+	db CHANGE_NPC4_FACING, $88
+
+	db CHANGE_ROOM_SCREEN, $02
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4258
+
+	db MOVE_WALK_NPC6, $0F
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_425B
+
+	db MOVE_WALK_NPC6, $14
+
+	db MOVE_WALK_BACKWARD_NPC1, $14
+
+	db EVENT_WAIT, $46
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_425E
+
+	db CHANGE_NPC4_FACING, $02
+
+	db CHANGE_NPC4_ANIM
+	db GUN_AIM_ANIM, $10
+
+	db CHANGE_NPC4_ANIM
+	db GUN_AIM_ANIM, $08
+
+	db PLAY_SFX, FIREGUN_SFX
+
+	db EVENT_WAIT, $1E
+
+	db PLAY_SFX, FIREGUN_SFX
+
+	db EVENT_WAIT, $1E
+
+	db PLAY_SFX, FIREGUN_SFX
+
+	db EVENT_WAIT, $1E
+
+	db CHANGE_NPC6_ANIM
+	db RUN_ANIM, $00
+
+	db CHANGE_NPC4_FACING, $82
+
+	db CHANGE_NPC4_ANIM
+	db GUN_AIM_ANIM, $10
+
+	db CHANGE_NPC4_ANIM
+	db IDLE_ANIM, $00
+
+	db MOVE_WALK_NPC4, $0A
+
+	db MOVE_WALK_NPC1, $0A
+
+	db CHANGE_NPC4_FACING, $86
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4261
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4264
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4267
+
+	db CHANGE_NPC4_FACING, $04
+
+	db MOVE_RUN_NPC4, $28
+
+	db CHANGE_ROOM_SCREEN, $01
+
+	db MOVE_RUN_NPC4, $32
+
+	db FADEOUT_SCREEN
+
+	db PLAY_SFX, OPEN_DOOR_SFX
+
+	db EVENT_WAIT, $1E
+
+	db PLAY_SFX, CLOSE_DOOR_SFX
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_4F92:
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db MAIN_HALL_1F, $06
+
+	db JILL_EVENT_DATA
+	dw $03D0
+	dw $0090
+	db FACING_SOUTH_EAST
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db BARRY_EVENT_DATA
+	dw $03D0
+	dw $0040
+	db FACING_SOUTH_EAST
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db MOVE_WALK_NPC1, $14
+
+	db MOVE_WALK_NPC4, $14
+
+	db CHANGE_NPC4_FACING, $82
+
+	db MOVE_WALK_NPC1, $0A
+
+	db MOVE_WALK_NPC4, $0A
+
+	db CHANGE_NPC4_FACING, $02
+
+	db MOVE_WALK_NPC1, $0F
+
+	db MOVE_WALK_NPC4, $0F
+
+	db CHANGE_ROOM_SCREEN, $05
+
+	db CHANGE_NPC1_FACING, $02
+
+	db CHANGE_NPC4_FACING, $02
+
+	db MOVE_WALK_NPC1, $28
+
+	db MOVE_WALK_NPC4, $28
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_426A
+
+	db EVENT_WAIT, $96
+
+	db MOVE_WALK_NPC1, $14
+
+	db CHANGE_NPC1_FACING, $86
+
+	db CHANGE_NPC4_FACING, $04
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $18
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_426D
+
+	db EVENT_WAIT, $64
+
+	db CHANGE_NPC4_FACING, $84
+
+	db MOVE_RUN_NPC4, $0A
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $00
+
+	db MOVE_RUN_NPC4, $32
+
+	db CHANGE_NPC1_FACING, $82
+
+	db MOVE_WALK_NPC1, $0A
+
+	db CHANGE_NPC1_FACING, $84
+
+	db MOVE_WALK_NPC1, $78
+
+	db CHANGE_ROOM_SCREEN, $04
+
+	db CHANGE_NPC1_FACING, $84
+
+	db MOVE_WALK_NPC1, $32
+
+	db BARRY_EVENT_DATA
+	dw $FDA8
+	dw $FE10
+	db FACING_NORTH_WEST
+	db $00
+	db IDLE_ANIM, $18
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db CHANGE_ROOM_SCREEN, $03
+
+	db MOVE_WALK_NPC1, $32
+
+	db CHANGE_NPC4_ANIM
+	db IDLE_ANIM, $18
+
+	db MOVE_WALK_NPC1, $0A
+
+	db CHANGE_NPC1_FACING, $84
+
+	db CHANGE_ROOM_SCREEN, $02
+
+	db MOVE_WALK_NPC1, $96
+
+	db CHANGE_NPC1_FACING, $02
+
+	db MOVE_WALK_NPC1, $0A
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $18
+
+	db EVENT_WAIT, $32
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4270
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $00
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4273
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $01
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4276
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4279
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_427C
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_427F
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4282
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4285
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $02
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4288
+
+	db EVENT_WAIT, $96
+
+	db MOVE_WALK_NPC1, $09
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_428B
+
+	db MOVE_WALK_BACKWARD_NPC1, $0A
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $00
+
+	db EVENT_WAIT, $46
+
+	db CHANGE_NPC4_FACING, $02
+
+	db CHANGE_ROOM_SCREEN, $06
+
+	db MOVE_RUN_NPC4, $3C
+
+	db CHANGE_NPC4_FACING, $82
+
+	db MOVE_RUN_NPC4, $0A
+
+	db CHANGE_ROOM_SCREEN, $05
+
+	db CHANGE_NPC4_FACING, $86
+
+	db CHANGE_NPC4_ANIM
+	db IDLE_ANIM, $00
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4291
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $06
+
+	db CHANGE_NPC4_ANIM
+	db IDLE_ANIM, $18
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4294
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $05
+
+	db CHANGE_NPC4_FACING, $06
+
+	db MOVE_WALK_NPC4, $28
+
+	db FADEOUT_SCREEN
+
+	db PLAY_SFX, OPEN_DOOR_SFX
+
+	db EVENT_WAIT, $32
+
+	db PLAY_SFX, CLOSE_DOOR_SFX
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_508A: ;jill & barry lockpick scene repeated unused
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db MAIN_HALL_1F, $02
+
+	db BARRY_EVENT_DATA
+	dw $FDA8
+	dw $FE10
+	db FACING_NORTH_WEST
+	db $00
+	db IDLE_ANIM, $18
+	db $00, $00
+
+	db JILL_EVENT_DATA
+	dw $FE98
+	dw $FF00
+	db FACING_SOUTH
+	db $00
+	db IDLE_ANIM, $18
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4270
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $00
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4273
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $01
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4276
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4279
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_427C
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_427F
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4282
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4285
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4288
+
+	db EVENT_WAIT, $96
+
+	db MOVE_WALK_NPC1, $1E
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_428B
+
+	db MOVE_WALK_BACKWARD_NPC1, $1E
+
+	db EVENT_WAIT, $46
+
+	db CHANGE_NPC4_FACING, $02
+
+	db CHANGE_ROOM_SCREEN, $06
+
+	db MOVE_RUN_NPC4, $3C
+
+	db CHANGE_NPC4_FACING, $82
+
+	db MOVE_RUN_NPC4, $0A
+
+	db CHANGE_ROOM_SCREEN, $05
+
+	db CHANGE_NPC4_FACING, $86
+
+	db CHANGE_NPC4_ANIM
+	db IDLE_ANIM, $00
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4291
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $06
+
+	db CHANGE_NPC4_ANIM
+	db IDLE_ANIM, $18
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4294
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $05
+
+	db CHANGE_NPC4_FACING, $06
+
+	db MOVE_WALK_NPC4, $28
+
+	db CHANGE_ROOM_SCREEN, $02
+
+	db EVENT_WAIT, $50
+
+	db PLAY_SFX, OPEN_DOOR_SFX
+
+	db EVENT_WAIT, $32
+
+	db PLAY_SFX, CLOSE_DOOR_SFX
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_5118:
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db FALLING_CIELING_ROOM, $01
+
+	db JILL_EVENT_DATA
+	dw $FF70
+	dw $FF30
+	db FACING_SOUTH
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $00
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4297
+
+	db EVENT_WAIT, $96
+
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db CORRIDOR_0A, $06
+
+	db BARRY_EVENT_DATA
+	dw $0018
+	dw $FEE8
+	db FACING_NORTH_WEST
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_429A
+
+	db EVENT_WAIT, $96
+
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db FALLING_CIELING_ROOM, $01
+
+	db JILL_EVENT_DATA
+	dw $FF70
+	dw $FF30
+	db FACING_SOUTH
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db CHANGE_NPC1_FACING, $88
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_429D
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_42A0
+
+	db EVENT_WAIT, $96
+
+	db PLAY_SFX, OPEN_DOOR_SFX
+
+	db SHOW_DOOR_ANIMATION, $40
+
+	db LOAD_ROOM
+	db FALLING_CIELING_ROOM, $01
+
+	db JILL_EVENT_DATA
+	dw $FF70
+	dw $0000
+	db FACING_NORTH
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db BARRY_EVENT_DATA
+	dw $0000
+	dw $00D0
+	db FACING_NORTH_WEST
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_42A3
+
+	db CHANGE_NPC4_FACING, $06
+
+	db CHANGE_NPC1_FACING, $02
+
+	db MOVE_RUN_NPC4, $02
+
+	db MOVE_RUN_NPC1, $02
+
+	db MOVE_RUN_NPC4, $02
+
+	db MOVE_RUN_NPC1, $04
+
+	db EVENT_WAIT, $50
+
+	db SHOW_DOOR_ANIMATION, $40
+
+	db LOAD_ROOM
+	db CORRIDOR_0A, $06
+
+	db JILL_EVENT_DATA
+	dw $0030
+	dw $FEE8
+	db FACING_SOUTH
+	db $00
+	db IDLE_ANIM, $18
+	db $00, $00
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_51AD:
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db FOREST_CORPSE_ROOM, $00
+
+	db BARRY_EVENT_DATA
+	dw $FFA8
+	dw $0028
+	db FACING_SOUTH_WEST
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db JILL_EVENT_DATA
+	dw $FED8
+	dw $00D0
+	db FACING_SOUTH_WEST
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db CHANGE_NPC4_FACING, $08
+
+	db CHANGE_NPC4_ANIM
+	db GUN_AIM_ANIM, $10
+
+	db CHANGE_NPC4_ANIM
+	db GUN_AIM_ANIM, $08
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_42E2
+
+	db EVENT_WAIT, $0A
+
+	db CHANGE_NPC4_ANIM
+	db GUN_AIM_ANIM, $10
+
+	db CHANGE_NPC4_ANIM
+	db IDLE_ANIM, $18
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_42E5
+
+	db EVENT_WAIT, $96
+
+	db MOVE_WALK_NPC1, $01
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_42E8
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_42EB
+
+	db CHANGE_NPC4_FACING, $86
+
+	db CHANGE_NPC1_FACING, $02
+
+	db MOVE_WALK_NPC4, $14
+
+	db CHANGE_ROOM_SCREEN, $01
+
+	db MOVE_WALK_NPC4, $0A
+
+	db CHANGE_NPC4_FACING, $84
+
+	db MOVE_WALK_NPC4, $1E
+
+	db MOVE_WALK_NPC1, $23
+
+	db CHANGE_NPC1_FACING, $84
+
+	db MOVE_WALK_NPC1, $19
+
+	db CHANGE_ROOM_SCREEN, $03
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_42EE
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $02
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_42F1
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_NPC4_ANIM
+	db KNIFE_AIM_ANIM, $00
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_42F4
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_42F7
+
+	db CHANGE_NPC1_FACING, $88
+
+	db MOVE_WALK_NPC1, $01
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_42FA
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_NPC4_ANIM
+	db IDLE_ANIM, $00
+
+	db CHANGE_NPC1_FACING, $08
+
+	db SCREEN_PANNING_DOWN
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db RECEIVE_ITEM, BAZOOKA, $54
+
+event_5232:
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db CORRIDOR_0A, $06
+
+	db BARRY_EVENT_DATA
+	dw $FFF8
+	dw $FE28
+	db FACING_NORTH_WEST
+	db $00
+	db IDLE_ANIM, $18
+	db $00, $00
+
+	db JILL_EVENT_DATA
+	dw $FFF8
+	dw $FEE8
+	db FACING_SOUTH_WEST
+	db $00
+	db IDLE_ANIM, $18
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_42A6
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_42A9
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_42AC
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_42AF
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_42B2
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_42B5
+
+	db EVENT_WAIT, $96
+
+	db MOVE_WALK_NPC4, $14
+
+	db CHANGE_NPC4_FACING, $02
+
+	db MOVE_WALK_NPC4, $19
+
+	db CHANGE_NPC4_ANIM
+	db IDLE_ANIM, $18
+
+	db CHANGE_NPC4_FACING, $84
+
+	db CHANGE_ROOM_SCREEN, $06
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_42B8
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $05
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_42BB
+
+	db CHANGE_NPC4_FACING, $04
+
+	db MOVE_WALK_NPC4, $14
+
+	db CHANGE_NPC4_FACING, $84
+
+	db MOVE_WALK_NPC4, $28
+
+	db LOAD_ROOM
+	db DINNING_ROOM_1F, $00
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_5295:
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db MAIN_HALL_1F, $01
+
+	db BARRY_EVENT_DATA
+	dw $0010
+	dw $FFB8
+	db FACING_WEST
+	db $00
+	db IDLE_ANIM, $18
+	db $00, $00
+
+	db JILL_EVENT_DATA
+	dw $FC30
+	dw $FED0
+	db FACING_WEST
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db MOVE_WALK_NPC1, $1E
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_42BE
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_NPC4_FACING, $08
+
+	db MOVE_WALK_NPC1, $28
+
+	db MOVE_WALK_NPC4, $32
+
+	db CHANGE_ROOM_SCREEN, $02
+
+	db CHANGE_NPC4_FACING, $82
+
+	db CHANGE_NPC4_ANIM
+	db IDLE_ANIM, $18
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_42C1
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_NPC1_FACING, $82
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_42C4
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_42C7
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_42CA
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_42CD
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_NPC1_FACING, $86
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_42D0
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $00
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_42D3
+
+	db CHANGE_NPC1_FACING, $06
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_42D6
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_42D9
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_42DC
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_NPC4_ANIM
+	db GUN_AIM_ANIM, $10
+
+	db CHANGE_NPC4_ANIM
+	db GUN_AIM_ANIM, $08
+
+	db EVENT_WAIT, $28
+
+	db CHANGE_NPC4_ANIM
+	db GUN_AIM_ANIM, $10
+
+	db CHANGE_NPC4_ANIM
+	db IDLE_ANIM, $18
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_42DF
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_NPC4_FACING, $82
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $0F
+
+	db MOVE_WALK_BACKWARD_NPC1, $14
+
+	db CHANGE_NPC4_FACING, $84
+
+	db MOVE_RUN_NPC4, $28
+
+	db CHANGE_ROOM_SCREEN, $01
+
+	db MOVE_RUN_NPC4, $14
+
+	db EVENT_WAIT, $3C
+
+	db CHANGE_ROOM_SCREEN, $02
+
+	db EVENT_WAIT, $50
+
+	db PLAY_SFX, OPEN_DOOR_SFX
+
+	db PLAY_SFX, CLOSE_DOOR_SFX
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_5334:
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db INSECTS_ROOM, $00
+
+	db BARRY_EVENT_DATA
+	dw $0090
+	dw $FFC8
+	db FACING_SOUTH_WEST
+	db $00
+	db IDLE_ANIM, $18
+	db $00, $00
+
+	db JILL_EVENT_DATA
+	dw $FFE0
+	dw $00F0
+	db FACING_SOUTH
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $64
+
+	db CHANGE_ROOM_SCREEN, $01
+
+	db CHANGE_NPC4_FACING, $08
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_42FD
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $00
+
+	db MOVE_WALK_NPC1, $0A
+
+	db CHANGE_ROOM_SCREEN, $01
+
+	db MOVE_WALK_NPC1, $05
+
+	db CHANGE_NPC1_FACING, $82
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $00
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4300
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4303
+
+	db MOVE_WALK_NPC1, $14
+
+	db CHANGE_NPC1_ANIM
+	db GUN_AIM_ANIM, $10
+
+	db EVENT_WAIT, $0A
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $00
+
+	db MOVE_WALK_BACKWARD_NPC1, $0A
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $18
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4306
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4309
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_430C
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_430F
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4312
+
+	db CHANGE_NPC4_FACING, $82
+
+	db MOVE_WALK_NPC4, $28
+
+	db CHANGE_NPC4_FACING, $04
+
+	db MOVE_WALK_NPC4, $28
+
+	db CHANGE_ROOM_SCREEN, $00
+
+	db CHANGE_NPC1_FACING, $08
+
+	db MOVE_WALK_BACKWARD_NPC1, $0A
+
+	db MOVE_WALK_NPC4, $14
+
+	db CHANGE_NPC4_FACING, $06
+
+	db EVENT_WAIT, $14
+
+	db CHANGE_NPC4_FACING, $86
+
+	db EVENT_WAIT, $46
+
+	db SHOW_DOOR_ANIMATION, $40
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_53B7:
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db RICHARD_ROOM, $01
+
+	db JILL_EVENT_DATA
+	dw $0010
+	dw $01B0
+	db FACING_WEST
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db MOVE_WALK_NPC1, $40
+
+	db CHANGE_NPC1_FACING, $04
+
+	db CHANGE_ROOM_SCREEN, $02
+
+	db MOVE_RUN_NPC1, $14
+
+	db CHANGE_ROOM_SCREEN, $03
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $00
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4315
+
+	db MOVE_RUN_NPC1, $14
+
+	db CHANGE_NPC1_FACING, $04
+
+	db CHANGE_NPC1_ANIM
+	db PICK_ITEM_ANIM, $00
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $04
+
+	db SHOW_RICHARD_MESSAGE
+	dw text_pointer_4318
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_431B
+
+	db EVENT_WAIT, $96
+
+	db SHOW_RICHARD_MESSAGE
+	dw text_pointer_431E
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4321
+
+	db EVENT_WAIT, $96
+
+	db SHOW_RICHARD_MESSAGE
+	dw text_pointer_4324
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4327
+
+	db EVENT_WAIT, $96
+
+	db SHOW_RICHARD_MESSAGE
+	dw text_pointer_432A
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $00
+
+	db CHANGE_NPC1_FACING, $04
+
+	db CHANGE_ROOM_SCREEN, $03
+
+	db MOVE_RUN_NPC1, $14
+
+	db CHANGE_ROOM_SCREEN, $02
+
+	db MOVE_RUN_NPC1, $0A
+
+	db CHANGE_ROOM_SCREEN, $01
+
+	db MOVE_RUN_NPC1, $0A
+
+	db CHANGE_NPC1_FACING, $84
+
+	db MOVE_RUN_NPC1, $28
+
+	db CHANGE_ROOM_SCREEN, $00
+
+	db MOVE_RUN_NPC1, $0A
+
+	db SHOW_DOOR_ANIMATION, $40
+
+	db LOAD_ROOM
+	db CORRIDOR_27, $00
+
+	db JILL_EVENT_DATA
+	dw $00C8
+	dw $02D0
+	db FACING_SOUTH
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_5436:
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db RICHARD_ROOM, $04
+
+	db JILL_EVENT_DATA
+	dw $01D0
+	dw $0040
+	db FACING_SOUTH
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db MOVE_RUN_NPC1, $14
+
+	db CHANGE_NPC1_FACING, $04
+
+	db CHANGE_NPC1_ANIM
+	db PICK_ITEM_ANIM, $00
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_432D
+
+	db EVENT_WAIT, $96
+
+	db SHOW_RICHARD_MESSAGE
+	dw text_pointer_4330
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4333
+
+	db EVENT_WAIT, $96
+
+	db SHOW_RICHARD_MESSAGE
+	dw text_pointer_4336
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $03
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $00
+
+	db EVENT_WAIT, $96
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_5470:
+	db LOAD_ROOM
+	db CORRIDOR_2D, $01
+
+	db JILL_EVENT_DATA
+	dw $0058
+	dw $FEB0
+	db FACING_NORTH
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db BARRY_EVENT_DATA
+	dw $0090
+	dw $0150
+	db FACING_SOUTH
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db MOVE_WALK_NPC1, $14
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $00
+
+	db EVENT_WAIT, $05
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $18
+
+	db EVENT_WAIT, $05
+
+	db CHANGE_NPC1_ANIM
+	db PICK_ITEM_ANIM, $00
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4339
+
+	db EVENT_WAIT, $96
+
+	db PLAY_SFX, CLOSE_DOOR_SFX
+
+	db MOVE_WALK_NPC4, $17
+
+	db EVENT_WAIT, $50
+
+	db FADEOUT_SCREEN
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_54AD:
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db COURTYARD_1F, $01
+
+	db JILL_EVENT_DATA
+	dw $0220
+	dw $0180
+	db FACING_NORTH_WEST
+	db $00
+	db IDLE_ANIM, $18
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db SHOW_BRAD_MESSAGE
+	dw text_pointer_433C
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4390
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BRAD_MESSAGE
+	dw text_pointer_433F
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4393
+
+	db EVENT_WAIT, $96
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_54D9:
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db CORRIDOR_4F, $05
+
+	db JILL_EVENT_DATA
+	dw $0370
+	dw $FD78
+	db FACING_SOUTH_WEST
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db CHANGE_NPC1_FACING, $84
+
+	db MOVE_WALK_BACKWARD_NPC1, $0A
+
+	db CHANGE_NPC1_FACING, $84
+
+	db EVENT_WAIT, $50
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_439C
+
+	db EVENT_WAIT, $96
+
+	db SHOW_MISTERY_MESSAGE
+	dw text_pointer_439F
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_43A2
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $18
+
+	db EVENT_WAIT, $96
+
+	db SHOW_MISTERY_MESSAGE
+	dw text_pointer_43A5
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_43A8
+
+	db EVENT_WAIT, $96
+
+	db SHOW_MISTERY_MESSAGE
+	dw text_pointer_43AB
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_43AE
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $00
+
+	db EVENT_WAIT, $96
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_5522:
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db GUARDHOUSE_DORM_002, $01
+
+	db BARRY_EVENT_DATA
+	dw $0080
+	dw $FF28
+	db FACING_NORTH_WEST
+	db $00
+	db GUN_AIM_ANIM, $08
+	db $00, $00
+
+	db JILL_EVENT_DATA
+	dw $0168
+	dw $0250
+	db FACING_SOUTH
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db MOVE_WALK_NPC1, $28
+
+	db CHANGE_ROOM_SCREEN, $02
+
+	db MOVE_WALK_NPC1, $1E
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $18
+
+	db MOVE_WALK_NPC4, $14
+
+	db CHANGE_NPC4_ANIM
+	db IDLE_ANIM, $00
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_43B1
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $04
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_43B4
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_43B7
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_43BA
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_43BD
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $00
+
+	db MOVE_WALK_NPC4, $05
+
+	db CHANGE_NPC4_FACING, $82
+
+	db MOVE_WALK_NPC4, $0A
+
+	db CHANGE_ROOM_SCREEN, $02
+
+	db MOVE_WALK_NPC4, $14
+
+	db CHANGE_NPC1_FACING, $04
+
+	db CHANGE_NPC4_FACING, $02
+
+	db MOVE_WALK_NPC4, $0A
+
+	db CHANGE_NPC4_FACING, $82
+
+	db MOVE_WALK_NPC4, $0A
+
+	db CHANGE_NPC1_FACING, $04
+
+	db EVENT_WAIT, $14
+
+	db CHANGE_ROOM_SCREEN, $01
+
+	db MOVE_WALK_NPC4, $14
+
+	db CHANGE_NPC4_ANIM
+	db IDLE_ANIM, $00
+
+	db CHANGE_NPC4_FACING, $08
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_43C0
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_NPC4_FACING, $88
+
+	db BARRY_EVENT_DATA
+	dw $FF68
+	dw $FF28
+	db FACING_NORTH_WEST
+	db $00
+	db GUN_AIM_ANIM, $08
+	db $00, $00
+
+	db CHANGE_ROOM_SCREEN, $04
+
+	db LOAD_SPRITES
+
+	db PLAY_SFX, OPEN_DOOR_SFX
+
+	db EVENT_WAIT, $64
+
+	db PLAY_SFX, CLOSE_DOOR_SFX
+
+	db CHANGE_NPC1_FACING, $88
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $18
+
+	db EVENT_WAIT, $32
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_55B4:
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db CORRIDOR_4F, $03
+
+	db JILL_EVENT_DATA
+	dw $02C8
+	dw $0210
+	db FACING_EAST
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db WESKER_EVENT_DATA
+	dw $0098
+	dw $0370
+	db FACING_EAST
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $64
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $00
+
+	db PLAY_SFX, FIREGUN_SFX
+
+	db EVENT_WAIT, $14
+
+	db CHANGE_NPC1_FACING, $04
+
+	db MOVE_RUN_NPC1, $1E
+
+	db CHANGE_ROOM_SCREEN, $02
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $00
+
+	db CHANGE_NPC1_FACING, $84
+
+	db PLAY_SFX, FIREGUN_SFX
+
+	db CHANGE_NPC2_ANIM
+	db GUN_AIM_ANIM, $00
+
+	db EVENT_WAIT, $32
+
+	db PLAY_SFX, FIREGUN_SFX
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_43D2
+
+	db CHANGE_NPC2_ANIM
+	db GUN_AIM_ANIM, $10
+
+	db CHANGE_NPC2_ANIM
+	db IDLE_ANIM, $00
+
+	db EVENT_WAIT, $78
+
+	db CHANGE_ROOM_SCREEN, $07
+
+	db CHANGE_NPC2_FACING, $08
+
+	db SHOW_WESKER_MESSAGE
+	dw text_pointer_43C3
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $18
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_43C6
+
+	db MOVE_WALK_NPC1, $28
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $00
+
+	db CHANGE_NPC2_ANIM
+	db IDLE_ANIM, $18
+
+	db SHOW_WESKER_MESSAGE
+	dw text_pointer_43C9
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_43CC
+
+	db EVENT_WAIT, $64
+
+	db CHANGE_ROOM_SCREEN, $01
+
+	db MOVE_WALK_NPC2, $03
+
+	db CHANGE_ROOM_SCREEN, $02
+
+	db MOVE_WALK_NPC2, $3F
+
+	db CHANGE_NPC2_FACING, $08
+
+	db EVENT_WAIT, $64
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_43CF
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $18
+
+	db CHANGE_NPC2_FACING, $84
+
+	db MOVE_WALK_NPC2, $06
+
+	db WESKER_EVENT_DATA
+	dw $FD30
+	dw $03D0
+	db FACING_SOUTH
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db EVENT_WAIT, $96
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_563E:
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db CORRIDOR_3A, $04
+
+	db JILL_EVENT_DATA
+	dw $FCD8
+	dw $FEF8
+	db FACING_NORTH
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db SHOW_BRAD_MESSAGE
+	dw text_pointer_4342
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $18
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4396
+
+	db EVENT_WAIT, $96
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_5663:
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db YAWM_2_ROOM, $02
+
+	db JILL_EVENT_DATA
+	dw $0078
+	dw $FE08
+	db FACING_SOUTH_WEST
+	db $00
+	db PICK_ITEM_ANIM, $00
+	db $00, $00
+
+	db BARRY_EVENT_DATA
+	dw $FEF0
+	dw $0290
+	db FACING_SOUTH
+	db $00
+	db IDLE_ANIM, $18
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db PLAY_SFX, OPEN_DOOR_SFX
+
+	db EVENT_WAIT, $32
+
+	db PLAY_SFX, CLOSE_DOOR_SFX
+
+	db EVENT_WAIT, $33
+
+	db CHANGE_ROOM_SCREEN, $00
+
+	db MOVE_WALK_NPC4, $50
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $00
+
+	db CHANGE_ROOM_SCREEN, $02
+
+	db CHANGE_NPC4_FACING, $82
+
+	db MOVE_WALK_NPC4, $1E
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $00
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $18
+
+	db MOVE_WALK_NPC4, $28
+
+	db CHANGE_NPC4_ANIM
+	db KNIFE_AIM_ANIM, $00
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4561
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4564
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4567
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_456A
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_456D
+
+	db EVENT_WAIT, $64
+
+	db SHOW_DOOR_ANIMATION, $85
+
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db TOMB_ROOM, $00
+
+	db JILL_EVENT_DATA
+	dw $0050
+	dw $0100
+	db FACING_SOUTH_WEST
+	db $00
+	db PICK_ITEM_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4570
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $00
+
+	db CHANGE_NPC1_FACING, $08
+
+	db EVENT_WAIT, $96
+
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db YAWM_2_ROOM, $02
+
+	db BARRY_EVENT_DATA
+	dw $0078
+	dw $FE08
+	db FACING_SOUTH_WEST
+	db $00
+	db KNIFE_AIM_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4573
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_NPC4_ANIM
+	db IDLE_ANIM, $00
+
+	db CHANGE_NPC4_FACING, $08
+
+	db MOVE_WALK_NPC4, $1E
+
+	db EVENT_WAIT, $32
+
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db TOMB_ROOM, $00
+
+	db JILL_EVENT_DATA
+	dw $0050
+	dw $0100
+	db FACING_NORTH_EAST
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4576
+
+	db CHANGE_NPC1_FACING, $88
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $18
+
+	db EVENT_WAIT, $A0
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_571C:
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db YAWM_2_ROOM, $02
+
+	db BARRY_EVENT_DATA
+	dw $FFA0
+	dw $00D0
+	db FACING_SOUTH_WEST
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db PLAY_SFX, OPEN_DOOR_SFX
+
+	db MOVE_RUN_NPC4, $19
+
+	db CHANGE_NPC4_FACING, $02
+
+	db MOVE_RUN_NPC4, $0A
+
+	db CHANGE_NPC4_ANIM
+	db KNIFE_AIM_ANIM, $00
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4579
+
+	db EVENT_WAIT, $96
+
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db TOMB_ROOM, $00
+
+	db JILL_EVENT_DATA
+	dw $0050
+	dw $0100
+	db FACING_NORTH_EAST
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $96
+
+	db FADEOUT_SCREEN
+
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db YAWM_2_ROOM, $02
+
+	db JILL_EVENT_DATA
+	dw $0078
+	dw $FE08
+	db FACING_NORTH
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db BARRY_EVENT_DATA
+	dw $00A8
+	dw $FED8
+	db FACING_SOUTH_WEST
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_457C
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $18
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_457F
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_NPC4_ANIM
+	db IDLE_ANIM, $18
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4582
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4585
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4588
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_42D0
+
+	db EVENT_WAIT, $64
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_42DF
+
+	db CHANGE_NPC4_FACING, $08
+
+	db MOVE_WALK_NPC4, $46
+
+	db CHANGE_NPC1_FACING, $82
+
+	db PLAY_SFX, OPEN_DOOR_SFX
+
+	db EVENT_WAIT, $1E
+
+	db PLAY_SFX, CLOSE_DOOR_SFX
+
+	db EVENT_WAIT, $64
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_57AB:
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db CORRIDOR_43, $00
+
+	db JILL_EVENT_DATA
+	dw $FEF0
+	dw $0018
+	db FACING_WEST
+	db $00
+	db GUN_AIM_ANIM, $08
+	db $00, $00
+
+	db BARRY_EVENT_DATA
+	dw $FFC0
+	dw $0008
+	db FACING_WEST
+	db $00
+	db GUN_AIM_ANIM, $08
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db CHANGE_NPC1_ANIM
+	db GUN_AIM_ANIM, $10
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $18
+
+	db CHANGE_NPC4_FACING, $88
+
+	db CHANGE_NPC4_ANIM
+	db GUN_AIM_ANIM, $10
+
+	db CHANGE_NPC4_ANIM
+	db IDLE_ANIM, $18
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_435A
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_435D
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4360
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4363
+
+	db EVENT_WAIT, $96
+
+	db EVENT_WAIT, $96
+
+	db SCREEN_PANNING_DOWN
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_57F1:
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db ENRICOS_ROOM, $03
+
+	db JILL_EVENT_DATA
+	dw $0220
+	dw $02D0
+	db FACING_WEST
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db MOVE_WALK_NPC1, $05
+
+	db CHANGE_NPC1_FACING, $04
+
+	db MOVE_WALK_NPC1, $0A
+
+	db SHOW_ENRICO_MESSAGE
+	dw text_pointer_4366
+
+	db MOVE_WALK_NPC1, $32
+
+	db CHANGE_NPC1_FACING, $02
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $05
+
+	db MOVE_WALK_NPC1, $28
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $00
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4369
+
+	db EVENT_WAIT, $96
+
+	db SHOW_ENRICO_MESSAGE
+	dw text_pointer_436C
+
+	db EVENT_WAIT, $96
+
+	db MOVE_WALK_NPC1, $1E
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $00
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_436F
+
+	db EVENT_WAIT, $96
+
+	db SHOW_ENRICO_MESSAGE
+	dw text_pointer_4372
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $04
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4375
+
+	db EVENT_WAIT, $96
+
+	db BARRY_EVENT_DATA
+	dw $0250
+	dw $0268
+	db FACING_SOUTH
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db CHANGE_ROOM_SCREEN, $03
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4378
+
+	db EVENT_WAIT, $96
+
+	db MOVE_RUN_NPC4, $1E
+
+	db CHANGE_NPC4_FACING, $02
+
+	db MOVE_RUN_NPC4, $14
+
+	db CHANGE_NPC4_ANIM
+	db IDLE_ANIM, $18
+
+	db CHANGE_ROOM_SCREEN, $05
+
+	db SHOW_ENRICO_MESSAGE
+	dw text_pointer_437B
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $04
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_437E
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $05
+
+	db SHOW_ENRICO_MESSAGE
+	dw text_pointer_4381
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $03
+
+	db SHOW_ENRICO_MESSAGE
+	dw text_pointer_4384
+
+	db PLAY_SFX, FIREGUN_SFX
+
+	db SHOW_ENRICO_MESSAGE
+	dw text_pointer_4387
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $05
+
+	db MOVE_RUN_NPC4, $0A
+
+	db CHANGE_NPC4_ANIM
+	db KNIFE_AIM_ANIM, $00
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_438A
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $03
+
+	db EVENT_WAIT, $96
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_588C:
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db CORRIDOR_64, $02
+
+	db JILL_EVENT_DATA
+	dw $0120
+	dw $FF08
+	db FACING_SOUTH_WEST
+	db $00
+	db IDLE_ANIM, $18
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db EVENT_WAIT, $64
+
+	db CHANGE_ROOM_SCREEN, $03
+
+	db SHOW_CHRIS_MESSAGE
+	dw text_pointer_42FD
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $02
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_43D5
+
+	db EVENT_WAIT, $96
+
+	db SHOW_CHRIS_MESSAGE
+	dw text_pointer_44A4
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_44A7
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_44AA
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $03
+
+	db SHOW_CHRIS_MESSAGE
+	dw text_pointer_44AD
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $02
+
+	db EVENT_WAIT, $96
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_58CE:
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db CORRIDOR_65, $03
+
+	db JILL_EVENT_DATA
+	dw $0390
+	dw $0038
+	db FACING_EAST
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db BARRY_EVENT_DATA
+	dw $0000
+	dw $FE48
+	db FACING_NORTH
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db MOVE_RUN_NPC4, $0A
+
+	db EVENT_WAIT, $64
+
+	db CHANGE_ROOM_SCREEN, $02
+
+	db MOVE_RUN_NPC4, $05
+
+	db CHANGE_NPC4_FACING, $04
+
+	db MOVE_RUN_NPC4, $46
+
+	db CHANGE_NPC4_FACING, $84
+
+	db MOVE_RUN_NPC4, $05
+
+	db CHANGE_ROOM_SCREEN, $03
+
+	db MOVE_RUN_NPC4, $19
+
+	db CHANGE_NPC1_FACING, $04
+
+	db MOVE_WALK_NPC1, $0A
+
+	db CHANGE_NPC4_FACING, $84
+
+	db EVENT_WAIT, $3C
+
+	db CHANGE_NPC4_ANIM
+	db IDLE_ANIM, $00
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4498
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_449B
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_449E
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_44A1
+
+	db CHANGE_NPC1_FACING, $84
+
+	db CHANGE_NPC4_FACING, $04
+
+	db MOVE_WALK_NPC4, $0A
+
+	db EVENT_WAIT, $64
+
+	db FADEOUT_SCREEN
+
+	db SCREEN_PANNING_DOWN
+
+	db LOAD_ROOM
+	db HELIPORT_ELEVATOR, $00
+
+	db JILL_EVENT_DATA
+	dw $0000
+	dw $FFC0
+	db FACING_EAST
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db BARRY_EVENT_DATA
+	dw $0000
+	dw $0040
+	db FACING_EAST
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db EVENT_WAIT, $96
+
+	db LOAD_ROOM
+	db CORRIDOR_6C, $00
+
+	db JILL_EVENT_DATA
+	dw $02D0
+	dw $FF78
+	db FACING_EAST
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db BARRY_EVENT_DATA
+	dw $02D0
+	dw $FEC8
+	db FACING_EAST
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db EVENT_WAIT, $32
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db EVENT_WAIT, $5A
+
+	db CHANGE_ROOM_SCREEN, $01
+
+	db EVENT_WAIT, $64
+
+event_59BE:
+	db LOAD_ROOM
+	db CORRIDOR_6C, $03
+
+	db JILL_EVENT_DATA
+	dw $FEC8
+	dw $0000
+	db FACING_EAST
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db BARRY_EVENT_DATA
+	dw $FEC8
+	dw $FE50
+	db FACING_EAST
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db WESKER_EVENT_DATA
+	dw $FDA0
+	dw $01D0
+	db FACING_SOUTH
+	db $00
+	db IDLE_ANIM, $18
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db MOVE_WALK_NPC1, $28
+
+	db CHANGE_NPC4_FACING, $02
+
+	db MOVE_WALK_NPC4, $14
+
+	db CHANGE_NPC4_FACING, $02
+
+	db CHANGE_NPC1_FACING, $04
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_426A
+
+	db EVENT_WAIT, $96
+
+	db SHOW_WESKER_MESSAGE
+	dw text_pointer_44B0
+
+	db CHANGE_NPC4_FACING, $82
+
+	db CHANGE_NPC4_ANIM
+	db GUN_AIM_ANIM, $10
+
+	db CHANGE_NPC4_ANIM
+	db GUN_AIM_ANIM, $08
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $18
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $05
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_44B3
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $02
+
+	db SHOW_WESKER_MESSAGE
+	dw text_pointer_44B6
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $05
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_44B9
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $03
+
+	db SHOW_WESKER_MESSAGE
+	dw text_pointer_44BC
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $05
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_44BF
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $02
+
+	db SHOW_WESKER_MESSAGE
+	dw text_pointer_44C2
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $05
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_44C5
+
+	db EVENT_WAIT, $96
+
+	db SHOW_WESKER_MESSAGE
+	dw text_pointer_44C8
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $03
+
+	db SHOW_WESKER_MESSAGE
+	dw text_pointer_44CB
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $05
+
+	db CHANGE_NPC4_ANIM
+	db IDLE_ANIM, $18
+
+	db CHANGE_NPC4_FACING, $06
+
+	db MOVE_WALK_NPC4, $05
+
+	db EVENT_WAIT, $32
+
+	db CHANGE_ROOM_SCREEN, $03
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $00
+
+	db SHOW_WESKER_MESSAGE
+	dw text_pointer_44CE
+
+	db MOVE_RUN_NPC4, $32
+
+	db EVENT_WAIT, $64
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_44D1
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $03
+
+	db SHOW_WESKER_MESSAGE
+	dw text_pointer_44D1
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_44D4
+
+	db EVENT_WAIT, $96
+
+	db SHOW_WESKER_MESSAGE
+	dw text_pointer_44D7
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $03
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_44DA
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $02
+
+	db MOVE_WALK_NPC2, $28
+
+	db CHANGE_NPC2_FACING, $02
+
+	db MOVE_WALK_NPC2, $14
+
+	db CHANGE_NPC2_FACING, $82
+
+	db MOVE_WALK_NPC2, $0A
+
+	db CHANGE_NPC2_FACING, $82
+
+	db MOVE_WALK_NPC2, $14
+
+	db CHANGE_NPC1_FACING, $88
+
+	db CHANGE_NPC2_FACING, $86
+
+	db SHOW_WESKER_MESSAGE
+	dw text_pointer_4534
+
+	db CHANGE_NPC4_FACING, $88
+
+	db MOVE_RUN_NPC4, $32
+
+	db EVENT_WAIT, $78
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_44DD
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $05
+
+	db SHOW_WESKER_MESSAGE
+	dw text_pointer_44E0
+
+	db MOVE_RUN_NPC4, $14
+
+	db CHANGE_NPC4_FACING, $04
+
+	db MOVE_RUN_NPC4, $0A
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $02
+
+	db CHANGE_NPC4_ANIM
+	db IDLE_ANIM, $00
+
+	db CHANGE_NPC2_ANIM
+	db IDLE_ANIM, $18
+
+	db CHANGE_NPC2_FACING, $04
+
+	db MOVE_WALK_NPC2, $0F
+
+	db CHANGE_NPC2_ANIM
+	db KNIFE_AIM_ANIM, $00
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_452E
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_44E3
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_44E6
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_44E9
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_44EC
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_43F3
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_44EF
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_44F2
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_44F5
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_44F8
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_44FB
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_44FE
+
+	db CHANGE_NPC1_FACING, $08
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db EVENT_WAIT, $96
+
+	db SHOW_DOOR_ANIMATION, $40
+
+	db JILL_EVENT_DATA
+	dw $FD90
+	dw $FD38
+	db FACING_NORTH
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_ROOM
+	db TYRANT_ROOM, $01
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_5B2F:
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db TYRANT_ROOM, $01
+
+	db JILL_EVENT_DATA
+	dw $FE00
+	dw $FFD0
+	db FACING_NORTH
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db BARRY_EVENT_DATA
+	dw $FD70
+	dw $FFD0
+	db FACING_NORTH
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db CHANGE_ROOM_SCREEN, $02
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db CHANGE_NPC1_FACING, $02
+
+	db CHANGE_NPC4_FACING, $02
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db CHANGE_ROOM_SCREEN, $05
+
+	db EVENT_WAIT, $64
+
+	db CHANGE_ROOM_SCREEN, $06
+
+	db EVENT_WAIT, $78
+
+	db CHANGE_ROOM_SCREEN, $05
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4504
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4507
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_450A
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_450D
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4510
+
+	db MOVE_WALK_NPC4, $28
+
+	db CHANGE_NPC4_FACING, $82
+
+	db MOVE_WALK_NPC4, $0A
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $05
+
+	db MOVE_WALK_BACKWARD_NPC4, $14
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $05
+
+	db MOVE_WALK_BACKWARD_NPC1, $14
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $02
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4513
+
+	db CHANGE_NPC4_ANIM
+	db KNIFE_AIM_ANIM, $00
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $05
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4501
+
+	db MOVE_WALK_BACKWARD_NPC1, $14
+
+	db EVENT_WAIT, $64
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_5BEC:
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db TYRANT_ROOM, $05
+
+	db JILL_EVENT_DATA
+	dw $FDC0
+	dw $0280
+	db FACING_NORTH_EAST
+	db $00
+	db PICK_ITEM_ANIM, $00
+	db $00, $00
+
+	db BARRY_EVENT_DATA
+	dw $FD90
+	dw $02F0
+	db FACING_NORTH
+	db $00
+	db KNIFE_AIM_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db CHANGE_NPC1_ANIM
+	db PICK_ITEM_ANIM, $00
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4576
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $00
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_436F
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_438D
+
+	db CHANGE_NPC4_ANIM
+	db IDLE_ANIM, $00
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_43E7
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $02
+
+	db CHANGE_NPC4_FACING, $06
+
+	db CHANGE_NPC1_FACING, $88
+
+	db EVENT_WAIT, $96
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_5C34:
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db CORRIDOR_6C, $02
+
+	db JILL_EVENT_DATA
+	dw $FE00
+	dw $0100
+	db FACING_SOUTH
+	db $00
+	db IDLE_ANIM, $18
+	db $00, $00
+
+	db BARRY_EVENT_DATA
+	dw $FD38
+	dw $0100
+	db FACING_SOUTH
+	db $00
+	db IDLE_ANIM, $18
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_NPC4, $05
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4516
+
+	db EVENT_WAIT, $96
+
+	db SHOW_CHRIS_MESSAGE
+	dw text_pointer_446E
+
+	db EVENT_WAIT, $96
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_4519
+
+	db MOVE_RUN_NPC4, $05
+
+	db MOVE_RUN_NPC1, $19
+
+	db CHANGE_NPC1_FACING, $84
+
+	db MOVE_RUN_NPC4, $05
+
+	db MOVE_RUN_NPC1, $05
+
+	db MOVE_RUN_NPC4, $05
+
+	db MOVE_RUN_NPC1, $05
+
+	db MOVE_RUN_NPC4, $05
+
+	db MOVE_RUN_NPC1, $05
+
+	db CHANGE_NPC4_FACING, $84
+
+	db MOVE_RUN_NPC4, $05
+
+	db MOVE_RUN_NPC1, $05
+
+	db MOVE_RUN_NPC4, $05
+
+	db MOVE_RUN_NPC1, $05
+
+	db EVENT_WAIT, $0F
+
+	db CHANGE_ROOM_SCREEN, $01
+
+	db MOVE_RUN_NPC4, $05
+
+	db MOVE_RUN_NPC1, $05
+
+	db MOVE_RUN_NPC4, $05
+
+	db MOVE_RUN_NPC1, $05
+
+	db MOVE_RUN_NPC4, $05
+
+	db MOVE_RUN_NPC1, $05
+
+	db MOVE_RUN_NPC4, $05
+
+	db MOVE_RUN_NPC1, $05
+
+	db MOVE_RUN_NPC4, $05
+
+	db MOVE_RUN_NPC1, $05
+
+	db CHANGE_ROOM_SCREEN, $00
+
+	db MOVE_RUN_NPC4, $05
+
+	db MOVE_RUN_NPC1, $05
+
+	db MOVE_RUN_NPC4, $05
+
+	db MOVE_RUN_NPC1, $05
+
+	db MOVE_RUN_NPC4, $05
+
+	db MOVE_RUN_NPC1, $05
+
+	db MOVE_RUN_NPC4, $05
+
+	db MOVE_RUN_NPC1, $05
+
+	db MOVE_RUN_NPC4, $05
+
+	db MOVE_RUN_NPC1, $05
+
+	db SHOW_DOOR_ANIMATION, $40
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_5CB4:
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db LAB_PRISON, $02
+
+	db CHRIS_EVENT_DATA
+	dw $FFF0
+	dw $FF00
+	db FACING_NORTH
+	db $00
+	db IDLE_ANIM, $18
+	db $00, $00
+
+	db JILL_EVENT_DATA
+	dw $FFF0
+	dw $0100
+	db FACING_SOUTH
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db EVENT_WAIT, $32
+
+	db CHANGE_ROOM_SCREEN, $01
+
+	db SHOW_CHRIS_MESSAGE
+	dw text_pointer_451C
+
+	db MOVE_WALK_PLAYER, $32
+
+	db CHANGE_PLAYER_ANIM
+	db IDLE_ANIM, $00
+
+	db EVENT_WAIT, $64
+
+	db CHANGE_ROOM_SCREEN, $02
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4528
+
+	db EVENT_WAIT, $96
+
+	db SHOW_CHRIS_MESSAGE
+	dw text_pointer_4516
+
+	db EVENT_WAIT, $96
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_452B
+
+	db CHANGE_NPC1_FACING, $88
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_PLAYER, $0A
+
+	db SHOW_DOOR_ANIMATION, $40
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_5CFC: ;jill saving chris from prison scene, repeated
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db LAB_PRISON, $02
+
+	db CHRIS_EVENT_DATA
+	dw $FFF0
+	dw $FF00
+	db FACING_NORTH
+	db $00
+	db IDLE_ANIM, $18
+	db $00, $00
+
+	db JILL_EVENT_DATA
+	dw $FFF0
+	dw $0100
+	db FACING_SOUTH
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db EVENT_WAIT, $32
+
+	db CHANGE_ROOM_SCREEN, $01
+
+	db SHOW_CHRIS_MESSAGE
+	dw text_pointer_451C
+
+	db MOVE_WALK_PLAYER, $32
+
+	db CHANGE_PLAYER_ANIM
+	db IDLE_ANIM, $00
+
+	db EVENT_WAIT, $64
+
+	db CHANGE_ROOM_SCREEN, $02
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_451F
+
+	db EVENT_WAIT, $96
+
+	db SHOW_CHRIS_MESSAGE
+	dw text_pointer_4522
+
+	db EVENT_WAIT, $32
+
+	db SHOW_JILL_MESSAGE
+	dw text_pointer_4525
+
+	db CHANGE_NPC1_FACING, $88
+
+	db MOVE_WALK_NPC1, $05
+
+	db MOVE_WALK_PLAYER, $0A
+
+	db SHOW_DOOR_ANIMATION, $40
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_5D44:
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db CORRIDOR_61, $03
+
+	db CHRIS_EVENT_DATA
+	dw $02D0
+	dw $0040
+	db FACING_EAST
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db JILL_EVENT_DATA
+	dw $02D0
+	dw $FFA0
+	db FACING_EAST
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db EVENT_WAIT, $96
+
+	db MOVE_RUN_PLAYER, $14
+
+	db CHANGE_ROOM_SCREEN, $02
+
+	db MOVE_RUN_PLAYER, $1E
+
+	db CHANGE_ROOM_SCREEN, $01
+
+	db MOVE_RUN_PLAYER, $14
+
+	db CHANGE_ROOM_SCREEN, $00
+
+	db MOVE_RUN_PLAYER, $14
+
+	db CHANGE_PLAYER_ANIM
+	db IDLE_ANIM, $00
+
+	db CHANGE_PLAYER_FACING, $86
+
+	db SHOW_CHRIS_MESSAGE
+	dw text_pointer_43E7
+
+	db EVENT_WAIT, $50
+
+	db CHANGE_PLAYER_FACING, $06
+
+	db CHANGE_PLAYER_ANIM
+	db IDLE_ANIM, $18
+
+	db EVENT_WAIT, $96
+
+	db CHANGE_ROOM_SCREEN, $03
+
+	db EVENT_WAIT, $64
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_5D8C:
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db LAB_ITEMBOX_ROOM, $01
+
+	db CHRIS_EVENT_DATA
+	dw $0068
+	dw $0120
+	db FACING_SOUTH
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db JILL_EVENT_DATA
+	dw $FFE8
+	dw $FEB0
+	db FACING_NORTH
+	db $00
+	db IDLE_ANIM, $18
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db MOVE_RUN_PLAYER, $14
+
+	db CHANGE_PLAYER_ANIM
+	db IDLE_ANIM, $00
+
+	db SHOW_CHRIS_MESSAGE
+	dw text_pointer_44A1
+
+	db EVENT_WAIT, $50
+
+	db CHANGE_PLAYER_FACING, $88
+
+	db MOVE_RUN_PLAYER, $32
+
+	db EVENT_WAIT, $64
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_5DBF:
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db LAB_ENTRANCE, $02
+
+	db BARRY_EVENT_DATA
+	dw $0090
+	dw $FF70
+	db FACING_SOUTH_WEST
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db SHOW_BARRY_MESSAGE
+	dw text_pointer_42A3
+
+	db CHANGE_NPC4_ANIM
+	db IDLE_ANIM, $18
+
+	db EVENT_WAIT, $14
+
+	db CHANGE_NPC4_ANIM
+	db IDLE_ANIM, $00
+
+	db EVENT_WAIT, $0A
+
+	db CHANGE_NPC4_ANIM
+	db IDLE_ANIM, $18
+
+	db EVENT_WAIT, $96
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_5DE9:
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db CORRIDOR_59, $02
+
+	db JILL_EVENT_DATA
+	dw $00A8
+	dw $0200
+	db FACING_SOUTH_WEST
+	db $00
+	db IDLE_ANIM, $00
+	db $00, $00
+
+	db BARRY_EVENT_DATA
+	dw $0048
+	dw $02B0
+	db FACING_SOUTH_WEST
+	db $00
+	db IDLE_ANIM, $18
+	db $00, $00
+
+	db CHRIS_EVENT_DATA
+	dw $00C8
+	dw $03D0
+	db FACING_SOUTH_WEST
+	db $00
+	db GUN_AIM_ANIM, $08
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db SHOW_SELF_DESTRUCT_MSG
+	dw $4531
+
+	db EVENT_WAIT, $96
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_5E1C:
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db HELIPORT, $01
+
+	db JILL_EVENT_DATA
+	dw $00F0
+	dw $0020
+	db FACING_EAST
+	db $00
+	db PICK_ITEM_ANIM, $00
+	db $00, $00
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $00
+
+	db EVENT_WAIT, $32
+
+	db CHANGE_NPC1_ANIM
+	db IDLE_ANIM, $18
+
+	db CHANGE_NPC1_FACING, $08
+
+	db EVENT_WAIT, $64
+
+	db CHANGE_ROOM_SCREEN, $04
+
+	db EVENT_WAIT, $64
+
+	db CHANGE_ROOM_SCREEN, $02
+
+	db EVENT_WAIT, $64
+
+	db CHANGE_ROOM_SCREEN, $05
+
+	db EVENT_WAIT, $64
+
+	db CHANGE_ROOM_SCREEN, $02
+
+	db EVENT_WAIT, $64
+
+	db CHANGE_ROOM_SCREEN, $00
+
+	db EVENT_WAIT, $96
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT
+
+event_5E54:
+	db RESET_ALL_CHARS_DATA
+
+	db LOAD_ROOM
+	db HELIPORT, $05
+
+	db LOAD_SPRITES
+
+	db FADEIN_SCREEN
+
+	db EVENT_WAIT, $32
+
+	db SCREEN_PANNING_UP
+
+	db EVENT_WAIT, $32
+
+	db COPY_NPC1_DATA_TO_PLAYER
+
+	db END_EVENT

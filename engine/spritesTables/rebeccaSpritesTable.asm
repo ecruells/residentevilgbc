@@ -1,0 +1,242 @@
+
+_rebeccaSpritesTable: ;FD:62FB
+;idle anim
+	dw BANK(rebecca_front_spritesheet), rebecca_front_idle_anim_pointers
+	dw BANK(rebecca_front_spritesheet), rebecca_front_idle_anim_pointers
+	dw BANK(rebecca_front_right_spritesheet), rebecca_front_right_idle_anim_pointers
+	dw BANK(rebecca_front_right_spritesheet), rebecca_front_right_idle_anim_pointers
+	dw BANK(rebecca_right_spritesheet), rebecca_right_idle_anim_pointers
+	dw BANK(rebecca_right_spritesheet), rebecca_right_idle_anim_pointers
+	dw BANK(rebecca_back_right_spritesheet), rebecca_back_right_idle_anim_pointers
+	dw BANK(rebecca_back_right_spritesheet), rebecca_back_right_idle_anim_pointers
+	dw BANK(rebecca_back_spritesheet), rebecca_back_idle_anim_pointers
+	dw BANK(rebecca_back_spritesheet), rebecca_back_idle_anim_pointers
+	dw BANK(rebecca_back_left_spritesheet), rebecca_back_left_idle_anim_pointers
+	dw BANK(rebecca_back_left_spritesheet), rebecca_back_left_idle_anim_pointers
+	dw BANK(rebecca_left_spritesheet), rebecca_left_idle_anim_pointers
+	dw BANK(rebecca_left_spritesheet), rebecca_left_idle_anim_pointers
+	dw BANK(rebecca_front_left_spritesheet), rebecca_front_left_idle_anim_pointers
+	dw BANK(rebecca_front_left_spritesheet), rebecca_front_left_idle_anim_pointers
+;walk
+	dw BANK(rebecca_front_spritesheet), rebecca_front_walk_anim_pointers
+	dw BANK(rebecca_front_spritesheet), rebecca_front_walk_anim_pointers
+	dw BANK(rebecca_front_right_spritesheet), rebecca_front_right_walk_anim_pointers
+	dw BANK(rebecca_front_right_spritesheet), rebecca_front_right_walk_anim_pointers
+	dw BANK(rebecca_right_spritesheet), rebecca_right_walk_anim_pointers
+	dw BANK(rebecca_right_spritesheet), rebecca_right_walk_anim_pointers
+	dw BANK(rebecca_back_right_spritesheet), rebecca_back_right_walk_anim_pointers
+	dw BANK(rebecca_back_right_spritesheet), rebecca_back_right_walk_anim_pointers
+	dw BANK(rebecca_back_spritesheet), rebecca_back_walk_anim_pointers
+	dw BANK(rebecca_back_spritesheet), rebecca_back_walk_anim_pointers
+	dw BANK(rebecca_back_left_spritesheet), rebecca_back_left_walk_anim_pointers
+	dw BANK(rebecca_back_left_spritesheet), rebecca_back_left_walk_anim_pointers
+	dw BANK(rebecca_left_spritesheet), rebecca_left_walk_anim_pointers
+	dw BANK(rebecca_left_spritesheet), rebecca_left_walk_anim_pointers
+	dw BANK(rebecca_front_left_spritesheet), rebecca_front_left_walk_anim_pointers
+	dw BANK(rebecca_front_left_spritesheet), rebecca_front_left_walk_anim_pointers
+;run (walk)
+	dw BANK(rebecca_front_spritesheet), rebecca_front_walk_anim_pointers
+	dw BANK(rebecca_front_spritesheet), rebecca_front_walk_anim_pointers
+	dw BANK(rebecca_front_right_spritesheet), rebecca_front_right_walk_anim_pointers
+	dw BANK(rebecca_front_right_spritesheet), rebecca_front_right_walk_anim_pointers
+	dw BANK(rebecca_right_spritesheet), rebecca_right_walk_anim_pointers
+	dw BANK(rebecca_right_spritesheet), rebecca_right_walk_anim_pointers
+	dw BANK(rebecca_back_right_spritesheet), rebecca_back_right_walk_anim_pointers
+	dw BANK(rebecca_back_right_spritesheet), rebecca_back_right_walk_anim_pointers
+	dw BANK(rebecca_back_spritesheet), rebecca_back_walk_anim_pointers
+	dw BANK(rebecca_back_spritesheet), rebecca_back_walk_anim_pointers
+	dw BANK(rebecca_back_left_spritesheet), rebecca_back_left_walk_anim_pointers
+	dw BANK(rebecca_back_left_spritesheet), rebecca_back_left_walk_anim_pointers
+	dw BANK(rebecca_left_spritesheet), rebecca_left_walk_anim_pointers
+	dw BANK(rebecca_left_spritesheet), rebecca_left_walk_anim_pointers
+	dw BANK(rebecca_front_left_spritesheet), rebecca_front_left_walk_anim_pointers
+	dw BANK(rebecca_front_left_spritesheet), rebecca_front_left_walk_anim_pointers
+;dead
+	dw BANK(rebecca_front_spritesheet), rebecca_front_dead_anim_pointers
+	dw BANK(rebecca_front_spritesheet), rebecca_front_dead_anim_pointers
+	dw BANK(rebecca_front_right_spritesheet), rebecca_front_right_dead_anim_pointers
+	dw BANK(rebecca_front_right_spritesheet), rebecca_front_right_dead_anim_pointers
+	dw BANK(rebecca_right_spritesheet), rebecca_right_dead_anim_pointers
+	dw BANK(rebecca_right_spritesheet), rebecca_right_dead_anim_pointers
+	dw BANK(rebecca_back_right_spritesheet), rebecca_back_right_dead_anim_pointers
+	dw BANK(rebecca_back_right_spritesheet), rebecca_back_right_dead_anim_pointers
+	dw BANK(rebecca_back_spritesheet), rebecca_back_dead_anim_pointers
+	dw BANK(rebecca_back_spritesheet), rebecca_back_dead_anim_pointers
+	dw BANK(rebecca_back_left_spritesheet), rebecca_back_left_dead_anim_pointers
+	dw BANK(rebecca_back_left_spritesheet), rebecca_back_left_dead_anim_pointers
+	dw BANK(rebecca_left_spritesheet), rebecca_left_dead_anim_pointers
+	dw BANK(rebecca_left_spritesheet), rebecca_left_dead_anim_pointers
+	dw BANK(rebecca_front_left_spritesheet), rebecca_front_left_dead_anim_pointers
+	dw BANK(rebecca_front_left_spritesheet), rebecca_front_left_dead_anim_pointers
+;63FB
+
+rebecca_front_idle_anim_pointers: ;63FB
+	dw rebecca_front_spritesheet+IDLE_FRAME_1
+	dw rebecca_front_spritesheet+IDLE_FRAME_1
+	dw rebecca_front_spritesheet+IDLE_FRAME_1
+	dw rebecca_front_spritesheet+IDLE_FRAME_2
+
+rebecca_front_right_idle_anim_pointers: ;03, $64
+	dw rebecca_front_right_spritesheet+IDLE_FRAME_1
+	dw rebecca_front_right_spritesheet+IDLE_FRAME_1
+	dw rebecca_front_right_spritesheet+IDLE_FRAME_1
+	dw rebecca_front_right_spritesheet+IDLE_FRAME_2
+
+rebecca_right_idle_anim_pointers: ;$0B, $64
+	dw rebecca_right_spritesheet+IDLE_FRAME_1
+	dw rebecca_right_spritesheet+IDLE_FRAME_1
+	dw rebecca_right_spritesheet+IDLE_FRAME_1
+	dw rebecca_right_spritesheet+IDLE_FRAME_2
+
+rebecca_back_right_idle_anim_pointers: ;$13, $64
+	dw rebecca_back_right_spritesheet+IDLE_FRAME_1
+	dw rebecca_back_right_spritesheet+IDLE_FRAME_1
+	dw rebecca_back_right_spritesheet+IDLE_FRAME_1
+	dw rebecca_back_right_spritesheet+IDLE_FRAME_2
+
+rebecca_back_idle_anim_pointers: ;$1B, $64
+	dw rebecca_back_spritesheet+IDLE_FRAME_1
+	dw rebecca_back_spritesheet+IDLE_FRAME_1
+	dw rebecca_back_spritesheet+IDLE_FRAME_1
+	dw rebecca_back_spritesheet+IDLE_FRAME_2
+
+rebecca_back_left_idle_anim_pointers: ;$23, $64
+	dw rebecca_back_left_spritesheet+IDLE_FRAME_1
+	dw rebecca_back_left_spritesheet+IDLE_FRAME_1
+	dw rebecca_back_left_spritesheet+IDLE_FRAME_1
+	dw rebecca_back_left_spritesheet+IDLE_FRAME_2
+
+rebecca_left_idle_anim_pointers: ;$2B, $64
+	dw rebecca_left_spritesheet+IDLE_FRAME_1
+	dw rebecca_left_spritesheet+IDLE_FRAME_1
+	dw rebecca_left_spritesheet+IDLE_FRAME_1
+	dw rebecca_left_spritesheet+IDLE_FRAME_2
+
+rebecca_front_left_idle_anim_pointers: ;$33, $64
+	dw rebecca_front_left_spritesheet+IDLE_FRAME_1
+	dw rebecca_front_left_spritesheet+IDLE_FRAME_1
+	dw rebecca_front_left_spritesheet+IDLE_FRAME_1
+	dw rebecca_front_left_spritesheet+IDLE_FRAME_2
+
+
+;walk
+rebecca_front_walk_anim_pointers:
+	dw rebecca_front_spritesheet+WALK_FRAME_1
+	dw rebecca_front_spritesheet+WALK_FRAME_2
+	dw rebecca_front_spritesheet+WALK_FRAME_3
+	dw rebecca_front_spritesheet+WALK_FRAME_4
+	dw rebecca_front_spritesheet+WALK_FRAME_5
+	dw rebecca_front_spritesheet+WALK_FRAME_6
+	dw rebecca_front_spritesheet+WALK_FRAME_7
+	dw rebecca_front_spritesheet+WALK_FRAME_8
+
+rebecca_front_right_walk_anim_pointers:
+	dw rebecca_front_right_spritesheet+WALK_FRAME_1
+	dw rebecca_front_right_spritesheet+WALK_FRAME_2
+	dw rebecca_front_right_spritesheet+WALK_FRAME_3
+	dw rebecca_front_right_spritesheet+WALK_FRAME_4
+	dw rebecca_front_right_spritesheet+WALK_FRAME_5
+	dw rebecca_front_right_spritesheet+WALK_FRAME_6
+	dw rebecca_front_right_spritesheet+WALK_FRAME_7
+	dw rebecca_front_right_spritesheet+WALK_FRAME_8
+
+rebecca_right_walk_anim_pointers:
+	dw rebecca_right_spritesheet+WALK_FRAME_1
+	dw rebecca_right_spritesheet+WALK_FRAME_2
+	dw rebecca_right_spritesheet+WALK_FRAME_3
+	dw rebecca_right_spritesheet+WALK_FRAME_4
+	dw rebecca_right_spritesheet+WALK_FRAME_5
+	dw rebecca_right_spritesheet+WALK_FRAME_6
+	dw rebecca_right_spritesheet+WALK_FRAME_7
+	dw rebecca_right_spritesheet+WALK_FRAME_8
+
+rebecca_back_right_walk_anim_pointers:
+	dw rebecca_back_right_spritesheet+WALK_FRAME_1
+	dw rebecca_back_right_spritesheet+WALK_FRAME_2
+	dw rebecca_back_right_spritesheet+WALK_FRAME_3
+	dw rebecca_back_right_spritesheet+WALK_FRAME_4
+	dw rebecca_back_right_spritesheet+WALK_FRAME_5
+	dw rebecca_back_right_spritesheet+WALK_FRAME_6
+	dw rebecca_back_right_spritesheet+WALK_FRAME_7
+	dw rebecca_back_right_spritesheet+WALK_FRAME_8
+
+rebecca_back_walk_anim_pointers:
+	dw rebecca_back_spritesheet+WALK_FRAME_1
+	dw rebecca_back_spritesheet+WALK_FRAME_2
+	dw rebecca_back_spritesheet+WALK_FRAME_3
+	dw rebecca_back_spritesheet+WALK_FRAME_4
+	dw rebecca_back_spritesheet+WALK_FRAME_5
+	dw rebecca_back_spritesheet+WALK_FRAME_6
+	dw rebecca_back_spritesheet+WALK_FRAME_7
+	dw rebecca_back_spritesheet+WALK_FRAME_8
+
+rebecca_back_left_walk_anim_pointers:
+	dw rebecca_back_left_spritesheet+WALK_FRAME_1
+	dw rebecca_back_left_spritesheet+WALK_FRAME_2
+	dw rebecca_back_left_spritesheet+WALK_FRAME_3
+	dw rebecca_back_left_spritesheet+WALK_FRAME_4
+	dw rebecca_back_left_spritesheet+WALK_FRAME_5
+	dw rebecca_back_left_spritesheet+WALK_FRAME_6
+	dw rebecca_back_left_spritesheet+WALK_FRAME_7
+	dw rebecca_back_left_spritesheet+WALK_FRAME_8
+
+rebecca_left_walk_anim_pointers:
+	dw rebecca_left_spritesheet+WALK_FRAME_1
+	dw rebecca_left_spritesheet+WALK_FRAME_2
+	dw rebecca_left_spritesheet+WALK_FRAME_3
+	dw rebecca_left_spritesheet+WALK_FRAME_4
+	dw rebecca_left_spritesheet+WALK_FRAME_5
+	dw rebecca_left_spritesheet+WALK_FRAME_6
+	dw rebecca_left_spritesheet+WALK_FRAME_7
+	dw rebecca_left_spritesheet+WALK_FRAME_8
+
+rebecca_front_left_walk_anim_pointers:
+	dw rebecca_front_left_spritesheet+WALK_FRAME_1
+	dw rebecca_front_left_spritesheet+WALK_FRAME_2
+	dw rebecca_front_left_spritesheet+WALK_FRAME_3
+	dw rebecca_front_left_spritesheet+WALK_FRAME_4
+	dw rebecca_front_left_spritesheet+WALK_FRAME_5
+	dw rebecca_front_left_spritesheet+WALK_FRAME_6
+	dw rebecca_front_left_spritesheet+WALK_FRAME_7
+	dw rebecca_front_left_spritesheet+WALK_FRAME_8
+
+;dead
+rebecca_front_dead_anim_pointers:
+	dw rebecca_front_spritesheet+NPC_DEAD_FRAME
+	dw rebecca_front_spritesheet+NPC_DEAD_FRAME
+	dw rebecca_front_spritesheet+NPC_DEAD_FRAME
+
+rebecca_front_right_dead_anim_pointers:
+	dw rebecca_front_right_spritesheet+NPC_DEAD_FRAME
+	dw rebecca_front_right_spritesheet+NPC_DEAD_FRAME
+	dw rebecca_front_right_spritesheet+NPC_DEAD_FRAME
+
+rebecca_right_dead_anim_pointers:
+	dw rebecca_right_spritesheet+NPC_DEAD_FRAME
+	dw rebecca_right_spritesheet+NPC_DEAD_FRAME
+	dw rebecca_right_spritesheet+NPC_DEAD_FRAME
+
+rebecca_back_right_dead_anim_pointers:
+	dw rebecca_back_right_spritesheet+NPC_DEAD_FRAME
+	dw rebecca_back_right_spritesheet+NPC_DEAD_FRAME
+	dw rebecca_back_right_spritesheet+NPC_DEAD_FRAME
+
+rebecca_back_dead_anim_pointers:
+	dw rebecca_back_spritesheet+NPC_DEAD_FRAME
+	dw rebecca_back_spritesheet+NPC_DEAD_FRAME
+	dw rebecca_back_spritesheet+NPC_DEAD_FRAME
+
+rebecca_back_left_dead_anim_pointers:
+	dw rebecca_back_left_spritesheet+NPC_DEAD_FRAME
+	dw rebecca_back_left_spritesheet+NPC_DEAD_FRAME
+	dw rebecca_back_left_spritesheet+NPC_DEAD_FRAME
+
+rebecca_left_dead_anim_pointers:
+	dw rebecca_left_spritesheet+NPC_DEAD_FRAME
+	dw rebecca_left_spritesheet+NPC_DEAD_FRAME
+	dw rebecca_left_spritesheet+NPC_DEAD_FRAME
+
+rebecca_front_left_dead_anim_pointers:
+	dw rebecca_front_left_spritesheet+NPC_DEAD_FRAME
+	dw rebecca_front_left_spritesheet+NPC_DEAD_FRAME
+	dw rebecca_front_left_spritesheet+NPC_DEAD_FRAME
