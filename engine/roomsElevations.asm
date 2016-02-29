@@ -4,21 +4,21 @@ applyPlayerElevation:: ;0F:5BB0
     ld [wSpritePosZLowByte], a
     ld [wSpritePosZHighByte], a
     ld a, [wRoomId]
-    cp a, MAP_STATUE_ROOM
+    cp a, EXHIBITION_ROOM
     jp z, .setMapStatueRoomEscalatorElevation
-    cp a, CORRIDOR_0F
+    cp a, ELEVATOR_STAIRWAY
     jp z, .setCorridor0FEscalatorElevation
-    cp a, SQUARE_CRANK_ROOM
+    cp a, SHED_ROOM
     jp z, .setCrankRoomEscalatorElevation
     cp a, MAIN_HALL_2F
     jp z, .setMainHall2fEscalatorElevation
-    cp a, CORRIDOR_24
+    cp a, EAST_STAIRCASE_2F
     jp z, .setCorridor24Elevation
-    cp a, CORRIDOR_2D
+    cp a, ATTIC_ENTRY
     jp z, .setCorridor2dElevation
-    cp a, COURTYARD_POOL
+    cp a, COURTYARD_FLOODGATE
     jp z, .setCourtyardPoolElevation
-    cp a, SURGERY_MORGUE_ROOM
+    cp a, OPERATING_MORGE_ROOM
     jp z, .setSurgeryMorgueRoomElevation
     ret
 

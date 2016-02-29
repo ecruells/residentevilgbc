@@ -5,89 +5,89 @@ loadRoomSpritesData: ;FB:4000
     jp z, loadMainHallItemSprites
     cp a, DINNING_ROOM_1F
     jp z, loadDinningRoom1FItemSprites
-    cp a, SAFE_ROOM
+    cp a, WEST_STOREROOM
     jp z, loadSafeRoomItemSprites
-    cp a, MAP_STATUE_ROOM
+    cp a, EXHIBITION_ROOM
     jp z, loadExhibitionRoomItemSprites
-    cp a, CORRIDOR_05 ;first zombie
+    cp a, REST_STOP_CORRIDOR ;first zombie
     jp z, loadRestStopCorridorItemSprites
-    cp a, MANSION_PLANT_ROOM
+    cp a, GREENHOUSE
     jp z, loadGreenhouseItemSprites
     cp a, PIANO_ROOM
     jp z, loadPianoRoomItemSprites
-    cp a, CORRIDOR_08 ;safe room
+    cp a, WEST_STAIRCASE_1F ;safe room
     jp z, load1FWestStaircaseItemSprites
-    cp a, BROKEN_SHOTGUN_ROOM ;$09
+    cp a, FIREARMS_ROOM ;$09
     jp z, loadFirearmsRoomItemSprites
-    cp a, CORRIDOR_0A ;to mansion bathroom
+    cp a, NORTH_EAST_CORRIDOR_1F ;to mansion bathroom
     jp z, loadNorthEastCorridorItemSprites
-    cp a, CORRIDOR_0C ;first cerberus
+    cp a, L_SHAPED_CORRIDOR ;first cerberus
     jp z, loadLShapedCorridorItemSprites
-    cp a, CORRIDOR_0D
+    cp a, EAST_STAIRS_CORRIDOR_1F
     jp z, loadEast1FStairsCorridorItemSprites
-    cp a, ZOMBIE_CLOSET_BEDROOM
+    cp a, KEEPERS_ROOM
     jp z, loadKeepersRoomItemSprites
-    cp a, ROOM_10
+    cp a, LARGE_ART_ROOM
     jp z, loadLargeArtRoomItemSprites
-    cp a, BATHROOM
+    cp a, MANSION_BATHROOM
     jp z, loadMansionBathroomItemSprites
-    cp a, CORRIDOR_12
+    cp a, OUTDOOR_AREA
     jp z, loadOutdoorAreaItemSprites
     cp a, TIGER_STATUE_ROOM
     jp z, loadTigerStatueRoomItemSprites
-    cp a, SQUARE_CRANK_ROOM
+    cp a, SHED_ROOM
     jp z, loadShedItemSprites
-    cp a, BIG_MIRROR_ROOM
+    cp a, MIRROR_ROOM
     jp z, loadMirrorRoomItemSprites
-    cp a, SHOTGUN_ROOM
+    cp a, LIVING_ROOM
     jp z, loadLivingRoomItemSprites
-    cp a, CORRIDOR_1A ;below tomb
+    cp a, UNDERGROUND_PASSAGE_1 ;below tomb
     jp z, loadUndergroundPassage1ItemSprts
-    cp a, RICHARD_ROOM
+    cp a, PILLAR_CORRIDOR
     jp z, loadPillarCorridorItemSprites
-    cp a, CHIMNEY_2F_MAP_ROOM
+    cp a, LOUNGE_ROOM
     jp z, loadLoungeItemSprites
-    cp a, CORRIDOR_20 ;to library
+    cp a, ELEVATOR_ROOM_2F ;to library
     jp z, load2FElevatorRoomItemSprites
-    cp a, CORRIDOR_21 ;to forest corpse room
+    cp a, HALLWAY_TO_EAST_TERRACE ;to forest corpse room
     jp z, loadEastTerraceHallwayItemSprite
-    cp a, CANDLE_ROOM
+    cp a, SMALL_DINNING_ROOM
     jp z, loadSmallDinningRoomItemSprt
     cp a, ARMORS_ROOM
     jp z, loadArmorsRoomItemSprites
-    cp a, CORRIDOR_25
+    cp a, WESTERN_CORRIDOR_2F
     jp z, load2FWesternCorridorItemSprt
-    cp a, LIGHTER_BEDROOM
+    cp a, MANSION_BEDROOM
     jp z, loadMansionRoomItemSprts
-    cp a, ROOM_28
+    cp a, SMALL_LIBRARY
     jp z, loadSmallLibraryItemSprts
-    cp a, YAWM_1_ROOM
+    cp a, ATTIC
     jp z, loadAtticItemSprites
-    cp a, FOREST_CORPSE_ROOM
+    cp a, EAST_TERRACE
     jp z, loadEastTerraceItemSprites
-    cp a, RED_JEWEL_ROOM
+    cp a, TAXIDERMY_ROOM
     jp z, loadTaxidermyRoomItemSprt
     cp a, LIBRARY
     jp z, loadLibraryItemSprites
-    cp a, ROOM_33 ;find mansion battery elevator
+    cp a, MATERIALS_ROOM ;find mansion battery elevator
     jp z, loadMaterialsRoomItemSprt
-    cp a, LIBRARY_ROOM_34 ;heliport view
+    cp a, HELIPAD_LOOKOUT_ROOM ;heliport view
     jp z, loadHelipadLookoutItemSprt
-    cp a, ENRICOS_ROOM
+    cp a, UNDGRND_SOUTH_PASSAGE
     jp z, loadSouthPassageItemSprt
     cp a, GUARDHOUSE_DORM_001
     jp z, loadDorm001ItemSprite
     cp a, GUARDHOUSE_DORM_002
     jp z, loadDorm002ItemSprite
-    cp a, AQUUARIUM_ROOM_57
+    cp a, AQUA_TANK_STOREROOM
     jp z, loadAquaTankStoreroomItemSprt
-    cp a, CORRIDOR_59
+    cp a, EMERGENCY_TUNNEL
     jp z, loadEmergencyTunnelItemSprt
-    cp a, SURGERY_MORGUE_ROOM
+    cp a, OPERATING_MORGE_ROOM
     jp z, loadOperatingRoomItemSprt
-    cp a, PAINTINGS_ROOM
+    cp a, LARGE_GALLERY
     jp z, loadPaintingsRoomItemSprt
-    cp a, CHEMICAL_SAFE_ROOM
+    cp a, EAST_STOREROOM
     jp z, loadEastStoreroomItemSprt
     ret
 

@@ -336,7 +336,7 @@ event_431C:
 
 event_436D:
 	db LOAD_ROOM
-	db SAFE_ROOM, $02
+	db WEST_STOREROOM, $02
 
 	db CHRIS_EVENT_DATA
 	dw $FFA0
@@ -463,7 +463,7 @@ event_436D:
 
 event_43ED:
 	db LOAD_ROOM
-	db SAFE_ROOM, $00
+	db WEST_STOREROOM, $00
 
 	db CHRIS_EVENT_DATA
 	dw $0050
@@ -511,7 +511,7 @@ event_43ED:
 
 event_441E:
 	db LOAD_ROOM
-	db SAFE_ROOM, $02
+	db WEST_STOREROOM, $02
 
 	db CHRIS_EVENT_DATA
 	dw $FF90
@@ -560,7 +560,7 @@ event_441E:
 
 event_4451:
 	db LOAD_ROOM
-	db SAFE_ROOM, $00
+	db WEST_STOREROOM, $00
 
 	db CHRIS_EVENT_DATA
 	dw $0050
@@ -850,7 +850,7 @@ event_4512:
 
 event_4574:
 	db LOAD_ROOM
-	db CORRIDOR_2D, $01
+	db ATTIC_ENTRY, $01
 
 	db CHRIS_EVENT_DATA
 	dw $0058
@@ -910,7 +910,7 @@ event_4574:
 
 event_45B1:
 	db LOAD_ROOM
-	db SAFE_ROOM, $04
+	db WEST_STOREROOM, $04
 
 	db CHRIS_EVENT_DATA
 	dw $0068
@@ -1006,7 +1006,7 @@ event_45B1:
 
 event_4612:
 	db LOAD_ROOM
-	db CORRIDOR_4F, $03
+	db DORMITORY_CORRIDOR, $03
 
 	db CHRIS_EVENT_DATA
 	dw $02C8
@@ -1148,7 +1148,7 @@ event_4612:
 
 event_46A3:
 	db LOAD_ROOM
-	db CREST_PANEL_CORRIDOR, $01
+	db SHED_PASSAGE, $01
 
 	db CHRIS_EVENT_DATA
 	dw $FF88
@@ -1190,7 +1190,7 @@ event_46A3:
 
 event_46CB:
 	db LOAD_ROOM
-	db CORRIDOR_0B, $02
+	db BACK_ENTRANCE_CORRIDOR, $02
 
 	db CHRIS_EVENT_DATA
 	dw $0210
@@ -1237,7 +1237,7 @@ event_46CB:
 
 event_46F8: ;zombie attacking rebecca, unused event
 	db LOAD_ROOM
-	db CORRIDOR_08, $04
+	db WEST_STAIRCASE_1F, $04
 
 	db CHRIS_EVENT_DATA
 	dw $FEC0
@@ -1347,7 +1347,7 @@ event_46F8: ;zombie attacking rebecca, unused event
 
 event_476B:
 	db LOAD_ROOM
-	db CORRIDOR_08, $05
+	db WEST_STAIRCASE_1F, $05
 
 	db CHRIS_EVENT_DATA
 	dw $01D8
@@ -1462,7 +1462,7 @@ event_476B:
 
 event_47DD:
 	db LOAD_ROOM
-	db ENRICOS_ROOM, $03
+	db UNDGRND_SOUTH_PASSAGE, $03
 
 	db CHRIS_EVENT_DATA
 	dw $0220
@@ -1604,7 +1604,7 @@ event_47DD:
 
 event_4869:
 	db LOAD_ROOM
-	db CORRIDOR_64, $02
+	db DETENTION_ROOM_PASSAGE, $02
 
 	db CHRIS_EVENT_DATA
 	dw $00C0
@@ -1665,7 +1665,7 @@ event_4869:
 
 event_48A3:
 	db LOAD_ROOM
-	db CORRIDOR_65, $03
+	db LAB_ELEVATOR_ENTRY, $03
 
 	db CHRIS_EVENT_DATA
 	dw $0390
@@ -1789,7 +1789,7 @@ event_48A3:
 	db EVENT_WAIT, $96
 
 	db LOAD_ROOM
-	db CORRIDOR_6C, $00
+	db MAIN_LAB_ENTRY, $00
 
 	db CHRIS_EVENT_DATA
 	dw $02D0
@@ -1903,7 +1903,7 @@ event_48A3:
 
 event_4999:
 	db LOAD_ROOM
-	db CORRIDOR_6C, $03
+	db MAIN_LAB_ENTRY, $03
 
 	db CHRIS_EVENT_DATA
 	dw $FEC8
@@ -2076,7 +2076,7 @@ event_4999:
 	db SCREEN_PANNING_DOWN
 
 	db LOAD_ROOM
-	db TYRANT_ROOM, $02
+	db MAIN_LABORATORY, $02
 
 	db CHRIS_EVENT_DATA
 	dw $FF28
@@ -2226,7 +2226,7 @@ event_4999:
 
 event_4AE3:
 	db LOAD_ROOM
-	db CORRIDOR_6C, $02
+	db MAIN_LAB_ENTRY, $02
 
 	db CHRIS_EVENT_DATA
 	dw $FDB0
@@ -2350,7 +2350,7 @@ event_4AE3:
 
 event_4B65:
 	db LOAD_ROOM
-	db CORRIDOR_65, $03
+	db LAB_ELEVATOR_ENTRY, $03
 
 	db CHRIS_EVENT_DATA
 	dw $0338
@@ -2437,7 +2437,7 @@ event_4B65:
 
 event_4BBD:
 	db LOAD_ROOM
-	db CORRIDOR_5E, $04
+	db LAB_CENTRAL_CLOISTER, $04
 
 	db CHRIS_EVENT_DATA
 	dw $0320
@@ -2471,7 +2471,7 @@ event_4BBD:
 
 event_4BDC:
 	db LOAD_ROOM
-	db LAB_PRISON, $00
+	db DETENTION_ROOM, $00
 
 	db CHRIS_EVENT_DATA
 	dw $0000
@@ -2533,7 +2533,7 @@ event_4BDC:
 
 event_4C1B:
 	db LOAD_ROOM
-	db CORRIDOR_61, $03
+	db LAB_B3F_WEST_CORRIDOR, $03
 
 	db CHRIS_EVENT_DATA
 	dw $02D0
@@ -2585,7 +2585,7 @@ event_4C1B:
 
 event_4C50:
 	db LOAD_ROOM
-	db LAB_ITEMBOX_ROOM, $01
+	db LAB_LADDER_ROOM, $01
 
 	db CHRIS_EVENT_DATA
 	dw $FFF0
@@ -2624,7 +2624,7 @@ event_4C50:
 
 event_4C78:
 	db LOAD_ROOM
-	db CORRIDOR_59, $02
+	db EMERGENCY_TUNNEL, $02
 
 	db CHRIS_EVENT_DATA
 	dw $00C8
@@ -2661,7 +2661,7 @@ event_4C78:
 
 event_4C9E:
 	db LOAD_ROOM
-	db CORRIDOR_59, $05
+	db EMERGENCY_TUNNEL, $05
 
 	db CHRIS_EVENT_DATA
 	dw $FCB8

@@ -1216,14 +1216,14 @@ loadTitleSlideRooms: ;01:478F
 
 SlideRoomsBGDemo::
 	;  roomId 				screenId
-	db CORRIDOR_1B, 		$04
-	db CORRIDOR_21, 		$02
-	db CORRIDOR_24, 		$01
-	db TOMB_ROOM, 			$02
-	db COURTYARD_POOL, 		$03
-	db AQUUARIUM_ROOM_57, 	$00
-	db LAB_PROJECTOR_ROOM, 	$01
-	db CHEMICAL_SAFE_ROOM, 	$00
+	db UNDERGROUND_PASSAGE_2, 		$04
+	db HALLWAY_TO_EAST_TERRACE, 		$02
+	db EAST_STAIRCASE_2F, 		$01
+	db TREVORS_TOMB, 			$02
+	db COURTYARD_FLOODGATE, 		$03
+	db AQUA_TANK_STOREROOM, 	$00
+	db VISUAL_DATA_ROOM, 	$01
+	db EAST_STOREROOM, 	$00
 ;4846
 
 healthMeterTilesPointers: ;4846
@@ -1616,11 +1616,11 @@ mapFound: ;01:4AD0
 
 showRoomAnimation:: ;01:4AFE
     ld a, [wRoomId]
-    cp a, MANSION_PLANT_ROOM
+    cp a, GREENHOUSE
     jp z, showPlantAnimRoom06
-    cp a, COURTYARD_2F ;cascade
+    cp a, WATERFALL_GARDEN ;cascade
     jp z, showCascadeAnimRoom38
-    cp a, BLACK_TIGER_ROOM
+    cp a, UNDERGROUND_WAREHOUSE
     jp z, showSpiderwebRoom45
     ret
 
@@ -2043,7 +2043,7 @@ Label4E46
 
 checkSlideUsage: ;4E56
     ld a, [wRoomId]
-    cp a, LAB_PROJECTOR_ROOM
+    cp a, VISUAL_DATA_ROOM
     ret nz
     ld a, b
     cp a, $FF
@@ -2142,9 +2142,9 @@ checkEagleMedalUsage:
 
 checkLighterUsage: ;4EF3
     ld a, [wRoomId]
-    cp a, CHIMNEY_2F_MAP_ROOM
+    cp a, LOUNGE_ROOM
     jp z, checkLighterUsageOnMapFireplace
-    cp a, CANDLE_ROOM
+    cp a, SMALL_DINNING_ROOM
     jp z, checkLighterUsageOnCandle
     ret
 
@@ -2212,7 +2212,7 @@ Label4F4E
 
 checkBrokenShotgunUsage: ;4F61
     ld a, [wRoomId]
-    cp a, SHOTGUN_ROOM
+    cp a, LIVING_ROOM
     ret nz
     ld a, b
     cp a, $FF
@@ -2257,7 +2257,7 @@ Label4FA1
 
 checkLabBatteryUsage: ;4FA9
     ld a, [wRoomId]
-    cp a, CORRIDOR_59
+    cp a, EMERGENCY_TUNNEL
     jp z, Label4FB2
     ret
 ;4FB2
@@ -2296,11 +2296,11 @@ Label4FB2: ;01:4FB2
 
 checkMODiskUsage: ;4FED
     ld a, [wRoomId]
-    cp a, SURGERY_MORGUE_ROOM
+    cp a, OPERATING_MORGE_ROOM
     jp z, checkMODiskUsageOnMorgue
-    cp a, QUIMERAS_ROOM_2
+    cp a, POWER_ROOM_PASSAGE_2
     jp z, checkMODiskUsageOnPowerRoomPassage
-    cp a, MO_DISK_READER_ROOM
+    cp a, LAB_RESEARCHER_ROOM
     jp z, checkMODiskUsageOnResearcherRoom
     ret
 ;5000
@@ -2417,11 +2417,11 @@ Label50A1
 
 checkHexCrankUsage: ;50C2
     ld a, [wRoomId]
-    cp a, EAGLE_MEDAL_ROOM
+    cp a, UNDGRND_STATUE_ROOM
     jp z, HexCrankUsageOnUndergndStatue
     cp a, BOULDER_ROOM_2
     jp z, HexCrankUsageOnBoulder2Floor
-    cp a, CORRIDOR_3F
+    cp a, UNDERGROUND_ENTRY
     jr z, HexCrankUsageOnUndergndEntranceFloor
     ret
 ;50D4
@@ -2577,7 +2577,7 @@ Label51CC
 
 checkFlameThrowerUsage: ;51D5
     ld a, [wRoomId]
-    cp a, CORRIDOR_46
+    cp a, WAY_TO_BREAK_ROOM
     jp z, flamethrowerUsage1
     cp a, BOULDER_ROOM_1
     jp z, flamethrowerUsage2
@@ -2641,7 +2641,7 @@ flamethrowerUsage2:
 
 checkCourtyardBatteryUsage: ;523A
     ld a, [wRoomId]
-    cp a, COURTYARD_2F
+    cp a, WATERFALL_GARDEN
     ret nz
     ld a, b
     or a
@@ -2676,7 +2676,7 @@ Label525B
 
 checkSquareCrankUsage: ;5277
     ld a, [wRoomId]
-    cp a, COURTYARD_POOL
+    cp a, COURTYARD_FLOODGATE
     ret nz
     ld a, b
     or a
@@ -2725,7 +2725,7 @@ Label52BF
 
 checkCrestUsage: ;52D9
     ld a, [wRoomId]
-    cp a, CREST_PANEL_CORRIDOR
+    cp a, SHED_PASSAGE
     ret nz
     ld a, b
     or a
@@ -3196,7 +3196,7 @@ applyHeal: ;55C3
 
 checkHerbicideUsage: ;01:55D3
     ld a, [wRoomId]
-    cp a, MANSION_PLANT_ROOM
+    cp a, GREENHOUSE
     ret nz
     ld a, b
     cp a, $FF
@@ -3264,19 +3264,19 @@ initSpecialCameraAngles:: ;01:564A
     ld a, [wRoomId]
     cp a, PIANO_ROOM
     jp z, Label5681
-    cp a, CORRIDOR_0A
+    cp a, NORTH_EAST_CORRIDOR_1F
     jp z, Label568A
-    cp a, CORRIDOR_35
+    cp a, WEST_STAIRCASE_2F
     jp z, Label5693
-    cp a, CORRIDOR_3A
+    cp a, WAY_TO_GUARDHOUSE
     jp z, Label569F
-    cp a, CORRIDOR_4C
+    cp a, AQUA_TANK_ENTRANCE
     jp z, Label56A7
-    cp a, CORRIDOR_5E
+    cp a, LAB_CENTRAL_CLOISTER
     jp z, Label56B9
-    cp a, CORRIDOR_59
+    cp a, EMERGENCY_TUNNEL
     jp z, Label56B0
-    cp a, SURGERY_MORGUE_ROOM
+    cp a, OPERATING_MORGE_ROOM
     jp z, Label56C2
     jp applyBaseCameraAngles
 
@@ -3951,81 +3951,81 @@ roomNormalCheckActions:
     ld a, [wRoomId]
     cp a, DINNING_ROOM_1F
     jp z, showDinningRoom1FActionMsg
-    cp a, SAFE_ROOM
+    cp a, WEST_STOREROOM
     jp z, showSafeRoomActionMsg
-    cp a, MAP_STATUE_ROOM
+    cp a, EXHIBITION_ROOM
     jp z, showExhibitionRoomActionMsg
-    cp a, CORRIDOR_05
+    cp a, REST_STOP_CORRIDOR
     jp z, showRestStopCorridorActionMsg
-    cp a, BROKEN_SHOTGUN_ROOM
+    cp a, FIREARMS_ROOM
     jp z, checkFirearmsRoomDesk
-    cp a, CORRIDOR_0C
+    cp a, L_SHAPED_CORRIDOR
     jp z, showLShapedCorridorActionMsg
-    cp a, CORRIDOR_0D
+    cp a, EAST_STAIRS_CORRIDOR_1F
     jp z, showEastStairsCorridor1FActionMsg
-    cp a, ZOMBIE_CLOSET_BEDROOM
+    cp a, KEEPERS_ROOM
     jp z, showKeepersRoomActionMsg
-    cp a, BATHROOM
+    cp a, MANSION_BATHROOM
     jp z, showMansionBathroomActionMsg
-    cp a, CREST_PANEL_CORRIDOR
+    cp a, SHED_PASSAGE
     jp z, checkCrestPanelAction
     cp a, TIGER_STATUE_ROOM
     jp z, showTigerStatueActionMsg
-    cp a, SQUARE_CRANK_ROOM
+    cp a, SHED_ROOM
     jp z, showShedActionMsg
-    cp a, SHOTGUN_ROOM
+    cp a, LIVING_ROOM
     jp z, showShotgunRoomActionMsg
-    cp a, CORRIDOR_21
+    cp a, HALLWAY_TO_EAST_TERRACE
     jp z, showHallwayToEastTerraceActionMsg
-    cp a, CANDLE_ROOM
+    cp a, SMALL_DINNING_ROOM
     jp z, showSmallDinningRoomActionMsg
     cp a, ARMORS_ROOM
     jp z, showArmorsRoomActionMsg
-    cp a, ROOM_28
+    cp a, SMALL_LIBRARY
     jp z, showSmallLibraryActionMsg
-    cp a, INSECTS_ROOM
+    cp a, RESEARCHERS_PRIVATE_ROOM
     jp z, showResearchersRoomActionMsg
-    cp a, RED_JEWEL_ROOM
+    cp a, TAXIDERMY_ROOM
     jp z, checkTaxidermyRoomLighs
-    cp a, LIBRARY_MO_DISC_ROOM
+    cp a, HIDDEN_LIBRARY
     jp z, checkHiddenLibraryLights
-    cp a, COURTYARD_POOL
+    cp a, COURTYARD_FLOODGATE
     jp z, showCourtyardFloodgateActionMsg
-    cp a, COURTYARD_2F
+    cp a, WATERFALL_GARDEN
     jp z, showWaterfallGardenActionMsg
     cp a, DORM_001_BATHROOM
     jp z, showDorm001BathroomActionMsg
-    cp a, AQUARIUM_CONTROL_ROOM
+    cp a, AQUA_TANK_CONTROL_ROOM
     jp z, showAquaTankControlRoomActionMsg
     cp a, GUARDHOUSE_DORM_002
     jp z, showDorm002ActionMsg
     cp a, DORM_002_BATHROOM
     jp z, showDorm002BathroomActionMsg
-    cp a, CHEMICALS_ROOM
+    cp a, CHEMISTRY_ROOM
     jp z, showChemistryRoomActionMsg
     cp a, GUARDHOUSE_DORM_003
     jp z, checkDorm003ActionMsg
-    cp a, AQUUARIUM_ROOM_57
+    cp a, AQUA_TANK_STOREROOM
     jp z, checkAquaTankStoreroomActionMsg
-    cp a, LAB_PROJECTOR_ROOM
+    cp a, VISUAL_DATA_ROOM
     jp z, checkVisualDataRoomActionbMsg
-    cp a, LAB_COMPUTER_ROOM
+    cp a, SMALL_LAB
     jp z, checkLabComputer
-    cp a, CORRIDOR_61
+    cp a, LAB_B3F_WEST_CORRIDOR
     jp z, checkLabPasscodePanel
-    cp a, LAB_PAINTING_ROOM
+    cp a, XRAY_ROOM
     jp z, checkXrayRoomActionMsg
-    cp a, CORRIDOR_65
+    cp a, LAB_ELEVATOR_ENTRY
     jp z, Label647B
-    cp a, QUIMERAS_ROOM_1
+    cp a, POWER_ROOM_PASSAGE_1
     jp z, checkLabElevator
     cp a, LAB_POWER_ROOM
     jp z, checkPowerRoomActionMsg
-    cp a, TYRANT_ROOM
+    cp a, MAIN_LABORATORY
     jp z, checkTyrantRoomDoorSwitch
-    cp a, PAINTINGS_ROOM
+    cp a, LARGE_GALLERY
     jp z, checkLargeGalleryPaintings
-    cp a, WOLF_MEDAL_ROOM
+    cp a, COURTYARD_STUDY
     jp z, checkMansionStudyLightSwitch
     ret
 ;5C82
@@ -5593,7 +5593,7 @@ dontHavePasscode
 
 showCourtyardElevatorMsg:
     ld a, [wRoomId]
-    cp a, COURTYARD_2F
+    cp a, WATERFALL_GARDEN
     jr z, Label6915
     ld hl, text_pointer_409F ;.A winch for the elevator. The elevator is down.
     jp displayActionMessage
@@ -7111,13 +7111,13 @@ loadRoomPallete: ;03:7A80
     inc hl
 	;check dark rooms
     ld a, [wRoomId]
-    cp a, CANDLE_ROOM
+    cp a, SMALL_DINNING_ROOM
     jp z, .setCandleRoomDarkTone ;LabelFAA7
-    cp a, RED_JEWEL_ROOM
+    cp a, TAXIDERMY_ROOM
     jp z, .setRedJewelRoomDarkTone ;LabelFAC1
-    cp a, WOLF_MEDAL_ROOM
+    cp a, COURTYARD_STUDY
     jp z, .setWolfMedalRoomDarkTone ;LabelFADB
-    cp a, LAB_PAINTING_ROOM
+    cp a, XRAY_ROOM
     jp z, .setLabPaintingRoomDarkTone ;LabelFAF5
 ;default pallete tone
 .LabelFAA0
@@ -7327,9 +7327,9 @@ applySprtWaterEffect: ;04:4A33
     or a
     ret nz ;return if flooded rooms trigger is off
     ld a, [wRoomId]
-    cp a, AQUARIUM
+    cp a, AQUA_TANK_ROOM
     jr z, .Label10A48
-    cp a, AQUARIUM_CONTROL_ROOM
+    cp a, AQUA_TANK_CONTROL_ROOM
     jr z, .Label10A48
     cp a, PLANT_42_ROOTS_ROOM
     jr z, .Label10A48
@@ -7683,7 +7683,7 @@ loadEnemyBloodSprite: ;04:4BC4
 
 checkGasRooms: ;04:4C34
     ld a, [wRoomId]
-    cp a, SURGERY_MORGUE_ROOM
+    cp a, OPERATING_MORGE_ROOM
     jr z, Label10C40
     cp a, ARMORS_ROOM
     jr z, Label10C40
@@ -8732,25 +8732,25 @@ applyRoomOverlapToSprt:: ;08:4000
     ld a, [wRoomId]
     cp a, DINNING_ROOM_1F
     jp z, ApplyDinningRoomOverlap
-    cp a, MAP_STATUE_ROOM
+    cp a, EXHIBITION_ROOM
     jp z, ApplyMapStatueRoomOverlap
-    cp a, CORRIDOR_05 ;first zombie location
+    cp a, REST_STOP_CORRIDOR ;first zombie location
     jp z, applyCorridor05RoomOverlap
-    cp a, CORRIDOR_08 ;to mansion safe room
+    cp a, WEST_STAIRCASE_1F ;to mansion safe room
     jp z, applyCorridor08RoomOverlap
-    cp a, ZOMBIE_CLOSET_BEDROOM ;$0E
+    cp a, KEEPERS_ROOM ;$0E
     jp z, ApplyZombieClosetRoomOverlap
-    cp a, ROOM_10 ;leading to big mirror room
+    cp a, LARGE_ART_ROOM ;leading to big mirror room
     jp z, ApplyRoom10Overlap
-    cp a, CANDLE_ROOM
+    cp a, SMALL_DINNING_ROOM
     jp z, ApplyCandleRoomOverlap
-    cp a, CORRIDOR_24 ;to chimney 2F Mansion map room
+    cp a, EAST_STAIRCASE_2F ;to chimney 2F Mansion map room
     jp z, ApplyCorridor24Overlap
-    cp a, INSECTS_ROOM
+    cp a, RESEARCHERS_PRIVATE_ROOM
     jp z, ApplyInsectsRoomOverlap
-    cp a, YAWM_1_ROOM
+    cp a, ATTIC
     jp z, ApplyYawn1RoomOverlap
-    cp a, CORRIDOR_4C ;leading to squarium
+    cp a, AQUA_TANK_ENTRANCE ;leading to squarium
     jp z, ApplyCorridor4CRoomOverlap
     cp a, GUARDHOUSE_DORM_003
     jp z, ApplyDorm003RoomOverlap
@@ -12533,29 +12533,29 @@ INCLUDE "main/roomsEventsColliders.asm"
 
 checkRoomsEventsColliders: ;C4:64FB
     ld a, [wRoomId]
-    cp a, MAP_STATUE_ROOM ;$04
+    cp a, EXHIBITION_ROOM ;$04
     jp z, mapStepLadderElevationCollider
-    cp a, MANSION_PLANT_ROOM ;$06
+    cp a, GREENHOUSE ;$06
     jp z, checkShieldKeyPlantCollider
     cp a, PIANO_ROOM ;$07
     jp z, ShowPianoRoomBgChange
-    cp a, LIBRARY_MO_DISC_ROOM ;$32
+    cp a, HIDDEN_LIBRARY ;$32
     jp z, checkLibrarySecretDoorCollider
-    cp a, COURTYARD_POOL ;$37
+    cp a, COURTYARD_FLOODGATE ;$37
     jp z, checkCourtyardPoolCollider
-    cp a, COURTYARD_2F ;$38
+    cp a, WATERFALL_GARDEN ;$38
     jp z, checkCascadeCollider
-    cp a, EAGLE_MEDAL_ROOM ;$3B
+    cp a, UNDGRND_STATUE_ROOM ;$3B
     jp z, checkCatacombStatueWallCollider
     cp a, BOULDER_ROOM_2 ;$3E
     jp z, checkBoulderRotateFloorCollider
-    cp a, CORRIDOR_3F ;$3F
+    cp a, UNDERGROUND_ENTRY ;$3F
     jp z, checkEntranceRotateFloorCollider
-    cp a, CORRIDOR_4C ;$4C
+    cp a, AQUA_TANK_ENTRANCE ;$4C
     jp z, checkAquariumWoodenBoxCollider
     cp a, PLANT_42_ROOTS_ROOM ;$58
     jp z, checkPlant42RootsCollider
-    cp a, LAB_PROJECTOR_ROOM ;$5D
+    cp a, VISUAL_DATA_ROOM ;$5D
     jp z, checkLabSlideRoomPillarCollider
     ret
 ;653B
@@ -13692,47 +13692,47 @@ checkLockedDoors:
     ld a, [wRoomId]
     or a ;MAIN_HALL_1F
     jp z, checkMainHall1FLockedDoor
-    cp a, CORRIDOR_03
+    cp a, F_SHAPED_CORRIDOR
     jp z, checkCorridor0CLockedDoors
-    cp a, MAP_STATUE_ROOM
+    cp a, EXHIBITION_ROOM
     jp z, checkMapStatueRoomLockedDoor
-    cp a, CORRIDOR_05
+    cp a, REST_STOP_CORRIDOR
     jp z, checkCorridor05LockedDoor
-    cp a, CORRIDOR_08
+    cp a, WEST_STAIRCASE_1F
     jp z, checkCorridor08LockedDoor
-    cp a, CORRIDOR_0A
+    cp a, NORTH_EAST_CORRIDOR_1F
     jp z, checkCorridor0ALockedDoor
-    cp a, CORRIDOR_0B
+    cp a, BACK_ENTRANCE_CORRIDOR
     jp z, checkCorridor0BLockedDoor
-    cp a, CORRIDOR_0F
+    cp a, ELEVATOR_STAIRWAY
     jp z, checkCorridor0FLockedDoor
-    cp a, CORRIDOR_12
+    cp a, OUTDOOR_AREA
     jp z, checkCorridor12LockedDoor
-    cp a, RICHARD_ROOM
+    cp a, PILLAR_CORRIDOR
     jp z, checkRichardRoomLockedDoor
-    cp a, CHIMNEY_2F_MAP_ROOM
+    cp a, LOUNGE_ROOM
     jp z, checkChimney2FMapRoomLockedDoor
-    cp a, CORRIDOR_24
+    cp a, EAST_STAIRCASE_2F
     jp z, checkCorridor24LockedDoor
-    cp a, CORRIDOR_27
+    cp a, U_SHAPED_CORRIDOR
     jp z, checkCorridor27LockedDoor
-    cp a, TOMB_ROOM
+    cp a, TREVORS_TOMB
     jp z, checkTombRoomLockedDoor
-    cp a, CORRIDOR_2D
+    cp a, ATTIC_ENTRY
     jp z, checkCorridor2DLockedDoor
-    cp a, LIBRARY_ROOM_34
+    cp a, HELIPAD_LOOKOUT_ROOM
     jp z, checkLibraryRoom34LockedDoor
-    cp a, CORRIDOR_35
+    cp a, WEST_STAIRCASE_2F
     jp z, checkCorridor35LockedDoor
-    cp a, AQUARIUM
+    cp a, AQUA_TANK_ROOM
     jp z, checkAquariumLockedDoor
-    cp a, CORRIDOR_4F
+    cp a, DORMITORY_CORRIDOR
     jp z, checkCorridor4FLockedDoor
-    cp a, GUARDHOUSE_BEES_ROOM
+    cp a, BEEHIVE_PASSAGE
     jp z, checkGuardhouseBeesRoomLockedDoor
-    cp a, CORRIDOR_5E
+    cp a, LAB_CENTRAL_CLOISTER
     jp z, checkCorridor5ELockedDoor
-    cp a, SURGERY_MORGUE_ROOM
+    cp a, OPERATING_MORGE_ROOM
     jp z, checkOperationRoomLockedDoor
 doorKeyNotFound:
     xor a
@@ -14521,141 +14521,141 @@ checkRoomsCameraChange: ;C6:4000
     jp z, checkMainMall1FCameraChange
     cp a, DINNING_ROOM_1F
     jp z, checkDinningRoom1FCameraChange
-    cp a, SAFE_ROOM
+    cp a, WEST_STOREROOM
     jp z, checkSafeRoomCameraChange
-    cp a, CORRIDOR_03
+    cp a, F_SHAPED_CORRIDOR
     jp z, checkCorridor03CameraChange
-    cp a, MAP_STATUE_ROOM
+    cp a, EXHIBITION_ROOM
     jp z, checkMapStatueRoomCameraChange
-    cp a, CORRIDOR_05
+    cp a, REST_STOP_CORRIDOR
     jp z, checkCorridor05CameraChange
-    cp a, MANSION_PLANT_ROOM
+    cp a, GREENHOUSE
     jp z, checkMansionPlantRoomCameraChange
     cp a, PIANO_ROOM
     jp z, checkPianoRoomCameraChange
-    cp a, CORRIDOR_08
+    cp a, WEST_STAIRCASE_1F
     jp z, checkCorridor08CameraChange
-    cp a, BROKEN_SHOTGUN_ROOM
+    cp a, FIREARMS_ROOM
     jp z, checkBrokenShotgunRoomCameraChange
-    cp a, CORRIDOR_0A
+    cp a, NORTH_EAST_CORRIDOR_1F
     jp z, checkCorridor0ACameraChange
-    cp a, CORRIDOR_0B
+    cp a, BACK_ENTRANCE_CORRIDOR
     jp z, checkCorridor0BCameraChange
-    cp a, CORRIDOR_0C
+    cp a, L_SHAPED_CORRIDOR
     jp z, checkCorridor0CCameraChange
-    cp a, CORRIDOR_0D
+    cp a, EAST_STAIRS_CORRIDOR_1F
     jp z, checkCorridor0DCameraChange
-    cp a, ZOMBIE_CLOSET_BEDROOM
+    cp a, KEEPERS_ROOM
     jp z, checkZombieClosetBedroomCameraChange
-    cp a, CORRIDOR_0F
+    cp a, ELEVATOR_STAIRWAY
     jp z, checkCorridor0FCameraChange
-    cp a, ROOM_10
+    cp a, LARGE_ART_ROOM
     jp z, checkRoom10CameraChange
-    cp a, BATHROOM
+    cp a, MANSION_BATHROOM
     jp z, checkBathroomCameraChange
-    cp a, CORRIDOR_12
+    cp a, OUTDOOR_AREA
     jp z, checkCorridor12CameraChange
-    cp a, CREST_PANEL_CORRIDOR
+    cp a, SHED_PASSAGE
     jp z, checkCrestPanelCorridorCameraChange
     cp a, CLOSET_ROOM
     jp z, checkClosetRoomCameraChange
-    cp a, SQUARE_CRANK_ROOM
+    cp a, SHED_ROOM
     jp z, checkSquareCrankRoomCameraChange
-    cp a, BIG_MIRROR_ROOM
+    cp a, MIRROR_ROOM
     jp z, checkBigMirrorRoomCameraChange
-    cp a, SHOTGUN_ROOM
+    cp a, LIVING_ROOM
     jp z, checkShotgunRoomCameraChange
     cp a, FALLING_CIELING_ROOM
     jp z, checkFallingCielingRoomCameraChange
-    cp a, CORRIDOR_1A
+    cp a, UNDERGROUND_PASSAGE_1
     jp z, checkCorridor1ACameraChange
-    cp a, CORRIDOR_1B
+    cp a, UNDERGROUND_PASSAGE_2
     jp z, checkCorridor1BCameraChange
     cp a, DINNING_ROOM_2F
     jp z, checkDinningRoom2FCameraChange
     cp a, MAIN_HALL_2F
     jp z, checkMainHall2FCameraChange
-    cp a, RICHARD_ROOM
+    cp a, PILLAR_CORRIDOR
     jp z, checkRichardRoomCameraChange
-    cp a, CHIMNEY_2F_MAP_ROOM
+    cp a, LOUNGE_ROOM
     jp z, checkChimney2FMapRoomCameraChange
-    cp a, CORRIDOR_20
+    cp a, ELEVATOR_ROOM_2F
     jp z, checkCorridor20CameraChange
-    cp a, CORRIDOR_21
+    cp a, HALLWAY_TO_EAST_TERRACE
     jp z, checkCorridor21CameraChange
-    cp a, CANDLE_ROOM
+    cp a, SMALL_DINNING_ROOM
     jp z, checkCandleRoomCameraChange
     cp a, ARMORS_ROOM
     jp z, checkArmorsRoomCameraChange
-    cp a, CORRIDOR_24
+    cp a, EAST_STAIRCASE_2F
     jp z, checkCorridor24CameraChange
-    cp a, CORRIDOR_25
+    cp a, WESTERN_CORRIDOR_2F
     jp z, checkCorridor25CameraChange
-    cp a, LIGHTER_BEDROOM
+    cp a, MANSION_BEDROOM
     jp z, checkLighterBedroomCameraChange
-    cp a, CORRIDOR_27
+    cp a, U_SHAPED_CORRIDOR
     jp z, checkCorridor27CameraChange
-    cp a, ROOM_28
+    cp a, SMALL_LIBRARY
     jp z, checkRoom28CameraChange
-    cp a, INSECTS_ROOM
+    cp a, RESEARCHERS_PRIVATE_ROOM
     jp z, checkInsectsRoomCameraChange
-    cp a, TOMB_ROOM
+    cp a, TREVORS_TOMB
     jp z, checkTombRoomCameraChange
-    cp a, YAWM_2_ROOM
+    cp a, LESSONS_ROOM
     jp z, checkYawn2RoomCameraChange
-    cp a, YAWM_1_ROOM
+    cp a, ATTIC
     jp z, checkYawn1RoomCameraChange
-    cp a, CORRIDOR_2D
+    cp a, ATTIC_ENTRY
     jp z, checkCorridor2DCameraChange
-    cp a, ROOM_2E
+    cp a, DEER_ROOM
     jp z, checkRoom2ECameraChange
-    cp a, FOREST_CORPSE_ROOM
+    cp a, EAST_TERRACE
     jp z, checkForestCorpseRoomCameraChange
-    cp a, RED_JEWEL_ROOM
+    cp a, TAXIDERMY_ROOM
     jp z, checkRedJewelRoomCameraChange
     cp a, LIBRARY
     jp z, checkLibraryCameraChange
-    cp a, LIBRARY_MO_DISC_ROOM
+    cp a, HIDDEN_LIBRARY
     jp z, checkLibraryMoDiskRoomCameraChange
-    cp a, ROOM_33
+    cp a, MATERIALS_ROOM
     jp z, checkRoom33CameraChange
-    cp a, LIBRARY_ROOM_34
+    cp a, HELIPAD_LOOKOUT_ROOM
     jp z, checkLibraryRoom34CameraChange
-    cp a, CORRIDOR_35
+    cp a, WEST_STAIRCASE_2F
     jp z, checkCorridor35CameraChange
-    cp a, COURTYARD_1F
+    cp a, COURTYARD_GARDEN
     jp z, checkCourtyard1FCameraChange
-    cp a, COURTYARD_POOL
+    cp a, COURTYARD_FLOODGATE
     jp z, checkCourtyardPoolCameraChange
-    cp a, COURTYARD_2F
+    cp a, WATERFALL_GARDEN
     jp z, checkCourtyard2FCameraChange
     cp a, HELIPORT
     jp z, checkHeliportCameraChange
-    cp a, CORRIDOR_3A
+    cp a, WAY_TO_GUARDHOUSE
     jp z, checkCorridor3ACameraChange
-    cp a, EAGLE_MEDAL_ROOM
+    cp a, UNDGRND_STATUE_ROOM
     jp z, checkEagleMedalRoomCameraChange
-    cp a, ENRICOS_ROOM
+    cp a, UNDGRND_SOUTH_PASSAGE
     jp z, checkEnricosRoomCameraChange
     cp a, BOULDER_ROOM_1
     jp z, checkBoulderRoom1CameraChange
     cp a, BOULDER_ROOM_2
     jp z, checkBoulderRoom2CameraChange
-    cp a, CORRIDOR_3F
+    cp a, UNDERGROUND_ENTRY
     jp z, checkCorridor3FCameraChange
-    cp a, SAFE_ROOM_CATACOMBS
+    cp a, UNDGRND_BREAK_ROOM
     jp z, checkCatacombSafeRoomCameraChange
     cp a, FOUNTAIN
     jp z, checkFountainCameraChange
     cp a, FOUNTAIN_ELEVATOR
     jp z, checkFountainElevatorCameraChange
-    cp a, CORRIDOR_43
+    cp a, UNDGRND_BRANCHED_PASSAGE
     jp z, checkCorridor43CameraChange
-    cp a, CATACOMB_POWER_ROOM
+    cp a, UNDGRND_GENERATOR_ROOM
     jp z, checkCatacombPowerRoomCameraChange
-    cp a, BLACK_TIGER_ROOM
+    cp a, UNDERGROUND_WAREHOUSE
     jp z, checkBlackTigerRoomCameraChange
-    cp a, CORRIDOR_46
+    cp a, WAY_TO_BREAK_ROOM
     jp z, checkCorridor46CameraChange
     cp a, GUARDHOUSE_ENTRANCE
     jp z, checkGuardhouseEntranceCameraChange
@@ -14663,25 +14663,25 @@ checkRoomsCameraChange: ;C6:4000
     jp z, checkGuardhouseDorm1CameraChange
     cp a, DORM_001_BATHROOM
     jp z, checkDorm1BathroomCameraChange
-    cp a, GUARDHOUSE_SAFE_ROOM
+    cp a, GUARDHOUSE_BREAK_ROOM
     jp z, checkGuardhouseSafeRoomCameraChange
-    cp a, AQUARIUM
+    cp a, AQUA_TANK_ROOM
     jp z, checkAquariumCameraChange
-    cp a, CORRIDOR_4C
+    cp a, AQUA_TANK_ENTRANCE
     jp z, checkCorridor4CCameraChange
-    cp a, AQUARIUM_CONTROL_ROOM
+    cp a, AQUA_TANK_CONTROL_ROOM
     jp z, checkAquariumControlRoomCameraChange
     cp a, GUARDHOUSE_BAR
     jp z, checkGuardhouseBarCameraChange
-    cp a, CORRIDOR_4F
+    cp a, DORMITORY_CORRIDOR
     jp z, checkCorridor4FCameraChange
     cp a, GUARDHOUSE_DORM_002
     jp z, checkGuardhouseDorm2CameraChange
     cp a, DORM_002_BATHROOM
     jp z, checkDorm2BathroomCameraChange
-    cp a, GUARDHOUSE_BEES_ROOM
+    cp a, BEEHIVE_PASSAGE
     jp z, checkGuardhouseBeesRoomCameraChange
-    cp a, CHEMICALS_ROOM
+    cp a, CHEMISTRY_ROOM
     jp z, checkChemicalsRoomCameraChange
     cp a, GUARDHOUSE_DORM_003
     jp z, checkGuardhouseDorm3CameraChange
@@ -14689,55 +14689,55 @@ checkRoomsCameraChange: ;C6:4000
     jp z, checkDorm3BathroomCameraChange
     cp a, PLANT_42_ROOM
     jp z, checkPlant42RoomCameraChange
-    cp a, AQUUARIUM_ROOM_57
+    cp a, AQUA_TANK_STOREROOM
     jp z, checkAquariumRoom57CameraChange
     cp a, PLANT_42_ROOTS_ROOM
     jp z, checkPlant42RootsRoomCameraChange
-    cp a, CORRIDOR_59
+    cp a, EMERGENCY_TUNNEL
     jp z, checkCorridor59CameraChange
     cp a, LAB_ENTRANCE
     jp z, checkLabEntranceCameraChange
-    cp a, LAB_ITEMBOX_ROOM
+    cp a, LAB_LADDER_ROOM
     jp z, checkLabItemboxRoomCameraChange
-    cp a, CORRIDOR_5C
+    cp a, LAB_B2F_STAIR_HALL
     jp z, checkCorridor5CCameraChange
-    cp a, LAB_PROJECTOR_ROOM
+    cp a, VISUAL_DATA_ROOM
     jp z, checkLabProjectorRoomCameraChange
-    cp a, CORRIDOR_5E
+    cp a, LAB_CENTRAL_CLOISTER
     jp z, checkCorridor5ECameraChange
-    cp a, LAB_COMPUTER_ROOM
+    cp a, SMALL_LAB
     jp z, checkLabComputerRoomCameraChange
-    cp a, SURGERY_MORGUE_ROOM
+    cp a, OPERATING_MORGE_ROOM
     jp z, checkSurgeryMorgueRoomCameraChange
-    cp a, CORRIDOR_61
+    cp a, LAB_B3F_WEST_CORRIDOR
     jp z, checkCorridor61CameraChange
-    cp a, MO_DISK_READER_ROOM
+    cp a, LAB_RESEARCHER_ROOM
     jp z, checkMoDiskReaderRoomCameraChange
-    cp a, LAB_PAINTING_ROOM
+    cp a, XRAY_ROOM
     jp z, checkLabPaintingRoomCameraChange
-    cp a, CORRIDOR_64
+    cp a, DETENTION_ROOM_PASSAGE
     jp z, checkCorridor64CameraChange
-    cp a, CORRIDOR_65
+    cp a, LAB_ELEVATOR_ENTRY
     jp z, checkCorridor65CameraChange
-    cp a, LAB_SAFE_ROOM
+    cp a, LAB_B3F_LOUNGE
     jp z, checkLabSafeRoomCameraChange
-    cp a, QUIMERAS_ROOM_1
+    cp a, POWER_ROOM_PASSAGE_1
     jp z, checkQuimerasRoom1CameraChange
-    cp a, QUIMERAS_ROOM_2
+    cp a, POWER_ROOM_PASSAGE_2
     jp z, checkQuimerasRoom2CameraChange
     cp a, LAB_POWER_ROOM
     jp z, checkLabPowerRoomCameraChange
-    cp a, CORRIDOR_6C
+    cp a, MAIN_LAB_ENTRY
     jp z, checkCorridor6CCameraChange
-    cp a, LAB_PRISON
+    cp a, DETENTION_ROOM
     jp z, checkLabPrisonCameraChange
-    cp a, TYRANT_ROOM
+    cp a, MAIN_LABORATORY
     jp z, checkTyrantRoomCameraChange
-    cp a, PAINTINGS_ROOM
+    cp a, LARGE_GALLERY
     jp z, checkPaintingsRoomCameraChange
-    cp a, CHEMICAL_SAFE_ROOM
+    cp a, EAST_STOREROOM
     jp z, checkHerbicideSafeRoomCameraChange
-    cp a, WOLF_MEDAL_ROOM
+    cp a, COURTYARD_STUDY
     jp z, checkWolfMedalRoomCameraChange
     cp a, MANSION_KITCHEN
     jp z, checkMansionKitchenCameraChange
@@ -25047,7 +25047,7 @@ reverseWordSignFD: ;FD:528E
 
 Function3F5297: ;FD:5297
     ld a, [wRoomId]
-    cp a, CORRIDOR_6C ; corridor to tyrant's room
+    cp a, MAIN_LAB_ENTRY ; corridor to tyrant's room
     jp z, Function3F52A0
     ret
 

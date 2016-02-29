@@ -5,39 +5,39 @@ applyRoomBgMask:: ;04:4CE7
     jp z, DinningRoomMask
     cp a, PIANO_ROOM
     jp z, PianoRoomMask
-    cp a, BATHROOM
+    cp a, MANSION_BATHROOM
     jp z, MansionBathroomMask
-    cp a, CREST_PANEL_CORRIDOR
+    cp a, SHED_PASSAGE
     jp z, ChestPanelMask
     cp a, TIGER_STATUE_ROOM
     jp z, TigerStatueMask
-    cp a, TOMB_ROOM
+    cp a, TREVORS_TOMB
     jp z, TombRoomMask
-    cp a, LIBRARY_MO_DISC_ROOM
+    cp a, HIDDEN_LIBRARY
     jp z, LibraryMODiskRoomMask
-    cp a, COURTYARD_POOL
+    cp a, COURTYARD_FLOODGATE
     jp z, CourtyardPoolMask
-    cp a, EAGLE_MEDAL_ROOM
+    cp a, UNDGRND_STATUE_ROOM
     jp z, EagleMedalRoomMask
     cp a, BOULDER_ROOM_2 ; crank moving floor
     jp z, BoulderRoom2Mask
-    cp a, CORRIDOR_3F ; courtyard cascade
+    cp a, UNDERGROUND_ENTRY ; courtyard cascade
     jp z, CourtyardCascadeMask
-    cp a, BLACK_TIGER_ROOM ;spiderwebs
+    cp a, UNDERGROUND_WAREHOUSE ;spiderwebs
     jp z, SpiderwebMask
     cp a, DORM_001_BATHROOM
     jp z, DormBathroomMask
-    cp a, AQUARIUM
+    cp a, AQUA_TANK_ROOM
     jp z, AquariumMask
-    cp a, CORRIDOR_4C ;to aquarium
+    cp a, AQUA_TANK_ENTRANCE ;to aquarium
     jp z, CorridorFloodMask
-    cp a, AQUARIUM_CONTROL_ROOM
+    cp a, AQUA_TANK_CONTROL_ROOM
     jp z, AquariumControlRoomMask
     cp a, PLANT_42_ROOTS_ROOM
     jp z, Plant42RootsRoomMask
-    cp a, LAB_PROJECTOR_ROOM
+    cp a, VISUAL_DATA_ROOM
     jp z, LabProjectorRoomMask
-    cp a, PAINTINGS_ROOM
+    cp a, LARGE_GALLERY
     jp z, PaintingsRoomMask
     ret
 
