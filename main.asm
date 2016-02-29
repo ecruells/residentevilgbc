@@ -2544,7 +2544,7 @@ findStatueLoop
     ld hl, wSpriteId - wCharSpritesData ;$B
     add hl, de
     ld a, [hl]
-    cp a, LITLE_STATUE_2
+    cp a, UNDERGROUND_STATUE
     jr z, statueFound
     ld a, e
     add a, $20
@@ -2847,7 +2847,7 @@ findClosetLoop
     ld hl, wSpriteId - wCharSpritesData ;$B
     add hl, de
     ld a, [hl]
-    cp a, DORM_CLOSET_B
+    cp a, DORM_003_CLOSET_F1
     jr z, closetFound
     ld a, e
     add a, $20
@@ -3016,7 +3016,7 @@ findClockLoop
     ld hl, wSpriteId - wCharSpritesData ;$B
     add hl, de
     ld a, [hl]
-    cp a, DINNIG_ROOM_CLOCK1
+    cp a, DINNING_ROOM_CLOCK
     jr z, clockFound
     ld a, e
     add a, $20
@@ -4361,7 +4361,7 @@ Label5EE8
     or a
     jp nz, scrollUpScreen ;button not pushed
 	;button pushed
-    ld c, LITLE_STATUE ;$E7
+    ld c, ARMORS_ROOM_STATUE_1 ;$E7
     call FindNPC
     or a
     jp z, scrollUpScreen ;return if statue not found
@@ -4374,7 +4374,7 @@ Label5EE8
     ld a, [hl]
     cp a, $FE
     jp nz, activateArmorsRoomPoisonGas
-    ld c, BUST_SCULPTURE ;$E8
+    ld c, ARMORS_ROOM_STATUE_2 ;$E8
     call FindNPC
     or a
     jp z, scrollUpScreen ;return if statue not found
@@ -4462,7 +4462,7 @@ findShelfLoop
     ld hl, wSpriteId - wCharSpritesData ;$B
     add hl, de
     ld a, [hl]
-    cp a, BOOKCASE_1 ;$E6
+    cp a, RESEARCHER_ROOM_SHELF ;$E6
     jr z, shelfFound
     ld a, e
     add a, $20
@@ -12474,13 +12474,13 @@ checkObjectsVisibility:: ;C4:6421 objectsSpritesFunc
 ;check if an object is visible when is visible from a certain room screen
 ;return FF when visible, 00 if not.
     ld a, [spriteIdBuffer]
-    cp a, STEP_LADDER ;$E0
+    cp a, MAP_STEP_LADDER ;$E0
     jp z, Label312445
     cp a, WOODEN_RACK ;$EC
     jp z, Label312450
-    cp a, DORM_CLOSET_A ;$EE
+    cp a, DORM_002_CLOSET ;$EE
     jp z, Label31245B
-    cp a, GARGOYLE_STATUE ;$F0
+    cp a, HIDDEN_LIBRARY_STATUE ;$F0
     jp z, Label312466
     cp a, WOODEN_BOX ;$F1
     jp z, Label312480
@@ -21616,31 +21616,31 @@ Label3ECCCF
     ld hl, wSpriteId - wCharSpritesData ;$B
     add hl, de
     ld a, [hl]
-    cp a, STEP_LADDER ;$E0
+    cp a, MAP_STEP_LADDER ;$E0
     jr z, Label3ECD96
     cp a, JEWEL_STATUE ;$E1
     jr z, Label3ECD96
     cp a, GUARDHOUSE_STATUE ;$E4
     jr z, Label3ECD96
-    cp a, LITLE_STATUE ;$E7
+    cp a, ARMORS_ROOM_STATUE_1 ;$E7
     jr z, Label3ECD96
-    cp a, BUST_SCULPTURE ;$E8
+    cp a, ARMORS_ROOM_STATUE_2 ;$E8
     jr z, Label3ECD96
     cp a, WOODEN_RACK ;$EC
     jr z, Label3ECD96
-    cp a, LITLE_STATUE_2 ;$ED
+    cp a, UNDERGROUND_STATUE ;$ED
     jr z, Label3ECD96
-    cp a, DORM_CLOSET_A ;$EE
+    cp a, DORM_002_CLOSET ;$EE
     jr z, Label3ECD96
-    cp a, CLOSET_DOOR ;$EF
+    cp a, XRAY_ROOM_SHELF ;$EF
     jr z, Label3ECD96
-    cp a, GARGOYLE_STATUE ;$F0
+    cp a, HIDDEN_LIBRARY_STATUE ;$F0
     jr z, Label3ECD96
     cp a, WOODEN_BOX ;$F1
     jr z, Label3ECD96
-    cp a, LAB_STEP_LADDER ;$F2
+    cp a, OPERATING_ROOM_LADDER ;$F2
     jr z, Label3ECD96
-    cp a, SURGERY_ROOM_BOX ;$F3
+    cp a, OPERATING_ROOM_BOX ;$F3
     jr z, Label3ECD96
     jp checkNextSpriteCollision
 Label3ECD96
@@ -21833,7 +21833,7 @@ Label3ECED9:
     push bc
     push de
     push hl
-    ld c, SURGERY_ROOM_BOX ;$F3
+    ld c, OPERATING_ROOM_BOX ;$F3
     call searchNPC
     or a
     jr z, restoreCurrentNPCData
@@ -22214,7 +22214,7 @@ checkObjTopCollider: ;FB:514C
     cp a, $FF
     jr nz, checkObjRightCollider
     ld a, [spriteIdBuffer]
-    cp a, STEP_LADDER ;$E0
+    cp a, MAP_STEP_LADDER ;$E0
     jr z, Label3ED161
     jr Label3ED16F
 Label3ED161
@@ -22250,7 +22250,7 @@ checkObjRightCollider: ;FB:518B
     or a
     jr nz, checkObjLeftCollider
     ld a, [spriteIdBuffer]
-    cp a, CRANK_STEP_LADDER ;$E9
+    cp a, SHED_STEP_LADDER ;$E9
     jr z, Label3ED19F
     jr Label3ED1A7
 Label3ED19F
@@ -22277,7 +22277,7 @@ Label3ED1A7
 
 checkObjLeftCollider: ;FB:51C3
     ld a, [spriteIdBuffer]
-    cp a, LAB_STEP_LADDER ;$F2
+    cp a, OPERATING_ROOM_LADDER ;$F2
     jr z, Label3ED1CC
     jr Label3ED1DA
 Label3ED1CC
@@ -22307,11 +22307,11 @@ Label3ED1DA
 
 checkStepLaddersElevation:: ;FB:51F6
     ld a, [spriteIdBuffer]
-    cp a, STEP_LADDER ;$E0
+    cp a, MAP_STEP_LADDER ;$E0
     jr z, Label3ED20B
-    cp a, CRANK_STEP_LADDER ;$E9
+    cp a, SHED_STEP_LADDER ;$E9
     jr z, Label3ED20B
-    cp a, LAB_STEP_LADDER ;$F2
+    cp a, OPERATING_ROOM_LADDER ;$F2
     jr z, Label3ED20B
 Label3ED205 ;FB:5205
     xor a
@@ -22974,17 +22974,17 @@ setObjectFrames: ;FC:42EA
     ld hl, wSpriteId - wCharSpritesData ;$B
     add hl, de
     ld a, [hl]
-    cp a, DINNIG_ROOM_CLOCK1 ;$E2
+    cp a, DINNING_ROOM_CLOCK ;$E2
     jr z, setDinningRoomClockFrame
     cp a, GUARDHOUSE_STATUE ;$E4
     jr z, setGuardHouseStatueFrame
-    cp a, BOOKCASE_1 ;$E6
+    cp a, RESEARCHER_ROOM_SHELF ;$E6
     jr z, setBookcase1Frame
-    cp a, CRANK_STEP_LADDER ;$E9
+    cp a, SHED_STEP_LADDER ;$E9
     jr z, setCrankStepLadderFrame
     cp a, WOODEN_BOX ;$F1
     jr z, setWoodenBoxFrame
-    cp a, LAB_STEP_LADDER ;$F2
+    cp a, OPERATING_ROOM_LADDER ;$F2
     jp z, setStepLadder3Frame
     jp nextObjectNPC
 

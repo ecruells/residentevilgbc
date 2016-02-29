@@ -1299,15 +1299,15 @@ setSpritePosScale:: ;00:0A33
     or a
     ret z
     ld a, [spriteIdBuffer]
-    cp a, BOOKCASE_1 ;$E6
+    cp a, RESEARCHER_ROOM_SHELF ;$E6
     jr z, LabelAC3
-    cp a, LITLE_STATUE ;$E7
+    cp a, ARMORS_ROOM_STATUE_1 ;$E7
     jr z, LabelACD
     cp a, $E8
     jr z, LabelACD
-    cp a, DORM_CLOSET_B ;$EA
+    cp a, DORM_003_CLOSET_F1 ;$EA
     jr z, LabelAC3
-    cp a, LITLE_STATUE_2 ;$ED
+    cp a, UNDERGROUND_STATUE ;$ED
     jr z, LabelACD
     jr LabelAD7
 LabelAC3
