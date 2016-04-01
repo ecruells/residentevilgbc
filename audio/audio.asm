@@ -1,9 +1,9 @@
 
 goToDisableSound:: ;06:4000
-	jp disableSound
+	jp clearSound
 
-jumpToSoundFunc487B:: ;06:4003
-	jp soundFunc487B
+jumpToupdateSoundEffect:: ;06:4003
+	jp updateSoundEffect
 
 goToPlayMusicRoutine:: ;06:4006
 	jp playMusicRoutine
@@ -14,7 +14,7 @@ updateMusic:: ;06:4009
 Label1800C: ;400C
     jp updateMusicRoutine
 Label1800F: ;400F
-    jp initSoundChannels
+    jp checkChannelsSfxUpdate
 Label18012: ;4012
     jp muteAllChannels
 Label18015: ;4015
@@ -25,19 +25,19 @@ Label1801B: ;401B
     jp increaseAudioVolume
 Label1801E: ;401E
     jp disableSoundOutput
-Label18021: ;4021
-    jp function18027
+goToSetMusicTempo: ;4021
+    jp setMusicTempo
 
 goToPlaySFXRoutine:: ;06:4024
 	jp playSFXRoutine
 
-function18027:: ;06:4027
-	ld [wSoundDD78], a
+setMusicTempo:: ;06:4027
+	ld [wSoundTempo], a
 	ret
 
 goToUpdateMusic::
 	call updateMusicRoutine
-	call initSoundChannels
+	call checkChannelsSfxUpdate
 	ret
 ;06:4032
 
@@ -134,71 +134,71 @@ playSFXRoutine:: ;06:40AF
     ld hl, SfxLookupTable ;$6F1C
     add a, l
     ld l, a
-    jr nc, .Label180B9
+    jr nc, .updateChannel1SFX
     inc h
-.Label180B9
+.updateChannel1SFX
     ld a, [hl]
     cp a, $FF
-    jr z, .Label180C1
-    call callSoundFunc487B
-.Label180C1
+    jr z, .updateChannel2SFX
+    call callUpdateSoundEffect
+.updateChannel2SFX
     inc hl
     ld a, [hl]
     cp a, $FF
-    jr z, .Label180CA
-    call callSoundFunc487B
-.Label180CA
+    jr z, .updateChannel3SFX
+    call callUpdateSoundEffect
+.updateChannel3SFX
     inc hl
     ld a, [hl]
     cp a, $FF
-    jr z, .Label180D3
-    call callSoundFunc487B
-.Label180D3
+    jr z, .updateChannel4SFX
+    call callUpdateSoundEffect
+.updateChannel4SFX
     inc hl
     ld a, [hl]
     cp a, $FF
-    jr z, .Label180DC
-    call callSoundFunc487B
-.Label180DC
+    jr z, .endSfxUpdate
+    call callUpdateSoundEffect
+.endSfxUpdate
     ret
 
-callSoundFunc487B:: ;06:40DD
-	push hl
-	call soundFunc487B
-	pop hl
+callUpdateSoundEffect:: ;06:40DD
+	push hl ;store chl sfx addr
+	call updateSoundEffect
+	pop hl ;restore chl sfx addr
 	ret
 
-disableSound:: ;06:40E3
+clearSound:: ;06:40E3
     ld a, %00000000
     ld [rAUDENA], a ;disable sound NR52
     nop
     ld [rAUDENA], a ;disable sound NR52
-    ld [wSoundDD68], a
-    ld [wDD69], a
-    ld [wDD6B], a
-    ld [wDD6C], a
-    ld [wDD6E], a
-    ld [wDD6F], a
-    ld [wDD71], a
-    ld [wDD72], a
-    ld [wSqr1Channel], a
-    ld [wSqr2Channel], a
-    ld [wWaveChannel], a
-    ld [wNoiseChannel], a
+    ld [wChannel1SfxAddrLow], a
+    ld [wChannel1SfxAddrHigh], a
+    ld [wChannel2SfxAddrLow], a
+    ld [wChannel2SfxAddrHigh], a
+    ld [wChannel3SfxAddrLow], a
+    ld [wChannel3SfxAddrHigh], a
+    ld [wChannel4SfxAddrLow], a
+    ld [wChannel4SfxAddrHigh], a
+    ld [wChannel1State], a
+    ld [wChannel2State], a
+    ld [wChannel3State], a
+    ld [wChannel4State], a
     ld a, $FF
-    ld [wSoundDD78], a
+    ld [wSoundTempo], a
     ld a, $01
-    ld [wSoundDD77], a
+    ld [wSoundTempoCounter], a
     ld de, _AUD3WAVERAM ;$FF30
-    ld hl, soundData49DD ;$49DD
+    ld hl, cleanedWaveRam ;$49DD
     ld b, $10
-.loop18120
+.cleanWaveRamLoop
     ld a, [hl]
     ld [de], a
     inc hl
     inc de
     dec b
-    jr nz, .loop18120
+    jr nz, .cleanWaveRamLoop
     call initSound
     ret
 
@@ -215,41 +215,41 @@ playMusicRoutine:: ;06:412B
     ld de, musicTable ;$49ED
     add hl, de
     ld a, [hli]
-    ld [wDD02], a
+    ld [wCh1NextActionAddrLow], a ;ch1 note addr low
     ld a, [hli]
-    ld [wDD03], a
+    ld [wCh1NextActionAddrHigh], a ;ch1 note addr high
     ld a, [hli]
-    ld [wDD1A], a
+    ld [wCh2NextActionAddrLow], a ;ch2 note addr low
     ld a, [hli]
-    ld [wDD1B], a
+    ld [wCh2NextActionAddrHigh], a ;ch2 note addr high
     ld a, [hli]
-    ld [wDD32], a
+    ld [wCh3NextActionAddrLow], a ;ch3 note addr low
     ld a, [hli]
-    ld [wDD33], a
+    ld [wCh3NextActionAddrHigh], a ;ch3 note addr high
     ld a, [hli]
-    ld [wDD4A], a
+    ld [wCh4NextActionAddrLow], a ;ch4 note addr low
     ld a, [hli]
-    ld [wDD4B], a
+    ld [wCh4NextActionAddrHigh], a ;ch4 note addr high
     ld a, [hli]
-    ld [wDD60], a
+    ld [wNoteLengthTableAddrLow], a ;note length table addr low
     ld a, [hli]
-    ld [wDD61], a
+    ld [wNoteLengthTableAddrHigh], a ;note length table addr high
     ld a, $01
-    ld [wDD01], a
-    ld [wDD19], a
+    ld [wCh1NoteLength], a ;ch1 note length counter
+    ld [wCh2NoteLength], a ;ch2 note length counter
     ld a, $02
-    ld [wDD31], a
-    ld [wDD49], a
+    ld [wCh3NoteLength], a
+    ld [wCh4NoteLength], a
     ld a, $03
-    ld [wSqr1Channel], a
-    ld [wSqr2Channel], a
-    ld [wWaveChannel], a
-    ld [wNoiseChannel], a
+    ld [wChannel1State], a
+    ld [wChannel2State], a
+    ld [wChannel3State], a
+    ld [wChannel4State], a
     ld [wNR50ChannelControl], a
     ld a, $FF
-    ld [wSoundDD78], a
+    ld [wSoundTempo], a ;tempo
     ld a, $01
-    ld [wSoundDD77], a
+    ld [wSoundTempoCounter], a ;tempo counter
 initSound:: ;06:418B
     ld a, %10001111
     ld [rAUDENA], a ;enable NR52 sound
@@ -257,7 +257,7 @@ initSound:: ;06:418B
     nop
 	ld [rAUDENA], a ;enable NR52 sound
     ld a, %00001000
-    ld [rAUD1SWEEP], a ;sweep decrease NR10
+    ld [rAUD1SWEEP], a ;sweep decrease (NR10)
     ld a, %11111111
     ld [rAUDTERM], a ;output all channel to all sound output
     ld [wNR51SoundOutput], a
@@ -270,473 +270,501 @@ initSound:: ;06:418B
     ld [rAUD2ENV], a ;NR22 stop envelope channel #2
     ld [rAUD3LEVEL], a ;NR32 mute volume #3
     ld [rAUD4ENV], a ;NR42 stop envelope channel #4
-    ld [wSndChl1Vol], a
-    ld [wSndChl2Vol], a
-    ld [wSndChl3Vol], a
-    ld [wSndChl4Vol], a
-    ld [wDD15], a
-    ld [wDD2D], a
-    ld [wDD45], a
-    ld [wDD5D], a
-    ld [wDD55], a
+    ld [wChl1ActionId], a
+    ld [wChl2ActionId], a
+    ld [wChl3ActionId], a
+    ld [wChl4ActionId], a
+    ld [wCh1DD15], a
+    ld [wCh2DD2D], a
+    ld [wCh3DD45], a
+    ld [wCh4DD5D], a
+    ld [wCh4PolyCounterTableTicks], a
     ret
 
 updateMusicRoutine:: ;06:41CB
     ld a, [wNR50ChannelControl]
     and a
     ret z ;return if sound is disabled
-    ld a, [wSoundDD78]
+    ld a, [wSoundTempo] ;get tempo
     ld b, a
-    ld a, [wSoundDD77]
+    ld a, [wSoundTempoCounter] ;get tempo counter
     add a, b
-    ld [wSoundDD77], a
+    ld [wSoundTempoCounter], a
     ret nc
-Label181DC: ;41DC
+updateChannel1: ;41DC
     xor a
-    ld [wSoundDD7B], a
-    ld hl, wDD62
-    ld de, Label181DC ;$41DC
+    ld [wChannelId], a ;set channel id
+    ld hl, wChlUpdateFunctionAddrLow
+    ld de, updateChannel1 ;$41DC
     ld [hl], e
     inc hl
     ld [hl], d
-    ld a, [wSndChl1Vol]
-    ld [wDD65], a
-    ld hl, wSqr1Channel
+    ld a, [wChl1ActionId] ;get channel action id
+    ld [wChannelActionId], a
+    ld hl, wChannel1State
     ld de, rAUD1LEN
-    call soundFunction44D4
-    ld a, [wSqr1Channel]
+    call getChannelNoteData
+    ld a, [wChannel1State]
     and a, $01
-    jp z, soundFunction429B
-    ld a, [wDD69]
+    jp z, updateChannel2 ;jump to next channel if chl1 is disabled
+    ld a, [wChannel1SfxAddrHigh]
     and a
-    jp nz, soundFunction429B
-    ld hl, wDD0A
-    ld de, wDD0B
+    jp nz, updateChannel2 ;jump if channel is playing sfx
+    ld hl, wCh1EnvelopeTableTicks
+    ld de, wCh1EnvelopeTableAddrLow
     ld a, [de]
     ld c, a
     inc de
     ld a, [de]
     ld b, a
     ld de, rAUD1ENV
-    call soundFunction446C
-    ld de, wDD0B
+    call checkChannelEnvelopeEffect
+    ld de, wCh1EnvelopeTableAddrLow
     ld a, c
     ld [de], a
     ld a, b
     inc de
     ld [de], a
-    ld hl, wSqr1Channel
+    ld hl, wChannel1State
     ld de, rAUD1LOW
-    call soundFunction45A7
-    ld hl, wDD0D
-    ld de, wDD0E
+    call updateChannelNote
+    ld hl, wCh1PitchBendTableTicks
+    ld de, wCh1PitchBendTableAddrLow
     ld a, [de]
     ld c, a
     inc de
     ld a, [de]
     ld b, a
-    ld de, wDD05
-    call soundFunction4494
-    ld de, wDD0E
+    ld de, wCh1FreqLow
+    call checkPitchBendEffect
+    ld de, wCh1PitchBendTableAddrLow
     ld a, c
     ld [de], a
     ld a, b
     inc de
     ld [de], a
-    ld a, [wDD10]
+    ld a, [wCh1VibratoTableTicks]
     and a
-    jr z, soundFunction429B
+    jr z, updateChannel2
     dec a
-    ld [wDD10], a
+    ld [wCh1VibratoTableTicks], a
     and a
-    jr nz, soundFunction429B
-    ld a, [wDD11]
+    jr nz, updateChannel2
+    ld a, [wCh1VibratoTableAddrLow]
     ld c, a
-    ld a, [wDD12]
+    ld a, [wCh1VibratoTableAddrHigh]
     ld b, a
     ld a, [bc]
     cp a, $FF
-    jr z, .Label1828C
-    ld [wDD10], a
+    jr z, .channel1VibratoLoop
+    ld [wCh1VibratoTableTicks], a
     inc bc
     ld a, [bc]
     ld e, a
-    ld a, [wDD7C]
+    ld a, [wChl1CurrentNoteId]
     add a, e
     push af
-    ld de, Label1881B ;$481B
+    ld de, frequencyHighBitsTable ;$481B
     add a, e
     ld e, a
     jr nc, .Label1826F
     inc d
 .Label1826F
     ld a, [de]
-    ld [wDD04], a
+    ld [wCh1FreqHigh], a
     pop af
-    ld de, Label187BB ;$47BB
+    ld de, frequencyLowBitsTable ;$47BB
     add a, e
     ld e, a
     jr nc, .Label1827C
     inc d
 .Label1827C
     ld a, [de]
-    ld [wDD05], a
+    ld [wCh1FreqLow], a
     inc bc
     ld a, c
-    ld [wDD11], a
+    ld [wCh1VibratoTableAddrLow], a
     ld a, b
-    ld [wDD12], a
-    jp soundFunction429B
-.Label1828C
+    ld [wCh1VibratoTableAddrHigh], a
+    jp updateChannel2
+
+.channel1VibratoLoop
     ld a, $01
-    ld [wDD10], a
+    ld [wCh1VibratoTableTicks], a
     inc bc
     ld a, [bc]
-    ld [wDD11], a
+    ld [wCh1VibratoTableAddrLow], a
     inc bc
     ld a, [bc]
-    ld [wDD12], a
+    ld [wCh1VibratoTableAddrHigh], a
 ;429B
-soundFunction429B:: ;06:429B
+
+updateChannel2:: ;06:429B
     ld a, $01
-    ld [wSoundDD7B], a
-    ld hl, wDD62
-    ld de, soundFunction429B ;$429B
+    ld [wChannelId], a
+    ld hl, wChlUpdateFunctionAddrLow
+    ld de, updateChannel2 ;$429B
     ld [hl], e
     inc hl
     ld [hl], d
-    ld a, [wSndChl2Vol]
-    ld [wDD65], a
-    ld hl, wSqr2Channel
+    ld a, [wChl2ActionId]
+    ld [wChannelActionId], a
+    ld hl, wChannel2State
     ld de, rAUD2LEN
-    call soundFunction44D4
-    ld a, [wSqr2Channel]
+    call getChannelNoteData
+    ld a, [wChannel2State]
     and a, $01
-    jp z, soundFunction435B
-    ld a, [wDD6C]
+    jp z, updateChannel3 ;jump to next channel if chl2 is disabled
+    ld a, [wChannel2SfxAddrHigh]
     and a
-    jp nz, soundFunction435B
-    ld hl, wDD22
-    ld de, wDD23
+    jp nz, updateChannel3 ;skip if channel is playing sfx
+    ld hl, wCh2EnvelopeTableTicks ;envelope table counter var
+    ld de, wCh2EnvelopeTableAddrLow ;envelope table addr low
+;store envelope table address into bc
     ld a, [de]
     ld c, a
     inc de
     ld a, [de]
     ld b, a
     ld de, rAUD2ENV
-    call soundFunction446C
-    ld de, wDD23
+    call checkChannelEnvelopeEffect
+;store next env effect address
+    ld de, wCh2EnvelopeTableAddrLow
     ld a, c
     ld [de], a
     ld a, b
     inc de
     ld [de], a
-    ld hl, wSqr2Channel
+    ld hl, wChannel2State
     ld de, rAUD2LOW
-    call soundFunction45A7
-    ld hl, wDD25
-    ld de, wDD26
+    call updateChannelNote
+    ld hl, wCh2PitchBendTableTicks ;pitch bend ticks counter var
+    ld de, wCh2PitchBendTableAddrLow ;pitch bend table addr low
+;store pitch bend table addr into bc
     ld a, [de]
     ld c, a
     inc de
     ld a, [de]
     ld b, a
-    ld de, wDD1D
-    call soundFunction4494
-    ld de, wDD26
+    ld de, wCh2FreqLow ;chl freq low
+    call checkPitchBendEffect
+    ld de, wCh2PitchBendTableAddrLow
     ld a, c
     ld [de], a
     ld a, b
     inc de
     ld [de], a
-    ld a, [wDD28]
+;checkVibratoEffect
+    ld a, [wCh2VibratoTableTicks] ;get vibrato effect ticks
     and a
-    jr z, soundFunction435B
-    dec a
-    ld [wDD28], a
+    jr z, updateChannel3 ;skip if ticks is zero
+    dec a ;decrese tick counter
+    ld [wCh2VibratoTableTicks], a
     and a
-    jr nz, soundFunction435B
-    ld a, [wDD29]
+    jr nz, updateChannel3 ;skip if effect is not over
+;store vibrato effect addr into bc
+    ld a, [wCh2VibratoTableAddrLow]
     ld c, a
-    ld a, [wDD2A]
+    ld a, [wCh2VibratoTableAddrHigh]
     ld b, a
-    ld a, [bc]
+    ld a, [bc] ;get vibrato ticks
     cp a, $FF
-    jr z, .Label1834C
-    ld [wDD28], a
+    jr z, .channel2VibratoLoop
+    ld [wCh2VibratoTableTicks], a ;update ticks
     inc bc
-    ld a, [bc]
+    ld a, [bc] ;get vibrato value
     ld e, a
-    ld a, [wDD7D]
-    add a, e
+    ld a, [wChl2CurrentNoteId] ;chl2 current note id
+    add a, e ;add vibrato pitch offset
+;get new note frequency
     push af
-    ld de, Label1881B ;$481B
+    ld de, frequencyHighBitsTable ;$481B
     add a, e
     ld e, a
     jr nc, .Label1832F
     inc d
 .Label1832F
     ld a, [de]
-    ld [wDD1C], a
+    ld [wCh2FreqHigh], a ;set freq low bits
     pop af
-    ld de, Label187BB ;$47BB
+    ld de, frequencyLowBitsTable ;$47BB
     add a, e
     ld e, a
     jr nc, .Label1833C
     inc d
 .Label1833C
     ld a, [de]
-    ld [wDD1D], a
+    ld [wCh2FreqLow], a ;set freq high bits
+;set next effect address
     inc bc
     ld a, c
-    ld [wDD29], a
+    ld [wCh2VibratoTableAddrLow], a
     ld a, b
-    ld [wDD2A], a
-    jp soundFunction435B
+    ld [wCh2VibratoTableAddrHigh], a
+    jp updateChannel3
 
-.Label1834C ;06:434C
+.channel2VibratoLoop ;06:434C
     ld a, $01
-    ld [wDD28], a
+    ld [wCh2VibratoTableTicks], a
     inc bc
     ld a, [bc]
-    ld [wDD29], a
+    ld [wCh2VibratoTableAddrLow], a
     inc bc
     ld a, [bc]
-    ld [wDD2A], a
-soundFunction435B:: ;06:435B
+    ld [wCh2VibratoTableAddrHigh], a
+
+
+updateChannel3:: ;06:435B
     ld a, $02
-    ld [wSoundDD7B], a
-    ld hl, wDD62
-    ld de, soundFunction435B ;$435B
+    ld [wChannelId], a
+    ld hl, wChlUpdateFunctionAddrLow
+    ld de, updateChannel3 ;$435B
     ld [hl], e
     inc hl
     ld [hl], d
-    ld a, [wSndChl3Vol]
-    ld [wDD65], a
-    ld hl, wWaveChannel
+    ld a, [wChl3ActionId]
+    ld [wChannelActionId], a
+    ld hl, wChannel3State
     ld de, rAUD3LEN
-    call soundFunction44D4
-    ld a, [wWaveChannel]
+    call getChannelNoteData
+    ld a, [wChannel3State]
     and a, $01
-    jp z, .Label1841B ;437D
-    ld a, [wDD6F]
+    jp z, updateChannel4 ;437D
+    ld a, [wChannel3SfxAddrHigh]
     and a
-    jp nz, .Label1841B
-    ld hl, wWaveChannel
+    jp nz, updateChannel4
+    ld hl, wChannel3State
     ld de, rAUD3LOW
-    call soundFunction45A7
-    ld hl, wDD3A
-    ld de, wDD3B
+    call updateChannelNote
+    ld hl, wCh3EnvelopeTableTicks
+    ld de, wCh3EnvelopeTableAddrLow
     ld a, [de]
     ld c, a
     inc de
     ld a, [de]
     ld b, a
     ld de, rAUD3LEVEL
-    call soundFunction446C
-    ld de, wDD3B
+    call checkChannelEnvelopeEffect
+    ld de, wCh3EnvelopeTableAddrLow
     ld a, c
     ld [de], a
     ld a, b
     inc de
     ld [de], a
-    ld hl, wDD3D
-    ld de, wDD3E
+    ld hl, wCh3PitchBendTableTicks
+    ld de, wCh3PitchBendTableAddrLow
     ld a, [de]
     ld c, a
     inc de
     ld a, [de]
     ld b, a
-    ld de, wDD35
-    call soundFunction4494
-    ld de, wDD3E
+    ld de, wCh3FreqLow
+    call checkPitchBendEffect
+    ld de, wCh3PitchBendTableAddrLow
     ld a, c
     ld [de], a
     ld a, b
     inc de
     ld [de], a
-    ld a, [wDD40]
+;checkVibratoEffect
+    ld a, [wCh3VibratoTableTicks]
     and a
-    jr z, .Label1841B
+    jr z, updateChannel4
     dec a
-    ld [wDD40], a
+    ld [wCh3VibratoTableTicks], a
     and a
-    jr nz, .Label1841B
-    ld a, [wDD41]
+    jr nz, updateChannel4
+    ld a, [wCh3VibratoTableAddrLow]
     ld c, a
-    ld a, [wDD42]
+    ld a, [wCh3VibratoTableAddrHigh]
     ld b, a
     ld a, [bc]
     cp a, $FF
-    jr z, .Label1840C ;43DA
-    ld [wDD40], a
+    jr z, .channel3VibratoLoop
+    ld [wCh3VibratoTableTicks], a
     inc bc
     ld a, [bc]
     ld e, a
-    ld a, [wDD7E]
+    ld a, [wChl3CurrentNoteId]
     add a, e
     push af
-    ld de, Label1881B ;$481B
+    ld de, frequencyHighBitsTable ;$481B
     add a, e
     ld e, a
     jr nc, .Label183EF
     inc d
 .Label183EF
     ld a, [de]
-    ld [wDD34], a
+    ld [wCh3FreqHigh], a
     pop af
-    ld de, Label187BB ;$47BB
+    ld de, frequencyLowBitsTable ;$47BB
     add a, e
     ld e, a
     jr nc, .Label183FC
     inc d
 .Label183FC
     ld a, [de]
-    ld [wDD35], a
+    ld [wCh3FreqLow], a
     inc bc
     ld a, c
-    ld [wDD41], a
+    ld [wCh3VibratoTableAddrLow], a
     ld a, b
-    ld [wDD42], a
-    jp .Label1841B
-.Label1840C ;06:440C
+    ld [wCh3VibratoTableAddrHigh], a
+    jp updateChannel4
+
+.channel3VibratoLoop ;06:440C
     ld a, $01
-    ld [wDD40], a
+    ld [wCh3VibratoTableTicks], a
     inc bc
     ld a, [bc]
-    ld [wDD41], a
+    ld [wCh3VibratoTableAddrLow], a
     inc bc
     ld a, [bc]
-    ld [wDD42], a
-.Label1841B: ;441B
+    ld [wCh3VibratoTableAddrHigh], a
+
+
+updateChannel4: ;441B
     ld a, $03
-    ld [wSoundDD7B], a
-    ld hl, wDD62
-    ld de, .Label1841B ;$441B
+    ld [wChannelId], a
+;store chl update addr in vars
+    ld hl, wChlUpdateFunctionAddrLow
+    ld de, updateChannel4 ;$441B
     ld [hl], e
     inc hl
     ld [hl], d
-    ld a, [wSndChl4Vol]
-    ld [wDD65], a
-    ld hl, wNoiseChannel
+    ld a, [wChl4ActionId]
+    ld [wChannelActionId], a
+    ld hl, wChannel4State
     ld de, rAUD4LEN
-    call soundFunction44D4
-    ld a, [wNoiseChannel]
-    and a, $01
-    jr z, .Label18462
-    ld a, [wDD72]
-    and a
-    jp nz, .Label18462
-    ld hl, wDD52
-    ld de, wDD53
+    call getChannelNoteData
+    ld a, [wChannel4State]
+    and a, $01 ;skip if channel is disabled
+    jr z, .updatePolyCounter
+    ld a, [wChannel4SfxAddrHigh]
+    and a ;skip if channel is sfx
+    jp nz, .updatePolyCounter
+    ld hl, wCh4EnvelopeTableTicks
+    ld de, wCh4EnvelopeTableAddrLow
+;envelope table addr into bc
     ld a, [de]
     ld c, a
     inc de
     ld a, [de]
     ld b, a
     ld de, rAUD4ENV
-    call soundFunction446C
-    ld de, wDD53
+    call checkChannelEnvelopeEffect
+;update next env. effect addr.
+    ld de, wCh4EnvelopeTableAddrLow
     ld a, c
     ld [de], a
     ld a, b
     inc de
     ld [de], a
-    call soundFunction45DE
-.Label18462
-    ld hl, wNoiseChannel
+    call checkPolynomialCounterEffect
+.updatePolyCounter
+    ld hl, wChannel4State
     ld de, rAUD4POLY
-    call soundFunction45A7
+    call updateChannelNote
     ret
 
-soundFunction446C:: ;06:446C
+checkChannelEnvelopeEffect:: ;06:446C
+;hl: envelope ticks counter
+;de: channel hardware envelope address
+;bc: table counter addr
     ld a, [hl]
     and a
-    ret z
-    dec [hl]
-    ret nz
-    ld a, [bc]
+    ret z ;return if end counter
+    dec [hl] ;decrease env. counter
+    ret nz ;return if there're ticks yet
+;if effect ticks finish, apply next envelope effect
+    ld a, [bc] ;get envelope value
     cp a, $FF
-    jr nz, soundFunction447A
+    jr nz, applyEnvelopeEffect
     ld a, $00
-    ld [hl], a
+    ld [hl], a ;set counter to zero
     ret
 
-soundFunction447A:: ;06:447A
+applyEnvelopeEffect:: ;06:447A
     ld [de], a
     inc bc
-    ld a, [bc]
+    ld a, [bc] ;get effect ticks
     ld [hl], a
     ld a, l
-    sub a, $06
+    sub a, $06 ;back to frequency high var
     ld l, a
     jr nc, .Label18485
     dec h
 .Label18485
     ld a, [hl]
-    or a, $80
+    or a, %10000000 ;$80 restart channel
     ld [hl], a
     ld a, l
-    add a, $04
+    add a, $04 ;go to channel envelope var
     ld l, a
     jr nc, .Label18490
     inc h
 .Label18490
     ld a, [de]
-    ld [hl], a
-    inc bc
+    ld [hl], a ;store envelope into channel var
+    inc bc ;next effect
     ret
 
-soundFunction4494:: ;06:4494
+checkPitchBendEffect:: ;06:4494
+;hl: pitch bend ticks counter
+;bc: pitch bend table addr
+;de: channel freq low
     ld a, [hl]
     and a
-    ret z
-    dec [hl]
-    ret nz
+    ret z ;return if no ticks left
+    dec [hl] ;decrease effect ticks
+    ret nz ;return if effect is not over yet
     inc bc
-    ld a, [bc]
-    push hl
-    ld [hl], a
-    dec bc
-    ld a, [de]
+    ld a, [bc] ;get ticks value
+    push hl ;store ticks counter
+    ld [hl], a ;store ticks value
+    dec bc ;set pitch bend value pointer
+    ld a, [de] ;get freq low value
     ld l, a
     dec de
-    ld a, [de]
+    ld a, [de] ;get freq high value
     ld h, a
-    ld a, [bc]
-    cp a, $7E
-    jr nz, soundFunction44AA
-    pop hl
+    ld a, [bc] ;get pitch bend value
+    cp a, $7E ;check if effect table end
+    jr nz, applyPitchBendEffect
+    pop hl ;restore ticks counter
     ret
 
-soundFunction44AA:: ;06:44AA
-    cp a, $7D
-    jr z, soundFunction44C7
+applyPitchBendEffect:: ;06:44AA
+;a: pitch bend value
+;hl: channel frequency value
+    cp a, $7D ;check if effect table loop
+    jr z, setPitchBendTableLoop
     cp a, $7F
-    jr nc, .Label184B9
+    jr nc, .pitchBendDown
+;pitchBendUp
     add a, l
     ld l, a
     jr nc, .Label184B7
     inc h
 .Label184B7
-    jr .Label184BE
-.Label184B9
+    jr .updateFreqVars
+.pitchBendDown
     add a, l
     ld l, a
-    jr c, .Label184BE
+    jr c, .updateFreqVars
     dec h
-.Label184BE
+.updateFreqVars
     ld a, h
-    ld [de], a
+    ld [de], a ;update note frequency high
     inc de
     ld a, l
-    ld [de], a
+    ld [de], a ;update note frequency low
     inc bc
     inc bc
     pop hl
     ret
 
-soundFunction44C7:: ;06:44C7
+setPitchBendTableLoop:: ;06:44C7
     inc bc
     ld a, [bc]
     push af
@@ -747,54 +775,60 @@ soundFunction44C7:: ;06:44C7
     ld c, a
     pop hl
     ld a, $01
-    ld [hl], a
+    ld [hl], a ;restart ticks value
     ret
 
-soundFunction44D4:: ;06:44D4
-;hl: wram audio X length
-;de, hram audio X length
-    ld a, [hl]
+getChannelNoteData:: ;06:44D4
+;get note value, if is a valid note value,
+;gets its frequency and instruments effects values
+    ld a, [hl] ;channel state
     and a, %00000010
     ret z
     inc hl
     dec [hl]
     ret nz
     inc hl
-    ld c, [hl] ;reads wDD02,wDD1A,wDD32,wDD4A
+    ld c, [hl] ;reads channel action id addr low
     inc hl
-    ld b, [hl]
-    ld a, [bc] ;5B59=24
+    ld b, [hl] ;reads channel action id addr high
+    ld a, [bc] ;read channel action id
     ld [wDD66], a
-    and a, $7F
-    cp a, $5F
-    jp nc, Label18637
-    push de
-    ld de, wDD65
-    ld a, [de]
+    and a, %01111111 ;$7F mask action id
+    cp a, $5F ;channel actions
+    jp nc, checkChannelAction
+	;if note id
+    push de ;store channel length register
+    ld de, wChannelActionId
+    ld a, [de] ;get branch tsp value
     ld d, a
     ld a, [bc]
-    and a, $7F
-    add a, d
+    and a, %01111111 ;$7F get note id
+    add a, d ;add tsp to note id
     ld d, a
     push af
-    ld a, [wSoundDD7B]
+    ld a, [wChannelId] ;get channel id
+;store channel current played note
+;if channel 1
     cp a, $00
     jr nz, .Label18501
     ld a, d
-    ld [wDD7C], a
+    ld [wChl1CurrentNoteId], a
+;if channel 2
 .Label18501
     cp a, $01
     jr nz, .Label18509
     ld a, d
-    ld [wDD7D], a
+    ld [wChl2CurrentNoteId], a
+;if channel 3
 .Label18509
     cp a, $02
     jr nz, .Label18511
     ld a, d
-    ld [wDD7E], a
+    ld [wChl3CurrentNoteId], a
 .Label18511
-    pop af
-    ld de, Label1881B ;$481B
+    pop af ;restore note id
+;get note frequency high bits
+    ld de, frequencyHighBitsTable ;$481B
     add a, e
     ld e, a
     jp nc, .Label1851B
@@ -802,14 +836,15 @@ soundFunction44D4:: ;06:44D4
 .Label1851B
     ld a, [de]
     inc hl
-    ld [hl], a
-    ld de, wDD65
+    ld [hl], a ;store freq high bits
+;get frequency low bits
+    ld de, wChannelActionId
     ld a, [de]
     ld d, a
     ld a, [bc]
-    and a, $7F
+    and a, %01111111 ;$7F
     add a, d
-    ld de, Label187BB ;$47BB
+    ld de, frequencyLowBitsTable ;$47BB
     add a, e
     ld e, a
     jr nc, .Label1852F
@@ -817,218 +852,222 @@ soundFunction44D4:: ;06:44D4
 .Label1852F
     ld a, [de]
     inc hl
-    ld [hl], a
+    ld [hl], a ;store freq low bits
     inc bc
-    ld a, [bc] ;5B5A=0A
-    and a, $0F
-    push hl
-    ld hl, wDD61
+    ld a, [bc] ;get instrument & note length byte
+    and a, $0F ;mask note length id
+    push hl ;store freq var
+    ld hl, wNoteLengthTableAddrHigh
     ld d, [hl]
     dec hl
     ld e, [hl]
     pop hl
-    add a, e
+    add a, e ;add note length offset
     ld e, a
     jr nc, .Label18543
     inc d
 .Label18543
-    ld a, [de]
+    ld a, [de] ;get note length
     ld de, $FFFC ;-4
     add hl, de
-    ld [hl], a
-    ld a, [wDD66]
-    and a, $80
+    ld [hl], a ;store note length
+    ld a, [wDD66] ;get raw note id
+    and a, %10000000 ;$80 get instrument table bit
     srl a
     srl a
     ld d, a
-    ld a, [bc] ;5B5A=0A
-    and a, $F0
+    ld a, [bc] ;get instrument & note length byte
+    and a, $F0 ;get instrument id
     srl a
     srl a
     srl a
-    add a, d
+    add a, d ;add instrumnet id offset to table id
     push hl
-    ld hl, Label18A8F ;$4A8F
+    ld hl, instrumentsTables ;$4A8F
     add a, l
     ld l, a
-    jr nc, .Label18566
+    jr nc, .getInstrumentAddress
     inc h
-.Label18566
+.getInstrumentAddress
     ld e, [hl]
     inc hl
     ld d, [hl]
     pop hl
-    inc bc
-    inc hl
+    inc bc ;next music note addr
+    inc hl ;next music note addr vars
     ld [hl], c
     inc hl
     ld [hl], b
-    ld b, d
+;read and set intrument values
+    ld b, d ;store inst addr into bc
     ld c, e
-    pop de
-    inc hl
+    pop de ;restore chl init & sound length register high
+    inc hl ;get note freq high var
     ld a, [bc]
-    or a, [hl]
+    or a, [hl] ;add restart chl bit (80)
     ld [hl], a
     inc hl
     inc hl
+    inc hl ;offset to chl wave pattern var
+    inc bc ;offset to next intrument byte (wave pattern value)
+    ld a, [bc]
+    ld [hl], a ;store wave pattern byte
+    inc bc ;inst chl envelope byte
+    inc de ;get chl envelope register
+    inc hl ;chl envelope var
+    ld a, [bc]
+    ld [hl], a ;store envelope
+    inc hl
+    inc hl ;envelope table counter var
+    inc bc
+    ld a, [bc]
+    ld [hl], a ;store envelope table counter
     inc hl
     inc bc
     ld a, [bc]
-    ld [hl], a
-    inc bc
-    inc de
-    inc hl
-    ld a, [bc]
-    ld [hl], a
-    inc hl
+    ld [hl], a ;store envelope table addr low
     inc hl
     inc bc
     ld a, [bc]
-    ld [hl], a
+    ld [hl], a ;store envelope table addr high
     inc hl
     inc bc
     ld a, [bc]
-    ld [hl], a
+    ld [hl], a ;store pitch bend table counter
     inc hl
     inc bc
     ld a, [bc]
-    ld [hl], a
+    ld [hl], a ;store pitch bend table addr low
     inc hl
     inc bc
     ld a, [bc]
-    ld [hl], a
-    inc hl
-    inc bc
-    ld a, [bc]
-    ld [hl], a
-    inc hl
-    inc bc
-    ld a, [bc]
-    ld [hl], a
+    ld [hl], a ;store pitch bend table addr high
     inc bc
     inc hl
     ld a, [bc]
-    ld [hl], a
+    ld [hl], a ;store tsp table counter
     inc bc
     inc hl
     ld a, [bc]
-    ld [hl], a
+    ld [hl], a ;store tsp table addr low
     inc bc
     inc hl
     ld a, [bc]
-    ld [hl], a
+    ld [hl], a ;store tsp table addr high
     ret
 
-soundFunction45A7:: ;06:45A7
+updateChannelNote:: ;06:45A7
+;hl: channel state
+;de: channel freq low
     ld a, [hl]
     and a, $01
-    ret z
+    ret z ;return if channel is disabled
     ld bc, $5
-    add hl, bc
+    add hl, bc ;go to channel freq low var
     ld a, e
-    cp a, $22
-    jp z, soundFunction45D5
+    cp a, $22 ;check if ch4 poly counter
+    jp z, setNoisePolyCounter
     ld a, [hl]
-    ld [de], a
-Label185B7::
-    dec hl
-    inc de
-    push de
-    push hl
+    ld [de], a ;set chl freq low
+Label185B7:
+    dec hl ;get freq high var
+    inc de ;get chl freq high register (or Noise Counter/consecutive)
+    push de ;store register
+    push hl ;store freq high var
     ld a, [hl]
     and a, $80
-    jr z, .Label185CD
+    jr z, .Label185CD ;jump if channel is not initialized
     ld bc, $3
-    add hl, bc
+    add hl, bc ;get wave pattern var
     dec de
     dec de
-    dec de
+    dec de ;get wave pattern register (or sound length)
     ld a, [hl]
-    ld [de], a
-    inc hl
-    inc de
+    ld [de], a ;set wave pattern value
+    inc hl ;get envelope var
+    inc de ;get env. register (or wave sound levels)
     ld a, [hl]
-    ld [de], a
+    ld [de], a ;set chl envelope
 .Label185CD
-    pop hl
-    pop de
+    pop hl ;get freq high var
+    pop de ;get freq register
     ld a, [hl]
-    ld [de], a
+    ld [de], a ;set frequency high
     and a, $7F
-    ld [hl], a
+    ld [hl], a ;store freq high value
     ret
 
-soundFunction45D5:: ;06:45D5
-    ld a, [wDD64]
-    ld [wDD4D], a
-    ld [de], a
+setNoisePolyCounter:: ;06:45D5
+    ld a, [wNoisePolyCounterValue] ;get poly counter
+    ld [wCh4PolyCounter], a ;store noise poly counter var
+    ld [de], a ;set noise poly counter
     jr Label185B7
 
-soundFunction45DE:: ;06:45DE
-    ld a, [wDD55]
+checkPolynomialCounterEffect:: ;06:45DE
+    ld a, [wCh4PolyCounterTableTicks] ;poly counter ticks
     and a
     ret z
-    dec a
-    ld [wDD55], a
+    dec a ;decrease ticks
+    ld [wCh4PolyCounterTableTicks], a
     and a
-    ret nz
-    ld a, [wDD56]
+    ret nz ;return if effect is not over yet
+    ld a, [wCh4PolyCounterTableAddrLow]
     ld l, a
-    ld a, [wDD57]
+    ld a, [wCh4PolyCounterTableAddrHigh]
     ld h, a
-    ld a, [hl]
+    ld a, [hl] ;get value
     cp a, $7E
     ret z
     cp a, $7D
-    jr z, soundFunction460B
-    ld [wDD64], a
+    jr z, setPolyCounterEffectLoop
+    ld [wNoisePolyCounterValue], a
     inc hl
     ld a, [hl]
-    ld [wDD55], a
+    ld [wCh4PolyCounterTableTicks], a
     inc hl
     ld a, l
-    ld [wDD56], a
+    ld [wCh4PolyCounterTableAddrLow], a
     ld a, h
-    ld [wDD57], a
+    ld [wCh4PolyCounterTableAddrHigh], a
     ret
 
-soundFunction460B:: ;06:460B
+setPolyCounterEffectLoop:: ;06:460B
     ld a, $01
-    ld [wDD55], a
+    ld [wCh4PolyCounterTableTicks], a
     inc hl
     ld a, [hl]
-    ld [wDD56], a
+    ld [wCh4PolyCounterTableAddrLow], a
     inc hl
     ld a, [hl]
-    ld [wDD57], a
+    ld [wCh4PolyCounterTableAddrHigh], a
     ret
 
-Label1861B: ;06:461B
-	dw Label1864B ;461C
-	dw Label18667 ;461E
-	dw Label18670 ;4620
-	dw Label18681 ;4622
-	dw Label18695 ;4624
-	dw Label186E0 ;4626
-	dw Label18719 ;4628
-	dw enableSoundOutput ;462A
-	dw Label18782 ;462C
-	dw Label1879A ;462E
-	dw Label18742 ;4630
-	dw Label18752 ;4632
-	dw Label18762 ;4634
-	dw Label18772 ;4636
+channelActionsTable: ;06:461B channel actions table
+	dw setNoteLength ;461C
+	dw disableChannel ;461E
+	dw setChannelLoop ;4620
+	dw setPolyCounterValue ;4622
+	dw setBranchAdress ;4624
+	dw setBranchEnd ;4626
+	dw chlAction18719 ;4628
+	dw setGlobalSoundOutput ;462A
+	dw setChannelLengthTableAddr ;462C
+	dw setSoundTempo ;462E
+	dw setSoundOutput1 ;4630
+	dw setSoundOutput2 ;4632
+	dw setSoundOutput3 ;4634
+	dw setSoundOutput4 ;4636
 
-Label18637:: ;06:4637
-;a: 67
+checkChannelAction:: ;06:4637
+;a: action id
+;bc: action addr
     sub a, $60
-    add a ;7+7 : E
-    push hl
+    add a
+    push hl ;store action id addr high
     dec hl
-    dec hl
-    inc [hl] ;[DD01]+1
-    ld hl, Label1861B+1 ;$461C
+    dec hl ;go to length counter
+    inc [hl] ;inc length
+    ld hl, channelActionsTable+1 ;$461C
     add a, l
     ld l, a
     jr nc, .Label18646
@@ -1040,121 +1079,123 @@ Label18637:: ;06:4637
     ld h, a
     jp [hl]
 
-Label1864B:
-    ld hl, wDD61
+setNoteLength:
+    ld hl, wNoteLengthTableAddrHigh
     ld a, [hl]
     dec hl
     ld l, [hl]
-    ld h, a
+    ld h, a ;length table addr into hl
     inc bc
-    ld a, [bc]
+    ld a, [bc] ;get length id
     and a, $0F
     add a, l
     ld l, a
     jr .Label1865B
     inc h
 .Label1865B
-    ld a, [hl]
+    ld a, [hl] ;get length value
     pop hl
     ld de, $FFFE ;-2
-    add hl, de
-    ld [hl], a
-    inc bc
+    add hl, de ;go to channel note length var
+    ld [hl], a ;set length
+    inc bc ;next action
     inc hl
-    jp Label187AD
+    jp storeChannelNextActionAddr
 
-Label18667:: ;06:4667
-    pop hl
+disableChannel:: ;06:4667
+    pop hl ;action id addr high
     ld bc, $FFFD ;-3
-    add hl, bc
+    add hl, bc ;get channel state
     ld a, $00
-    ld [hl], a
+    ld [hl], a ;disable channel
     ret
 ;4670
 
-Label18670: ;06:4670
+setChannelLoop: ;06:4670
     pop hl
     ld de, $FFFE ;-2
-    add hl, de
+    add hl, de ;get chl note length
     ld a, $01
+    ld [hli], a ;reset channel ticks
+    inc bc
+    ld a, [bc] ;get loop chl addr low
     ld [hli], a
     inc bc
-    ld a, [bc]
-    ld [hli], a
-    inc bc
-    ld a, [bc]
+    ld a, [bc] ;get loop chl addr high
     ld [hl], a
-    jp Label187B1
+    jp goToNextChannelUpdateAddr
 ;4681
 
-Label18681: ;4681
-    pop hl
+setPolyCounterValue: ;4681
+    pop hl ;action/note id addr high
     inc bc
-    ld a, [bc]
-    ld [wDD64], a
+    ld a, [bc] ;get action parameter
+    ld [wNoisePolyCounterValue], a
     ld de, $FFFE ;-2
-    add hl, de
+    add hl, de ;go to chl length
     ld a, $01
-    ld [hli], a
+    ld [hli], a ;reset length
     inc bc
-    call Label187AD
-    jp Label187B1
+    call storeChannelNextActionAddr
+    jp goToNextChannelUpdateAddr
 ;4695
-Label18695: ;4695
-    pop hl
+
+setBranchAdress: ;4695
+    pop hl ;action/note id addr high
     ld de, $FFFE ;-2
     add hl, de
     ld a, $01
-    ld [hli], a
+    ld [hli], a ;reset length
     inc bc
-    ld a, [bc]
+    ld a, [bc] ;get branch id
     sla a
     jr nc, Label186A9
-    ld de, no_music ;$6D7C
+    ld de, music_branches_table ;$6D7C
     inc d
     jr Label186AC
 Label186A9
-    ld de, no_music ;$6D7C
+    ld de, music_branches_table ;$6D7C
 Label186AC
+;add branch id offset
     add a, e
     ld e, a
-    jr nc, Label186B1
+    jr nc, getBranchAddress
     inc d
-Label186B1
+getBranchAddress ;and update next action address
     ld a, [de]
     ld [hli], a
     inc de
     ld a, [de]
     ld [hli], a
     ld d, h
-    ld e, l
+    ld e, l ;action id addr high to de
     ld a, $10
-    add a, e
+    add a, e ;go to channel action id var
     ld e, a
     jr nc, Label186BF
     inc d
 Label186BF
     inc bc
-    ld a, [bc]
+    ld a, [bc] ;get branch tsp value
     ld [de], a
     inc de
     ld a, [de]
     and a
     jr z, Label186CA
     inc bc
-    jr Label186D6
+    jr backupNextActionAddress
 Label186CA
     ld a, $01
     ld [de], a
     dec de
     dec de
     inc bc
-    ld a, [bc]
+    ld a, [bc] ;get branch counter
     sub a, $01
     ld [de], a
     inc de
     inc de
-Label186D6
+backupNextActionAddress
     inc bc
     inc de
     ld a, c
@@ -1162,34 +1203,35 @@ Label186D6
     inc de
     ld a, b
     ld [de], a
-    jp Label187B1
+    jp goToNextChannelUpdateAddr
 ;46E0
 
-Label186E0: ;46E0
-    inc bc
-    pop hl
+setBranchEnd: ;46E0
+    inc bc ;action parameter
+    pop hl ;action/note id addr high
     ld de, $FFFE ;-2
     add hl, de
     ld a, $01
-    ld [hli], a
-    ld d, h
+    ld [hli], a ;reset length
+    ld d, h ;note address into de
     ld e, l
-    ld a, $11
+    ld a, $11 ;go to branch counter
     add a, e
     ld e, a
     jr nc, Label186F2
     inc d
 Label186F2
-    ld a, [de]
+    ld a, [de] ;get branch counter
     and a
     jr z, Label1870A
     sub a, $01
-    ld [de], a
+    ld [de], a ;decrease counter
     inc de
     inc de
     inc de
-    ld a, [de]
-    sub a, $04
+    ld a, [de] ;get next channel action addr
+;repeat branch action address
+    sub a, $04 ;back to current branch address
     ld [hli], a
     inc de
     ld a, [de]
@@ -1197,137 +1239,138 @@ Label186F2
     sub a, $01
 Label18706
     ld [hl], a
-    jp Label187B1
+    jp goToNextChannelUpdateAddr
 Label1870A
     inc de
     ld a, $00
-    ld [de], a
+    ld [de], a ;reset action id
     inc de
-    ld [de], a
+    ld [de], a ;reset DD2D
     inc de
+;restore next channel action
     ld a, [de]
     ld [hli], a
     inc de
     ld a, [de]
     ld [hl], a
-    jp Label187B1
+    jp goToNextChannelUpdateAddr
 ;4719
 
-Label18719: ;4719
-    inc bc
+chlAction18719: ;4719
+    inc bc ;action parameter
     ld a, [bc]
-    ld [wDD67], a
-    pop hl
+    ld [wDD67], a ;value aparently never used
+    pop hl ;action id addr high
     ld de, $FFFE ;-2
-    add hl, de
+    add hl, de ;back to note length counter
     ld a, $01
-    ld [hli], a
-    inc bc
-    call Label187AD
-    jp Label187B1
+    ld [hli], a ;set length
+    inc bc ;next channel instruccion
+    call storeChannelNextActionAddr
+    jp goToNextChannelUpdateAddr
 ;472D
 
 
-enableSoundOutput: ;472D
+setGlobalSoundOutput: ;472D
     inc bc
-    ld a, [bc] ;read 5B55=FF
-    ld [rAUDTERM], a ;NR51 sound output
+    ld a, [bc] ;get sound enabler value
+    ld [rAUDTERM], a ;set sound output
     ld [wNR51SoundOutput], a
-Label18734
-    inc bc ;5B57
-    pop hl ;DD03
+goToNextChannelAction:
+    inc bc ;next action
+    pop hl ;;action id addr high
     ld de, $FFFE ;-2
-    add hl, de ;DD01
+    add hl, de
     ld a, $01
-    ld [hli], a
-    call Label187AD
-    jr Label187B1
+    ld [hli], a ;set length
+    call storeChannelNextActionAddr
+    jr goToNextChannelUpdateAddr
 
-Label18742: ;4742
+setSoundOutput1: ;4742
     inc bc
     ld a, [wNR51SoundOutput]
-    and a, $EE
+    and a, %11101110 ;$EE disable SO1
     ld h, a
     ld a, [bc]
     or a, h
     ld [wNR51SoundOutput], a
     ld [rAUDTERM], a ;NR51 sound output
-    jr Label18734
+    jr goToNextChannelAction
 
-Label18752: ;4752
+setSoundOutput2: ;4752
     inc bc
     ld a, [wNR51SoundOutput]
-    and a, $DD
+    and a, %11011101 ;$DD disable SO2
     ld h, a
     ld a, [bc]
     or a, h
     ld [wNR51SoundOutput], a
     ld [rAUDTERM], a ;NR51 sound output
-    jr Label18734
+    jr goToNextChannelAction
 
-Label18762: ;4762
+setSoundOutput3: ;4762
     inc bc
     ld a, [wNR51SoundOutput]
-    and a, $BB
+    and a, %10111011 ;$BB disable SO2
     ld h, a
     ld a, [bc]
     or a, h
     ld [wNR51SoundOutput], a
     ld [rAUDTERM], a ;NR51 sound output
-    jr Label18734
+    jr goToNextChannelAction
 
-Label18772: ;4772
+setSoundOutput4: ;4772
     inc bc
     ld a, [wNR51SoundOutput]
-    and a, $77
+    and a, %01110111 ;$77 disable SO2
     ld h, a
     ld a, [bc]
     or a, h
     ld [wNR51SoundOutput], a
     ld [rAUDTERM], a ;NR51 sound output
-    jr Label18734
+    jr goToNextChannelAction
 ;4782
 
-Label18782: ;4782
+setChannelLengthTableAddr: ;4782
     inc bc
-    ld a, [bc]
-    ld [wDD60], a
+    ld a, [bc] ;get length table addr low
+    ld [wNoteLengthTableAddrLow], a
     inc bc
-    ld a, [bc]
-    ld [wDD61], a
+    ld a, [bc] ;get length table addr high
+    ld [wNoteLengthTableAddrHigh], a
     pop hl
     ld de, $FFFE ;-2
     add hl, de
     ld a, $01
-    ld [hli], a
+    ld [hli], a ;set length
     inc bc
-    call Label187AD
-    jr Label187B1
+    call storeChannelNextActionAddr
+    jr goToNextChannelUpdateAddr
 
-Label1879A: ;479A
+setSoundTempo: ;479A
     inc bc
-    ld a, [bc] ;5B58=B4
-    ld [wSoundDD78], a
+    ld a, [bc] ;get tempo value
+    ld [wSoundTempo], a
     pop hl
     ld de, $FFFE ;-2
     add hl, de
     ld a, $01
-    ld [hli], a
+    ld [hli], a ;set length
     inc bc
-    call Label187AD
-    jr Label187B1
+    call storeChannelNextActionAddr
+    jr goToNextChannelUpdateAddr
 ;47AD
 
-Label187AD: ;06:47AD
+storeChannelNextActionAddr: ;06:47AD
 	ld [hl], c
 	inc hl
 	ld [hl], b
 	ret
 ;47B1
 
-Label187B1: ;06:47B1
-    pop hl
-    ld de, wDD62
+goToNextChannelUpdateAddr: ;06:47B1
+    pop hl ;delete next channel update addr from stack
+    ld de, wChlUpdateFunctionAddrLow
     ld a, [de]
     ld l, a
     inc de
@@ -1336,7 +1379,7 @@ Label187B1: ;06:47B1
     jp [hl]
 ;47BB
 
-Label187BB: ;47BB
+frequencyLowBitsTable: ;47BB sound frequency low bits table (64bytes)
 	db $9D, $07, $6B, $CA, $23, $78, $C7, $12, $59, $9C, $DB, $17, $4F, $84, $B6, $E5
 	db $12, $3C, $64, $89, $AD, $CE, $EE, $0C, $28, $42, $5B, $73, $89, $9E, $B2, $C5
 	db $D7, $E7, $F7, $06, $14, $21, $2E, $3A, $45, $4F, $59, $63, $6C, $74, $7C, $83
@@ -1345,7 +1388,7 @@ Label187BB: ;47BB
 	db $EE, $EF, $F0, $F1, $F2, $F3, $F3, $F4, $F5, $F5, $F7, $F7, $F8, $F8, $FA, $FA
 ;481B
 
-Label1881B: ;481B
+frequencyHighBitsTable: ;481B sound frequency high bits table(channels 1,2,3)
 	db $00, $01, $01, $01, $02, $02, $02, $03, $03, $03, $03, $04, $04, $04, $04, $04
 	db $05, $05, $05, $05, $05, $05, $05, $06, $06, $06, $06, $06, $06, $06, $06, $06
 	db $06, $06, $06, $07, $07, $07, $07, $07, $07, $07, $07, $07, $07, $07, $07, $07
@@ -1354,8 +1397,11 @@ Label1881B: ;481B
 	db $07, $07, $07, $07, $07, $07, $07, $07, $07, $07, $07, $07, $07, $07, $07, $07
 ;487B
 
-soundFunc487B:: ;06:487B
+
+
+updateSoundEffect:: ;06:487B
     ld hl, BaseSfxLookupTable ;$6E9E
+;get sound effect address
     sla a
     add a, l
     ld l, a
@@ -1365,102 +1411,106 @@ soundFunc487B:: ;06:487B
     ld a, [hl]
     ld c, a
     inc hl
-    ld a, [hl]
+    ld a, [hl] ;store sfx addr in bc
     ld b, a
-    ld a, $8F
-    ld [rAUDENA], a ;NR52 sound on/off
-    ld a, [bc]
+    ld a, %10001111 ;$8F
+    ld [rAUDENA], a ;enable all sound
+    ld a, [bc] ;get sfx channel id
     inc bc
     cp a, $01
-    jr z, .Label188BD
+    jr z, .updatePulse2Sfx
     cp a, $02
-    jr z, .Label188DE
+    jr z, .updateWaveSfx
     cp a, $03
-    jr z, .Label188FF
+    jr z, .updateNoiseSfx
+;updatePulse1Sfx
     ld a, [wNR51SoundOutput]
     ld d, a
-    ld a, $11
+    ld a, %00010001 ;$11
     or a, d
-    ld [wLRSoundEnabler], a
-    ld a, [wSqr1Channel]
-    and a, $FE
-    ld [wSqr1Channel], a
+    ld [wLRSoundEnabler], a  ;enable sound 1
+    ld a, [wChannel1State]
+    and a, %11111110 ;$FE
+    ld [wChannel1State], a
+;store sfx value address
     ld a, c
-    ld [wSoundDD68], a
+    ld [wChannel1SfxAddrLow], a
     ld a, b
-    ld [wDD69], a
+    ld [wChannel1SfxAddrHigh], a
     ld a, $02
-    ld [wDD6A], a
-    jr initSoundChannels
-.Label188BD
+    ld [wChannel1SfxCounter], a
+    jr checkChannelsSfxUpdate
+.updatePulse2Sfx
     ld a, [wNR51SoundOutput]
     ld d, a
-    ld a, $22
+    ld a, %00100010 ;$22
     or a, d
     ld [wLRSoundEnabler], a
-    ld a, [wSqr2Channel]
-    and a, $FE
-    ld [wSqr2Channel], a
+    ld a, [wChannel2State]
+    and a, %11111110 ;$FE
+    ld [wChannel2State], a
     ld a, c
-    ld [wDD6B], a
+    ld [wChannel2SfxAddrLow], a
     ld a, b
-    ld [wDD6C], a
+    ld [wChannel2SfxAddrHigh], a
     ld a, $02
-    ld [wDD6D], a
-    jr initSoundChannels
-.Label188DE
+    ld [wChannel2SfxCounter], a
+    jr checkChannelsSfxUpdate
+.updateWaveSfx
     ld a, [wNR51SoundOutput]
     ld d, a
-    ld a, $44
+    ld a, %01000100 ;$44
     or a, d
     ld [wLRSoundEnabler], a
-    ld a, [wWaveChannel]
-    and a, $FE
-    ld [wWaveChannel], a
+    ld a, [wChannel3State]
+    and a, %11111110 ;$FE
+    ld [wChannel3State], a
     ld a, c
-    ld [wDD6E], a
+    ld [wChannel3SfxAddrLow], a
     ld a, b
-    ld [wDD6F], a
+    ld [wChannel3SfxAddrHigh], a
     ld a, $02
-    ld [wDD70], a
-    jr initSoundChannels
-.Label188FF
+    ld [wChannel3SfxCounter], a
+    jr checkChannelsSfxUpdate
+.updateNoiseSfx
     ld a, [wNR51SoundOutput]
     ld d, a
-    ld a, $88
+    ld a, %10001000 ;$88
     or a, d
     ld [wLRSoundEnabler], a
-    ld a, [wNoiseChannel]
-    and a, $FE
-    ld [wNoiseChannel], a
+    ld a, [wChannel4State]
+    and a, %11111110 ;$FE
+    ld [wChannel4State], a
     ld a, c
-    ld [wDD71], a
+    ld [wChannel4SfxAddrLow], a
     ld a, b
-    ld [wDD72], a
+    ld [wChannel4SfxAddrHigh], a
     ld a, $02
-    ld [wDD73], a
-initSoundChannels::
-    ld hl, wSqr1Channel
+    ld [wChannel4SfxCounter], a
+
+checkChannelsSfxUpdate::
+    ld hl, wChannel1State
     ld a, l
-    ld [wSoundDD74], a
+    ld [wChannelStateVarAddrLow], a
     ld a, h
-    ld [wSoundDD75], a
-    ld hl, wSoundDD68
+    ld [wChannelStateVarAddrHigh], a
+    ld hl, wChannel1SfxAddrLow
+;get channel sfx addr
     ld c, [hl]
     inc hl
     ld b, [hl]
     ld a, b
     or a, c
-    jr z, .Label18939
+    jr z, .Label18939 ;skip if no sfx addr
     ld de, rAUD1LEN
-    call soundFunction498B
+    call checkSfxUpdate
 .Label18939
-    ld hl, wSqr2Channel
+    ld hl, wChannel2State
     ld a, l
-    ld [wSoundDD74], a
+    ld [wChannelStateVarAddrLow], a
     ld a, h
-    ld [wSoundDD75], a
-    ld hl, wDD6B
+    ld [wChannelStateVarAddrHigh], a
+    ld hl, wChannel2SfxAddrLow
     ld c, [hl]
     inc hl
     ld b, [hl]
@@ -1468,14 +1518,14 @@ initSoundChannels::
     or a, c
     jr z, .Label18954
     ld de, rAUD2LEN
-    call soundFunction498B
+    call checkSfxUpdate
 .Label18954
-    ld hl, wWaveChannel
+    ld hl, wChannel3State
     ld a, l
-    ld [wSoundDD74], a
+    ld [wChannelStateVarAddrLow], a
     ld a, h
-    ld [wSoundDD75], a
-    ld hl, wDD6E
+    ld [wChannelStateVarAddrHigh], a
+    ld hl, wChannel3SfxAddrLow
     ld c, [hl]
     inc hl
     ld b, [hl]
@@ -1483,14 +1533,14 @@ initSoundChannels::
     or a, c
     jr z, .Label1896F
     ld de, rAUD3LEN
-    call soundFunction498B
+    call checkSfxUpdate
 .Label1896F
-    ld hl, wNoiseChannel
+    ld hl, wChannel4State
     ld a, l
-    ld [wSoundDD74], a
+    ld [wChannelStateVarAddrLow], a
     ld a, h
-    ld [wSoundDD75], a
-    ld hl, wDD71
+    ld [wChannelStateVarAddrHigh], a
+    ld hl, wChannel4SfxAddrLow
     ld c, [hl]
     inc hl
     ld b, [hl]
@@ -1498,98 +1548,98 @@ initSoundChannels::
     or a, c
     jr z, .Label1898A
     ld de, rAUD4LEN
-    call soundFunction498B
+    call checkSfxUpdate
 .Label1898A
     ret
 
-soundFunction498B:: ;06:498B
+checkSfxUpdate:: ;06:498B
 	ld a, [wLRSoundEnabler]
 	ld [rAUDTERM], a ;NR51
 	inc hl
-	dec [hl]
-	jr z, soundFunction4995
+	dec [hl] ;decrease sfx counter
+	jr z, updateSfxValues
 	ret
 
-soundFunction4995:: ;06:4995
-    ld a, [bc]
+updateSfxValues:: ;06:4995
+    ld a, [bc] ;get sfx value
     cp a, $FF
-    jr z, soundFunction49B5
+    jr z, finishChannelSfxPlay
     cp a, $FE
-    jr z, soundFunction49D1
-    ld [hl], a
+    jr z, setSoundEffectBranch
+    ld [hl], a ;set sfx counter
     inc bc
     ld a, [bc]
-    ld [de], a
+    ld [de], a ;set rAUDXLEN
     inc bc
     inc de
     ld a, [bc]
-    ld [de], a
+    ld [de], a ;set rAUDXENV
     inc bc
     inc de
     inc de
     ld a, [bc]
-    ld [de], a
+    ld [de], a ;set rAUDXHIGH or rAUD4GO
     inc bc
     dec de
     ld a, [bc]
-    ld [de], a
+    ld [de], a ;set rAUDXLOW or rAUD4POLY
     inc bc
-
-label189B0::
+setNextSfxAddress:
     dec hl
     ld [hl], b
     dec hl
     ld [hl], c
     ret
 
-soundFunction49B5:: ;06:49B5
+finishChannelSfxPlay:: ;06:49B5
     ld a, $00
     dec hl
-    ld [hl], a
+    ld [hl], a ;set sfx address to zero
     dec hl
     ld [hl], a
-    ld hl, wSoundDD74
-    ld c, [hl]
+    ld hl, wChannelStateVarAddrLow
+    ld c, [hl] ;get channel state var pointer in bc
     inc hl
     ld b, [hl]
     ld a, [bc]
     and a, $02
-    jp z, .Label189CB
+    jp z, .Label189CB ;if channel is not busy
     ld a, [bc]
     or a, $01
-    ld [bc], a
+    ld [bc], a ;enable channel
 .Label189CB
     ld a, [wNR51SoundOutput]
     ld [rAUDTERM], a ;NR51 sound output
     ret
 
-soundFunction49D1:: ;06:49D1
+setSoundEffectBranch:: ;06:49D1
     inc bc
-    ld a, [bc]
+    ld a, [bc] ;store sfx branch address in bc
     ld e, a
     inc bc
     ld a, [bc]
     ld b, a
     ld c, e
     ld a, $01
-    ld [hl], a
-    jr label189B0
+    ld [hl], a ;set sfx counter
+    jr setNextSfxAddress
 ;49DD
 
-soundData49DD::	;49DD
+cleanedWaveRam:	;49DD
 	db $AA, $AA, $AA, $AA, $AA, $AA, $AA, $AA, $00, $00, $00, $00, $00, $00, $00, $00
 ;49ED
 
 INCLUDE "audio/musicChannelsTable.asm" ;49ED
 ;4A6F
 
-Label18A6F: ;4A6F
+noteLengthTableA: ;4A6F note lenght table
 	db $03, $04, $06, $09, $0C, $12, $18, $24, $30, $48, $60, $90, $C0, $08, $10, $2A
-Label18A7F: ;4A7F
+noteLengthTableB: ;4A7F
 	db $04, $06, $08, $0C, $10, $18, $20, $30, $40, $60, $80, $C0, $FC, $05, $0A, $14
+	;db $01, $02, $03, $04, $05, $06, $07, $08, $09, $0A, $0B, $0C, $0D, $0E, $0F, $10
 ;4A8F
 
-Label18A8F: ;4A8F
+instrumentsTables: ;4A8F instruments table 1
 	dw Label18ACF
 	dw Label18ADB
 	dw Label18AE7
@@ -1606,6 +1656,7 @@ Label18A8F: ;4A8F
 	dw Label18B6B
 	dw Label18B77
 	dw Label18B83
+;instruments table 2
 	dw Label18B8F
 	dw Label18B9B
 	dw Label18BA7
@@ -1628,42 +1679,58 @@ Label18A8F: ;4A8F
 
 
 Label18ACF: ;06:4ACF
-	dbw $80, $0200 ;ch1
-	dbw $00, $0000 ;ch2
-	dbw $00, $0000 ;ch3
-	dbw $00, $0000 ;ch4
-Label18ADB:
-	dbw $C0, $00BD
+	db $80
+	db $00
+	db $02
+	dbw $00, $0000
+	dbw $00, $0000
+	dbw $00, $0000
+Label18ADB: ;noise instrument
+	db $C0 ;11000000 ;restart sound & enable lenght counter
+	db $BD ;sound length
+	db $00 ;envelope
 	dbw $01, Label18C4F ;4C4F
 	dbw $01, Label18D56 ;4D56
 	dbw $00, $0000
 Label18AE7:
-	dbw $80, $0080
+	db $80
+	db $80
+	db $00
 	dbw $01, Label18C58
 	dbw $01, Label18D59
 	dbw $00, $0000
 Label18AF3:
-	dbw $C0, $31BB
+	db $C0
+	db $BB
+	db $31
 	dbw $00, $0000
 	dbw $01, Label18D7A
 	dbw $00, $0000
 Label18AFF:
-	dbw $C0, $41BB
+	db $C0
+	db $BB
+	db $41
 	dbw $00, $0000
 	dbw $01, Label18D7A
 	dbw $00, $0000
 Label18B0B:
-	dbw $80, $0080
+	db $80
+	db $80
+	db $00
 	dbw $01, Label18C63
 	dbw $01, Label18D59
 	dbw $00, $0000
 Label18B17:
-	dbw $80, $0080
+	db $80
+	db $80
+	db $00
 	dbw $01, Label18CD1
 	dbw $02, Label18DD1
 	dbw $00, $0000
 Label18B23:
-	dbw $80, $0080
+	db $80
+	db $80
+	db $00
 	dbw $01, Label18C8C
 	dbw $01, Label18DBE
 	dbw $00, $0000
@@ -1673,123 +1740,170 @@ Label18B2F:
 	dbw $00, $0000
 	dbw $01, Label18E55
 Label18B3B:
-	dbw $80, $0080
+	db $80
+	db $80
+	db $00
 	dbw $01, Label18CA8
 	dbw $00, $0000
 	dbw $01, Label18E60
-Label18B47:
-	dbw $80, $3780
+Label18B47: ;4B47
+	db $80 ;init
+	db $80 ;wave pattern 50%
+	db $37 ;envelope
 	dbw $00, $0000
 	dbw $01, Label18DBE
 	dbw $00, $0000
 Label18B53:
-	dbw $80, $9780
+	db $80
+	db $80
+	db $97
 	dbw $00, $0000
 	dbw $01, Label18DBE
 	dbw $00, $0000
 Label18B5F:
-	dbw $80, $0080
+	db $80
+	db $80
+	db $00
 	dbw $01, Label18CB5
 	dbw $01, Label18DBE
 	dbw $00, $0000
 Label18B6B:
-	dbw $80, $6280
+	db $80
+	db $80
+	db $62
 	dbw $00, $0000
 	dbw $01, Label18DD1
 	dbw $00, $0000
 Label18B77:
-	dbw $80, $8080
+	db $80
+	db $80
+	db $80
 	dbw $01, Label18CC4
 	dbw $02, Label18DE4
 	dbw $00, $0000
 Label18B83:
-	dbw $80, $8080
+	db $80
+	db $80
+	db $80
 	dbw $01, Label18CD1
 	dbw $02, Label18DE4
 	dbw $00, $0000
+
 Label18B8F:
-	dbw $C0, $0000
+	db $C0
+	db $00
+	db $00
 	dbw $01, Label18D05
 	dbw $00, $0000
 	dbw $00, $0000
 Label18B9B:
-	dbw $C0, $0000
+	db $C0 ;;trigger channel start (init) | Consecutive select/length counter enable
+	db $00
+	db $00
 	dbw $01, Label18D10
 	dbw $00, $0000
 	dbw $00, $0000
 Label18BA7:
-	dbw $80, $0000
+	db $80
+	db $00
+	db $00
 	dbw $01, Label18D19
 	dbw $01, Label18E0A
 	dbw $00, $0000
 Label18BB3:
-	dbw $80, $0080
+	db $80
+	db $80
+	db $00
 	dbw $01, Label18CE4
 	dbw $00, $0000
 	dbw $01, Label18E90
 Label18BBF:
-	dbw $80, $6480
+	db $80
+	db $80
+	db $64
 	dbw $00, $0000
 	dbw $00, $0000
 	dbw $01, Label18E9F
 Label18BCB:
-	dbw $80, $6480
+	db $80
+	db $80
+	db $64
 	dbw $00, $0000
 	dbw $00, $0000
 	dbw $01, Label18EAE
 Label18BD7:
-	dbw $80, $0080
+	db $80
+	db $80
+	db $00
 	dbw $01, Label18CE4
 	dbw $00, $0000
 	dbw $02, Label18EBD
 Label18BE3:
-	dbw $80, $5680
+	db $80
+	db $80
+	db $56
 	dbw $00, $0000
 	dbw $00, $0000
 	dbw $01, Label18ECC
 Label18BEF:
-	dbw $80, $0000
+	db $80
+	db $00
+	db $00
 	dbw $01, Label18D26
 	dbw $01, Label18E0A
 	dbw $00, $0000
 Label18BFB:
-	dbw $80, $0000
+	db $80
+	db $00
+	db $00
 	dbw $01, Label18D26
 	dbw $00, $0000
 	dbw $00, $0000
-Label18C07:
-	dbw $80, $0040
+Label18C07: ;4c07
+	db $80 ;trigger channel start (init)
+	db $40
+	db $00
 	dbw $01, Label18CFC
 	dbw $01, Label18DBE
 	dbw $00, $0000
 Label18C13:
-	dbw $80, $0080
+	db $80
+	db $80
+	db $00
 	dbw $01, Label18CD1
 	dbw $00, $0000
 	dbw $01, Label18E6D
 Label18C1F:
-	dbw $80, $0080
+	db $80
+	db $80
+	db $00
 	dbw $01, Label18D3B
 	dbw $00, $0000
 	dbw $01, Label18EE6
 Label18C2B:
-	dbw $80, $0080
+	db $80
+	db $80
+	db $00
 	dbw $01, Label18D44
 	dbw $01, Label18E20
 	dbw $00, $0000
 Label18C37:
-	dbw $80, $0080
+	db $80
+	db $80
+	db $00
 	dbw $01, Label18D4D
 	dbw $01, Label18E20
 	dbw $00, $0000
 Label18C43:
-	dbw $80, $0080
+	db $80
+	db $80
+	db $00
 	dbw $01, Label18CD1
 	dbw $02, Label18DF7
 	dbw $00, $0000
 ;4C4F
 
-INCLUDE "audio/audio_4c4f.asm" ;4C4F
+INCLUDE "audio/instrumentsEffectsTables.asm" ;4C4F
 ;4EF5
 
 ;music themes
@@ -1806,11 +1920,12 @@ INCLUDE "audio/music/moonlightSonataFail.asm" ;6708
 INCLUDE "audio/music/vacantFlatTheme.asm" ;684E
 INCLUDE "audio/music/unusedOriginalTheme07.asm" ;6BD6
 INCLUDE "audio/music/noMusic.asm" ;6D79
+
+INCLUDE "audio/music_branches_table.asm" ;6D7C
 ;6E9E
 
 INCLUDE "audio/baseSfxLookupTable.asm" ;6E9E
-INCLUDE "audio/sfxLookupTable.asm"
-INCLUDE "audio/baseSoundEffects.asm"
+INCLUDE "audio/sfxLookupTable.asm" ;6F1C
+INCLUDE "audio/baseSoundEffects.asm" ;6FC4
 
 ;06:7A57 rest of bank is empty
-

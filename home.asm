@@ -6005,5 +6005,3 @@ checkUMBNo4Combine:
     cp a, UMB_NO2
     db $CA, $27 ;end of home bank, but routine continue to bank 1
    ;jp z, UMBNo2AndUMBNo4Combine next instruccion between bank0 & bank1
-
-

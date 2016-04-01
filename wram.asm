@@ -608,10 +608,10 @@ wLoadEventBgImagePal:: ;C1C6
 wItemTriggerId:: ;C1C7
 	ds 1
 
-wc1c8:: ;c1c8
+wSampleTempoLow:: ;c1c8
 	ds 1
 
-wc1c9:: ;c1c9
+wSampleTempoHigh:: ;c1c9
 	ds 1
 
 wc1ca:: ;c1ca
@@ -3797,199 +3797,286 @@ SECTION "sound RAM",WRAMX,BANK[1]
 ;music ram
 
 ;audio channel #1 wram
-wSqr1Channel:: ;DD00
+wChannel1State:: ;DD00
+;channel status
+;bit 0: channel enabled
+;bit 1: play channel
 	ds 1
-wDD01:: ;DD01
+wCh1NoteLength:: ;DD01
 	ds 1
-wDD02:: ;DD02
+wCh1NextActionAddrLow:: ;DD02
 	ds 1
-wDD03:: ;DD03
+wCh1NextActionAddrHigh:: ;DD03
 	ds 1
-wDD04:: ;DD04
+wCh1FreqHigh:: ;DD04
 	ds 1
-wDD05:: ;DD05
-	ds 5
-wDD0A:: ;DD0A
+wCh1FreqLow:: ;DD05
 	ds 1
-wDD0B:: ;DD0B
-	ds 2
-wDD0D:: ;DD0D
+wDD06:: ;DD06
 	ds 1
-wDD0E:: ;DD0E
-	ds 2
-wDD10:: ;DD10
+wCh1WavePattern:: ;DD07
 	ds 1
-wDD11:: ;DD11
+wCh1Envelope:: ;DD08
 	ds 1
-wDD12:: ;DD12
-	ds 2
-wSndChl1Vol:: ;DD14
+wDD09:: ;DD09
 	ds 1
-wDD15:: ;DD15
-	ds 3
+wCh1EnvelopeTableTicks:: ;DD0A
+	ds 1
+wCh1EnvelopeTableAddrLow:: ;DD0B
+	ds 1
+wCh1EnvelopeTableAddrHigh:: ;DD0C
+	ds 1
+wCh1PitchBendTableTicks:: ;DD0D
+	ds 1
+wCh1PitchBendTableAddrLow:: ;DD0E
+	ds 1
+wCh1PitchBendTableAddrHigh:: ;DD0F
+	ds 1
+wCh1VibratoTableTicks:: ;DD10
+	ds 1
+wCh1VibratoTableAddrLow:: ;DD11
+	ds 1
+wCh1VibratoTableAddrHigh:: ;DD12
+	ds 1
+wCh1BranchCounter:: ;DD13
+	ds 1
+wChl1ActionId:: ;DD14
+	ds 1
+wCh1DD15:: ;DD15
+	ds 1
+wCh1NextActionAddrLowBkp:: ;DD16
+	ds 1
+wCh1NextActionAddrHighBkp:: ;DD17
+	ds 1
+
 
 ;audio channel #2 wram
-wSqr2Channel:: ;DD18
+wChannel2State:: ;DD18
 	ds 1
-wDD19:: ;DD19
+wCh2NoteLength:: ;wCh2NoteLength note length counter
 	ds 1
-wDD1A:: ;DD1A
+wCh2NextActionAddrLow:: ;DD1A channel next note addr low
 	ds 1
-wDD1B:: ;DD1B
+wCh2NextActionAddrHigh:: ;DD1B channel next note addr high
 	ds 1
-wDD1C:: ;DD1C
+wCh2FreqHigh:: ;DD1C NR24 snd init & hight freq bits
 	ds 1
-wDD1D:: ;DD1D
-	ds 5
-wDD22:: ;DD22
+wCh2FreqLow:: ;DD1D NR23 frequency low bits
 	ds 1
-wDD23:: ;DD23
-	ds 2
-wDD25:: ;DD25
+wDD1E:: ;DD1E
 	ds 1
-wDD26:: ;DD26
-	ds 2
-wDD28:: ;DD28
+wCh2WavePattern:: ;DD1F NR21 wave pattern
 	ds 1
-wDD29:: ;DD29
+wCh2Envelope:: ;DD20 NR22 ch2 envelope
 	ds 1
-wDD2A:: ;DD2A
-	ds 2
-wSndChl2Vol:: ;DD2C
+wDD21:: ;DD21
 	ds 1
-wDD2D:: ;DD2D
-	ds 3
+wCh2EnvelopeTableTicks:: ;DD22 envelope table counter var
+	ds 1
+wCh2EnvelopeTableAddrLow:: ;DD23 envelope table addr low
+	ds 1
+wCh2EnvelopeTableAddrHigh:: ;DD24 envelope table addr high
+	ds 1
+wCh2PitchBendTableTicks:: ;DD25 pitch bend table counter var
+	ds 1
+wCh2PitchBendTableAddrLow:: ;DD26 pitch bend table addr low
+	ds 1
+wCh2PitchBendTableAddrHigh:: ;DD27 pitch bend table addr high
+	ds 1
+wCh2VibratoTableTicks:: ;DD28 vibrato table counter
+	ds 1
+wCh2VibratoTableAddrLow:: ;DD29 vibrato table addr low
+	ds 1
+wCh2VibratoTableAddrHigh:: ;DD2A vibrato table addr high
+	ds 1
+wCh2BranchCounter:: ;DD2B branch counter
+	ds 1
+wChl2ActionId:: ;DD2C or branch tsp value
+	ds 1
+wCh2DD2D:: ;DD2D
+	ds 1
+wCh2NextActionAddrLowBkp:: ;DD2E next action adress backup low
+	ds 1
+wCh2NextActionAddrHighBkp:: ;DD2F next action adress backup high
+	ds 1
+
 
 ;audio channel #3 wram
-wWaveChannel:: ;DD30
+wChannel3State:: ;DD30
 	ds 1
-wDD31:: ;DD31
+wCh3NoteLength:: ;DD31
 	ds 1
-wDD32:: ;DD32
+wCh3NextActionAddrLow:: ;DD32
 	ds 1
-wDD33:: ;DD33
+wCh3NextActionAddrHigh:: ;DD33
 	ds 1
-wDD34:: ;DD34
+wCh3FreqHigh:: ;DD34
 	ds 1
-wDD35:: ;DD35
-	ds 5
-wDD3A:: ;DD3A
+wCh3FreqLow:: ;DD35
 	ds 1
-wDD3B:: ;DD3B
-	ds 2
-wDD3D:: ;DD3D
+wDD36:: ;DD36
 	ds 1
-wDD3E:: ;DD3E
-	ds 2
-wDD40:: ;DD40
+wCh3SoundLength:: ;DD37
 	ds 1
-wDD41:: ;DD41
+wCh3Volume:: ;DD38
 	ds 1
-wDD42:: ;DD42
-	ds 2
-wSndChl3Vol:: ;DD44
+wDD39:: ;DD39
 	ds 1
-wDD45:: ;DD45
-	ds 3
+wCh3EnvelopeTableTicks:: ;DD3A
+	ds 1
+wCh3EnvelopeTableAddrLow:: ;DD3B
+	ds 1
+wCh3EnvelopeTableAddrHigh:: ;DD3C
+	ds 1
+wCh3PitchBendTableTicks:: ;DD3D
+	ds 1
+wCh3PitchBendTableAddrLow:: ;DD3E
+	ds 1
+wCh3PitchBendTableAddrHigh:: ;DD3F
+	ds 1
+wCh3VibratoTableTicks:: ;DD40
+	ds 1
+wCh3VibratoTableAddrLow:: ;DD41
+	ds 1
+wCh3VibratoTableAddrHigh:: ;DD42
+	ds 1
+wCh3BranchCounter:: ;DD43
+	ds 1
+wChl3ActionId:: ;DD44
+	ds 1
+wCh3DD45:: ;DD45
+	ds 1
+wCh3NextActionAddrLowBkp:: ;DD46
+	ds 1
+wCh3NextActionAddrHighBkp:: ;DD47
+	ds 1
 
-;audio channel #2 wram
-wNoiseChannel:: ;DD48
+
+;audio channel #4 wram
+wChannel4State:: ;DD48 enable channel
 	ds 1
-wDD49:: ;DD49
+wCh4NoteLength:: ;DD49 note length counter
 	ds 1
-wDD4A:: ;DD4A
+wCh4NextActionAddrLow:: ;DD4A channel next note addr low
 	ds 1
-wDD4B:: ;DD4B
-	ds 2
-wDD4D:: ;DD4D
-	ds 5
-wDD52:: ;DD52
+wCh4NextActionAddrHigh:: ;DD4B channel next note addr high
 	ds 1
-wDD53:: ;DD53
-	ds 2
-wDD55:: ;DD55
+wCh4LengthCounter:: ;DD4C snd init & counter/consecutive selection
 	ds 1
-wDD56:: ;DD56
+wCh4PolyCounter:: ;DD4D polynomial counter
 	ds 1
-wDD57:: ;DD57
-	ds 5
-wSndChl4Vol:: ;DD5C
+wDD4E:: ;DD4E
 	ds 1
-wDD5D:: ;DD5D
-	ds 3
+wCh4SoundLength:: ;DD4F sound length?
+	ds 1
+wCh4Envelope:: ;DD50 envelope
+	ds 1
+wDD51:: ;DD51
+	ds 1
+wCh4EnvelopeTableTicks:: ;DD52 envelope ticks counter var
+	ds 1
+wCh4EnvelopeTableAddrLow:: ;DD53 envelope table addr low
+	ds 1
+wCh4EnvelopeTableAddrHigh:: ;DD54 envelope table addr high
+	ds 1
+wCh4PolyCounterTableTicks:: ;DD55 poly counter ticks var
+	ds 1
+wCh4PolyCounterTableAddrLow:: ;DD56 poly counter table addr low
+	ds 1
+wCh4PolyCounterTableAddrHigh:: ;DD57 poly counter table addr high
+	ds 1
+wDD58:: ;DD58 unused vibrato effect on noise
+	ds 1
+wDD59:: ;DD59 unused vibrato effect on noise
+	ds 1
+wDD5A:: ;DD5A unused vibrato effect on noise
+	ds 1
+wCh4BranchCounter:: ;DD5B branch counter
+	ds 1
+wChl4ActionId:: ;DD5C
+	ds 1
+wCh4DD5D:: ;DD5D
+	ds 1
+wCh4NextActionAddrLowBkp:: ;DD5E
+	ds 1
+wCh4NextActionAddrHighBkp:: ;DD5F
+	ds 1
+
 
 
 ;audio control wram
-wDD60:: ;DD60
+wNoteLengthTableAddrLow:: ;DD60 note length table addr high
 	ds 1
 
-wDD61:: ;DD61
+wNoteLengthTableAddrHigh:: ;DD61 note length table addr low
 	ds 1
 
-wDD62:: ;DD62
-	ds 2
-
-wDD64:: ;DD64
+wChlUpdateFunctionAddrLow:: ;DD62 channel update function addr low
+	ds 1
+wChlUpdateFunctionAddrHigh:: ;DD63 channel update function addr high
 	ds 1
 
-wDD65:: ;DD65 channel volume?
+wNoisePolyCounterValue:: ;DD64
 	ds 1
 
-wDD66:: ;DD66
+wChannelActionId:: ;DD65
+	ds 1
+
+wDD66:: ;DD66 channel note id
 	ds 1
 
 wDD67:: ;DD67
 	ds 1
 
-wSoundDD68:: ;DD68
+wChannel1SfxAddrLow:: ;DD68
 	ds 1
 
-wDD69:: ;DD69
+wChannel1SfxAddrHigh:: ;DD69
 	ds 1
 
-wDD6A:: ;DD6A
+wChannel1SfxCounter:: ;DD6A
 	ds 1
 
-wDD6B:: ;DD6B
+wChannel2SfxAddrLow:: ;DD6B
 	ds 1
 
-wDD6C:: ;DD6C
+wChannel2SfxAddrHigh:: ;DD6C
 	ds 1
 
-wDD6D:: ;DD6D
+wChannel2SfxCounter:: ;DD6D
 	ds 1
 
-wDD6E:: ;DD6E
+wChannel3SfxAddrLow:: ;DD6E
 	ds 1
 
-wDD6F:: ;DD6F
+wChannel3SfxAddrHigh:: ;DD6F
 	ds 1
 
-wDD70:: ;DD70
+wChannel3SfxCounter:: ;DD70
 	ds 1
 
-wDD71:: ;DD71
+wChannel4SfxAddrLow:: ;DD71
 	ds 1
 
-wDD72:: ;DD72
+wChannel4SfxAddrHigh:: ;DD72
 	ds 1
 
-wDD73:: ;DD73
+wChannel4SfxCounter:: ;DD73
 	ds 1
 
-wSoundDD74:: ;DD74
+wChannelStateVarAddrLow:: ;DD74
 	ds 1
 
-wSoundDD75:: ;DD75
+wChannelStateVarAddrHigh:: ;DD75
 	ds 1
 
 wNR50ChannelControl:: ;DD76
 	ds 1
 
-wSoundDD77:: ;DD77
+wSoundTempoCounter:: ;DD77
 	ds 1
 
-wSoundDD78:: ;DD78
+wSoundTempo:: ;DD78
 	ds 1
 
 wNR51SoundOutput:: ;DD79
@@ -3998,16 +4085,20 @@ wNR51SoundOutput:: ;DD79
 wLRSoundEnabler:: ;DD7A
 	ds 1
 
-wSoundDD7B:: ;DD7B
+wChannelId:: ;DD7B
+;ch1 = 0
+;ch2 = 1
+;ch3 = 2
+;ch4 = 3
 	ds 1
 
-wDD7C:: ;DD7C
+wChl1CurrentNoteId:: ;DD7C ch1 current note id
 	ds 1
 
-wDD7D:: ;DD7D
+wChl2CurrentNoteId:: ;DD7D ch2 current note id
 	ds 1
 
-wDD7E:: ;DD7E
+wChl3CurrentNoteId:: ;DD7E ch3 current note id
 	ds 1
 
 

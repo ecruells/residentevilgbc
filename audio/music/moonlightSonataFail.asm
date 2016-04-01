@@ -1,175 +1,191 @@
 moonlight_sonata_fail_ch1: ;6708
 	db $67, $FF
 	db $69, $B9
-	db $64, $6C
+	branchId $6C
 	db $E4, $01
-	db $64, $6F
+	branchId $6F
 	db $E4, $01
 	db $66, $01
 	db $24, $00
-	db $61
+	endChannel
 
 moonlight_sonata_fail_ch2: ;6719
-	db $64, $6D
+	branchId $6D
 	db $E4, $01
-	db $64, $70
+	branchId $70
 	db $E4, $01
 	db $24, $00
-	db $61
+	endChannel
 
 moonlight_sonata_fail_ch3: ;6724
-	db $64, $6E
+	branchId $6E
 	db $F0, $01
-	db $64, $71
+	branchId $71
 	db $F0, $01
 	db $24, $00
-	db $61
+	endChannel
 
 moonlight_sonata_fail_ch4: ;672F
-	db $61
+	endChannel
 
-moonlight_sonata_fail: ;6730
-	db $24, $0C
-	db $24, $0C
-	db $24, $0C
-	db $24, $0C
-	db $24, $0B
-	db $44, $C7
-	db $44, $C4
-	db $65, $38
-	db $AE, $3D
-	db $AE, $40
-	db $AE, $38
-	db $AE, $3D
-	db $AE, $3E
-	db $AE, $38
-	db $AE, $3D
-	db $AE, $40
-	db $AE, $38
-	db $AE, $3D
-	db $AE, $40
-	db $AE, $38
-	db $AE, $3C
-	db $AE, $40
-	db $AE, $38
-	db $AE, $3D
-	db $AE, $40
-	db $AE, $38
-	db $AE, $3D
-	db $AE, $40
-	db $AE, $38
-	db $AE, $3D
-	db $AE, $40
-	db $AE, $3B
-	db $AE, $3D
-	db $AE, $3E
-	db $AE, $39
-	db $AE, $3D
-	db $AE, $40
-	db $AE, $39
-	db $AE, $3E
-	db $AE, $42
-	db $AE, $39
-	db $AE, $3F
-	db $AE, $42
-	db $AE, $38
-	db $AE, $3C
-	db $AE, $42
-	db $AE, $38
-	db $AE, $3D
-	db $AE, $40
-	db $AE, $38
-	db $AE, $3E
-	db $AE, $3F
-	db $AE, $36
-	db $AE, $3D
-	db $AE, $3F
-	db $AE, $34
-	db $AE, $38
-	db $AE, $3D
-	db $AE, $38
-	db $AE, $3C
-	db $AE, $40
-	db $AE, $38
-	db $AE, $3D
-	db $AE, $40
-	db $AE, $38
-	db $AE, $3D
-	db $AE, $40
-	db $AE, $65
-	db $A5, $2C
-	db $A3, $2C
-	db $A2, $2A
-	db $9E, $2A
-	db $A0, $2A
-	db $9F, $2A
-	db $A5, $2C
-	db $65, $44
-	db $CB, $44
-	db $C7, $44
-	db $C4, $43
-	db $CA, $45
-	db $CA, $44
-	db $CA, $41
-	db $C8, $48
-	db $C8, $40
-	db $CC, $40
-	db $CC, $65
-	db $38, $AE
-	db $3F, $AE
-	db $42, $AE
-	db $38, $AE
-	db $3F, $AE
-	db $42, $AE
-	db $37, $AE
-	db $3F, $AE
-	db $41, $AE
-	db $38, $AE
-	db $3F, $AE
-	db $41, $AE
-	db $38, $AE
-	db $3D, $AE
-	db $40, $AE
-	db $38, $AE
-	db $3D, $AE
-	db $40, $AE
-	db $39, $AE
-	db $3D, $AE
-	db $42, $AE
-	db $39, $AE
-	db $3D, $AE
-	db $42, $AE
-	db $38, $AE
-	db $3B, $AE
-	db $40, $AE
-	db $38, $AE
-	db $39, $AE
-	db $40, $AE
-	db $3B, $AE
-	db $3B, $AE
-	db $3F, $AE
-	db $39, $AE
-	db $3B, $AE
-	db $3F, $AE
-	db $38, $AE
-	db $3B, $AE
-	db $41, $AE
-	db $38, $AE
-	db $3B, $AE
-	db $40, $AE
-	db $38, $AE
-	db $3C, $AE
-	db $40, $AE
-	db $38, $AE
-	db $3B, $AE
-	db $40, $AE
-	db $38, $CC
-	db $65, $A4
-	db $2C, $A5
-	db $2A, $9D
-	db $2A, $A3
-	db $2A, $A2
-	db $2A, $A8
-	db $2C, $9C
-	db $2C, $65
+
+
+moonlight_sonata_fail_branch_6730: ;6730
+	typenote0 C#6, 0, 12
+	typenote0 C#6, 0, 12
+	typenote0 C#6, 0, 12
+	typenote0 C#6, 0, 12
+	typenote0 C#6, 0, 11
+	typenote0 A_8, 12, 7
+	typenote0 A_8, 12, 4
+	branchEnd
+
+moonlight_sonata_fail_branch_673F: ;673F
+	typenote0 A_7, 10, 14
+	typenote0 D_8, 10, 14
+	typenote0 F_8, 10, 14
+	typenote0 A_7, 10, 14
+	typenote0 D_8, 10, 14
+	typenote0 D#8, 10, 14
+	typenote0 A_7, 10, 14
+	typenote0 D_8, 10, 14
+	typenote0 F_8, 10, 14
+	typenote0 A_7, 10, 14
+	typenote0 D_8, 10, 14
+	typenote0 F_8, 10, 14
+	typenote0 A_7, 10, 14
+	typenote0 C#8, 10, 14
+	typenote0 F_8, 10, 14
+	typenote0 A_7, 10, 14
+	typenote0 D_8, 10, 14
+	typenote0 F_8, 10, 14
+	typenote0 A_7, 10, 14
+	typenote0 D_8, 10, 14
+	typenote0 F_8, 10, 14
+	typenote0 A_7, 10, 14
+	typenote0 D_8, 10, 14
+	typenote0 F_8, 10, 14
+	typenote0 C_8, 10, 14
+	typenote0 D_8, 10, 14
+	typenote0 D#8, 10, 14
+	typenote0 A#7, 10, 14
+	typenote0 D_8, 10, 14
+	typenote0 F_8, 10, 14
+	typenote0 A#7, 10, 14
+	typenote0 D#8, 10, 14
+	typenote0 G_8, 10, 14
+	typenote0 A#7, 10, 14
+	typenote0 E_8, 10, 14
+	typenote0 G_8, 10, 14
+	typenote0 A_7, 10, 14
+	typenote0 C#8, 10, 14
+	typenote0 G_8, 10, 14
+	typenote0 A_7, 10, 14
+	typenote0 D_8, 10, 14
+	typenote0 F_8, 10, 14
+	typenote0 A_7, 10, 14
+	typenote0 D#8, 10, 14
+	typenote0 E_8, 10, 14
+	typenote0 G_7, 10, 14
+	typenote0 D_8, 10, 14
+	typenote0 E_8, 10, 14
+	typenote0 F_7, 10, 14
+	typenote0 A_7, 10, 14
+	typenote0 D_8, 10, 14
+	typenote0 A_7, 10, 14
+	typenote0 C#8, 10, 14
+	typenote0 F_8, 10, 14
+	typenote0 A_7, 10, 14
+	typenote0 D_8, 10, 14
+	typenote0 F_8, 10, 14
+	typenote0 A_7, 10, 14
+	typenote0 D_8, 10, 14
+	typenote0 F_8, 10, 14
+	branchEnd
+
+moonlight_sonata_fail_branch_67B8: ;67B8
+	typenote1 D_6, 2, 12
+	typenote1 C_6, 2, 12
+	typenote1 B_5, 2, 10
+	typenote1 G_5, 2, 10
+	typenote1 A_5, 2, 10
+	typenote1 G#5, 2, 10
+	typenote1 D_6, 2, 12
+	branchEnd
+
+moonlight_sonata_fail_branch_67C7: ;67C7
+	typenote0 A_8, 12, 11
+	typenote0 A_8, 12, 7
+	typenote0 A_8, 12, 4
+	typenote0 G#8, 12, 10
+	typenote0 A#8, 12, 10
+	typenote0 A_8, 12, 10
+	typenote0 F#8, 12, 8
+	typenote0 C#9, 12, 8
+	typenote0 F_8, 12, 12
+	typenote0 F_8, 12, 12
+	branchEnd
+
+moonlight_sonata_fail_branch_67DC: ;67DC
+	typenote0 A_7, 10, 14
+	typenote0 E_8, 10, 14
+	typenote0 G_8, 10, 14
+	typenote0 A_7, 10, 14
+	typenote0 E_8, 10, 14
+	typenote0 G_8, 10, 14
+	typenote0 G#7, 10, 14
+	typenote0 E_8, 10, 14
+	typenote0 F#8, 10, 14
+	typenote0 A_7, 10, 14
+	typenote0 E_8, 10, 14
+	typenote0 F#8, 10, 14
+	typenote0 A_7, 10, 14
+	typenote0 D_8, 10, 14
+	typenote0 F_8, 10, 14
+	typenote0 A_7, 10, 14
+	typenote0 D_8, 10, 14
+	typenote0 F_8, 10, 14
+	typenote0 A#7, 10, 14
+	typenote0 D_8, 10, 14
+	typenote0 G_8, 10, 14
+	typenote0 A#7, 10, 14
+	typenote0 D_8, 10, 14
+	typenote0 G_8, 10, 14
+	typenote0 A_7, 10, 14
+	typenote0 C_8, 10, 14
+	typenote0 F_8, 10, 14
+	typenote0 A_7, 10, 14
+	typenote0 A#7, 10, 14
+	typenote0 F_8, 10, 14
+	typenote0 C_8, 10, 14
+	typenote0 C_8, 10, 14
+	typenote0 E_8, 10, 14
+	typenote0 A#7, 10, 14
+	typenote0 C_8, 10, 14
+	typenote0 E_8, 10, 14
+	typenote0 A_7, 10, 14
+	typenote0 C_8, 10, 14
+	typenote0 F#8, 10, 14
+	typenote0 A_7, 10, 14
+	typenote0 C_8, 10, 14
+	typenote0 F_8, 10, 14
+	typenote0 A_7, 10, 14
+	typenote0 C#8, 10, 14
+	typenote0 F_8, 10, 14
+	typenote0 A_7, 10, 14
+	typenote0 C_8, 10, 14
+	typenote0 F_8, 10, 14
+	typenote0 A_7, 12, 12
+	branchEnd
+
+moonlight_sonata_fail_branch_683F: ;683F
+	typenote1 C#6, 2, 12
+	typenote1 D_6, 2, 10
+	typenote1 F#5, 2, 10
+	typenote1 C_6, 2, 10
+	typenote1 B_5, 2, 10
+	typenote1 F_6, 2, 12
+	typenote1 F_5, 2, 12
+	branchEnd
 ;684E
+

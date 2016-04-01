@@ -1,469 +1,491 @@
 unused_original_theme_05_ch1: ;5ECB
 	db $67, $FF
 	db $69, $BE
-	db $64, $4F
+	branchId $4F
 	db $00, $01
-	db $64, $42
+	branchId $42
 	db $E6, $01
-	db $64, $44
+	branchId $44
 	db $E6, $02
-	db $64, $47
+	branchId $47
 	db $DA, $01
-	db $64, $48
+	branchId $48
 	db $CE, $01
-	db $64, $4B
+	branchId $4B
 	db $E6, $01
-	db $64, $4D
+	branchId $4D
 	db $E6, $01
 	db $66, $01
-	dbw $62, unused_original_theme_05_ch1
+	channelLoop unused_original_theme_05_ch1
 
 unused_original_theme_05_ch2: ;5EF0
-	db $64, $4F
+	branchId $4F
 	db $00, $04
-	db $64, $45
+	branchId $45
 	db $E6, $02
-	db $64, $45
+	branchId $45
 	db $DC, $02
-	db $64, $49
+	branchId $49
 	db $E6, $01
-	db $64, $50
+	branchId $50
 	db $F2, $04
-	db $64, $50
+	branchId $50
 	db $F0, $04
-	db $64, $50
+	branchId $50
 	db $F2, $02
-	db $64, $50
+	branchId $50
 	db $F5, $02
-	db $64, $50
+	branchId $50
 	db $F9, $02
-	db $64, $50
+	branchId $50
 	db $F7, $02
 	db $9E, $BA
 	db $9E, $BA
-	dbw $62, unused_original_theme_05_ch2
+	channelLoop unused_original_theme_05_ch2
 
 unused_original_theme_05_ch3: ;5F1F
-	db $64, $43
+	branchId $43
 	db $F2, $04
-	db $64, $46
+	branchId $46
 	db $F2, $02
-	db $64, $46
+	branchId $46
 	db $F4, $02
-	db $64, $4A
+	branchId $4A
 	db $F2, $01
-	db $64, $4C
+	branchId $4C
 	db $F2, $01
-	db $64, $4E
+	branchId $4E
 	db $F2, $01
-	dbw $62, unused_original_theme_05_ch3
+	channelLoop unused_original_theme_05_ch3
 
 unused_original_theme_05_ch4: ;5F3A
-	db $61
+	endChannel
 
-unused_original_theme_05: ;5F3B
-	db $34, $F8
-	db $33, $F8
-	db $32, $F8
-	db $31, $F8
-	db $30, $F8
-	db $2F, $F8
-	db $2E, $F8
-	db $30, $F8
-	db $34, $F6
-	db $39, $F6
-	db $38, $F6
-	db $33, $F6
-	db $32, $F6
-	db $37, $F6
-	db $36, $F8
-	db $30, $F6
-	db $35, $F6
-	db $34, $F6
-	db $2F, $F6
-	db $2E, $F6
-	db $33, $F6
-	db $31, $F6
-	db $30, $F6
-	db $30, $F6
-	db $39, $F6
-	db $38, $F6
-	db $3B, $F6
-	db $3A, $F6
-	db $37, $F6
-	db $39, $F8
-	db $38, $F6
-	db $35, $F6
-	db $37, $F6
-	db $3B, $F6
-	db $3A, $F6
-	db $37, $F6
-	db $3B, $F8
-	db $65, $A1
-	db $26, $A8
-	db $26, $A7
-	db $26, $A0
-	db $26, $9F
-	db $26, $A6
-	db $26, $A5
-	db $26, $9E
-	db $26, $9D
-	db $26, $A4
-	db $26, $A3
-	db $26, $9C
-	db $26, $9B
-	db $26, $A2
-	db $26, $A0
-	db $28, $65
-	db $3C, $C4
-	db $3C, $C4
-	db $3C, $C4
-	db $3C, $C4
-	db $3C, $C4
-	db $3C, $C4
-	db $3C, $C4
-	db $3C, $C4
-	db $3B, $C4
-	db $3B, $C4
-	db $3B, $C4
-	db $3B, $C4
-	db $3B, $C4
-	db $3B, $C4
-	db $3B, $C4
-	db $3B, $C4
-	db $3A, $C4
-	db $3A, $C4
-	db $3A, $C4
-	db $3A, $C4
-	db $3A, $C4
-	db $3A, $C4
-	db $3A, $C4
-	db $3A, $C4
-	db $39, $C4
-	db $39, $C4
-	db $39, $C4
-	db $39, $C4
-	db $39, $C4
-	db $39, $C4
-	db $39, $C4
-	db $39, $C4
-	db $65, $34
-	db $C4, $34
-	db $C4, $34
-	db $C4, $34
-	db $C4, $34
-	db $C4, $34
-	db $C4, $34
-	db $C4, $34
-	db $C4, $33
-	db $C4, $33
-	db $C4, $33
-	db $C4, $33
-	db $C4, $33
-	db $C4, $33
-	db $C4, $33
-	db $C4, $33
-	db $C4, $32
-	db $C4, $32
-	db $C4, $32
-	db $C4, $32
-	db $C4, $32
-	db $C4, $32
-	db $C4, $32
-	db $C4, $32
-	db $C4, $30
-	db $C4, $30
-	db $C4, $30
-	db $C4, $30
-	db $C4, $30
-	db $C4, $30
-	db $C4, $30
-	db $C4, $30
-	db $C4, $65
-	db $6D, $75
-	db $73, $69
-	db $63, $20
-	db $62, $79
-	db $20, $4D
-	db $41, $52
-	db $4B, $20
-	db $54, $2E
-	db $57, $2E
-	db $20, $43
-	db $4F, $4F
-	db $4B, $53
-	db $45, $59
-	db $20, $41
-	db $50, $52
-	db $49, $4C
-	db $20, $31
-	db $39, $39
-	db $39, $A1
-	db $17, $A1
-	db $17, $A1
-	db $16, $A1
-	db $17, $A1
-	db $17, $A1
-	db $16, $A1
-	db $17, $A1
-	db $17, $A1
-	db $16, $A1
-	db $17, $A1
-	db $17, $A1
-	db $16, $65
-	db $B6, $B4
-	db $BB, $B4
-	db $C2, $B8
-	db $C3, $B4
-	db $C2, $B4
-	db $C1, $BA
-	db $B7, $B4
-	db $BB, $B4
-	db $C0, $B6
-	db $C2, $B6
-	db $C3, $B6
-	db $C7, $B6
-	db $C2, $B6
-	db $BE, $B6
-	db $BD, $B6
-	db $BB, $B4
-	db $BD, $B4
-	db $BE, $B4
-	db $C2, $B7
-	db $C7, $B6
-	db $C8, $B6
-	db $C5, $B6
-	db $C1, $B8
-	db $CC, $B4
-	db $CA, $B4
-	db $C9, $B6
-	db $C7, $B6
-	db $C0, $B6
-	db $C2, $BA
-	db $65, $47
-	db $F4, $49
-	db $F4, $4A
-	db $F6, $4E
-	db $F6, $4F
-	db $F4, $4E
-	db $F4, $4D
-	db $FA, $47
-	db $F6, $49
-	db $F6, $4A
-	db $F6, $4E
-	db $F6, $4F
-	db $FA, $4C
-	db $F7, $4A
-	db $F4, $48
-	db $F6, $45
-	db $F6, $4B
-	db $FA, $45
-	db $F4, $47
-	db $F4, $48
-	db $F6, $45
-	db $F6, $48
-	db $F6, $47
-	db $FA, $65
-	db $42, $C6
-	db $3B, $C6
-	db $3E, $C6
-	db $42, $C6
-	db $41, $C6
-	db $39, $C6
-	db $3C, $C6
-	db $41, $C6
-	db $42, $C6
-	db $3B, $C6
-	db $3E, $C6
-	db $42, $C6
-	db $41, $C6
-	db $39, $C6
-	db $3C, $C6
-	db $41, $C6
-	db $40, $C6
-	db $39, $C6
-	db $3C, $C6
-	db $40, $C6
-	db $3F, $C6
-	db $37, $C6
-	db $3A, $C6
-	db $3F, $C6
-	db $40, $C6
-	db $39, $C6
-	db $3C, $C6
-	db $40, $C6
-	db $3F, $C6
-	db $37, $C6
-	db $3A, $C6
-	db $3F, $C6
-	db $65, $A3
-	db $27, $A3
-	db $24, $AF
-	db $26, $A3
-	db $26, $A3
-	db $27, $A3
-	db $24, $AF
-	db $26, $AF
-	db $26, $A3
-	db $27, $A3
-	db $24, $AF
-	db $26, $A3
-	db $26, $A3
-	db $27, $AF
-	db $27, $A3
-	db $26, $A1
-	db $27, $AD
-	db $27, $AD
-	db $26, $A1
-	db $27, $AD
-	db $27, $AD
-	db $26, $A1
-	db $27, $AD
-	db $27, $AD
-	db $26, $A1
-	db $27, $AD
-	db $27, $AD
-	db $26, $65
-	db $2D, $F8
-	db $2E, $F6
-	db $2B, $F6
-	db $2D, $F7
-	db $30, $F4
-	db $33, $F6
-	db $34, $F6
-	db $2D, $F8
-	db $2E, $F6
-	db $2B, $F6
-	db $2D, $F7
-	db $30, $F4
-	db $33, $F6
-	db $34, $F6
-	db $2B, $F8
-	db $32, $F8
-	db $31, $FA
-	db $2B, $F8
-	db $32, $F8
-	db $31, $FA
-	db $65, $33
-	db $84, $33
-	db $84, $33
-	db $84, $33
-	db $84, $33
-	db $84, $33
-	db $84, $33
-	db $84, $33
-	db $84, $65
-	db $A1, $87
-	db $A1, $84
-	db $A1, $86
-	db $A1, $86
-	db $A1, $87
-	db $A1, $84
-	db $A1, $86
-	db $A1, $86
-	db $A1, $87
-	db $A1, $84
-	db $A1, $86
-	db $A1, $86
-	db $A1, $87
-	db $A1, $84
-	db $A1, $86
-	db $A1, $86
-	db $9F, $87
-	db $9F, $84
-	db $9F, $86
-	db $9F, $86
-	db $9F, $87
-	db $9F, $84
-	db $9F, $86
-	db $9F, $86
-	db $9F, $87
-	db $9F, $84
-	db $9F, $86
-	db $9F, $86
-	db $9F, $87
-	db $9F, $84
-	db $9F, $86
-	db $9F, $86
-	db $65, $39
-	db $F6, $38
-	db $F6, $39
-	db $F6, $3A
-	db $F6, $39
-	db $F6, $38
-	db $F6, $39
-	db $F6, $3A
-	db $F6, $34
-	db $F6, $33
-	db $F6, $34
-	db $F6, $35
-	db $F6, $34
-	db $F6, $33
-	db $F6, $34
-	db $F6, $35
-	db $F6, $36
-	db $F6, $35
-	db $F6, $36
-	db $F6, $37
-	db $F6, $36
-	db $F6, $35
-	db $F6, $36
-	db $F6, $37
-	db $F6, $39
-	db $F6, $38
-	db $F6, $39
-	db $F6, $3A
-	db $F6, $39
-	db $F6, $38
-	db $F6, $39
-	db $F6, $3A
-	db $F6, $3B
-	db $F6, $38
-	db $F6, $34
-	db $F6, $40
-	db $F6, $3B
-	db $F6, $38
-	db $F6, $34
-	db $F8, $65
-	db $A1, $26
-	db $A2, $26
-	db $A1, $26
-	db $A5, $26
-	db $A1, $26
-	db $A2, $26
-	db $A1, $26
-	db $A5, $26
-	db $A4, $26
-	db $A5, $26
-	db $A4, $26
-	db $A7, $26
-	db $A4, $26
-	db $A5, $26
-	db $A4, $26
-	db $A7, $26
-	db $A7, $26
-	db $A6, $26
-	db $A7, $26
-	db $A4, $26
-	db $A7, $26
-	db $A6, $26
-	db $A7, $26
-	db $A4, $26
-	db $A6, $26
-	db $A5, $26
-	db $A6, $26
-	db $A7, $26
-	db $A6, $26
-	db $A5, $26
-	db $A6, $26
-	db $A7, $26
-	db $A8, $28
-	db $9C, $28
-	db $A8, $28
-	db $9C, $28
-	db $65, $24
-	db $0A, $24
-	db $0A, $24
-	db $0A, $24
-	db $0A, $65
+
+unused_original_theme_05_branch_5F3B: ;5F3B
+	typenote0 F_7, 15, 8
+	typenote0 E_7, 15, 8
+	typenote0 D#7, 15, 8
+	typenote0 D_7, 15, 8
+	typenote0 C#7, 15, 8
+	typenote0 C_7, 15, 8
+	typenote0 B_6, 15, 8
+	typenote0 C#7, 15, 8
+	typenote0 F_7, 15, 6
+	typenote0 A#7, 15, 6
+	typenote0 A_7, 15, 6
+	typenote0 E_7, 15, 6
+	typenote0 D#7, 15, 6
+	typenote0 G#7, 15, 6
+	typenote0 G_7, 15, 8
+	typenote0 C#7, 15, 6
+	typenote0 F#7, 15, 6
+	typenote0 F_7, 15, 6
+	typenote0 C_7, 15, 6
+	typenote0 B_6, 15, 6
+	typenote0 E_7, 15, 6
+	typenote0 D_7, 15, 6
+	typenote0 C#7, 15, 6
+	typenote0 C#7, 15, 6
+	typenote0 A#7, 15, 6
+	typenote0 A_7, 15, 6
+	typenote0 C_8, 15, 6
+	typenote0 B_7, 15, 6
+	typenote0 G#7, 15, 6
+	typenote0 A#7, 15, 8
+	typenote0 A_7, 15, 6
+	typenote0 F#7, 15, 6
+	typenote0 G#7, 15, 6
+	typenote0 C_8, 15, 6
+	typenote0 B_7, 15, 6
+	typenote0 G#7, 15, 6
+	typenote0 C_8, 15, 8
+	branchEnd
+
+unused_original_theme_05_branch_5F86: ;5F86
+	typenote1 A#5, 2, 6
+	typenote1 F_6, 2, 6
+	typenote1 E_6, 2, 6
+	typenote1 A_5, 2, 6
+	typenote1 G#5, 2, 6
+	typenote1 D#6, 2, 6
+	typenote1 D_6, 2, 6
+	typenote1 G_5, 2, 6
+	typenote1 F#5, 2, 6
+	typenote1 C#6, 2, 6
+	typenote1 C_6, 2, 6
+	typenote1 F_5, 2, 6
+	typenote1 E_5, 2, 6
+	typenote1 B_5, 2, 6
+	typenote1 A_5, 2, 8
+	branchEnd
+
+unused_original_theme_05_branch_5FA5: ;5FA5
+	typenote0 C#8, 12, 4
+	typenote0 C#8, 12, 4
+	typenote0 C#8, 12, 4
+	typenote0 C#8, 12, 4
+	typenote0 C#8, 12, 4
+	typenote0 C#8, 12, 4
+	typenote0 C#8, 12, 4
+	typenote0 C#8, 12, 4
+	typenote0 C_8, 12, 4
+	typenote0 C_8, 12, 4
+	typenote0 C_8, 12, 4
+	typenote0 C_8, 12, 4
+	typenote0 C_8, 12, 4
+	typenote0 C_8, 12, 4
+	typenote0 C_8, 12, 4
+	typenote0 C_8, 12, 4
+	typenote0 B_7, 12, 4
+	typenote0 B_7, 12, 4
+	typenote0 B_7, 12, 4
+	typenote0 B_7, 12, 4
+	typenote0 B_7, 12, 4
+	typenote0 B_7, 12, 4
+	typenote0 B_7, 12, 4
+	typenote0 B_7, 12, 4
+	typenote0 A#7, 12, 4
+	typenote0 A#7, 12, 4
+	typenote0 A#7, 12, 4
+	typenote0 A#7, 12, 4
+	typenote0 A#7, 12, 4
+	typenote0 A#7, 12, 4
+	typenote0 A#7, 12, 4
+	typenote0 A#7, 12, 4
+	branchEnd
+
+unused_original_theme_05_branch_5FE6: ;5FE6
+	typenote0 F_7, 12, 4
+	typenote0 F_7, 12, 4
+	typenote0 F_7, 12, 4
+	typenote0 F_7, 12, 4
+	typenote0 F_7, 12, 4
+	typenote0 F_7, 12, 4
+	typenote0 F_7, 12, 4
+	typenote0 F_7, 12, 4
+	typenote0 E_7, 12, 4
+	typenote0 E_7, 12, 4
+	typenote0 E_7, 12, 4
+	typenote0 E_7, 12, 4
+	typenote0 E_7, 12, 4
+	typenote0 E_7, 12, 4
+	typenote0 E_7, 12, 4
+	typenote0 E_7, 12, 4
+	typenote0 D#7, 12, 4
+	typenote0 D#7, 12, 4
+	typenote0 D#7, 12, 4
+	typenote0 D#7, 12, 4
+	typenote0 D#7, 12, 4
+	typenote0 D#7, 12, 4
+	typenote0 D#7, 12, 4
+	typenote0 D#7, 12, 4
+	typenote0 C#7, 12, 4
+	typenote0 C#7, 12, 4
+	typenote0 C#7, 12, 4
+	typenote0 C#7, 12, 4
+	typenote0 C#7, 12, 4
+	typenote0 C#7, 12, 4
+	typenote0 C#7, 12, 4
+	typenote0 C#7, 12, 4
+	branchEnd
+
+;6027
+	db "music by MARK T.W. COOKSEY APRIL 1999"
+
+
+unused_original_theme_05_branch_604C: ;604C
+	typenote1 A#5, 1, 7
+	typenote1 A#5, 1, 7
+	typenote1 A#5, 1, 6
+	typenote1 A#5, 1, 7
+	typenote1 A#5, 1, 7
+	typenote1 A#5, 1, 6
+	typenote1 A#5, 1, 7
+	typenote1 A#5, 1, 7
+	typenote1 A#5, 1, 6
+	typenote1 A#5, 1, 7
+	typenote1 A#5, 1, 7
+	typenote1 A#5, 1, 6
+	branchEnd
+
+unused_original_theme_05_branch_6065: ;6065
+	typenote1 G_7, 11, 4
+	typenote1 C_8, 11, 4
+	typenote1 G_8, 11, 8
+	typenote1 G#8, 11, 4
+	typenote1 G_8, 11, 4
+	typenote1 F#8, 11, 10
+	typenote1 G#7, 11, 4
+	typenote1 C_8, 11, 4
+	typenote1 F_8, 11, 6
+	typenote1 G_8, 11, 6
+	typenote1 G#8, 11, 6
+	typenote1 C_9, 11, 6
+	typenote1 G_8, 11, 6
+	typenote1 D#8, 11, 6
+	typenote1 D_8, 11, 6
+	typenote1 C_8, 11, 4
+	typenote1 D_8, 11, 4
+	typenote1 D#8, 11, 4
+	typenote1 G_8, 11, 7
+	typenote1 C_9, 11, 6
+	typenote1 C#9, 11, 6
+	typenote1 A#8, 11, 6
+	typenote1 F#8, 11, 8
+	typenote1 F_9, 11, 4
+	typenote1 D#9, 11, 4
+	typenote1 D_9, 11, 6
+	typenote1 C_9, 11, 6
+	typenote1 F_8, 11, 6
+	typenote1 G_8, 11, 10
+	branchEnd
+
+unused_original_theme_05_branch_60A0: ;60A0
+	typenote0 C_9, 15, 4
+	typenote0 D_9, 15, 4
+	typenote0 D#9, 15, 6
+	typenote0 G_9, 15, 6
+	typenote0 G#9, 15, 4
+	typenote0 G_9, 15, 4
+	typenote0 F#9, 15, 10
+	typenote0 C_9, 15, 6
+	typenote0 D_9, 15, 6
+	typenote0 D#9, 15, 6
+	typenote0 G_9, 15, 6
+	typenote0 G#9, 15, 10
+	typenote0 F_9, 15, 7
+	typenote0 D#9, 15, 4
+	typenote0 C#9, 15, 6
+	typenote0 A#8, 15, 6
+	typenote0 E_9, 15, 10
+	typenote0 A#8, 15, 4
+	typenote0 C_9, 15, 4
+	typenote0 C#9, 15, 6
+	typenote0 A#8, 15, 6
+	typenote0 C#9, 15, 6
+	typenote0 C_9, 15, 10
+	branchEnd
+
+unused_original_theme_05_branch_60CF: ;60CF
+	typenote0 G_8, 12, 6
+	typenote0 C_8, 12, 6
+	typenote0 D#8, 12, 6
+	typenote0 G_8, 12, 6
+	typenote0 F#8, 12, 6
+	typenote0 A#7, 12, 6
+	typenote0 C#8, 12, 6
+	typenote0 F#8, 12, 6
+	typenote0 G_8, 12, 6
+	typenote0 C_8, 12, 6
+	typenote0 D#8, 12, 6
+	typenote0 G_8, 12, 6
+	typenote0 F#8, 12, 6
+	typenote0 A#7, 12, 6
+	typenote0 C#8, 12, 6
+	typenote0 F#8, 12, 6
+	typenote0 F_8, 12, 6
+	typenote0 A#7, 12, 6
+	typenote0 C#8, 12, 6
+	typenote0 F_8, 12, 6
+	typenote0 E_8, 12, 6
+	typenote0 G#7, 12, 6
+	typenote0 B_7, 12, 6
+	typenote0 E_8, 12, 6
+	typenote0 F_8, 12, 6
+	typenote0 A#7, 12, 6
+	typenote0 C#8, 12, 6
+	typenote0 F_8, 12, 6
+	typenote0 E_8, 12, 6
+	typenote0 G#7, 12, 6
+	typenote0 B_7, 12, 6
+	typenote0 E_8, 12, 6
+	branchEnd
+
+unused_original_theme_05_branch_6110: ;6110
+	typenote1 C_6, 2, 7
+	typenote1 C_6, 2, 4
+	typenote1 C_7, 2, 6
+	typenote1 C_6, 2, 6
+	typenote1 C_6, 2, 7
+	typenote1 C_6, 2, 4
+	typenote1 C_7, 2, 6
+	typenote1 C_7, 2, 6
+	typenote1 C_6, 2, 7
+	typenote1 C_6, 2, 4
+	typenote1 C_7, 2, 6
+	typenote1 C_6, 2, 6
+	typenote1 C_6, 2, 7
+	typenote1 C_7, 2, 7
+	typenote1 C_6, 2, 6
+	typenote1 A#5, 2, 7
+	typenote1 A#6, 2, 7
+	typenote1 A#6, 2, 6
+	typenote1 A#5, 2, 7
+	typenote1 A#6, 2, 7
+	typenote1 A#6, 2, 6
+	typenote1 A#5, 2, 7
+	typenote1 A#6, 2, 7
+	typenote1 A#6, 2, 6
+	typenote1 A#5, 2, 7
+	typenote1 A#6, 2, 7
+	typenote1 A#6, 2, 6
+	branchEnd
+
+unused_original_theme_05_branch_6147: ;6147
+	typenote0 A#6, 15, 8
+	typenote0 B_6, 15, 6
+	typenote0 G#6, 15, 6
+	typenote0 A#6, 15, 7
+	typenote0 C#7, 15, 4
+	typenote0 E_7, 15, 6
+	typenote0 F_7, 15, 6
+	typenote0 A#6, 15, 8
+	typenote0 B_6, 15, 6
+	typenote0 G#6, 15, 6
+	typenote0 A#6, 15, 7
+	typenote0 C#7, 15, 4
+	typenote0 E_7, 15, 6
+	typenote0 F_7, 15, 6
+	typenote0 G#6, 15, 8
+	typenote0 D#7, 15, 8
+	typenote0 D_7, 15, 10
+	typenote0 G#6, 15, 8
+	typenote0 D#7, 15, 8
+	typenote0 D_7, 15, 10
+	branchEnd
+
+unused_original_theme_05_branch_6170: ;6170
+	typenote0 E_7, 8, 4
+	typenote0 E_7, 8, 4
+	typenote0 E_7, 8, 4
+	typenote0 E_7, 8, 4
+	typenote0 E_7, 8, 4
+	typenote0 E_7, 8, 4
+	typenote0 E_7, 8, 4
+	typenote0 E_7, 8, 4
+	branchEnd
+
+unused_original_theme_05_branch_6181: ;6181
+	typenote1 A#5, 8, 7
+	typenote1 A#5, 8, 4
+	typenote1 A#5, 8, 6
+	typenote1 A#5, 8, 6
+	typenote1 A#5, 8, 7
+	typenote1 A#5, 8, 4
+	typenote1 A#5, 8, 6
+	typenote1 A#5, 8, 6
+	typenote1 A#5, 8, 7
+	typenote1 A#5, 8, 4
+	typenote1 A#5, 8, 6
+	typenote1 A#5, 8, 6
+	typenote1 A#5, 8, 7
+	typenote1 A#5, 8, 4
+	typenote1 A#5, 8, 6
+	typenote1 A#5, 8, 6
+	typenote1 G#5, 8, 7
+	typenote1 G#5, 8, 4
+	typenote1 G#5, 8, 6
+	typenote1 G#5, 8, 6
+	typenote1 G#5, 8, 7
+	typenote1 G#5, 8, 4
+	typenote1 G#5, 8, 6
+	typenote1 G#5, 8, 6
+	typenote1 G#5, 8, 7
+	typenote1 G#5, 8, 4
+	typenote1 G#5, 8, 6
+	typenote1 G#5, 8, 6
+	typenote1 G#5, 8, 7
+	typenote1 G#5, 8, 4
+	typenote1 G#5, 8, 6
+	typenote1 G#5, 8, 6
+	branchEnd
+
+unused_original_theme_05_branch_61C2: ;61C2
+	typenote0 A#7, 15, 6
+	typenote0 A_7, 15, 6
+	typenote0 A#7, 15, 6
+	typenote0 B_7, 15, 6
+	typenote0 A#7, 15, 6
+	typenote0 A_7, 15, 6
+	typenote0 A#7, 15, 6
+	typenote0 B_7, 15, 6
+	typenote0 F_7, 15, 6
+	typenote0 E_7, 15, 6
+	typenote0 F_7, 15, 6
+	typenote0 F#7, 15, 6
+	typenote0 F_7, 15, 6
+	typenote0 E_7, 15, 6
+	typenote0 F_7, 15, 6
+	typenote0 F#7, 15, 6
+	typenote0 G_7, 15, 6
+	typenote0 F#7, 15, 6
+	typenote0 G_7, 15, 6
+	typenote0 G#7, 15, 6
+	typenote0 G_7, 15, 6
+	typenote0 F#7, 15, 6
+	typenote0 G_7, 15, 6
+	typenote0 G#7, 15, 6
+	typenote0 A#7, 15, 6
+	typenote0 A_7, 15, 6
+	typenote0 A#7, 15, 6
+	typenote0 B_7, 15, 6
+	typenote0 A#7, 15, 6
+	typenote0 A_7, 15, 6
+	typenote0 A#7, 15, 6
+	typenote0 B_7, 15, 6
+	typenote0 C_8, 15, 6
+	typenote0 A_7, 15, 6
+	typenote0 F_7, 15, 6
+	typenote0 F_8, 15, 6
+	typenote0 C_8, 15, 6
+	typenote0 A_7, 15, 6
+	typenote0 F_7, 15, 8
+	branchEnd
+
+unused_original_theme_05_branch_6211: ;6211
+	typenote1 A#5, 2, 6
+	typenote1 B_5, 2, 6
+	typenote1 A#5, 2, 6
+	typenote1 D_6, 2, 6
+	typenote1 A#5, 2, 6
+	typenote1 B_5, 2, 6
+	typenote1 A#5, 2, 6
+	typenote1 D_6, 2, 6
+	typenote1 C#6, 2, 6
+	typenote1 D_6, 2, 6
+	typenote1 C#6, 2, 6
+	typenote1 E_6, 2, 6
+	typenote1 C#6, 2, 6
+	typenote1 D_6, 2, 6
+	typenote1 C#6, 2, 6
+	typenote1 E_6, 2, 6
+	typenote1 E_6, 2, 6
+	typenote1 D#6, 2, 6
+	typenote1 E_6, 2, 6
+	typenote1 C#6, 2, 6
+	typenote1 E_6, 2, 6
+	typenote1 D#6, 2, 6
+	typenote1 E_6, 2, 6
+	typenote1 C#6, 2, 6
+	typenote1 D#6, 2, 6
+	typenote1 D_6, 2, 6
+	typenote1 D#6, 2, 6
+	typenote1 E_6, 2, 6
+	typenote1 D#6, 2, 6
+	typenote1 D_6, 2, 6
+	typenote1 D#6, 2, 6
+	typenote1 E_6, 2, 6
+	typenote1 F_6, 2, 8
+	typenote1 F_5, 2, 8
+	typenote1 F_6, 2, 8
+	typenote1 F_5, 2, 8
+	branchEnd
+
+unused_original_theme_05_branch_625A: ;625A
+	typenote0 C#6, 0, 10
+	typenote0 C#6, 0, 10
+	typenote0 C#6, 0, 10
+	typenote0 C#6, 0, 10
+	branchEnd
 ;6263

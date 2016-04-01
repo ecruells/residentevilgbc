@@ -1,71 +1,76 @@
 wandering_about_theme_ch1: ;5E51
 	db $67, $FF
 	db $69, $B4
-	db $64, $40
+	branchId $40
 	db $E6, $01
 	db $66, $01
-	dbw $62, wandering_about_theme_ch1
+	channelLoop wandering_about_theme_ch1
 
 wandering_about_theme_ch2: ;5E5E
-	db $61
+	endChannel
 
 wandering_about_theme_ch3: ;5E5F
-	db $64, $41
+	branchId $41
 	db $E6, $01
-	dbw $62, wandering_about_theme_ch3
+	channelLoop wandering_about_theme_ch3
 
 wandering_about_theme_ch4: ;5E66
-	db $61
+	endChannel
 
-wandering_about_theme: ;5E67 unused mansion theme
-	db $24, $0A
-	db $24, $0A
-	db $24, $0A
-	db $24, $0A
-	db $36, $F8
-	db $37, $FB
-	db $33, $FC
-	db $3F, $F8
-	db $3E, $F8
-	db $3D, $F9
-	db $38, $F6
-	db $3B, $FB
-	db $3C, $FC
-	db $24, $08
-	db $42, $F8
-	db $43, $FA
-	db $3F, $FB
-	db $32, $FA
-	db $31, $F8
-	db $30, $FA
-	db $31, $F8
-	db $32, $F8
-	db $37, $F8
-	db $34, $F8
-	db $3A, $F8
-	db $39, $FC
-	db $65, $AA
-	db $28, $AB
-	db $2B, $A7
-	db $2C, $AA
-	db $28, $AB
-	db $2B, $A7
-	db $2C, $A6
-	db $28, $AB
-	db $28, $B0
-	db $29, $AC
-	db $26, $AD
-	db $2C, $AE
-	db $2C, $AA
-	db $28, $AB
-	db $2B, $A7
-	db $2A, $A6
-	db $2A, $A5
-	db $28, $A4
-	db $2A, $A5
-	db $2A, $AB
-	db $28, $A8
-	db $28, $AE
-	db $28, $AD
-	db $2C, $65
+
+
+wandering_about_theme_branch_5E67: ;5E67
+	typenote0 C#6, 0, 10
+	typenote0 C#6, 0, 10
+	typenote0 C#6, 0, 10
+	typenote0 C#6, 0, 10
+	typenote0 G_7, 15, 8
+	typenote0 G#7, 15, 11
+	typenote0 E_7, 15, 12
+	typenote0 E_8, 15, 8
+	typenote0 D#8, 15, 8
+	typenote0 D_8, 15, 9
+	typenote0 A_7, 15, 6
+	typenote0 C_8, 15, 11
+	typenote0 C#8, 15, 12
+	typenote0 C#6, 0, 8
+	typenote0 G_8, 15, 8
+	typenote0 G#8, 15, 10
+	typenote0 E_8, 15, 11
+	typenote0 D#7, 15, 10
+	typenote0 D_7, 15, 8
+	typenote0 C#7, 15, 10
+	typenote0 D_7, 15, 8
+	typenote0 D#7, 15, 8
+	typenote0 G#7, 15, 8
+	typenote0 F_7, 15, 8
+	typenote0 B_7, 15, 8
+	typenote0 A#7, 15, 12
+	branchEnd
+
+wandering_about_theme_branch_5E9C: ;5E9C
+	typenote1 G_6, 2, 8
+	typenote1 G#6, 2, 11
+	typenote1 E_6, 2, 12
+	typenote1 G_6, 2, 8
+	typenote1 G#6, 2, 11
+	typenote1 E_6, 2, 12
+	typenote1 D#6, 2, 8
+	typenote1 G#6, 2, 8
+	typenote1 C#7, 2, 9
+	typenote1 A_6, 2, 6
+	typenote1 A#6, 2, 12
+	typenote1 B_6, 2, 12
+	typenote1 G_6, 2, 8
+	typenote1 G#6, 2, 11
+	typenote1 E_6, 2, 10
+	typenote1 D#6, 2, 10
+	typenote1 D_6, 2, 8
+	typenote1 C#6, 2, 10
+	typenote1 D_6, 2, 10
+	typenote1 G#6, 2, 8
+	typenote1 F_6, 2, 8
+	typenote1 B_6, 2, 8
+	typenote1 A#6, 2, 12
+	branchEnd
 ;5ECB

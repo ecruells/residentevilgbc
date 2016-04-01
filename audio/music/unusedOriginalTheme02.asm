@@ -5,221 +5,237 @@ unused_original_theme_02_ch1: ;54A3
 	db $24, $0A
 	db $24, $0A
 	db $24, $0A
-	db $64, $1A
+	branchId $1A
 	db $E2, $01
-	db $64, $1B
+	branchId $1B
 	db $E2, $01
 	db $66, $01
-	dbw $62, unused_original_theme_02_ch1
+	channelLoop unused_original_theme_02_ch1
 
 unused_original_theme_02_ch2: ;54BC
-	db $64, $1C
+	branchId $1C
 	db $E2, $01
-	db $64, $1C
+	branchId $1C
 	db $E0, $01
-	db $64, $1C
+	branchId $1C
 	db $E2, $02
-	db $64, $1C
+	branchId $1C
 	db $E0, $02
-	db $64, $1C
+	branchId $1C
 	db $E2, $02
-	dbw $62, unused_original_theme_02_ch2
+	channelLoop unused_original_theme_02_ch2
 
 unused_original_theme_02_ch3: ;54D3
-	db $64, $1D
+	branchId $1D
 	db $EE, $01
-	db $64, $1D
+	branchId $1D
 	db $EC, $01
-	db $64, $1D
+	branchId $1D
 	db $EE, $02
-	db $64, $1D
+	branchId $1D
 	db $EC, $02
-	db $64, $1D
+	branchId $1D
 	db $EE, $02
-	dbw $62, unused_original_theme_02_ch3
+	channelLoop unused_original_theme_02_ch3
 
 unused_original_theme_02_ch4: ;54EA
-	db $64, $1E
+	branchId $1E
 	db $00, $01
-	db $64, $1F
+	branchId $1F
 	db $00, $01
-	dbw $62, unused_original_theme_02_ch4
+	channelLoop unused_original_theme_02_ch4
 
-unused_original_theme_02: ;54F5
-	db $3C, $F2
-	db $3F, $F2
-	db $43, $F2
-	db $44, $F5
-	db $43, $F8
-	db $24, $04
-	db $42, $FA
-	db $3C, $F2
-	db $3F, $F2
-	db $43, $F2
-	db $44, $F5
-	db $43, $F8
-	db $44, $F2
-	db $45, $F2
-	db $47, $F8
-	db $46, $F8
-	db $65, $3A
-	db $F2, $3D
-	db $F2, $41
-	db $F2, $42
-	db $F5, $41
-	db $F6, $41
-	db $F2, $3F
-	db $F2, $3D
-	db $F2, $3F
-	db $F2, $3D
-	db $F4, $3C
-	db $F4, $3D
-	db $F2, $3A
-	db $F7, $24
-	db $02, $38
-	db $F4, $3A
-	db $F4, $3D
-	db $F4, $3A
-	db $F2, $3D
-	db $F2, $3F
-	db $F2, $41
-	db $F4, $42
-	db $F2, $41
-	db $F2, $3F
-	db $F2, $41
-	db $F4, $3F
-	db $F4, $3D
-	db $F4, $3A
-	db $F4, $3D
-	db $F9, $3D
-	db $F2, $3F
-	db $F2, $41
-	db $F4, $43
-	db $FA, $3C
-	db $F2, $3F
-	db $F2, $43
-	db $F2, $44
-	db $F5, $43
-	db $F4, $3C
-	db $F2, $3F
-	db $F2, $43
-	db $F2, $44
-	db $F5, $43
-	db $F4, $3C
-	db $FC, $24
-	db $00, $65
-	db $30, $D2
-	db $30, $D2
-	db $30, $D2
-	db $30, $D2
-	db $30, $D2
-	db $30, $D2
-	db $30, $D2
-	db $30, $D2
-	db $30, $D2
-	db $30, $D2
-	db $30, $D2
-	db $31, $D2
-	db $31, $D2
-	db $31, $D2
-	db $2E, $D2
-	db $2E, $D2
-	db $30, $D2
-	db $30, $D2
-	db $30, $D2
-	db $30, $D2
-	db $30, $D2
-	db $30, $D2
-	db $30, $D2
-	db $30, $D2
-	db $30, $D2
-	db $30, $D2
-	db $30, $D2
-	db $31, $D2
-	db $31, $D2
-	db $31, $D2
-	db $2E, $D2
-	db $2E, $D2
-	db $65, $A4
-	db $15, $A4
-	db $14, $A4
-	db $12, $98
-	db $15, $98
-	db $14, $98
-	db $12, $9F
-	db $14, $A2
-	db $14, $A4
-	db $15, $A4
-	db $14, $9F
-	db $12, $98
-	db $15, $98
-	db $14, $98
-	db $12, $9F
-	db $14, $A2
-	db $14, $65
-	db $18, $12
-	db $1E, $32
-	db $1E, $32
-	db $18, $12
-	db $18, $12
-	db $1E, $32
-	db $1A, $22
-	db $1E, $32
-	db $1E, $32
-	db $18, $12
-	db $1E, $32
-	db $18, $12
-	db $18, $12
-	db $1E, $32
-	db $1A, $22
-	db $1E, $32
-	db $18, $12
-	db $1E, $32
-	db $1E, $32
-	db $18, $12
-	db $1E, $32
-	db $18, $12
-	db $1A, $22
-	db $18, $12
-	db $18, $12
-	db $1E, $32
-	db $18, $12
-	db $1E, $32
-	db $1A, $22
-	db $1A, $22
-	db $1A, $22
-	db $1E, $32
-	db $65, $18
-	db $12, $1E
-	db $42, $1E
-	db $42, $18
-	db $12, $1E
-	db $42, $1A
-	db $22, $18
-	db $12, $1E
-	db $42, $1A
-	db $22, $18
-	db $12, $1A
-	db $22, $1E
-	db $42, $18
-	db $12, $1E
-	db $42, $18
-	db $12, $1E
-	db $42, $18
-	db $12, $18
-	db $12, $1E
-	db $42, $1A
-	db $22, $1E
-	db $42, $18
-	db $12, $1A
-	db $22, $1E
-	db $42, $18
-	db $12, $1E
-	db $42, $18
-	db $12, $1E
-	db $42, $1A
-	db $22, $1A
-	db $22, $1A
-	db $22, $1E
-	db $42, $65
+
+
+unused_original_theme_02_branch_54F5: ;54F5
+	typenote0 C#8, 15, 2
+	typenote0 E_8, 15, 2
+	typenote0 G#8, 15, 2
+	typenote0 A_8, 15, 5
+	typenote0 G#8, 15, 8
+	typenote0 C#6, 0, 4
+	typenote0 G_8, 15, 10
+	typenote0 C#8, 15, 2
+	typenote0 E_8, 15, 2
+	typenote0 G#8, 15, 2
+	typenote0 A_8, 15, 5
+	typenote0 G#8, 15, 8
+	typenote0 A_8, 15, 2
+	typenote0 A#8, 15, 2
+	typenote0 C_9, 15, 8
+	typenote0 B_8, 15, 8
+	branchEnd
+
+unused_original_theme_02_branch_5516: ;5516
+	typenote0 B_7, 15, 2
+	typenote0 D_8, 15, 2
+	typenote0 F#8, 15, 2
+	typenote0 G_8, 15, 5
+	typenote0 F#8, 15, 6
+	typenote0 F#8, 15, 2
+	typenote0 E_8, 15, 2
+	typenote0 D_8, 15, 2
+	typenote0 E_8, 15, 2
+	typenote0 D_8, 15, 4
+	typenote0 C#8, 15, 4
+	typenote0 D_8, 15, 2
+	typenote0 B_7, 15, 7
+	typenote0 C#6, 0, 2
+	typenote0 A_7, 15, 4
+	typenote0 B_7, 15, 4
+	typenote0 D_8, 15, 4
+	typenote0 B_7, 15, 2
+	typenote0 D_8, 15, 2
+	typenote0 E_8, 15, 2
+	typenote0 F#8, 15, 4
+	typenote0 G_8, 15, 2
+	typenote0 F#8, 15, 2
+	typenote0 E_8, 15, 2
+	typenote0 F#8, 15, 4
+	typenote0 E_8, 15, 4
+	typenote0 D_8, 15, 4
+	typenote0 B_7, 15, 4
+	typenote0 D_8, 15, 9
+	typenote0 D_8, 15, 2
+	typenote0 E_8, 15, 2
+	typenote0 F#8, 15, 4
+	typenote0 G#8, 15, 10
+	typenote0 C#8, 15, 2
+	typenote0 E_8, 15, 2
+	typenote0 G#8, 15, 2
+	typenote0 A_8, 15, 5
+	typenote0 G#8, 15, 4
+	typenote0 C#8, 15, 2
+	typenote0 E_8, 15, 2
+	typenote0 G#8, 15, 2
+	typenote0 A_8, 15, 5
+	typenote0 G#8, 15, 4
+	typenote0 C#8, 15, 12
+	typenote0 C#6, 0, 0
+	branchEnd
+
+unused_original_theme_02_branch_5571: ;5571
+	typenote0 C#7, 13, 2
+	typenote0 C#7, 13, 2
+	typenote0 C#7, 13, 2
+	typenote0 C#7, 13, 2
+	typenote0 C#7, 13, 2
+	typenote0 C#7, 13, 2
+	typenote0 C#7, 13, 2
+	typenote0 C#7, 13, 2
+	typenote0 C#7, 13, 2
+	typenote0 C#7, 13, 2
+	typenote0 C#7, 13, 2
+	typenote0 D_7, 13, 2
+	typenote0 D_7, 13, 2
+	typenote0 D_7, 13, 2
+	typenote0 B_6, 13, 2
+	typenote0 B_6, 13, 2
+	typenote0 C#7, 13, 2
+	typenote0 C#7, 13, 2
+	typenote0 C#7, 13, 2
+	typenote0 C#7, 13, 2
+	typenote0 C#7, 13, 2
+	typenote0 C#7, 13, 2
+	typenote0 C#7, 13, 2
+	typenote0 C#7, 13, 2
+	typenote0 C#7, 13, 2
+	typenote0 C#7, 13, 2
+	typenote0 C#7, 13, 2
+	typenote0 D_7, 13, 2
+	typenote0 D_7, 13, 2
+	typenote0 D_7, 13, 2
+	typenote0 B_6, 13, 2
+	typenote0 B_6, 13, 2
+	branchEnd
+
+unused_original_theme_02_branch_55B2: ;55B2
+	typenote1 C#6, 1, 5
+	typenote1 C#6, 1, 4
+	typenote1 C#6, 1, 2
+	typenote1 C#5, 1, 5
+	typenote1 C#5, 1, 4
+	typenote1 C#5, 1, 2
+	typenote1 G#5, 1, 4
+	typenote1 B_5, 1, 4
+	typenote1 C#6, 1, 5
+	typenote1 C#6, 1, 4
+	typenote1 G#5, 1, 2
+	typenote1 C#5, 1, 5
+	typenote1 C#5, 1, 4
+	typenote1 C#5, 1, 2
+	typenote1 G#5, 1, 4
+	typenote1 B_5, 1, 4
+	branchEnd
+
+unused_original_theme_02_branch_55D3: ;55D3
+	typenote0 C#5, 1, 2
+	typenote0 G_5, 3, 2
+	typenote0 G_5, 3, 2
+	typenote0 C#5, 1, 2
+	typenote0 C#5, 1, 2
+	typenote0 G_5, 3, 2
+	typenote0 D#5, 2, 2
+	typenote0 G_5, 3, 2
+	typenote0 G_5, 3, 2
+	typenote0 C#5, 1, 2
+	typenote0 G_5, 3, 2
+	typenote0 C#5, 1, 2
+	typenote0 C#5, 1, 2
+	typenote0 G_5, 3, 2
+	typenote0 D#5, 2, 2
+	typenote0 G_5, 3, 2
+	typenote0 C#5, 1, 2
+	typenote0 G_5, 3, 2
+	typenote0 G_5, 3, 2
+	typenote0 C#5, 1, 2
+	typenote0 G_5, 3, 2
+	typenote0 C#5, 1, 2
+	typenote0 D#5, 2, 2
+	typenote0 C#5, 1, 2
+	typenote0 C#5, 1, 2
+	typenote0 G_5, 3, 2
+	typenote0 C#5, 1, 2
+	typenote0 G_5, 3, 2
+	typenote0 D#5, 2, 2
+	typenote0 D#5, 2, 2
+	typenote0 D#5, 2, 2
+	typenote0 G_5, 3, 2
+	branchEnd
+
+unused_original_theme_02_branch_5614: ;5614
+	typenote0 C#5, 1, 2
+	typenote0 G_5, 4, 2
+	typenote0 G_5, 4, 2
+	typenote0 C#5, 1, 2
+	typenote0 G_5, 4, 2
+	typenote0 D#5, 2, 2
+	typenote0 C#5, 1, 2
+	typenote0 G_5, 4, 2
+	typenote0 D#5, 2, 2
+	typenote0 C#5, 1, 2
+	typenote0 D#5, 2, 2
+	typenote0 G_5, 4, 2
+	typenote0 C#5, 1, 2
+	typenote0 G_5, 4, 2
+	typenote0 C#5, 1, 2
+	typenote0 G_5, 4, 2
+	typenote0 C#5, 1, 2
+	typenote0 C#5, 1, 2
+	typenote0 G_5, 4, 2
+	typenote0 D#5, 2, 2
+	typenote0 G_5, 4, 2
+	typenote0 C#5, 1, 2
+	typenote0 D#5, 2, 2
+	typenote0 G_5, 4, 2
+	typenote0 C#5, 1, 2
+	typenote0 G_5, 4, 2
+	typenote0 C#5, 1, 2
+	typenote0 G_5, 4, 2
+	typenote0 D#5, 2, 2
+	typenote0 D#5, 2, 2
+	typenote0 D#5, 2, 2
+	typenote0 G_5, 4, 2
+	branchEnd
 ;5655
+

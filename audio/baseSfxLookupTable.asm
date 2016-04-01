@@ -63,3 +63,4 @@ BaseSfxLookupTable:	;06:6E9E
 	dw base_sfx_7A42
 	dw base_sfx_7A49
 	dw base_sfx_7A50
+;6F1C
