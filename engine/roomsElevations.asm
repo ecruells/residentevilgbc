@@ -212,7 +212,7 @@ applyPlayerElevation:: ;0F:5BB0
     ret
 
 .setMapStatueRoomEscalatorElevation ;0F:5D0E
-    ld a, [wSpriteDataC31F]
+    ld a, [wStepLadderElevationMode]
     or a
     ret z
     ld a, [wSpritePositionZLow]
@@ -242,7 +242,7 @@ applyPlayerElevation:: ;0F:5BB0
     ret
 
 .setCrankRoomEscalatorElevation ;0F:5D3A
-    ld a, [wSpriteDataC31F]
+    ld a, [wStepLadderElevationMode]
     or a
     ret z
     ld a, [wSpritePositionXLow]
@@ -279,7 +279,7 @@ applyPlayerElevation:: ;0F:5BB0
     ret
 
 .setSurgeryMorgueRoomElevation ;0F:5D71
-    ld a, [wSpriteDataC31F]
+    ld a, [wStepLadderElevationMode]
     or a
     ret z
     ld a, [wSpritePositionXLow]

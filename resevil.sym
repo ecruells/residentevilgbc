@@ -5476,7 +5476,7 @@ FF:4033 playSample.sampleUpdateLoop
 00:C120 wOAMDMAretOpcode
 00:C117 wHDMAtrigger
 00:C103 wc103
-00:C112 wPlayerSpeed
+00:C112 wFrameRate
 00:C1B0 wAnimatedRoomSpritesFrameRate
 00:C200 wVisitedRoom00Trigger
 00:C11F wRoomScreen
@@ -5490,7 +5490,7 @@ FF:4033 playSample.sampleUpdateLoop
 00:C105 wLCDUpdate
 00:C1FE wRoomMusicId
 00:C1BF wEventId
-00:C1C4 wTimer
+00:C1C4 wFrameRateCounter
 00:C1C5 wc1c5
 00:C30B wSpriteId
 00:C301 wSpriteZOrder
@@ -5500,7 +5500,7 @@ FF:4033 playSample.sampleUpdateLoop
 00:C17E wButtonAEventId
 00:C1C3 wDoorAnimationType
 00:C306 wSpriteAnimationId
-00:C307 wSpriteAnimationLoopTimer
+00:C307 wSpriteAnimationFrameId
 00:C1B8 wFoundItemId
 00:C1F4 selectedItemId
 00:C1C6 wLoadEventBgImagePal
@@ -5772,9 +5772,9 @@ FF:4033 playSample.sampleUpdateLoop
 00:C2FC wOverlapC2FC
 00:C2F9 wOverlapMaskAddrLow
 00:C2FA wOverlapMaskAddrHigh
-00:C30F wSprtScreenTrigger
+00:C30F wZombieAndObjectVarId
 00:C31D wSpriteDataC31D
-00:C31F wSpriteDataC31F
+00:C31F wStepLadderElevationMode
 00:C2CF wNumericPanelKey06Value
 00:C2D5 wNumericPanelKey08Value
 00:C2D8 wNumericPanelKey09Value
@@ -5892,7 +5892,7 @@ FF:4033 playSample.sampleUpdateLoop
 00:C4E1 wLabStepLadderPushed
 00:C451 wGuardhouseStatueMoved
 00:C31B wMoveInputBlockTimer
-00:C31C wSpriteDataC31C
+00:C31C wZombieRecoilTimer
 00:C122 wCursorTilesHeight
 00:C121 wCursorTilesWidth
 00:C1C8 wSampleTempoLow
@@ -5907,6 +5907,7 @@ FF:4033 playSample.sampleUpdateLoop
 00:C500 wTriggerInkRibbonMainHall
 00:C2D9 wNumericPanelKey09PosY
 00:C2DA wNumericPanelKey09PosX
+00:C310 wZombieAndObjectVarIdHigh
 00:C198 wTriggerFile19
 00:C197 wTriggerFile18
 00:C194 wTriggerFile15
@@ -6723,7 +6724,6 @@ FF:4033 playSample.sampleUpdateLoop
 00:C2EF wComputerLoginChar04
 00:C2ED wComputerLoginChar02
 00:C2EE wComputerLoginChar03
-00:C310 wSprtDataC310
 00:C2CB wNumericPanelKey04PosX
 00:C2CA wNumericPanelKey04PosY
 00:C2D3 wNumericPanelKey07PosY

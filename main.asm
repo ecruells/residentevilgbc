@@ -1135,7 +1135,7 @@ loadTitleSlideRooms: ;01:478F
     call hideSprites
     ld hl, $07FF ;set slide demo frame counter & timer
     ld a, l
-    ld [wTimer], a
+    ld [wFrameRateCounter], a
     ld a, h
     ld [wc1c5], a
     ld a, $20
@@ -1156,13 +1156,13 @@ loadTitleSlideRooms: ;01:478F
     ld [wRoomIdHigh], a
     ld a, [wc1c5]
     push af
-    ld a, [wTimer]
+    ld a, [wFrameRateCounter]
     push af
-    ld a, [wTimer]
+    ld a, [wFrameRateCounter]
     cp a, $FF
     call z, loadAllRoomBgData
     pop af
-    ld [wTimer], a
+    ld [wFrameRateCounter], a
     pop af
     ld [wc1c5], a
     ld a, [wButtonPressId]
@@ -1171,7 +1171,7 @@ loadTitleSlideRooms: ;01:478F
     ld a, [wc1c5]
     or a
     jr nz, .Label47F1
-    ld a, [wTimer]
+    ld a, [wFrameRateCounter]
     cp a, $20
     jr nc, .Label47F1
     call ResetPal
@@ -1180,11 +1180,11 @@ loadTitleSlideRooms: ;01:478F
     xor a
     ld [wc1c5], a
     ld a, $1F
-    ld [wTimer], a
+    ld [wFrameRateCounter], a
 .Label47FA
-    ld a, [wTimer]
+    ld a, [wFrameRateCounter]
     dec a
-    ld [wTimer], a
+    ld [wFrameRateCounter], a
     cp a, $FF
     jr nz, .Label4813
     ld a, [wc1c5]
@@ -1194,7 +1194,7 @@ loadTitleSlideRooms: ;01:478F
     jr nz, .Label4813
     jp InitGame
 .Label4813
-	ld a, [wTimer]
+	ld a, [wFrameRateCounter]
     cp a, $E0
     jr nc, .Label4820
     cp a, $20
@@ -1273,7 +1273,7 @@ Label487F
     ld a, [hli]
     ld h, [hl]
     ld l, a
-    ld a, [wPlayerSpeed] ;get framerate
+    ld a, [wFrameRate] ;get framerate
     srl a
     srl a
     srl a
@@ -1644,7 +1644,7 @@ showPlantAnimRoom06:: ;01:4B11
     ld a, $10
     ld [wLowColliderTopY], a
     ld hl, room06_01_masks_pointers ;$7A96
-    ld a, [wTimer]
+    ld a, [wFrameRateCounter]
     ld c, a
     and a, $07
     ret nz
@@ -1670,7 +1670,7 @@ showPlantAnimRoom06:: ;01:4B11
     ld a, $0B
     ld [wLowColliderTopY], a
     ld hl, room06_02_masks_pointers ;$7AA2
-    ld a, [wTimer]
+    ld a, [wFrameRateCounter]
     ld c, a
     and a, $07
     ret nz
@@ -1705,7 +1705,7 @@ showCascadeAnimRoom38:: ;01:4B84
     ld a, $09
     ld [wLowColliderTopY], a
     ld hl, room38_02_masks_pointers ;$7B20
-    ld a, [wTimer]
+    ld a, [wFrameRateCounter]
     ld c, a
     and a, $07
     ret nz
@@ -1752,7 +1752,7 @@ showSpiderwebRoom45:: ;014BC6
     ld a, [wSpriteAnimationId]
     cp a, $05
     ret nz
-    ld a, [wSpriteAnimationLoopTimer] ;PlayerAnimationLoopTimer
+    ld a, [wSpriteAnimationFrameId] ;PlayerAnimationLoopTimer
     cp a, $14
     jr z, .Label4C06
     cp a, $1C
@@ -1928,7 +1928,7 @@ goToLoadRoomBgData: ;01:4D5E
     ld [wLowColliderLeftX], a
     call loadRoomBG ;3080
     xor a
-    ld [wTimer], a
+    ld [wFrameRateCounter], a
     call goToLoadRoomBgMask ;942
     jp showRoomAnimation ;4AFE
 ;4D7D
@@ -4310,7 +4310,7 @@ Label5E98
     ld a, PICK_ITEM_ANIM ;$07
     ld [wSpriteAnimationId], a
     xor a
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     call loadAndCalcEventSpritesData
     ld b, $80
     call routineDelay
@@ -7115,7 +7115,7 @@ Label10C40 ;04:4C40
     ld a, [wPoisonGasActivationByte]
     or a
     ret z
-    ld a, [wTimer]
+    ld a, [wFrameRateCounter]
     and a, $03
     ret nz
     ld a, [wCharHealth]
@@ -7151,7 +7151,7 @@ InitSelectedPlayerData:: ;04:4C5C
     ld a, CHRIS ;sprite id
     ld [wSpriteId], a
     xor a
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     ld [wFiregunFramesId], a
     ld [wBloodFramesId], a
     ld a, $20
@@ -7179,7 +7179,7 @@ initJillData: ;04:4CA5
     ld a, JILL
     ld [wSpriteId], a
     xor a
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     ld [wFiregunFramesId], a
     ld [wBloodFramesId], a
     ld a, $20
@@ -9414,12 +9414,12 @@ Label3A0EB
     ld a, [bc]
     ld [hl], a
     inc bc
-    ld hl, wSpriteAnimationLoopTimer - wCharSpritesData ;$0007
+    ld hl, wSpriteAnimationFrameId - wCharSpritesData ;$0007
     add hl, de
     ld a, [bc]
     ld [hl], a
     inc bc
-    ld hl, wSprtScreenTrigger - wCharSpritesData ;$000F
+    ld hl, wZombieAndObjectVarId - wCharSpritesData ;$000F
     add hl, de
     ld [hl], $FF
     ld hl, wSpriteDataC31D - wCharSpritesData ;$001D
@@ -9520,7 +9520,7 @@ Label3A1A7
     ld a, [bc]
     ld [hl], a
     inc bc
-    ld hl, wSpriteAnimationLoopTimer - wCharSpritesData ;$7
+    ld hl, wSpriteAnimationFrameId - wCharSpritesData ;$7
     add hl, de
     ld a, [bc]
     ld [hl], a
@@ -9744,7 +9744,7 @@ Loop3A2C6
     add hl, de
     ld [hl], WALK_ANIM ;$01
 	;change frame id
-    ld hl, wSpriteAnimationLoopTimer - wCharSpritesData  ;$7
+    ld hl, wSpriteAnimationFrameId - wCharSpritesData  ;$7
     add hl, de
     ld a, [hl]
     sub a, $02
@@ -9822,7 +9822,7 @@ Label3A32B
     ld hl, wSpriteAnimationId - wCharSpritesData  ;$6
     add hl, de
     ld [hl], WALK_ANIM ;$01
-    ld hl, wSpriteAnimationLoopTimer - wCharSpritesData ;$7
+    ld hl, wSpriteAnimationFrameId - wCharSpritesData ;$7
     add hl, de
     ld a, [hl]
     add a, $02
@@ -9895,7 +9895,7 @@ Label3A387
     add hl, de
     ld [hl], RUN_ANIM ;$02
 	;change frame id
-    ld hl, wSpriteAnimationLoopTimer - wCharSpritesData ;$7
+    ld hl, wSpriteAnimationFrameId - wCharSpritesData ;$7
     add hl, de
     ld a, [hl]
     add a, $02
@@ -11700,7 +11700,7 @@ fallingStatueScreenPal:		INCBIN "gfx/tilemaps/fallingStatueScreen.pal" ;6240
 checkAxSpritesScreenId:: ;C4:6280
 ;if screen correspond to criteria, return $00, otherwise $FF
 ;de: spriteData addr
-    ld hl, wSprtScreenTrigger - wCharSpritesData ;$F
+    ld hl, wZombieAndObjectVarId - wCharSpritesData ;$F
     add hl, de
     ld a, [hl]
     or a
@@ -11983,7 +11983,7 @@ checkRoomsEventsColliders: ;C4:64FB
     ret
 ;653B
 mapStepLadderElevationCollider: ;C4:653B
-    ld a, [wSpriteDataC31F]
+    ld a, [wStepLadderElevationMode]
     or a
     ret z
     ld hl, mapStepLadderElevCollider1 ;$648B
@@ -12690,7 +12690,7 @@ checkDroppedItemInput
     ld a, PICK_ITEM_ANIM
     ld [wSpriteAnimationId], a
     xor a
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     ld [wButtonAEventId], a
     ret
 Label316502: ;C5:6502
@@ -13719,11 +13719,11 @@ Label316B31: ;C5:6B31
     ld a, [bc]
     ld [hl], a
     inc bc
-    ld hl, wSprtScreenTrigger - wCharSpritesData ;$000F
+    ld hl, wZombieAndObjectVarId - wCharSpritesData ;$000F
     add hl, de
     ld a, [bc]
     ld [hl], a
-    inc hl ;wSprtDataC310
+    inc hl ;wZombieAndObjectVarIdHigh
     inc bc
     ld a, [bc]
     ld [hl], a
@@ -13756,7 +13756,7 @@ Label316B31: ;C5:6B31
     ld hl, wSpriteAnimationId - wCharSpritesData ;$0006
     add hl, de
     ld [hl], $00
-    ld hl, wSpriteAnimationLoopTimer - wCharSpritesData ;$0007
+    ld hl, wSpriteAnimationFrameId - wCharSpritesData ;$0007
     add hl, de
     ld [hl], $00
     ld hl, wSpriteDataC308 - wCharSpritesData ;$0008
@@ -13809,7 +13809,7 @@ Label316BB4: ;C5:6BB4
     ld a, [bc]
     ld [hl], a
     inc bc
-    ld hl, wSprtScreenTrigger - wCharSpritesData ;$000F
+    ld hl, wZombieAndObjectVarId - wCharSpritesData ;$000F
     add hl, de
     ld a, [bc]
     ld [hl], a
@@ -13846,7 +13846,7 @@ Label316BB4: ;C5:6BB4
     ld hl, wSpriteAnimationId - wCharSpritesData ;$0006
     add hl, de
     ld [hl], $00
-    ld hl, wSpriteAnimationLoopTimer - wCharSpritesData ;$0007
+    ld hl, wSpriteAnimationFrameId - wCharSpritesData ;$0007
     add hl, de
     ld [hl], $00
     ld hl, wSpriteDataC308 - wCharSpritesData ;$0008
@@ -13862,7 +13862,7 @@ Label316BB4: ;C5:6BB4
     ld hl, wCharHealth - wCharSpritesData ;$000E
     add hl, de
     ld [hl], 64 ;$40
-    ld hl, wSprtScreenTrigger - wCharSpritesData ;$000F
+    ld hl, wZombieAndObjectVarId - wCharSpritesData ;$000F
     add hl, de
     ld a, [hl]
     cp a, $FE
@@ -21106,7 +21106,7 @@ Label3ECD96
     inc hl
     inc bc
     pop bc
-    ld hl, wSprtScreenTrigger - wCharSpritesData ;$F
+    ld hl, wZombieAndObjectVarId - wCharSpritesData ;$F
     add hl, de
     ld a, [hl]
     cp a, $F0
@@ -21586,7 +21586,7 @@ evaluateObjectCollision: ;FB:50D6
     sbc a, h
     or a
     jp nz, checkStepLaddersElevation
-    ld a, [wSpriteDataC31F]
+    ld a, [wStepLadderElevationMode]
     or a
     jp nz, Label3ED205 ;return if step ladder elevation is true
 	;else check for step ladder elevation
@@ -21645,7 +21645,7 @@ Label3ED161
     or a
     jr z, Label3ED16F ;jump if disabled
     ld a, $FF
-    ld [wSpriteDataC31F], a
+    ld [wStepLadderElevationMode], a
     jp Label3ED207
 Label3ED16F
     ld a, [wLowColliderTopY]
@@ -21678,7 +21678,7 @@ checkObjRightCollider: ;FB:518B
     jr Label3ED1A7
 Label3ED19F
     ld a, $FF
-    ld [wSpriteDataC31F], a
+    ld [wStepLadderElevationMode], a
     jp Label3ED207
 Label3ED1A7
     ld a, [wLowColliderRightX]
@@ -21708,7 +21708,7 @@ Label3ED1CC
     or a
     jr z, Label3ED1DA
     ld a, $FF
-    ld [wSpriteDataC31F], a
+    ld [wStepLadderElevationMode], a
     jp Label3ED207
 Label3ED1DA
     ld a, [wLowColliderLeftX]
@@ -21745,7 +21745,7 @@ Label3ED207 ;FB:5207
     jr Label3ED205
 Label3ED20B
 	xor a
-    ld [wSpriteDataC31F], a ;reset step ladder elevation
+    ld [wStepLadderElevationMode], a ;reset step ladder elevation
     jr Label3ED205
 
 ;5211
@@ -21859,7 +21859,7 @@ Label3ED2C7
     jr nz, evalNextZombieAttack ;skip if not attacking
 	;reset zombie animation
     ld [hl], IDLE_ANIM ;$00
-    ld hl, wSpriteAnimationLoopTimer - wCharSpritesData ;$7
+    ld hl, wSpriteAnimationFrameId - wCharSpritesData ;$7
     add hl, de
     ld [hl], $00
     jr evalNextZombieAttack
@@ -21867,7 +21867,7 @@ beginZombieAttack
     ld hl, wSpriteAnimationId - wCharSpritesData ;$6
     add hl, de
     ld [hl], ATTACK_ANIM ;$03
-    ld hl, wSpriteAnimationLoopTimer - wCharSpritesData ;$7
+    ld hl, wSpriteAnimationFrameId - wCharSpritesData ;$7
     add hl, de
     ld [hl], $00
     ld a, $28 ;set attack duration
@@ -21895,7 +21895,7 @@ resetZombieAnimation:
     ld hl, wSpriteAnimationId - wCharSpritesData ;$6
     add hl, de
     ld [hl], IDLE_ANIM ;$00
-    ld hl, wSpriteAnimationLoopTimer - wCharSpritesData ;$7
+    ld hl, wSpriteAnimationFrameId - wCharSpritesData ;$7
     add hl, de
     ld [hl], $00
 evalNextZombieAttack:
@@ -22216,7 +22216,7 @@ Loop3F01E9
     ld a, [hl]
     cp a, DEAD_ANIM ;$02
     jp z, nextEnemyChaseNPC ;jump if enemy is dead
-    ld hl, wSprtScreenTrigger - wCharSpritesData ;$F
+    ld hl, wZombieAndObjectVarId - wCharSpritesData ;$F
     add hl, de
     ld a, [hli]
     ld h, [hl] ;$10
@@ -22272,7 +22272,7 @@ Label3F0238
     ld hl, wSpriteAnimationId - wCharSpritesData ;$6
     add hl, de
     ld [hl], IDLE_ANIM ;$00
-    ld hl, wSpriteAnimationLoopTimer - wCharSpritesData ;$7
+    ld hl, wSpriteAnimationFrameId - wCharSpritesData ;$7
     add hl, de
     ld [hl], $00
     pop hl
@@ -22298,7 +22298,7 @@ Label3F0259
     ld hl, wSpriteAnimationId - wCharSpritesData ;$6
     add hl, de
     ld [hl], IDLE_ANIM ;$00
-    ld hl, wSpriteAnimationLoopTimer - wCharSpritesData ;$7
+    ld hl, wSpriteAnimationFrameId - wCharSpritesData ;$7
     add hl, de
     ld [hl], $00
     pop hl
@@ -22324,7 +22324,7 @@ Label3F027A
     ld hl, wSpriteAnimationId - wCharSpritesData ;$6
     add hl, de
     ld [hl], IDLE_ANIM ;$00
-    ld hl, wSpriteAnimationLoopTimer - wCharSpritesData ;$7
+    ld hl, wSpriteAnimationFrameId - wCharSpritesData ;$7
     add hl, de
     ld [hl], $00
     pop hl
@@ -22388,7 +22388,7 @@ setObjectFrames: ;FC:42EA
     ld hl, objectsSpritesFramesId ;$42D6
     add hl, bc
     ld a, [hli]
-    ld hl, wSpriteAnimationLoopTimer - wCharSpritesData ;$7
+    ld hl, wSpriteAnimationFrameId - wCharSpritesData ;$7
     add hl, de
     ld [hl], a ;set frameId
     ld hl, wSpriteAnimationId - wCharSpritesData ;$6
@@ -22415,7 +22415,7 @@ setDinningRoomClockFrame ;FC:4325
     ld a, [wRoomScreen]
     cp a, $05
     jp z, nextObjectNPC
-    ld hl, wSpriteAnimationLoopTimer - wCharSpritesData ;$7
+    ld hl, wSpriteAnimationFrameId - wCharSpritesData ;$7
     add hl, de
     ld a, [hl]
     add a, $08
@@ -22437,7 +22437,7 @@ setBookcase1Frame ;FC:434B
     ld a, [wRoomScreen]
     or a ;$00
     jp z, nextObjectNPC
-    ld hl, wSpriteAnimationLoopTimer - wCharSpritesData ;$7
+    ld hl, wSpriteAnimationFrameId - wCharSpritesData ;$7
     add hl, de
     ld a, [hl]
     add a, $08
@@ -22448,7 +22448,7 @@ setCrankStepLadderFrame ;FC:435D
     ld a, [wRoomScreen]
     cp a, $01
     jp z, nextObjectNPC
-    ld hl, wSpriteAnimationLoopTimer - wCharSpritesData ;$7
+    ld hl, wSpriteAnimationFrameId - wCharSpritesData ;$7
     add hl, de
     ld a, [hl]
     add a, $08
@@ -22508,7 +22508,7 @@ setZombieAnimation: ;FC:43C5
     ld a, [wLCDUpdate]
     or a
     jp nz, nextObjectNPC
-    ld hl, wSprtScreenTrigger - wCharSpritesData ;$F
+    ld hl, wZombieAndObjectVarId - wCharSpritesData ;$F
     add hl, de
     ld a, [hl]
     call checkZombieActive
@@ -22519,7 +22519,7 @@ setZombieAnimation: ;FC:43C5
     ld a, [hl]
     cp a, DEAD_ANIM ;$02
     jp z, nextObjectNPC ;next sprt if zombie is dead
-    ld hl, wSpriteDataC31C - wCharSpritesData ;$1C
+    ld hl, wZombieRecoilTimer - wCharSpritesData ;$1C
     add hl, de
     ld a, [hl]
     or a
@@ -22533,7 +22533,7 @@ setZombieAnimation: ;FC:43C5
     ld hl, wSpriteAnimationId - wCharSpritesData ;$6
     add hl, de
     ld [hl], WALK_ANIM ;$01
-    ld hl, wSpriteAnimationLoopTimer - wCharSpritesData ;$7
+    ld hl, wSpriteAnimationFrameId - wCharSpritesData ;$7
     add hl, de
     ld a, [hl]
     add a, $02
@@ -22577,7 +22577,7 @@ setZombieAttackAnimation:
     ld a, [wButtonPressId]
     and a, AB_INPUT ;$03
     jp z, nextObjectNPC
-    ld hl, wSpriteDataC31C - wCharSpritesData ;$1C
+    ld hl, wZombieRecoilTimer - wCharSpritesData ;$1C
     add hl, de
     ld a, [hl]
     or a
@@ -22588,13 +22588,13 @@ setZombieAttackAnimation:
     jp nextObjectNPC
 
 zombieAttackRecoil:
-    ld hl, wSpriteDataC31C - wCharSpritesData ;$1C
+    ld hl, wZombieRecoilTimer - wCharSpritesData ;$1C
     add hl, de
     dec [hl]
     ld hl, wSpriteAnimationId - wCharSpritesData ;$6
     add hl, de
     ld [hl], WALK_ANIM ;$01
-    ld hl, wSpriteAnimationLoopTimer - wCharSpritesData ;$7
+    ld hl, wSpriteAnimationFrameId - wCharSpritesData ;$7
     add hl, de
     ld [hl], $00
     ld hl, wSpriteFacing - wCharSpritesData ;$9
@@ -22729,19 +22729,19 @@ Label3F0544 ;4544
     ld a, IDLE_ANIM ;$00
     ld [wSpriteAnimationId], a
     xor a
-    ld [wSpriteAnimationLoopTimer], a ;reset frameId
+    ld [wSpriteAnimationFrameId], a ;reset frameId
     ret
 ;4577
 
 pickItemAnimationInput: ;FC:4577
-    ld a, [wSpriteAnimationLoopTimer]
+    ld a, [wSpriteAnimationFrameId]
     inc a
     cp a, $10
     jr nc, Label3F0583
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     ret
 Label3F0583 ;FC:4583
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     cp a, $10
     jr nz, Label3F0590
     ld a, DROPPED_ITEM_ACTION ;$01
@@ -22753,7 +22753,7 @@ Label3F0590 ;FC:4590
     ld a, IDLE_ANIM ;$00
     ld [wSpriteAnimationId], a
     xor a
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     ret
 ;459D
 
@@ -22781,11 +22781,11 @@ Label3F05A8
     ld a, [wButtonPressId]
     and a, ALL_DIRECTION_B_INPUT ;$F2
     ret nz
-    ld a, [wSpriteAnimationLoopTimer]
+    ld a, [wSpriteAnimationFrameId]
     cp a, $1F
     ret z
     inc a
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     ret
 
 indleAnimLeftInput: ;FC:45DF
@@ -22798,14 +22798,14 @@ indleAnimUpInput: ;FC:45E1
     ld a, WALK_ANIM ;$01
     ld [wSpriteAnimationId], a
     xor a
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     jp playerWalkMove
 
 indleAnimDownInput: ;FC:45ED
     ld a, WALK_ANIM ;$01
     ld [wSpriteAnimationId], a
     ld a, $3F
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     jp playerWalkBackwardMove
 
 indleAnimBInput: ;45FA
@@ -22835,7 +22835,7 @@ setShotgunAimAnimation: ;FC:4611
     ld c, $08
 Label3F062A
     ld a, c
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     ret
 ;462F
 setGunAimAnimation: ;FC:462F
@@ -22852,14 +22852,14 @@ setGunAimAnimation: ;FC:462F
     ld c, $08
 Label3F0648
     ld a, c
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     ret
 ;464D
 setKnifeAimAnimation: ;FC:464D
     ld a, KNIFE_AIM_ANIM ;$05
     ld [wSpriteAnimationId], a
     xor a
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     ret
 ;4657
 
@@ -22880,7 +22880,7 @@ shotgunAimAnimationInput: ;FC:4657
     ld c, $08
 Label3F0672
     ld a, c
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     call checkTurnLeftPress
     call checkTurnRightPress
     ld a, [wButtonPressId]
@@ -22895,7 +22895,7 @@ Label3F0672
     ld [wFiregunFramesId], a
     ld a, SHOTGUN_SFX ;$10
     call playSFX
-    ld a, [wSpriteAnimationLoopTimer]
+    ld a, [wSpriteAnimationFrameId]
     or a
     ret z
     call gunShotAtEnemy
@@ -22904,7 +22904,7 @@ stopShotgunAim: ;FC:469F
     ld a, $00
     ld [wSpriteAnimationId], a
     xor a
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     ret
 ;46A9
 
@@ -22925,7 +22925,7 @@ gunAimAnimationInput: ;FC:46A9
     ld c, $08
 Label3F06C4
     ld a, c
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     call checkTurnLeftPress
     call checkTurnRightPress
     ld a, [wButtonPressId]
@@ -22940,7 +22940,7 @@ Label3F06C4
     ld [wFiregunFramesId], a
     ld a, FIREGUN_SFX ;$0F
     call playSFX
-    ld a, [wSpriteAnimationLoopTimer]
+    ld a, [wSpriteAnimationFrameId]
     or a
     ret z
     call gunShotAtEnemy
@@ -22949,7 +22949,7 @@ stopGunAim: ;FC:46F1
     ld a, IDLE_ANIM ;$00
     ld [wSpriteAnimationId], a
     xor a
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     ret
 ;46FB
 
@@ -22957,7 +22957,7 @@ knifeAimAnimationInput: ;FC:46FB
     ld a, [wButtonPressId]
     and a, B_INPUT ;$02
     jp z, stopKnifeAiming
-    ld a, [wSpriteAnimationLoopTimer]
+    ld a, [wSpriteAnimationFrameId]
     cp a, $10
     jr c, Label3F0716
     cp a, $18
@@ -22969,36 +22969,36 @@ knifeAimAnimationInput: ;FC:46FB
 Label3F0716
     inc a
     and a, $0F
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     jr checkKnifeInput
 Label3F071E
     inc a
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     cp a, $18
     jr c, checkKnifeInput
     xor a
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     jr checkKnifeInput
 Label3F072C
     inc a
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     cp a, $20
     jr c, checkKnifeInput
     xor a
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     jr checkKnifeInput
 Label3F073A
     inc a
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     cp a, $28
     jr c, checkKnifeInput
     xor a
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     jr checkKnifeInput
 checkKnifeInput
     call checkTurnLeftPress
     call checkTurnRightPress
-    ld a, [wSpriteAnimationLoopTimer]
+    ld a, [wSpriteAnimationFrameId]
     cp a, $10
     ret nc
     ld a, [wButtonPressId]
@@ -23018,15 +23018,15 @@ checkKnifeInput
     and a, DOWN_INPUT
     jr nz, setKnifeAimDownFrame
     ld a, $20
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     ret
 setKnifeAimUpFrame ;FC:4779
     ld a, $10
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     ret
 setKnifeAimDownFrame ;FC:477F
     ld a, $18
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     ret
 ;4785
 
@@ -23034,7 +23034,7 @@ stopKnifeAiming: ;FC:4785
     ld a, IDLE_ANIM
     ld [wSpriteAnimationId], a
     xor a
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     ret
 ;478F
 stopKnifeAttack: ;FC:478F
@@ -23054,7 +23054,7 @@ walkAnimationInput: ;FC:4794
     ld a, IDLE_ANIM ;$00
     ld [wSpriteAnimationId], a
     xor a
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     ret
 .checkRunning ;FC:47AC
     ld a, [wButtonPressId]
@@ -23085,7 +23085,7 @@ runAnimationInput: ;FC:47CF
     ld a, IDLE_ANIM ;$00
     ld [wSpriteAnimationId], a
     xor a
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     ld a, $FF
     ld [wBButtonPressDown], a
     ret
@@ -23131,7 +23131,7 @@ Label3F0821
     cp a, $00
     ret nz
     xor a
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     ret
 leftInputNotPressed: ;FC:483A
     ld [hl], $00
@@ -23166,7 +23166,7 @@ Label3F0857
     cp a, $00
     ret nz
     xor a
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     ret
 rightInputNotPressed: ;FC:4870
     ld [hl], $00
@@ -23175,10 +23175,10 @@ Label3F0873
 	ret
 
 playerWalkMove: ;FC:4874
-    ld a, [wSpriteAnimationLoopTimer]
+    ld a, [wSpriteAnimationFrameId]
     add a, $04 ;add sprite frames
     and a, $3F ;set limit frame
-    ld [wSpriteAnimationLoopTimer], a ;set new frame
+    ld [wSpriteAnimationFrameId], a ;set new frame
 	;walk north
     ld bc, $0000
     ld de, $000E
@@ -23234,7 +23234,7 @@ Label3F08CD ;48CD
     ld a, [wSpritePositionZHigh]
     adc a, d
     ld [wSpritePositionZHigh], a
-    ld a, [wSpriteAnimationLoopTimer]
+    ld a, [wSpriteAnimationFrameId]
     and a, $1F
     cp a, $03
     jr c, .playWalkSfx
@@ -23244,10 +23244,10 @@ Label3F08CD ;48CD
     jp playSFX
 
 playerWalkBackwardMove: ;FC:48FB
-    ld a, [wSpriteAnimationLoopTimer]
+    ld a, [wSpriteAnimationFrameId]
     sub a, $03
     and a, $3F
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
 	;walk backward north
     ld bc, $0000
     ld de, $FFF9
@@ -23815,10 +23815,10 @@ Label3F0C6C
     ld hl, wSpriteAnimationId - wCharSpritesData ;$6
     add hl, de
     ld [hl], DEAD_ANIM ;$02
-    ld hl, wSpriteAnimationLoopTimer - wCharSpritesData ;$7
+    ld hl, wSpriteAnimationFrameId - wCharSpritesData ;$7
     add hl, de
     ld [hl], $00
-    ld hl, wSprtScreenTrigger - wCharSpritesData ;$F
+    ld hl, wZombieAndObjectVarId - wCharSpritesData ;$F
     add hl, de
     ld c, [hl]
     ld b, $00

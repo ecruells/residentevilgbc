@@ -63,7 +63,7 @@ wUpKeyPressDown:: ;C110
 wDownKeyPressDown:: ;C111
 	ds 1
 
-wPlayerSpeed:: ;c112
+wFrameRate:: ;c112
 	ds 1
 
 wSpriteTilesBufferLow:: ;C113
@@ -600,7 +600,7 @@ wDoorAnimationType:: ;c1c3
 ;				  < 90: Heliport elevator
 	ds 1
 
-wTimer:: ;c1c4 wFrameCounter
+wFrameRateCounter:: ;c1c4
 	ds 1
 
 wc1c5:: ;c1c5
@@ -1093,9 +1093,13 @@ wc27f:: ;c27f
 	ds 1
 
 
+
+
 wItemBoxSlot01:: ;C280
 ;item box slots, 32 slots in total
 	ds 32
+
+
 
 wC2A0:: ;C2A0
 	ds 1
@@ -1378,20 +1382,20 @@ wCharSpritesData:: ;c300
 ; c3X0+04: Sprite Width
 ; c3X0+05: Sprite Height
 ; C3X0+06: sprite animation Id
-; C3X0+07: sprite animation frame Id/animation timer
+; C3X0+07: sprite animation frame Id
 ; C3X0+09: sprite facing
 ; C3X0+0A: weapon firegun pause timer
 ; C3X0+0B: sprite Id
 ; C3X0+0C: firegun sprite frames
 ; C3X0+0D: Blood sprite frames
 ; C3X0+0E: health  20: full
-; C3X0+0F: zombie/object trigger id
-; C3X0+10: zombie/object trigger id High
-; C3X0+11-C3X0+12: sprite X pos offset (low-hi signed 16bit number)
-; C3X0+13-C3X0+14: sprite Y pos offset (low-hi signed 16bit number)
-; C3X0+15-C3X0+16: sprite X position (low-hi signed 16bit number)
-; C3X0+17-C3X0+18: sprite Y position (low-hi signed 16bit number)
-; C3X0+19-C3X0+1A: sprite Z position (low-hi signed 16bit number) sprite elevation
+; C3X0+0F: zombie/object var id
+; C3X0+10: zombie/object var id High
+; C3X0+11-C3X0+12: sprite X pos (low-hi signed 16bit number)
+; C3X0+13-C3X0+14: sprite Z pos (low-hi signed 16bit number)
+; C3X0+15-C3X0+16: sprite map X position (low-hi signed 16bit number)
+; C3X0+17-C3X0+18: sprite map Z position (low-hi signed 16bit number)
+; C3X0+19-C3X0+1A: sprite Y position (sprite elevation) (low-hi signed 16bit number)
 ; C3X0+1B: player input block timer
 	ds 1
 wSpriteZOrder:: ;c301
@@ -1406,7 +1410,7 @@ wSpriteHeight:: ;c305
 	ds 1
 wSpriteAnimationId:: ;c306
 	ds 1
-wSpriteAnimationLoopTimer:: ;c307
+wSpriteAnimationFrameId:: ;c307
 	ds 1
 wSpriteDataC308:: ;c308
 	ds 1
@@ -1422,9 +1426,9 @@ wBloodFramesId:: ;c30D
 	ds 1
 wCharHealth:: ;c30E
 	ds 1
-wSprtScreenTrigger:: ;c30F object movement
+wZombieAndObjectVarId:: ;c30F object movement
 	ds 1
-wSprtDataC310:: ;c310
+wZombieAndObjectVarIdHigh:: ;c310
 	ds 1
 wSpritePositionXLow:: ;c311
 	ds 1
@@ -1448,13 +1452,13 @@ wSpritePositionYHigh:: ;c31A
 	ds 1
 wMoveInputBlockTimer:: ;c31B
 	ds 1
-wSpriteDataC31C::  ;c31C zombieRecoilTimer
+wZombieRecoilTimer::  ;c31C zombieRecoilTimer
 	ds 1
 wSpriteDataC31D::  ;c31D
 	ds 1
 wSpriteDataC31E::  ;c31E
 	ds 1
-wSpriteDataC31F::  ;c31F step ladder elevation mode
+wStepLadderElevationMode::  ;c31F step ladder elevation mode
 	ds 1
 
 ;rest of NPC sprites data
@@ -3752,16 +3756,16 @@ wc700:: ;c700
 spritePriorityTable:: ;C800
 ;stores sprites draw priority data
 ;10 bytes of data per 8 chars
-;C80x + 0: Sprite Y-sort value
-;C80x + 1: Sprite ID
-;C80x + 2: $00
-;C80x + 3: Sprite X Pos
-;C80x + 4: Sprite Y Pos
+;C80x + 0: Sprite Z-order
+;C80x + 1: Sprite Id
+;C80x + 2: Sprite Id High
+;C80x + 3: Sprite screen X Pos
+;C80x + 4: Sprite screen Y Pos
 ;C80x + 5: Sprite width
 ;C80x + 6: Sprite height
 ;C80x + 7: Sprite facing
-;C80x + 8: Sprite animation frame Id/animation timer
-;C80x + 9: Sprite animation ID
+;C80x + 8: Sprite animation frame Id
+;C80x + 9: Sprite animation Id
 	ds 10 * 8
 
 ;wEndSpritePriorityTable:: ;C84F

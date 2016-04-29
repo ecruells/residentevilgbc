@@ -341,7 +341,7 @@ newGameStartSceneSet: ;03E5
     ld [wEventId], a ;set event id to new game first scene
     ld hl, $04E2 ;set timer and frame counter values
     ld a, l
-    ld [wTimer], a
+    ld [wFrameRateCounter], a
     ld a, h
     ld [wc1c5], a
 gameLoopWithEventCheck: ;405
@@ -377,12 +377,12 @@ gameLoopWithEventCheck: ;405
     jr gameLoopWithEventCheck ;reload Room Bg and screen Y-pos data
 .Label444
     ld a, $08
-    ld [wPlayerSpeed], a
+    ld [wFrameRate], a
 ;0449
 
 gamePlayLoop: ;00:0449
     call haltCPU
-    ld a, [wPlayerSpeed]
+    ld a, [wFrameRate]
     cp a, $04
     jr c, gamePlayLoop ;limit framerate
 	;print debug info
@@ -430,7 +430,7 @@ gamePlayLoop: ;00:0449
     ld hl, _SCRN0+$22A
     call printDebugWord ;print stack pointer
     xor a
-    ld [wPlayerSpeed], a ;reset framerate counter
+    ld [wFrameRate], a ;reset framerate counter
     call initSprtBufferAddr
     call calcSpritesSizeAndPosition
     call goToLoadRoomSpritesData
@@ -473,9 +473,9 @@ gamePlayLoop: ;00:0449
     add hl, de
     ld [hl], $01 ;set room visited
     call goToCheckGasRooms
-    ld a, [wTimer]
+    ld a, [wFrameRateCounter]
     dec a
-    ld [wTimer], a
+    ld [wFrameRateCounter], a
     call showRoomAnimation ;$4AFE
     ld a, [wLCDUpdate]
     cp a, $5E
@@ -579,7 +579,7 @@ goToLoadSaveGameMenu: ;5E1
     ld a, IDLE_ANIM
     ld [wSpriteAnimationId], a
     xor a
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     ld a, SAVE_GAME_MODE ;$01
     call loadSaveGameMenu
     ld a, $01
@@ -1193,7 +1193,7 @@ showSpriteDoorsAnimation:: ;00:0C80
     ld a, $00
     ld [wSpriteAnimationId], a
     xor a
-    ld [wSpriteAnimationLoopTimer], a
+    ld [wSpriteAnimationFrameId], a
     ld hl, _SCRN0 ;$9800
     ld bc, $400
 	;clear screen loop
@@ -3220,7 +3220,7 @@ loadTitleScreen:: ;00:333B
     ld [wLCDUpdate], a
     ld hl, $300
     ld a, l
-    ld [wTimer], a
+    ld [wFrameRateCounter], a
     ld a, h
     ld [wc1c5], a
 .titleLoop
@@ -3231,9 +3231,9 @@ loadTitleScreen:: ;00:333B
     ld a, [wLCDUpdate]
     or a
     jr nz, .Label3383
-    ld a, [wTimer]
+    ld a, [wFrameRateCounter]
     dec a
-    ld [wTimer], a
+    ld [wFrameRateCounter], a
     cp a, $FF
     jr nz, .Label3383
     ld a, [wc1c5]

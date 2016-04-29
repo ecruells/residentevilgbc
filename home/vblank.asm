@@ -53,7 +53,7 @@ Vblank:: ;00:030E
     call updateMusic
     pop af
     call BankSwitch
-    ld hl, wPlayerSpeed
+    ld hl, wFrameRate
     inc [hl]
     ld hl, wAnimatedRoomSpritesFrameRate ;c1b0
     inc [hl]
