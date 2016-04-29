@@ -1731,21 +1731,21 @@ showSpiderwebRoom45:: ;014BC6
     ret nc
     cp a, $04
     ret c
-    ld a, [wSpritePosXoffsetHighByte]
+    ld a, [wSpritePositionXHigh]
     cp a, $01
     ret nz
-    ld a, [wSpritePosXoffsetLowByte]
+    ld a, [wSpritePositionXLow]
     cp a, $40
     ret c
-    ld a, [wSpritePosYoffsetHighByte]
+    ld a, [wSpritePositionZHigh]
     cp a, $FF
     jr z, .Label4BEA
-    ld a, [wSpritePosYoffsetLowByte]
+    ld a, [wSpritePositionZLow]
     cp a, $70
     ret nc
     jr .Label4BF0
 .Label4BEA
-    ld a, [wSpritePosYoffsetLowByte]
+    ld a, [wSpritePositionZLow]
     cp a, $B0
     ret c
 .Label4BF0
@@ -1935,16 +1935,16 @@ goToLoadRoomBgData: ;01:4D5E
 
 checkItemUsage:: ;;01:4D7D
 ;get current player position
-    ld a, [wSpritePosXoffsetLowByte]
+    ld a, [wSpritePositionXLow]
     ld e, a
-    ld a, [wSpritePosXoffsetHighByte]
+    ld a, [wSpritePositionXHigh]
     ld d, a
     call div8SignedWord
     ld c, e
     ld b, d
-    ld a, [wSpritePosYoffsetLowByte]
+    ld a, [wSpritePositionZLow]
     ld e, a
-    ld a, [wSpritePosYoffsetHighByte]
+    ld a, [wSpritePositionZHigh]
     ld d, a
     call div8SignedWord
 ;check selected item usage
@@ -2558,7 +2558,7 @@ statueNotFound ;infinite loop
     jr statueNotFound
 statueFound
 ;move statue
-    ld hl, wSpritePosXoffsetHighByte - wCharSpritesData ;$12
+    ld hl, wSpritePositionXHigh - wCharSpritesData ;$12
     add hl, de
     ld a, [hld]
     cp a, $80
@@ -2860,7 +2860,7 @@ findClosetLoop
 closetNotFound ;01:53D3
     jr closetNotFound
 closetFound
-    ld hl, wSpritePosXoffsetLowByte - wCharSpritesData ;$11
+    ld hl, wSpritePositionXLow - wCharSpritesData ;$11
     add hl, de
     ld bc, $150
     ld [hl], c
@@ -3029,7 +3029,7 @@ findClockLoop
 clockNotFound ;54D2
     jr clockNotFound
 clockFound
-    ld hl, wSpritePosXoffsetLowByte - wCharSpritesData ;$11
+    ld hl, wSpritePositionXLow - wCharSpritesData ;$11
     add hl, de
     ld bc, $D8
     ld [hl], c
@@ -3328,17 +3328,17 @@ Label56CB:
 
 applyBaseCameraAngles:: ;01:56CE
     ld a, l
-    ld [wSpriteScaling1LowByte], a
+    ld [wSpriteBaseXScaleLow], a
     ld a, h
-    ld [wSpriteScaling1HighByte], a
+    ld [wSpriteBaseXScaleHigh], a
     ld a, e
-    ld [wSpriteScaling2LowByte], a
+    ld [wSpriteBaseZScaleLow], a
     ld a, d
-    ld [wSpriteScaling2HighByte], a
+    ld [wSpriteBaseZScaleHigh], a
     ld a, c
-    ld [wSpriteScaling3LowByte], a
+    ld [wSpriteBaseYScaleLow], a
     ld a, b
-    ld [wSpriteScaling3HighByte], a
+    ld [wSpriteBaseYScaleHigh], a
     ret
 
 setTWArrowOAMData:: ;01:56E7
@@ -4366,7 +4366,7 @@ Label5EE8
     or a
     jp z, scrollUpScreen ;return if statue not found
 	;check statue position (x-pos $FEF0)
-    ld hl, wSpritePosXoffsetLowByte - wCharSpritesData ;$11
+    ld hl, wSpritePositionXLow - wCharSpritesData ;$11
     add hl, de
     ld a, [hli]
     cp a, $F0
@@ -4379,7 +4379,7 @@ Label5EE8
     or a
     jp z, scrollUpScreen ;return if statue not found
 	;check statue position (y-pos $0000)
-    ld hl, wSpritePosYoffsetLowByte - wCharSpritesData ;$13
+    ld hl, wSpritePositionZLow - wCharSpritesData ;$13
     add hl, de
     ld a, [hli]
     or a ;$00
@@ -4477,7 +4477,7 @@ Label5FDE ;
     jr Label5FDE
 shelfFound
 ;move shelf
-    ld hl, wSpritePosYoffsetLowByte - wCharSpritesData ;$13
+    ld hl, wSpritePositionZLow - wCharSpritesData ;$13
     add hl, de
     ld bc, $FF60 ;shelf position
     ld [hl], c
@@ -6369,585 +6369,8 @@ NPCFound
     ret
 ;6ED0
 
-Label6ED0: ;01:6ED0
-    ld a, e
-    cp a, $80
-    jr c, Label6EF9
-    ld a, l
-    cp a, $80
-    jr c, Label6EE8
-    ld a, l
-    xor a, $FF
-    inc a
-    ld l, a
-    ld a, e
-    xor a, $FF
-    inc a
-    ld e, a
-    call Label6F42
-    ret
-Label6EE8: ;01:6EE8
-    ld a, e
-    xor a, $FF
-    inc a
-    ld e, a
-    call Label6F42
-    ld a, $00
-    sub a, e
-    ld e, a
-    ld a, $00
-    sbc a, d
-    ld d, a
-    ret
-Label6EF9: ;01:6EF9
-    ld a, l
-    cp a, $80
-    jr c, Label6F0E
-    xor a, $FF
-    inc a
-    ld l, a
-    call Label6F42
-    ld a, $00
-    sub a, e
-    ld e, a
-    ld a, $00
-    sbc a, d
-    ld d, a
-    ret
-Label6F0E: ;01:6F0E
-    jp Label6F42
-;6F11
 
-func6F11: ;01:6F11
-    ld a, d
-    cp a, $80
-    jr c, .Label6F2F ; jump if positive
-    ld a, l
-    cp a, $80
-    jr c, .Label6F26 ; jump if positive
-    ld a, l
-	;reverse byte sign
-    xor a, $FF
-    inc a
-    ld l, a
-    call reverseDESign
-    jp Label6F42
-.Label6F26
-    call reverseDESign
-    call Label6F42
-    jp reverseDESign
-.Label6F2F
-    ld a, l
-    cp a, $80
-    jr c, .Label6F3F ; jump if positive
-    ld a, l
-	;reverse byte sign
-    xor a, $FF
-    inc a
-    ld l, a
-    call Label6F42
-    jp reverseDESign
-.Label6F3F
-    jp Label6F42
-
-Label6F42: ;6F42
-    push hl
-    ld c, h
-    ld a, l
-    ld b, $00
-    ld h, b
-    ld l, b
-    add a
-    jr nc, Label6F4E
-    add hl, de
-    adc a, b
-Label6F4E
-    add hl, hl
-    adc a
-    jr nc, Label6F54
-    add hl, de
-    adc a, b
-Label6F54
-    add hl, hl
-    adc a
-    jr nc, Label6F5A
-    add hl, de
-    adc a, b
-Label6F5A
-    add hl, hl
-    adc a
-    jr nc, Label6F60
-    add hl, de
-    adc a, b
-Label6F60
-    add hl, hl
-    adc a
-    jr nc, Label6F66
-    add hl, de
-    adc a, b
-Label6F66
-    add hl, hl
-    adc a
-    jr nc, Label6F6C
-    add hl, de
-    adc a, b
-Label6F6C
-    add hl, hl
-    adc a
-    jr nc, Label6F72
-    add hl, de
-    adc a, b
-Label6F72
-    add hl, hl
-    adc a
-    jr nc, Label6F78
-    add hl, de
-    adc a, b
-Label6F78
-    push hl
-    ld h, b
-    ld l, b
-    ld b, a
-    ld a, c
-    ld c, h
-    add a
-    jr nc, Label6F83
-    add hl, de
-    adc a, c
-Label6F83
-    add hl, hl
-    adc a
-    jr nc, Label6F89
-    add hl, de
-    adc a, c
-Label6F89
-    add hl, hl
-    adc a
-    jr nc, Label6F8F
-    add hl, de
-    adc a, c
-Label6F8F
-    add hl, hl
-    adc a
-    jr nc, Label6F95
-    add hl, de
-    adc a, c
-Label6F95
-    add hl, hl
-    adc a
-    jr nc, Label6F9B
-    add hl, de
-    adc a, c
-Label6F9B
-    add hl, hl
-    adc a
-    jr nc, Label6FA1
-    add hl, de
-    adc a, c
-Label6FA1
-    add hl, hl
-    adc a
-    jr nc, Label6FA7
-    add hl, de
-    adc a, c
-Label6FA7
-    add hl, hl
-    adc a
-    jr nc, Label6FAD
-    add hl, de
-    adc a, c
-Label6FAD
-    pop de
-    ld c, a
-    ld a, d
-    add a, l
-    ld d, a
-    ld a, b
-    adc a, h
-    ld h, a
-    ld a, c
-    adc a, $00
-    ld b, a
-    ld c, h
-    pop hl
-    ret
-
-func6FBC: ;01:6FBC
-    ld a, d
-    cp a, $80
-    jr c, .Label6FD5 ;jump if positive
-	;else reverse sign
-    ld a, $00
-    sub a, e
-    ld e, a
-    ld a, $00
-    sbc a, d
-    ld d, a
-    call func6FD8
-	;reverse sign
-    ld a, $00
-    sub a, e
-    ld e, a
-    ld a, $00
-    sbc a, d
-    ld d, a
-    ret
-.Label6FD5
-	jp func6FD8
-
-
-func6FD8: ;01:6FD8
-    ld hl, wc150
-    ld [hl], c
-    inc hl
-    ld [hl], b
-    inc hl
-    ld [hl], $11
-    ld bc, $0000
-Label6FE4:
-    ld hl, wc152
-    ld a, e
-    rla
-    ld e, a
-    ld a, d
-    rla
-    ld d, a
-    dec [hl]
-    ret z
-    ld a, c
-    rla
-    ld c, a
-    ld a, b
-    rla
-    ld b, a
-    dec l
-    dec l
-    ld a, c
-    sub a, [hl]
-    ld c, a
-    inc hl
-    ld a, b
-    sbc a, [hl]
-    ld b, a
-    jp nc, Label7009
-    dec l
-    ld a, c
-    add a, [hl]
-    ld c, a
-    inc l
-    ld a, b
-    adc a, [hl]
-    ld b, a
-Label7009:
-    ccf ;clear carry flag
-    jp Label6FE4
-    ld a, d
-    cp a, $80
-    jr nc, Label7016
-    ld e, d
-    ld d, $00
-    ret
-Label7016: ;01:7016
-    ld a, $00
-    sub a, e
-    ld e, a
-    ld a, $00
-    sbc a, d
-    ld d, a
-    ld e, d
-    ld d, $00
-    ld a, $00
-    sub a, e
-    ld e, a
-    ld a, $00
-    sbc a, d
-    ld d, a
-    ret
-
-Function702A: ;01:702A
-    push de
-    ld e, [hl]
-    inc hl
-    ld d, [hl]
-    ld a, d
-    cp a, $80
-    jr c, Label7042
-    call reverseDESign
-    srl d
-    rr e
-    call reverseDESign
-    ld [hl], d
-    dec hl
-    ld [hl], e
-    pop de
-    ret
-Label7042: ;01:7042
-    srl d
-    rr e
-    ld [hl], d
-    dec hl
-    ld [hl], e
-    pop de
-    ret
-
-;signWordsFunctions
-
-div4WordInHLPointer: ;01:704B
-    push de
-    ld e, [hl]
-    inc hl
-    ld d, [hl]
-    ld a, d
-    cp a, $80
-    jr c, .Label7067 ; jump if positive
-    call reverseDESign
-    srl d
-    rr e
-    srl d
-    rr e
-    call reverseDESign
-    ld [hl], d
-    dec hl
-    ld [hl], e
-    pop de
-    ret
-.Label7067
-    srl d
-    rr e
-    srl d
-    rr e
-    ld [hl], d
-    dec hl
-    ld [hl], e
-    pop de
-    ret
-
-reverseDESign:: ;01:7074
-    ld a, $00
-    sub a, e
-    ld e, a
-    ld a, $00
-    sbc a, d
-    ld d, a
-    ret
-reverseHLSign:: ;01:707D
-    ld a, $00
-    sub a, l
-    ld l, a
-    ld a, $00
-    sbc a, h
-    ld h, a
-    ret
-;7086
-
-div128signedWord:: ;01:7086
-;divide a signed word by 128
-    ld a, d
-    cp a, $80
-    jr c, .Label70AE ;if positive
-    call reverseDESign
-    srl d
-    rr e
-    srl d
-    rr e
-    srl d
-    rr e
-    srl d
-    rr e
-    srl d
-    rr e
-    srl d
-    rr e
-    srl d
-    rr e
-    call reverseDESign
-    ret
-.Label70AE
-    srl d
-    rr e
-    srl d
-    rr e
-    srl d
-    rr e
-    srl d
-    rr e
-    srl d
-    rr e
-    srl d
-    rr e
-    srl d
-    rr e
-    ret
-
-
-div64signedWord: ;01:70CB
-;divide a signed word by 64
-    ld a, d
-    cp a, $80
-    jr c, .Label70EF ;if positive
-    call reverseDESign
-    srl d
-    rr e
-    srl d
-    rr e
-    srl d
-    rr e
-    srl d
-    rr e
-    srl d
-    rr e
-    srl d
-    rr e
-    call reverseDESign
-    ret
-.Label70EF
-    srl d
-    rr e
-    srl d
-    rr e
-    srl d
-    rr e
-    srl d
-    rr e
-    srl d
-    rr e
-    srl d
-    rr e
-    ret
-
-div16SignedWord:: ;01:7108
-;divide a signed word by 16
-    ld a, d
-    cp a, $80
-    jr c, .Label7124 ;if positive
-    call reverseDESign
-    srl d
-    rr e
-    srl d
-    rr e
-    srl d
-    rr e
-    srl d
-    rr e
-    call reverseDESign
-    ret
-.Label7124
-    srl d
-    rr e
-    srl d
-    rr e
-    srl d
-    rr e
-    srl d
-    rr e
-    ret
-
-div8SignedWord:: ;01:7135
-;divide a signed word by 8
-    ld a, d
-    cp a, $80
-    jr c, .Label714D
-    call reverseDESign
-    srl d
-    rr e
-    srl d
-    rr e
-    srl d
-    rr e
-    call reverseDESign
-    ret
-.Label714D
-    srl d
-    rr e
-    srl d
-    rr e
-    srl d
-    rr e
-    ret
-
-div2SignedWord:: ;01:715A
-;divide a signed word by 2
-    ld a, d
-    cp a, $80
-    jr c, .Label716A ;if positive
-    call reverseDESign
-    srl d
-    rr e
-    call reverseDESign
-    ret
-.Label716A
-    srl d
-    rr e
-    ret
-;716F
-
-div2SignedBCWord: ;01:716F
-    push de
-    ld e, c
-    ld d, b
-    call div2SignedWord
-    ld c, e
-    ld b, d
-    pop de
-    ret
-;7179
-
-multiply4SignedWord01: ;01:7179
-    ld a, d
-    cp a, $80
-    jr c, Label718D
-    call reverseDESign
-    push hl
-    push de
-    pop hl
-    add hl, hl
-    add hl, hl
-    push hl
-    pop de
-    pop hl
-    call reverseDESign
-    ret
-Label718D: ;01:718D
-    push hl
-    push de
-    pop hl
-    add hl, hl
-    add hl, hl
-    push hl
-    pop de
-    pop hl
-    ret
-;7196
-
-multiply8SignedWord01: ;01:7196
-    ld a, d
-    cp a, $80
-    jr c, Label71AB
-    call reverseDESign
-    push hl
-    push de
-    pop hl
-    add hl, hl
-    add hl, hl
-    add hl, hl
-    push hl
-    pop de
-    pop hl
-    call reverseDESign
-    ret
-Label71AB: ;01:71AB
-    push hl
-    push de
-    pop hl
-    add hl, hl
-    add hl, hl
-    add hl, hl
-    push hl
-    pop de
-    pop hl
-    ret
-;71B5
-
+INCLUDE "engine/multiplyDivision.asm"
 
 
 RoomsBgLookupTable:: 	INCLUDE "engine/roomsBgLookupTable.asm" ;71B5
@@ -7655,7 +7078,7 @@ loadEnemyBloodSprite: ;04:4BC4
     pop hl
     pop de
     push hl
-    ld hl, wSpriteYscale - wCharSpritesData ;$5
+    ld hl, wSpriteHeight - wCharSpritesData ;$5
     add hl, de
     ld a, [hl]
     srl a
@@ -7663,7 +7086,7 @@ loadEnemyBloodSprite: ;04:4BC4
     srl a
     srl a
     ld c, a
-    ld hl, wSpriteZPosLowBuffer - wCharSpritesData ;$3
+    ld hl, wSpriteScreenPosY - wCharSpritesData ;$3
     add hl, de
     ld a, [hl]
     add a, c
@@ -9542,7 +8965,7 @@ INCLUDE "engine/scaling/horizontalScalingTable.asm"
 
 SECTION "bankB",ROMX,BANK[$B]
 
-scaleDataTable: 	INCBIN "engine/scaling/scaleData.bin"
+INCLUDE "engine/scaling/cameraPitchYawTable.asm" ;4000
 
 ;0B:5000
 doorsSpritesheet: 	INCBIN "gfx/sprite_sheets/doors/doors_spritesheet.2bpp"
@@ -9964,21 +9387,21 @@ Label3A0EB
     ld hl, wCharSpritesData - wCharSpritesData ;$0000
     add hl, de
     ld [hl], %11000000 ;$C0
-    ld hl, wSpritePosXoffsetLowByte - wCharSpritesData ;$0011
+    ld hl, wSpritePositionXLow - wCharSpritesData ;$0011
     add hl, de
     ld a, [bc]
     ld [hli], a
     inc bc
     ld a, [bc]
-    ld [hl], a ;wSpritePosXoffsetHighByte
+    ld [hl], a ;wSpritePositionXHigh
     inc bc
-    ld hl, wSpritePosYoffsetLowByte - wCharSpritesData ;$0013
+    ld hl, wSpritePositionZLow - wCharSpritesData ;$0013
     add hl, de
     ld a, [bc]
     ld [hli], a
     inc bc
     ld a, [bc]
-    ld [hl], a ;wSpritePosYoffsetHighByte
+    ld [hl], a ;wSpritePositionZHigh
     inc bc
     ld hl, wSpriteFacing - wCharSpritesData ;$0009
     add hl, de
@@ -10298,21 +9721,21 @@ Loop3A2C6
     ld a, $00
     adc a, b
     ld b, a
-    ld hl, wSpritePosXoffsetLowByte - wCharSpritesData ;$11
+    ld hl, wSpritePositionXLow - wCharSpritesData ;$11
     add hl, de
     ld a, [bc]
     add a, [hl]
     ld [hli], a
-    inc bc ;wSpritePosXoffsetHighByte
+    inc bc ;wSpritePositionXHigh
     ld a, [bc]
     adc a, [hl]
     ld [hli], a
 	;add move offset to Ypos
-    inc bc ;wSpritePosYoffsetLowByte
+    inc bc ;wSpritePositionZLow
     ld a, [bc]
     add a, [hl]
     ld [hli], a
-    inc bc ;wSpritePosYoffsetHighByte
+    inc bc ;wSpritePositionZHigh
     ld a, [bc]
     adc a, [hl]
     ld [hli], a
@@ -10377,21 +9800,21 @@ Label3A32B
     adc a, b
     ld b, a
 	;add move offset to Xpos
-    ld hl, wSpritePosXoffsetLowByte - wCharSpritesData ;$11
+    ld hl, wSpritePositionXLow - wCharSpritesData ;$11
     add hl, de
     ld a, [bc]
     add a, [hl]
     ld [hli], a
-    inc bc ;wSpritePosXoffsetHighByte
+    inc bc ;wSpritePositionXHigh
     ld a, [bc]
     adc a, [hl]
     ld [hli], a
 	;add move offset to Ypos
-    inc bc ;wSpritePosYoffsetLowByte
+    inc bc ;wSpritePositionZLow
     ld a, [bc]
     add a, [hl]
     ld [hli], a
-    inc bc ;wSpritePosYoffsetHighByte
+    inc bc ;wSpritePositionZHigh
     ld a, [bc]
     adc a, [hl]
     ld [hli], a
@@ -10449,21 +9872,21 @@ Label3A387
     adc a, b
     ld b, a
 	;add move offset to Xpos
-    ld hl, wSpritePosXoffsetLowByte - wCharSpritesData ;$11
+    ld hl, wSpritePositionXLow - wCharSpritesData ;$11
     add hl, de
     ld a, [bc]
     add a, [hl]
     ld [hli], a
-    inc bc ;wSpritePosXoffsetHighByte
+    inc bc ;wSpritePositionXHigh
     ld a, [bc]
     adc a, [hl]
     ld [hli], a
 	;add move offset to Ypos
-    inc bc ;wSpritePosYoffsetLowByte
+    inc bc ;wSpritePositionZLow
     ld a, [bc]
     add a, [hl]
     ld [hli], a
-    inc bc ;wSpritePosYoffsetHighByte
+    inc bc ;wSpritePositionZHigh
     ld a, [bc]
     adc a, [hl]
     ld [hli], a
@@ -12685,15 +12108,15 @@ evalRoomEventCollision:
     ld a, [hli]
     adc a, b
     ld [wHighColliderTopY], a
-    ld a, [wSpritePosXoffsetLowByte]
+    ld a, [wSpritePositionXLow]
     ld e, a
-    ld a, [wSpritePosXoffsetHighByte]
+    ld a, [wSpritePositionXHigh]
     ld d, a
     call div8SignedWordC4
     push de
-    ld a, [wSpritePosYoffsetLowByte]
+    ld a, [wSpritePositionZLow]
     ld e, a
-    ld a, [wSpritePosYoffsetHighByte]
+    ld a, [wSpritePositionZHigh]
     ld d, a
     call div8SignedWordC4
     ld l, e
@@ -12727,13 +12150,13 @@ Label312621
     ret nz
     push de
     push hl
-    ld a, [wSpritePosXLowByte]
+    ld a, [wSpriteRoomPositionXLow]
     ld e, a
-    ld a, [wSpritePosXHighByte]
+    ld a, [wSpriteRoomPositionXHigh]
     ld d, a
-    ld a, [wSpritePosYLowByte]
+    ld a, [wSpriteRoomPositionYLow]
     ld l, a
-    ld a, [wSpritePosYHighByte]
+    ld a, [wSpriteRoomPositionYHigh]
     ld h, a
 ;checkRoomEventBottomCollider
     ld a, [wLowColliderBottomY]
@@ -12749,10 +12172,10 @@ Label312621
     call multiply8SignedWordC4
     ld a, e
     sub a, $01
-    ld [wSpritePosYoffsetLowByte], a
+    ld [wSpritePositionZLow], a
     ld a, d
     sbc a, $00
-    ld [wSpritePosYoffsetHighByte], a
+    ld [wSpritePositionZHigh], a
     pop hl
     pop de
     ret
@@ -12770,10 +12193,10 @@ checkRoomEventTopCollider: ;C4:6682
     call multiply8SignedWordC4
     ld a, e
     add a, $08
-    ld [wSpritePosYoffsetLowByte], a
+    ld [wSpritePositionZLow], a
     ld a, d
     adc a, $00
-    ld [wSpritePosYoffsetHighByte], a
+    ld [wSpritePositionZHigh], a
     pop hl
     pop de
     ret
@@ -12791,10 +12214,10 @@ checkRoomEventRightCollider: ;C4:66A8
     call multiply8SignedWordC4
     ld a, e
     sub a, $01
-    ld [wSpritePosXoffsetLowByte], a
+    ld [wSpritePositionXLow], a
     ld a, d
     sbc a, $00
-    ld [wSpritePosXoffsetHighByte], a
+    ld [wSpritePositionXHigh], a
     pop hl
     pop de
     ret
@@ -12806,10 +12229,10 @@ checkRoomEventLeftCollider: ;C4:66CD
     call multiply8SignedWordC4
     ld a, e
     add a, $08
-    ld [wSpritePosXoffsetLowByte], a
+    ld [wSpritePositionXLow], a
     ld a, d
     adc a, $00
-    ld [wSpritePosXoffsetHighByte], a
+    ld [wSpritePositionXHigh], a
     pop hl
     pop de
     ret
@@ -13074,11 +12497,11 @@ Label3163B3
     ld [wc1f5], a
     ld de, $FFFC ;-4
     add hl, de
-    ld a, [wSpritePosXoffsetLowByte]
+    ld a, [wSpritePositionXLow]
     sub a, [hl]
     ld c, a ;store x-distance
     inc hl
-    ld a, [wSpritePosXoffsetHighByte]
+    ld a, [wSpritePositionXHigh]
     sbc a, [hl]
     inc hl
     or a
@@ -13099,11 +12522,11 @@ Label3163DF
     cp a, $C0
     jr c, Label3163D1 ;return if x-distance < $C0 (-64)
 Label3163E4
-    ld a, [wSpritePosYoffsetLowByte]
+    ld a, [wSpritePositionZLow]
     sub a, [hl]
     ld c, a ;store y-distance
     inc hl
-    ld a, [wSpritePosYoffsetHighByte]
+    ld a, [wSpritePositionZHigh]
     sbc a, [hl]
     inc hl
     or a
@@ -13192,11 +12615,11 @@ Label316472
     ld [wc1f5], a
     ld de, $FFFC ;-4
     add hl, de
-    ld a, [wSpritePosXoffsetLowByte]
+    ld a, [wSpritePositionXLow]
     sub a, [hl]
     ld c, a ;store x-distance
     inc hl
-    ld a, [wSpritePosXoffsetHighByte]
+    ld a, [wSpritePositionXHigh]
     sbc a, [hl]
     inc hl
     or a
@@ -13217,11 +12640,11 @@ Label31649E
     cp a, $E0
     jr c, Label316490 ;return if x-distance < $E0 (-32)
 Label3164A3
-    ld a, [wSpritePosYoffsetLowByte]
+    ld a, [wSpritePositionZLow]
     sub a, [hl]
     ld c, a ;store y-distance
     inc hl
-    ld a, [wSpritePosYoffsetHighByte]
+    ld a, [wSpritePositionZHigh]
     sbc a, [hl]
     inc hl
     or a
@@ -13300,11 +12723,11 @@ checkDoorAction:: ;C5:6519
     ld [wButtonActionFacing], a
     ld de, $FFFC ;-4 return to action xpos
     add hl, de ;action xpos low
-    ld a, [wSpritePosXoffsetLowByte]
+    ld a, [wSpritePositionXLow]
     sub a, [hl]
     ld c, a ;store x-distance
     inc hl ;action xpos high
-    ld a, [wSpritePosXoffsetHighByte]
+    ld a, [wSpritePositionXHigh]
     sbc a, [hl]
     inc hl ;action ypos low
     or a
@@ -13339,11 +12762,11 @@ Label316561
     cp a, b
     jr c, returnNoPosXMatch ;return if out of action x-range
 evalActionYaxis
-    ld a, [wSpritePosYoffsetLowByte]
+    ld a, [wSpritePositionZLow]
     sub a, [hl]
     ld c, a ;store y-distance
     inc hl
-    ld a, [wSpritePosYoffsetHighByte]
+    ld a, [wSpritePositionZHigh]
     sbc a, [hl]
     inc hl
     or a
@@ -13434,16 +12857,16 @@ checkDoorActionInput
     inc de
 	;set player position to target door pos
     ld a, [de]
-    ld [wSpritePosXoffsetLowByte], a
+    ld [wSpritePositionXLow], a
     inc de
     ld a, [de]
-    ld [wSpritePosXoffsetHighByte], a
+    ld [wSpritePositionXHigh], a
     inc de
     ld a, [de]
-    ld [wSpritePosYoffsetLowByte], a
+    ld [wSpritePositionZLow], a
     inc de
     ld a, [de]
-    ld [wSpritePosYoffsetHighByte], a
+    ld [wSpritePositionZHigh], a
     inc de
     ld a, [de]
     ld [wSpriteFacing], a
@@ -13477,11 +12900,11 @@ checkTypewriterAction: ;C5:6638
     or a
     jp nz, returnNoTypewriterAction
 Label316643
-    ld a, [wSpritePosXoffsetLowByte]
+    ld a, [wSpritePositionXLow]
     sub a, [hl]
     ld c, a ;store x-distance
     inc hl ;action xpos high
-    ld a, [wSpritePosXoffsetHighByte]
+    ld a, [wSpritePositionXHigh]
     sbc a, [hl]
     inc hl ;action ypos low
     or a
@@ -13502,11 +12925,11 @@ Label316663
     cp a, $C0
     jr c, xDistanceOutRange ;return if x-distance < $40 (-64)
 Label316668
-    ld a, [wSpritePosYoffsetLowByte]
+    ld a, [wSpritePositionZLow]
     sub a, [hl]
     ld c, a ;store y-distance
     inc hl ;y-pos high
-    ld a, [wSpritePosYoffsetHighByte]
+    ld a, [wSpritePositionZHigh]
     sbc a, [hl]
     inc hl ;facing
     or a
@@ -13566,11 +12989,11 @@ checkItemBoxAction: ;C5:66C8
     ld a, [wButtonAEventId]
     or a
     jp nz, returnNoItemBoxAction
-    ld a, [wSpritePosXoffsetLowByte]
+    ld a, [wSpritePositionXLow]
     sub a, [hl]
     ld c, a ;store x-distance
     inc hl ;action xpos high
-    ld a, [wSpritePosXoffsetHighByte]
+    ld a, [wSpritePositionXHigh]
     sbc a, [hl]
     inc hl
     or a
@@ -13591,11 +13014,11 @@ Label3166EF
     cp a, $C0
     jr c, itemBoxOutofXRange ;return if x-distance < $40 (-64)
 Label3166F4
-    ld a, [wSpritePosYoffsetLowByte]
+    ld a, [wSpritePositionZLow]
     sub a, [hl]
     ld c, a ;store y-distance
     inc hl
-    ld a, [wSpritePosYoffsetHighByte]
+    ld a, [wSpritePositionZHigh]
     sbc a, [hl]
     inc hl ;facing
     or a
@@ -14171,7 +13594,7 @@ returnItemTriggerVar:
 ;6AA2
 
 Label316AA2: ;C5:6AA2
-    ld a, [wSpritePosZLowByte]
+    ld a, [wSpritePositionYLow]
     cp a, $10
     jr nc, Label316AAC
     xor a ;set item trigger var to false
@@ -14180,7 +13603,7 @@ Label316AAC
     ld a, [wItemTriggerId]
     jr Label316A96
 Label316AB1:
-    ld a, [wSpritePosZLowByte]
+    ld a, [wSpritePositionYLow]
     cp a, $10
     jr nc, Label316ABB
     xor a ;set item trigger var to false
@@ -14306,19 +13729,19 @@ Label316B31: ;C5:6B31
     ld [hl], a
     inc hl
     inc bc
-    ld hl, wSpritePosXoffsetLowByte - wCharSpritesData ;$0011
+    ld hl, wSpritePositionXLow - wCharSpritesData ;$0011
     add hl, de
     ld a, [bc]
     ld [hl], a
-    inc hl ;wSpritePosXoffsetHighByte
+    inc hl ;wSpritePositionXHigh
     inc bc
     ld a, [bc]
     ld [hl], a
-    inc hl ;wSpritePosYoffsetLowByte
+    inc hl ;wSpritePositionZLow
     inc bc
     ld a, [bc]
     ld [hl], a
-    inc hl ;wSpritePosYoffsetHighByte
+    inc hl ;wSpritePositionZHigh
     inc bc
     ld a, [bc]
     ld [hl], a
@@ -14396,19 +13819,19 @@ Label316BB4: ;C5:6BB4
     ld [hl], a
     inc hl
     inc bc
-    ld hl, wSpritePosXoffsetLowByte - wCharSpritesData ;$0011
+    ld hl, wSpritePositionXLow - wCharSpritesData ;$0011
     add hl, de
     ld a, [bc]
     ld [hl], a
-    inc hl ;wSpritePosXoffsetHighByte
+    inc hl ;wSpritePositionXHigh
     inc bc
     ld a, [bc]
     ld [hl], a
-    inc hl ;wSpritePosYoffsetLowByte
+    inc hl ;wSpritePositionZLow
     inc bc
     ld a, [bc]
     ld [hl], a
-    inc hl ;wSpritePosYoffsetHighByte
+    inc hl ;wSpritePositionZHigh
     inc bc
     ld a, [bc]
     ld [hl], a
@@ -14454,7 +13877,7 @@ Label316C41:
     ld a, [wc4d5]
     or a
     jp z, Label316C39
-    ld hl, wSpritePosYoffsetLowByte - wCharSpritesData ;$0013
+    ld hl, wSpritePositionZLow - wCharSpritesData ;$0013
     add hl, de
     push bc
     ld bc, $FFC0 ;sprite position
@@ -14503,16 +13926,16 @@ checkRoomsCameraChange: ;C6:4000
 ;Eval player position and change room camera angle (screenId)
 ;and check if there is a camera change event trigger.
 ;Return true ($FF) if change screen, false ($00) if not
-    ld a, [wSpritePosXoffsetLowByte]
+    ld a, [wSpritePositionXLow]
     ld e, a
-    ld a, [wSpritePosXoffsetHighByte]
+    ld a, [wSpritePositionXHigh]
     ld d, a
     call div8SignedWordC6
     ld l, e
     ld h, d ; pos X into hl
-    ld a, [wSpritePosYoffsetLowByte]
+    ld a, [wSpritePositionZLow]
     ld e, a
-    ld a, [wSpritePosYoffsetHighByte]
+    ld a, [wSpritePositionZHigh]
     ld d, a ; pos Y into de
     call div8SignedWordC6
     ld c, $00
@@ -15236,7 +14659,7 @@ Label318516
     ld a, [wRoomScreen]
     cp a, $05
     jr nz, Label318533
-    ld a, [wSpritePosZLowByte]
+    ld a, [wSpritePositionYLow]
     cp a, $20
     jr c, Label318533
     ld a, [wPoisonGasActivationByte]
@@ -21249,13 +20672,13 @@ rebecca_front_right_spritesheet:		INCBIN "gfx/sprite_sheets/rebecca/rebecca_fron
 rebecca_right_spritesheet:				INCBIN "gfx/sprite_sheets/rebecca/rebecca_right_spritesheet.2bpp"
 
 SECTION "bank_CB",ROMX,BANK[$CB]
-rebecca_back_right_spritesheet:		INCBIN "gfx/sprite_sheets/rebecca/rebecca_back_right_spritesheet.2bpp"
+rebecca_back_right_spritesheet:			INCBIN "gfx/sprite_sheets/rebecca/rebecca_back_right_spritesheet.2bpp"
 rebecca_back_spritesheet:				INCBIN "gfx/sprite_sheets/rebecca/rebecca_back_spritesheet.2bpp"
 rebecca_back_left_spritesheet:			INCBIN "gfx/sprite_sheets/rebecca/rebecca_back_left_spritesheet.2bpp"
 
 SECTION "bank_CC",ROMX,BANK[$CC]
 rebecca_left_spritesheet:				INCBIN "gfx/sprite_sheets/rebecca/rebecca_left_spritesheet.2bpp"
-rebecca_front_left_spritesheet:		INCBIN "gfx/sprite_sheets/rebecca/rebecca_front_left_spritesheet.2bpp"
+rebecca_front_left_spritesheet:			INCBIN "gfx/sprite_sheets/rebecca/rebecca_front_left_spritesheet.2bpp"
 
 
 ;wesker/barry spritesheet
@@ -21265,13 +20688,13 @@ weskerbarry_front_right_spritesheet:	INCBIN "gfx/sprite_sheets/weskerbarry/weske
 weskerbarry_right_spritesheet:			INCBIN "gfx/sprite_sheets/weskerbarry/weskerbarry_right_spritesheet.2bpp"
 
 SECTION "bank_CE",ROMX,BANK[$CE]
-weskerbarry_back_right_spritesheet:	INCBIN "gfx/sprite_sheets/weskerbarry/weskerbarry_back_right_spritesheet.2bpp"
+weskerbarry_back_right_spritesheet:		INCBIN "gfx/sprite_sheets/weskerbarry/weskerbarry_back_right_spritesheet.2bpp"
 weskerbarry_back_spritesheet:			INCBIN "gfx/sprite_sheets/weskerbarry/weskerbarry_back_spritesheet.2bpp"
 weskerbarry_back_left_spritesheet:		INCBIN "gfx/sprite_sheets/weskerbarry/weskerbarry_back_left_spritesheet.2bpp"
 
 SECTION "bank_CF",ROMX,BANK[$CF]
 weskerbarry_left_spritesheet:			INCBIN "gfx/sprite_sheets/weskerbarry/weskerbarry_left_spritesheet.2bpp"
-weskerbarry_front_left_spritesheet:	INCBIN "gfx/sprite_sheets/weskerbarry/weskerbarry_front_left_spritesheet.2bpp"
+weskerbarry_front_left_spritesheet:		INCBIN "gfx/sprite_sheets/weskerbarry/weskerbarry_front_left_spritesheet.2bpp"
 
 
 
@@ -21512,7 +20935,7 @@ checkObjectCollision
     ld a, [hl]
     cp a, WOODEN_BOX ;$F1
     jr nz, Label3ECCCF
-    ld hl, wSpritePosZHighByte - wCharSpritesData ;$1A
+    ld hl, wSpritePositionYHigh - wCharSpritesData ;$1A
     add hl, de
     ld a, [hld]
     cp a, $FF
@@ -21535,10 +20958,10 @@ Label3ECCCF
     add hl, bc
     ld c, l
     ld b, h ;set collider pos to bc
-    ld hl, wSpritePosXoffsetLowByte - wCharSpritesData ;$11
+    ld hl, wSpritePositionXLow - wCharSpritesData ;$11
     add hl, de
     ld e, [hl]
-    inc hl ;wSpritePosXoffsetHighByte
+    inc hl ;wSpritePositionXHigh
     ld d, [hl]
     call div8SignedWordFB
     ld a, [bc]
@@ -21565,10 +20988,10 @@ Label3ECCCF
     ld [wHighColliderLeftX], a
     pop de
     push de
-    ld hl, wSpritePosYoffsetLowByte - wCharSpritesData ;$13
+    ld hl, wSpritePositionZLow - wCharSpritesData ;$13
     add hl, de
     ld e, [hl]
-    inc hl ;wSpritePosYoffsetHighByte
+    inc hl ;wSpritePositionZHigh
     ld d, [hl]
     call div8SignedWordFB
     ld a, [bc]
@@ -21593,15 +21016,15 @@ Label3ECCCF
     ld [wLowColliderTopY], a
     ld a, h
     ld [wHighColliderTopY], a
-    ld a, [wSpritePosXoffsetLowByte]
+    ld a, [wSpritePositionXLow]
     ld e, a
-    ld a, [wSpritePosXoffsetHighByte]
+    ld a, [wSpritePositionXHigh]
     ld d, a
     call div8SignedWordFB
     push de ; store player sprite position
-    ld a, [wSpritePosYoffsetLowByte]
+    ld a, [wSpritePositionZLow]
     ld e, a
-    ld a, [wSpritePosYoffsetHighByte]
+    ld a, [wSpritePositionZHigh]
     ld d, a
     call div8SignedWordFB
     ld l, e
@@ -21660,22 +21083,22 @@ Label3ECD96
     adc a, b
     ld b, a
     push bc ;store movement offset
-    ld hl, wSpritePosXoffsetLowByte - wCharSpritesData ;$11
+    ld hl, wSpritePositionXLow - wCharSpritesData ;$11
     add hl, de
     ld a, [bc]
     add a, [hl]
     ld [hl], a
-    inc hl ;wSpritePosXoffsetHighByte
+    inc hl ;wSpritePositionXHigh
     inc bc
     ld a, [bc]
     adc a, [hl]
     ld [hl], a
-    inc hl ;wSpritePosYoffsetLowByte
+    inc hl ;wSpritePositionZLow
     inc bc
     ld a, [bc]
     add a, [hl]
     ld [hl], a
-    inc hl ;wSpritePosYoffsetHighByte
+    inc hl ;wSpritePositionZHigh
     inc bc
     ld a, [bc]
     adc a, [hl]
@@ -21712,7 +21135,7 @@ Label3ECD96
     jp z, Label3ECF19
     jp checkNextSpriteCollision
 Label3ECE0B
-    ld hl, wSpritePosYoffsetHighByte - wCharSpritesData ;$14
+    ld hl, wSpritePositionZHigh - wCharSpritesData ;$14
     add hl, de
     ld a, [hld]
     or a
@@ -21725,7 +21148,7 @@ Label3ECE0B
     ld [wMansion1FMapStepLadderPushed], a
     jp checkNextSpriteCollision
 Label3ECE24
-    ld hl, wSpritePosYoffsetHighByte - wCharSpritesData ;$14
+    ld hl, wSpritePositionZHigh - wCharSpritesData ;$14
     add hl, de
     ld a, [hld]
     cp a, $FF
@@ -21737,7 +21160,7 @@ Label3ECE24
     ld [wEventId], a
     jp checkNextSpriteCollision
 Label3ECE3C
-    ld hl, wSpritePosXoffsetHighByte - wCharSpritesData ;$12
+    ld hl, wSpritePositionXHigh - wCharSpritesData ;$12
     add hl, de
     ld a, [hld]
     cp a, $FE
@@ -21748,7 +21171,7 @@ Label3ECE3C
     ld [hl], $F0
     jp checkNextSpriteCollision
 Label3ECE51
-    ld hl, wSpritePosYoffsetHighByte - wCharSpritesData ;$14
+    ld hl, wSpritePositionZHigh - wCharSpritesData ;$14
     add hl, de
     ld a, [hld]
     or a ;$00
@@ -21756,7 +21179,7 @@ Label3ECE51
     ld [hl], $00
     jp checkNextSpriteCollision
 Label3ECE5F:
-    ld hl, wSpritePosYoffsetHighByte - wCharSpritesData ;$14
+    ld hl, wSpritePositionZHigh - wCharSpritesData ;$14
     add hl, de
     ld a, [hld]
     or a
@@ -21764,7 +21187,7 @@ Label3ECE5F:
     ld [hl], $00
     jp checkNextSpriteCollision
 Label3ECE6D:
-    ld hl, wSpritePosXoffsetHighByte - wCharSpritesData ;$12
+    ld hl, wSpritePositionXHigh - wCharSpritesData ;$12
     add hl, de
     ld a, [hld]
     or a
@@ -21781,7 +21204,7 @@ Label3ECE6D:
     ld [wc571], a
     jp checkNextSpriteCollision
 Label3ECE90:
-    ld hl, wSpritePosYoffsetHighByte - wCharSpritesData ;$14
+    ld hl, wSpritePositionZHigh - wCharSpritesData ;$14
     add hl, de
     ld a, [hld]
     cp a, $FF
@@ -21794,7 +21217,7 @@ Label3ECE90:
     ld [wc4d5], a
     jp checkNextSpriteCollision
 Label3ECEAA:
-    ld hl, wSpritePosYoffsetHighByte - wCharSpritesData ;$14
+    ld hl, wSpritePositionZHigh - wCharSpritesData ;$14
     add hl, de
     ld a, [hld]
     cp a, $FD
@@ -21807,7 +21230,7 @@ Label3ECEAA:
     ld [wLibrarySecretDoorTrigger], a
     jp checkNextSpriteCollision
 Label3ECEC4:
-    ld hl, wSpritePosYoffsetHighByte - wCharSpritesData ;$14
+    ld hl, wSpritePositionZHigh - wCharSpritesData ;$14
     add hl, de
     ld a, [hld]
     cp a, $FF
@@ -21818,7 +21241,7 @@ Label3ECEC4:
     ld [hl], $88
     jp checkNextSpriteCollision
 Label3ECED9:
-    ld hl, wSpritePosXoffsetHighByte - wCharSpritesData ;$12
+    ld hl, wSpritePositionXHigh - wCharSpritesData ;$12
     add hl, de
     ld a, [hld]
     or a
@@ -21859,7 +21282,7 @@ activateSurgeryRoomGas
     ld [wPoisonGasActivationByte], a
     jp checkNextSpriteCollision
 Label3ECF19:
-    ld hl, wSpritePosXoffsetHighByte - wCharSpritesData ;$12
+    ld hl, wSpritePositionXHigh - wCharSpritesData ;$12
     add hl, de
     ld a, [hld]
     cp a, $01
@@ -21870,7 +21293,7 @@ Label3ECF19:
     ld [hl], $60
     jp checkNextSpriteCollision
 Label3ECF2E:
-    ld hl, wSpritePosYoffsetHighByte - wCharSpritesData ;$14
+    ld hl, wSpritePositionZHigh - wCharSpritesData ;$14
     add hl, de
     ld a, [hld]
     cp a, $FF
@@ -21885,10 +21308,10 @@ Label3ECF2E:
 
 checkZombieCollision:
 ;set a collider of 12,12
-    ld hl, wSpritePosXoffsetLowByte - wCharSpritesData ;$11
+    ld hl, wSpritePositionXLow - wCharSpritesData ;$11
     add hl, de
     ld e, [hl]
-    inc hl ;wSpritePosXoffsetHighByte
+    inc hl ;wSpritePositionXHigh
     ld d, [hl]
     call div8SignedWordFB
     ld hl, $FFFA ;-6
@@ -21905,10 +21328,10 @@ checkZombieCollision:
     ld [wHighColliderLeftX], a
     pop de
     push de
-    ld hl, wSpritePosYoffsetLowByte - wCharSpritesData ;$13
+    ld hl, wSpritePositionZLow - wCharSpritesData ;$13
     add hl, de
     ld e, [hl]
-    inc hl ;wSpritePosYoffsetHighByte
+    inc hl ;wSpritePositionZHigh
     ld d, [hl]
     call div8SignedWordFB
     ld hl, $FFFA ;-6
@@ -21923,15 +21346,15 @@ checkZombieCollision:
     ld [wLowColliderTopY], a
     ld a, h
     ld [wHighColliderTopY], a
-    ld a, [wSpritePosXoffsetLowByte]
+    ld a, [wSpritePositionXLow]
     ld e, a
-    ld a, [wSpritePosXoffsetHighByte]
+    ld a, [wSpritePositionXHigh]
     ld d, a
     call div8SignedWordFB
     push de ;store player posX into de
-    ld a, [wSpritePosYoffsetLowByte]
+    ld a, [wSpritePositionZLow]
     ld e, a
-    ld a, [wSpritePosYoffsetHighByte]
+    ld a, [wSpritePositionZHigh]
     ld d, a
     call div8SignedWordFB
     ld l, e
@@ -22034,14 +21457,14 @@ evaluateZombieCollision: ;FB:4FFA
     jp nz, returnNotZombieCollision
     push de ;store player pos X
     push hl ;store player pos Y
-    ld a, [wSpritePosXLowByte]
+    ld a, [wSpriteRoomPositionXLow]
     ld e, a
-    ld a, [wSpritePosXHighByte]
+    ld a, [wSpriteRoomPositionXHigh]
     ld d, a
     push de
-    ld a, [wSpritePosYLowByte]
+    ld a, [wSpriteRoomPositionYLow]
     ld e, a
-    ld a, [wSpritePosYHighByte]
+    ld a, [wSpriteRoomPositionYHigh]
     ld d, a
     ld l, e
     ld h, d
@@ -22060,10 +21483,10 @@ evaluateZombieCollision: ;FB:4FFA
     call multiply8SignedWordFB
     ld a, e
     sub a, $01
-    ld [wSpritePosYoffsetLowByte], a
+    ld [wSpritePositionZLow], a
     ld a, d
     sbc a, $00
-    ld [wSpritePosYoffsetHighByte], a
+    ld [wSpritePositionZHigh], a
     pop hl
     pop de
     ld a, $FF
@@ -22082,10 +21505,10 @@ checkZombieTopCollider: ;FB:5069
     call multiply8SignedWordFB
     ld a, e
     add a, $08
-    ld [wSpritePosYoffsetLowByte], a
+    ld [wSpritePositionZLow], a
     ld a, d
     adc a, $00
-    ld [wSpritePosYoffsetHighByte], a
+    ld [wSpritePositionZHigh], a
     pop hl
     pop de
     ld a, $FF
@@ -22104,10 +21527,10 @@ checkZombieRightCollider: ;FB:5091
     call multiply8SignedWordFB
     ld a, e
     sub a, $01
-    ld [wSpritePosXoffsetLowByte], a
+    ld [wSpritePositionXLow], a
     ld a, d
     sbc a, $00
-    ld [wSpritePosXoffsetHighByte], a
+    ld [wSpritePositionXHigh], a
     pop hl
     pop de
     ld a, $FF
@@ -22120,10 +21543,10 @@ checkZombieLeftCollider: ;FB:50B8
     call multiply8SignedWordFB
     ld a, e
     add a, $08
-    ld [wSpritePosXoffsetLowByte], a
+    ld [wSpritePositionXLow], a
     ld a, d
     adc a, $00
-    ld [wSpritePosXoffsetHighByte], a
+    ld [wSpritePositionXHigh], a
     pop hl
     pop de
     ld a, $FF
@@ -22169,14 +21592,14 @@ evaluateObjectCollision: ;FB:50D6
 	;else check for step ladder elevation
     push de
     push hl
-    ld a, [wSpritePosXLowByte]
+    ld a, [wSpriteRoomPositionXLow]
     ld e, a
-    ld a, [wSpritePosXHighByte]
+    ld a, [wSpriteRoomPositionXHigh]
     ld d, a
     push de ;store player pos-X
-    ld a, [wSpritePosYLowByte]
+    ld a, [wSpriteRoomPositionYLow]
     ld e, a
-    ld a, [wSpritePosYHighByte]
+    ld a, [wSpriteRoomPositionYHigh]
     ld d, a
     ld l, e
     ld h, d ;store player pos-y into hl
@@ -22196,10 +21619,10 @@ evaluateObjectCollision: ;FB:50D6
     call multiply8SignedWordFB
     ld a, e
     sub a, $01
-    ld [wSpritePosYoffsetLowByte], a
+    ld [wSpritePositionZLow], a
     ld a, d
     sbc a, $00
-    ld [wSpritePosYoffsetHighByte], a
+    ld [wSpritePositionZHigh], a
     pop hl
     pop de
     ld a, $FF
@@ -22232,10 +21655,10 @@ Label3ED16F
     call multiply8SignedWordFB
     ld a, e
     add a, $08
-    ld [wSpritePosYoffsetLowByte], a
+    ld [wSpritePositionZLow], a
     ld a, d
     adc a, $00
-    ld [wSpritePosYoffsetHighByte], a
+    ld [wSpritePositionZHigh], a
     pop hl
     pop de
     ld a, $FF
@@ -22265,10 +21688,10 @@ Label3ED1A7
     call multiply8SignedWordFB
     ld a, e
     sub a, $01
-    ld [wSpritePosXoffsetLowByte], a
+    ld [wSpritePositionXLow], a
     ld a, d
     sbc a, $00
-    ld [wSpritePosXoffsetHighByte], a
+    ld [wSpritePositionXHigh], a
     pop hl
     pop de
     ld a, $FF
@@ -22295,10 +21718,10 @@ Label3ED1DA
     call multiply8SignedWordFB
     ld a, e
     add a, $08
-    ld [wSpritePosXoffsetLowByte], a
+    ld [wSpritePositionXLow], a
     ld a, d
     adc a, $00
-    ld [wSpritePosXoffsetHighByte], a
+    ld [wSpritePositionXHigh], a
     pop hl
     pop de
     ld a, $FF
@@ -22358,10 +21781,10 @@ Label3ED225
     and a, $40
     jp z, resetZombieAnimation ;reset animation and skip if hidden
 	;set a collider of 18,18
-    ld hl, wSpritePosXoffsetLowByte - wCharSpritesData ;$11
+    ld hl, wSpritePositionXLow - wCharSpritesData ;$11
     add hl, de
     ld e, [hl]
-    inc hl ;wSpritePosXoffsetHighByte
+    inc hl ;wSpritePositionXHigh
     ld d, [hl]
     call div8SignedWordFB
     ld hl, $FFF7 ;-9
@@ -22378,10 +21801,10 @@ Label3ED225
     ld [wHighColliderLeftX], a
     pop de
     push de
-    ld hl, wSpritePosYoffsetLowByte - wCharSpritesData ;$13
+    ld hl, wSpritePositionZLow - wCharSpritesData ;$13
     add hl, de
     ld e, [hl]
-    inc hl ;wSpritePosYoffsetHighByte
+    inc hl ;wSpritePositionZHigh
     ld d, [hl]
     call div8SignedWordFB
     ld hl, $FFF7
@@ -22396,15 +21819,15 @@ Label3ED225
     ld [wLowColliderTopY], a
     ld a, h
     ld [wHighColliderTopY], a
-    ld a, [wSpritePosXoffsetLowByte]
+    ld a, [wSpritePositionXLow]
     ld e, a
-    ld a, [wSpritePosXoffsetHighByte]
+    ld a, [wSpritePositionXHigh]
     ld d, a
     call div8SignedWordFB
     push de
-    ld a, [wSpritePosYoffsetLowByte]
+    ld a, [wSpritePositionZLow]
     ld e, a
-    ld a, [wSpritePosYoffsetHighByte]
+    ld a, [wSpritePositionZHigh]
     ld d, a
     call div8SignedWordFB
     ld l, e
@@ -22543,10 +21966,10 @@ Loop3ED364:
     cp a, DEAD_ANIM ;$02
     jp z, checkNextZombie
 	;create a collider of 48,48
-    ld hl, wSpritePosXoffsetLowByte - wCharSpritesData ;$11
+    ld hl, wSpritePositionXLow - wCharSpritesData ;$11
     add hl, de
     ld e, [hl]
-    inc hl ;wSpritePosXoffsetHighByte
+    inc hl ;wSpritePositionXHigh
     ld d, [hl]
     call div8SignedWordFB
     ld hl, $FFD0 ;-48
@@ -22563,10 +21986,10 @@ Loop3ED364:
     ld [wHighColliderLeftX], a
     pop de
     push de
-    ld hl, wSpritePosYoffsetLowByte - wCharSpritesData ;$13
+    ld hl, wSpritePositionZLow - wCharSpritesData ;$13
     add hl, de
     ld e, [hl]
-    inc hl ;wSpritePosYoffsetHighByte
+    inc hl ;wSpritePositionZHigh
     ld d, [hl]
     call div8SignedWordFB
     ld hl, $FFD0 ;-48
@@ -22581,15 +22004,15 @@ Loop3ED364:
     ld [wLowColliderTopY], a
     ld a, h
     ld [wHighColliderTopY], a
-    ld a, [wSpritePosXoffsetLowByte]
+    ld a, [wSpritePositionXLow]
     ld e, a
-    ld a, [wSpritePosXoffsetHighByte]
+    ld a, [wSpritePositionXHigh]
     ld d, a
     call div8SignedWordFB
     push de
-    ld a, [wSpritePosYoffsetLowByte]
+    ld a, [wSpritePositionZLow]
     ld e, a
-    ld a, [wSpritePosYoffsetHighByte]
+    ld a, [wSpritePositionZHigh]
     ld d, a
     call div8SignedWordFB
     ld l, e
@@ -22602,13 +22025,13 @@ Loop3ED364:
     pop de
     push de
     ld b, $80
-    ld hl, wSpritePosXoffsetLowByte - wCharSpritesData ;$11
+    ld hl, wSpritePositionXLow - wCharSpritesData ;$11
     add hl, de
-    ld a, [wSpritePosXoffsetLowByte]
+    ld a, [wSpritePositionXLow]
     sub a, [hl]
     ld c, a
-    inc hl ;wSpritePosXoffsetHighByte
-    ld a, [wSpritePosXoffsetHighByte]
+    inc hl ;wSpritePositionXHigh
+    ld a, [wSpritePositionXHigh]
     sbc a, [hl]
     or a
     jr z, Label3ED413 ;if positions are iqual
@@ -22631,13 +22054,13 @@ Label3ED413
 Label3ED418
     ld b, $08
 Label3ED41A
-    ld hl, wSpritePosYoffsetLowByte - wCharSpritesData ;$13
+    ld hl, wSpritePositionZLow - wCharSpritesData ;$13
     add hl, de
-    ld a, [wSpritePosYoffsetLowByte]
+    ld a, [wSpritePositionZLow]
     sub a, [hl]
     ld c, a
-    inc hl ;wSpritePosYoffsetHighByte
-    ld a, [wSpritePosYoffsetHighByte]
+    inc hl ;wSpritePositionZHigh
+    ld a, [wSpritePositionZHigh]
     sbc a, [hl]
     or a
     jr z, Label3ED44F
@@ -22807,7 +22230,7 @@ Loop3F01E9
     ld c, e ;de to bc
     ld b, d
     ld a, c
-    add a, wSpritePosXoffsetLowByte - wCharSpritesData ;$11
+    add a, wSpritePositionXLow - wCharSpritesData ;$11
     ld c, a
     ld a, b
     adc a, $00
@@ -22815,34 +22238,34 @@ Loop3F01E9
     ld a, [bc]
     sub a, [hl] ;enemyPosX - limitPosX
     inc hl ;limitPosXHigh
-    inc bc ;wSpritePosXoffsetHighByte
+    inc bc ;wSpritePositionXHigh
     ld a, [bc]
     sbc a, [hl]
     cp a, $C0
     jr c, Label3F0238 ;jump if distance < $C0 (192)
     dec hl ;limitPosXLow
-    dec bc ;wSpritePosXoffsetLowByte
+    dec bc ;wSpritePositionXLow
     ld a, [hli] ;limitPosXHigh
     ld [bc], a ;set enemyPosX = limitPosX
-    inc bc ;wSpritePosXoffsetHighByte
+    inc bc ;wSpritePositionXHigh
     ld a, [hl]
     ld [bc], a
 Label3F0238
-    dec bc ;wSpritePosXoffsetLowByte
+    dec bc ;wSpritePositionXLow
     inc hl ;next limitPosX (low)
     ld a, [bc]
     sub a, [hl] ;enemyPosX - limitPosX
     inc hl ;limitPosX (high)
-    inc bc ;wSpritePosXoffsetHighByte
+    inc bc ;wSpritePositionXHigh
     ld a, [bc]
     sbc a, [hl]
     cp a, $40
     jr nc, Label3F0259 ;jump if distance > $40(64)
     dec hl ;limit X low
-    dec bc ;wSpritePosXoffsetLowByte
+    dec bc ;wSpritePositionXLow
     ld a, [hli]
     ld [bc], a ;set limit X low to enemy pos X low
-    inc bc ;wSpritePosXoffsetHighByte
+    inc bc ;wSpritePositionXHigh
     ld a, [hl]
     ld [bc], a ;set limit X high to enemy pos X high
     push hl
@@ -22854,18 +22277,18 @@ Label3F0238
     ld [hl], $00
     pop hl
 Label3F0259
-    inc hl ;wSpritePosYoffsetLowByte
+    inc hl ;wSpritePositionZLow
     inc bc ;limit Y low
     ld a, [bc]
     sub a, [hl] ;enemyPosY - limitPosY
     inc hl ;limit Y high
-    inc bc ;wSpritePosYoffsetHighByte
+    inc bc ;wSpritePositionZHigh
     ld a, [bc]
     sbc a, [hl]
     cp a, $C0
     jr c, Label3F027A ;jump if Y-distance < $C0 (192)
     dec hl ;limit Y low
-    dec bc ;wSpritePosYoffsetLowByte
+    dec bc ;wSpritePositionZLow
     ld a, [hli]
     ld [bc], a ;set limit Y low to enemy pos Y low
     inc bc
@@ -22880,12 +22303,12 @@ Label3F0259
     ld [hl], $00
     pop hl
 Label3F027A
-    dec bc ;wSpritePosYoffsetLowByte
+    dec bc ;wSpritePositionZLow
     inc hl ;next limitPosY (low)
     ld a, [bc]
     sub a, [hl] ;enemyPosY - limitPosY
     inc hl ;limitPosY high
-    inc bc ;wSpritePosYoffsetHighByte
+    inc bc ;wSpritePositionZHigh
     ld a, [bc]
     sbc a, [hl]
     cp a, $40
@@ -23003,10 +22426,10 @@ setGuardHouseStatueFrame ;FC:4338
     ld a, [wGuardhouseStatueMoved]
     or a
     jp z, nextObjectNPC
-    ld hl, wSpritePosYoffsetLowByte - wCharSpritesData ;$13
+    ld hl, wSpritePositionZLow - wCharSpritesData ;$13
     add hl, de
     ld [hl], $17
-    inc hl ;wSpritePosYoffsetHighByte
+    inc hl ;wSpritePositionZHigh
     ld [hl], $FF
     jp nextObjectNPC
 
@@ -23036,15 +22459,15 @@ setWoodenBoxFrame ;FC:4370
     ld a, [wAquariumWoodenBoxSunken]
     or a
     jr nz, Label3F039D
-    ld hl, wSpritePosYoffsetHighByte - wCharSpritesData ;$14
+    ld hl, wSpritePositionZHigh - wCharSpritesData ;$14
     add hl, de
-    ld a, [hld] ;wSpritePosYoffsetLowByte
+    ld a, [hld] ;wSpritePositionZLow
     or a
     jp nz, nextObjectNPC
     ld a, [hl]
     cp a, $88
     jp c, nextObjectNPC
-    ld hl, wSpritePosZHighByte - wCharSpritesData ;$1A
+    ld hl, wSpritePositionYHigh - wCharSpritesData ;$1A
     add hl, de
     ld [hl], $FF
     dec hl
@@ -23057,15 +22480,15 @@ setWoodenBoxFrame ;FC:4370
     ld [wAquariumWoodenBoxSunken], a
     jp nextObjectNPC
 Label3F039D
-    ld hl, wSpritePosYoffsetLowByte - wCharSpritesData ;$13
+    ld hl, wSpritePositionZLow - wCharSpritesData ;$13
     add hl, de
     ld [hl], $88
     inc hl
     ld [hl], $00
-    ld hl, wSpritePosZLowByte - wCharSpritesData ;$19
+    ld hl, wSpritePositionYLow - wCharSpritesData ;$19
     add hl, de
     ld [hl], $EC
-    inc hl ;wSpritePosZHighByte
+    inc hl ;wSpritePositionYHigh
     ld [hl], $FF
     jp nextObjectNPC
 
@@ -23073,7 +22496,7 @@ setStepLadder3Frame: ;FC:43B2
     ld a, [wGuardhouseStatueMoved] ;recicled var
     or a
     jp z, nextObjectNPC
-    ld hl, wSpritePosYoffsetLowByte - wCharSpritesData ;$13
+    ld hl, wSpritePositionZLow - wCharSpritesData ;$13
     add hl, de
     ld [hl], $17
     inc hl ;
@@ -23127,20 +22550,20 @@ setZombieAnimation: ;FC:43C5
     add hl, bc
     ld c, l
     ld b, h
-    ld hl, wSpritePosXoffsetLowByte - wCharSpritesData ;$11
+    ld hl, wSpritePositionXLow - wCharSpritesData ;$11
     add hl, de
     ld a, [bc]
     add a, [hl]
     ld [hli], a
-    inc bc ;wSpritePosXoffsetHighByte
+    inc bc ;wSpritePositionXHigh
     ld a, [bc]
     adc a, [hl]
     ld [hli], a
-    inc bc ;wSpritePosYoffsetLowByte
+    inc bc ;wSpritePositionZLow
     ld a, [bc]
     add a, [hl]
     ld [hli], a
-    inc bc ;wSpritePosYoffsetHighByte
+    inc bc ;wSpritePositionZHigh
     ld a, [bc]
     adc a, [hl]
     ld [hli], a
@@ -23185,20 +22608,20 @@ zombieAttackRecoil:
     add hl, bc
     ld c, l
     ld b, h
-    ld hl, wSpritePosXoffsetLowByte - wCharSpritesData ;$11
+    ld hl, wSpritePositionXLow - wCharSpritesData ;$11
     add hl, de
     ld a, [bc]
     add a, [hl]
     ld [hli], a
-    inc bc ;wSpritePosXoffsetHighByte
+    inc bc ;wSpritePositionXHigh
     ld a, [bc]
     adc a, [hl]
     ld [hli], a
-    inc bc ;wSpritePosYoffsetLowByte
+    inc bc ;wSpritePositionZLow
     ld a, [bc]
     add a, [hl]
     ld [hli], a
-    inc bc ;wSpritePosYoffsetHighByte
+    inc bc ;wSpritePositionZHigh
     ld a, [bc]
     adc a, [hl]
     ld [hli], a
@@ -23229,25 +22652,25 @@ checkPlayerInput: ;FC:44DB
     xor a
     ld [wButtonAEventId], a
 	;convert sprite xpos
-    ld a, [wSpritePosXoffsetLowByte]
+    ld a, [wSpritePositionXLow]
     ld e, a
-    ld a, [wSpritePosXoffsetHighByte]
+    ld a, [wSpritePositionXHigh]
     ld d, a
     call div8SignedWordFC
     ld a, e
-    ld [wSpritePosXLowByte], a
+    ld [wSpriteRoomPositionXLow], a
     ld a, d
-    ld [wSpritePosXHighByte], a
+    ld [wSpriteRoomPositionXHigh], a
 	;convert sprite ypos
-    ld a, [wSpritePosYoffsetLowByte]
+    ld a, [wSpritePositionZLow]
     ld e, a
-    ld a, [wSpritePosYoffsetHighByte]
+    ld a, [wSpritePositionZHigh]
     ld d, a
     call div8SignedWordFC
     ld a, e
-    ld [wSpritePosYLowByte], a
+    ld [wSpriteRoomPositionYLow], a
     ld a, d
-    ld [wSpritePosYHighByte], a
+    ld [wSpriteRoomPositionYHigh], a
     ld a, [wMoveInputBlockTimer]
     or a
     jr z, Label3F0512
@@ -23798,19 +23221,19 @@ playerWalkMove: ;FC:4874
 Label3F08CD ;48CD
     call Label3F0971
 	;set move X offset
-    ld a, [wSpritePosXoffsetLowByte]
+    ld a, [wSpritePositionXLow]
     add a, c
-    ld [wSpritePosXoffsetLowByte], a
-    ld a, [wSpritePosXoffsetHighByte]
+    ld [wSpritePositionXLow], a
+    ld a, [wSpritePositionXHigh]
     adc a, b
-    ld [wSpritePosXoffsetHighByte], a
+    ld [wSpritePositionXHigh], a
 	;set move Y offset
-    ld a, [wSpritePosYoffsetLowByte]
+    ld a, [wSpritePositionZLow]
     add a, e
-    ld [wSpritePosYoffsetLowByte], a
-    ld a, [wSpritePosYoffsetHighByte]
+    ld [wSpritePositionZLow], a
+    ld a, [wSpritePositionZHigh]
     adc a, d
-    ld [wSpritePosYoffsetHighByte], a
+    ld [wSpritePositionZHigh], a
     ld a, [wSpriteAnimationLoopTimer]
     and a, $1F
     cp a, $03
@@ -23865,18 +23288,18 @@ playerWalkBackwardMove: ;FC:48FB
     ld bc, $0006
     ld de, $FFFA
 Label3F0954
-    ld a, [wSpritePosXoffsetLowByte]
+    ld a, [wSpritePositionXLow]
     add a, c
-    ld [wSpritePosXoffsetLowByte], a
-    ld a, [wSpritePosXoffsetHighByte]
+    ld [wSpritePositionXLow], a
+    ld a, [wSpritePositionXHigh]
     adc a, b
-    ld [wSpritePosXoffsetHighByte], a
-    ld a, [wSpritePosYoffsetLowByte]
+    ld [wSpritePositionXHigh], a
+    ld a, [wSpritePositionZLow]
     add a, e
-    ld [wSpritePosYoffsetLowByte], a
-    ld a, [wSpritePosYoffsetHighByte]
+    ld [wSpritePositionZLow], a
+    ld a, [wSpritePositionZHigh]
     adc a, d
-    ld [wSpritePosYoffsetHighByte], a
+    ld [wSpritePositionZHigh], a
     ret
 ;4971
 
@@ -23989,31 +23412,31 @@ gunShootingAction: ;FC:49E4
     ret
 ;4A10
 gunShotFacingSouthEast: ;FC:4A10
-    ld hl, wSpritePosXoffsetLowByte - wCharSpritesData; $11
+    ld hl, wSpritePositionXLow - wCharSpritesData; $11
     add hl, de
     ld c, [hl]
-    inc hl ;wSpritePosXoffsetHighByte
+    inc hl ;wSpritePositionXHigh
     ld b, [hl]
 	;NPC Xpos - sprite Xpos
-    ld a, [wSpritePosXoffsetLowByte]
+    ld a, [wSpritePositionXLow]
     sub a, c
     ld c, a
-    ld a, [wSpritePosXoffsetHighByte]
+    ld a, [wSpritePositionXHigh]
     sbc a, b
     ld b, a
     cp a, $02
     jp nc, noDamageShot
-    ld hl, wSpritePosYoffsetLowByte - wCharSpritesData ;$13
+    ld hl, wSpritePositionZLow - wCharSpritesData ;$13
     add hl, de
     ld a, [hl]
-    inc hl ;wSpritePosYoffsetHighByte
+    inc hl ;wSpritePositionZHigh
     ld h, [hl]
 	;NPC Ypos - sprite Ypos
     ld l, a
-    ld a, [wSpritePosYoffsetLowByte]
+    ld a, [wSpritePositionZLow]
     sub a, l
     ld l, a
-    ld a, [wSpritePosYoffsetHighByte]
+    ld a, [wSpritePositionZHigh]
     sbc a, h
     ld h, a
     cp a, $02
@@ -24039,29 +23462,29 @@ Label3F0A54
     jp applyShotDamage
 
 gunShotFacingNorthEast: ;FC:4A5D
-    ld hl, wSpritePosXoffsetLowByte - wCharSpritesData; $11
+    ld hl, wSpritePositionXLow - wCharSpritesData; $11
     add hl, de
     ld c, [hl]
     inc hl
     ld b, [hl]
-    ld a, [wSpritePosXoffsetLowByte]
+    ld a, [wSpritePositionXLow]
     sub a, c
     ld c, a
-    ld a, [wSpritePosXoffsetHighByte]
+    ld a, [wSpritePositionXHigh]
     sbc a, b
     ld b, a
     cp a, $02
     jp nc, noDamageShot
-    ld hl, wSpritePosYoffsetLowByte - wCharSpritesData ;$13
+    ld hl, wSpritePositionZLow - wCharSpritesData ;$13
     add hl, de
     ld a, [hl]
     inc hl
     ld h, [hl]
     ld l, a
-    ld a, [wSpritePosYoffsetLowByte]
+    ld a, [wSpritePositionZLow]
     sub a, l
     ld l, a
-    ld a, [wSpritePosYoffsetHighByte]
+    ld a, [wSpritePositionZHigh]
     sbc a, h
     ld h, a
     cp a, $FE
@@ -24093,15 +23516,15 @@ Label3F0AA9
     jp applyShotDamage
 
 gunShotFacingSouthWest: ;FC:4AB2
-    ld hl, wSpritePosXoffsetLowByte - wCharSpritesData; $11
+    ld hl, wSpritePositionXLow - wCharSpritesData; $11
     add hl, de
     ld c, [hl]
     inc hl
     ld b, [hl]
-    ld a, [wSpritePosXoffsetLowByte]
+    ld a, [wSpritePositionXLow]
     sub a, c
     ld c, a
-    ld a, [wSpritePosXoffsetHighByte]
+    ld a, [wSpritePositionXHigh]
     sbc a, b
     ld b, a
     cp a, $FE
@@ -24112,16 +23535,16 @@ gunShotFacingSouthWest: ;FC:4AB2
     ld a, $00
     sbc a, b
     ld b, a
-    ld hl, wSpritePosYoffsetLowByte - wCharSpritesData ;$13
+    ld hl, wSpritePositionZLow - wCharSpritesData ;$13
     add hl, de
     ld a, [hl]
     inc hl
     ld h, [hl]
     ld l, a
-    ld a, [wSpritePosYoffsetLowByte]
+    ld a, [wSpritePositionZLow]
     sub a, l
     ld l, a
-    ld a, [wSpritePosYoffsetHighByte]
+    ld a, [wSpritePositionZHigh]
     sbc a, h
     ld h, a
     cp a, $02
@@ -24147,15 +23570,15 @@ Label3F0AFE
     jp applyShotDamage
 
 gunShotFacingNorthWest: ;FC:4B07
-    ld hl, wSpritePosXoffsetLowByte - wCharSpritesData; $11
+    ld hl, wSpritePositionXLow - wCharSpritesData; $11
     add hl, de
     ld c, [hl]
     inc hl
     ld b, [hl]
-    ld a, [wSpritePosXoffsetLowByte]
+    ld a, [wSpritePositionXLow]
     sub a, c
     ld c, a
-    ld a, [wSpritePosXoffsetHighByte]
+    ld a, [wSpritePositionXHigh]
     sbc a, b
     ld b, a
     cp a, $FE
@@ -24166,16 +23589,16 @@ gunShotFacingNorthWest: ;FC:4B07
     ld a, $00
     sbc a, b
     ld b, a
-    ld hl, wSpritePosYoffsetLowByte - wCharSpritesData ;$13
+    ld hl, wSpritePositionZLow - wCharSpritesData ;$13
     add hl, de
     ld a, [hl]
     inc hl
     ld h, [hl]
     ld l, a
-    ld a, [wSpritePosYoffsetLowByte]
+    ld a, [wSpritePositionZLow]
     sub a, l
     ld l, a
-    ld a, [wSpritePosYoffsetHighByte]
+    ld a, [wSpritePositionZHigh]
     sbc a, h
     ld h, a
     cp a, $FE
@@ -24207,15 +23630,15 @@ Label3F0B5B
     jp applyShotDamage
 
 gunShotFacingSouth: ;FC:4B64
-    ld hl, wSpritePosXoffsetLowByte - wCharSpritesData; $11
+    ld hl, wSpritePositionXLow - wCharSpritesData; $11
     add hl, de
     ld c, [hl]
     inc hl
     ld b, [hl]
-    ld a, [wSpritePosXoffsetLowByte]
+    ld a, [wSpritePositionXLow]
     sub a, c
     ld c, a
-    ld a, [wSpritePosXoffsetHighByte]
+    ld a, [wSpritePositionXHigh]
     sbc a, b
     ld b, a
     or a
@@ -24231,15 +23654,15 @@ Label3F0B85
     cp a, $60
     jp nc, noDamageShot
 Label3F0B8B
-    ld hl, wSpritePosYoffsetLowByte - wCharSpritesData ;$13
+    ld hl, wSpritePositionZLow - wCharSpritesData ;$13
     add hl, de
     ld c, [hl]
     inc hl
     ld b, [hl]
-    ld a, [wSpritePosYoffsetLowByte]
+    ld a, [wSpritePositionZLow]
     sub a, c
     ld c, a
-    ld a, [wSpritePosYoffsetHighByte]
+    ld a, [wSpritePositionZHigh]
     sbc a, b
     ld b, a
     cp a, $02
@@ -24247,15 +23670,15 @@ Label3F0B8B
     jp applyShotDamage
 
 gunShotFacingEast: ;FC:4BA4
-    ld hl, wSpritePosYoffsetLowByte - wCharSpritesData ;$13
+    ld hl, wSpritePositionZLow - wCharSpritesData ;$13
     add hl, de
     ld c, [hl]
     inc hl
     ld b, [hl]
-    ld a, [wSpritePosYoffsetLowByte]
+    ld a, [wSpritePositionZLow]
     sub a, c
     ld c, a
-    ld a, [wSpritePosYoffsetHighByte]
+    ld a, [wSpritePositionZHigh]
     sbc a, b
     ld b, a
     or a
@@ -24271,15 +23694,15 @@ Label3F0BC5
     cp a, $60
     jp nc, noDamageShot
 Label3F0BCB
-    ld hl, wSpritePosXoffsetLowByte - wCharSpritesData; $11
+    ld hl, wSpritePositionXLow - wCharSpritesData; $11
     add hl, de
     ld c, [hl]
     inc hl
     ld b, [hl]
-    ld a, [wSpritePosXoffsetLowByte]
+    ld a, [wSpritePositionXLow]
     sub a, c
     ld c, a
-    ld a, [wSpritePosXoffsetHighByte]
+    ld a, [wSpritePositionXHigh]
     sbc a, b
     ld b, a
     cp a, $02
@@ -24287,15 +23710,15 @@ Label3F0BCB
     jr applyShotDamage
 
 gunShotFacingNorth: ;FC:4BE3
-    ld hl, wSpritePosXoffsetLowByte - wCharSpritesData; $11
+    ld hl, wSpritePositionXLow - wCharSpritesData; $11
     add hl, de
     ld c, [hl]
     inc hl
     ld b, [hl]
-    ld a, [wSpritePosXoffsetLowByte]
+    ld a, [wSpritePositionXLow]
     sub a, c
     ld c, a
-    ld a, [wSpritePosXoffsetHighByte]
+    ld a, [wSpritePositionXHigh]
     sbc a, b
     ld b, a
     or a
@@ -24311,15 +23734,15 @@ Label3F0C04
     cp a, $60
     jp nc, noDamageShot
 Label3F0C0A
-    ld hl, wSpritePosYoffsetLowByte - wCharSpritesData ;$13
+    ld hl, wSpritePositionZLow - wCharSpritesData ;$13
     add hl, de
     ld c, [hl]
     inc hl
     ld b, [hl]
-    ld a, [wSpritePosYoffsetLowByte]
+    ld a, [wSpritePositionZLow]
     sub a, c
     ld c, a
-    ld a, [wSpritePosYoffsetHighByte]
+    ld a, [wSpritePositionZHigh]
     sbc a, b
     ld b, a
     cp a, $FE
@@ -24327,15 +23750,15 @@ Label3F0C0A
     jr applyShotDamage
 
 gunShotFacingWest: ;FC:4C22
-    ld hl, wSpritePosYoffsetLowByte - wCharSpritesData ;$13
+    ld hl, wSpritePositionZLow - wCharSpritesData ;$13
     add hl, de
     ld c, [hl]
     inc hl
     ld b, [hl]
-    ld a, [wSpritePosYoffsetLowByte]
+    ld a, [wSpritePositionZLow]
     sub a, c
     ld c, a
-    ld a, [wSpritePosYoffsetHighByte]
+    ld a, [wSpritePositionZHigh]
     sbc a, b
     ld b, a
     or a
@@ -24351,15 +23774,15 @@ Label3F0C43
     cp a, $60
     jp nc, noDamageShot
 Label3F0C49
-    ld hl, wSpritePosXoffsetLowByte - wCharSpritesData; $11
+    ld hl, wSpritePositionXLow - wCharSpritesData; $11
     add hl, de
     ld c, [hl]
     inc hl
     ld b, [hl]
-    ld a, [wSpritePosXoffsetLowByte]
+    ld a, [wSpritePositionXLow]
     sub a, c
     ld c, a
-    ld a, [wSpritePosXoffsetHighByte]
+    ld a, [wSpritePositionXHigh]
     sbc a, b
     ld b, a
     cp a, $FE
@@ -24691,9 +24114,9 @@ checkRoomBoundaries:: ;FD:43A0
     add hl, hl
     ld de, roomsBoundaries ;$4000
     add hl, de
-    ld a, [wSpritePosXoffsetLowByte]
+    ld a, [wSpritePositionXLow]
     ld e, a
-    ld a, [wSpritePosXoffsetHighByte]
+    ld a, [wSpritePositionXHigh]
     ld d, a
     call div8SignedWordFD
     push hl
@@ -24712,9 +24135,9 @@ checkRoomBoundaries:: ;FD:43A0
     ld e, c
     call multiply8SignedWordFD
     ld a, e
-    ld [wSpritePosXoffsetLowByte], a
+    ld [wSpritePositionXLow], a
     ld a, d
-    ld [wSpritePosXoffsetHighByte], a
+    ld [wSpritePositionXHigh], a
     jr checkTopBorder ;jump to check y-axis
 checkRightBorder
     ld c, [hl]
@@ -24731,9 +24154,9 @@ checkRightBorder
     ld e, c
     call multiply8SignedWordFD
     ld a, e
-    ld [wSpritePosXoffsetLowByte], a
+    ld [wSpritePositionXLow], a
     ld a, d
-    ld [wSpritePosXoffsetHighByte], a
+    ld [wSpritePositionXHigh], a
 checkTopBorder
     pop hl
     ld bc, $0004 ;offset to top border
@@ -24742,9 +24165,9 @@ checkTopBorder
     inc hl
     ld b, [hl]
     inc hl
-    ld a, [wSpritePosYoffsetLowByte]
+    ld a, [wSpritePositionZLow]
     ld e, a
-    ld a, [wSpritePosYoffsetHighByte]
+    ld a, [wSpritePositionZHigh]
     ld d, a
     call div8SignedWordFD
     ld a, d
@@ -24757,9 +24180,9 @@ checkTopBorder
     ld e, c
     call multiply8SignedWordFD
     ld a, e
-    ld [wSpritePosYoffsetLowByte], a
+    ld [wSpritePositionZLow], a
     ld a, d
-    ld [wSpritePosYoffsetHighByte], a
+    ld [wSpritePositionZHigh], a
     jr finishBoundaryCheck
 checkBottomBorder
     ld c, [hl]
@@ -24776,9 +24199,9 @@ checkBottomBorder
     ld e, c
     call multiply8SignedWordFD
     ld a, e
-    ld [wSpritePosYoffsetLowByte], a
+    ld [wSpritePositionZLow], a
     ld a, d
-    ld [wSpritePosYoffsetHighByte], a
+    ld [wSpritePositionZHigh], a
 finishBoundaryCheck
     ret
 ;4430
@@ -24835,15 +24258,15 @@ collidersLoop:
     ld [wHighColliderTopY], a
     push hl
 	;check collider collision
-    ld a, [wSpritePosXoffsetLowByte]
+    ld a, [wSpritePositionXLow]
     ld e, a
-    ld a, [wSpritePosXoffsetHighByte]
+    ld a, [wSpritePositionXHigh]
     ld d, a
     call div8SignedWordFD
     push de
-    ld a, [wSpritePosYoffsetLowByte]
+    ld a, [wSpritePositionZLow]
     ld e, a
-    ld a, [wSpritePosYoffsetHighByte]
+    ld a, [wSpritePositionZHigh]
     ld d, a
     call div8SignedWordFD
     ld l, e
@@ -24886,13 +24309,13 @@ checkRoomCollisions: ;FD:5184
     ret nz
     push de
     push hl
-    ld a, [wSpritePosXLowByte]
+    ld a, [wSpriteRoomPositionXLow]
     ld e, a
-    ld a, [wSpritePosXHighByte]
+    ld a, [wSpriteRoomPositionXHigh]
     ld d, a
-    ld a, [wSpritePosYLowByte]
+    ld a, [wSpriteRoomPositionYLow]
     ld l, a
-    ld a, [wSpritePosYHighByte]
+    ld a, [wSpriteRoomPositionYHigh]
     ld h, a
 ;evalBottomCollider
     ld a, [wLowColliderBottomY]
@@ -24908,10 +24331,10 @@ checkRoomCollisions: ;FD:5184
     call multiply8SignedWordFD
     ld a, e
     sub a, $01
-    ld [wSpritePosYoffsetLowByte], a
+    ld [wSpritePositionZLow], a
     ld a, d
     sbc a, $00
-    ld [wSpritePosYoffsetHighByte], a
+    ld [wSpritePositionZHigh], a
     pop hl
     pop de
     ret
@@ -24931,10 +24354,10 @@ evalTopCollider: ;FD:51E5
     call multiply8SignedWordFD
     ld a, e
     add a, $08
-    ld [wSpritePosYoffsetLowByte], a
+    ld [wSpritePositionZLow], a
     ld a, d
     adc a, $00
-    ld [wSpritePosYoffsetHighByte], a
+    ld [wSpritePositionZHigh], a
     pop hl
     pop de
     ret
@@ -24954,10 +24377,10 @@ evalRightCollider: ;FD:520B
     call multiply8SignedWordFD
     ld a, e
     sub a, $01
-    ld [wSpritePosXoffsetLowByte], a
+    ld [wSpritePositionXLow], a
     ld a, d
     sbc a, $00
-    ld [wSpritePosXoffsetHighByte], a
+    ld [wSpritePositionXHigh], a
     pop hl
     pop de
     ret
@@ -24971,10 +24394,10 @@ evalLeftCollider: ;FD:5230
     call multiply8SignedWordFD
     ld a, e
     add a, $08
-    ld [wSpritePosXoffsetLowByte], a
+    ld [wSpritePositionXLow], a
     ld a, d
     adc a, $00
-    ld [wSpritePosXoffsetHighByte], a
+    ld [wSpritePositionXHigh], a
     pop hl
     pop de
     ret

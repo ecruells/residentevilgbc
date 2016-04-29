@@ -318,13 +318,13 @@ StartGameScene:: ;00:039D
     ld de, $0005 ;set action area offset
     add hl, de
     ld a, [hli]
-    ld [wSpritePosXoffsetLowByte], a
+    ld [wSpritePositionXLow], a
     ld a, [hli]
-    ld [wSpritePosXoffsetHighByte], a
+    ld [wSpritePositionXHigh], a
     ld a, [hli]
-    ld [wSpritePosYoffsetLowByte], a
+    ld [wSpritePositionZLow], a
     ld a, [hli]
-    ld [wSpritePosYoffsetHighByte], a
+    ld [wSpritePositionZHigh], a
     ld a, [hli]
     ld [wSpriteFacing], a
     ld a, $01
@@ -393,16 +393,16 @@ gamePlayLoop: ;00:0449
     ld d, a
     call printDebugWord ;print room & screen Id
     ld hl, _SCRN0+$205
-    ld a, [wSpritePosXoffsetLowByte]
+    ld a, [wSpritePositionXLow]
     ld e, a
-    ld a, [wSpritePosXoffsetHighByte]
+    ld a, [wSpritePositionXHigh]
     ld d, a
     call div8SignedWord
     call printDebugWord ;print player X position
     ld hl, _SCRN0+$20A
-    ld a, [wSpritePosYoffsetLowByte]
+    ld a, [wSpritePositionZLow]
     ld e, a
-    ld a, [wSpritePosYoffsetHighByte]
+    ld a, [wSpritePositionZHigh]
     ld d, a
     call div8SignedWord
     call printDebugWord ;print player Y position
@@ -412,15 +412,15 @@ gamePlayLoop: ;00:0449
     ld d, $00
     call printDebugWord ;print player facing
     ld hl, _SCRN0+$220
-    ld a, [wSpriteYPosLowBuffer]
+    ld a, [wSpriteZOrder]
     ld e, a
     ld a, [wRotateFloor2AnimId]
     ld d, a
     call printDebugWord
     ld hl, _SCRN0+$225
-    ld a, [wSpritePosZLowByte]
+    ld a, [wSpritePositionYLow]
     ld e, a
-    ld a, [wSpritePosZHighByte]
+    ld a, [wSpritePositionYHigh]
     ld d, a
     call printDebugWord ;print player Z-elevation
     ld hl, $0000
@@ -432,7 +432,7 @@ gamePlayLoop: ;00:0449
     xor a
     ld [wPlayerSpeed], a ;reset framerate counter
     call initSprtBufferAddr
-    call calcAllSpritesData
+    call calcSpritesSizeAndPosition
     call goToLoadRoomSpritesData
     call hideOAM
     call goToSprtPrioritySort
@@ -447,7 +447,7 @@ gamePlayLoop: ;00:0449
     call goToCheckEnemyBoundaries
     call goToCheckRoomBoundaries
     call goToCheckSpritesCollision
-    call goToCheckRoomsColliders
+    call goToCheckRoomsColliders ;8F1
     call goToCheckRoomsEventsColliders ;8F8
     call goToCheckRoomsCameraChange
     or a
@@ -547,7 +547,7 @@ cameraChangeTransition: ;00:05AE
     call resetScreenAndFadeIn
     call goToLoadRoomSpritesData
     call goToLoadZombieAndObjAnimFrames
-    call calcAllSpritesData
+    call calcSpritesSizeAndPosition
     jp gameLoopWithEventCheck
 ;05BD
 
@@ -725,7 +725,7 @@ loadAndCalcEventSpritesData:: ;00:06D6
     ld a, $01
     call BankSwitch
     call initSprtBufferAddr
-    call calcAllSpritesData ;0B72
+    call calcSpritesSizeAndPosition ;0B72
     call goToLoadRoomSpritesData ;08E3
     call hideOAM
     call goToSprtPrioritySort
@@ -823,25 +823,25 @@ loadAllRoomBgData:: ;00:0741
     ld a, [hli]
     ld [wCameraYAxisHighByte], a
     ld a, [hli]
-    ld [wSpriteSizeLow], a
+    ld [wCameraYawAddrLow], a
     ld a, [hli]
-    ld [wSpriteSizeHigh], a
+    ld [wCameraYawAddrHigh], a
     ld a, [hli]
-    ld [wCameraZoomLow], a
+    ld [wCameraPitchAddrLow], a
     ld a, [hli]
-    ld [wCameraZoomHigh], a
+    ld [wCameraPitchAddrHigh], a
     ld a, [hli]
     ld [wCameraXPaddingLowByte], a
     ld a, [hli]
     ld [wCameraXPaddingHighByte], a
     ld a, [hli]
-    ld [wCameraYPaddingLowByte], a
-    ld a, [hli]
-    ld [wCameraYPaddingHighByte], a
-    ld a, [hli]
     ld [wCameraZPaddingLowByte], a
     ld a, [hli]
     ld [wCameraZPaddingHighByte], a
+    ld a, [hli]
+    ld [wCameraYPaddingLowByte], a
+    ld a, [hli]
+    ld [wCameraYPaddingHighByte], a
     ld a, [hli]
     ld [wCameraFacing], a
     ld a, [hl]
@@ -852,7 +852,7 @@ loadAllRoomBgData:: ;00:0741
     ld [wCameraType], a
     ld a, $01
     call BankSwitch
-    call getScreenCameraPosValues
+    call getCameraPitchYaw
     call goToApplyPlayerElevation
     ld a, [wRoomId]
     ld l, a
@@ -1094,434 +1094,11 @@ goToLoadRoomBgMask:: ;00:0942
     ld a, BANK(applyRoomBgMask) ;$04
     jp goToJumpFuncHL
 
-calcSpriteScalePos:: ;00:094A
-    ld a, [wCameraType]
-    or a
-    jp z, setSpritePosScale
-    push de
-    ld hl, wSpritePosXoffsetLowByte - wCharSpritesData ;$11
-    add hl, de
-    ld e, [hl]
-    inc hl ;wSpritePosXoffsetHighByte
-    ld d, [hl]
-    call div8SignedWord
-    ld a, e
-    ld [wSpriteLowPosXBuffer], a
-    ld a, d
-    ld [wSpriteHighPosXBuffer], a
-    pop de
-    push de
-    ld hl, wSpritePosYoffsetLowByte - wCharSpritesData ;$13
-    add hl, de
-    ld e, [hl]
-    inc hl ;wSpritePosYoffsetHighByte
-    ld d, [hl]
-    call div8SignedWord
-    ld a, e
-    ld [wSpriteLowPosYBuffer], a
-    ld a, d
-    ld [wSpriteHighPosYBuffer], a
-    ld hl, wCharSpritesData - wCharSpritesData ;$0
-    ld a, l
-    ld [wSpriteLowPosZBuffer], a
-    ld a, h
-    ld [wSpriteHighPosZBuffer], a
-    call calcSpritePos
-    pop de
-    ld hl, wSpriteXPosLowBuffer - wCharSpritesData ;$0002
-    add hl, de
-    ld a, [wSpriteLowPosXBuffer]
-    ld [hl], a
-    ld hl, wSpriteZPosLowBuffer - wCharSpritesData ;$3
-    add hl, de
-    ld a, [wSpriteLowPosZBuffer]
-    ld [hl], a
-    ld hl, wSpriteYPosLowBuffer - wCharSpritesData ;$1
-    add hl, de
-    ld a, [wSpriteLowPosYBuffer]
-    ld [hl], a
-    ld a, [wSpriteHighPosYBuffer]
-    or a
-    ret nz
-    ld a, [wSpriteLowPosYBuffer]
-    or a
-    ret z
-    push de
-    ld de, $16
-    call loadSpriteScaleData
-    pop de
-    push de
-    ld hl, wSpritePosXoffsetLowByte - wCharSpritesData ;$11
-    add hl, de
-    ld e, [hl]
-    inc hl ;wSpritePosXoffsetHighByte
-    ld d, [hl]
-    call div8SignedWord
-    ld a, [wSpriteScaleC144Low]
-    ld l, a
-    ld a, [wSpriteScaleC145High]
-    ld h, a
-    add hl, de
-    ld a, l
-    ld [wSpriteLowPosXBuffer], a
-    ld a, h
-    ld [wSpriteHighPosXBuffer], a
-    pop de
-    push de
-    ld hl, wSpritePosYoffsetLowByte - wCharSpritesData ;$13
-    add hl, de
-    ld e, [hl]
-    inc hl ;wSpritePosYoffsetHighByte
-    ld d, [hl]
-    call div8SignedWord
-    ld a, [wSpriteZoomLowByte]
-    ld l, a
-    ld a, [wSpriteZoomHighByte]
-    ld h, a
-    add hl, de
-    ld a, l
-    ld [wSpriteLowPosYBuffer], a
-    ld a, h
-    ld [wSpriteHighPosYBuffer], a
-    ld hl, $0000 ;reset pos Z buffer
-    ld a, l
-    ld [wSpriteLowPosZBuffer], a
-    ld a, h
-    ld [wSpriteHighPosZBuffer], a
-    call calcSpritePos
-    pop de
-    ld a, [wSpriteLowPosXBuffer]
-    ld c, a
-    ld hl, wSpriteXPosLowBuffer - wCharSpritesData ;$2
-    add hl, de
-    ld a, [hl]
-    sub a, c
-    ld hl, wSpriteXscale - wCharSpritesData ;$4
-    add hl, de
-    ld [hl], a
-    cp a, $20
-    jr c, .LabelA0F
-    ld a, $1F
-    ld [hl], a
-.LabelA0F
-    ld hl, wSpriteXscale - wCharSpritesData ;$4
-    add hl, de
-    ld a, [hl]
-    ld c, a
-    srl a
-    add a, c
-    ld hl, wSpriteYscale - wCharSpritesData ;$5
-    add hl, de
-    ld [hl], a
-    srl a
-    ld c, a
-    ld hl, wSpriteZPosLowBuffer - wCharSpritesData ;$3
-    add hl, de
-    ld a, [hl]
-    sub a, c
-    ld [hl], a
-    ld hl, wSpriteXPosLowBuffer - wCharSpritesData ;$2
-    add hl, de
-    ld a, [hl]
-    sub a, $10
-    ld [hl], a
-    ld a, $C0
-    ld [de], a
-    ret
 
-setSpritePosScale:: ;00:0A33
-    push de
-    ld hl, wSpritePosXoffsetLowByte - wCharSpritesData ;$11
-    add hl, de
-    ld e, [hl]
-    inc hl ;wSpritePosXoffsetHighByte
-    ld d, [hl]
-    call div8SignedWord
-    ld a, e
-    ld [wSpriteLowPosXBuffer], a
-    ld a, d
-    ld [wSpriteHighPosXBuffer], a
-    pop de
-    push de
-    ld hl, wSpritePosYoffsetLowByte - wCharSpritesData ;$13
-    add hl, de
-    ld e, [hl]
-    inc hl ;wSpritePosYoffsetHighByte
-    ld d, [hl]
-    call div8SignedWord
-    ld a, e
-    ld [wSpriteLowPosYBuffer], a
-    ld a, d
-    ld [wSpriteHighPosYBuffer], a
-    pop de
-    push de
-    ld hl, wSpritePosZLowByte - wCharSpritesData ;$19
-    add hl, de
-    ld a, [hli]
-    ld [wSpriteLowPosZBuffer], a
-    ld a, [hli]
-    ld [wSpriteHighPosZBuffer], a
-    call calcSpritePos
-    pop de
-    ld a, [wSpriteHighPosXBuffer]
-    or a
-    jr z, .LabelA7D
-    cp a, $FF
-    ret nz
-    ld a, [wSpriteLowPosXBuffer]
-    cp a, $E0
-    ret c
-    jr .LabelA83
-.LabelA7D
-    ld a, [wSpriteLowPosXBuffer]
-    cp a, $A8
-    ret nc
-.LabelA83
-    ld hl, wSpriteXPosLowBuffer - wCharSpritesData ;$2
-    add hl, de
-    ld a, [wSpriteLowPosXBuffer]
-    ld [hl], a
-    ld a, [wSpriteHighPosZBuffer]
-    or a
-    ret nz
-    ld hl, wSpriteZPosLowBuffer - wCharSpritesData ;$3
-    add hl, de
-    ld a, [wSpriteLowPosZBuffer]
-    ld [hl], a
-    ld hl, wSpriteYPosLowBuffer - wCharSpritesData ;$1
-    add hl, de
-    ld a, [wSpriteLowPosYBuffer]
-    ld [hl], a
-    ld a, [wSpriteHighPosYBuffer]
-    or a
-    ret nz
-    ld a, [wSpriteLowPosYBuffer]
-    or a
-    ret z
-    ld a, [spriteIdBuffer]
-    cp a, RESEARCHER_ROOM_SHELF ;$E6
-    jr z, LabelAC3
-    cp a, ARMORS_ROOM_STATUE_1 ;$E7
-    jr z, LabelACD
-    cp a, $E8
-    jr z, LabelACD
-    cp a, DORM_003_CLOSET_F1 ;$EA
-    jr z, LabelAC3
-    cp a, UNDERGROUND_STATUE ;$ED
-    jr z, LabelACD
-    jr LabelAD7
-LabelAC3
-    push de
-    ld de, $0098
-    call loadSpriteScaleData
-    pop de
-    jr LabelADF
-LabelACD
-    push de
-    ld de, $0060
-    call loadSpriteScaleData
-    pop de
-    jr LabelADF
-LabelAD7
-    push de
-    ld de, $0080
-    call loadSpriteScaleData
-    pop de
-LabelADF
-    push de
-    ld hl, wSpritePosXoffsetLowByte - wCharSpritesData ;$0011
-    add hl, de
-    ld e, [hl]
-    inc hl ; wSpritePosXoffsetHighByte
-    ld d, [hl]
-    call div8SignedWord
-    ld a, [wSpriteScaleC144Low]
-    ld l, a
-    ld a, [wSpriteScaleC145High]
-    ld h, a
-    add hl, de
-    ld a, l
-    ld [wSpriteLowPosXBuffer], a
-    ld a, h
-    ld [wSpriteHighPosXBuffer], a
-    pop de
-    push de
-    ld hl, wSpritePosYoffsetLowByte - wCharSpritesData ;$13
-    add hl, de
-    ld e, [hl]
-    inc hl ;wSpritePosYoffsetHighByte
-    ld d, [hl]
-    call div8SignedWord
-    ld a, [wSpriteZoomLowByte]
-    ld l, a
-    ld a, [wSpriteZoomHighByte]
-    ld h, a
-    add hl, de
-    ld a, l
-    ld [wSpriteLowPosYBuffer], a
-    ld a, h
-    ld [wSpriteHighPosYBuffer], a
-    ld hl, $0000
-    ld a, l
-    ld [wSpriteLowPosZBuffer], a
-    ld a, h
-    ld [wSpriteHighPosZBuffer], a
-    call calcSpritePos
-    pop de
-    ld a, [wSpriteLowPosXBuffer]
-    ld c, a
-    ld a, [wSpriteHighPosXBuffer]
-    ld b, a
-    ld hl, wSpriteXPosLowBuffer - wCharSpritesData ;$0002
-    add hl, de
-    ld a, [hl]
-	;reverse bc sign
-    sub a, c
-    ld c, a
-    ld a, $00
-    sbc a, b
-    ld b, a
-	;div bc by 4
-    srl b
-    rr c
-    srl b
-    rr c
-    ld a, c
-    srl a
-    ld hl, wSpriteXscale - wCharSpritesData ;$0004
-    add hl, de
-    ld [hl], a
-    cp a, $20
-    jr c, LabelB51
-    ld a, $1F
-    ld [hl], a
-LabelB51
-    ld a, c
-    cp a, $60
-    jr c, LabelB58
-    ld a, $5F
-LabelB58
-    ld hl, wSpriteYscale - wCharSpritesData ;$0005
-    add hl, de
-    ld [hl], a
-    ld c, a
-    ld hl, wSpriteZPosLowBuffer - wCharSpritesData ;$0003
-    add hl, de
-    ld a, [hl]
-    inc a
-    sub a, c
-    ld [hl], a
-    ld hl, wSpriteXPosLowBuffer - wCharSpritesData ;$0002
-    add hl, de
-    ld a, [hl]
-    sub a, $10
-    ld [hl], a
-    ld a, $C0
-    ld [de], a
-    ret
 
-calcAllSpritesData: ;00:0B72
-    ld de, wCharSpritesData
-    ld b, $08 ;sprites count
-loadSpritesDataLoop
-    push bc
-    push de
-    ld a, [de]
-    and a, %10000000 ;$80 hide sprite
-    ld [de], a
-    jr z, continueNextSprite ;jump to next if sprite is disabled
-    ld hl, wSpriteId - wCharSpritesData ;$000B
-    add hl, de
-    ld a, [hl]
-    cp a, ZOMBIE
-    jr c, LabelB9F ; jump if char is less than zombie (main chars)
-    cp a, $A8
-    jr c, LabelBBD ; jump if chars is a zombie
-    cp a, OBJECTS
-    jp nc, LabelBE4 ; jump is char is an object
-continueNextSprite: ;0B91
-    pop de
-    pop bc
-    ld a, e
-    add a, $20 ; next sprite offset
-    ld e, a
-    ld a, d
-    adc a, $00
-    ld d, a
-    dec b
-    jr nz, loadSpritesDataLoop
-    ret
 
-LabelB9F: ;00:0B9F
-;chars
-    ld [spriteIdBuffer], a
-    push de
-    call calcSpriteScalePos
-    pop de
-    ld a, [de]
-    and a, $40
-    jr z, continueNextSprite
-    push de
-    call goToLoadSprtPriorityData
-    pop de
-    ld hl, wFiregunFramesId - wCharSpritesData ;$C
-    add hl, de
-    ld a, [hl]
-    and a, %10000000 ;$80
-    call nz, LabelBFE ;call if sprite enabled
-    jr continueNextSprite
+INCLUDE	"engine/scaling/spriteSizeAndPositionFunctions1.asm"
 
-LabelBBD: ;00:0BBD
-;zombie
-    ld [spriteIdBuffer], a
-    call goToCheckZombieVisibility ;0933
-    or a
-    jr z, continueNextSprite ; jump if $00
-    call checkBloodFramesIdValue
-    push de
-    call calcSpriteScalePos
-    pop de
-    ld a, [de] ;C3x0
-    and a, %01000000 ;$40 check if hidden
-    jr z, continueNextSprite ;to next sprt if char is hidden
-    push de
-    call goToLoadSprtPriorityData ;0839
-    pop de
-    ld hl, wBloodFramesId - wCharSpritesData ;$D
-    add hl, de
-    ld a, [hl]
-    and a, $80
-    call nz, LabelC04
-    jr continueNextSprite
-
-LabelBE4: ;0BE4
-;objects
-    ld [spriteIdBuffer], a
-    call goToCheckObjVisibility
-    or a
-    jr z, continueNextSprite ;next sprite if $00 (not visible)
-    push de
-    call calcSpriteScalePos
-    pop de
-    ld a, [de]
-    and a, %01000000 ;$40
-    jr z, continueNextSprite
-    push de
-    call goToLoadSprtPriorityData
-    pop de
-    jr continueNextSprite
-
-LabelBFE: ;00:0BFE
-    push de
-    call loadFiregunSprite ;11B3
-    pop de
-    ret
-
-LabelC04: ;00:0C04
-    push de
-    call goToLoadEnemyBloodSprt
-    pop de
-    ret
 
 ;0C0A
 
@@ -1929,385 +1506,10 @@ LabelEC0
     ld a, CLOSE_DOOR_SFX ;$05
     jp playSFX
 
-calcSpritePos:: ;00:0EC5
-    ld a, [wCameraXAxisLowByte]
-    ld e, a
-    ld a, [wCameraXAxisHighByte]
-    ld d, a
-    ld a, [wSpriteLowPosXBuffer]
-    ld l, a
-    ld a, [wSpriteHighPosXBuffer]
-    ld h, a
-    add hl, de ;cam X axis + sprite X pos
-    ld a, l
-    ld [wSpriteLowPosXBuffer], a
-    ld [wSpriteLowPosXCamX], a
-    ld a, h
-    ld [wSpriteHighPosXBuffer], a
-    ld [wSpriteHighPosXCamX], a
-    ld a, [wCameraZAxisLowByte]
-    ld e, a
-    ld a, [wCameraZAxisHighByte]
-    ld d, a
-    ld a, [wSpriteLowPosZBuffer]
-    ld l, a
-    ld a, [wSpriteHighPosZBuffer]
-    ld h, a
-    add hl, de ; cam Z axis + sprite Z pos
-    ld e, l
-    ld d, h
-    call reverseDESign
-    ld a, e
-    ld [wSpriteLowPosZBuffer], a
-    ld [wSpriteLowPosZcamZ], a
-    ld a, d
-    ld [wSpriteHighPosZBuffer], a
-    ld [wSpriteHighPosZcamZ], a
-    ld a, [wCameraYAxisLowByte]
-    ld e, a
-    ld a, [wCameraYAxisHighByte]
-    ld d, a
-    ld a, [wSpriteLowPosYBuffer]
-    ld l, a
-    ld a, [wSpriteHighPosYBuffer]
-    ld h, a
-    add hl, de ;camera Y axis + sprite Y pos
-    ld a, l
-    ld [wSpriteLowPosYBuffer], a
-    ld [wSpriteLowPosYCamY], a
-    ld a, h
-    ld [wSpriteHighPosYBuffer], a
-    ld [wSpriteHighPosYCamY], a
-    ld a, [wSpriteLowPosXBuffer]
-    ld e, a
-    ld a, [wSpriteHighPosXBuffer]
-    ld d, a
-    ld a, [wCameraPosX]
-    ld l, a
-    ld h, $00
-    call func6F11
-    ld a, e
-    ld [wc154], a
-    ld a, d
-    ld [wc155], a
-    ld a, [wSpriteLowPosYBuffer]
-    ld e, a
-    ld a, [wSpriteHighPosYBuffer]
-    ld d, a
-    ld a, [wCameraPosY]
-    ld l, a
-    ld h, $00
-    call func6F11
-    call func10E9
-    call div16SignedWord
-    ld a, e
-    ld [wSpriteScaleC144Low], a
-    ld a, d
-    ld [wSpriteScaleC145High], a
-    ld a, [wSpriteLowPosZBuffer]
-    ld [wc146], a
-    ld a, [wSpriteHighPosZBuffer]
-    ld [wc147], a
-    ld a, [wSpriteLowPosXBuffer]
-    ld e, a
-    ld a, [wSpriteHighPosXBuffer]
-    ld d, a
-    ld a, [wCameraPosY]
-    ld l, a
-    ld h, $00
-    call func6F11
-    ld a, e
-    ld [wc154], a
-    ld a, d
-    ld [wc155], a
-    ld a, [wSpriteLowPosYBuffer]
-    ld e, a
-    ld a, [wSpriteHighPosYBuffer]
-    ld d, a
-    ld a, [wCameraPosX]
-    ld l, a
-    ld h, $00
-    call func6F11
-    call func10FA
-    call div64signedWord
-    ld a, e
-    ld [wSpriteZoomLowByte], a
-    ld a, d
-    ld [wSpriteZoomHighByte], a
-    ld a, [wSpriteScaleC144Low]
-    ld [wSpriteLowPosXBuffer], a
-    ld a, [wSpriteScaleC145High]
-    ld [wSpriteHighPosXBuffer], a
-    ld a, [wc146]
-    ld e, a
-    ld a, [wc147]
-    ld d, a
-    ld a, [wCameraC12D]
-    ld l, a
-    ld h, $00
-    call func6F11
-    ld a, e
-    ld [wc154], a
-    ld a, d
-    ld [wc155], a
-    ld a, [wSpriteZoomLowByte]
-    ld e, a
-    ld a, [wSpriteZoomHighByte]
-    ld d, a
-    ld a, [wCameraC12C]
-    ld l, a
-    ld h, $00
-    call func6F11
-    call func10E9
-    call div64signedWord
-    ld a, e
-    ld [wSpriteLowPosYBuffer], a
-    ld a, d
-    ld [wSpriteHighPosYBuffer], a
-    ld a, [wc146]
-    ld e, a
-    ld a, [wc147]
-    ld d, a
-    ld a, [wCameraC12C]
-    ld l, a
-    ld h, $00
-    call func6F11
-    ld a, e
-    ld [wc154], a
-    ld a, d
-    ld [wc155], a
-    ld a, [wSpriteZoomLowByte]
-    ld e, a
-    ld a, [wSpriteZoomHighByte]
-    ld d, a
-    ld a, [wCameraC12D]
-    ld l, a
-    ld h, $00
-    call func6F11
-    call func10FA
-    call div16SignedWord
-    ld a, e
-    ld [wSpriteLowPosZBuffer], a
-    ld a, d
-    ld [wSpriteHighPosZBuffer], a
-    ld a, [wCameraXPaddingLowByte]
-    ld l, a
-    ld a, [wCameraXPaddingHighByte]
-    ld h, a
-    ld a, [wSpriteLowPosXBuffer]
-    ld e, a
-    ld a, [wSpriteHighPosXBuffer]
-    ld d, a
-    add hl, de
-    ld a, l
-    ld [wSpriteLowPosXBuffer], a
-    ld a, h
-    ld [wSpriteHighPosXBuffer], a
-    ld a, [wCameraYPaddingLowByte]
-    ld l, a
-    ld a, [wCameraYPaddingHighByte]
-    ld h, a
-    ld a, [wSpriteLowPosZBuffer]
-    ld e, a
-    ld a, [wSpriteHighPosZBuffer]
-    ld d, a
-    add hl, de
-    ld a, l
-    ld [wSpriteLowPosZBuffer], a
-    ld a, h
-    ld [wSpriteHighPosZBuffer], a
-    ld a, [wCameraZPaddingLowByte]
-    ld l, a
-    ld a, [wCameraZPaddingHighByte]
-    ld h, a
-    ld a, [wSpriteLowPosYBuffer]
-    ld e, a
-    ld a, [wSpriteHighPosYBuffer]
-    ld d, a
-    add hl, de
-    ld a, l
-    ld [wSpriteLowPosYBuffer], a
-    ld a, h
-    ld [wSpriteHighPosYBuffer], a
-    ld hl, wSpriteLowPosXBuffer
-    call div4WordInHLPointer
-    ld hl, wSpriteLowPosZBuffer
-    call div4WordInHLPointer
-    ld a, [wSpriteLowPosYBuffer]
-    ld e, a
-    ld a, [wSpriteHighPosYBuffer]
-    ld d, a
-    ld a, [wSpriteScaling3LowByte]
-    ld l, a
-    ld a, [wSpriteScaling3HighByte]
-    ld h, a
-    call func6F11
-    call div128signedWord
-    ld a, e
-    ld [wSpriteLowPosYBuffer], a
-    ld a, d
-    ld [wSpriteHighPosYBuffer], a
-    ld a, [wSpriteLowPosXBuffer]
-    ld e, a
-    ld a, [wSpriteHighPosXBuffer]
-    ld d, a
-    ld a, [wSpriteScaling1LowByte]
-    ld l, a
-    ld a, [wSpriteScaling1HighByte]
-    ld h, a
-;00:10A4
-    call func6F11
-    ld a, [wSpriteLowPosYBuffer]
-    ld c, a
-    ld a, [wSpriteHighPosYBuffer]
-    ld b, a
-    call func6FBC
-    ld a, e
-    add a, $58
-    ld [wSpriteLowPosXBuffer], a
-    ld a, d
-    adc a, $00
-    ld [wSpriteHighPosXBuffer], a
-    ld a, [wSpriteLowPosZBuffer]
-    ld e, a
-    ld a, [wSpriteHighPosZBuffer]
-    ld d, a
-    ld a, [wSpriteScaling2LowByte]
-    ld l, a
-    ld a, [wSpriteScaling2HighByte]
-    ld h, a
-    call func6F11
-    ld a, [wSpriteLowPosYBuffer]
-    ld c, a
-    ld a, [wSpriteHighPosYBuffer]
-    ld b, a
-    call func6FBC
-    ld a, e
-    add a, $50
-    ld [wSpriteLowPosZBuffer], a
-    ld a, d
-    adc a, $00
-    ld [wSpriteHighPosZBuffer], a
-    ret
 
-func10E9: ;00:10E9
-    push hl
-    ld a, [wc154]
-    ld l, a
-    ld a, [wc155]
-    ld h, a
-    call reverseDESign
-    add hl, de
-    ld e, l
-    ld d, h
-    pop hl
-    ret
 
-func10FA: ;00:10FA
-    push hl
-    ld a, [wc154]
-    ld l, a
-    ld a, [wc155]
-    ld h, a
-    add hl, de
-    ld e, l
-    ld d, h
-    pop hl
-    ret
+INCLUDE "engine/scaling/spriteSizeAndPositionFunctions2.asm"
 
-loadSpriteScaleData:: ;00:1108
-    push de
-    call getSpriteScaleData
-    pop de
-    push de
-    ld a, [wSpriteScaleValueB]
-    ld l, a
-    ld h, $00
-    call func6F11
-    call div64signedWord
-    ld a, e
-    ld [wSpriteScaleC144Low], a
-    ld a, d
-    ld [wSpriteScaleC145High], a
-    pop de
-    ld a, [wSpriteScaleValueA]
-    ld l, a
-    ld h, $00
-    call func6F11
-    call div64signedWord
-    ld a, e
-    ld [wSpriteZoomLowByte], a
-    ld a, d
-    ld [wSpriteZoomHighByte], a
-    ret
-
-getScreenCameraPosValues:: ;00:1138
-    ld a, BANK(scaleDataTable) ;$0B
-    call BankSwitch
-    ld de, scaleDataTable ;$4000
-    ld a, [wSpriteSizeLow]
-    ld l, a
-    ld a, [wSpriteSizeHigh]
-    add a, $08
-    and a, $0F
-    add a, d
-    ld h, a
-    ld a, [hl]
-    ld [wCameraPosY], a
-    ld a, h
-    sub a, d
-    add a, $04
-    and a, $0F
-    add a, d
-    ld h, a
-    ld a, [hl]
-    ld [wCameraPosX], a
-    ld a, [wCameraZoomLow]
-    ld l, a
-    ld a, [wCameraZoomHigh]
-    add a, d
-    ld h, a
-    ld a, [hl]
-    ld [wCameraC12C], a
-    ld a, h
-    sub a, d
-    add a, $04
-    and a, $0F
-    add a, d
-    ld h, a
-    ld a, [hl]
-    ld [wCameraC12D], a
-    ld a, $01
-    call BankSwitch
-    jp initSpecialCameraAngles
-
-getSpriteScaleData:: ;00:117E
-    ld a, [wSpriteSizeLow]
-    ld e, a
-    ld a, [wSpriteSizeHigh]
-    ld d, a
-    call reverseDESign
-    ld l, e
-    ld h, d
-    ld a, BANK(scaleDataTable) ;$0B
-    call BankSwitch
-    ld de, scaleDataTable ;$4000
-    ld a, h
-    and a, $0F
-    add a, d
-    ld h, a
-    ld a, [hl]
-    ld [wSpriteScaleValueA], a
-    ld a, h
-    sub a, d
-    add a, $04
-    and a, $0F
-    add a, d
-    ld h, a
-    ld a, [hl]
-    ld [wSpriteScaleValueB], a
-    ld a, $01
-    jp BankSwitch
 
 enableHDMA:: ;00:11AD
     ld a, $01
@@ -2405,18 +1607,18 @@ Label1211
     inc hl
     push hl
     push de
-    ld hl, wSpriteXscale - wCharSpritesData ;$4
+    ld hl, wSpriteWidth - wCharSpritesData ;$4
     add hl, de
     ld l, [hl]
     ld h, $00
     ld e, c
     ld d, b
-    call func6F11
+    call wordMultiply
     ld bc, $20
-    call func6FBC
+    call wordDivision
     ld c, e
     pop de
-    ld hl, wSpriteXPosLowBuffer - wCharSpritesData ;$2
+    ld hl, wSpriteScreenPosX - wCharSpritesData ;$2
     add hl, de
     ld a, [hl]
     add a, $0C
@@ -2441,7 +1643,7 @@ Label1211
     add a, c
     ld [hl], a
     push de
-    ld hl, wSpriteYscale - wCharSpritesData ;$5
+    ld hl, wSpriteHeight - wCharSpritesData ;$5
     add hl, de
     ld l, [hl]
     ld h, $00
@@ -2470,12 +1672,12 @@ Label128E ;firegun sprite Y position
     jr z, Label12A5
     ld de, $0013
 Label12A5
-    call func6F11
+    call wordMultiply
     ld bc, $30
-    call func6FBC
+    call wordDivision
     ld c, e
     pop de
-    ld hl, wSpriteZPosLowBuffer - wCharSpritesData ;$3
+    ld hl, wSpriteScreenPosY - wCharSpritesData ;$3
     add hl, de
     ld a, [hl]
     sub a, $08
@@ -2574,7 +1776,7 @@ loop1365
     ret z
     push de
     inc de
-    ld a, [de]
+    ld a, [de] ;get spriteId
     ld l, a
     inc de
     ld a, [de]
@@ -2582,7 +1784,7 @@ loop1365
     inc de
     ld a, h
     or a
-    jr nz, .Label1387
+    jr nz, .Label1387 ;jump if no scalable sprite
     ld a, l
     cp a, $08
     jr c, .Label1381
@@ -2615,26 +1817,26 @@ loadSpriteTilesBuffer: ;00:2687
 ;de: sprite frame pointer
     ld a, [wSprtPriorHeight]
     ld c, a
-    and a, $0F ;mask Y scale low nibble
-    jr z, .Label2695 ;jump if masking is zero
-	;else mask high nibble and add $10
+    and a, $0F ;mask height low nibble
+    jr z, .Label2695 ;jump if sprite height is perfect power of 2 to match a 16px height sprite
+;else add an extra sprite height
     ld a, c
     and a, $F0
-    add a, $10
+    add a, $10 ;add extra sprite height
     ld c, a
 .Label2695
     ld a, c
-    add a
-    ld [wSpriteVRAMTilesNumberRelative], a ;set number of tiles to store
+    add a ;height x 2 (8x16 sprites require two tiles data)
+    ld [wSpriteHalfBufferSize], a ;set number of tiles to store
     ld a, [wSprtPriorWidth]
-    push af ;store X scale value
+    push af ;store width value
     ld b, $02 ;sprite sides
 .loop26A0
-    push bc
-    push hl
+    push bc ;store sides couter
+    push hl ;store tiles buffer
     call loadAndScaleSpriteTileData
     ld a, [wSprtPriorWidth]
-    or a, %00010000 ;$10 ;set h-scale high nibble
+    or a, $10 ;set h-scale high nibble
     ld [wSprtPriorWidth], a
     ld a, [wSprtPriorHeight]
     and a, $0F
@@ -2654,7 +1856,7 @@ loadSpriteTilesBuffer: ;00:2687
     dec c
     jr nz, .Label26BD
     pop hl
-    ld a, [wSpriteVRAMTilesNumberRelative]
+    ld a, [wSpriteHalfBufferSize]
     add a, l
     ld l, a
     ld a, $00
@@ -2702,125 +1904,7 @@ loadSpriteTilesBuffer: ;00:2687
     ret
 
 INCLUDE "engine/scaling/scalingFunctions.asm" ;00:270B
-
-loadAndScaleSpriteTileData:: ;00:299F
-;hl: spriteTilesbuffer
-;de: sprite frame pointer
-    push hl ;store spriteTilesBuffer
-    ld hl, _verticalScalingLookupTable ;$1397
-    ld a, [wSprtPriorHeight]
-    dec a
-    add a
-    add a, l ;VScaleLookupTable + ((Yscale - 1) * 2)
-    ld l, a
-    ld a, $00
-    adc a, h
-    ld h, a
-    ld c, [hl]
-    inc hl
-    ld b, [hl] ;load v-scale pointer to bc
-    pop hl ;restore spriteTilesBuffer
-loop29B2:
-    push bc ;store v-scale pointer
-	;store sprite tile pointed data into bc
-    ld a, [de] ;
-    ld c, a
-    inc de
-    ld a, [de]
-    ld b, a
-    inc de
-    push de ;store sprite tile pointer
-    push hl ; store spriteTilesBuffer
-    ld a, [wCurrentRomBank]
-    push af
-    ld a, $0A
-    call BankSwitch
-    ld hl, _horizontalScalingTable ;$4000
-    ld a, [wSprtPriorWidth]
-    and a, $0F ;mask h-scale
-    add a, h ;add h-scale offset to high byte
-    ld h, a
-    ld l, c ; set low byte from sprite tile low byte
-    ld c, [hl] ;get h-scale value
-    ld l, b ; set high byte from sprite tile high byte
-    ld b, [hl] ;get h-scale value
-    pop af
-    call BankSwitch
-    ld a, h
-    add a, $0D
-    ld h, a
-    push bc
-    ld a, [de]
-    ld c, a
-    inc de
-    ld a, [de]
-    ld b, a
-    ld a, [wCurrentRomBank]
-    push af
-    ld a, $0A
-    call BankSwitch
-    ld l, c
-    ld c, [hl]
-    ld l, b
-    ld b, [hl]
-    pop af
-    call BankSwitch ;back to home bank
-    pop de
-    ld hl, Label2A07 ;$2A07 set return address
-    push hl
-    ld hl, _scalingFuncionTable ;$270B
-    ld a, [wSprtPriorWidth]
-    add a
-    add a, l
-    ld l, a
-    ld a, $00
-    adc a, h
-    ld h, a ;scaling function pointer offset hl + (h-scale * 2)
-    ld a, [hli]
-    ld h, [hl]
-    ld l, a ;set scaling funtion pointer to HL
-    jp [hl]
-Label2A07:
-    pop hl ;restore sprt tiles buffer
-	;load sprite tile data into buffer
-    ld [hl], e
-    inc hl
-    ld [hl], d
-    dec hl
-    ld a, [wSpriteVRAMTilesNumberRelative]
-    add a, l
-    ld l, a
-    ld a, $00
-    adc a, h
-    ld h, a ;add sprite buffer offset
-	;load sprite tile data into buffer
-    ld [hl], c
-    inc hl
-    ld [hl], b
-    inc hl
-    ld a, [wSpriteVRAMTilesNumberRelative]
-    ld e, a
-    ld a, l
-    sub a, e
-    ld l, a
-    ld a, h
-	sbc a, $00 ;substract sprite buffer offset
-	ld h, a
-	pop de
-	dec de
-	dec de
-	pop bc ;restore v-scale pointer
-	ld a, [bc]
-	cp a, $FF
-	ret z ;return if v-scale data is FF
-	add a
-	add a, e
-	ld e, a
-	ld a, $00
-	adc a, d
-	ld d, a
-	inc bc
-	jp loop29B2
+INCLUDE "engine/scaling/spriteScalingRoutine.asm" ;00:299F
 
 Function2A37:: ;00:2A37
     push bc
@@ -2902,7 +1986,7 @@ loadRoomItemSpriteTilesData:: ;00:2A86
     jr z, .Label2A9B
     inc a
     ld l, a
-    ld a, [wSpriteYPosLowBuffer]
+    ld a, [wSpriteZOrder]
     cp a, l
     jp c, .Label2B4B ;jump if player y-sort < item y-sort
 .Label2A9B
@@ -2937,20 +2021,20 @@ loadRoomItemSpriteTilesData:: ;00:2A86
     jr z, .Label2AF3
     cp a, $FE
     jr z, .Label2AF3
-    ld a, [wSpriteXPosLowBuffer]
+    ld a, [wSpriteScreenPosX]
     add a, $10
     ld l, a
-    ld a, [wSpriteXscale]
+    ld a, [wSpriteWidth]
     srl a
     add a, l
     ld l, a
     ld a, [roomItemSpriteXPos]
     cp a, l
     jr nc, .Label2B4B
-    ld a, [wSpriteXscale]
+    ld a, [wSpriteWidth]
     srl a
     ld l, a
-    ld a, [wSpriteXPosLowBuffer]
+    ld a, [wSpriteScreenPosX]
     add a, $10
     sub a, l
     ld l, a
@@ -3094,21 +2178,21 @@ Label2B50: ;00:2B50
 loadSpriteTilesData: ;00:2BE9
     dec de
     dec de
-    dec de ;C800 Sprite Y Pos Low
+    dec de ;C800 Sprite Z-order
     ld a, [de]
     ld [wSprtPriorYaxis], a
     inc de
     inc de
-    inc de ;C803 Sprite X Pos Low
+    inc de ;C803 Sprite screen X
     ld a, [de]
     ld [wSprtPriorXaxis], a
-    inc de ;C804 Sprite Y Pos Low
+    inc de ;C804 Sprite screen Y
     ld a, [de]
     ld [wSprtPriorY2axis], a
-    inc de ;C805 Sprite X scale
+    inc de ;C805 Sprite width
     ld a, [de]
     ld [wSprtPriorWidth], a
-    inc de ;C806 Sprite Y scale
+    inc de ;C806 Sprite height
     ld a, [de]
     ld [wSprtPriorHeight], a
     inc de ;C807 Sprite facing
@@ -3120,24 +2204,26 @@ loadSpriteTilesData: ;00:2BE9
     inc de ;C809 Sprite animation ID
     ld a, [de]
     ld l, a ;store animId in l
-    ld e, $00 ;set temp X scale to $00
+    ld e, $00 ;set temp width to $00
     ld a, [wSprtPriorWidth]
     cp a, $21
-    jr nc, .Label2C25 ;jump if current X scale is >= $21
+    jr nc, .Label2C25 ;jump if width is >= $21
+;if width is < 21
     ld d, a
     ld a, $20
     sub a, d
     srl a
-    ld e, a ; set X scale ($20 - xScale) / 2
+    ld e, a ; ($20 - width) / 2
     cp a, $0D
     jr c, .Label2C25 ;jump if result is < $0D
-	;else set X scale to $0C
+	;else set max width to $0C
     ld e, $0C
 .Label2C25
-    ld a, e ;set final X scale result
+    ld a, e ;set width result
     ld [wSprtPriorWidth], a
     ld h, $00
-	;offset animationId by x64 bytes
+;offset animationId by x64 bytes
+;l: animationId
     add hl, hl
     add hl, hl
     add hl, hl
@@ -3171,7 +2257,7 @@ Label2C65
     ld a, [wCameraType]
     or a
     jr z, Label2C6F ;jump if camera type is $00 (normal)
-	;if overhead camera type apply a 4 byte offset
+;if overhead camera type apply a 4 byte offset
     inc de
     inc de
     inc de
@@ -3208,16 +2294,17 @@ Label2C6F
     ld e, a ; ( frameId / 8 ) * 2
     ld d, $00
     add hl, de ;apply frame offset
+;finally, store frame pointer in de
     ld e, [hl]
     inc hl
-    ld d, [hl] ;store sprite frame pointer in de
-    ld a, c
+    ld d, [hl]
+    ld a, c ;sprite bank
     call BankSwitch
     ld a, [wSpriteTilesBufferLow]
     ld l, a
     ld a, [wSpriteTilesBufferHigh]
     ld h, a
-    push hl
+    push hl ;store sprite tile buffer
     call loadSpriteTilesBuffer
     ld a, l
     ld [wSpriteTilesBufferLow], a

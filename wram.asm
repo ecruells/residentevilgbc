@@ -89,7 +89,7 @@ wSprtPriorHeight:: ;c118
 wc119:: ;c119 unused
 	ds 1
 
-wSpriteVRAMTilesNumberRelative:: ;c11a
+wSpriteHalfBufferSize:: ;c11a
 	ds 1
 
 wSelectedPlayer:: ;c11b
@@ -171,21 +171,22 @@ wSprtPriorWidth:: ;C128
 wc129:: ;c129 unused
 	ds 1
 
-wCameraPosY:: ;C12A
+;camera position & rotation values
+wCameraYawY:: ;C12A
 	ds 1
-wCameraPosX:: ;c12b
+wCameraYawX:: ;c12b
 	ds 1
-wCameraC12C:: ;C12C
+wCameraPitchY:: ;C12C
 	ds 1
-wCameraC12D:: ;C12D
+wCameraPitchX:: ;C12D
 	ds 1
-wSpriteSizeLow:: ;c12E
+wCameraYawAddrLow:: ;c12E
 	ds 1
-wSpriteSizeHigh:: ;c12F
+wCameraYawAddrHigh:: ;c12F
 	ds 1
-wCameraZoomLow:: ;c130
+wCameraPitchAddrLow:: ;c130
 	ds 1
-wCameraZoomHigh:: ;c131
+wCameraPitchAddrHigh:: ;c131
 	ds 1
 wCameraXAxisLowByte:: ;c132
 	ds 1
@@ -203,40 +204,43 @@ wCameraXPaddingLowByte:: ;c138
 	ds 1
 wCameraXPaddingHighByte:: ;c139
 	ds 1
-wCameraYPaddingLowByte:: ;c13A
+wCameraZPaddingLowByte:: ;c13A
 	ds 1
-wCameraYPaddingHighByte:: ;c13B
+wCameraZPaddingHighByte:: ;c13B
 	ds 1
-wCameraZPaddingLowByte:: ;c13C
+wCameraYPaddingLowByte:: ;c13C
 	ds 1
-wCameraZPaddingHighByte:: ;c13D
-	ds 1
-wSpriteLowPosXBuffer:: ;c13E
-	ds 1
-wSpriteHighPosXBuffer:: ;c13F
-	ds 1
-wSpriteLowPosZBuffer:: ;c140
-	ds 1
-wSpriteHighPosZBuffer:: ;c141
-	ds 1
-wSpriteLowPosYBuffer:: ;c142
-	ds 1
-wSpriteHighPosYBuffer:: ;c143
-	ds 1
-wSpriteScaleC144Low:: ;C144 relative to X pos
-	ds 1
-wSpriteScaleC145High:: ;C145 relative to X pos
+wCameraYPaddingHighByte:: ;c13D
 	ds 1
 
-wc146:: ;c146
+wCalcSpriteScreenPosXLow:: ;c13E
+	ds 1
+wCalcSpriteScreenPosXHigh:: ;c13F
+	ds 1
+wCalcSpriteScreenPosYLow:: ;c140
+	ds 1
+wCalcSpriteScreenPosYHigh:: ;c141
+	ds 1
+wCalcSpriteZOrderLow:: ;c142
+	ds 1
+wCalcSpriteZOrderHigh:: ;c143
 	ds 1
 
-wc147:: ;c147
+;((sprite x-pos * cam yaw x) - (sprite y-pos * cam yaw y)) / 16
+wSpritePosXYCamYawDiffLow:: ;C144
+	ds 1
+wSpritePosXYCamYawDiffHigh:: ;C145
 	ds 1
 
-wSpriteZoomLowByte:: ;c148 relative to Y pos
+wCalcSpriteScreenPosYLow2:: ;c146
 	ds 1
-wSpriteZoomHighByte:: ;c149 relative to Y pos
+wCalcSpriteScreenPosYHigh2:: ;c147
+	ds 1
+
+;((sprite x-pos * cam yaw y) + (sprite y-pos * cam yaw x)) / 64
+wSpritePosXYCamYawSumLow:: ;c148
+	ds 1
+wSpritePosXYCamYawSumHigh:: ;c149
 	ds 1
 
 wc14a:: ;c14a unused
@@ -269,10 +273,10 @@ wc152:: ;c152
 wc153:: ;c153
 	ds 1
 
-wc154:: ;c154
+wMultiplyLastProductLow:: ;c154
 	ds 1
 
-wc155:: ;c155
+wMultiplyLastProductHigh:: ;c155
 	ds 1
 
 wc156:: ;c156
@@ -654,26 +658,28 @@ wSpriteLowPosYCamY:: ;c1D9
 	ds 1
 wSpriteHighPosYCamY:: ;c1DA
 	ds 1
-wSpriteScaling1LowByte:: ;c1DB
+
+wSpriteBaseXScaleLow:: ;c1DB
 	ds 1
-wSpriteScaling1HighByte:: ;c1DC
+wSpriteBaseXScaleHigh:: ;c1DC
 	ds 1
-wSpriteScaling2LowByte:: ;c1DD
+wSpriteBaseZScaleLow:: ;c1DD
 	ds 1
-wSpriteScaling2HighByte:: ;c1DE
+wSpriteBaseZScaleHigh:: ;c1DE
 	ds 1
-wSpriteScaling3LowByte:: ;c1DF
+wSpriteBaseYScaleLow:: ;c1DF
 	ds 1
-wSpriteScaling3HighByte:: ;c1E0
+wSpriteBaseYScaleHigh:: ;c1E0
 	ds 1
+
 wSpriteScaleValueA:: ;C1E1
 	ds 1
 wSpriteScaleValueB:: ;C1E2
 	ds 1
 
 wCameraType:: ;c1E3
-; $normal
-; $01: overhead
+;0: normal
+;1: overhead
 	ds 1
 
 wButtonActionFacing:: ;C1E4
@@ -1365,12 +1371,12 @@ wCharSpritesData:: ;c300
 ; player sprite is always the first (c300), NPCs start at c320 to c3e0
 ; C3X0+00: sprite state
 ;		bit 7: sprite enabled
-;		bit 6: sprite not visible
-; c3X0+01: Sprite Y Pos Low Buffer
-; c3X0+02: Sprite X Pos Low Buffer
-; c3X0+03: Sprite Z Pos Low Buffer
-; c3X0+04: Sprite X scale
-; c3X0+05: Sprite Y scale
+;		bit 6: sprite visible
+; c3X0+01: Sprite Z order
+; c3X0+02: Sprite Screen X position
+; c3X0+03: Sprite Screen Y position
+; c3X0+04: Sprite Width
+; c3X0+05: Sprite Height
 ; C3X0+06: sprite animation Id
 ; C3X0+07: sprite animation frame Id/animation timer
 ; C3X0+09: sprite facing
@@ -1381,22 +1387,22 @@ wCharSpritesData:: ;c300
 ; C3X0+0E: health  20: full
 ; C3X0+0F: zombie/object trigger id
 ; C3X0+10: zombie/object trigger id High
-; C3X0+11-C3X0+12: sprite X pos offset (low-hi signed 16bit number) camera distance correction?
-; C3X0+13-C3X0+14: sprite Y pos offset (low-hi signed 16bit number) camera distance correction?
+; C3X0+11-C3X0+12: sprite X pos offset (low-hi signed 16bit number)
+; C3X0+13-C3X0+14: sprite Y pos offset (low-hi signed 16bit number)
 ; C3X0+15-C3X0+16: sprite X position (low-hi signed 16bit number)
 ; C3X0+17-C3X0+18: sprite Y position (low-hi signed 16bit number)
 ; C3X0+19-C3X0+1A: sprite Z position (low-hi signed 16bit number) sprite elevation
 ; C3X0+1B: player input block timer
 	ds 1
-wSpriteYPosLowBuffer:: ;c301
+wSpriteZOrder:: ;c301
 	ds 1
-wSpriteXPosLowBuffer:: ;c302
+wSpriteScreenPosX:: ;c302
 	ds 1
-wSpriteZPosLowBuffer:: ;c303
+wSpriteScreenPosY:: ;c303
 	ds 1
-wSpriteXscale:: ;c304
+wSpriteWidth:: ;c304
 	ds 1
-wSpriteYscale:: ;c305
+wSpriteHeight:: ;c305
 	ds 1
 wSpriteAnimationId:: ;c306
 	ds 1
@@ -1420,25 +1426,25 @@ wSprtScreenTrigger:: ;c30F object movement
 	ds 1
 wSprtDataC310:: ;c310
 	ds 1
-wSpritePosXoffsetLowByte:: ;c311
+wSpritePositionXLow:: ;c311
 	ds 1
-wSpritePosXoffsetHighByte:: ;c312
+wSpritePositionXHigh:: ;c312
 	ds 1
-wSpritePosYoffsetLowByte:: ;c313
+wSpritePositionZLow:: ;c313
 	ds 1
-wSpritePosYoffsetHighByte:: ;c314
+wSpritePositionZHigh:: ;c314
 	ds 1
-wSpritePosXLowByte:: ;c315
+wSpriteRoomPositionXLow:: ;c315
 	ds 1
-wSpritePosXHighByte:: ;c316
+wSpriteRoomPositionXHigh:: ;c316
 	ds 1
-wSpritePosYLowByte:: ;c317
+wSpriteRoomPositionYLow:: ;c317
 	ds 1
-wSpritePosYHighByte:: ;c318
+wSpriteRoomPositionYHigh:: ;c318
 	ds 1
-wSpritePosZLowByte:: ;c319
+wSpritePositionYLow:: ;c319
 	ds 1
-wSpritePosZHighByte:: ;c31A
+wSpritePositionYHigh:: ;c31A
 	ds 1
 wMoveInputBlockTimer:: ;c31B
 	ds 1
@@ -3751,8 +3757,8 @@ spritePriorityTable:: ;C800
 ;C80x + 2: $00
 ;C80x + 3: Sprite X Pos
 ;C80x + 4: Sprite Y Pos
-;C80x + 5: Sprite X scale
-;C80x + 6: Sprite Y scale
+;C80x + 5: Sprite width
+;C80x + 6: Sprite height
 ;C80x + 7: Sprite facing
 ;C80x + 8: Sprite animation frame Id/animation timer
 ;C80x + 9: Sprite animation ID

@@ -1,8 +1,8 @@
 
 applyPlayerElevation:: ;0F:5BB0
     xor a
-    ld [wSpritePosZLowByte], a
-    ld [wSpritePosZHighByte], a
+    ld [wSpritePositionYLow], a
+    ld [wSpritePositionYHigh], a
     ld a, [wRoomId]
     cp a, EXHIBITION_ROOM
     jp z, .setMapStatueRoomEscalatorElevation
@@ -23,9 +23,9 @@ applyPlayerElevation:: ;0F:5BB0
     ret
 
 .setCourtyardPoolElevation ;0F:5BE3
-    ld a, [wSpritePosXoffsetLowByte]
+    ld a, [wSpritePositionXLow]
     ld e, a
-    ld a, [wSpritePosXoffsetHighByte]
+    ld a, [wSpritePositionXHigh]
     ld d, a
     call divideWord0FBy8
     ld a, d
@@ -34,9 +34,9 @@ applyPlayerElevation:: ;0F:5BB0
     ld a, e
     cp a, $50
     ret c
-    ld a, [wSpritePosYoffsetLowByte]
+    ld a, [wSpritePositionZLow]
     ld e, a
-    ld a, [wSpritePosYoffsetHighByte]
+    ld a, [wSpritePositionZHigh]
     ld d, a
     call divideWord0FBy8
     ld a, d
@@ -53,18 +53,18 @@ applyPlayerElevation:: ;0F:5BB0
 .Label3DC0E
     ld de, $FFE0
     ld a, e
-    ld [wSpritePosZLowByte], a
+    ld [wSpritePositionYLow], a
     ld a, d
-    ld [wSpritePosZHighByte], a
+    ld [wSpritePositionYHigh], a
     ret
 
 .setCorridor2dElevation ;0F:5C1A
     ld a, [wRoomScreen]
     cp a, $01
     ret nz
-    ld a, [wSpritePosYoffsetLowByte]
+    ld a, [wSpritePositionZLow]
     ld e, a
-    ld a, [wSpritePosYoffsetHighByte]
+    ld a, [wSpritePositionZHigh]
     ld d, a
     call divideWord0FBy8
     ld hl, $14
@@ -84,18 +84,18 @@ applyPlayerElevation:: ;0F:5BB0
     ld e, a
     ld d, $00
     ld a, e
-    ld [wSpritePosZLowByte], a
+    ld [wSpritePositionYLow], a
     ld a, d
-    ld [wSpritePosZHighByte], a
+    ld [wSpritePositionYHigh], a
     ret
 
 .setCorridor24Elevation ;0F:5C4B
     ld a, [wRoomScreen]
     or a
     ret nz
-    ld a, [wSpritePosXoffsetLowByte]
+    ld a, [wSpritePositionXLow]
     ld e, a
-    ld a, [wSpritePosXoffsetHighByte]
+    ld a, [wSpritePositionXHigh]
     ld d, a
     call divideWord0FBy8
     ld hl, $50
@@ -116,18 +116,18 @@ applyPlayerElevation:: ;0F:5BB0
     ld d, $00
     call reverseWordSign0F
     ld a, e
-    ld [wSpritePosZLowByte], a
+    ld [wSpritePositionYLow], a
     ld a, d
-    ld [wSpritePosZHighByte], a
+    ld [wSpritePositionYHigh], a
     ret
 
 .setMainHall2fEscalatorElevation ;0F:5C7E
     ld a, [wRoomScreen]
     or a
     ret nz
-    ld a, [wSpritePosYoffsetLowByte]
+    ld a, [wSpritePositionZLow]
     ld e, a
-    ld a, [wSpritePosYoffsetHighByte]
+    ld a, [wSpritePositionZHigh]
     ld d, a
     call divideWord0FBy8
     ld a, d
@@ -136,9 +136,9 @@ applyPlayerElevation:: ;0F:5BB0
     ld a, e
     cp a, $40
     ret c
-    ld a, [wSpritePosXoffsetLowByte]
+    ld a, [wSpritePositionXLow]
     ld e, a
-    ld a, [wSpritePosXoffsetHighByte]
+    ld a, [wSpritePositionXHigh]
     ld d, a
     call divideWord0FBy8
     ld a, d
@@ -160,9 +160,9 @@ applyPlayerElevation:: ;0F:5BB0
     ld d, $00
     call reverseWordSign0F
     ld a, e
-    ld [wSpritePosZLowByte], a
+    ld [wSpritePositionYLow], a
     ld a, d
-    ld [wSpritePosZHighByte], a
+    ld [wSpritePositionYHigh], a
     ret
 .Label3DCC4 ;0F:5CC4
     ld a, $00
@@ -181,18 +181,18 @@ applyPlayerElevation:: ;0F:5BB0
     ld d, $00
     call reverseWordSign0F
     ld a, e
-    ld [wSpritePosZLowByte], a
+    ld [wSpritePositionYLow], a
     ld a, d
-    ld [wSpritePosZHighByte], a
+    ld [wSpritePositionYHigh], a
     ret
 
 .setCorridor0FEscalatorElevation ;0F:5CE4
     ld a, [wRoomScreen]
     cp a, $02
     jr nc, .Label3DD0D
-    ld a, [wSpritePosYoffsetLowByte]
+    ld a, [wSpritePositionZLow]
     ld e, a
-    ld a, [wSpritePosYoffsetHighByte]
+    ld a, [wSpritePositionZHigh]
     ld d, a
     call divideWord0FBy8
     ld a, d
@@ -205,9 +205,9 @@ applyPlayerElevation:: ;0F:5BB0
 .Label3DD02
     call reverseWordSign0F
     ld a, e
-    ld [wSpritePosZLowByte], a
+    ld [wSpritePositionYLow], a
     ld a, d
-    ld [wSpritePosZHighByte], a
+    ld [wSpritePositionYHigh], a
 .Label3DD0D
     ret
 
@@ -215,9 +215,9 @@ applyPlayerElevation:: ;0F:5BB0
     ld a, [wSpriteDataC31F]
     or a
     ret z
-    ld a, [wSpritePosYoffsetLowByte]
+    ld a, [wSpritePositionZLow]
     ld e, a
-    ld a, [wSpritePosYoffsetHighByte]
+    ld a, [wSpritePositionZHigh]
     ld d, a
     call divideWord0FBy8
     ld bc, $14
@@ -236,18 +236,18 @@ applyPlayerElevation:: ;0F:5BB0
 .Label3DD30
     add a
     add a
-    ld [wSpritePosZLowByte], a
+    ld [wSpritePositionYLow], a
     xor a
-    ld [wSpritePosZHighByte], a
+    ld [wSpritePositionYHigh], a
     ret
 
 .setCrankRoomEscalatorElevation ;0F:5D3A
     ld a, [wSpriteDataC31F]
     or a
     ret z
-    ld a, [wSpritePosXoffsetLowByte]
+    ld a, [wSpritePositionXLow]
     ld e, a
-    ld a, [wSpritePosXoffsetHighByte]
+    ld a, [wSpritePositionXHigh]
     ld d, a
     call divideWord0FBy8
     ld bc, $8
@@ -273,18 +273,18 @@ applyPlayerElevation:: ;0F:5BB0
     jr nz, .Label3DD69
     ld a, $08
 .Label3DD69
-    ld [wSpritePosZLowByte], a
+    ld [wSpritePositionYLow], a
     xor a
-    ld [wSpritePosZHighByte], a
+    ld [wSpritePositionYHigh], a
     ret
 
 .setSurgeryMorgueRoomElevation ;0F:5D71
     ld a, [wSpriteDataC31F]
     or a
     ret z
-    ld a, [wSpritePosXoffsetLowByte]
+    ld a, [wSpritePositionXLow]
     ld e, a
-    ld a, [wSpritePosXoffsetHighByte]
+    ld a, [wSpritePositionXHigh]
     ld d, a
     call divideWord0FBy8
     ld bc, $1C
@@ -303,9 +303,9 @@ applyPlayerElevation:: ;0F:5BB0
 .Label3DD93
     add a
     add a
-    ld [wSpritePosZLowByte], a
+    ld [wSpritePositionYLow], a
     xor a
-    ld [wSpritePosZHighByte], a
+    ld [wSpritePositionYHigh], a
     ret
 
 divideWord0FBy8:: ;0F:5D9D

@@ -2,14 +2,14 @@
 ;18 bytes for each camera
 ;00: CameraXAxisLowByte
 ;01: CameraXAxisHighByte
-;02: CameraZAxisLowByte
-;03: CameraZAxisHighByte
-;04: CameraYAxisLowByte
-;05: CameraYAxisHighByte
-;06: SpriteSizeLow
-;07: SpriteSizeHigh
-;08: CameraZoomLow
-;09: CameraZoomHigh
+;02: CameraYAxisLowByte
+;03: CameraYAxisHighByte
+;04: CameraZAxisLowByte
+;05: CameraZAxisHighByte
+;06: CameraYawAddrLow	camera yaw (x-axis rotation)
+;07: CameraYawAddrHigh
+;08: CameraPitchAddrLow	camera pitch (y-axis rotation)
+;09: CameraPitchAddrHigh
 ;10: CameraXPaddingLowByte
 ;11: CameraXPaddingHighByte
 ;12: CameraYPaddingLowByte
@@ -19,7 +19,7 @@
 ;16: CameraFacing
 ;17: CameraType
 
-room00_camera_data: ;40E8
+room00_camera_data: ;7:40E8
 db $07 ;start of cameras list, it indicates room's cameras number, apparently unused
 	dw $0000, $0000, $0000, $0800, $01B0, $0000, $017C, $0084, (NORMAL_CAM|$28) << 8 | CAM_FACE_SOUTH
 	dw $0000, $0000, $0000, $0CFC, $037A, $FF28, $008A, $008D, (NORMAL_CAM|$28) << 8 | CAM_FACE_EAST

@@ -13,9 +13,9 @@ _scalingFuncionTable: ;00:270B
 	dw Function27BA ;$BA, $27
 	dw Function27CB ;$CB, $27
 	dw Function27CB ;$CB, $27
-	db $00, $00
-	db $00, $00
-	db $00, $00
+	dw $0000
+	dw $0000
+	dw $0000
 	dw Function27DA ;$DA, $27
 	dw Function27DB ;$DB, $27
 	dw Function27E0 ;$E0, $27
@@ -33,8 +33,10 @@ _scalingFuncionTable: ;00:270B
 Function2745: ;00:2745
 	ret
 Function2746: ;00:2746
+;de: odd line bytes
+;bc: even line bytes
     ld a, e
-    and a, $01
+    and a, $01 ;((e & 1) * 128) | c
     add a
     add a
     add a
@@ -46,7 +48,7 @@ Function2746: ;00:2746
     ld c, a
     srl e
     ld a, d
-    and a, $01
+    and a, $01 ;((d & 1) * 128) | b
     add a
     add a
     add a
@@ -507,4 +509,5 @@ Function2974: ;00:2974
     ld b, $00
     ret
 
-	;299F
+;299F
+
