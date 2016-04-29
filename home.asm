@@ -4897,11 +4897,11 @@ GetFirstEmptyNPCDataSlot:: ;00:3EB8
 
 haltCPU:: ;00:3ED2
     ld a, $FF
-    ld [wc103], a
+    ld [wHaltCpuTrigger], a
 .haltLoop
     halt
     ;nop
-	ld a, [wc103]
+	ld a, [wHaltCpuTrigger]
 	or a
 	jr nz, .haltLoop
 	ret

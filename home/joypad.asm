@@ -20,9 +20,9 @@ ReadJoypad:: ;02BB
     and a, $0F
     or a, b
     ld d, a
-    ld a, [wc101]
+    ld a, [wButtonsCombinationValue] ;get last button combination
     or a, d
-    ld [wc101], a
+    ld [wButtonsCombinationValue], a ;combine new button press with last button comb
     ld a, d
     ld [wButtonPressId], a ;store pressed button id ito wram
     ld a, $30

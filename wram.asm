@@ -7,13 +7,13 @@ wWorkRamStart:: ;c000
 wButtonPressId:: ; c100
 	ds 1
 
-wc101:: ;c101
+wButtonsCombinationValue:: ;c101
 	ds 1
 
 wCurrentRomBank:: ;c102
 	ds 1
 
-wc103:: ;c103
+wHaltCpuTrigger:: ;c103
 	ds 1
 
 wc104:: ;c104

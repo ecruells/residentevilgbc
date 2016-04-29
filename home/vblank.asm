@@ -47,14 +47,16 @@ Vblank:: ;00:030E
     call BankSwitch
     call ReadJoypad
     xor a
-    ld [wc103], a
+    ld [wHaltCpuTrigger], a ;disable halt CPU mode
     ld a, BANK(updateMusic) ;$06
     call BankSwitch
     call updateMusic
     pop af
     call BankSwitch
+    ;increase game framerate
     ld hl, wFrameRate
     inc [hl]
+    ;increse sprites anim framerate
     ld hl, wAnimatedRoomSpritesFrameRate ;c1b0
     inc [hl]
     ld a, [wButtonPressId]

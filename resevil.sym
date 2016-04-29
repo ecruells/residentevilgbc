@@ -5472,10 +5472,10 @@ FF:4033 playSample.sampleUpdateLoop
 00:C30E wCharHealth
 00:C102 wCurrentRomBank
 00:C17F wCurrentSoundId
-00:C101 wc101
+00:C101 wButtonsCombinationValue
 00:C120 wOAMDMAretOpcode
 00:C117 wHDMAtrigger
-00:C103 wc103
+00:C103 wHaltCpuTrigger
 00:C112 wFrameRate
 00:C1B0 wAnimatedRoomSpritesFrameRate
 00:C200 wVisitedRoom00Trigger
