@@ -19,7 +19,7 @@ wHaltCpuTrigger:: ;c103
 wc104:: ;c104
 	ds 1
 
-wLCDUpdate:: ;c105
+wFadeInOutUpdate:: ;c105
 ;store screen fade-out/fade-id progression
 	ds 1
 
@@ -43,10 +43,10 @@ wRoomBGBankId:: ;c10A
 wBGDataAddrBank:: ;C10B
 	ds 1
 
-policeCardXpos:: ;c10c
+wPoliceCardXpos:: ;c10c
 	ds 1
 
-policeCardYpos:: ;c10d
+wPoliceCardYpos:: ;c10d
 	ds 1
 
 wCursorPosId:: ;C10E
@@ -395,10 +395,13 @@ wc17a:: ;c17a
 wc17b:: ;c17b
 	ds 1
 
+
 wRoomId:: ;c17C
 	ds 1
 wRoomIdHigh:: ;c17d
 	ds 1
+
+
 wButtonAEventId:: ;c17E
 ;$00: nothing
 ;$01: open door
@@ -580,10 +583,10 @@ wEventId:: ;c1bf
 wScreenYPos:: ;c1c0
 	ds 1
 
-roomItemSpriteIdBuffer:: ;c1c1
+wRoomItemSpriteIdBuffer:: ;c1c1
 	ds 1
 
-spriteIdBuffer:: ;c1c2
+wSpriteIdBuffer:: ;c1c2
 	ds 1
 
 wDoorAnimationType:: ;c1c3
@@ -685,29 +688,29 @@ wCameraType:: ;c1E3
 wButtonActionFacing:: ;C1E4
 	ds 1
 
-wSprtPriorXaxis:: ;C1E5
+wSprtPriorScrnXPos:: ;C1E5
 	ds 1
-wSprtPriorY2axis:: ;C1E6
+wSprtPriorScrnYPos:: ;C1E6
 	ds 1
 
 
-ItemIdSlot1:: ;C1E7
+wItemIdSlot1:: ;C1E7
 	ds 1
-ItemIdSlot2:: ;C1E8
+wItemIdSlot2:: ;C1E8
 	ds 1
-ItemIdSlot3:: ;C1E9
+wItemIdSlot3:: ;C1E9
 	ds 1
-ItemIdSlot4:: ;C1EA
+wItemIdSlot4:: ;C1EA
 	ds 1
-ItemIdSlot5:: ;C1EB
+wItemIdSlot5:: ;C1EB
 	ds 1
-ItemIdSlot6:: ;C1EC
+wItemIdSlot6:: ;C1EC
 	ds 1
-ItemIdSlot7:: ;C1ED
+wItemIdSlot7:: ;C1ED
 	ds 1
-ItemIdSlot8:: ;C1EE
+wItemIdSlot8:: ;C1EE
 	ds 1
-equipedItemId:: ;C1EF
+wEquipedItemId:: ;C1EF
 	ds 1
 
 
@@ -720,9 +723,9 @@ wSpriteC1F1:: ;C1F1
 wBgTransitionDirCounter:: ;C1F2
 	ds 1
 
-selectedGridId:: ;C1F3
+wSelectedGridId:: ;C1F3
 	ds 1
-selectedItemId:: ;C1F4
+wSelectedItemId:: ;C1F4
 	ds 1
 
 wc1f5:: ;c1f5
@@ -1365,7 +1368,7 @@ wOverlapC2FD:: ; C2FD
 wOverlapC2FE:: ; C2FE
 	ds 1
 
-wSprtPriorYaxis:: ;C2FF
+wSprtPriorZOrder:: ;C2FF
 	ds 1
 
 

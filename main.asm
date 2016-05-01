@@ -122,11 +122,11 @@ mainMenuRoutine: ;01:40A5
     ld a, $04
     ld [wMenuSelGridId], a
     ld a, $28
-    ld [policeCardXpos], a
+    ld [wPoliceCardXpos], a
     ld a, $38
-    ld [policeCardYpos], a
+    ld [wPoliceCardYpos], a
     ld a, $01
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     call showMenuItemName
 mainMenuLoop
     call haltCPU
@@ -137,12 +137,12 @@ mainMenuLoop
     call goToLoadMenuItemsSprtData
     call goToLoadEquipedSpriteData
     call loadFileBookmarksCursors
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     or a
     call z, checkMenuInputPress
     call enableHDMA
     call swapOAMDMAopcode
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     cp a, $5E
     ret z
     ld hl, MainMenuMapTable+8 ;$2F26
@@ -158,11 +158,11 @@ itemBoxMenuRoutine: ;01:40F6
     ld a, $04 ;item 1 selected
     ld [wMenuSelGridId], a
     ld a, $28
-    ld [policeCardXpos], a
+    ld [wPoliceCardXpos], a
     ld a, $38
-    ld [policeCardYpos], a
+    ld [wPoliceCardYpos], a
     ld a, $01
-    ld [wLCDUpdate], a ;set fade-in
+    ld [wFadeInOutUpdate], a ;set fade-in
     call showMenuItemName
     call printItemboxList
 itemboxMenuLoop
@@ -175,12 +175,12 @@ itemboxMenuLoop
     call goToLoadEquipedSpriteData
     call goToLoadSelectedItemboxItemSprite
     call goToLoadItemboxCursor
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     or a
     call z, checkItemboxMenuInputs
     call enableHDMA
     call swapOAMDMAopcode
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     cp a, $5E
     ret z
     ld hl, ItemBoxMapTable+8 ;$2FB2
@@ -212,7 +212,7 @@ itemboxItemGridCursorAInput: ;01:4175
     and a, A_INPUT
     ret z
     ld a, [wMenuSelGridId]
-    ld [selectedGridId], a ;store item grid selected cursor
+    ld [wSelectedGridId], a ;store item grid selected cursor
     ld a, $80
     ld [wMenuSelGridId], a ;set grid in itembox cursor mode
     ld a, CONFIRM_SFX ;$02
@@ -226,11 +226,11 @@ itemboxCursorAInput: ;01:4193
     ld a, [wButtonPressId]
     and a, A_INPUT
     ret z
-    ld a, [selectedGridId]
+    ld a, [wSelectedGridId]
     sub a, $04 ;get slot id offset
     ld e, a
     ld d, $00
-    ld hl, ItemIdSlot1
+    ld hl, wItemIdSlot1
     add hl, de
     ld e, l
     ld d, h ;set selected item slot id in de
@@ -246,7 +246,7 @@ itemboxCursorAInput: ;01:4193
     ld [de], a ;set item from itembox
     pop af
     ld [hl], a ;store item
-    ld a, [selectedGridId]
+    ld a, [wSelectedGridId]
     ld [wMenuSelGridId], a ;return to item grid
     call printItemboxList
     call showMenuItemName
@@ -260,7 +260,7 @@ itemboxItemGridCursorBInput: ;41CD
     and a, B_INPUT
     ret z
     ld a, $5C
-    ld [wLCDUpdate], a ;set fade-out to exit menu
+    ld [wFadeInOutUpdate], a ;set fade-out to exit menu
     ret
 ;41D9
 
@@ -268,7 +268,7 @@ itemboxCursorBInput: ;01:41D9
     ld a, [wButtonPressId]
     and a, B_INPUT
     ret z
-    ld a, [selectedGridId]
+    ld a, [wSelectedGridId]
     ld [wMenuSelGridId], a ;restore to item slot cursor
     ld a, CANCEL_SFX ;$03
     call playSFX
@@ -556,7 +556,7 @@ displayLoadGameWelcomeMsg:: ;01:439A
     call hideSprites
     call loadFontTiles
     ld a, $01
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     ld hl, _NewGameWelcomeMsgPointer ;$458B
     ld a, [wCursorIdBuffer]
     or a
@@ -733,7 +733,7 @@ hideOAM:: ;01:4494
     ret
 
 loadBGPallete:: ;01:44A7
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     or a
     ret z
     cp a, $60
@@ -746,7 +746,7 @@ loadBGPallete:: ;01:44A7
 .fadeOutPallete
     inc a
 .Label44B7
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     cp a, $5E
     jp nc, ResetPal
     ld c, [hl]
@@ -763,7 +763,7 @@ loadBGPallete:: ;01:44A7
     jp loadPallete
 
 checkAndLoadRoomPal:: ;01:44CD
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     or a
     ret z
     cp a, $60
@@ -775,7 +775,7 @@ checkAndLoadRoomPal:: ;01:44CD
 .Label44DC
     inc a ;fade-out
 .Label44DD
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     cp a, $5E
     jp nc, ResetPal
     ld a, [wRoomId]
@@ -840,7 +840,7 @@ showDeathScreen: ;01:4538
     call ResetPal
     call hideSprites
     ld a, $20
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     ld hl, ChrisDeathScrnMapTable ;$2F3A
     ld a, $20
     call loadTileMap
@@ -883,20 +883,20 @@ Label455E
     jr nz, Label455B
 Label4582
     call haltCPU
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     cp a, $5E
     ret z
     ld a, [wButtonPressId]
     and a, A_START_INPUT ;$09
     jr z, Label45A1
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     or a
     jr z, Label459C
     cp a, $40
     jr nc, Label45A1
 Label459C
     ld a, $40
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
 Label45A1
     ld hl, ChrisDeathScrnMapTable+8 ;$2F42
     call loadBGPallete
@@ -929,7 +929,7 @@ restorePauseMenu: ;45CF when restore from quick save, it starts here
     xor a
     call playMusic ;stop music
     ld a, $01
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     ld hl, PauseScreenMapTable ;$2F48
     ld a, $14
     call loadTileMap
@@ -960,7 +960,7 @@ Label4600
     ld a, [wCurrentMusicId]
     call playMusic ;restore music
     ld a, $01
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     call ResetPal
     jp gameLoopWithEventCheck
 ;462B
@@ -971,12 +971,12 @@ loadHotGenStudiosLogoScreen: ;462B Label462B unused
     ld a, $14
     call loadTileMap
     ld a, $20
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     ld a, $80
     ld [wBgTransitionDirCounter], a
 logoFadeOutLoop
     call haltCPU
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     cp a, $5E
     ret z
     ld a, [wBgTransitionDirCounter]
@@ -984,7 +984,7 @@ logoFadeOutLoop
     ld [wBgTransitionDirCounter], a
     jr nz, Label4657
     ld a, $40
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
 Label4657
     ld hl, HotGenStudiosSplashMaptable+8 ;$2F34
     call loadBGPallete
@@ -1056,13 +1056,13 @@ Label46BD
     xor a
     ld [wScreenYPos], a
     ld a, $20
-    ld [wLCDUpdate], a ;fade-in
+    ld [wFadeInOutUpdate], a ;fade-in
     ld a, $80
     ld [wBgTransitionDirCounter], a
 roomBgTransitionLoop
     call haltCPU
     call haltCPU
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     cp a, $5E
     jr z, finishBgTransition ;return when finish fade-out
     ld a, [wBgTransitionDirCounter]
@@ -1070,7 +1070,7 @@ roomBgTransitionLoop
     ld [wBgTransitionDirCounter], a
     jr nz, Label470D
     ld a, $40
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
 Label470D
     ld a, [wDoorAnimationType]
     and a, $01 ;mask first bit to get transition direction (00: upward, 01:downward)
@@ -1139,7 +1139,7 @@ loadTitleSlideRooms: ;01:478F
     ld a, h
     ld [wc1c5], a
     ld a, $20
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
 .loop47A5
     call haltCPU
     ld a, [wc1c5]
@@ -1202,14 +1202,14 @@ loadTitleSlideRooms: ;01:478F
     jr .Label4830
 .Label4820
     sub a, $E0
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     jr .Label4830
 .Label4827
     ld c, a
     ld a, $1F
     sub a, c
     add a, $40
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
 .Label4830
     call checkAndLoadRoomPal ;01:44CD
     jp .loop47A5
@@ -1315,7 +1315,7 @@ updatePolicecardCursors: ;01:48BD
     call selectOAMDataDest
     ld de, $1C4E ;cursor 1 pos x,y
     ld bc, $8C4E ;cursor 2 pos x,y
-    ld a, [policeCardXpos]
+    ld a, [wPoliceCardXpos]
     cp a, $28
     jr z, .Label48D6
 ;if card is moving, hide cursors
@@ -1340,11 +1340,11 @@ updatePolicecardCursors: ;01:48BD
     ret
 
 updatePolicecardFacePosition:: ;01:48EA
-    ld a, [policeCardYpos]
+    ld a, [wPoliceCardYpos]
     and a, $F8
     add a, $16 ;face sprite y pos
     ld d, a
-    ld a, [policeCardXpos]
+    ld a, [wPoliceCardXpos]
     and a, $F8
     add a, $24 ;face sprite x pos
     ld e, a
@@ -1382,11 +1382,11 @@ loadMainMenuFaceOAMData:: ;01:4918
     jp loadSprtOAMBuffer
 
 updatePolicecardLogoColorsPosition:: ;01:493A
-    ld a, [policeCardYpos]
+    ld a, [wPoliceCardYpos]
     and a, $F8
     add a, $0D ;sprite y pos
     ld d, a
-    ld a, [policeCardXpos]
+    ld a, [wPoliceCardXpos]
     and a, $F8
     add a, $02 ;sprite x pos
     ld e, a
@@ -1492,7 +1492,7 @@ includeFoundItem: ;01:49ED
     ld bc, ClearTextboxText ;$63EE
     ld a, BANK(ClearTextboxText) ;$FA
     call printMessage
-    ld hl, ItemIdSlot1
+    ld hl, wItemIdSlot1
     ld b, $06 ;chris item slots
     ld a, [wSpriteId]
     cp a, CHRIS ;$92
@@ -1512,7 +1512,7 @@ findEmptySlotLoop
     call printMessage
     jp Label4A99
 emptySlotFound
-    ld a, [selectedItemId]
+    ld a, [wSelectedItemId]
     cp a, NOTHING_ITEM_1 ;$06
     jp z, fileFound
     cp a, NOTHING_ITEM_2 ;$11
@@ -1948,7 +1948,7 @@ checkItemUsage:: ;;01:4D7D
     ld d, a
     call div8SignedWord
 ;check selected item usage
-    ld a, [selectedItemId]
+    ld a, [wSelectedItemId]
     cp a, SHEET_MUSIC
     jp z, checkMusicSheetUsage
     cp a, F_AID_SPRAY
@@ -2456,7 +2456,7 @@ HexCrankUsageOnUndergndEntranceFloor: ;01:50D4
     call loadAllRoomBgData
     call loadAndCalcEventSpritesData
     ld a, $01
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     call checkAndLoadRoomPal
     pop hl
     ld b, $30
@@ -2511,7 +2511,7 @@ Label5150
     call loadAllRoomBgData
     call loadAndCalcEventSpritesData
     ld a, $01
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     call checkAndLoadRoomPal
     pop hl
     ld b, $30
@@ -2744,7 +2744,7 @@ checkCrestUsage: ;52D9
     ret c
     cp a, FACING_SOUTH_EAST+1 ;$15
     ret nc
-    ld a, [selectedItemId]
+    ld a, [wSelectedItemId]
     cp a, STAR_CREST
     jr z, putStarCrest
     cp a, MOON_CREST
@@ -3243,7 +3243,7 @@ finishItemUsage:
     call ResetPal
     call hideSprites
     ld a, $01
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     jp gameLoopWithEventCheck
 
 finishHealItemUsage:
@@ -3863,7 +3863,7 @@ Label5AF3
     or a
     jp nz, scrollUpScreen ;return if shotgun isn't putted back
 	;remove shotgun from inventory if it's putted back
-    ld hl, ItemIdSlot1
+    ld hl, wItemIdSlot1
     ld b, $06
     ld a, [wSelectedPlayer]
     or a
@@ -4392,7 +4392,7 @@ activateArmorsRoomPoisonGas
     ld a, $FF
     ld [wPoisonGasActivationByte], a
     ld a, $01
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     ld hl, text_pointer_4003 ;Something has happened!
     call getMsgPointerAndShow
     call msgInputPressWaitLoop
@@ -4506,7 +4506,7 @@ Label5FFC ;01:5FFC
     xor a, $FF
     ld [wTaxidermyRoomLight], a
     ld a, $01
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     jp scrollUpScreen
 
 checkHiddenLibraryLights:
@@ -4756,7 +4756,7 @@ emptyBottleNotFound:
     jp scrollUpScreen
 
 findEmptyBottle: ;01:621D
-    ld hl, ItemIdSlot1
+    ld hl, wItemIdSlot1
     ld b, $06
     ld a, [wSelectedPlayer]
     or a
@@ -5025,7 +5025,7 @@ checkBlueLightSwitch: ;01:6423
     ld a, $FF
     ld [wXrayRoomBlueLight], a
     ld a, $01
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     jp scrollUpScreen
 checkNormalLightSwitch
     ld a, [wXrayRoomNormalLight]
@@ -5040,7 +5040,7 @@ checkNormalLightSwitch
     ld a, $FF
     ld [wXrayRoomNormalLight], a
     ld a, $01
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     jp scrollUpScreen
 checkXrayRoomPainting
     ld c, XRAY_ROOM_PAINTING_REVEALED ;$03
@@ -5474,11 +5474,11 @@ Label6806: ;01:6806
     ld [wc5cc], a
     ld [wc5cd], a
     ld a, $01
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     jp scrollUpScreen
 
 searchSmallKeyInInventory:
-    ld hl, ItemIdSlot1
+    ld hl, wItemIdSlot1
     ld b, $06 ;chris item slots
     ld a, [wSelectedPlayer]
     or a
@@ -6271,7 +6271,7 @@ displayFile: ;6E35
     call hideSprites
     call loadFontTiles
     ld a, $01
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     ld hl, $0000
     ld b, $07
 clearScreenLoop
@@ -6544,14 +6544,14 @@ loadRoomPallete: ;03:7A80
     jp z, .setLabPaintingRoomDarkTone ;LabelFAF5
 ;default pallete tone
 .LabelFAA0
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     and a, $1F
     jr .LabelFB16
 .setCandleRoomDarkTone ;LabelFAA7
     ld a, [wCandleRoomLight]
     or a
     jp nz, .LabelFAA0 ;if candle room light is on, set default light
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     and a, $1F
     push hl
     ld l, a
@@ -6567,7 +6567,7 @@ loadRoomPallete: ;03:7A80
     ld a, [wTaxidermyRoomLight]
     or a
     jp z, .LabelFAA0 ;if red jewel room light is on, set default light
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     and a, $1F
     push hl
     ld l, a
@@ -6583,7 +6583,7 @@ loadRoomPallete: ;03:7A80
     ld a, [wMansionStudyLights]
     or a
     jp nz, .LabelFAA0 ;if wolf medal room light is on, set default light
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     and a, $1F
     push hl
     ld l, a
@@ -6603,7 +6603,7 @@ loadRoomPallete: ;03:7A80
     or a
     jp nz, .LabelFAA0
 .LabelFB03
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     and a, $1F
     push hl
     ld l, a
@@ -6639,7 +6639,7 @@ loadRoomPallete: ;03:7A80
     inc hl
     ld d, [hl]
     inc hl
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     and a, $1F
     call changePalTone
     call VBlankWait
@@ -6974,7 +6974,7 @@ loadSpritePriorityData:: ;04:4B80
     ld [hli], a
     inc de ; 02 Sprite X Pos Low Buffer
     push de
-    ld a, [spriteIdBuffer]
+    ld a, [wSpriteIdBuffer]
     ld [hl], a
     inc hl
     ld [hl], $00
@@ -7126,7 +7126,7 @@ Label10C40 ;04:4C40
     or a
     ret nz
     ld a, $40
-    ld [wLCDUpdate], a ;fade-out if player is dead by gas
+    ld [wFadeInOutUpdate], a ;fade-out if player is dead by gas
     ret
 ;4C5C
 
@@ -7139,11 +7139,11 @@ InitSelectedPlayerData:: ;04:4C5C
 	;init chris data
 	;init items
     ld a, COMBAT_KNIFE
-    ld [ItemIdSlot1], a
+    ld [wItemIdSlot1], a
     ld a, F_AID_SPRAY
-    ld [ItemIdSlot2], a
+    ld [wItemIdSlot2], a
     ld a, EMPTY
-    ld [equipedItemId], a
+    ld [wEquipedItemId], a
     ld a, EMPTY
     ld [wSpriteAnimationId], a
     ld a, $80
@@ -7165,13 +7165,13 @@ InitSelectedPlayerData:: ;04:4C5C
     ret
 initJillData: ;04:4CA5
     ld a, BERRETTA
-    ld [ItemIdSlot1], a
+    ld [wItemIdSlot1], a
     ld a, COMBAT_KNIFE
-    ld [ItemIdSlot2], a
+    ld [wItemIdSlot2], a
     ld a, F_AID_SPRAY
-    ld [ItemIdSlot3], a
+    ld [wItemIdSlot3], a
     ld a, EMPTY
-    ld [equipedItemId], a
+    ld [wEquipedItemId], a
     ld a, EMPTY
     ld [wSpriteAnimationId], a
     ld a, $80
@@ -7402,7 +7402,7 @@ INCLUDE "main/itemsPalleteIndexTable.asm" ;5BC0
 
 loadMenuItemsSprtData: ;05:5C1C
 ;first, load items OAM data
-    ld hl, ItemIdSlot1
+    ld hl, wItemIdSlot1
     ld e, $08
     ld b, $00 ;sprite piece counter?
 loadItemsOAMLoop
@@ -7451,7 +7451,7 @@ Label15C53
     jr c, loadItemsOAMLoop
 ;load sprite tiles data
     ld de, wSpriteTilesBuffer+$80 ;$CB80
-    ld hl, ItemIdSlot1
+    ld hl, wItemIdSlot1
     ld b, $08
 loadItemTileDataLoop
     push bc ;store slots count
@@ -7597,7 +7597,7 @@ Label15CF5
     ld [hli], a
     dec b
     jr nz, Label15CEF
-    ld a, [selectedItemId]
+    ld a, [wSelectedItemId]
     ld l, a
     ld h, $00
     add hl, hl
@@ -7676,7 +7676,7 @@ Label15D62
     ld [vramBank], a ;vram bank select
 ;get item pallete index
     ld hl, itemsPalleteIndexTable ;5BC0
-    ld a, [selectedItemId]
+    ld a, [wSelectedItemId]
     add a, l
     ld l, a
     ld a, $00
@@ -7697,7 +7697,7 @@ Loop15D8A
     inc hl
     ld d, [hl]
     inc hl
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     and a, $1F
     call changePalTone
     call VBlankWait
@@ -7799,7 +7799,7 @@ itemsPallete: ;05:5E00
 ;5E40
 
 loadEquipedSpriteData: ;05:5E40
-    ld a, [equipedItemId]
+    ld a, [wEquipedItemId]
     ld hl, itemsPalleteIndexTable
     add a, l
     ld l, a
@@ -7828,7 +7828,7 @@ loadEquipedSpriteData: ;05:5E40
     ld [hl], d
     inc l
 ;load sprite tile data
-    ld a, [equipedItemId]
+    ld a, [wEquipedItemId]
     ld l, a
     ld h, $00
     add hl, hl
@@ -8331,7 +8331,7 @@ ApplyYawn1RoomOverlap: ;08:4132
     jp ApplyRoomOverlapMask
 
 ApplyCorridor4CRoomOverlap: ;08:4162
-    ld a, [spriteIdBuffer]
+    ld a, [wSpriteIdBuffer]
     cp a, WOODEN_BOX ;$F1
     ret nz ;apply only to wooden box
     ld a, [wRoomScreen]
@@ -8375,7 +8375,7 @@ ApplyDorm003RoomOverlap: ;08:4176
 ApplyRoomOverlapMask:: ;08:41B4
     ld a, [de]
     ld c, a
-    ld a, [wSprtPriorYaxis]
+    ld a, [wSprtPriorZOrder]
     cp a, c
     jp c, NotApplyOverlap ;4392 if sprite is over overlap
     inc de
@@ -8383,7 +8383,7 @@ ApplyRoomOverlapMask:: ;08:41B4
     inc de
     ld a, [de]
     ld c, a
-    ld a, [wSprtPriorY2axis]
+    ld a, [wSprtPriorScrnYPos]
     sub a, c ;Y2axis - [de]
     cp a, $80
     jp c, Label201ED ;jump if positive
@@ -8424,7 +8424,7 @@ Label201ED:
     ld a, [de]
     add a, c
     ld c, a
-    ld a, [wSprtPriorY2axis]
+    ld a, [wSprtPriorScrnYPos]
     ld b, a
     ld a, [wSprtPriorHeight]
     add a, b
@@ -8469,7 +8469,7 @@ Loop2022C: ;08:422C
     adc a, d
     ld [wOverlapMaskAddrHigh], a
     pop de
-    ld a, [wSprtPriorXaxis]
+    ld a, [wSprtPriorScrnXPos]
     sub a, c
     cp a, $00
     jr z, .Label20275
@@ -9175,7 +9175,7 @@ endEvent:
 
 getItemInEvent: ;0E:4212
     ld a, [hli]
-    ld [selectedItemId], a
+    ld [wSelectedItemId], a
     ld a, [hli]
     ld [wItemTriggerId], a
     ret
@@ -11896,7 +11896,7 @@ Label312416:
 checkObjectsVisibility:: ;C4:6421 objectsSpritesFunc
 ;check if an object is visible when is visible from a certain room screen
 ;return FF when visible, 00 if not.
-    ld a, [spriteIdBuffer]
+    ld a, [wSpriteIdBuffer]
     cp a, MAP_STEP_LADDER ;$E0
     jp z, Label312445
     cp a, WOODEN_RACK ;$EC
@@ -12357,7 +12357,7 @@ InitGameTriggers: ;C5:6273
 checkRoomsActions: ;C5:62C5
     xor a
     ld [wButtonAEventId], a ;reset button A event
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     or a
     ret nz ;return if fade-in
     ld a, [wRoomId]
@@ -12570,7 +12570,7 @@ checkPickItemInput
     ld de, $FFFE ;-2
     add hl, de
     ld a, [hl] ;get item id
-    ld [selectedItemId], a
+    ld [wSelectedItemId], a
     ld de, $FFFE ;-2
     add hl, de
     ld a, [hl] ;get item id
@@ -13524,7 +13524,7 @@ searchAndRemoveItem:
 ;c: item id
     push bc
     push hl
-    ld hl, ItemIdSlot1
+    ld hl, wItemIdSlot1
     ld b, $06 ;chris item slots
     ld a, [wSelectedPlayer]
     or a
@@ -13549,7 +13549,7 @@ removeFoundItem: ;C5:6A6A
 searchKeyInInventory: ;C5:6A6E
 ;search door key in inventory, return true if is found ($FF), false if not ($00)
 ;c: key id
-    ld de, ItemIdSlot1
+    ld de, wItemIdSlot1
     ld b, $08 ;item slots count
 Loop316A73
     ld a, [de]
@@ -18887,7 +18887,7 @@ Label319B7D: ;C6:5B7D
     ld a, [wc48a]
     or a
     jr nz, Label319B78
-    ld hl, ItemIdSlot1
+    ld hl, wItemIdSlot1
     ld b, $08
 Label319B88
     ld a, [hl]
@@ -20947,7 +20947,7 @@ Label3ECCCF
     ld hl, wSpriteId - wCharSpritesData ;$B
     add hl, de
     ld a, [hl]
-    ld [spriteIdBuffer], a ;store sprite Id
+    ld [wSpriteIdBuffer], a ;store sprite Id
     sub a, OBJECTS ;$E0 get object id
     ld l, a
     ld h, $00
@@ -21636,7 +21636,7 @@ checkObjTopCollider: ;FB:514C
     sbc a, h
     cp a, $FF
     jr nz, checkObjRightCollider
-    ld a, [spriteIdBuffer]
+    ld a, [wSpriteIdBuffer]
     cp a, MAP_STEP_LADDER ;$E0
     jr z, Label3ED161
     jr Label3ED16F
@@ -21672,7 +21672,7 @@ checkObjRightCollider: ;FB:518B
     sbc a, d
     or a
     jr nz, checkObjLeftCollider
-    ld a, [spriteIdBuffer]
+    ld a, [wSpriteIdBuffer]
     cp a, SHED_STEP_LADDER ;$E9
     jr z, Label3ED19F
     jr Label3ED1A7
@@ -21699,7 +21699,7 @@ Label3ED1A7
 ;51C3
 
 checkObjLeftCollider: ;FB:51C3
-    ld a, [spriteIdBuffer]
+    ld a, [wSpriteIdBuffer]
     cp a, OPERATING_ROOM_LADDER ;$F2
     jr z, Label3ED1CC
     jr Label3ED1DA
@@ -21729,7 +21729,7 @@ Label3ED1DA
 ;51F6
 
 checkStepLaddersElevation:: ;FB:51F6
-    ld a, [spriteIdBuffer]
+    ld a, [wSpriteIdBuffer]
     cp a, MAP_STEP_LADDER ;$E0
     jr z, Label3ED20B
     cp a, SHED_STEP_LADDER ;$E9
@@ -21889,7 +21889,7 @@ setPlayerHealthZero
     xor a
     ld [wCharHealth], a
     ld a, $40 ;begin game over fade-out
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     jr evalNextZombieAttack
 resetZombieAnimation:
     ld hl, wSpriteAnimationId - wCharSpritesData ;$6
@@ -22505,7 +22505,7 @@ setStepLadder3Frame: ;FC:43B2
 ;43C5
 
 setZombieAnimation: ;FC:43C5
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     or a
     jp nz, nextObjectNPC
     ld hl, wZombieAndObjectVarId - wCharSpritesData ;$F
@@ -22812,7 +22812,7 @@ indleAnimBInput: ;45FA
     ld a, [wBButtonPressDown]
     or a
     jp nz, Label3F05A8 ;if B button is already pressed
-    ld a, [equipedItemId]
+    ld a, [wEquipedItemId]
     cp a, BERRETTA
     jr z, setGunAimAnimation
     cp a, SHOTGUN
@@ -23791,7 +23791,7 @@ Label3F0C49
 
 applyShotDamage:
     ld c, BERRETTA_DAMAGE ;$0C
-    ld a, [equipedItemId]
+    ld a, [wEquipedItemId]
     cp a, BERRETTA
     jr z, Label3F0C6C
     ld c, SHOTGUN_DAMAGE ;$18

@@ -224,7 +224,7 @@ calcNormalCameraSpriteSizeAndPosition:: ;00:0A33 normal camera scaling
     ld a, [wCalcSpriteZOrderLow]
     or a
     ret z ;return if z-order = 0
-    ld a, [spriteIdBuffer]
+    ld a, [wSpriteIdBuffer]
     cp a, RESEARCHER_ROOM_SHELF ;$E6
     jr z, setSpriteBigSize
     cp a, ARMORS_ROOM_STATUE_1 ;$E7
@@ -384,7 +384,7 @@ continueNextSprite: ;0B91
     ret
 
 calcCharsSizeAndPosition: ;00:0B9F
-    ld [spriteIdBuffer], a
+    ld [wSpriteIdBuffer], a
     push de
     call calcSpriteSizeAndPosition
     pop de
@@ -402,7 +402,7 @@ calcCharsSizeAndPosition: ;00:0B9F
     jr continueNextSprite
 
 calcFoesSizeAndPosition: ;00:0BBD
-    ld [spriteIdBuffer], a
+    ld [wSpriteIdBuffer], a
     call goToCheckZombieVisibility ;0933
     or a
     jr z, continueNextSprite ; jump if $00
@@ -424,7 +424,7 @@ calcFoesSizeAndPosition: ;00:0BBD
     jr continueNextSprite
 
 calcObjectsSizeAndPosition: ;0BE4
-    ld [spriteIdBuffer], a
+    ld [wSpriteIdBuffer], a
     call goToCheckObjVisibility
     or a
     jr z, continueNextSprite ;next sprite if $00 (not visible)

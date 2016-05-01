@@ -344,7 +344,7 @@ setSpriteBaseSize:: ;00:1108
 
 getCameraPitchYaw:: ;00:1138
     ld a, BANK(cameraPitchYawTable) ;$0B
-    call BankSwitch
+    call bankSwitch
     ld de, cameraPitchYawTable ;$4000
 ;get camera yaw
     ld a, [wCameraYawAddrLow]
@@ -381,7 +381,7 @@ getCameraPitchYaw:: ;00:1138
     ld a, [hl]
     ld [wCameraPitchX], a
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     jp initSpecialCameraAngles
 
 getSpriteScaleData:: ;00:117E
@@ -393,7 +393,7 @@ getSpriteScaleData:: ;00:117E
     ld l, e
     ld h, d
     ld a, BANK(cameraPitchYawTable) ;$0B
-    call BankSwitch
+    call bankSwitch
     ld de, cameraPitchYawTable ;$4000
     ld a, h
     and a, $0F ;mask address
@@ -410,4 +410,4 @@ getSpriteScaleData:: ;00:117E
     ld a, [hl] ;get yaw value x
     ld [wSpriteScaleValueB], a
     ld a, $01
-    jp BankSwitch
+    jp bankSwitch

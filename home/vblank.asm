@@ -44,15 +44,15 @@ Vblank:: ;00:030E
     ld a, [wCurrentRomBank]
     push af
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     call ReadJoypad
     xor a
     ld [wHaltCpuTrigger], a ;disable halt CPU mode
     ld a, BANK(updateMusic) ;$06
-    call BankSwitch
+    call bankSwitch
     call updateMusic
     pop af
-    call BankSwitch
+    call bankSwitch
     ;increase game framerate
     ld hl, wFrameRate
     inc [hl]

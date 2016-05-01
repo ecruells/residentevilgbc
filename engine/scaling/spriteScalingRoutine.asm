@@ -29,7 +29,7 @@ loadAndScaleTileLoop:
     ld a, [wCurrentRomBank]
     push af
     ld a, BANK(_horizontalScalingTable) ;$0A
-    call BankSwitch
+    call bankSwitch
     ld hl, _horizontalScalingTable ;$4000
     ld a, [wSprtPriorWidth] ;base width
     and a, $0F ;mask width
@@ -40,7 +40,7 @@ loadAndScaleTileLoop:
     ld l, b ; add tile line subpixels high bits offset
     ld b, [hl] ;get h-scale value
     pop af ;back to sprite frames bank
-    call BankSwitch
+    call bankSwitch
     ld a, h
     add a, $0D ;move to even line h-scale table
     ld h, a
@@ -54,13 +54,13 @@ loadAndScaleTileLoop:
     ld a, [wCurrentRomBank]
     push af
     ld a, BANK(_horizontalScalingTable) ;$0A
-    call BankSwitch
+    call bankSwitch
     ld l, c
     ld c, [hl]
     ld l, b
     ld b, [hl]
     pop af
-    call BankSwitch ;back to sprite frame bank
+    call bankSwitch ;back to sprite frame bank
     pop de ;restore odd line scale values
     ld hl, Label2A07 ;$2A07 set return address
     push hl

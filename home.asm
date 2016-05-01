@@ -96,7 +96,7 @@ InitGame:: ;00:016B
     pop af
     ld [wc104], a
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     call initOAMDMARoutine
     call hideSprites
     ld a, $03
@@ -191,10 +191,10 @@ muteAudio:: ;0246
 	ld a, [wCurrentRomBank]
 	push af
 	ld a, BANK(goToDisableSound) ;$06
-	call BankSwitch
+	call bankSwitch
 	call goToDisableSound ;$4000
 	pop af
-	jp BankSwitch
+	jp bankSwitch
 
 
 playMusic:: ;0256
@@ -203,45 +203,45 @@ playMusic:: ;0256
 	ld a, [wCurrentRomBank]
 	push af
 	ld a, BANK(goToPlayMusicRoutine) ;$06
-	call BankSwitch
+	call bankSwitch
 	ld a, c
 	ld [wCurrentMusicId], a
 	call goToPlayMusicRoutine ;$4006
 	pop af
-	jp BankSwitch
+	jp bankSwitch
 
 playSFX:: ;026B
     ld c, a
     ld a, [wCurrentRomBank]
     push af
     ld a, BANK(goToPlaySFXRoutine) ;$06
-    call BankSwitch
+    call bankSwitch
     ld a, c
     ld [wCurrentSoundId], a
     call goToPlaySFXRoutine
     pop af
-    jp BankSwitch
+    jp bankSwitch
 
 
 jumpToFunctionHL1:: ;0280
-    call BankSwitch
+    call bankSwitch
     ld de, jumpToFunctionHL1+8 ;$288
     push de
     jp [hl]
     push af
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     pop af
     ret
 
 jumpToFunctionHL2:: ;0290
-    call BankSwitch
+    call bankSwitch
     ld bc, jumpToFunctionHL2+8 ;$298
     push bc
     jp [hl]
     push af
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     pop af
     ret
 
@@ -250,12 +250,12 @@ jumToFunctionHL3:: ;02A0
 	ld a, [wCurrentRomBank]
 	push af
 	ld a, c
-	call BankSwitch
+	call bankSwitch
 	ld de, jumToFunctionHL3+14 ;$02AE
 	push de
 	jp [hl]
 	pop af
-	jp BankSwitch
+	jp bankSwitch
 
 
 routineDelay:: ;02B2
@@ -270,7 +270,7 @@ routineDelay:: ;02B2
 INCLUDE "home/joypad.asm"
 
 
-BankSwitch:: ;00:02EE
+bankSwitch:: ;00:02EE
     push bc
     ld b, a
     ld a, [wCurrentRomBank]
@@ -289,7 +289,7 @@ INCLUDE "home/vblank.asm"
 SoftReset:: ;00:0391
 	di
 	ld a, $01
-	call BankSwitch
+	call bankSwitch
 	call ResetPal
 	jp InitGame
 
@@ -304,7 +304,7 @@ StartGameScene:: ;00:039D
     ld [wRoomIdHigh], a
     call goToInitSelectedPlayerData ;$0890
     ld a, BANK(roomsActionsDatatable) ;$C5
-    call BankSwitch
+    call bankSwitch
     ld a, [wRoomId]
     ld l, a
     ld a, [wRoomIdHigh]
@@ -328,13 +328,13 @@ StartGameScene:: ;00:039D
     ld a, [hli]
     ld [wSpriteFacing], a
     ld a, $01
-    call BankSwitch
+    call bankSwitch
 
 newGameStartSceneSet: ;03E5
 	call goToInitGameTriggers ;$8B2
     call goToInitRoomSprites ;$906
     ld a, $20
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     ld a, DEFAULT_MAIN_THEME ;$05
     ld [wRoomMusicId], a
     ld a, $01
@@ -364,7 +364,7 @@ gameLoopWithEventCheck: ;405
     cp a, $FF
     jp nz, $0605 ;if event return was by getting item
     ld a, $1F ;set fade-in screen
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     ld c, CHRIS ;$92 init player sprite id, chris by default
     ld a, [wSelectedPlayer]
     or a
@@ -477,7 +477,7 @@ gamePlayLoop: ;00:0449
     dec a
     ld [wFrameRateCounter], a
     call showRoomAnimation ;$4AFE
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     cp a, $5E
     jp z, goToMainMenuRoutine ;go to main menu if fade-out value if $5E
     or a
@@ -486,7 +486,7 @@ gamePlayLoop: ;00:0449
     and a, SELECT_INPUT
     jr z, skipOpenMenu
     ld a, $5C
-    ld [wLCDUpdate], a ;set open main menu
+    ld [wFadeInOutUpdate], a ;set open main menu
 skipOpenMenu
     ld a, [wButtonPressId]
     and a, START_INPUT
@@ -494,11 +494,11 @@ skipOpenMenu
     ld a, [wEventId]
     or a
     jp nz, jumpToEventCheck ;73B
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     push af
     call checkAndLoadRoomPal ;$44CD
     pop bc
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     or a
     jr nz, Label57B
     ld a, b
@@ -520,7 +520,7 @@ resetScreenAndFadeIn: ;00:057E
     call hideSprites
     call ResetPal
     ld a, $01
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     ret
 ;058D
 
@@ -531,7 +531,7 @@ goToMainMenuRoutine: ;00:058D
     ret z ;ret if player is dead
     call mainMenuRoutine ;$40A5
     ld a, $01
-    ld [wLCDUpdate], a ;set fade-in
+    ld [wFadeInOutUpdate], a ;set fade-in
     jp gameLoopWithEventCheck
 ;059D
 
@@ -540,7 +540,7 @@ goToItemBoxMenuRoutine: ;00:059D
     call hideSprites
     call itemBoxMenuRoutine ;$40F6
     ld a, $01
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     jp gameLoopWithEventCheck
 
 cameraChangeTransition: ;00:05AE
@@ -567,7 +567,7 @@ Label5D0
     call showSpriteDoorsAnimation
 Label5D3
     ld a, $01 ;set fade-in
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     call goToCheckRoomsCameraChange
     call goToInitRoomSprites
     jp gameLoopWithEventCheck
@@ -583,17 +583,17 @@ goToLoadSaveGameMenu: ;5E1
     ld a, SAVE_GAME_MODE ;$01
     call loadSaveGameMenu
     ld a, $01
-    ld [wLCDUpdate], a ;set fade-in
+    ld [wFadeInOutUpdate], a ;set fade-in
     jp gameLoopWithEventCheck
 ;5FF
 
 includeDroppedItem: ;5FF
     ld a, [wFoundItemId]
-    ld [selectedItemId], a
+    ld [wSelectedItemId], a
 goToIncludeItemMenu: ;00:0605
     call includeItemMenu ;$366F
     ld a, $01
-    ld [wLCDUpdate], a ;set fade-in
+    ld [wFadeInOutUpdate], a ;set fade-in
     jp gameLoopWithEventCheck
 ;610
 
@@ -604,19 +604,19 @@ showEventMsgCharName:: ;00:0610
     ld a, [wCurrentRomBank]
     push af
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     ld a, c
     ld c, e
     ld b, d
     call printMessage
     pop af
-    jp BankSwitch
+    jp bankSwitch
 
 showEventMessage:: ;00:0623
     ld a, [wCurrentRomBank]
     push af
     ld a, $FA
-    call BankSwitch
+    call bankSwitch
     ld a, [de]
     ld c, a
     inc de
@@ -626,47 +626,47 @@ showEventMessage:: ;00:0623
     ld a, [de]
     ld e, a
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     ld a, e ;message bank
     call printAutoTypingMessage
     pop af
-    jp BankSwitch
+    jp bankSwitch
 
 loadEventRoomScreen: ;00:0641
     ld a, [wCurrentRomBank]
     push af
     push hl
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     call ResetPal
     call hideSprites
     call loadAllRoomBgData
     ld a, $01
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     call haltCPU
     call checkAndLoadRoomPal
     pop hl
     pop af
-    jp BankSwitch
+    jp bankSwitch
 
 loadStoredRoomBg:: ;00:0664
     ld a, [wCurrentRomBank]
     push af
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     call ResetPal
     call hideSprites
     call loadAllRoomBgData
     pop af
-    jp BankSwitch
+    jp bankSwitch
 
 FadeScreen:: ;00:067A
     ld a, [wCurrentRomBank]
     push af
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     ld a, c
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     ld b, $20
 Loop689
     push bc
@@ -697,7 +697,7 @@ Label6AD
     dec b
     jr nz, Loop689
     pop af
-    jp BankSwitch
+    jp bankSwitch
 
 ;6B5
 
@@ -705,25 +705,25 @@ showEventDoorAnimation:: ;00:06B5
     ld a, [wCurrentRomBank]
     push af
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     call ResetPal
     ld a, [wDoorAnimationType]
     cp a, $7C
     jr nc, Label6CF
     call showSpriteDoorsAnimation ;$0C80
     pop af
-    jp BankSwitch
+    jp bankSwitch
 
 Label6CF: ;06CF
     call $465F
     pop af
-    jp BankSwitch
+    jp bankSwitch
 
 loadAndCalcEventSpritesData:: ;00:06D6
     ld a, [wCurrentRomBank]
     push af
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     call initSprtBufferAddr
     call calcSpritesSizeAndPosition ;0B72
     call goToLoadRoomSpritesData ;08E3
@@ -733,7 +733,7 @@ loadAndCalcEventSpritesData:: ;00:06D6
     call enableHDMA
     call swapOAMDMAopcode
     pop af
-    jp BankSwitch
+    jp bankSwitch
 
 ;06FB
 
@@ -741,10 +741,10 @@ loadEventBgMask: ;00:06FB
     ld a, [wCurrentRomBank]
     push af
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     call goToLoadRoomBgMask
     pop af
-    jp BankSwitch
+    jp bankSwitch
 
 goToDisplayEvent:: ;00:070B
     ld a, BANK(displayEvent) ;$0E
@@ -757,7 +757,7 @@ showEventBgImage: ;00:0713
     ld a, [wCurrentRomBank]
     push af
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     push bc
     call ResetPal
     pop bc
@@ -776,7 +776,7 @@ showEventBgImage: ;00:0713
     ld a, c
     call loadTileMap
     pop af
-    jp BankSwitch
+    jp bankSwitch
 
 ;73B
 jumpToEventCheck: ;73B
@@ -786,7 +786,7 @@ jumpToEventCheck: ;73B
 
 loadAllRoomBgData:: ;00:0741
     ld a, $07
-    call BankSwitch
+    call bankSwitch
     ld a, [wRoomId]
     ld l, a
     ld a, [wRoomIdHigh]
@@ -851,7 +851,7 @@ loadAllRoomBgData:: ;00:0741
     and a, %01000000 ;($40) bit 6 indicate camera type
     ld [wCameraType], a
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     call getCameraPitchYaw
     call goToApplyPlayerElevation
     ld a, [wRoomId]
@@ -869,23 +869,23 @@ loadAllRoomBgData:: ;00:0741
     ld a, $01
     ld [vramBank], a ;vram bank select
     ld a, $0F
-    call BankSwitch
+    call bankSwitch
     ld de, mainFonts ;$4CB0
     ld hl, _VRAM+$800 ; fonts vram
     ld bc, $0800 ; bytes number to load
     call loadDataToRam
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     xor a
     ld [vramBank], a ;vram bank select
     ld a, $0C
-    call BankSwitch
+    call bankSwitch
     ld de, FiregunTiles ;$4F04
     ld hl, _VRAM+$740 ; sprites tiles vram
     ld bc, $00C0 ; bytes number to load
     call loadDataToRam
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     ld hl, _SCRN0+$200 ;debug black frame tilemap
     ld b, $80
 .loop80C
@@ -909,26 +909,26 @@ goToLoadEnemyBloodSprt:: ;00:0829
     ld a, [wCurrentRomBank]
     push af
     ld a, BANK(loadEnemyBloodSprite) ;$04
-    call BankSwitch
+    call bankSwitch
     call loadEnemyBloodSprite ;04:4BC4
     pop af
-    jp BankSwitch
+    jp bankSwitch
 
 goToLoadSprtPriorityData:: ;00:0839
 	ld a, [wCurrentRomBank]
     push af
     ld a, BANK(loadSpritePriorityData) ;$04
-    call BankSwitch
+    call bankSwitch
     call loadSpritePriorityData ;$4B80
     pop af
-    jp BankSwitch
+    jp bankSwitch
 
 callLoadRoomPal:: ;00:0849
     ld a, BANK(loadRoomPallete) ;$03
-    call BankSwitch
+    call bankSwitch
     call loadRoomPallete ;03:7A80
     ld a, $01
-    jp BankSwitch
+    jp bankSwitch
 
 goToLoadZombieAndObjAnimFrames: ;00:0856
     ld hl, loadZombieAndObjectAnimFrames ;$42AA
@@ -952,17 +952,17 @@ goToLoadItemboxCursor: ;086E
 
 callSprtFloodEfect:: ;00:0876
     ld a, BANK(applySprtWaterEffect) ;$04
-    call BankSwitch
+    call bankSwitch
     call applySprtWaterEffect ;4A33
     ld a, $01
-    jp BankSwitch
+    jp bankSwitch
 
 callRoomOverlapSprt:: ;00:0883
     ld a, BANK(applyRoomOverlapToSprt) ;$08
-    call BankSwitch
+    call bankSwitch
     call applyRoomOverlapToSprt ;$4000
     ld a, $01
-    jp BankSwitch
+    jp bankSwitch
 
 goToInitSelectedPlayerData:: ;00:0890
     ld hl, InitSelectedPlayerData ;$4C5C
@@ -1105,14 +1105,14 @@ INCLUDE	"engine/scaling/spriteSizeAndPositionFunctions1.asm"
 getMsgPointerAndShow: ;00:0C0A
 ;get message pointen and bank, and display it
     ld a, BANK(textPointers) ;$FA
-    call BankSwitch
+    call bankSwitch
     ld c, [hl]
     inc hl
     ld b, [hl] ;msg pointer in bc
     inc hl
     ld e, [hl] ;msg bank in e
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     ld a, e ;set msg bank
     ld hl, $1000 ;message position
     jp printMessage
@@ -1213,7 +1213,7 @@ showSpriteDoorsAnimation:: ;00:0C80
     or a, c
     jr nz, .loop0C92
     ld a, $20
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     xor a
     ld [wDoorAnimationFrameCounter], a
     ld a, [wDoorSpriteId]
@@ -1344,7 +1344,7 @@ LabelD68
     call enableHDMA
     call swapOAMDMAopcode
 	;fade-in door
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     or a
     jr z, LabelD99
     cp a, $20
@@ -1353,11 +1353,11 @@ LabelD99
     ld a, [wDoorAnimationFrameCounter]
     cp a, $1F
     jr c, LabelDAC
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     cp a, $40
     jr nc, LabelDAC
     ld a, $40
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
 LabelDAC
     ld a, [wDoorAnimationFrameCounter]
     cp a, $2F
@@ -1375,7 +1375,7 @@ LabelDB7 ;play open door sound
     ld a, c
     call playSFX
 LabelDCA
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     cp a, $5E
     jp z, LabelDEA
     or a
@@ -1384,7 +1384,7 @@ LabelDCA
     and a, SELECT_INPUT
     jr z, LabelDE1 ;skip door animation
     ld a, $40
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
 LabelDE1
     ld hl, doorsPallete ;$2EEE
     call loadBGPallete
@@ -1457,7 +1457,7 @@ LabelE3D
     call loadDoorSpriteData ;2D62
     call enableHDMA
     call swapOAMDMAopcode
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     or a
     jr z, LabelE6F
     cp a, $20
@@ -1466,11 +1466,11 @@ LabelE6F
     ld a, [wDoorAnimationFrameCounter]
     cp a, $1F
     jr c, LabelE82
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     cp a, $40
     jr nc, LabelE82
     ld a, $40
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
 LabelE82
     ld a, [wDoorAnimationFrameCounter]
     cp a, $2F
@@ -1488,7 +1488,7 @@ LabelE8D
     ld a, c
     call playSFX
 LabelEA0
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     cp a, $5E
     jp z, LabelEC0
     or a
@@ -1497,7 +1497,7 @@ LabelEA0
     and a, SELECT_INPUT ;skip door animation
     jr z, LabelEB7
     ld a, $40
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
 LabelEB7
     ld hl, doorsPallete ;$2EEE
     call loadBGPallete
@@ -1788,11 +1788,11 @@ loop1365
     ld a, l
     cp a, $08
     jr c, .Label1381
-    ld [spriteIdBuffer], a
+    ld [wSpriteIdBuffer], a
     ld hl, loadSpriteTilesData ;$2BE9
     jr .Label1387
 .Label1381
-    ld [roomItemSpriteIdBuffer], a
+    ld [wRoomItemSpriteIdBuffer], a
     ld hl, loadRoomItemSpriteTilesData ;$2A86
 .Label1387
     ld bc, Label138C ;set return pointer
@@ -2008,7 +2008,7 @@ loadRoomItemSpriteTilesData:: ;00:2A86
     ld [wSprtPriorHeight], a
     inc de
     ld a, [de] ;sprite bank
-    call BankSwitch
+    call bankSwitch
     inc de
     ld a, [de]
     ld l, a
@@ -2055,7 +2055,7 @@ loadRoomItemSpriteTilesData:: ;00:2A86
     ld a, h
     ld [wSpriteTilesBufferHigh], a
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     ld a, [wSpriteC165]
     ld l, a
     ld h, $00
@@ -2071,7 +2071,7 @@ loadRoomItemSpriteTilesData:: ;00:2A86
     ld a, [wSpriteC1F1]
     add a
     ld [wVramBankSubBuffer], a
-    ld a, [roomItemSpriteIdBuffer]
+    ld a, [wRoomItemSpriteIdBuffer]
     ld [wVramBankBuffer], a
     ld a, [wSprtPriorHeight]
     srl a
@@ -2088,7 +2088,7 @@ loadRoomItemSpriteTilesData:: ;00:2A86
     jp loadSprtOAMBuffer
 .Label2B4B
     ld a, $01
-    jp BankSwitch
+    jp bankSwitch
 ;2B50
 
 Label2B50: ;00:2B50
@@ -2180,15 +2180,15 @@ loadSpriteTilesData: ;00:2BE9
     dec de
     dec de ;C800 Sprite Z-order
     ld a, [de]
-    ld [wSprtPriorYaxis], a
+    ld [wSprtPriorZOrder], a
     inc de
     inc de
     inc de ;C803 Sprite screen X
     ld a, [de]
-    ld [wSprtPriorXaxis], a
+    ld [wSprtPriorScrnXPos], a
     inc de ;C804 Sprite screen Y
     ld a, [de]
-    ld [wSprtPriorY2axis], a
+    ld [wSprtPriorScrnYPos], a
     inc de ;C805 Sprite width
     ld a, [de]
     ld [wSprtPriorWidth], a
@@ -2231,7 +2231,7 @@ loadSpriteTilesData: ;00:2BE9
     add hl, hl
     add hl, hl
     ld de, _chrisSpritesTable ;$52EB
-    ld a, [spriteIdBuffer]
+    ld a, [wSpriteIdBuffer]
     cp a, CHRIS
     jr z, Label2C65
     ld de, _jillSpritesTable ;$598B
@@ -2279,7 +2279,7 @@ Label2C6F
     ld d, $00 ;facing offset ( PlayerCamFacing / 2 ) * 8
     add hl, de ;apply facing offset
     ld a, $FD
-    call BankSwitch
+    call bankSwitch
     ld a, [hli]
     ld c, a ;sprite bank
     inc hl
@@ -2299,7 +2299,7 @@ Label2C6F
     inc hl
     ld d, [hl]
     ld a, c ;sprite bank
-    call BankSwitch
+    call bankSwitch
     ld a, [wSpriteTilesBufferLow]
     ld l, a
     ld a, [wSpriteTilesBufferHigh]
@@ -2311,7 +2311,7 @@ Label2C6F
     ld a, h
     ld [wSpriteTilesBufferHigh], a
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     pop hl
     push hl
     call callSprtFloodEfect
@@ -2324,9 +2324,9 @@ Label2C6F
     add hl, hl
     ld de, wOAMBufferC9 ;$C900
     add hl, de
-    ld a, [wSprtPriorXaxis]
+    ld a, [wSprtPriorScrnXPos]
     ld e, a
-    ld a, [wSprtPriorY2axis]
+    ld a, [wSprtPriorScrnYPos]
     ld d, a
     call selectOAMDataDest
     ld a, [wSpriteC1F1]
@@ -2334,7 +2334,7 @@ Label2C6F
 	;set vram chars sprite positions
     ld [wVramBankSubBuffer], a
     ld c, $00
-    ld a, [spriteIdBuffer]
+    ld a, [wSpriteIdBuffer]
     cp a, CHRIS
     jr z, Label2D13
     ld c, $01
@@ -2412,7 +2412,7 @@ funcOAMSprt2D4A: ;00:2D4A
 
 loadDoorSpriteData: ;00:2D62
     ld a, BANK(doorsSpritesheet) ;$0B
-    call BankSwitch
+    call bankSwitch
     ld a, [wDoorSprtTileBufferOffset]
     ld l, a
     ld h, $00
@@ -2429,7 +2429,7 @@ loadDoorSpriteData: ;00:2D62
     ld d, a
     call loadSpriteTilesBuffer
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     ld a, [wDoorSprtTileBufferOffset]
     ld l, a
     ld h, $00
@@ -2477,13 +2477,13 @@ loadSaveGameMenu:: ;00:2DD0
     ld a, $16
     call loadTileMap ;load typewriter BG @0D:5740
     ld a, BANK(ArrowCursor) ;$02
-    call BankSwitch
+    call bankSwitch
     ld de, ArrowCursor ;$6C7C
     ld hl, wSpriteTilesBuffer ;$cb00
     ld bc, $20 ; bytes count
     call loadSprtTilesToBuffer
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     ld de, LoadGameText ;$5701
     ld a, [wLoadOrSave]
     cp a, LOAD_GAME_MODE ;$00
@@ -2505,7 +2505,7 @@ loadSaveGameMenu:: ;00:2DD0
     xor a
     ld [wCursorPosId], a
     ld a, $20
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
 loop2E23: ;load/save menu loop
     call haltCPU
     call setTWArrowOAMData
@@ -2549,7 +2549,7 @@ loop2E23: ;load/save menu loop
     xor a
     ld [wDownKeyPressDown], a
 .Label2E74
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     cp a, $5E ;where exit from save menu, return when screen completly fade-out
     ret z
     or a
@@ -2586,12 +2586,12 @@ loop2E23: ;load/save menu loop
     push de
     call displayLoadGameWelcomeMsg ;$439A
     ld a, $01
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     jp gameLoopWithEventCheck
 ;save game action
 .Label2EC2
     ld a, $40
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     ld a, [wLoadOrSave]
     cp a, LOAD_GAME_MODE ;$00
     jr nz, applyFadePallete
@@ -2636,7 +2636,7 @@ loadTileMap:: ;00:2FDC
     ld bc, $0002 ;get tilemap bank
     add hl, bc
     ld a, [hl]
-    call BankSwitch
+    call bankSwitch
     push hl
     ld hl, _VRAM+$800
     ld bc, $1000
@@ -2679,7 +2679,7 @@ loadTileMap:: ;00:2FDC
     dec b
     jr nz, .loop3017
     ld a, $01
-    jp BankSwitch
+    jp bankSwitch
 
 loadTilePalVRAM1:: ;00:303A
     push bc
@@ -2732,7 +2732,7 @@ loadRoomBGMask:: ;00:3073
     ld a, [wCurrentRomBank]
     push af
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     xor a
     push hl
     jr label308D
@@ -2741,7 +2741,7 @@ loadRoomBG:: ;00:3080
     ld a, [wCurrentRomBank]
     push af
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     push hl
     ld a, [wRoomScreen]
 label308D:
@@ -2761,7 +2761,7 @@ label308D:
     inc hl
     ld a, c
     ld [wRoomBGBankId], a
-    call BankSwitch
+    call bankSwitch
     ld hl, $280 ;offset to BG tiles data
     add hl, de
     call checkBgAddrOverflow
@@ -2780,7 +2780,7 @@ label308D:
     push bc
     push de
     ld a, [wRoomBGBankId]
-    call BankSwitch
+    call bankSwitch
     ld a, [wVramBankSubBuffer]
     and a, $0F
     inc a
@@ -2857,7 +2857,7 @@ label308D:
     ld [vramBank], a ;vram bank select
 .Label314B
     ld a, [wRoomBGBankId]
-    call BankSwitch
+    call bankSwitch
     ld a, [wVramBankSubBuffer]
     and a, $0F
     inc a
@@ -2903,7 +2903,7 @@ label308D:
     add hl, hl
     add hl, hl
     ld a, [wBGDataAddrBank]
-    call BankSwitch
+    call bankSwitch
     ld a, [wBGDataAddrLow]
     ld e, a
     ld a, [wBGDataAddrHigh]
@@ -2945,7 +2945,7 @@ label308D:
     or a, c
     jp nz, .loop30C2
     pop af
-    jp BankSwitch
+    jp bankSwitch
 
 checkCurrentBgAddr:: ;00:31EF
     ld a, d
@@ -2955,7 +2955,7 @@ checkCurrentBgAddr:: ;00:31EF
     ld d, a
     ld a, [wCurrentRomBank]
     inc a
-    jp BankSwitch
+    jp bankSwitch
 
 checkBgAddrOverflow:: ;00:31FD
 	ld a, h
@@ -2965,7 +2965,7 @@ checkBgAddrOverflow:: ;00:31FD
     ld h, a
     ld a, [wCurrentRomBank]
     inc a
-    jp BankSwitch
+    jp bankSwitch
 
 checkTileMapAddr:: ;00:320B
     ld a, d
@@ -2976,7 +2976,7 @@ checkTileMapAddr:: ;00:320B
     ld a, [wRoomBGBankId]
     inc a
     ld [wRoomBGBankId], a
-    jp BankSwitch
+    jp bankSwitch
 
 loadSprtTilesToBuffer:: ;00:321C
 ;params:
@@ -3066,7 +3066,7 @@ loadBGTilesData:: ;00:3251
     ld d, a
     ld a, [wCurrentRomBank]
     inc a
-    call BankSwitch
+    call bankSwitch
 .Label3284
     dec bc
     ld a, b
@@ -3091,7 +3091,7 @@ loadPallete:: ;00:3297
 ;a:  pallete bank
 ;hl: bg pal pointer
 ;de: obj pal pointer
-    call BankSwitch
+    call bankSwitch
     push de ;store obj pallete pointer
 	;load BG pallete
     ld c, $00
@@ -3101,7 +3101,7 @@ loadPallete:: ;00:3297
     inc hl
     ld d, [hl]
     inc hl
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     and a, $1F
     call changePalTone
     call VBlankWait
@@ -3127,7 +3127,7 @@ loadPallete:: ;00:3297
     inc hl
     ld d, [hl]
     inc hl
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     and a, $1F
     call changePalTone
     call VBlankWait
@@ -3145,7 +3145,7 @@ loadPallete:: ;00:3297
     dec b
     jr nz, .loop32C7
     ld a, $01
-    jp BankSwitch
+    jp bankSwitch
 
 changePalTone:: ;00:32EF
     push bc
@@ -3217,7 +3217,7 @@ loadTitleScreen:: ;00:333B
     ld [wCursorPosId], a
     call hideSprites
     ld a, $20
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     ld hl, $300
     ld a, l
     ld [wFrameRateCounter], a
@@ -3225,10 +3225,10 @@ loadTitleScreen:: ;00:333B
     ld [wc1c5], a
 .titleLoop
     call haltCPU
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     or a
     call z, goToCheckTitleCursor
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     or a
     jr nz, .Label3383
     ld a, [wFrameRateCounter]
@@ -3243,7 +3243,7 @@ loadTitleScreen:: ;00:333B
     jr nz, .Label3383
     jp loadTitleSlideRooms ;$478F ;loadTitleSlideRooms
 .Label3383
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     cp a, $5E
     ret z
     or a
@@ -3252,17 +3252,17 @@ loadTitleScreen:: ;00:333B
     and a, START_INPUT ;$08
     jr z, .Label339D
     ld a, $40
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     ld a, FIREGUN_SFX ;$0F
     call playSFX
 .Label339D
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     push af
     ld hl, TitlePalLookupTable ;$2EFC ; pallete pointer
     call loadBGPallete
     pop af
     ld c, a
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     or a
     jr nz, .titleLoop
     ld a, c
@@ -3273,20 +3273,20 @@ loadTitleScreen:: ;00:333B
     ld de, $480
     ld bc, $C3 ;sample lenght
     ld a, $FF
-    call BankSwitch
+    call bankSwitch
     call playSample
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     ld bc, $1388 ;wait delay
     call waitDelay
     ld hl, EvilSample ;$4D1A "evil" sample audio
     ld de, $480
     ld bc, $CC ;sample lenght
     ld a, $FF
-    call BankSwitch
+    call bankSwitch
     call playSample
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     ei
     jp .titleLoop
 
@@ -3295,7 +3295,7 @@ loadPlayerSelectMenu:: ;00:33EB
     ld a, $14
     call loadTileMap
     ld a, $02
-    call BankSwitch
+    call bankSwitch
     ld de, StarsPoliceCardExtraColors ;$6AFC
     ld hl, wSpriteTilesBuffer ;$cb00
     ld bc, $180
@@ -3309,16 +3309,16 @@ loadPlayerSelectMenu:: ;00:33EB
     ld bc, $20
     call loadSprtTilesToBuffer
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     call enableHDMA
     xor a
     ld [wCursorPosId], a ;set cursor id $00 (chris)
     ld a, $28
-    ld [policeCardXpos], a ;init police card x pos
+    ld [wPoliceCardXpos], a ;init police card x pos
     ld a, $38
-    ld [policeCardYpos], a ;init police card y pos
+    ld [wPoliceCardYpos], a ;init police card y pos
     ld a, $20
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
 .loop3437
     call updatePolicecardFacePosition ;$48EA
     call updatePolicecardLogoColorsPosition ;$493A
@@ -3327,14 +3327,14 @@ loadPlayerSelectMenu:: ;00:33EB
     call updatePolicecardTilesPosition ;$3C37
     call swapOAMDMAopcode ;$4457
     call hideOAM ;4494
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     or a
     jr nz, .Label3480
-    ld a, [policeCardXpos]
+    ld a, [wPoliceCardXpos]
     cp a, $28
     jr z, .Label346C
     sub a, $08
-    ld [policeCardXpos], a
+    ld [wPoliceCardXpos], a
     cp a, $C0
     jr nz, .Label3480
     ld a, [wCursorPosId]
@@ -3346,16 +3346,16 @@ loadPlayerSelectMenu:: ;00:33EB
     and a, LEFT_RIGHT_INPUT ;$30
     jr z, .Label3480
 	;if left/right input press
-    ld a, [policeCardXpos]
+    ld a, [wPoliceCardXpos]
     sub a, $08
-    ld [policeCardXpos], a
+    ld [wPoliceCardXpos], a
     ld a, SELECT_MENU_SFX ;$00
     call playSFX
 .Label3480
-    ld a, [policeCardXpos]
+    ld a, [wPoliceCardXpos]
     cp a, $28
     jr nz, .Label34A1
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     cp a, $5E
     ret z
     or a
@@ -3365,7 +3365,7 @@ loadPlayerSelectMenu:: ;00:33EB
     jr z, .Label34A1
 	;if player selected
     ld a, $40
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     ld a, START_GAME_SFX ;$17
     call playSFX
 .Label34A1
@@ -3465,7 +3465,7 @@ Loop3506
 
 loadRoomsMapDetail: ;00:351D
     ld a, BANK(Room_00_map) ;$05
-    call BankSwitch
+    call bankSwitch
     ld hl, Room_00_map ;$5EE7
     ld b, $2D ;room maps count
 drawRoomMapLoop
@@ -3475,7 +3475,7 @@ drawRoomMapLoop
     dec b
     jr nz, drawRoomMapLoop
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     ld a, BANK(mapDetailPallete) ;$09
     ld hl, mapDetailPallete ;$4040
     jp loadBGPal
@@ -3485,7 +3485,7 @@ loadBGPal: ;00:353C
 ;paranms
 ;a: pallete bank
 ;hl: pallete pointer
-    call BankSwitch
+    call bankSwitch
     ld c, $00
     ld b, $20
 .loop3543
@@ -3493,7 +3493,7 @@ loadBGPal: ;00:353C
     inc hl
     ld d, [hl]
     inc hl
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     and a, $1F
     call changePalTone
     call VBlankWait
@@ -3511,7 +3511,7 @@ loadBGPal: ;00:353C
     dec b
     jr nz, .loop3543
     ld a, $01
-    jp BankSwitch
+    jp bankSwitch
 
 INCLUDE "main/mainMenuSubmenusPointers.asm" ;356B
 ;35BF
@@ -3563,7 +3563,7 @@ loadSubmenuTilesData:
     push bc
     push hl
     ld a, c
-    call BankSwitch
+    call bankSwitch
     ld a, $01
     ld [vramBank], a ;vram bank select
     ld hl, _VRAM+$1000 ;menu detail window address
@@ -3615,19 +3615,19 @@ loadItemSubmenuTileDataLoop
     pop hl ;restore submenu pallete id adddress
     pop bc ;restore bank
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     ld e, [hl]
     inc hl
     ld d, [hl] ;get palIds address
     inc hl
     push hl
     ld a, c
-    call BankSwitch
+    call bankSwitch
     call loadMenuDetailWindowPalIds
 ;loadItemSubmenuPallete
     pop hl
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     ld c, [hl] ;pal bank
     inc hl
     inc hl
@@ -3650,15 +3650,15 @@ includeItemMenu: ;00:366F
     xor a
     call loadMainMenuTileMap
     ld a, $01
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     ld a, $FF
     ld [wMenuSelGridId], a
     ld hl, MainMenuMapTable+8 ;$2F26
     call loadBGPallete
     call goToLoadItemBigSprite
     ld a, BANK(getItemTextPointers) ;$FA
-    call BankSwitch
-    ld a, [selectedItemId]
+    call bankSwitch
+    ld a, [wSelectedItemId]
     ld l, a
     ld h, $00
     add hl, hl
@@ -3670,7 +3670,7 @@ includeItemMenu: ;00:366F
     inc hl
     ld b, [hl]
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     ld hl, $0F00
     ld a, BANK(getItemTextPointers) ;$FA
     call printMessage ;print get item text
@@ -3711,18 +3711,18 @@ Label36F3
     cp a, CHECK_ITEM_CURSOR ;$81
     jr nz, noItemNameToPrint ;ret if not check option
     ld de, itemsNamesPointer+2 ;$4599
-    ld a, [selectedGridId]
+    ld a, [wSelectedGridId]
 getItemNameIndex
     sub a, $04 ;get slot id
     ld l, a
     ld h, $00
-    ld bc, ItemIdSlot1
+    ld bc, wItemIdSlot1
     add hl, bc ;get slot item id
     ld a, [hl]
     cp a, EMPTY ;$00
     jr z, noItemNameToPrint
     ld a, BANK(itemsNamesPointer) ;$FA
-    call BankSwitch
+    call bankSwitch
     ld l, [hl]
     ld h, $00
     add hl, hl
@@ -3733,7 +3733,7 @@ getItemNameIndex
     inc hl
     ld b, [hl]
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     ld hl, $0F00
     ld a, BANK(itemsNamesPointer) ;$FA
     jp printMessage ;print item name
@@ -3757,13 +3757,13 @@ mainMenuMode
     call clearItemDetailWindowTiles
 Label3743
     ld a, BANK(MainMenuFaces) ;$0C
-    call BankSwitch
+    call bankSwitch
     ld de, MainMenuFaces ;$4E84
     ld hl, wSpriteTilesBuffer ;$CB00
     ld bc, $80
     call loadDataToRam
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     call loadFontTiles
     ld a, [wSelectedPlayer]
     or a
@@ -3813,12 +3813,12 @@ Label37C0:
     ld a, $01
     ld [vramBank], a ;vram bank select
     ld a, BANK(mainFontsBold) ;$0F
-    call BankSwitch
+    call bankSwitch
     ld hl, _VRAM+$800
     ld bc, $0800
     call loadDataToRam
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     xor a
     ld [vramBank], a ;vram bank select
     ret
@@ -3850,7 +3850,7 @@ checkMenuInputPress:: ;00:37E3
     dec a ;enable B button press
     ld [wBButtonPressDown], a
     ld a, $5C
-    ld [wLCDUpdate], a ;set fade-out
+    ld [wFadeInOutUpdate], a ;set fade-out
     ret
 resetMenuBInputPress ;00:380F
     xor a
@@ -4078,11 +4078,11 @@ checkSubmenuAInput:
     jp playSFX
 
 checkUseEquipSubmenuAInputPress:
-    ld a, [selectedGridId]
+    ld a, [wSelectedGridId]
     sub a, ITEM_SLOT_1 ;$04
     ld e, a
     ld d, $00
-    ld hl, ItemIdSlot1
+    ld hl, wItemIdSlot1
     add hl, de
     ld a, [hl] ;get selected item id
     cp a, BERRETTA
@@ -4095,14 +4095,14 @@ checkUseEquipSubmenuAInputPress:
     jp checkItemUsage
 equipWeapon
     ld c, a
-    ld a, [equipedItemId]
+    ld a, [wEquipedItemId]
     cp a, c
     jr nz, Label39E8
 	;if the same weapon, unequip it
     ld c, EMPTY
 Label39E8
     ld a, c
-    ld [equipedItemId], a
+    ld [wEquipedItemId], a
     ld a, CONFIRM_SFX ;$02
     call playSFX
     ld a, ITEM_SLOT_1 ;$04
@@ -4123,11 +4123,11 @@ checkItemCheckSubmenuAInputPress: ;3A07
     call playSFX
     ld a, ITEM_DESC_MODE ;$84
     ld [wMenuSelGridId], a ;set item description mode
-    ld a, [selectedGridId]
+    ld a, [wSelectedGridId]
     sub a, ITEM_SLOT_1 ;$04
     ld e, a
     ld d, $00
-    ld hl, ItemIdSlot1
+    ld hl, wItemIdSlot1
     add hl, de
     ld a, [hl] ;get selected item id
     cp a, DOOM_BOOK_1
@@ -4154,7 +4154,7 @@ checkItemCombineSubmenuAInputPress: ;00:3A40
     call clearItemDetailWindowTiles
     ld a, CONFIRM_SFX ;$02
     call playSFX
-    ld a, [selectedGridId]
+    ld a, [wSelectedGridId]
     add a, COMBINE_GRID_MODE ;$E0
     ld [wMenuSelGridId], a ;set combine grid mode
     ld b, $08
@@ -4191,7 +4191,7 @@ checkFilebooksSubmenuAInputPress: ;00:3A60
     xor a
     call loadMainMenuTileMap ;reset tilemap
     ld a, $01
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     ld a, BANK(MainMenuPallete) ;$0C
     ld hl, MainMenuPallete ;$4DC4
     call loadBGPal
@@ -4207,7 +4207,7 @@ checkMenuAKeyPress: ;3A92
     ret nz
     ld a, $FF
     ld [wAButtonPressDown], a
-    ld a, [wLCDUpdate]
+    ld a, [wFadeInOutUpdate]
     or a
     ret nz
 ;if A input is pressed
@@ -4218,7 +4218,7 @@ checkMenuAKeyPress: ;3A92
     jr nz, checkTopMenu
 ;exit main menu
     ld a, $5C
-    ld [wLCDUpdate], a
+    ld [wFadeInOutUpdate], a
     ld a, CONFIRM_SFX ;$02
     jp playSFX
 
@@ -4266,14 +4266,14 @@ checkItemGridAInputPress: ;3B05
     sub a, ITEM_SLOT_1 ;$04
     ld l, a
     ld h, $00
-    ld de, ItemIdSlot1
+    ld de, wItemIdSlot1
     add hl, de
     ld a, [hl] ;get selected item id
     cp a, EMPTY
     jr z, emptyItemSlotSelected
-    ld [selectedItemId], a ;store selected item id
+    ld [wSelectedItemId], a ;store selected item id
     ld a, [wMenuSelGridId]
-    ld [selectedGridId], a ;store selected item slot
+    ld [wSelectedGridId], a ;store selected item slot
     ld a, USE_EQUIP_CURSOR ;$80
     ld [wMenuSelGridId], a ;set item submenu mode
     ld a, SELECT_MENU_SFX ;$00
@@ -4442,7 +4442,7 @@ goToLoadMenuItemCursors: ;00:3C2F
 
 updatePolicecardTilesPosition: ;00:3C37
     ld a, BANK(PlayerSelectScreenIndexes) ;$02
-    call BankSwitch
+    call bankSwitch
     ld hl, PlayerSelectScreenIndexes+$168 ;$6440 chris police card info tilesIds
     ld de, PlayerSelectScreenIndexes+$3BA ;$6692 ;pal indexes
     ld a, [wCursorPosId]
@@ -4459,7 +4459,7 @@ updatePolicecardTilesPosition: ;00:3C37
     ld [wRoomBGBankId], a
     ld a, d
     ld [wBGDataAddrBank], a
-    ld a, [policeCardYpos]
+    ld a, [wPoliceCardYpos]
     sub a, $10
     srl a
     srl a
@@ -4473,7 +4473,7 @@ updatePolicecardTilesPosition: ;00:3C37
     add hl, hl
     ld de, _SCRN0 ;$9800
     add hl, de
-    ld a, [policeCardXpos]
+    ld a, [wPoliceCardXpos]
     sub a, $08
     srl a
     srl a
@@ -4483,7 +4483,7 @@ updatePolicecardTilesPosition: ;00:3C37
     ld bc, $070D ;police card size (0D x 07 tiles)
     call updatePolicecardTiles
     ld a, $01
-    jp BankSwitch
+    jp bankSwitch
 
 updatePolicecardTiles:: ;00:3C8D
     push bc
@@ -4668,25 +4668,25 @@ selectOAMDataDest:: ;00:3D85
 
 
 printItemBoxSelectedSlot:: ;00:3D8F
-    call BankSwitch
+    call bankSwitch
     xor a
     ld [wTypingCharsTrigger], a
     ld a, $08 ;selected slot pallete
     jr Label3DE3
 
 printAutoTypingMessage::
-    call BankSwitch
+    call bankSwitch
     ld a, $FF ;enable auto typing text
-    jr printMessageWithBankSwitched ; Label3DDE
+    jr printMessageWithbankSwitched ; Label3DDE
 
 ShowAutomaticText:: ;00:3DA1
     ld a, BANK(textPointers) ;$FA
-    call BankSwitch
+    call bankSwitch
     ld c, [hl]
     inc hl
     ld b, [hl]
     ld a, $01
-    call BankSwitch
+    call bankSwitch
     ld hl, $0F00
     ld a, BANK(textPointers) ;$FA
     jr printMessage
@@ -4695,7 +4695,7 @@ printTextAtPosition:: ;00:3DB5
 ;de: text position
 ;hl: text pointer
     ld a, BANK(textPointers) ;$FA
-    call BankSwitch
+    call bankSwitch
     ld c, [hl]
     inc hl
     ld b, [hl]
@@ -4707,7 +4707,7 @@ printTextAtPosition:: ;00:3DB5
 
 printHighlightedText:: ;00:3DC3
     ld a, BANK(textPointers) ;$FA
-    call BankSwitch
+    call bankSwitch
     ld c, [hl]
     inc hl
     ld b, [hl]
@@ -4715,7 +4715,7 @@ printHighlightedText:: ;00:3DC3
     ld a, [hl]
     ld l, e
     ld h, d
-    call BankSwitch
+    call bankSwitch
     xor a
     ld [wTypingCharsTrigger], a ;disable typing chars mode
     ld a, $08 ;selected text pallete
@@ -4726,9 +4726,9 @@ printMessage:: ;00:3DDA
 ;a: text bank
 ;bc: text pointer
 ;hl: text start position h: y-tile l: x-tile
-    call BankSwitch
+    call bankSwitch
     xor a
-printMessageWithBankSwitched:
+printMessageWithbankSwitched:
     ld [wTypingCharsTrigger], a ;disable/enable typing chars mode
     ld a, $09 ;font pallete id
 Label3DE3:
@@ -4811,7 +4811,7 @@ EndOfString:
     and a, $1F
     ld [wMsgCharXpos], a
     ld a, $01
-    jp BankSwitch ;return
+    jp bankSwitch ;return
 NewLine:
     ld hl, wc1f7
     inc [hl]
@@ -4908,7 +4908,7 @@ haltCPU:: ;00:3ED2
 
 deleteTypewriterBGText:: ;00:3EE0
     ld a, BANK(loadSaveMenuIndexes) ;$0D
-    call BankSwitch
+    call bankSwitch
     ld a, [wCursorPosId]
     add a
     ld l, a
@@ -4974,7 +4974,7 @@ deleteTypewriterBGText:: ;00:3EE0
     dec b
     jr nz, .loop3EF7
     ld a, $01
-    jp BankSwitch
+    jp bankSwitch
 ;3F43
 
 printItemboxList: ;00:3F43
@@ -4998,12 +4998,12 @@ Loop3F45
     ld de, itemsNamesPointer ;$4597
     add hl, de ;get item name address
     ld a, BANK(itemsNamesPointer) ;$FA
-    call BankSwitch
+    call bankSwitch
     ld e, [hl]
     inc hl
     ld d, [hl] ;store name address in de
     ld a, $01
-    call BankSwitch
+    call bankSwitch
 ;get item name position
     ld h, b ;get y-pos
     dec h
@@ -5032,18 +5032,18 @@ Label3F8D
 ;3F92
 
 checkCombiningItems: ;00:3F92
-    ld a, [selectedGridId]
+    ld a, [wSelectedGridId]
     sub a, $04 ;get slot id
     ld e, a
     ld d, $00
-    ld hl, ItemIdSlot1
+    ld hl, wItemIdSlot1
     add hl, de
     push hl ;store selected item slot id
     ld a, [wMenuSelGridId]
     sub a, $E4 ;get target slot id
     ld e, a
     ld d, $00
-    ld hl, ItemIdSlot1
+    ld hl, wItemIdSlot1
     add hl, de ;get target item slot id
     pop de ;restore selected item id
     ld a, [de]
