@@ -966,6 +966,11 @@ itemsNamesPointer: ;4597
 	dw text_3E88EC
 
 getItemTextPointers:;459B
+;nothing string
+;clear text string
+;item name text
+;item description text
+;item get item text
 	dw text_3E88EC
 	dw text_3EA49F
 	dw text_3E8D5A

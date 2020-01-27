@@ -1077,7 +1077,7 @@ checkChannelAction:: ;06:4637
     dec hl
     ld l, [hl]
     ld h, a
-    jp [hl]
+    jp hl
 
 setNoteLength:
     ld hl, wNoteLengthTableAddrHigh
@@ -1376,7 +1376,7 @@ goToNextChannelUpdateAddr: ;06:47B1
     inc de
     ld a, [de]
     ld h, a
-    jp [hl]
+    jp hl
 ;47BB
 
 frequencyLowBitsTable: ;47BB sound frequency low bits table (64bytes)

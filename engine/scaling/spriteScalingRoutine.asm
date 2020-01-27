@@ -75,7 +75,7 @@ loadAndScaleTileLoop:
     ld a, [hli]
     ld h, [hl]
     ld l, a ;set scaling funtion pointer to HL
-    jp [hl]
+    jp hl
 Label2A07:
 ;de: odd line bytes
 ;bc: even line bytes

@@ -38,12 +38,7 @@ SECTION "Entry", ROM0 [$100]
 	jp Start
 
 
-;SECTION "Header", ROM0 [$104]
-;	ds $150 - $104
-
 	ROM_HEADER  ROM_MBC5_RAM_BAT, ROM_SIZE_4MBYTE, RAM_SIZE_8KBYTE
-
-
 
 
 SECTION "Main", ROM0
@@ -227,7 +222,7 @@ jumpToFunctionHL1:: ;0280
     call bankSwitch
     ld de, jumpToFunctionHL1+8 ;$288
     push de
-    jp [hl]
+    jp hl
     push af
     ld a, $01
     call bankSwitch
@@ -238,7 +233,7 @@ jumpToFunctionHL2:: ;0290
     call bankSwitch
     ld bc, jumpToFunctionHL2+8 ;$298
     push bc
-    jp [hl]
+    jp hl
     push af
     ld a, $01
     call bankSwitch
@@ -253,7 +248,7 @@ jumToFunctionHL3:: ;02A0
 	call bankSwitch
 	ld de, jumToFunctionHL3+14 ;$02AE
 	push de
-	jp [hl]
+	jp hl
 	pop af
 	jp bankSwitch
 
@@ -1797,7 +1792,7 @@ loop1365
 .Label1387
     ld bc, Label138C ;set return pointer
     push bc
-    jp [hl]
+    jp hl
 Label138C:
     pop de
     ld a, e

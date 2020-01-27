@@ -638,7 +638,7 @@ ROM_HEADER:   MACRO
  DB 1                         ; $14a - Destination code
  DB $33                       ; $14b - Old licensee code
  DB 0                         ; $14c - Mask ROM version
- DB 0                         ; $14d - Complement check (important)
+ DB $47                       ; $14d - Complement check (important)
  DW 0                         ; $14e - Checksum (not important)
 
         ENDM

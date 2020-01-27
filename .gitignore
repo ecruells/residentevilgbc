@@ -1,6 +1,8 @@
-/resevil.gbc/
-/resevil.sav/
-/resevil.sn1/
-/resevil.o/
-/resevil.sym/
+
+*.gbc
+*.sav
 /debug/
+*.o
+*.sav
+*.sn*
+*.sym
