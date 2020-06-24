@@ -1,48 +1,34 @@
 unused_original_theme_02_ch1: ;54A3
-	db $67, $FF
-	db $69, $DC
-	db $24, $0A
-	db $24, $0A
-	db $24, $0A
-	db $24, $0A
-	branchId $1A
-	db $E2, $01
-	branchId $1B
-	db $E2, $01
-	db $66, $01
+	enableSound $FF
+	tempo 220
+	chainWait 10
+	chainWait 10
+	chainWait 10
+	chainWait 10
+	playBranch unusedTheme02Branches, 0, -30, 1
+	playBranch unusedTheme02Branches, 1, -30, 1
+	chlAction0x66 1
 	channelLoop unused_original_theme_02_ch1
 
 unused_original_theme_02_ch2: ;54BC
-	branchId $1C
-	db $E2, $01
-	branchId $1C
-	db $E0, $01
-	branchId $1C
-	db $E2, $02
-	branchId $1C
-	db $E0, $02
-	branchId $1C
-	db $E2, $02
+	playBranch unusedTheme02Branches, 2, -30, 1
+	playBranch unusedTheme02Branches, 2, -32, 1
+	playBranch unusedTheme02Branches, 2, -30, 2
+	playBranch unusedTheme02Branches, 2, -32, 2
+	playBranch unusedTheme02Branches, 2, -30, 2
 	channelLoop unused_original_theme_02_ch2
 
 unused_original_theme_02_ch3: ;54D3
-	branchId $1D
-	db $EE, $01
-	branchId $1D
-	db $EC, $01
-	branchId $1D
-	db $EE, $02
-	branchId $1D
-	db $EC, $02
-	branchId $1D
-	db $EE, $02
+	playBranch unusedTheme02Branches, 3, -18, 1
+	playBranch unusedTheme02Branches, 3, -20, 1
+	playBranch unusedTheme02Branches, 3, -18, 2
+	playBranch unusedTheme02Branches, 3, -20, 2
+	playBranch unusedTheme02Branches, 3, -18, 2
 	channelLoop unused_original_theme_02_ch3
 
 unused_original_theme_02_ch4: ;54EA
-	branchId $1E
-	db $00, $01
-	branchId $1F
-	db $00, $01
+	playBranch unusedTheme02Branches, 4, 0, 1
+	playBranch unusedTheme02Branches, 5, 0, 1
 	channelLoop unused_original_theme_02_ch4
 
 

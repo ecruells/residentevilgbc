@@ -36,6 +36,8 @@ OAMF_YFLIP  EQU  %01000000 ; Y flip
 OAMF_XFLIP  EQU  %00100000 ; X flip
 OAMF_PAL0   EQU  %00000000 ; Palette number; 0,1
 OAMF_PAL1   EQU  %00010000 ; Palette number; 0,1
+OAMF_VRAM0  EQU  %00000000 ; Tile VRAM Bank 0
+OAMF_VRAM1  EQU  %00001000 ; Tile VRAM Bank 1
 
 
 ;***************************************************************************
@@ -250,6 +252,100 @@ rWY EQU $FF4A
 ; -- 7 <EQU WX <EQU 166
 ; --
 rWX EQU $FF4B
+
+
+; --
+; -- KEY 1 ($FF4D)
+; -- Select CPU Speed (R/W)
+; --
+rKEY1 EQU $FF4D
+
+
+; --
+; -- VBK ($FF4F)
+; -- Select Video RAM Bank (R/W)
+; --
+rVBK EQU $FF4F
+
+
+; --
+; -- HDMA1 ($FF51)
+; -- Horizontal Blanking, General Purpose DMA (W)
+; --
+rHDMA1 EQU $FF51
+
+
+; --
+; -- HDMA2 ($FF52)
+; -- Horizontal Blanking, General Purpose DMA (W)
+; --
+rHDMA2 EQU $FF52
+
+
+; --
+; -- HDMA3 ($FF53)
+; -- Horizontal Blanking, General Purpose DMA (W)
+; --
+rHDMA3 EQU $FF53
+
+
+; --
+; -- HDMA4 ($FF54)
+; -- Horizontal Blanking, General Purpose DMA (W)
+; --
+rHDMA4 EQU $FF54
+
+
+; --
+; -- HDMA5 ($FF55)
+; -- Horizontal Blanking, General Purpose DMA (R/W)
+; --
+rHDMA5 EQU $FF55
+
+HDMA_GP_MODE        EQU %00000000   ; HDMA general purpose DMA mode
+HDMA_HBLANK_MODE    EQU %10000000   ; HDMA H-Blank DMA mode
+
+
+; --
+; -- RP ($FF56)
+; -- Infrared Communications Port (R/W)
+; --
+rRP EQU $FF56
+
+
+; --
+; -- BCPS ($FF68)
+; -- Background Color Palette Specification (R/W)
+; --
+rBCPS EQU $FF68
+
+
+; --
+; -- BCPD ($FF69)
+; -- Background Color Palette Data (R/W)
+; --
+rBCPD EQU $FF69
+
+
+; --
+; -- BCPS ($FF6A)
+; -- Object Color Palette Specification (R/W)
+; --
+rOCPS EQU $FF6A
+
+
+; --
+; -- BCPD ($FF6B)
+; -- Object Color Palette Data (R/W)
+; --
+rOCPD EQU $FF6B
+
+
+; --
+; -- SVBK ($FF4F)
+; -- Select Main RAM Bank (R/W)
+; --
+rSVBK EQU $FF70
 
 
 ;***************************************************************************

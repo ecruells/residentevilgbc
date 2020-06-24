@@ -1,38 +1,27 @@
 unused_original_theme_07_ch1: ;6BD6
-	db $67, $FF
-	db $69, $A9
-	branchId $88
-	db $E4, $01
-	branchId $89
-	db $E4, $01
-	branchId $88
-	db $E4, $01
-	branchId $8A
-	db $E4, $01
-	db $66, $01
+	enableSound $FF
+	tempo 169
+	playBranch unusedTheme07Branches, 0, -28, 1
+	playBranch unusedTheme07Branches, 1, -28, 1
+	playBranch unusedTheme07Branches, 0, -28, 1
+	playBranch unusedTheme07Branches, 2, -28, 1
+	chlAction0x66 1
 	channelLoop unused_original_theme_07_ch1
 
 unused_original_theme_07_ch2: ;6BEF
-	branchId $8B
-	db $F0, $01
-	branchId $8C
-	db $E4, $01
-	branchId $8B
-	db $F0, $01
-	branchId $8D
-	db $F0, $01
+	playBranch unusedTheme07Branches, 3, -16, 1
+	playBranch unusedTheme07Branches, 4, -28, 1
+	playBranch unusedTheme07Branches, 3, -16, 1
+	playBranch unusedTheme07Branches, 5, -16, 1
 	channelLoop unused_original_theme_07_ch2
 
 unused_original_theme_07_ch3: ;6C02
-	branchId $8E
-	db $F0, $01
-	branchId $8F
-	db $F0, $01
-	branchId $8E
-	db $F0, $01
-	branchId $90
-	db $F0, $01
+	playBranch unusedTheme07Branches, 6, -16, 1
+	playBranch unusedTheme07Branches, 7, -16, 1
+	playBranch unusedTheme07Branches, 6, -16, 1
+	playBranch unusedTheme07Branches, 8, -16, 1
 	channelLoop unused_original_theme_07_ch3
+
 
 unused_original_theme_07_ch4: ;6C15
 	typenote0 G_5, 4, 4
@@ -49,7 +38,6 @@ unused_original_theme_07_ch4: ;6C15
 	typenote0 G_5, 4, 2
 	typenote0 G_5, 4, 2
 	channelLoop unused_original_theme_07_ch4
-
 
 
 ;usused sad like theme

@@ -1,0 +1,367 @@
+[
+  {
+    "room_id": 0,
+    "map_rects": [
+      {
+        "x": 35,
+        "y": 36,
+        "width": 16,
+        "height": 15
+      }
+    ]
+  },
+  {
+    "room_id": 1,
+    "map_rects": [
+      {
+        "x": 18,
+        "y": 39,
+        "width": 16,
+        "height": 7
+      }
+    ]
+  },
+  {
+    "room_id": 2,
+    "map_rects": [
+      {
+        "x": 15,
+        "y": 25,
+        "width": 3,
+        "height": 3
+      }
+    ]
+  },
+  {
+    "room_id": 3,
+    "map_rects": [
+      {
+        "x": 22,
+        "y": 22,
+        "width": 5,
+        "height": 2
+      },
+      {
+        "x": 27,
+        "y": 23,
+        "width": 5,
+        "height": 1
+      },
+      {
+        "x": 31,
+        "y": 23,
+        "width": 1,
+        "height": 3
+      },
+      {
+        "x": 22,
+        "y": 24,
+        "width": 1,
+        "height": 11
+      }
+    ]
+  },
+  {
+    "room_id": 4,
+    "map_rects": [
+      {
+        "x": 52,
+        "y": 43,
+        "width": 7,
+        "height": 5
+      },
+      {
+        "x": 57,
+        "y": 41,
+        "width": 4,
+        "height": 1
+      },
+      {
+        "x": 61,
+        "y": 41,
+        "width": 2,
+        "height": 3
+      },
+      {
+        "x": 59,
+        "y": 43,
+        "width": 2,
+        "height": 1
+      }
+    ]
+  },
+  {
+    "room_id": 5,
+    "map_rects": [
+      {
+        "x": 15,
+        "y": 34,
+        "width": 2,
+        "height": 2
+      },
+      {
+        "x": 15,
+        "y": 36,
+        "width": 15,
+        "height": 2
+      }
+    ]
+  },
+  {
+    "room_id": 6,
+    "map_rects": [
+      {
+        "x": 28,
+        "y": 25,
+        "width": 2,
+        "height": 2
+      },
+      {
+        "x": 28,
+        "y": 27,
+        "width": 4,
+        "height": 1
+      }
+    ]
+  },
+  {
+    "room_id": 7,
+    "map_rects": [
+      {
+        "x": 24,
+        "y": 29,
+        "width": 5,
+        "height": 6
+      },
+      {
+        "x": 29,
+        "y": 29,
+        "width": 3,
+        "height": 1
+      },
+      {
+        "x": 29,
+        "y": 34,
+        "width": 1,
+        "height": 1
+      }
+    ]
+  },
+  {
+    "room_id": 8,
+    "map_rects": [
+      {
+        "x": 12,
+        "y": 22,
+        "width": 9,
+        "height": 2
+      },
+      {
+        "x": 12,
+        "y": 24,
+        "width": 2,
+        "height": 5
+      },
+      {
+        "x": 12,
+        "y": 29,
+        "width": 6,
+        "height": 4
+      }
+    ]
+  },
+  {
+    "room_id": 9,
+    "map_rects": [
+      {
+        "x": 19,
+        "y": 25,
+        "width": 2,
+        "height": 3
+      }
+    ]
+  },
+  {
+    "room_id": 10,
+    "map_rects": [
+      {
+        "x": 60,
+        "y": 28,
+        "width": 2,
+        "height": 2
+      },
+      {
+        "x": 61,
+        "y": 27,
+        "width": 1,
+        "height": 1
+      },
+      {
+        "x": 61,
+        "y": 26,
+        "width": 6,
+        "height": 1
+      },
+      {
+        "x": 66,
+        "y": 27,
+        "width": 1,
+        "height": 2
+      },
+      {
+        "x": 66,
+        "y": 29,
+        "width": 4,
+        "height": 1
+      },
+      {
+        "x": 70,
+        "y": 29,
+        "width": 2,
+        "height": 4
+      }
+    ]
+  },
+  {
+    "room_id": 11,
+    "map_rects": [
+      {
+        "x": 52,
+        "y": 24,
+        "width": 1,
+        "height": 4
+      },
+      {
+        "x": 52,
+        "y": 28,
+        "width": 7,
+        "height": 2
+      }
+    ]
+  },
+  {
+    "room_id": 12,
+    "map_rects": [
+      {
+        "x": 60,
+        "y": 46,
+        "width": 10,
+        "height": 2
+      },
+      {
+        "x": 70,
+        "y": 34,
+        "width": 2,
+        "height": 12
+      }
+    ]
+  },
+  {
+    "room_id": 13,
+    "map_rects": [
+      {
+        "x": 56,
+        "y": 20,
+        "width": 4,
+        "height": 3
+      },
+      {
+        "x": 56,
+        "y": 23,
+        "width": 2,
+        "height": 4
+      }
+    ]
+  },
+  {
+    "room_id": 14,
+    "map_rects": [
+      {
+        "x": 19,
+        "y": 29,
+        "width": 2,
+        "height": 5
+      },
+      {
+        "x": 18,
+        "y": 34,
+        "width": 1,
+        "height": 1
+      }
+    ]
+  },
+  {
+    "room_id": 15,
+    "map_rects": [
+      {
+        "x": 30,
+        "y": 31,
+        "width": 4,
+        "height": 2
+      },
+      {
+        "x": 33,
+        "y": 33,
+        "width": 1,
+        "height": 3
+      },
+      {
+        "x": 31,
+        "y": 36,
+        "width": 3,
+        "height": 2
+      }
+    ]
+  },
+  {
+    "room_id": 16,
+    "map_rects": [
+      {
+        "x": 52,
+        "y": 36,
+        "width": 11,
+        "height": 1
+      },
+      {
+        "x": 55,
+        "y": 37,
+        "width": 1,
+        "height": 1
+      },
+      {
+        "x": 52,
+        "y": 38,
+        "width": 4,
+        "height": 4
+      }
+    ]
+  },
+  {
+    "room_id": 17,
+    "map_rects": [
+      {
+        "x": 68,
+        "y": 26,
+        "width": 4,
+        "height": 2
+      }
+    ]
+  },
+  {
+    "room_id": 18,
+    "map_rects": [
+      {
+        "x": 67,
+        "y": 24,
+        "width": 7,
+        "height": 1
+      },
+      {
+        "x": 73,
+        "y": 25,
+        "width": 1,
+        "height": 6
+      }
+    ]
+  }
+]

@@ -1,0 +1,4968 @@
+[
+  [
+    {
+      "type": "door",
+      "door_label": "door40E8"
+    },
+    {
+      "type": "door",
+      "door_label": "door40F3"
+    },
+    {
+      "type": "door",
+      "door_label": "door40FE"
+    },
+    {
+      "type": "door",
+      "door_label": "door4109"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 0,
+      "item_id": 56,
+      "player_position": {
+        "x": 264,
+        "y": -64,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 1,
+      "item_id": 31,
+      "player_position": {
+        "x": -432,
+        "y": -384,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "typewriter",
+      "player_position": {
+        "x": 264,
+        "y": -64,
+        "facing_id": 16
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4136"
+    },
+    {
+      "type": "door",
+      "door_label": "door4141"
+    },
+    {
+      "type": "entity",
+      "entity_id": 226,
+      "entity_var_id": 242,
+      "entity_position": {
+        "x": 80,
+        "y": 336,
+        "facing_id": 128
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 226,
+      "entity_var_id": 243,
+      "entity_position": {
+        "x": 216,
+        "y": 336,
+        "facing_id": 128
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 2,
+      "item_id": 29,
+      "player_position": {
+        "x": 912,
+        "y": 0,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 3,
+      "item_id": 68,
+      "player_position": {
+        "x": 80,
+        "y": 360,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 4,
+      "item_id": 59,
+      "player_position": {
+        "x": 296,
+        "y": -200,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 0,
+      "player_position": {
+        "x": 72,
+        "y": 280,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 1,
+      "player_position": {
+        "x": 280,
+        "y": -280,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 2,
+      "player_position": {
+        "x": 592,
+        "y": -336,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 3,
+      "player_position": {
+        "x": -160,
+        "y": -336,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 4,
+      "player_position": {
+        "x": -80,
+        "y": 336,
+        "facing_id": 16
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door41BB"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 5,
+      "item_id": 52,
+      "player_position": {
+        "x": 152,
+        "y": 56,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 6,
+      "item_id": 66,
+      "player_position": {
+        "x": 32,
+        "y": -88,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "typewriter",
+      "player_position": {
+        "x": -184,
+        "y": -120,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "itembox",
+      "player_position": {
+        "x": 192,
+        "y": 248,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 0,
+      "player_position": {
+        "x": 152,
+        "y": -64,
+        "facing_id": 24
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door41FE"
+    },
+    {
+      "type": "door",
+      "door_label": "door4209"
+    },
+    {
+      "type": "door",
+      "door_label": "door4214"
+    },
+    {
+      "type": "door",
+      "door_label": "door421F"
+    },
+    {
+      "type": "door",
+      "door_label": "door422A"
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 0,
+      "entity_position": {
+        "x": 216,
+        "y": -776,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 1,
+      "entity_position": {
+        "x": -520,
+        "y": -960,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 2,
+      "entity_position": {
+        "x": -616,
+        "y": 112,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4257"
+    },
+    {
+      "type": "door",
+      "door_label": "door4262"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 7,
+      "item_id": 70,
+      "player_position": {
+        "x": -24,
+        "y": 120,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 8,
+      "item_id": 56,
+      "player_position": {
+        "x": 632,
+        "y": 584,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 224,
+      "entity_var_id": 240,
+      "entity_position": {
+        "x": 16,
+        "y": 256,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 3,
+      "entity_position": {
+        "x": 576,
+        "y": 888,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 0,
+      "player_position": {
+        "x": 8,
+        "y": 552,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 1,
+      "player_position": {
+        "x": -336,
+        "y": 264,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 2,
+      "player_position": {
+        "x": -336,
+        "y": -72,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 3,
+      "player_position": {
+        "x": -336,
+        "y": -280,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 4,
+      "player_position": {
+        "x": 328,
+        "y": -232,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 5,
+      "player_position": {
+        "x": 328,
+        "y": 208,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 6,
+      "player_position": {
+        "x": 520,
+        "y": 800,
+        "facing_id": 8
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door42E7"
+    },
+    {
+      "type": "door",
+      "door_label": "door42F2"
+    },
+    {
+      "type": "door",
+      "door_label": "door42FD"
+    },
+    {
+      "type": "door",
+      "door_label": "door4308"
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 9,
+      "item_id": 67,
+      "player_position": {
+        "x": 1024,
+        "y": 232,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 10,
+      "item_id": 67,
+      "player_position": {
+        "x": 1024,
+        "y": 232,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 4,
+      "entity_position": {
+        "x": 984,
+        "y": 344,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 0,
+      "player_position": {
+        "x": 1104,
+        "y": 344,
+        "facing_id": 24
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4340"
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 11,
+      "item_id": 28,
+      "player_position": {
+        "x": 168,
+        "y": -152,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 12,
+      "item_id": 28,
+      "player_position": {
+        "x": 168,
+        "y": -152,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 13,
+      "item_id": 40,
+      "player_position": {
+        "x": -40,
+        "y": -152,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 14,
+      "item_id": 40,
+      "player_position": {
+        "x": -40,
+        "y": -152,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 15,
+      "item_id": 40,
+      "player_position": {
+        "x": -40,
+        "y": -152,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 16,
+      "item_id": 40,
+      "player_position": {
+        "x": -40,
+        "y": -152,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 17,
+      "item_id": 2,
+      "player_position": {
+        "x": 200,
+        "y": 48,
+        "facing_id": 24
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4399"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 18,
+      "item_id": 53,
+      "player_position": {
+        "x": -408,
+        "y": -752,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 19,
+      "item_id": 35,
+      "player_position": {
+        "x": -1024,
+        "y": 8,
+        "facing_id": 8
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door43BB"
+    },
+    {
+      "type": "door",
+      "door_label": "door43C6"
+    },
+    {
+      "type": "door",
+      "door_label": "door43D1"
+    },
+    {
+      "type": "door",
+      "door_label": "door43DC"
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 5,
+      "entity_position": {
+        "x": 552,
+        "y": -592,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 6,
+      "entity_position": {
+        "x": -16,
+        "y": -224,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 7,
+      "entity_position": {
+        "x": 536,
+        "y": 536,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4409"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 21,
+      "item_id": 49,
+      "player_position": {
+        "x": -104,
+        "y": 152,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 22,
+      "item_id": 67,
+      "player_position": {
+        "x": -208,
+        "y": 152,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 8,
+      "player_position": {
+        "x": 144,
+        "y": -184,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4436"
+    },
+    {
+      "type": "door",
+      "door_label": "door4441"
+    },
+    {
+      "type": "door",
+      "door_label": "door444C"
+    },
+    {
+      "type": "door",
+      "door_label": "door4457"
+    },
+    {
+      "type": "door",
+      "door_label": "door4462"
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 23,
+      "item_id": 40,
+      "player_position": {
+        "x": -552,
+        "y": 984,
+        "facing_id": 24
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4479"
+    },
+    {
+      "type": "door",
+      "door_label": "door4484"
+    },
+    {
+      "type": "door",
+      "door_label": "door448F"
+    },
+    {
+      "type": "door",
+      "door_label": "door449A"
+    },
+    {
+      "type": "door",
+      "door_label": "door44A5"
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 8,
+      "entity_position": {
+        "x": -16,
+        "y": -32,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 9,
+      "entity_position": {
+        "x": 272,
+        "y": 8,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door44C7"
+    },
+    {
+      "type": "door",
+      "door_label": "door44D2"
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 24,
+      "item_id": 67,
+      "player_position": {
+        "x": 376,
+        "y": -48,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 25,
+      "item_id": 67,
+      "player_position": {
+        "x": 72,
+        "y": 376,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 236,
+      "entity_var_id": 252,
+      "entity_position": {
+        "x": 384,
+        "y": -96,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "normal_action",
+      "action_id": 0,
+      "player_position": {
+        "x": -376,
+        "y": 456,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "normal_action",
+      "action_id": 1,
+      "player_position": {
+        "x": -112,
+        "y": 456,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "normal_action",
+      "action_id": 2,
+      "player_position": {
+        "x": 272,
+        "y": 456,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4520"
+    },
+    {
+      "type": "door",
+      "door_label": "door452B"
+    },
+    {
+      "type": "door",
+      "door_label": "door4536"
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 26,
+      "item_id": 40,
+      "player_position": {
+        "x": 16,
+        "y": -136,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 10,
+      "entity_position": {
+        "x": 480,
+        "y": 280,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 0,
+      "player_position": {
+        "x": 600,
+        "y": 184,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4563"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 27,
+      "item_id": 67,
+      "player_position": {
+        "x": -80,
+        "y": 152,
+        "facing_id": 28
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 28,
+      "item_id": 6,
+      "player_position": {
+        "x": 368,
+        "y": -136,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 29,
+      "item_id": 62,
+      "player_position": {
+        "x": 320,
+        "y": 208,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 11,
+      "entity_position": {
+        "x": 328,
+        "y": 208,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 0,
+      "player_position": {
+        "x": -216,
+        "y": 152,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 1,
+      "player_position": {
+        "x": -376,
+        "y": -24,
+        "facing_id": 8
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door45B1"
+    },
+    {
+      "type": "door",
+      "door_label": "door45BC"
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door45C8"
+    },
+    {
+      "type": "door",
+      "door_label": "door45D3"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 30,
+      "item_id": 67,
+      "player_position": {
+        "x": 0,
+        "y": 264,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 31,
+      "item_id": 62,
+      "player_position": {
+        "x": -464,
+        "y": 72,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 12,
+      "entity_position": {
+        "x": -464,
+        "y": 72,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4600"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 32,
+      "item_id": 19,
+      "player_position": {
+        "x": -120,
+        "y": 8,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "normal_action",
+      "action_id": 0,
+      "player_position": {
+        "x": 320,
+        "y": 184,
+        "facing_id": 24
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4622"
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 33,
+      "item_id": 40,
+      "player_position": {
+        "x": 552,
+        "y": 432,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 34,
+      "item_id": 40,
+      "player_position": {
+        "x": 552,
+        "y": 432,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 35,
+      "item_id": 40,
+      "player_position": {
+        "x": 552,
+        "y": 432,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 36,
+      "item_id": 28,
+      "player_position": {
+        "x": 80,
+        "y": 432,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 37,
+      "item_id": 28,
+      "player_position": {
+        "x": 80,
+        "y": 432,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 38,
+      "item_id": 28,
+      "player_position": {
+        "x": 80,
+        "y": 432,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 13,
+      "entity_position": {
+        "x": -256,
+        "y": 40,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 14,
+      "entity_position": {
+        "x": 80,
+        "y": 496,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 15,
+      "entity_position": {
+        "x": 304,
+        "y": 560,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4691"
+    },
+    {
+      "type": "door",
+      "door_label": "door469C"
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 8,
+      "player_position": {
+        "x": 56,
+        "y": -976,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door46B3"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 39,
+      "item_id": 71,
+      "player_position": {
+        "x": -80,
+        "y": 80,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 40,
+      "item_id": 37,
+      "player_position": {
+        "x": 80,
+        "y": 80,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 8,
+      "player_position": {
+        "x": 0,
+        "y": 80,
+        "facing_id": 16
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door46E0"
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door46EC"
+    },
+    {
+      "type": "door",
+      "door_label": "door46F7"
+    },
+    {
+      "type": "entity",
+      "entity_id": 233,
+      "entity_var_id": 249,
+      "entity_position": {
+        "x": 144,
+        "y": 0,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 41,
+      "item_id": 38,
+      "player_position": {
+        "x": 208,
+        "y": 64,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 42,
+      "item_id": 36,
+      "player_position": {
+        "x": -200,
+        "y": -168,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 0,
+      "player_position": {
+        "x": -168,
+        "y": -168,
+        "facing_id": 4
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 1,
+      "player_position": {
+        "x": 136,
+        "y": -168,
+        "facing_id": 28
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 2,
+      "player_position": {
+        "x": -168,
+        "y": 208,
+        "facing_id": 8
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4745"
+    },
+    {
+      "type": "door",
+      "door_label": "door4750"
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 43,
+      "item_id": 40,
+      "player_position": {
+        "x": -304,
+        "y": -336,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 44,
+      "item_id": 40,
+      "player_position": {
+        "x": -304,
+        "y": -336,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 45,
+      "item_id": 56,
+      "player_position": {
+        "x": 200,
+        "y": -176,
+        "facing_id": 24
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door477D"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 46,
+      "item_id": 55,
+      "player_position": {
+        "x": -8,
+        "y": 272,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 0,
+      "player_position": {
+        "x": -32,
+        "y": -216,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 1,
+      "player_position": {
+        "x": -272,
+        "y": 168,
+        "facing_id": 12
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door47AA"
+    },
+    {
+      "type": "door",
+      "door_label": "door47B5"
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door47C1"
+    },
+    {
+      "type": "door",
+      "door_label": "door47CC"
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 60,
+      "item_id": 62,
+      "player_position": {
+        "x": 464,
+        "y": -336,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 40,
+      "entity_position": {
+        "x": -232,
+        "y": 312,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 41,
+      "entity_position": {
+        "x": 144,
+        "y": -336,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door47F9"
+    },
+    {
+      "type": "door",
+      "door_label": "door4804"
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 42,
+      "entity_position": {
+        "x": -232,
+        "y": 312,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 43,
+      "entity_position": {
+        "x": 144,
+        "y": -336,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 61,
+      "item_id": 40,
+      "player_position": {
+        "x": 960,
+        "y": 240,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 62,
+      "item_id": 40,
+      "player_position": {
+        "x": 960,
+        "y": 328,
+        "facing_id": 16
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door483C"
+    },
+    {
+      "type": "door",
+      "door_label": "door4847"
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 44,
+      "entity_position": {
+        "x": 240,
+        "y": -336,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 45,
+      "entity_position": {
+        "x": -736,
+        "y": 336,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 225,
+      "entity_var_id": 241,
+      "entity_position": {
+        "x": 0,
+        "y": -264,
+        "facing_id": 16
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4874"
+    },
+    {
+      "type": "door",
+      "door_label": "door487F"
+    },
+    {
+      "type": "door",
+      "door_label": "door488A"
+    },
+    {
+      "type": "door",
+      "door_label": "door4895"
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door48A1"
+    },
+    {
+      "type": "door",
+      "door_label": "door48AC"
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 63,
+      "item_id": 40,
+      "player_position": {
+        "x": 120,
+        "y": 104,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 64,
+      "item_id": 40,
+      "player_position": {
+        "x": 376,
+        "y": -104,
+        "facing_id": 16
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door48CE"
+    },
+    {
+      "type": "door",
+      "door_label": "door48D9"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 65,
+      "item_id": 72,
+      "player_position": {
+        "x": 16,
+        "y": -120,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 66,
+      "item_id": 40,
+      "player_position": {
+        "x": -184,
+        "y": -144,
+        "facing_id": 16
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door48FB"
+    },
+    {
+      "type": "door",
+      "door_label": "door4906"
+    },
+    {
+      "type": "door",
+      "door_label": "door4911"
+    },
+    {
+      "type": "door",
+      "door_label": "door491C"
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 46,
+      "entity_position": {
+        "x": -256,
+        "y": -104,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 47,
+      "entity_position": {
+        "x": 528,
+        "y": 88,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 48,
+      "entity_position": {
+        "x": 528,
+        "y": -1112,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 67,
+      "item_id": 40,
+      "player_position": {
+        "x": 304,
+        "y": -152,
+        "facing_id": 8
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4954"
+    },
+    {
+      "type": "door",
+      "door_label": "door495F"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 68,
+      "item_id": 61,
+      "player_position": {
+        "x": -336,
+        "y": 0,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "normal_action",
+      "action_id": 0,
+      "player_position": {
+        "x": 264,
+        "y": 0,
+        "facing_id": 16
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4981"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 69,
+      "item_id": 62,
+      "player_position": {
+        "x": -248,
+        "y": 424,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 70,
+      "item_id": 67,
+      "player_position": {
+        "x": 336,
+        "y": -200,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 8,
+      "player_position": {
+        "x": -56,
+        "y": -160,
+        "facing_id": 16
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door49AE"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 71,
+      "item_id": 63,
+      "player_position": {
+        "x": -392,
+        "y": -16,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "normal_action",
+      "action_id": 14,
+      "player_position": {
+        "x": 0,
+        "y": 0,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 231,
+      "entity_var_id": 247,
+      "entity_position": {
+        "x": -128,
+        "y": 0,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 232,
+      "entity_var_id": 248,
+      "entity_position": {
+        "x": 280,
+        "y": -64,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 0,
+      "player_position": {
+        "x": 448,
+        "y": 144,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 1,
+      "player_position": {
+        "x": 288,
+        "y": 144,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 2,
+      "player_position": {
+        "x": 160,
+        "y": 144,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 3,
+      "player_position": {
+        "x": 88,
+        "y": 144,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 4,
+      "player_position": {
+        "x": -64,
+        "y": 144,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 5,
+      "player_position": {
+        "x": -256,
+        "y": 144,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 6,
+      "player_position": {
+        "x": -384,
+        "y": 144,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 7,
+      "player_position": {
+        "x": 448,
+        "y": -392,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 8,
+      "player_position": {
+        "x": 288,
+        "y": -392,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 9,
+      "player_position": {
+        "x": 160,
+        "y": -392,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 10,
+      "player_position": {
+        "x": 88,
+        "y": -392,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 11,
+      "player_position": {
+        "x": -64,
+        "y": -392,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 12,
+      "player_position": {
+        "x": -256,
+        "y": -392,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 13,
+      "player_position": {
+        "x": -384,
+        "y": -392,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4A80"
+    },
+    {
+      "type": "door",
+      "door_label": "door4A8B"
+    },
+    {
+      "type": "door",
+      "door_label": "door4A96"
+    },
+    {
+      "type": "door",
+      "door_label": "door4AA1"
+    },
+    {
+      "type": "door",
+      "door_label": "door4AAC"
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 49,
+      "entity_position": {
+        "x": -296,
+        "y": 824,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 50,
+      "entity_position": {
+        "x": -448,
+        "y": 8,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 51,
+      "entity_position": {
+        "x": -176,
+        "y": -936,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4AD9"
+    },
+    {
+      "type": "door",
+      "door_label": "door4AE4"
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 72,
+      "item_id": 34,
+      "player_position": {
+        "x": 368,
+        "y": 960,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 73,
+      "item_id": 40,
+      "player_position": {
+        "x": 256,
+        "y": 960,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 74,
+      "item_id": 40,
+      "player_position": {
+        "x": 128,
+        "y": 960,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 52,
+      "entity_position": {
+        "x": -72,
+        "y": -416,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 53,
+      "entity_position": {
+        "x": 336,
+        "y": 712,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4B27"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 75,
+      "item_id": 9,
+      "player_position": {
+        "x": 160,
+        "y": 200,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 76,
+      "item_id": 62,
+      "player_position": {
+        "x": 272,
+        "y": 200,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 77,
+      "item_id": 28,
+      "player_position": {
+        "x": -272,
+        "y": -208,
+        "facing_id": 8
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4B54"
+    },
+    {
+      "type": "door",
+      "door_label": "door4B5F"
+    },
+    {
+      "type": "door",
+      "door_label": "door4B6A"
+    },
+    {
+      "type": "door",
+      "door_label": "door4B75"
+    },
+    {
+      "type": "door",
+      "door_label": "door4B80"
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 54,
+      "entity_position": {
+        "x": 288,
+        "y": 640,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 55,
+      "entity_position": {
+        "x": -288,
+        "y": -672,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4BA2"
+    },
+    {
+      "type": "door",
+      "door_label": "door4BAD"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 78,
+      "item_id": 74,
+      "player_position": {
+        "x": 8,
+        "y": -304,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 0,
+      "player_position": {
+        "x": -248,
+        "y": -272,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 1,
+      "player_position": {
+        "x": 184,
+        "y": 360,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 2,
+      "player_position": {
+        "x": 184,
+        "y": 216,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 3,
+      "player_position": {
+        "x": 216,
+        "y": 8,
+        "facing_id": 16
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4BF0"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 79,
+      "item_id": 62,
+      "player_position": {
+        "x": -240,
+        "y": -8,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 80,
+      "item_id": 73,
+      "player_position": {
+        "x": 200,
+        "y": -56,
+        "facing_id": 4
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 81,
+      "item_id": 56,
+      "player_position": {
+        "x": -240,
+        "y": 240,
+        "facing_id": 4
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 8,
+      "player_position": {
+        "x": 240,
+        "y": 120,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 230,
+      "entity_var_id": 245,
+      "entity_position": {
+        "x": -224,
+        "y": 0,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 230,
+      "entity_var_id": 246,
+      "entity_position": {
+        "x": -224,
+        "y": -160,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 0,
+      "player_position": {
+        "x": 136,
+        "y": -184,
+        "facing_id": 24
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4C49"
+    },
+    {
+      "type": "door",
+      "door_label": "door4C54"
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4C60"
+    },
+    {
+      "type": "door",
+      "door_label": "door4C6B"
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4C77"
+    },
+    {
+      "type": "entity",
+      "entity_id": 160,
+      "entity_var_id": 63,
+      "entity_position": {
+        "x": 24,
+        "y": -104,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 82,
+      "item_id": 57,
+      "player_position": {
+        "x": -200,
+        "y": -848,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 83,
+      "item_id": 62,
+      "player_position": {
+        "x": -352,
+        "y": -136,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4CA4"
+    },
+    {
+      "type": "door",
+      "door_label": "door4CAF"
+    },
+    {
+      "type": "door",
+      "door_label": "door4CBA"
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 56,
+      "entity_position": {
+        "x": -120,
+        "y": -80,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4CD1"
+    },
+    {
+      "type": "door",
+      "door_label": "door4CDC"
+    },
+    {
+      "type": "door",
+      "door_label": "door4CE7"
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 57,
+      "entity_position": {
+        "x": -96,
+        "y": 120,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4CFE"
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 84,
+      "item_id": 67,
+      "player_position": {
+        "x": 344,
+        "y": -152,
+        "facing_id": 4
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4D15"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 85,
+      "item_id": 41,
+      "player_position": {
+        "x": -24,
+        "y": -248,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 86,
+      "item_id": 75,
+      "player_position": {
+        "x": 48,
+        "y": -128,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 87,
+      "item_id": 44,
+      "player_position": {
+        "x": -184,
+        "y": -32,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 88,
+      "item_id": 62,
+      "player_position": {
+        "x": -184,
+        "y": -88,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 8,
+      "player_position": {
+        "x": 240,
+        "y": 56,
+        "facing_id": 24
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4D58"
+    },
+    {
+      "type": "door",
+      "door_label": "door4D63"
+    },
+    {
+      "type": "door",
+      "door_label": "door4D6E"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 89,
+      "item_id": 44,
+      "player_position": {
+        "x": -208,
+        "y": 248,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 90,
+      "item_id": 76,
+      "player_position": {
+        "x": 584,
+        "y": -88,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 58,
+      "entity_position": {
+        "x": 664,
+        "y": -264,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 59,
+      "entity_position": {
+        "x": 152,
+        "y": -120,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4DA6"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 91,
+      "item_id": 15,
+      "player_position": {
+        "x": 360,
+        "y": -512,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 8,
+      "player_position": {
+        "x": -80,
+        "y": -136,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 240,
+      "entity_var_id": 239,
+      "entity_position": {
+        "x": -80,
+        "y": -384,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4DD3"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 92,
+      "item_id": 62,
+      "player_position": {
+        "x": 80,
+        "y": -120,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 93,
+      "item_id": 62,
+      "player_position": {
+        "x": 80,
+        "y": -120,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 94,
+      "item_id": 20,
+      "player_position": {
+        "x": -80,
+        "y": -120,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4E00"
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 95,
+      "item_id": 56,
+      "player_position": {
+        "x": 64,
+        "y": 104,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 96,
+      "item_id": 67,
+      "player_position": {
+        "x": 216,
+        "y": 184,
+        "facing_id": 16
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4E22"
+    },
+    {
+      "type": "door",
+      "door_label": "door4E2D"
+    },
+    {
+      "type": "door",
+      "door_label": "door4E38"
+    },
+    {
+      "type": "door",
+      "door_label": "door4E43"
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 60,
+      "entity_position": {
+        "x": -88,
+        "y": 248,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 61,
+      "entity_position": {
+        "x": 720,
+        "y": -256,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 62,
+      "entity_position": {
+        "x": -104,
+        "y": -720,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4E70"
+    },
+    {
+      "type": "door",
+      "door_label": "door4E7B"
+    },
+    {
+      "type": "door",
+      "door_label": "door4E86"
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 100,
+      "item_id": 34,
+      "player_position": {
+        "x": 568,
+        "y": 584,
+        "facing_id": 12
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 101,
+      "item_id": 34,
+      "player_position": {
+        "x": 568,
+        "y": 584,
+        "facing_id": 12
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 102,
+      "item_id": 40,
+      "player_position": {
+        "x": 976,
+        "y": 1232,
+        "facing_id": 12
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 103,
+      "item_id": 40,
+      "player_position": {
+        "x": 976,
+        "y": 1232,
+        "facing_id": 12
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 104,
+      "item_id": 40,
+      "player_position": {
+        "x": 976,
+        "y": 1232,
+        "facing_id": 12
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 105,
+      "item_id": 28,
+      "player_position": {
+        "x": 848,
+        "y": 1232,
+        "facing_id": 12
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 106,
+      "item_id": 28,
+      "player_position": {
+        "x": 848,
+        "y": 1232,
+        "facing_id": 12
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 107,
+      "item_id": 72,
+      "player_position": {
+        "x": -856,
+        "y": 376,
+        "facing_id": 12
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 8,
+      "player_position": {
+        "x": -976,
+        "y": 512,
+        "facing_id": 24
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4EF5"
+    },
+    {
+      "type": "door",
+      "door_label": "door4F00"
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 8,
+      "player_position": {
+        "x": 200,
+        "y": -200,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 9,
+      "player_position": {
+        "x": 936,
+        "y": 312,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4F22"
+    },
+    {
+      "type": "door",
+      "door_label": "door4F2D"
+    },
+    {
+      "type": "door",
+      "door_label": "door4F38"
+    },
+    {
+      "type": "door",
+      "door_label": "door4F43"
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 8,
+      "player_position": {
+        "x": 32,
+        "y": -552,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 9,
+      "player_position": {
+        "x": 192,
+        "y": 720,
+        "facing_id": 16
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4F65"
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 108,
+      "item_id": 26,
+      "player_position": {
+        "x": -528,
+        "y": 976,
+        "facing_id": 12
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4F7C"
+    },
+    {
+      "type": "door",
+      "door_label": "door4F87"
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 109,
+      "item_id": 28,
+      "player_position": {
+        "x": 1024,
+        "y": 952,
+        "facing_id": 12
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 110,
+      "item_id": 28,
+      "player_position": {
+        "x": 1024,
+        "y": 952,
+        "facing_id": 12
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 111,
+      "item_id": 40,
+      "player_position": {
+        "x": 1024,
+        "y": 1168,
+        "facing_id": 12
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 112,
+      "item_id": 40,
+      "player_position": {
+        "x": 1024,
+        "y": 1168,
+        "facing_id": 12
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4FBF"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 113,
+      "item_id": 18,
+      "player_position": {
+        "x": 184,
+        "y": -208,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 8,
+      "player_position": {
+        "x": -208,
+        "y": 56,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 237,
+      "entity_var_id": 253,
+      "entity_position": {
+        "x": -208,
+        "y": 0,
+        "facing_id": 24
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door4FEC"
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 114,
+      "item_id": 86,
+      "player_position": {
+        "x": -360,
+        "y": 40,
+        "facing_id": 12
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 115,
+      "item_id": 67,
+      "player_position": {
+        "x": 320,
+        "y": -200,
+        "facing_id": 12
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door500E"
+    },
+    {
+      "type": "door",
+      "door_label": "door5019"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 116,
+      "item_id": 65,
+      "player_position": {
+        "x": 120,
+        "y": -464,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 117,
+      "item_id": 44,
+      "player_position": {
+        "x": -976,
+        "y": 8,
+        "facing_id": 16
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door503B"
+    },
+    {
+      "type": "door",
+      "door_label": "door5046"
+    },
+    {
+      "type": "door",
+      "door_label": "door5051"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 118,
+      "item_id": 21,
+      "player_position": {
+        "x": -976,
+        "y": -480,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 119,
+      "item_id": 79,
+      "player_position": {
+        "x": -976,
+        "y": -704,
+        "facing_id": 8
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door5073"
+    },
+    {
+      "type": "door",
+      "door_label": "door507E"
+    },
+    {
+      "type": "door",
+      "door_label": "door5089"
+    },
+    {
+      "type": "typewriter",
+      "player_position": {
+        "x": 40,
+        "y": -496,
+        "facing_id": 16
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door50A0"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 120,
+      "item_id": 56,
+      "player_position": {
+        "x": -112,
+        "y": -8,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 121,
+      "item_id": 14,
+      "player_position": {
+        "x": 120,
+        "y": -72,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 122,
+      "item_id": 34,
+      "player_position": {
+        "x": 208,
+        "y": -208,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "typewriter",
+      "player_position": {
+        "x": -112,
+        "y": 72,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "itembox",
+      "player_position": {
+        "x": -176,
+        "y": -168,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door50E3"
+    },
+    {
+      "type": "door",
+      "door_label": "door50EE"
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 123,
+      "item_id": 40,
+      "player_position": {
+        "x": -544,
+        "y": -584,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 124,
+      "item_id": 40,
+      "player_position": {
+        "x": -544,
+        "y": -584,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 125,
+      "item_id": 34,
+      "player_position": {
+        "x": -88,
+        "y": -656,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 126,
+      "item_id": 34,
+      "player_position": {
+        "x": -88,
+        "y": -656,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 8,
+      "player_position": {
+        "x": 8,
+        "y": 360,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 9,
+      "player_position": {
+        "x": 1016,
+        "y": 248,
+        "facing_id": 8
+      }
+    }
+  ],
+  [],
+  [
+    {
+      "type": "door",
+      "door_label": "door513D"
+    },
+    {
+      "type": "door",
+      "door_label": "door5148"
+    },
+    {
+      "type": "door",
+      "door_label": "door5153"
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 127,
+      "item_id": 65,
+      "player_position": {
+        "x": -120,
+        "y": -104,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door516A"
+    },
+    {
+      "type": "door",
+      "door_label": "door5175"
+    },
+    {
+      "type": "door",
+      "door_label": "door5180"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 128,
+      "item_id": 14,
+      "player_position": {
+        "x": 712,
+        "y": -488,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 132,
+      "item_id": 62,
+      "player_position": {
+        "x": 712,
+        "y": -320,
+        "facing_id": 24
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door51A2"
+    },
+    {
+      "type": "door",
+      "door_label": "door51AD"
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 129,
+      "item_id": 25,
+      "player_position": {
+        "x": -264,
+        "y": 464,
+        "facing_id": 24
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door51C4"
+    },
+    {
+      "type": "door",
+      "door_label": "door51CF"
+    },
+    {
+      "type": "door",
+      "door_label": "door51DA"
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door51E6"
+    },
+    {
+      "type": "door",
+      "door_label": "door51F1"
+    },
+    {
+      "type": "door",
+      "door_label": "door51FC"
+    },
+    {
+      "type": "door",
+      "door_label": "door5207"
+    },
+    {
+      "type": "door",
+      "door_label": "door5212"
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 140,
+      "item_id": 34,
+      "player_position": {
+        "x": -904,
+        "y": -960,
+        "facing_id": 12
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 141,
+      "item_id": 34,
+      "player_position": {
+        "x": -904,
+        "y": -960,
+        "facing_id": 12
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 142,
+      "item_id": 34,
+      "player_position": {
+        "x": -904,
+        "y": -960,
+        "facing_id": 12
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 228,
+      "entity_var_id": 244,
+      "entity_position": {
+        "x": 128,
+        "y": -584,
+        "facing_id": 16
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door524A"
+    },
+    {
+      "type": "door",
+      "door_label": "door5255"
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 120,
+      "entity_position": {
+        "x": -192,
+        "y": -216,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 121,
+      "entity_position": {
+        "x": 240,
+        "y": -112,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 143,
+      "item_id": 77,
+      "player_position": {
+        "x": -200,
+        "y": -400,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 144,
+      "item_id": 62,
+      "player_position": {
+        "x": 312,
+        "y": -120,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 145,
+      "item_id": 24,
+      "player_position": {
+        "x": 264,
+        "y": -216,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door5298"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 146,
+      "item_id": 1,
+      "player_position": {
+        "x": -136,
+        "y": -56,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 0,
+      "player_position": {
+        "x": 104,
+        "y": 208,
+        "facing_id": 24
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door52BA"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 147,
+      "item_id": 67,
+      "player_position": {
+        "x": -88,
+        "y": 248,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 148,
+      "item_id": 14,
+      "player_position": {
+        "x": -160,
+        "y": 248,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "typewriter",
+      "player_position": {
+        "x": 216,
+        "y": 184,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "itembox",
+      "player_position": {
+        "x": -56,
+        "y": -200,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door52F2"
+    },
+    {
+      "type": "door",
+      "door_label": "door52FD"
+    },
+    {
+      "type": "door",
+      "door_label": "door5308"
+    },
+    {
+      "type": "door",
+      "door_label": "door5313"
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door531F"
+    },
+    {
+      "type": "door",
+      "door_label": "door532A"
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 149,
+      "item_id": 40,
+      "player_position": {
+        "x": 784,
+        "y": 1232,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 150,
+      "item_id": 40,
+      "player_position": {
+        "x": 784,
+        "y": 1232,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 241,
+      "entity_var_id": 238,
+      "entity_position": {
+        "x": 960,
+        "y": 0,
+        "facing_id": 16
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door5357"
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 8,
+      "player_position": {
+        "x": -184,
+        "y": -120,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 9,
+      "player_position": {
+        "x": -88,
+        "y": 336,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 0,
+      "player_position": {
+        "x": 152,
+        "y": 264,
+        "facing_id": 24
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door5384"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 151,
+      "item_id": 67,
+      "player_position": {
+        "x": -776,
+        "y": 440,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 152,
+      "item_id": 56,
+      "player_position": {
+        "x": -640,
+        "y": 832,
+        "facing_id": 16
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door53A6"
+    },
+    {
+      "type": "door",
+      "door_label": "door53B1"
+    },
+    {
+      "type": "door",
+      "door_label": "door53BC"
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 153,
+      "item_id": 40,
+      "player_position": {
+        "x": 808,
+        "y": -1232,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 154,
+      "item_id": 40,
+      "player_position": {
+        "x": 808,
+        "y": -1232,
+        "facing_id": 16
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door53DE"
+    },
+    {
+      "type": "door",
+      "door_label": "door53E9"
+    },
+    {
+      "type": "door",
+      "door_label": "door53F4"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 155,
+      "item_id": 80,
+      "player_position": {
+        "x": 152,
+        "y": -48,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 156,
+      "item_id": 62,
+      "player_position": {
+        "x": 312,
+        "y": -88,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 157,
+      "item_id": 81,
+      "player_position": {
+        "x": 192,
+        "y": -216,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 238,
+      "entity_var_id": 254,
+      "entity_position": {
+        "x": -128,
+        "y": -160,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 0,
+      "player_position": {
+        "x": 48,
+        "y": -400,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door5437"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 158,
+      "item_id": 67,
+      "player_position": {
+        "x": 208,
+        "y": 88,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 122,
+      "entity_position": {
+        "x": 48,
+        "y": -8,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 0,
+      "player_position": {
+        "x": 120,
+        "y": 208,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 1,
+      "player_position": {
+        "x": -136,
+        "y": -56,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door546F"
+    },
+    {
+      "type": "door",
+      "door_label": "door547A"
+    },
+    {
+      "type": "door",
+      "door_label": "door5485"
+    },
+    {
+      "type": "door",
+      "door_label": "door5490"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 159,
+      "item_id": 60,
+      "player_position": {
+        "x": -8,
+        "y": -512,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door54A7"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 160,
+      "item_id": 46,
+      "player_position": {
+        "x": -200,
+        "y": 88,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 161,
+      "item_id": 46,
+      "player_position": {
+        "x": 152,
+        "y": 144,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 162,
+      "item_id": 46,
+      "player_position": {
+        "x": 152,
+        "y": -120,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 163,
+      "item_id": 46,
+      "player_position": {
+        "x": 0,
+        "y": -56,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 8,
+      "player_position": {
+        "x": -200,
+        "y": 88,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 9,
+      "player_position": {
+        "x": 152,
+        "y": 144,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 10,
+      "player_position": {
+        "x": -80,
+        "y": -56,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 11,
+      "player_position": {
+        "x": -272,
+        "y": 32,
+        "facing_id": 8
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door550B"
+    },
+    {
+      "type": "door",
+      "door_label": "door5516"
+    },
+    {
+      "type": "door",
+      "door_label": "door5521"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 164,
+      "item_id": 56,
+      "player_position": {
+        "x": 384,
+        "y": -200,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 8,
+      "player_position": {
+        "x": -184,
+        "y": -224,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 234,
+      "entity_var_id": 250,
+      "entity_position": {
+        "x": 192,
+        "y": -368,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 235,
+      "entity_var_id": 251,
+      "entity_position": {
+        "x": 336,
+        "y": -368,
+        "facing_id": 24
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door5559"
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 166,
+      "item_id": 67,
+      "player_position": {
+        "x": 120,
+        "y": 0,
+        "facing_id": 16
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door5570"
+    },
+    {
+      "type": "door",
+      "door_label": "door557B"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 167,
+      "item_id": 47,
+      "player_position": {
+        "x": 144,
+        "y": 584,
+        "facing_id": 16
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door5592"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 168,
+      "item_id": 67,
+      "player_position": {
+        "x": 112,
+        "y": -56,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 169,
+      "item_id": 67,
+      "player_position": {
+        "x": 112,
+        "y": -56,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 170,
+      "item_id": 62,
+      "player_position": {
+        "x": -224,
+        "y": -56,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 171,
+      "item_id": 62,
+      "player_position": {
+        "x": -224,
+        "y": -56,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 172,
+      "item_id": 91,
+      "player_position": {
+        "x": -112,
+        "y": -56,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 0,
+      "player_position": {
+        "x": -64,
+        "y": 40,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 1,
+      "player_position": {
+        "x": 72,
+        "y": 144,
+        "facing_id": 8
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door55EB"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 173,
+      "item_id": 78,
+      "player_position": {
+        "x": 392,
+        "y": -272,
+        "facing_id": 28
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door5602"
+    },
+    {
+      "type": "door",
+      "door_label": "door560D"
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 180,
+      "item_id": 32,
+      "player_position": {
+        "x": -552,
+        "y": -920,
+        "facing_id": 12
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 8,
+      "player_position": {
+        "x": -920,
+        "y": -976,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door562F"
+    },
+    {
+      "type": "door",
+      "door_label": "door563A"
+    },
+    {
+      "type": "door",
+      "door_label": "door5645"
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door5651"
+    },
+    {
+      "type": "door",
+      "door_label": "door565C"
+    },
+    {
+      "type": "itembox",
+      "player_position": {
+        "x": 104,
+        "y": 0,
+        "facing_id": 24
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door5673"
+    },
+    {
+      "type": "door",
+      "door_label": "door567E"
+    },
+    {
+      "type": "door",
+      "door_label": "door5689"
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 181,
+      "item_id": 40,
+      "player_position": {
+        "x": -64,
+        "y": -128,
+        "facing_id": 12
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 182,
+      "item_id": 40,
+      "player_position": {
+        "x": -64,
+        "y": -128,
+        "facing_id": 12
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 183,
+      "item_id": 27,
+      "player_position": {
+        "x": -960,
+        "y": -528,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 160,
+      "entity_position": {
+        "x": 88,
+        "y": 384,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 161,
+      "entity_position": {
+        "x": -120,
+        "y": -288,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door56CC"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 185,
+      "item_id": 54,
+      "player_position": {
+        "x": 336,
+        "y": -64,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 8,
+      "player_position": {
+        "x": -336,
+        "y": -360,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 9,
+      "player_position": {
+        "x": 8,
+        "y": -336,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 10,
+      "player_position": {
+        "x": -8,
+        "y": -464,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door5704"
+    },
+    {
+      "type": "door",
+      "door_label": "door570F"
+    },
+    {
+      "type": "door",
+      "door_label": "door571A"
+    },
+    {
+      "type": "door",
+      "door_label": "door5725"
+    },
+    {
+      "type": "door",
+      "door_label": "door5730"
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 162,
+      "entity_position": {
+        "x": -808,
+        "y": -400,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 163,
+      "entity_position": {
+        "x": -104,
+        "y": 880,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 164,
+      "entity_position": {
+        "x": -280,
+        "y": 560,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 165,
+      "entity_position": {
+        "x": 0,
+        "y": -632,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door5768"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 186,
+      "item_id": 84,
+      "player_position": {
+        "x": -8,
+        "y": -168,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 8,
+      "player_position": {
+        "x": 464,
+        "y": -160,
+        "facing_id": 24
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door578A"
+    },
+    {
+      "type": "door",
+      "door_label": "door5795"
+    },
+    {
+      "type": "door",
+      "door_label": "door57A0"
+    },
+    {
+      "type": "door",
+      "door_label": "door57AB"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 187,
+      "item_id": 28,
+      "player_position": {
+        "x": 656,
+        "y": 208,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 189,
+      "item_id": 44,
+      "player_position": {
+        "x": -48,
+        "y": -456,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 242,
+      "entity_var_id": 237,
+      "entity_position": {
+        "x": 288,
+        "y": -176,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 243,
+      "entity_var_id": 236,
+      "entity_position": {
+        "x": 560,
+        "y": -544,
+        "facing_id": 8
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door57E3"
+    },
+    {
+      "type": "door",
+      "door_label": "door57EE"
+    },
+    {
+      "type": "door",
+      "door_label": "door57F9"
+    },
+    {
+      "type": "door",
+      "door_label": "door5804"
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 8,
+      "player_position": {
+        "x": 672,
+        "y": 96,
+        "facing_id": 16
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door581B"
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 166,
+      "entity_position": {
+        "x": -176,
+        "y": -32,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 167,
+      "entity_position": {
+        "x": -80,
+        "y": -280,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 168,
+      "entity_position": {
+        "x": 56,
+        "y": 128,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 190,
+      "item_id": 17,
+      "player_position": {
+        "x": -400,
+        "y": -208,
+        "facing_id": 8
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door5853"
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 191,
+      "item_id": 40,
+      "player_position": {
+        "x": -272,
+        "y": -352,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 192,
+      "item_id": 67,
+      "player_position": {
+        "x": 224,
+        "y": -136,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 193,
+      "item_id": 58,
+      "player_position": {
+        "x": -112,
+        "y": 296,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 239,
+      "entity_var_id": 255,
+      "entity_position": {
+        "x": -280,
+        "y": 128,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 8,
+      "player_position": {
+        "x": -304,
+        "y": 128,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 9,
+      "player_position": {
+        "x": 304,
+        "y": 104,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 10,
+      "player_position": {
+        "x": 0,
+        "y": -400,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door58AC"
+    },
+    {
+      "type": "door",
+      "door_label": "door58B7"
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door58C3"
+    },
+    {
+      "type": "door",
+      "door_label": "door58CE"
+    },
+    {
+      "type": "door",
+      "door_label": "door58D9"
+    },
+    {
+      "type": "door",
+      "door_label": "door58E4"
+    },
+    {
+      "type": "door",
+      "door_label": "door58EF"
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 169,
+      "entity_position": {
+        "x": 512,
+        "y": -56,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 170,
+      "entity_position": {
+        "x": -504,
+        "y": -56,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 8,
+      "player_position": {
+        "x": 776,
+        "y": 120,
+        "facing_id": 8
+      }
+    }
+  ],
+  [],
+  [
+    {
+      "type": "door",
+      "door_label": "door591D"
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 194,
+      "item_id": 40,
+      "player_position": {
+        "x": -184,
+        "y": 192,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 195,
+      "item_id": 34,
+      "player_position": {
+        "x": 80,
+        "y": 192,
+        "facing_id": 24
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 196,
+      "item_id": 83,
+      "player_position": {
+        "x": 168,
+        "y": 264,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 197,
+      "item_id": 44,
+      "player_position": {
+        "x": -152,
+        "y": -24,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "typewriter",
+      "player_position": {
+        "x": 256,
+        "y": 264,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "itembox",
+      "player_position": {
+        "x": -104,
+        "y": -320,
+        "facing_id": 8
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door596B"
+    },
+    {
+      "type": "door",
+      "door_label": "door5976"
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 8,
+      "player_position": {
+        "x": -760,
+        "y": 760,
+        "facing_id": 8
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door598D"
+    },
+    {
+      "type": "door",
+      "door_label": "door5998"
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door59A4"
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 8,
+      "player_position": {
+        "x": -544,
+        "y": 328,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 9,
+      "player_position": {
+        "x": 680,
+        "y": 152,
+        "facing_id": 8
+      }
+    }
+  ],
+  [],
+  [
+    {
+      "type": "door",
+      "door_label": "door59C7"
+    },
+    {
+      "type": "door",
+      "door_label": "door59D2"
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door59DE"
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door59EA"
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 8,
+      "player_position": {
+        "x": -352,
+        "y": 848,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 8,
+      "player_position": {
+        "x": -320,
+        "y": 848,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 8,
+      "player_position": {
+        "x": -288,
+        "y": 848,
+        "facing_id": 16
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door5A17"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 207,
+      "item_id": 69,
+      "player_position": {
+        "x": -976,
+        "y": 208,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 8,
+      "player_position": {
+        "x": -312,
+        "y": -48,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 9,
+      "player_position": {
+        "x": -120,
+        "y": -48,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 10,
+      "player_position": {
+        "x": 80,
+        "y": -48,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 11,
+      "player_position": {
+        "x": 232,
+        "y": 56,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 12,
+      "player_position": {
+        "x": 112,
+        "y": 56,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 13,
+      "player_position": {
+        "x": -144,
+        "y": 56,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 14,
+      "player_position": {
+        "x": -464,
+        "y": 56,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 7,
+      "player_position": {
+        "x": -976,
+        "y": 208,
+        "facing_id": 8
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door5A86"
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 200,
+      "item_id": 30,
+      "player_position": {
+        "x": 144,
+        "y": -200,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 201,
+      "item_id": 14,
+      "player_position": {
+        "x": -8,
+        "y": -128,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 202,
+      "item_id": 62,
+      "player_position": {
+        "x": 240,
+        "y": -80,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "on_floor_action",
+      "check_type": "pick_item",
+      "room_item_id": 203,
+      "item_id": 67,
+      "player_position": {
+        "x": 208,
+        "y": 40,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "typewriter",
+      "player_position": {
+        "x": 240,
+        "y": 240,
+        "facing_id": 16
+      }
+    },
+    {
+      "type": "itembox",
+      "player_position": {
+        "x": -136,
+        "y": -240,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 0,
+      "player_position": {
+        "x": 104,
+        "y": -240,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 1,
+      "player_position": {
+        "x": 208,
+        "y": -240,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door5AEA"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 204,
+      "item_id": 44,
+      "player_position": {
+        "x": -8,
+        "y": -144,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 205,
+      "item_id": 12,
+      "player_position": {
+        "x": -128,
+        "y": -8,
+        "facing_id": 8
+      }
+    },
+    {
+      "type": "check_action",
+      "check_type": "normal_action",
+      "action_id": 8,
+      "player_position": {
+        "x": -40,
+        "y": -144,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door5B17"
+    },
+    {
+      "type": "check_action",
+      "check_type": "pick_item",
+      "room_item_id": 206,
+      "item_id": 85,
+      "player_position": {
+        "x": -80,
+        "y": -184,
+        "facing_id": 0
+      }
+    },
+    {
+      "type": "entity",
+      "entity_id": 152,
+      "entity_var_id": 200,
+      "entity_position": {
+        "x": 920,
+        "y": 120,
+        "facing_id": 0
+      }
+    }
+  ],
+  [
+    {
+      "type": "door",
+      "door_label": "door5B39"
+    },
+    {
+      "type": "door",
+      "door_label": "door5B44"
+    },
+    {
+      "type": "door",
+      "door_label": "door5B4F"
+    }
+  ]
+]

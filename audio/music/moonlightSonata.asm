@@ -1,28 +1,22 @@
 moonlight_sonata_ch1: ;65C2
-	db $67, $FF
-	db $69, $B9
-	branchId $66
-	db $E4, $01
-	branchId $69
-	db $E4, $01
-	db $66, $01
-	db $24, $00
+	enableSound $FF
+	tempo 185
+	playBranch moonlightSonataBranches, 0, -28, 1
+	playBranch moonlightSonataBranches, 3, -28, 1
+	chlAction0x66 1
+	chainWait 0
 	endChannel
 
 moonlight_sonata_ch2: ;65D3
-	branchId $67
-	db $E4, $01
-	branchId $6A
-	db $E4, $01
-	db $24, $00
+	playBranch moonlightSonataBranches, 1, -28, 1
+	playBranch moonlightSonataBranches, 4, -28, 1
+	chainWait 0
 	endChannel
 
 moonlight_sonata_ch3: ;65DE
-	branchId $68
-	db $F0, $01
-	branchId $6B
-	db $F0, $01
-	db $24, $00
+	playBranch moonlightSonataBranches, 2, -16, 1
+	playBranch moonlightSonataBranches, 5, -16, 1
+	chainWait 0
 	endChannel
 
 moonlight_sonata_ch4: ;65E9

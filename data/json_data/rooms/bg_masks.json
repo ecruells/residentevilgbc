@@ -1,0 +1,391 @@
+[
+  {
+    "room_id": 6,
+    "masks": [
+      {
+        "bg_id": 1,
+        "label": "fountain_plant",
+        "frames": 4
+      },
+      {
+        "bg_id": 2,
+        "label": "fountain_plant",
+        "frames": 4
+      }
+    ]
+  },
+  {
+    "room_id": 86,
+    "masks": [
+      {
+        "bg_id": 0,
+        "label": "plant_42"
+      },
+      {
+        "bg_id": 1,
+        "label": "plant_42"
+      },
+      {
+        "bg_id": 2,
+        "label": "plant_42"
+      },
+      {
+        "bg_id": 3,
+        "label": "plant_42"
+      },
+      {
+        "bg_id": 4,
+        "label": "plant_42"
+      },
+      {
+        "bg_id": 5,
+        "label": "plant_42"
+      }
+    ]
+  },
+  {
+    "room_id": 111,
+    "masks": [
+      {
+        "bg_id": 4,
+        "label": "painting"
+      },
+      {
+        "bg_id": 5,
+        "label": "painting"
+      },
+      {
+        "bg_id": 6,
+        "label": "painting"
+      }
+    ]
+  },
+  {
+    "room_id": 93,
+    "masks": [
+      {
+        "bg_id": 3,
+        "label": "button_panel"
+      },
+      {
+        "bg_id": 0,
+        "label": "wall_pillar",
+        "frames": 2
+      },
+      {
+        "bg_id": 2,
+        "label": "wall_pillar",
+        "frames": 2
+      },
+      {
+        "bg_id": 1,
+        "label": "wall_pillar",
+        "frames": 2
+      }
+    ]
+  },
+  {
+    "room_id": 1,
+    "masks": [
+      {
+        "bg_id": 1,
+        "label": "broken_statue"
+      },
+      {
+        "bg_id": 2,
+        "label": "broken_statue"
+      },
+      {
+        "bg_id": 4,
+        "label": "broken_statue"
+      }
+    ]
+  },
+  {
+    "room_id": 20,
+    "masks": [
+      {
+        "bg_id": 1,
+        "label": "lion_statue_rotating",
+        "frames": 7
+      },
+      {
+        "bg_id": 0,
+        "label": "lion_statue_rotated_right",
+        "bg_mask_id": 0
+      },
+      {
+        "bg_id": 0,
+        "label": "lion_statue_rotated_left",
+        "bg_mask_id": 1
+      }
+    ]
+  },
+  {
+    "room_id": 7,
+    "masks": [
+      {
+        "bg_id": 1,
+        "label": "secret_door_opened"
+      },
+      {
+        "bg_id": 3,
+        "label": "secret_door_opened",
+        "bg_mask_id": 0
+      },
+      {
+        "bg_id": 7,
+        "label": "secret_door_opening",
+        "frames": 3
+      },
+      {
+        "bg_id": 3,
+        "label": "secret_door_opening",
+        "frames": 3,
+        "bg_mask_id": 1
+      }
+    ] 
+  },
+  {
+    "room_id": 19,
+    "masks": [
+      {
+        "bg_id": 4,
+        "label": "crest_panel"
+      }
+    ]
+  },
+  {
+    "room_id": 1,
+    "masks": [
+      {
+        "bg_id": 3,
+        "label": "blood_on_floor"
+      }
+    ]
+  },
+  {
+    "room_id": 56,
+    "masks": [
+      {
+        "bg_id": 2,
+        "label": "waterwall",
+        "frames": 4
+      }
+    ]
+  },
+  {
+    "room_id": 75,
+    "masks": [
+      {
+        "bg_id": 0,
+        "label": "aqua_tank_flood"
+      },
+      {
+        "bg_id": 1,
+        "label": "aqua_tank_flood"
+      },
+      {
+        "bg_id": 2,
+        "label": "aqua_tank_flood"
+      },
+      {
+        "bg_id": 3,
+        "label": "aqua_tank_flood"
+      },
+      {
+        "bg_id": 4,
+        "label": "aqua_tank_flood"
+      },
+      {
+        "bg_id": 5,
+        "label": "aqua_tank_flood"
+      }
+    ]
+  },
+  {
+    "room_id": 76,
+    "masks": [
+      {
+        "bg_id": 5,
+        "label": "corridor_flood"
+      }
+    ]
+  },
+  {
+    "room_id": 77,
+    "masks": [
+      {
+        "bg_id": 0,
+        "label": "flood"
+      },
+      {
+        "bg_id": 1,
+        "label": "flood"
+      },
+      {
+        "bg_id": 2,
+        "label": "flood"
+      },
+      {
+        "bg_id": 3,
+        "label": "water_switch",
+        "frames": 2
+      }
+    ]
+  },
+  {
+    "room_id": 55,
+    "masks": [
+      {
+        "bg_id": 0,
+        "label": "full_pool"
+      },
+      {
+        "bg_id": 1,
+        "label": "full_pool"
+      },
+      {
+        "bg_id": 2,
+        "label": "full_pool"
+      }
+    ]
+  },
+  {
+    "room_id": 88,
+    "masks": [
+      {
+        "bg_id": 0,
+        "label": "flooded_roots"
+      },
+      {
+        "bg_id": 1,
+        "label": "flooded_roots",
+        "bg_mask_id": 0
+      },
+      {
+        "bg_id": 2,
+        "label": "flooded_roots",
+        "bg_mask_id": 0
+      },
+      {
+        "bg_id": 3,
+        "label": "flooded_roots"
+      },
+      {
+        "bg_id": 4,
+        "label": "flooded_roots"
+      }
+    ] 
+  },
+  {
+    "room_id": 17,
+    "masks": [
+      {
+        "bg_id": 3,
+        "label": "full_bathtube"
+      },
+      {
+        "bg_id": 1,
+        "label": "full_bathtube"
+      }
+    ]
+  },
+  {
+    "room_id": 73,
+    "masks": [
+      {
+        "bg_id": 0,
+        "label": "full_bathtube"
+      },
+      {
+        "bg_id": 1,
+        "label": "full_bathtube"
+      }
+    ]
+  },
+  {
+    "room_id": 88,
+    "masks": [
+      {
+        "bg_id": 1,
+        "label": "plant42_roots",
+        "bg_mask_id": 1
+      },
+      {
+        "bg_id": 2,
+        "label": "plant42_roots",
+        "bg_mask_id": 1
+      }
+    ]
+  },
+  {
+    "room_id": 42,
+    "masks": [
+      {
+        "bg_id": 1,
+        "label": "rope",
+        "bg_mask_id": 0
+      },
+      {
+        "bg_id": 1,
+        "label": "opened_tomb",
+        "bg_mask_id": 1
+      },
+      {
+        "bg_id": 2,
+        "label": "opening_tomb",
+        "frames": 2
+      },
+      {
+        "bg_id": 3,
+        "label": "rope"
+      }
+    ]
+  },
+  {
+    "room_id": 62,
+    "masks": [
+      {
+        "bg_id": 5,
+        "label": "underground_moving_walls",
+        "frames": 3
+      }
+    ]
+  },
+  {
+    "room_id": 63,
+    "masks": [
+      {
+        "bg_id": 5,
+        "label": "underground_moving_walls",
+        "frames": 5
+      }
+    ]
+  },
+  {
+    "room_id": 69,
+    "masks": [
+      {
+        "bg_id": 3,
+        "label": "spiderweb",
+        "frames": 3
+      },
+      {
+        "bg_id": 0,
+        "label": "spiderweb",
+        "frames": 3
+      },
+      {
+        "bg_id": 1,
+        "label": "spiderweb"
+      },
+      {
+        "bg_id": 2,
+        "label": "spiderweb",
+        "frames": 2
+      }
+    ]
+  }
+
+]

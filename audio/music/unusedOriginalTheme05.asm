@@ -1,61 +1,38 @@
 unused_original_theme_05_ch1: ;5ECB
-	db $67, $FF
-	db $69, $BE
-	branchId $4F
-	db $00, $01
-	branchId $42
-	db $E6, $01
-	branchId $44
-	db $E6, $02
-	branchId $47
-	db $DA, $01
-	branchId $48
-	db $CE, $01
-	branchId $4B
-	db $E6, $01
-	branchId $4D
-	db $E6, $01
-	db $66, $01
+	enableSound $FF
+	tempo 190
+	playBranch unusedTheme05Branches, 13, 0, 1
+	playBranch unusedTheme05Branches, 0, -26, 1
+	playBranch unusedTheme05Branches, 2, -26, 2
+	playBranch unusedTheme05Branches, 5, -38, 1
+	playBranch unusedTheme05Branches, 6, -50, 1
+	playBranch unusedTheme05Branches, 9, -26, 1
+	playBranch unusedTheme05Branches, 11, -26, 1
+	chlAction0x66 1
 	channelLoop unused_original_theme_05_ch1
 
 unused_original_theme_05_ch2: ;5EF0
-	branchId $4F
-	db $00, $04
-	branchId $45
-	db $E6, $02
-	branchId $45
-	db $DC, $02
-	branchId $49
-	db $E6, $01
-	branchId $50
-	db $F2, $04
-	branchId $50
-	db $F0, $04
-	branchId $50
-	db $F2, $02
-	branchId $50
-	db $F5, $02
-	branchId $50
-	db $F9, $02
-	branchId $50
-	db $F7, $02
-	db $9E, $BA
-	db $9E, $BA
+	playBranch unusedTheme05Branches, 13, 0, 4
+	playBranch unusedTheme05Branches, 3, -26, 2
+	playBranch unusedTheme05Branches, 3, -36, 2
+	playBranch unusedTheme05Branches, 7, -26, 1
+	playBranch unusedTheme05Branches, 14, -14, 4
+	playBranch unusedTheme05Branches, 14, -16, 4
+	playBranch unusedTheme05Branches, 14, -14, 2
+	playBranch unusedTheme05Branches, 14, -11, 2
+	playBranch unusedTheme05Branches, 14, -7, 2
+	playBranch unusedTheme05Branches, 14, -9, 2
+	typenote1 G_5, 11, 10
+	typenote1 G_5, 11, 10
 	channelLoop unused_original_theme_05_ch2
 
 unused_original_theme_05_ch3: ;5F1F
-	branchId $43
-	db $F2, $04
-	branchId $46
-	db $F2, $02
-	branchId $46
-	db $F4, $02
-	branchId $4A
-	db $F2, $01
-	branchId $4C
-	db $F2, $01
-	branchId $4E
-	db $F2, $01
+	playBranch unusedTheme05Branches, 1, -14, 4
+	playBranch unusedTheme05Branches, 4, -14, 2
+	playBranch unusedTheme05Branches, 4, -12, 2
+	playBranch unusedTheme05Branches, 8, -14, 1
+	playBranch unusedTheme05Branches, 10, -14, 1
+	playBranch unusedTheme05Branches, 12, -14, 1
 	channelLoop unused_original_theme_05_ch3
 
 unused_original_theme_05_ch4: ;5F3A
@@ -102,7 +79,7 @@ unused_original_theme_05_branch_5F3B: ;5F3B
 	typenote0 C_8, 15, 8
 	branchEnd
 
-unused_original_theme_05_branch_5F86: ;5F86
+unused_original_theme_05_branch_5F86: ;5F5E
 	typenote1 A#5, 2, 6
 	typenote1 F_6, 2, 6
 	typenote1 E_6, 2, 6

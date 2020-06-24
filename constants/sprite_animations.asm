@@ -8,6 +8,18 @@ KNIFE_AIM_ANIM		EQU $05
 GET_DAMAGED_ANIM	EQU $06
 PICK_ITEM_ANIM		EQU $07
 
-;zombie
+; aim animation frames
+AIMING_UP           EQU $00
+AIMING_FRONT        EQU $08
+AIMING_DOWN         EQU $10
+
+; knife attack frames
+KNIFE_UP_ATTACK     EQU $10
+KNIFE_DOWN_ATTACK   EQU $18
+KNIFE_FRONT_ATTACK  EQU $20
+
+IDLE_ANIM_F2        EQU $1F
+
+; zombie
 DEAD_ANIM			EQU $02
 ATTACK_ANIM			EQU $03

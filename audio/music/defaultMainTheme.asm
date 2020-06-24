@@ -1,44 +1,33 @@
-default_main_theme_ch1: ;5B55
+default_main_theme_ch1: ;06:5B55
 	enableSound $FF
 	tempo 180
 	chainWait 10
 	chainWait 10
 	chainWait 10
 	chainWait 10
-	branchId $36
-	semitone_tsp -28, 1
-	branchId $3A
-	semitone_tsp -28, 1
-	branchId $3D
-	semitone_tsp -40, 1
+	playBranch default_theme_branches, 0, -28, 1
+	playBranch default_theme_branches, 4, -28, 1
+	playBranch default_theme_branches, 7, -40, 1
 	chainWait 4
 	chlAction0x66 1
 	channelLoop default_main_theme_ch1
 
 default_main_theme_ch2: ;5B74
-	branchId $37
-	semitone_tsp -28, 1
+	playBranch default_theme_branches, 1, -28, 1
 	chainWait 4
-	branchId $36
-	semitone_tsp -28, 1
-	branchId $3A
-	semitone_tsp -28, 1
-	branchId $3D
-	semitone_tsp -40, 1
+	playBranch default_theme_branches, 0, -28, 1
+	playBranch default_theme_branches, 4, -28, 1
+	playBranch default_theme_branches, 7, -40, 1
 	channelLoop default_main_theme_ch2
 
 default_main_theme_ch3: ;5B89
-	branchId $38
-	db $F0, $03
-	branchId $3C
-	db $F0, $02
-	branchId $3F
-	db $F0, $01
+	playBranch default_theme_branches, 2, -16, 3
+	playBranch default_theme_branches, 6, -16, 2
+	playBranch default_theme_branches, 9, -16, 1
 	channelLoop default_main_theme_ch3
 
 default_main_theme_ch4: ;5B98
-	branchId $39
-	db $00, $18
+	playBranch default_theme_branches, 3, 0, 24
 	channelLoop default_main_theme_ch4
 
 default_main_theme_branch_5B9F: ;5B9F
@@ -412,3 +401,4 @@ default_main_theme_branch_5E0A: ;5E0A
 	typenote1 F_6, 2, 6
 	branchEnd
 ;5E51
+                                                                       

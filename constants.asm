@@ -1,7 +1,6 @@
 
 INCLUDE "macros.asm"
 
-INCLUDE "hram.asm"
 INCLUDE "wram.asm"
 INCLUDE "sram.asm"
 
@@ -13,8 +12,12 @@ INCLUDE "constants/events_commands.asm"
 INCLUDE "constants/items.asm"
 INCLUDE "constants/sprite_animations.asm"
 INCLUDE "constants/door_constants.asm"
+INCLUDE "constants/door_ids.asm"
 INCLUDE "constants/special_screens.asm"
 INCLUDE "constants/spritesheet_offsets.asm"
 INCLUDE "constants/sound_effects.asm"
 INCLUDE "constants/music_constants.asm"
 INCLUDE "constants/menu_constants.asm"
+INCLUDE "constants/event_scenes.asm"
+INCLUDE "constants/palette_fade_effects.asm"
+INCLUDE "constants/rooms_items.asm"

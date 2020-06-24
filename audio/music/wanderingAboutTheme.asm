@@ -1,17 +1,15 @@
 wandering_about_theme_ch1: ;5E51
-	db $67, $FF
-	db $69, $B4
-	branchId $40
-	db $E6, $01
-	db $66, $01
+	enableSound $FF
+	tempo 180
+	playBranch wanderingAboutThemeBranches, 0, -26, 1
+	chlAction0x66 1
 	channelLoop wandering_about_theme_ch1
 
 wandering_about_theme_ch2: ;5E5E
 	endChannel
 
 wandering_about_theme_ch3: ;5E5F
-	branchId $41
-	db $E6, $01
+	playBranch wanderingAboutThemeBranches, 1, -26, 1
 	channelLoop wandering_about_theme_ch3
 
 wandering_about_theme_ch4: ;5E66

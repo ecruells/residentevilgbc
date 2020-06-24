@@ -3,19 +3,19 @@ SECTION "Saveram", SRAM, BANK[0]
 sSRamStart::	;a000
 	ds $B9
 
-sQuickSaveFlagB9:: ;a0b9
+sQuickSaveFlag01:: ;a0b9
 	ds 1
 
-sQuickSaveFlagBA:: ;a0ba
+sQuickSaveFlag02:: ;a0ba
 	ds 2
 
-sQuickSaveFlagBC:: ;a0bc
+sQuickSaveFlag03:: ;a0bc
 	ds 1
 
 
 SECTION "SaveramSlotsMetadata", SRAM[$BF00], BANK[0]
 
-sSaveSlot1Trigger:: ;BF00
+sSaveSlot1Flag:: ;BF00
 	ds 4
 sSaveSlot2Trigger:: ;BF04
 	ds 4
@@ -36,11 +36,11 @@ sSaveSlot4Info:: ;bf50
 
 SECTION "SaveramInitFlags", SRAM[$BFFC], BANK[0]
 
-sExtRamInitFC:: ;BFFC
+sSRamInitiazedFlag0:: ;BFFC
 	ds 1
-sExtRamInitFD:: ;BFFD
+sSRamInitiazedFlag1:: ;BFFD
 	ds 1
-sExtRamInitFE:: ;BFFE
+sSRamInitiazedFlag2:: ;BFFE
 	ds 1
-sExtRamInitFF:: ;BFFF
+sSRamInitiazedFlag3:: ;BFFF
 	ds 1

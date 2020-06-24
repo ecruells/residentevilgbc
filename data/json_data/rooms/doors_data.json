@@ -1,0 +1,3625 @@
+[
+  {
+    "label": "door40E8",
+    "type": "sprite_door",
+    "type_id": 8,
+    "palette_id": 0,
+    "target": {
+      "room_id": 0,
+      "door_label": "door4136"
+    },
+    "player_position": {
+      "x": 976,
+      "y": 64,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door4136",
+    "type": "sprite_door",
+    "type_id": 8,
+    "palette_id": 0,
+    "target": {
+      "room_id": 1,
+      "door_label": "door40E8"
+    },
+    "player_position": {
+      "x": -912,
+      "y": 0,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door40F3",
+    "type": "sprite_door",
+    "type_id": 9,
+    "palette_id": 1,
+    "target": {
+      "room_id": 0,
+      "door_label": "door4257"
+    },
+    "player_position": {
+      "x": -976,
+      "y": -320,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door4257",
+    "type": "sprite_door",
+    "type_id": 9,
+    "palette_id": 1,
+    "target": {
+      "room_id": 4,
+      "door_label": "door40F3"
+    },
+    "player_position": {
+      "x": 0,
+      "y": -528,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door40FE",
+    "type": "sprite_door",
+    "type_id": 2,
+    "palette_id": 2,
+    "target": {
+      "room_id": 0,
+      "door_label": "door45D3"
+    },
+    "player_position": {
+      "x": -976,
+      "y": 192,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door45D3",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 16,
+      "door_label": "door40FE"
+    },
+    "player_position": {
+      "x": 56,
+      "y": 784,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door4109",
+    "type": "tilemap_door",
+    "type_id": 0,
+    "target": {
+      "room_id": 0,
+      "door_label": "door4895"
+    },
+    "player_position": {
+      "x": 0,
+      "y": -64,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door4895",
+    "type": "tilemap_door",
+    "type_id": 1,
+    "target": {
+      "room_id": 29,
+      "door_label": "door4109"
+    },
+    "player_position": {
+      "x": 0,
+      "y": 744,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door4141",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 2,
+    "target": {
+      "room_id": 1,
+      "door_label": "door42E7"
+    },
+    "player_position": {
+      "x": 704,
+      "y": 336,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door42E7",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 5,
+      "door_label": "door4141"
+    },
+    "player_position": {
+      "x": 512,
+      "y": -48,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door41BB",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 2,
+      "door_label": "door43C6"
+    },
+    "player_position": {
+      "x": -160,
+      "y": 336,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door43C6",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 8,
+      "door_label": "door41BB"
+    },
+    "player_position": {
+      "x": 80,
+      "y": 504,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door41FE",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 3,
+      "door_label": "door42F2"
+    },
+    "player_position": {
+      "x": -832,
+      "y": 960,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door4209",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 3,
+      "door_label": "door4563"
+    },
+    "player_position": {
+      "x": -880,
+      "y": 304,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door4563",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 14,
+      "door_label": "door4209"
+    },
+    "player_position": {
+      "x": -240,
+      "y": -208,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door4214",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 3,
+      "door_label": "door46B3"
+    },
+    "player_position": {
+      "x": -440,
+      "y": 56,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door46B3",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 20,
+      "door_label": "door4214"
+    },
+    "player_position": {
+      "x": 112,
+      "y": -48,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door421F",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 3,
+      "door_label": "door43BB"
+    },
+    "player_position": {
+      "x": -880,
+      "y": -920,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door43BB",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 8,
+      "door_label": "door421F"
+    },
+    "player_position": {
+      "x": 976,
+      "y": -672,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door422A",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 3,
+      "door_label": "door4340"
+    },
+    "player_position": {
+      "x": 792,
+      "y": -392,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door4340",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 6,
+      "door_label": "door422A"
+    },
+    "player_position": {
+      "x": -520,
+      "y": 272,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door4262",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 4,
+      "door_label": "door44C7"
+    },
+    "player_position": {
+      "x": -224,
+      "y": 552,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door44C7",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 12,
+      "door_label": "door4262"
+    },
+    "player_position": {
+      "x": -592,
+      "y": 488,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door42FD",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 5,
+      "door_label": "door4399"
+    },
+    "player_position": {
+      "x": -920,
+      "y": 56,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door4399",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 7,
+      "door_label": "door42FD"
+    },
+    "player_position": {
+      "x": 464,
+      "y": -520,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door4308",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 5,
+      "door_label": "door45B1"
+    },
+    "player_position": {
+      "x": -976,
+      "y": -24,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door45B1",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 15,
+      "door_label": "door4308"
+    },
+    "player_position": {
+      "x": 400,
+      "y": 208,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door43D1",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 8,
+      "door_label": "door4409"
+    },
+    "player_position": {
+      "x": 792,
+      "y": -504,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door4409",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 9,
+      "door_label": "door43D1"
+    },
+    "player_position": {
+      "x": 56,
+      "y": 208,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door43DC",
+    "type": "tilemap_door",
+    "type_id": 4,
+    "target": {
+      "room_id": 8,
+      "door_label": "door4E38"
+    },
+    "player_position": {
+      "x": -264,
+      "y": 880,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door4E38",
+    "type": "tilemap_door",
+    "type_id": 5,
+    "target": {
+      "room_id": 53,
+      "door_label": "door43DC"
+    },
+    "player_position": {
+      "x": -56,
+      "y": -328,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door4436",
+    "type": "sprite_door",
+    "type_id": 2,
+    "palette_id": 2,
+    "target": {
+      "room_id": 10,
+      "door_label": "door44D2"
+    },
+    "player_position": {
+      "x": -624,
+      "y": 1216,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door44D2",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 12,
+      "door_label": "door4436"
+    },
+    "player_position": {
+      "x": 592,
+      "y": -752,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door4441",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 10,
+      "door_label": "door4622"
+    },
+    "player_position": {
+      "x": -56,
+      "y": 1264,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door4622",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 18,
+      "door_label": "door4441"
+    },
+    "player_position": {
+      "x": -120,
+      "y": -400,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door444C",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 10,
+      "door_label": "door4600"
+    },
+    "player_position": {
+      "x": -24,
+      "y": 736,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door4600",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 17,
+      "door_label": "door444C"
+    },
+    "player_position": {
+      "x": -288,
+      "y": 336,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door4457",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 10,
+      "door_label": "door47AA"
+    },
+    "player_position": {
+      "x": 48,
+      "y": -280,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door47AA",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 25,
+      "door_label": "door4457"
+    },
+    "player_position": {
+      "x": 0,
+      "y": 208,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door4462",
+    "type": "sprite_door",
+    "type_id": 8,
+    "palette_id": 0,
+    "target": {
+      "room_id": 10,
+      "door_label": "door449A"
+    },
+    "player_position": {
+      "x": -32,
+      "y": -688,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door449A",
+    "type": "sprite_door",
+    "type_id": 8,
+    "palette_id": 0,
+    "target": {
+      "room_id": 11,
+      "door_label": "door4462"
+    },
+    "player_position": {
+      "x": -528,
+      "y": 24,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door4479",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 11,
+      "door_label": "door5A17"
+    },
+    "player_position": {
+      "x": 440,
+      "y": -80,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door5A17",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 111,
+      "door_label": "door4479"
+    },
+    "player_position": {
+      "x": -864,
+      "y": -336,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door4484",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 11,
+      "door_label": "door5AEA"
+    },
+    "player_position": {
+      "x": 80,
+      "y": 88,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door5AEA",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 113,
+      "door_label": "door4484"
+    },
+    "player_position": {
+      "x": 80,
+      "y": 208,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door448F",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 11,
+      "door_label": "door4520"
+    },
+    "player_position": {
+      "x": -128,
+      "y": 88,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door4520",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 13,
+      "door_label": "door448F"
+    },
+    "player_position": {
+      "x": 976,
+      "y": 248,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door44A5",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 11,
+      "door_label": "door4691"
+    },
+    "player_position": {
+      "x": 528,
+      "y": 384,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door4691",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 19,
+      "door_label": "door44A5"
+    },
+    "player_position": {
+      "x": -120,
+      "y": 608,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door452B",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 13,
+      "door_label": "door5A86"
+    },
+    "player_position": {
+      "x": 200,
+      "y": -288,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door5A86",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 112,
+      "door_label": "door452B"
+    },
+    "player_position": {
+      "x": -120,
+      "y": 240,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door4536",
+    "type": "tilemap_door",
+    "type_id": 4,
+    "target": {
+      "room_id": 13,
+      "door_label": "door4AAC"
+    },
+    "player_position": {
+      "x": -176,
+      "y": 296,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door4AAC",
+    "type": "tilemap_door",
+    "type_id": 5,
+    "target": {
+      "room_id": 36,
+      "door_label": "door4536"
+    },
+    "player_position": {
+      "x": -1120,
+      "y": 264,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door45BC",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 15,
+      "door_label": "door5B39"
+    },
+    "player_position": {
+      "x": -392,
+      "y": 512,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door5B39",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 115,
+      "door_label": "door45BC"
+    },
+    "player_position": {
+      "x": -568,
+      "y": -384,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door45C8",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 16,
+      "door_label": "door4745"
+    },
+    "player_position": {
+      "x": -464,
+      "y": -720,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door4745",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 23,
+      "door_label": "door45C8"
+    },
+    "player_position": {
+      "x": 336,
+      "y": 272,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door469C",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 19,
+      "door_label": "door46EC"
+    },
+    "player_position": {
+      "x": 144,
+      "y": -896,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door46EC",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 22,
+      "door_label": "door469C"
+    },
+    "player_position": {
+      "x": 0,
+      "y": 208,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door46E0",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 21,
+      "door_label": "door4750"
+    },
+    "player_position": {
+      "x": 192,
+      "y": 80,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door4750",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 23,
+      "door_label": "door46E0"
+    },
+    "player_position": {
+      "x": 304,
+      "y": -336,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door477D",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 24,
+      "door_label": "door47B5"
+    },
+    "player_position": {
+      "x": 272,
+      "y": -120,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door47B5",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 25,
+      "door_label": "door477D"
+    },
+    "player_position": {
+      "x": 208,
+      "y": -96,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door47C1",
+    "type": "tilemap_door",
+    "type_id": 6,
+    "target": {
+      "room_id": 26,
+      "door_label": "door4C49"
+    },
+    "player_position": {
+      "x": 464,
+      "y": 280,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door4C49",
+    "type": "tilemap_door",
+    "type_id": 7,
+    "target": {
+      "room_id": 42,
+      "door_label": "door47C1"
+    },
+    "player_position": {
+      "x": -16,
+      "y": 8,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door47CC",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 26,
+      "door_label": "door47F9"
+    },
+    "player_position": {
+      "x": -912,
+      "y": 296,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door47F9",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 27,
+      "door_label": "door47CC"
+    },
+    "player_position": {
+      "x": 808,
+      "y": -336,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door4804",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 27,
+      "door_label": "door5B44"
+    },
+    "player_position": {
+      "x": -968,
+      "y": 216,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door5B44",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 115,
+      "door_label": "door4804"
+    },
+    "player_position": {
+      "x": -280,
+      "y": 272,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door483C",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 28,
+      "door_label": "door4874"
+    },
+    "player_position": {
+      "x": -976,
+      "y": -24,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door4874",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 29,
+      "door_label": "door483C"
+    },
+    "player_position": {
+      "x": 976,
+      "y": 192,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door4847",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 28,
+      "door_label": "door4E43"
+    },
+    "player_position": {
+      "x": 864,
+      "y": 336,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door4E43",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 53,
+      "door_label": "door4847"
+    },
+    "player_position": {
+      "x": -296,
+      "y": -976,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door487F",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 29,
+      "door_label": "door4954"
+    },
+    "player_position": {
+      "x": -976,
+      "y": -528,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door4954",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 33,
+      "door_label": "door487F"
+    },
+    "player_position": {
+      "x": -320,
+      "y": -48,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door488A",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 29,
+      "door_label": "door4B80"
+    },
+    "player_position": {
+      "x": -976,
+      "y": 400,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door4B80",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 39,
+      "door_label": "door488A"
+    },
+    "player_position": {
+      "x": -720,
+      "y": 640,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door48A1",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 30,
+      "door_label": "door4B75"
+    },
+    "player_position": {
+      "x": -464,
+      "y": 416,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door48AC",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 30,
+      "door_label": "door4CA4"
+    },
+    "player_position": {
+      "x": 432,
+      "y": -464,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door48CE",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 31,
+      "door_label": "door4A96"
+    },
+    "player_position": {
+      "x": -160,
+      "y": 208,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door4A96",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 36,
+      "door_label": "door48CE"
+    },
+    "player_position": {
+      "x": 144,
+      "y": -960,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door48D9",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 31,
+      "door_label": "door4C60"
+    },
+    "player_position": {
+      "x": 208,
+      "y": 128,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door4C60",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 43,
+      "door_label": "door48D9"
+    },
+    "player_position": {
+      "x": -272,
+      "y": 576,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door48FB",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 32,
+      "door_label": "door4D58"
+    },
+    "player_position": {
+      "x": 440,
+      "y": -896,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door4D58",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 49,
+      "door_label": "door48FB"
+    },
+    "player_position": {
+      "x": -208,
+      "y": 0,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door4906",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 32,
+      "door_label": "door4DD3"
+    },
+    "player_position": {
+      "x": -136,
+      "y": 224,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door4DD3",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 51,
+      "door_label": "door4906"
+    },
+    "player_position": {
+      "x": -48,
+      "y": 208,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door4911",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 32,
+      "door_label": "door4AD9"
+    },
+    "player_position": {
+      "x": -720,
+      "y": -72,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door4AD9",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 37,
+      "door_label": "door4911"
+    },
+    "player_position": {
+      "x": 528,
+      "y": 640,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door491C",
+    "type": "tilemap_door",
+    "type_id": 14,
+    "target": {
+      "room_id": 32,
+      "door_label": "door5B4F"
+    },
+    "player_position": {
+      "x": 456,
+      "y": -256,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door5B4F",
+    "type": "tilemap_door",
+    "type_id": 15,
+    "target": {
+      "room_id": 115,
+      "door_label": "door491C"
+    },
+    "player_position": {
+      "x": 920,
+      "y": -88,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door495F",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 33,
+      "door_label": "door4CFE"
+    },
+    "player_position": {
+      "x": 464,
+      "y": 48,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door4CFE",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 47,
+      "door_label": "door495F"
+    },
+    "player_position": {
+      "x": -312,
+      "y": 208,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door4981",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 34,
+      "door_label": "door4CBA"
+    },
+    "player_position": {
+      "x": -288,
+      "y": -272,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door4CBA",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 45,
+      "door_label": "door4981"
+    },
+    "player_position": {
+      "x": -512,
+      "y": -48,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door49AE",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 35,
+      "door_label": "door4B6A"
+    },
+    "player_position": {
+      "x": 464,
+      "y": -16,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door4B6A",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 39,
+      "door_label": "door49AE"
+    },
+    "player_position": {
+      "x": 568,
+      "y": -32,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door4A80",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 36,
+      "door_label": "door4B5F"
+    },
+    "player_position": {
+      "x": 144,
+      "y": 784,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door4A8B",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 36,
+      "door_label": "door4CDC"
+    },
+    "player_position": {
+      "x": -376,
+      "y": 64,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door4CDC",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 46,
+      "door_label": "door4A8B"
+    },
+    "player_position": {
+      "x": 144,
+      "y": 0,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door4AA1",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 36,
+      "door_label": "door4BAD"
+    },
+    "player_position": {
+      "x": -456,
+      "y": 848,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door4AE4",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 37,
+      "door_label": "door4E22"
+    },
+    "player_position": {
+      "x": -312,
+      "y": -376,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door4E22",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 53,
+      "door_label": "door4AE4"
+    },
+    "player_position": {
+      "x": -104,
+      "y": 720,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door4B27",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 38,
+      "door_label": "door4CE7"
+    },
+    "player_position": {
+      "x": -272,
+      "y": 176,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door4CE7",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 46,
+      "door_label": "door4B27"
+    },
+    "player_position": {
+      "x": -16,
+      "y": -400,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door4B54",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 39,
+      "door_label": "door4BA2"
+    },
+    "player_position": {
+      "x": -672,
+      "y": -720,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door4BA2",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 40,
+      "door_label": "door4B54"
+    },
+    "player_position": {
+      "x": -256,
+      "y": 464,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door4BF0",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 41,
+      "door_label": "door4CD1"
+    },
+    "player_position": {
+      "x": -64,
+      "y": 240,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door4CD1",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 46,
+      "door_label": "door4BF0"
+    },
+    "player_position": {
+      "x": 16,
+      "y": 272,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door4C54",
+    "type": "tilemap_door",
+    "type_id": 8,
+    "target": {
+      "room_id": 42,
+      "door_label": "door4C6B"
+    },
+    "player_position": {
+      "x": -16,
+      "y": 336,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door4C6B",
+    "type": "tilemap_door",
+    "type_id": 9,
+    "target": {
+      "room_id": 43,
+      "door_label": "door4C54"
+    },
+    "player_position": {
+      "x": 208,
+      "y": -360,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door4C77",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 44,
+      "door_label": "door4CAF"
+    },
+    "player_position": {
+      "x": -200,
+      "y": 400,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door4CAF",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 45,
+      "door_label": "door4C77"
+    },
+    "player_position": {
+      "x": 88,
+      "y": -336,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door4D15",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 48,
+      "door_label": "door4E2D"
+    },
+    "player_position": {
+      "x": 240,
+      "y": 224,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door4E2D",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 53,
+      "door_label": "door4D15"
+    },
+    "player_position": {
+      "x": -56,
+      "y": 64,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door4D63",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 49,
+      "door_label": "door4DA6"
+    },
+    "player_position": {
+      "x": 752,
+      "y": -560,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door4DA6",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 50,
+      "door_label": "door4D63"
+    },
+    "player_position": {
+      "x": 464,
+      "y": 128,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door4D6E",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 49,
+      "door_label": "door4E00"
+    },
+    "player_position": {
+      "x": 512,
+      "y": 336,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door4E00",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 52,
+      "door_label": "door4D6E"
+    },
+    "player_position": {
+      "x": -48,
+      "y": 272,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door4E70",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 54,
+      "door_label": "door4F00"
+    },
+    "player_position": {
+      "x": 424,
+      "y": -1104,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door4F00",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 55,
+      "door_label": "door4E70"
+    },
+    "player_position": {
+      "x": 936,
+      "y": 976,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door4E86",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 54,
+      "door_label": "door4F22"
+    },
+    "player_position": {
+      "x": -976,
+      "y": 496,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door4F22",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 56,
+      "door_label": "door4E86"
+    },
+    "player_position": {
+      "x": 328,
+      "y": 624,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door4EF5",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 55,
+      "door_label": "door4F2D"
+    },
+    "player_position": {
+      "x": -672,
+      "y": 136,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door4F2D",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 56,
+      "door_label": "door4EF5"
+    },
+    "player_position": {
+      "x": 600,
+      "y": -720,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door4F38",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 56,
+      "door_label": "door4F7C"
+    },
+    "player_position": {
+      "x": -720,
+      "y": -448,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door4F7C",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 58,
+      "door_label": "door4F38"
+    },
+    "player_position": {
+      "x": 1024,
+      "y": 1088,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door4F43",
+    "type": "tilemap_door",
+    "type_id": 7,
+    "target": {
+      "room_id": 56,
+      "door_label": "door5073"
+    },
+    "player_position": {
+      "x": 0,
+      "y": -720,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door5073",
+    "type": "tilemap_door",
+    "type_id": 6,
+    "target": {
+      "room_id": 63,
+      "door_label": "door4F43"
+    },
+    "player_position": {
+      "x": 312,
+      "y": 848,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door560D",
+    "type": "tilemap_door",
+    "type_id": 16,
+    "target": {
+      "room_id": 89,
+      "door_label": "door4F65"
+    },
+    "player_position": {
+      "x": -976,
+      "y": -848,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door4F87",
+    "type": "sprite_door",
+    "type_id": 8,
+    "palette_id": 0,
+    "target": {
+      "room_id": 58,
+      "door_label": "door51FC"
+    },
+    "player_position": {
+      "x": -800,
+      "y": -976,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door51FC",
+    "type": "sprite_door",
+    "type_id": 8,
+    "palette_id": 0,
+    "target": {
+      "room_id": 71,
+      "door_label": "door4F87"
+    },
+    "player_position": {
+      "x": -880,
+      "y": -376,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door4FBF",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 59,
+      "door_label": "door5046"
+    },
+    "player_position": {
+      "x": 16,
+      "y": -208,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door5046",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 62,
+      "door_label": "door4FBF"
+    },
+    "player_position": {
+      "x": -200,
+      "y": -24,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door4FEC",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 60,
+      "door_label": "door5175"
+    },
+    "player_position": {
+      "x": -336,
+      "y": -720,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door5175",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 68,
+      "door_label": "door4FEC"
+    },
+    "player_position": {
+      "x": 72,
+      "y": 656,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door500E",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 61,
+      "door_label": "door5089"
+    },
+    "player_position": {
+      "x": 248,
+      "y": -464,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door5089",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 63,
+      "door_label": "door500E"
+    },
+    "player_position": {
+      "x": -432,
+      "y": 848,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door5019",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 61,
+      "door_label": "door51A2"
+    },
+    "player_position": {
+      "x": 592,
+      "y": 464,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door51A2",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 69,
+      "door_label": "door5019"
+    },
+    "player_position": {
+      "x": -336,
+      "y": 32,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door5051",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 62,
+      "door_label": "door51DA"
+    },
+    "player_position": {
+      "x": 808,
+      "y": 104,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door51DA",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 70,
+      "door_label": "door5051"
+    },
+    "player_position": {
+      "x": 976,
+      "y": 0,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door503B",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 62,
+      "door_label": "door50EE"
+    },
+    "player_position": {
+      "x": 520,
+      "y": 976,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door50EE",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 65,
+      "door_label": "door503B"
+    },
+    "player_position": {
+      "x": -464,
+      "y": -248,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door507E",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 63,
+      "door_label": "door513D"
+    },
+    "player_position": {
+      "x": 528,
+      "y": 688,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door513D",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 67,
+      "door_label": "door507E"
+    },
+    "player_position": {
+      "x": -272,
+      "y": 24,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door50A0",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 64,
+      "door_label": "door51C4"
+    },
+    "player_position": {
+      "x": -64,
+      "y": 208,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door51C4",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 70,
+      "door_label": "door50A0"
+    },
+    "player_position": {
+      "x": -928,
+      "y": 112,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door50E3",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 65,
+      "door_label": "door5645"
+    },
+    "player_position": {
+      "x": 496,
+      "y": 760,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door5645",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 90,
+      "door_label": "door50E3"
+    },
+    "player_position": {
+      "x": 248,
+      "y": 592,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door5148",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 67,
+      "door_label": "door5180"
+    },
+    "player_position": {
+      "x": 264,
+      "y": 896,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door5180",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 68,
+      "door_label": "door5148"
+    },
+    "player_position": {
+      "x": -912,
+      "y": 512,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door5153",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 67,
+      "door_label": "door516A"
+    },
+    "player_position": {
+      "x": 336,
+      "y": -880,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door516A",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 68,
+      "door_label": "door5153"
+    },
+    "player_position": {
+      "x": -712,
+      "y": -856,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door51AD",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 69,
+      "door_label": "door51CF"
+    },
+    "player_position": {
+      "x": 336,
+      "y": 0,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door51CF",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 70,
+      "door_label": "door51AD"
+    },
+    "player_position": {
+      "x": 0,
+      "y": 112,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door51E6",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 71,
+      "door_label": "door53A6"
+    },
+    "player_position": {
+      "x": 104,
+      "y": 144,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door53A6",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 79,
+      "door_label": "door51E6"
+    },
+    "player_position": {
+      "x": -624,
+      "y": 808,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door51F1",
+    "type": "sprite_door",
+    "type_id": 8,
+    "palette_id": 0,
+    "target": {
+      "room_id": 71,
+      "door_label": "door5384"
+    },
+    "player_position": {
+      "x": 592,
+      "y": -568,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door5384",
+    "type": "sprite_door",
+    "type_id": 8,
+    "palette_id": 0,
+    "target": {
+      "room_id": 78,
+      "door_label": "door51F1"
+    },
+    "player_position": {
+      "x": -392,
+      "y": 232,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door5207",
+    "type": "sprite_door",
+    "type_id": 8,
+    "palette_id": 0,
+    "target": {
+      "room_id": 71,
+      "door_label": "door524A"
+    },
+    "player_position": {
+      "x": -120,
+      "y": -648,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door524A",
+    "type": "sprite_door",
+    "type_id": 8,
+    "palette_id": 0,
+    "target": {
+      "room_id": 72,
+      "door_label": "door5207"
+    },
+    "player_position": {
+      "x": 384,
+      "y": 592,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door5212",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 71,
+      "door_label": "door52BA"
+    },
+    "player_position": {
+      "x": -232,
+      "y": -504,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door52BA",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 74,
+      "door_label": "door5212"
+    },
+    "player_position": {
+      "x": -336,
+      "y": -296,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door5255",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 72,
+      "door_label": "door5298"
+    },
+    "player_position": {
+      "x": 312,
+      "y": 560,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door5298",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 73,
+      "door_label": "door5255"
+    },
+    "player_position": {
+      "x": -176,
+      "y": 208,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door52F2",
+    "type": "sprite_door",
+    "type_id": 8,
+    "palette_id": 0,
+    "target": {
+      "room_id": 75,
+      "door_label": "door532A"
+    },
+    "player_position": {
+      "x": 976,
+      "y": 64,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door532A",
+    "type": "sprite_door",
+    "type_id": 8,
+    "palette_id": 0,
+    "target": {
+      "room_id": 76,
+      "door_label": "door52F2"
+    },
+    "player_position": {
+      "x": 72,
+      "y": 1136,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door52FD",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 75,
+      "door_label": "door55EB"
+    },
+    "player_position": {
+      "x": 976,
+      "y": -928,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door55EB",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 88,
+      "door_label": "door52FD"
+    },
+    "player_position": {
+      "x": -392,
+      "y": 272,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door5308",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 75,
+      "door_label": "door5592"
+    },
+    "player_position": {
+      "x": -976,
+      "y": -720,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door5592",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 87,
+      "door_label": "door5308"
+    },
+    "player_position": {
+      "x": 272,
+      "y": 96,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door5313",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 75,
+      "door_label": "door5357"
+    },
+    "player_position": {
+      "x": -976,
+      "y": -464,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door5357",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 77,
+      "door_label": "door5313"
+    },
+    "player_position": {
+      "x": -208,
+      "y": 288,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door531F",
+    "type": "tilemap_door",
+    "type_id": 6,
+    "target": {
+      "room_id": 76,
+      "door_label": "door53F4"
+    },
+    "player_position": {
+      "x": -880,
+      "y": -1040,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door53F4",
+    "type": "tilemap_door",
+    "type_id": 7,
+    "target": {
+      "room_id": 80,
+      "door_label": "door531F"
+    },
+    "player_position": {
+      "x": -152,
+      "y": -200,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door53B1",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 79,
+      "door_label": "door5490"
+    },
+    "player_position": {
+      "x": 712,
+      "y": 480,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door5490",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 82,
+      "door_label": "door53B1"
+    },
+    "player_position": {
+      "x": -976,
+      "y": 928,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door53BC",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 79,
+      "door_label": "door53DE"
+    },
+    "player_position": {
+      "x": 880,
+      "y": -616,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door53DE",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 80,
+      "door_label": "door53BC"
+    },
+    "player_position": {
+      "x": 368,
+      "y": 592,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door53E9",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 80,
+      "door_label": "door5437"
+    },
+    "player_position": {
+      "x": 312,
+      "y": 448,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door5437",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 81,
+      "door_label": "door53E9"
+    },
+    "player_position": {
+      "x": -168,
+      "y": 208,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door546F",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 82,
+      "door_label": "door550B"
+    },
+    "player_position": {
+      "x": 136,
+      "y": 656,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door550B",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 84,
+      "door_label": "door546F"
+    },
+    "player_position": {
+      "x": 376,
+      "y": 592,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door547A",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 82,
+      "door_label": "door557B"
+    },
+    "player_position": {
+      "x": 928,
+      "y": 864,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door557B",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 86,
+      "door_label": "door547A"
+    },
+    "player_position": {
+      "x": 720,
+      "y": 0,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door5485",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 82,
+      "door_label": "door54A7"
+    },
+    "player_position": {
+      "x": -584,
+      "y": 496,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door54A7",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 83,
+      "door_label": "door5485"
+    },
+    "player_position": {
+      "x": -272,
+      "y": -96,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door5516",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 84,
+      "door_label": "door5559"
+    },
+    "player_position": {
+      "x": 312,
+      "y": 512,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door5559",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 85,
+      "door_label": "door5516"
+    },
+    "player_position": {
+      "x": -160,
+      "y": 208,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door5521",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 84,
+      "door_label": "door5570"
+    },
+    "player_position": {
+      "x": 168,
+      "y": -400,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door5570",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 86,
+      "door_label": "door5521"
+    },
+    "player_position": {
+      "x": 720,
+      "y": 304,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door5602",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 89,
+      "door_label": "door562F"
+    },
+    "player_position": {
+      "x": 976,
+      "y": 880,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door562F",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 90,
+      "door_label": "door5602"
+    },
+    "player_position": {
+      "x": -464,
+      "y": 32,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door563A",
+    "type": "tilemap_door",
+    "type_id": 7,
+    "target": {
+      "room_id": 90,
+      "door_label": "door565C"
+    },
+    "player_position": {
+      "x": -336,
+      "y": 264,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door565C",
+    "type": "tilemap_door",
+    "type_id": 6,
+    "target": {
+      "room_id": 91,
+      "door_label": "door563A"
+    },
+    "player_position": {
+      "x": 0,
+      "y": 336,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door5651",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 91,
+      "door_label": "door5673"
+    },
+    "player_position": {
+      "x": 0,
+      "y": -336,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door5673",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 92,
+      "door_label": "door5651"
+    },
+    "player_position": {
+      "x": 672,
+      "y": 200,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door567E",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 92,
+      "door_label": "door570F"
+    },
+    "player_position": {
+      "x": 120,
+      "y": -408,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door570F",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 94,
+      "door_label": "door567E"
+    },
+    "player_position": {
+      "x": -808,
+      "y": -976,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door5689",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 92,
+      "door_label": "door56CC"
+    },
+    "player_position": {
+      "x": -640,
+      "y": -440,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door56CC",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 93,
+      "door_label": "door5689"
+    },
+    "player_position": {
+      "x": -8,
+      "y": 464,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door5704",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 94,
+      "door_label": "door5768"
+    },
+    "player_position": {
+      "x": 872,
+      "y": -976,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door5768",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 95,
+      "door_label": "door5704"
+    },
+    "player_position": {
+      "x": 464,
+      "y": 208,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door571A",
+    "type": "sprite_door",
+    "type_id": 8,
+    "palette_id": 0,
+    "target": {
+      "room_id": 94,
+      "door_label": "door57E3"
+    },
+    "player_position": {
+      "x": -976,
+      "y": -656,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door57E3",
+    "type": "sprite_door",
+    "type_id": 8,
+    "palette_id": 0,
+    "target": {
+      "room_id": 97,
+      "door_label": "door571A"
+    },
+    "player_position": {
+      "x": -720,
+      "y": -16,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door5725",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 94,
+      "door_label": "door57A0"
+    },
+    "player_position": {
+      "x": 288,
+      "y": 760,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door57A0",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 96,
+      "door_label": "door5725"
+    },
+    "player_position": {
+      "x": -200,
+      "y": 208,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door5730",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 94,
+      "door_label": "door58D9"
+    },
+    "player_position": {
+      "x": 976,
+      "y": 824,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door58D9",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 101,
+      "door_label": "door5730"
+    },
+    "player_position": {
+      "x": 0,
+      "y": -976,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door578A",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 96,
+      "door_label": "door58EF"
+    },
+    "player_position": {
+      "x": 384,
+      "y": 208,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door58EF",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 101,
+      "door_label": "door578A"
+    },
+    "player_position": {
+      "x": 72,
+      "y": -656,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door5795",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 96,
+      "door_label": "door57AB"
+    },
+    "player_position": {
+      "x": 120,
+      "y": -224,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door57AB",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 96,
+      "door_label": "door5795"
+    },
+    "player_position": {
+      "x": -56,
+      "y": -96,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door57EE",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 97,
+      "door_label": "door5853"
+    },
+    "player_position": {
+      "x": -576,
+      "y": -96,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door5853",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 99,
+      "door_label": "door57EE"
+    },
+    "player_position": {
+      "x": 304,
+      "y": 288,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door57F9",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 97,
+      "door_label": "door581B"
+    },
+    "player_position": {
+      "x": 128,
+      "y": 96,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door581B",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 98,
+      "door_label": "door57F9"
+    },
+    "player_position": {
+      "x": -288,
+      "y": 208,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door5804",
+    "type": "sprite_door",
+    "type_id": 8,
+    "palette_id": 0,
+    "target": {
+      "room_id": 97,
+      "door_label": "door58B7"
+    },
+    "player_position": {
+      "x": 720,
+      "y": 0,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door58B7",
+    "type": "sprite_door",
+    "type_id": 8,
+    "palette_id": 0,
+    "target": {
+      "room_id": 100,
+      "door_label": "door5804"
+    },
+    "player_position": {
+      "x": -248,
+      "y": 816,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door58AC",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 100,
+      "door_label": "door59DE"
+    },
+    "player_position": {
+      "x": 144,
+      "y": -248,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door59DE",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 109,
+      "door_label": "door58AC"
+    },
+    "player_position": {
+      "x": -40,
+      "y": 256,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door58C3",
+    "type": "tilemap_door",
+    "type_id": 12,
+    "target": {
+      "room_id": 101,
+      "door_label": "door59C7"
+    },
+    "player_position": {
+      "x": 888,
+      "y": 208,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door59C7",
+    "type": "tilemap_door",
+    "type_id": 13,
+    "target": {
+      "room_id": 108,
+      "door_label": "door58C3"
+    },
+    "player_position": {
+      "x": 720,
+      "y": -256,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door58CE",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 101,
+      "door_label": "door596B"
+    },
+    "player_position": {
+      "x": -1232,
+      "y": -96,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door596B",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 104,
+      "door_label": "door58CE"
+    },
+    "player_position": {
+      "x": 56,
+      "y": -720,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door58E4",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 101,
+      "door_label": "door591D"
+    },
+    "player_position": {
+      "x": 0,
+      "y": 8,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door591D",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 103,
+      "door_label": "door58E4"
+    },
+    "player_position": {
+      "x": 256,
+      "y": -208,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door5976",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 104,
+      "door_label": "door598D"
+    },
+    "player_position": {
+      "x": 792,
+      "y": 488,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door598D",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 105,
+      "door_label": "door5976"
+    },
+    "player_position": {
+      "x": 880,
+      "y": -592,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door5998",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 105,
+      "door_label": "door59A4"
+    },
+    "player_position": {
+      "x": 200,
+      "y": 584,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door59A4",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 106,
+      "door_label": "door5998"
+    },
+    "player_position": {
+      "x": 48,
+      "y": -464,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door59D2",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 108,
+      "door_label": "door59EA"
+    },
+    "player_position": {
+      "x": -608,
+      "y": 464,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door4E7B",
+    "type": "sprite_door",
+    "type_id": 8,
+    "palette_id": 0,
+    "target": {
+      "room_id": 54,
+      "door_label": "door46F7"
+    },
+    "player_position": {
+      "x": 696,
+      "y": 1152,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door46F7",
+    "type": "sprite_door",
+    "type_id": 8,
+    "palette_id": 0,
+    "target": {
+      "room_id": 22,
+      "door_label": "door4E7B"
+    },
+    "player_position": {
+      "x": 0,
+      "y": -208,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door4B75",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 39,
+      "door_label": "door48A1"
+    },
+    "player_position": {
+      "x": 200,
+      "y": 720,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door4BAD",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 40,
+      "door_label": "door4AA1"
+    },
+    "player_position": {
+      "x": 400,
+      "y": -376,
+      "facing_id": 24
+    }
+  },
+  {
+    "label": "door4CA4",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 45,
+      "door_label": "door48AC"
+    },
+    "player_position": {
+      "x": 88,
+      "y": 336,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door42F2",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 5,
+      "door_label": "door41FE"
+    },
+    "player_position": {
+      "x": 32,
+      "y": 56,
+      "facing_id": 16
+    }
+  },
+  {
+    "label": "door4B5F",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 39,
+      "door_label": "door4A80"
+    },
+    "player_position": {
+      "x": 112,
+      "y": -720,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door59EA",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 0,
+    "target": {
+      "room_id": 110,
+      "door_label": "door59D2"
+    },
+    "player_position": {
+      "x": -624,
+      "y": -712,
+      "facing_id": 0
+    }
+  },
+  {
+    "label": "door4F65",
+    "type": "tilemap_door",
+    "type_id": 17,
+    "target": {
+      "room_id": 57,
+      "door_label": "door560D"
+    },
+    "player_position": {
+      "x": -568,
+      "y": 768,
+      "facing_id": 8
+    }
+  },
+  {
+    "label": "door5B17",
+    "type": "sprite_door",
+    "type_id": 0,
+    "palette_id": 1,
+    "target": {
+      "room_id": 0,
+      "door_label": 0
+    },
+    "player_position": {
+      "x": 0,
+      "y": 0,
+      "facing_id": 0
+    }
+  }
+]

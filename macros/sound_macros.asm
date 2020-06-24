@@ -1,5 +1,19 @@
 
-;similar to chain wait, but this extends the last played note length
+
+; sound channels
+SOUND_CHANNEL_1		EQU $00 ; tone & sweep
+SOUND_CHANNEL_2		EQU $01 ; tone
+SOUND_CHANNEL_3		EQU $02 ; wave
+SOUND_CHANNEL_4		EQU $03 ; noise
+
+; channel states
+CHANNEL_ACTIVE		EQU %00000001
+CHANNEL_PLAYING		EQU %00000010
+
+; ----------------------
+; music branch constants
+
+; similar to chain wait, but this extends the last played note length
 lastNoteWait: MACRO
 	db $60, \1
 	ENDM
@@ -13,10 +27,22 @@ channelLoop: MACRO
 	dw \1
 	ENDM
 
-branchId: macro
-	db $64
-	db \1 ; volume
-	endm
+; branch play data macro
+;
+; raw data struct:
+; 	byte1 ($64): play branch header
+; 	byte2: branch id (relative from the start of all music branches)
+; 	byte3: branch seminotes transpose value
+;   byte4: branch play counter, must be at least 1
+;
+; macro params:
+; 	1: music branch pointer
+; 	2: branch id relative to the music branch pointer
+; 	3: branch seminote transposition
+; 	4: branch play counter
+playBranch: MACRO
+	db $64, (\1 - music_branches_table) / 2 + \2, \3, \4
+	ENDM
 
 branchEnd: MACRO
 	db $65
@@ -35,16 +61,16 @@ tempo: MACRO
 	db \1
 	ENDM
 
-;actually, the chain wait is the note "C#6" with silent instrument,
-;and its length is the wait length
+; actually, the chain wait is the note "C#6" with silent instrument,
+; and its length is the wait length
 chainWait: MACRO
 	db $24, \1
 	ENDM
 
-;notes line macro
-;1: instrument table id (bit 7) & note (bits 6-0)
-;2: instrument id
-;3: note length
+; notes line macro
+; 1: instrument table id (bit 7) & note (bits 6-0)
+; 2: instrument id
+; 3: note length
 typenote0: MACRO
 	db \1, (\2 << 4) | \3
 	ENDM
@@ -53,12 +79,7 @@ typenote1: MACRO
 	db $80 | (\1), (\2 << 4) | \3
 	ENDM
 
-;branch semitones transposition
-semitone_tsp: MACRO
-	db \1, \2
-	ENDM
-
-;instruments effects table macros
+; instruments effects table macros
 envelopeTableEnd: MACRO
 	db $FF
 	ENDM
@@ -77,7 +98,7 @@ vibratoTableLoop: MACRO
 	dw \1
 	ENDM
 
-;sfx macros
+; sfx macros
 sfxChannel: MACRO
 	db \1
 	ENDM
@@ -92,7 +113,7 @@ soundEffectBranch: MACRO
 	ENDM
 
 
-;notes
+; notes
 C#3		EQU $00
 D_3		EQU $01
 D#3		EQU $02

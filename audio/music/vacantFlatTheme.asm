@@ -1,68 +1,45 @@
 vacant_flat_theme_ch1: ;684E
-	db $67, $FF
-	db $69, $A5
-	branchId $72
-	db $E2, $02
-	branchId $76
-	db $E2, $01
-	branchId $79
-	db $E2, $01
-	db $24, $0C
-	branchId $7E
-	db $D6, $01
-	db $24, $06
-	branchId $7F
-	db $E2, $01
-	branchId $82
-	db $E2, $01
-	branchId $85
-	db $E2, $02
-	db $66, $01
+	enableSound $FF
+	tempo 165
+	playBranch vacantFlatThemeBranches, 0, -30, 2
+	playBranch vacantFlatThemeBranches, 4, -30, 1
+	playBranch vacantFlatThemeBranches, 7, -30, 1
+	chainWait 12
+	playBranch vacantFlatThemeBranches, 12, -42, 1
+	chainWait 6
+	playBranch vacantFlatThemeBranches, 13, -30, 1
+	playBranch vacantFlatThemeBranches, 16, -30, 1
+	playBranch vacantFlatThemeBranches, 19, -30, 2
+	chlAction0x66 1
 	channelLoop vacant_flat_theme_ch1
 
 vacant_flat_theme_ch2: ;6877
-	branchId $73
-	db $D6, $02
-	branchId $77
-	db $D6, $02
-	branchId $7B
-	db $E2, $04
-	branchId $7C
-	db $E2, $04
-	branchId $7D
-	db $E2, $01
-	db $24, $0C
-	db $24, $04
-	branchId $7E
-	db $D6, $01
-	db $24, $04
-	db $24, $0A
-	branchId $80
-	db $EE, $03
-	branchId $83
-	db $E2, $01
-	branchId $86
-	db $E2, $02
+	playBranch vacantFlatThemeBranches, 1, -42, 2
+	playBranch vacantFlatThemeBranches, 5, -42, 2
+	playBranch vacantFlatThemeBranches, 9, -30, 4
+	playBranch vacantFlatThemeBranches, 10, -30, 4
+	playBranch vacantFlatThemeBranches, 11, -30, 1
+	chainWait 12
+	chainWait 4
+	playBranch vacantFlatThemeBranches, 12, -42, 1
+	chainWait 4
+	chainWait 10
+	playBranch vacantFlatThemeBranches, 14, -18, 3
+	playBranch vacantFlatThemeBranches, 17, -30, 1
+	playBranch vacantFlatThemeBranches, 20, -30, 2
 	channelLoop vacant_flat_theme_ch2
 
 vacant_flat_theme_ch3: ;68A6
-	branchId $74
-	db $E2, $01
-	branchId $78
-	db $EE, $01
-	branchId $7A
-	db $EE, $01
-	branchId $81
-	db $EE, $08
-	branchId $84
-	db $EE, $01
-	branchId $87
-	db $EE, $02
+	playBranch vacantFlatThemeBranches, 2, -30, 1
+	playBranch vacantFlatThemeBranches, 6, -18, 1
+	playBranch vacantFlatThemeBranches, 8, -18, 1
+	playBranch vacantFlatThemeBranches, 15, -18, 8
+	playBranch vacantFlatThemeBranches, 18, -18, 1
+	playBranch vacantFlatThemeBranches, 21, -18, 2
 	channelLoop vacant_flat_theme_ch3
 
 vacant_flat_theme_ch4: ;68C1
-	branchId $75
-	db $00, $08
+	playBranch vacantFlatThemeBranches, 3, 0, 8
 	channelLoop vacant_flat_theme_ch4
 
 

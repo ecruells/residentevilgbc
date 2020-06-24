@@ -1,68 +1,76 @@
 
-Vblank:: ;00:030E
+vblank:: ;00:030E
     di
     push af
     push bc
     push de
     push hl
+; enable sprite display
     ld a, [rLCDC]  ;lcd control
-    or a, $02
-    ld [rLCDC], a ;lcd control
-    ld a, [wOAMDMAretOpcode]
-    add a, $C9
-    ld [$FF81], a
-    call OAMDMATransfer ;Warning - RAM-only procedure
-    ld a, [vramBank]  ;vram bank select
+    or a, LCDCF_OBJON
+    ld [rLCDC], a ; lcd control
+; call DMA
+    ld a, [wCurrentOAMBufferFlag]
+    add a, HIGH(wOAMBufferC9)
+    ld [OAMDMATransfer+1], a ; set OAM source
+    call OAMDMATransfer ; hiRam routine
+    ld a, [rVBK]  ;vram bank select
     push af
     xor a
-    ld [vramBank], a ;vram bank select
-    ld a, [wHDMAtrigger]
+    ld [rVBK], a ;vram bank select
+    ld a, [wHDMAFlag]
     or a
-    jr z, .skipHDMA
+    jr z, .hdmaFinished
 
-;set HMDA souce, dest and count
-    ld hl, wSpriteTilesBuffer ;$CB00
+; set HMDA values to transfer sprite tiles data from tiles buffer to vram tiles data
+    ld hl, wSpriteTilesBuffer
     ld a, h
-    ld [$FF51], a ;hdma source high
+    ld [rHDMA1], a ;hdma source high
     ld a, l
-    and a, $F8
-    ld [$FF52], a ;hdma source low
+    and a, %11111000
+    ld [rHDMA2], a ;hdma source low
+    xor a ; set dest at the start of hdma dest address ($0 == $8000)
+    ld [rHDMA3], a ;hdma dest high
+    ld [rHDMA4], a ;hdma dest low
+; start hdma
+; set general purpose mode
+; set a transfer length of $640 bytes ($640 / $10 - 1 = $63)
+    ld a, HDMA_GP_MODE | $63
+    ld [rHDMA5], a ; hdma length-mode-start
     xor a
-    ld [$FF53], a ;hdma dest high
-    ld [$FF54], a ;hdma dest low
-    ld a, $63
-    ld [$FF55], a ;hdma count
-    xor a
-    ld [wHDMAtrigger], a ;disable HMDA
+    ld [wHDMAFlag], a ; disable HMDA
 
-.skipHDMA
+.hdmaFinished
+; continue vblank
     pop af
-    and a, $01
-    ld [vramBank], a ;vram bank select
+    and a, 1
+    ld [rVBK], a ;vram bank select
     ld a, [wScreenYPos]
-    ld [rSCY], a ;scroll screen Y
+    ld [rSCY], a ; scroll screen Y
     ld a, [wCurrentRomBank]
     push af
     ld a, $01
     call bankSwitch
     call ReadJoypad
     xor a
-    ld [wHaltCpuTrigger], a ;disable halt CPU mode
-    ld a, BANK(updateMusic) ;$06
+    ld [wHaltCPUFlag], a ; disable halt CPU flag
+    ld a, BANK(updateMusicAndSfxCaller)
     call bankSwitch
-    call updateMusic
+    call updateMusicAndSfxCaller
     pop af
     call bankSwitch
-    ;increase game framerate
-    ld hl, wFrameRate
+; increase game framerate counter
+    ld hl, wFrameRateCounter
     inc [hl]
-    ;increse sprites anim framerate
-    ld hl, wAnimatedRoomSpritesFrameRate ;c1b0
+; increse sprites animation frame counter
+    ld hl, wAnimatedRoomSpritesFrameCounter
     inc [hl]
     ld a, [wButtonPressId]
-    and a, AB_INPUT | START_SEL_INPUT ;$0F
-    cp a, AB_INPUT | START_SEL_INPUT ;$0F
-    jp z, SoftReset ;391
+; check soft reset
+    and a, AB_INPUT | START_SEL_INPUT
+    cp a, AB_INPUT | START_SEL_INPUT
+    jp z, softReset
+; update LYC
     ld a, [wScreenYPos]
     ld c, a
     ld a, %01111111

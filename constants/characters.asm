@@ -1,38 +1,52 @@
 
-;characters
-CHRIS				EQU $92
-JILL				EQU $93
-WESKER				EQU $94
-REBECCA				EQU $95
-BARRY				EQU $96
+; characters
+CHRIS				        EQU $92
+JILL				        EQU $93
+WESKER				        EQU $94
+REBECCA				        EQU $95
+BARRY				        EQU $96
 
-;enemies
-ZOMBIE				EQU $98
-YAWN				EQU $A0
 
-;objects
+; enemies ($98-$A8)
+
+ZOMBIE				        EQU $98
+
+; unknown enemy id. It could tyrant, because this id is used to 
+; load an entity data in the chris's heliport event scene
+ENEMY_9E                    EQU $9E
+
+YAWN				        EQU $A0
+
+
+NON_ENEMIES_CHARS           EQU $A8
+
+; objects
 OBJECTS						EQU $E0
 
-MAP_STEP_LADDER				EQU $E0 ;screen 02
+MAP_STEP_LADDER				EQU $E0 ; screen 02
 JEWEL_STATUE				EQU $E1
 DINNING_ROOM_CLOCK			EQU $E2
+DINNING_ROOM_CLOCK_F2       EQU $E3 ; clock sprite frame when is moving
 GUARDHOUSE_STATUE			EQU $E4
+MAP_STEP_LADDER2            EQU $E5 ; same as $E0
 RESEARCHER_ROOM_SHELF		EQU $E6
 ARMORS_ROOM_STATUE_1		EQU $E7
 ARMORS_ROOM_STATUE_2		EQU $E8
 SHED_STEP_LADDER			EQU $E9
 DORM_003_CLOSET_F1			EQU $EA
 DORM_003_CLOSET_F2			EQU $EB
-WOODEN_RACK					EQU $EC ;screen 02
+WOODEN_RACK					EQU $EC ; screen 02
 UNDERGROUND_STATUE			EQU $ED
-DORM_002_CLOSET				EQU $EE ;screen 03
+DORM_002_CLOSET				EQU $EE ; screen 03
 XRAY_ROOM_SHELF				EQU $EF
-HIDDEN_LIBRARY_STATUE		EQU $F0 ;screen 02, 04, 06, 07
+HIDDEN_LIBRARY_STATUE		EQU $F0 ; screen 02, 04, 06, 07
 WOODEN_BOX					EQU $F1
 OPERATING_ROOM_LADDER		EQU $F2
 OPERATING_ROOM_BOX			EQU $F3
 
-;objects vars ids
+;
+; objects vars ids
+;
 
 MAP_STEP_LADDER_VARID				EQU $F0
 JEWEL_STATUE_VARID					EQU $F1

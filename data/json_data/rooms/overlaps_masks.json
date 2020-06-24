@@ -1,0 +1,2099 @@
+[
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [
+      {
+        "room_id": 1,
+        "bg_id": 0,
+        "y_sort": 52,
+        "unused1": 48,
+        "unused2": 16,
+        "y": 56,
+        "height": 40,
+        "masks": [
+          {
+            "filename": "room01_00_olmask_A1",
+            "x": 48
+          },
+          {
+            "filename": "room01_00_olmask_A2",
+            "x": 56
+          }
+        ]
+      },
+      {
+        "room_id": 1,
+        "bg_id": 0,
+        "y_sort": 50,
+        "unused1": 112,
+        "unused2": 24,
+        "y": 56,
+        "height": 48,
+        "masks": [
+          {
+            "filename": "room01_00_olmask_B1",
+            "x": 112
+          },
+          {
+            "filename": "room01_00_olmask_B2",
+            "x": 120
+          },
+          {
+            "filename": "room01_00_olmask_B3",
+            "x": 128
+          }
+        ]
+      }
+    ],
+    [],
+    [
+      {
+        "room_id": 1,
+        "bg_id": 2,
+        "y_sort": 61,
+        "unused1": 48,
+        "unused2": 16,
+        "y": 72,
+        "height": 40,
+        "masks": [
+          {
+            "filename": "room01_02_olmask_A1",
+            "x": 48
+          },
+          {
+            "filename": "room01_02_olmask_A2",
+            "x": 56
+          }
+        ]
+      },
+      {
+        "room_id": 1,
+        "bg_id": 2,
+        "y_sort": 66,
+        "unused1": 96,
+        "unused2": 16,
+        "y": 72,
+        "height": 40,
+        "masks": [
+          {
+            "filename": "room01_02_olmask_B1",
+            "x": 96
+          },
+          {
+            "filename": "room01_02_olmask_B2",
+            "x": 104
+          }
+        ]
+      }
+    ],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [
+      {
+        "room_id": 4,
+        "bg_id": 0,
+        "y_sort": 1,
+        "unused1": 40,
+        "unused2": 40,
+        "y": 32,
+        "height": 112,
+        "masks": [
+          {
+            "filename": "room04_00_olmask_A1",
+            "x": 40
+          },
+          {
+            "filename": "room04_00_olmask_A2",
+            "x": 48
+          },
+          {
+            "filename": "room04_00_olmask_A3",
+            "x": 56
+          },
+          {
+            "filename": "room04_00_olmask_A4",
+            "x": 64
+          },
+          {
+            "filename": "room04_00_olmask_A5",
+            "x": 72
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "room_id": 4,
+        "bg_id": 1,
+        "y_sort": 31,
+        "unused1": 64,
+        "unused2": 40,
+        "y": 32,
+        "height": 96,
+        "masks": [
+          {
+            "filename": "room04_01_olmask_A1",
+            "x": 64
+          },
+          {
+            "filename": "room04_01_olmask_A2",
+            "x": 72
+          },
+          {
+            "filename": "room04_01_olmask_A3",
+            "x": 80
+          },
+          {
+            "filename": "room04_01_olmask_A4",
+            "x": 88
+          },
+          {
+            "filename": "room04_01_olmask_A5",
+            "x": 96
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "room_id": 4,
+        "bg_id": 2,
+        "y_sort": 1,
+        "unused1": 88,
+        "unused2": 80,
+        "y": 88,
+        "height": 56,
+        "masks": [
+          {
+            "filename": "room04_02_olmask_A1",
+            "x": 88
+          },
+          {
+            "filename": "room04_02_olmask_A2",
+            "x": 96
+          },
+          {
+            "filename": "room04_02_olmask_A3",
+            "x": 104
+          },
+          {
+            "filename": "room04_02_olmask_A4",
+            "x": 112
+          },
+          {
+            "filename": "room04_02_olmask_A5",
+            "x": 120
+          },
+          {
+            "filename": "room04_02_olmask_A6",
+            "x": 128
+          },
+          {
+            "filename": "room04_02_olmask_A7",
+            "x": 136
+          },
+          {
+            "filename": "room04_02_olmask_A8",
+            "x": 144
+          },
+          {
+            "filename": "room04_02_olmask_A9",
+            "x": 152
+          },
+          {
+            "filename": "room04_02_olmask_A10",
+            "x": 160
+          }
+        ]
+      }
+    ],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [
+      {
+        "room_id": 5,
+        "bg_id": 1,
+        "y_sort": 34,
+        "unused1": 112,
+        "unused2": 56,
+        "y": 48,
+        "height": 64,
+        "masks": [
+          {
+            "filename": "room05_01_olmask_A1",
+            "x": 112
+          },
+          {
+            "filename": "room05_01_olmask_A2",
+            "x": 120
+          },
+          {
+            "filename": "room05_01_olmask_A3",
+            "x": 128
+          },
+          {
+            "filename": "room05_01_olmask_A4",
+            "x": 136
+          },
+          {
+            "filename": "room05_01_olmask_A5",
+            "x": 144
+          },
+          {
+            "filename": "room05_01_olmask_A6",
+            "x": 152
+          },
+          {
+            "filename": "room05_01_olmask_A7",
+            "x": 160
+          }
+        ]
+      }
+    ],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [
+      {
+        "room_id": 8,
+        "bg_id": 2,
+        "y_sort": 47,
+        "unused1": 80,
+        "unused2": 16,
+        "y": 56,
+        "height": 56,
+        "masks": [
+          {
+            "filename": "room08_02_olmask_A1",
+            "x": 80
+          },
+          {
+            "filename": "room08_02_olmask_A2",
+            "x": 88
+          }
+        ]
+      }
+    ],
+    [],
+    [
+      {
+        "room_id": 8,
+        "bg_id": 4,
+        "y_sort": 1,
+        "unused1": 112,
+        "unused2": 40,
+        "y": 40,
+        "height": 40,
+        "masks": [
+          {
+            "filename": "room08_04_olmask_A1",
+            "x": 112
+          },
+          {
+            "filename": "room08_04_olmask_A2",
+            "x": 120
+          },
+          {
+            "filename": "room08_04_olmask_A3",
+            "x": 128
+          },
+          {
+            "filename": "room08_04_olmask_A4",
+            "x": 136
+          },
+          {
+            "filename": "room08_04_olmask_A5",
+            "x": 144
+          }
+        ]
+      }
+    ],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [
+      {
+        "room_id": 14,
+        "bg_id": 0,
+        "y_sort": 1,
+        "unused1": 8,
+        "unused2": 120,
+        "y": 112,
+        "height": 32,
+        "masks": [
+          {
+            "filename": "room0E_00_olmask_A1",
+            "x": 8
+          },
+          {
+            "filename": "room0E_00_olmask_A2",
+            "x": 16
+          },
+          {
+            "filename": "room0E_00_olmask_A3",
+            "x": 24
+          },
+          {
+            "filename": "room0E_00_olmask_A4",
+            "x": 32
+          },
+          {
+            "filename": "room0E_00_olmask_A5",
+            "x": 40
+          },
+          {
+            "filename": "room0E_00_olmask_A6",
+            "x": 48
+          },
+          {
+            "filename": "room0E_00_olmask_A7",
+            "x": 56
+          },
+          {
+            "filename": "room0E_00_olmask_A8",
+            "x": 64
+          },
+          {
+            "filename": "room0E_00_olmask_A9",
+            "x": 72
+          },
+          {
+            "filename": "room0E_00_olmask_A10",
+            "x": 80
+          },
+          {
+            "filename": "room0E_00_olmask_A11",
+            "x": 88
+          },
+          {
+            "filename": "room0E_00_olmask_A12",
+            "x": 96
+          },
+          {
+            "filename": "room0E_00_olmask_A13",
+            "x": 104
+          },
+          {
+            "filename": "room0E_00_olmask_A14",
+            "x": 112
+          },
+          {
+            "filename": "room0E_00_olmask_A15",
+            "x": 120
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "room_id": 14,
+        "bg_id": 1,
+        "y_sort": 1,
+        "unused1": 32,
+        "unused2": 120,
+        "y": 104,
+        "height": 40,
+        "masks": [
+          {
+            "filename": "room0E_01_olmask_A1",
+            "x": 64
+          },
+          {
+            "filename": "room0E_01_olmask_A2",
+            "x": 72
+          },
+          {
+            "filename": "room0E_01_olmask_A3",
+            "x": 80
+          },
+          {
+            "filename": "room0E_01_olmask_A4",
+            "x": 88
+          },
+          {
+            "filename": "room0E_01_olmask_A5",
+            "x": 96
+          },
+          {
+            "filename": "room0E_01_olmask_A6",
+            "x": 104
+          },
+          {
+            "filename": "room0E_01_olmask_A7",
+            "x": 112
+          },
+          {
+            "filename": "room0E_01_olmask_A8",
+            "x": 120
+          },
+          {
+            "filename": "room0E_01_olmask_A9",
+            "x": 128
+          },
+          {
+            "filename": "room0E_01_olmask_A10",
+            "x": 136
+          },
+          {
+            "filename": "room0E_01_olmask_A11",
+            "x": 144
+          },
+          {
+            "filename": "room0E_01_olmask_A12",
+            "x": 152
+          },
+          {
+            "filename": "room0E_01_olmask_A13",
+            "x": 160
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "room_id": 14,
+        "bg_id": 2,
+        "y_sort": 1,
+        "unused1": 32,
+        "unused2": 120,
+        "y": 88,
+        "height": 40,
+        "masks": [
+          {
+            "filename": "room0E_02_olmask_A1",
+            "x": 32
+          },
+          {
+            "filename": "room0E_02_olmask_A2",
+            "x": 40
+          },
+          {
+            "filename": "room0E_02_olmask_A3",
+            "x": 48
+          },
+          {
+            "filename": "room0E_02_olmask_A4",
+            "x": 56
+          }
+        ]
+      }
+    ],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [
+      {
+        "room_id": 16,
+        "bg_id": 0,
+        "y_sort": 1,
+        "unused1": 48,
+        "unused2": 40,
+        "y": 48,
+        "height": 88,
+        "masks": [
+          {
+            "filename": "room10_00_olmask_A1",
+            "x": 48
+          },
+          {
+            "filename": "room10_00_olmask_A2",
+            "x": 56
+          },
+          {
+            "filename": "room10_00_olmask_A3",
+            "x": 64
+          },
+          {
+            "filename": "room10_00_olmask_A4",
+            "x": 72
+          },
+          {
+            "filename": "room10_00_olmask_A5",
+            "x": 80
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "room_id": 16,
+        "bg_id": 1,
+        "y_sort": 1,
+        "unused1": 8,
+        "unused2": 24,
+        "y": 48,
+        "height": 64,
+        "masks": [
+          {
+            "filename": "room10_01_olmask_A1",
+            "x": 8
+          },
+          {
+            "filename": "room10_01_olmask_A2",
+            "x": 16
+          },
+          {
+            "filename": "room10_01_olmask_A3",
+            "x": 24
+          }
+        ]
+      },
+      {
+        "room_id": 16,
+        "bg_id": 1,
+        "y_sort": 1,
+        "unused1": 88,
+        "unused2": 32,
+        "y": 48,
+        "height": 80,
+        "masks": [
+          {
+            "filename": "room10_01_olmask_B1",
+            "x": 88
+          },
+          {
+            "filename": "room10_01_olmask_B2",
+            "x": 96
+          },
+          {
+            "filename": "room10_01_olmask_B3",
+            "x": 104
+          },
+          {
+            "filename": "room10_01_olmask_B4",
+            "x": 112
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "room_id": 16,
+        "bg_id": 2,
+        "y_sort": 1,
+        "unused1": 96,
+        "unused2": 40,
+        "y": 56,
+        "height": 64,
+        "masks": [
+          {
+            "filename": "room10_02_olmask_A1",
+            "x": 96
+          },
+          {
+            "filename": "room10_02_olmask_A2",
+            "x": 104
+          },
+          {
+            "filename": "room10_02_olmask_A3",
+            "x": 112
+          },
+          {
+            "filename": "room10_02_olmask_A4",
+            "x": 120
+          },
+          {
+            "filename": "room10_02_olmask_A5",
+            "x": 128
+          }
+        ]
+      }
+    ],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    []
+  ],
+  [
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    []
+  ],
+  [
+    [
+      {
+        "room_id": 34,
+        "bg_id": 0,
+        "y_sort": 1,
+        "unused1": 56,
+        "unused2": 56,
+        "y": 96,
+        "height": 40,
+        "masks": [
+          {
+            "filename": "room22_00_olmask_A1",
+            "x": 56
+          },
+          {
+            "filename": "room22_00_olmask_A2",
+            "x": 64
+          },
+          {
+            "filename": "room22_00_olmask_A3",
+            "x": 72
+          },
+          {
+            "filename": "room22_00_olmask_A4",
+            "x": 80
+          },
+          {
+            "filename": "room22_00_olmask_A5",
+            "x": 88
+          },
+          {
+            "filename": "room22_00_olmask_A6",
+            "x": 96
+          },
+          {
+            "filename": "room22_00_olmask_A7",
+            "x": 104
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "room_id": 34,
+        "bg_id": 1,
+        "y_sort": 1,
+        "unused1": 64,
+        "unused2": 56,
+        "y": 88,
+        "height": 40,
+        "masks": [
+          {
+            "filename": "room22_01_olmask_A1",
+            "x": 64
+          },
+          {
+            "filename": "room22_01_olmask_A2",
+            "x": 72
+          },
+          {
+            "filename": "room22_01_olmask_A3",
+            "x": 80
+          },
+          {
+            "filename": "room22_01_olmask_A4",
+            "x": 88
+          },
+          {
+            "filename": "room22_01_olmask_A5",
+            "x": 96
+          },
+          {
+            "filename": "room22_01_olmask_A6",
+            "x": 104
+          },
+          {
+            "filename": "room22_01_olmask_A7",
+            "x": 112
+          }
+        ]
+      }
+    ],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [
+      {
+        "room_id": 36,
+        "bg_id": 0,
+        "y_sort": 1,
+        "unused1": 72,
+        "unused2": 32,
+        "y": 64,
+        "height": 48,
+        "masks": [
+          {
+            "filename": "room24_00_olmask_A1",
+            "x": 72
+          },
+          {
+            "filename": "room24_00_olmask_A2",
+            "x": 80
+          },
+          {
+            "filename": "room24_00_olmask_A3",
+            "x": 88
+          },
+          {
+            "filename": "room24_00_olmask_A4",
+            "x": 96
+          }
+        ]
+      },
+      {
+        "room_id": 36,
+        "bg_id": 0,
+        "y_sort": 1,
+        "unused1": 104,
+        "unused2": 32,
+        "y": 32,
+        "height": 80,
+        "masks": [
+          {
+            "filename": "room24_00_olmask_B1",
+            "x": 104
+          },
+          {
+            "filename": "room24_00_olmask_B2",
+            "x": 112
+          },
+          {
+            "filename": "room24_00_olmask_B3",
+            "x": 120
+          },
+          {
+            "filename": "room24_00_olmask_B4",
+            "x": 128
+          }
+        ]
+      },
+      {
+        "room_id": 36,
+        "bg_id": 0,
+        "y_sort": 1,
+        "unused1": 136,
+        "unused2": 32,
+        "y": 16,
+        "height": 56,
+        "masks": [
+          {
+            "filename": "room24_00_olmask_C1",
+            "x": 136
+          },
+          {
+            "filename": "room24_00_olmask_C2",
+            "x": 144
+          },
+          {
+            "filename": "room24_00_olmask_C3",
+            "x": 152
+          },
+          {
+            "filename": "room24_00_olmask_C4",
+            "x": 160
+          }
+        ]
+      }
+    ],
+    [],
+    [],
+    [],
+    [
+      {
+        "room_id": 36,
+        "bg_id": 4,
+        "y_sort": 1,
+        "unused1": 32,
+        "unused2": 64,
+        "y": 80,
+        "height": 40,
+        "masks": [
+          {
+            "filename": "room24_04_olmask_A1",
+            "x": 32
+          },
+          {
+            "filename": "room24_04_olmask_A2",
+            "x": 40
+          },
+          {
+            "filename": "room24_04_olmask_A3",
+            "x": 48
+          },
+          {
+            "filename": "room24_04_olmask_A4",
+            "x": 56
+          },
+          {
+            "filename": "room24_04_olmask_A5",
+            "x": 64
+          },
+          {
+            "filename": "room24_04_olmask_A6",
+            "x": 72
+          },
+          {
+            "filename": "room24_04_olmask_A7",
+            "x": 80
+          },
+          {
+            "filename": "room24_04_olmask_A8",
+            "x": 88
+          }
+        ]
+      },
+      {
+        "room_id": 36,
+        "bg_id": 4,
+        "y_sort": 1,
+        "unused1": 96,
+        "unused2": 8,
+        "y": 16,
+        "height": 104,
+        "masks": [
+          {
+            "filename": "room24_04_olmask_B1",
+            "x": 96
+          }
+        ]
+      },
+      {
+        "room_id": 36,
+        "bg_id": 4,
+        "y_sort": 1,
+        "unused1": 104,
+        "unused2": 56,
+        "y": 80,
+        "height": 40,
+        "masks": [
+          {
+            "filename": "room24_04_olmask_C1",
+            "x": 104
+          },
+          {
+            "filename": "room24_04_olmask_C2",
+            "x": 112
+          },
+          {
+            "filename": "room24_04_olmask_C3",
+            "x": 120
+          },
+          {
+            "filename": "room24_04_olmask_C4",
+            "x": 128
+          },
+          {
+            "filename": "room24_04_olmask_C5",
+            "x": 136
+          },
+          {
+            "filename": "room24_04_olmask_C6",
+            "x": 144
+          }
+        ]
+      }
+    ],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [
+      {
+        "room_id": 41,
+        "bg_id": 0,
+        "y_sort": 1,
+        "unused1": 8,
+        "unused2": 64,
+        "y": 72,
+        "height": 72,
+        "masks": [
+          {
+            "filename": "room29_00_olmask_A1",
+            "x": 8
+          },
+          {
+            "filename": "room29_00_olmask_A2",
+            "x": 16
+          },
+          {
+            "filename": "room29_00_olmask_A3",
+            "x": 24
+          },
+          {
+            "filename": "room29_00_olmask_A4",
+            "x": 32
+          },
+          {
+            "filename": "room29_00_olmask_A5",
+            "x": 40
+          },
+          {
+            "filename": "room29_00_olmask_A6",
+            "x": 48
+          },
+          {
+            "filename": "room29_00_olmask_A7",
+            "x": 56
+          },
+          {
+            "filename": "room29_00_olmask_A8",
+            "x": 64
+          }
+        ]
+      }
+    ],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [
+      {
+        "room_id": 44,
+        "bg_id": 1,
+        "y_sort": 36,
+        "unused1": 72,
+        "unused2": 24,
+        "y": 40,
+        "height": 64,
+        "masks": [
+          {
+            "filename": "room2C_01_olmask_A1",
+            "x": 72
+          },
+          {
+            "filename": "room2C_01_olmask_A2",
+            "x": 80
+          },
+          {
+            "filename": "room2C_01_olmask_A3",
+            "x": 88
+          }
+        ]
+      },
+      {
+        "room_id": 44,
+        "bg_id": 1,
+        "y_sort": 24,
+        "unused1": 56,
+        "unused2": 32,
+        "y": 88,
+        "height": 40,
+        "masks": [
+          {
+            "filename": "room2C_01_olmask_B1",
+            "x": 56
+          },
+          {
+            "filename": "room2C_01_olmask_B2",
+            "x": 64
+          },
+          {
+            "filename": "room2C_01_olmask_B3",
+            "x": 72
+          },
+          {
+            "filename": "room2C_01_olmask_B4",
+            "x": 80
+          }
+        ]
+      },
+      {
+        "room_id": 44,
+        "bg_id": 1,
+        "y_sort": 37,
+        "unused1": 120,
+        "unused2": 24,
+        "y": 48,
+        "height": 56,
+        "masks": [
+          {
+            "filename": "room2C_01_olmask_C1",
+            "x": 120
+          },
+          {
+            "filename": "room2C_01_olmask_C2",
+            "x": 128
+          },
+          {
+            "filename": "room2C_01_olmask_C3",
+            "x": 136
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "room_id": 44,
+        "bg_id": 2,
+        "y_sort": 1,
+        "unused1": 72,
+        "unused2": 24,
+        "y": 56,
+        "height": 64,
+        "masks": [
+          {
+            "filename": "room2C_02_olmask_A1",
+            "x": 72
+          },
+          {
+            "filename": "room2C_02_olmask_A2",
+            "x": 80
+          },
+          {
+            "filename": "room2C_02_olmask_A3",
+            "x": 88
+          },
+          {
+            "filename": "room2C_02_olmask_B1",
+            "x": 96
+          }
+        ]
+      },
+      {
+        "room_id": 44,
+        "bg_id": 2,
+        "y_sort": 1,
+        "unused1": 88,
+        "unused2": 32,
+        "y": 88,
+        "height": 32,
+        "masks": [
+          {
+            "filename": "room2C_02_olmask_B1",
+            "x": 88
+          },
+          {
+            "filename": "room2C_02_olmask_B2",
+            "x": 96
+          },
+          {
+            "filename": "room2C_02_olmask_B3",
+            "x": 104
+          },
+          {
+            "filename": "room2C_02_olmask_B4",
+            "x": 112
+          },
+          {
+            "filename": "room2C_02_olmask_C1",
+            "x": 120
+          }
+        ]
+      },
+      {
+        "room_id": 44,
+        "bg_id": 2,
+        "y_sort": 1,
+        "unused1": 24,
+        "unused2": 16,
+        "y": 56,
+        "height": 56,
+        "masks": [
+          {
+            "filename": "room2C_02_olmask_C1",
+            "x": 24
+          },
+          {
+            "filename": "room2C_02_olmask_C2",
+            "x": 32
+          }
+        ]
+      }
+    ],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      {
+        "room_id": 76,
+        "bg_id": 5,
+        "y_sort": 1,
+        "unused1": 96,
+        "unused2": 16,
+        "y": 56,
+        "height": 24,
+        "masks": [
+          {
+            "filename": "room4C_05_olmask_A1",
+            "x": 96
+          },
+          {
+            "filename": "room4C_05_olmask_A2",
+            "x": 104
+          }
+        ]
+      }
+    ],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [
+      {
+        "room_id": 84,
+        "bg_id": 1,
+        "y_sort": 1,
+        "unused1": 64,
+        "unused2": 16,
+        "y": 56,
+        "height": 64,
+        "masks": [
+          {
+            "filename": "room54_01_olmask_A1",
+            "x": 64
+          },
+          {
+            "filename": "room54_01_olmask_A2",
+            "x": 72
+          }
+        ]
+      },
+      {
+        "room_id": 84,
+        "bg_id": 1,
+        "y_sort": 38,
+        "unused1": 104,
+        "unused2": 24,
+        "y": 80,
+        "height": 32,
+        "masks": [
+          {
+            "filename": "room54_01_olmask_B1",
+            "x": 104
+          },
+          {
+            "filename": "room54_01_olmask_B2",
+            "x": 112
+          },
+          {
+            "filename": "room54_01_olmask_B3",
+            "x": 120
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "room_id": 84,
+        "bg_id": 2,
+        "y_sort": 1,
+        "unused1": 48,
+        "unused2": 40,
+        "y": 80,
+        "height": 64,
+        "masks": [
+          {
+            "filename": "room54_02_olmask_A1",
+            "x": 48
+          },
+          {
+            "filename": "room54_02_olmask_A2",
+            "x": 56
+          },
+          {
+            "filename": "room54_02_olmask_A3",
+            "x": 64
+          },
+          {
+            "filename": "room54_02_olmask_A4",
+            "x": 72
+          },
+          {
+            "filename": "room54_02_olmask_A5",
+            "x": 80
+          }
+        ]
+      },
+      {
+        "room_id": 84,
+        "bg_id": 2,
+        "y_sort": 1,
+        "unused1": 120,
+        "unused2": 48,
+        "y": 88,
+        "height": 56,
+        "masks": [
+          {
+            "filename": "room54_02_olmask_B1",
+            "x": 120
+          },
+          {
+            "filename": "room54_02_olmask_B2",
+            "x": 128
+          },
+          {
+            "filename": "room54_02_olmask_B3",
+            "x": 136
+          },
+          {
+            "filename": "room54_02_olmask_B4",
+            "x": 144
+          },
+          {
+            "filename": "room54_02_olmask_B5",
+            "x": 152
+          },
+          {
+            "filename": "room54_02_olmask_B6",
+            "x": 160
+          }
+        ]
+      },
+      {
+        "room_id": 84,
+        "bg_id": 2,
+        "y_sort": 1,
+        "unused1": 8,
+        "unused2": 40,
+        "y": 56,
+        "height": 88,
+        "masks": [
+          {
+            "filename": "room54_02_olmask_C1",
+            "x": 8
+          },
+          {
+            "filename": "room54_02_olmask_C2",
+            "x": 16
+          },
+          {
+            "filename": "room54_02_olmask_C3",
+            "x": 24
+          },
+          {
+            "filename": "room54_02_olmask_C4",
+            "x": 32
+          },
+          {
+            "filename": "room54_02_olmask_C5",
+            "x": 40
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "room_id": 84,
+        "bg_id": 3,
+        "y_sort": 1,
+        "unused1": 64,
+        "unused2": 72,
+        "y": 72,
+        "height": 72,
+        "masks": [
+          {
+            "filename": "room54_03_olmask_A1",
+            "x": 64
+          },
+          {
+            "filename": "room54_03_olmask_A2",
+            "x": 72
+          },
+          {
+            "filename": "room54_03_olmask_A3",
+            "x": 80
+          },
+          {
+            "filename": "room54_03_olmask_A4",
+            "x": 88
+          },
+          {
+            "filename": "room54_03_olmask_A5",
+            "x": 96
+          },
+          {
+            "filename": "room54_03_olmask_A6",
+            "x": 104
+          },
+          {
+            "filename": "room54_03_olmask_A7",
+            "x": 112
+          },
+          {
+            "filename": "room54_03_olmask_A8",
+            "x": 120
+          },
+          {
+            "filename": "room54_03_olmask_A9",
+            "x": 128
+          }
+        ]
+      }
+    ],
+    [],
+    [
+      {
+        "room_id": 84,
+        "bg_id": 5,
+        "y_sort": 1,
+        "unused1": 8,
+        "unused2": 40,
+        "y": 80,
+        "height": 64,
+        "masks": [
+          {
+            "filename": "room54_05_olmask_A1",
+            "x": 8
+          },
+          {
+            "filename": "room54_05_olmask_A2",
+            "x": 16
+          },
+          {
+            "filename": "room54_05_olmask_A3",
+            "x": 24
+          },
+          {
+            "filename": "room54_05_olmask_A4",
+            "x": 32
+          },
+          {
+            "filename": "room54_05_olmask_A5",
+            "x": 40
+          }
+        ]
+      }
+    ],
+    []
+  ],
+  [
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    []
+  ],
+  [
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  [
+    [],
+    []
+  ],
+  [
+    [],
+    []
+  ],
+  [
+    []
+  ],
+  [
+    [],
+    [],
+    [],
+    [],
+    []
+  ]
+]

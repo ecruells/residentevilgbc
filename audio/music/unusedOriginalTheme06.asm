@@ -1,110 +1,64 @@
 unused_original_theme_06_ch1: ;6263
-	db $67, $FF
-	db $69, $C3
-	db $24, $0A
-	db $24, $0A
-	branchId $54
-	db $E3, $01
-	branchId $55
-	db $E3, $01
-	branchId $58
-	db $D7, $01
-	branchId $59
-	db $E3, $01
-	branchId $5A
-	db $FB, $01
-	branchId $5A
-	db $F9, $01
-	branchId $5D
-	db $E3, $01
-	branchId $5F
-	db $E3, $02
-	branchId $61
-	db $E3, $01
-	branchId $61
-	db $E0, $01
-	branchId $62
-	db $E3, $01
-	branchId $62
-	db $E1, $01
-	branchId $61
-	db $E3, $01
-	branchId $61
-	db $E0, $01
-	branchId $62
-	db $E3, $01
-	branchId $62
-	db $E1, $01
-	db $66, $01
+	enableSound $FF
+	tempo 195
+	chainWait 10
+	chainWait 10
+	playBranch unusedTheme06Branches, 3, -29, 1
+	playBranch unusedTheme06Branches, 4, -29, 1
+	playBranch unusedTheme06Branches, 7, -41, 1
+	playBranch unusedTheme06Branches, 8, -29, 1
+	playBranch unusedTheme06Branches, 9, -5, 1
+	playBranch unusedTheme06Branches, 9, -7, 1
+	playBranch unusedTheme06Branches, 12, -29, 1
+	playBranch unusedTheme06Branches, 14, -29, 2
+	playBranch unusedTheme06Branches, 16, -29, 1
+	playBranch unusedTheme06Branches, 16, -32, 1
+	playBranch unusedTheme06Branches, 17, -29, 1
+	playBranch unusedTheme06Branches, 17, -31, 1
+	playBranch unusedTheme06Branches, 16, -29, 1
+	playBranch unusedTheme06Branches, 16, -32, 1
+	playBranch unusedTheme06Branches, 17, -29, 1
+	playBranch unusedTheme06Branches, 17, -31, 1
+	chlAction0x66 1
 	channelLoop unused_original_theme_06_ch1
 
 unused_original_theme_06_ch2: ;62B0
-	branchId $52
-	db $E3, $07
-	branchId $52
-	db $E5, $02
-	branchId $57
-	db $E3, $01
-	branchId $5B
-	db $E3, $01
-	branchId $5B
-	db $E1, $01
-	branchId $5B
-	db $E3, $01
-	branchId $5B
-	db $E1, $01
-	branchId $60
-	db $E3, $02
-	branchId $63
-	db $E3, $01
-	branchId $63
-	db $E0, $01
-	branchId $64
-	db $E3, $01
-	branchId $64
-	db $E1, $01
-	branchId $63
-	db $E3, $01
-	branchId $63
-	db $E0, $01
-	branchId $64
-	db $E3, $01
-	branchId $64
-	db $E1, $01
+	playBranch unusedTheme06Branches, 1, -29, 7
+	playBranch unusedTheme06Branches, 1, -27, 2
+	playBranch unusedTheme06Branches, 6, -29, 1
+	playBranch unusedTheme06Branches, 10, -29, 1
+	playBranch unusedTheme06Branches, 10, -31, 1
+	playBranch unusedTheme06Branches, 10, -29, 1
+	playBranch unusedTheme06Branches, 10, -31, 1
+	playBranch unusedTheme06Branches, 15, -29, 2
+	playBranch unusedTheme06Branches, 18, -29, 1
+	playBranch unusedTheme06Branches, 18, -32, 1
+	playBranch unusedTheme06Branches, 19, -29, 1
+	playBranch unusedTheme06Branches, 19, -31, 1
+	playBranch unusedTheme06Branches, 18, -29, 1
+	playBranch unusedTheme06Branches, 18, -32, 1
+	playBranch unusedTheme06Branches, 19, -29, 1
+	playBranch unusedTheme06Branches, 19, -31, 1
 	channelLoop unused_original_theme_06_ch2
 
 unused_original_theme_06_ch3: ;62F3
-	branchId $53
-	db $EF, $07
-	branchId $56
-	db $EF, $09
-	branchId $5C
-	db $FB, $01
-	branchId $5C
-	db $F9, $01
-	branchId $5C
-	db $FB, $01
-	branchId $5C
-	db $F9, $01
-	branchId $5E
-	db $FB, $01
-	branchId $65
-	db $EF, $01
-	branchId $65
-	db $EC, $01
-	branchId $65
-	db $EF, $01
-	branchId $65
-	db $EF, $01
-	branchId $65
-	db $EC, $01
-	branchId $65
-	db $EF, $01
+	playBranch unusedTheme06Branches, 2, -17, 7
+	playBranch unusedTheme06Branches, 5, -17, 9
+	playBranch unusedTheme06Branches, 11, -5, 1
+	playBranch unusedTheme06Branches, 11, -7, 1
+	playBranch unusedTheme06Branches, 11, -5, 1
+	playBranch unusedTheme06Branches, 11, -7, 1
+	playBranch unusedTheme06Branches, 13, -5, 1
+	playBranch unusedTheme06Branches, 20, -17, 1
+	playBranch unusedTheme06Branches, 20, -20, 1
+	playBranch unusedTheme06Branches, 20, -17, 1
+	playBranch unusedTheme06Branches, 20, -17, 1
+	playBranch unusedTheme06Branches, 20, -20, 1
+	playBranch unusedTheme06Branches, 20, -17, 1
 	channelLoop unused_original_theme_06_ch3
 
 unused_original_theme_06_ch4: ;632A
-	branchId $51
-	db $00, $10
+	playBranch unusedTheme06Branches, 0, 0, 16
 	channelLoop unused_original_theme_06_ch4
 
 

@@ -1,0 +1,988 @@
+
+_chrisSpritesTable: ;FD:52EB
+;idle animation
+	dw BANK(chris_front_spritesheet), chris_front_idle_anim_pointers
+	dw BANK(chris_overhead_front_spritesheet), chris_front_right_idle_anim_pointers
+	dw BANK(chris_front_right_spritesheet), chris_right_idle_anim_pointers
+	dw BANK(chris_overhead_front_right_spritesheet), chris_back_right_idle_anim_pointers
+	dw BANK(chris_right_spritesheet), chris_back_idle_anim_pointers
+	dw BANK(chris_overhead_right_spritesheet), chris_back_left_idle_anim_pointers
+	dw BANK(chris_back_right_spritesheet), chris_left_idle_anim_pointers
+	dw BANK(chris_overhead_back_right_spritesheet), chris_front_left_idle_anim_pointers
+	dw BANK(chris_back_spritesheet), chris_overhead_front_idle_anim_pointers
+	dw BANK(chris_overhead_back_spritesheet), chris_overhead_front_right_idle_anim_pointers
+	dw BANK(chris_back_left_spritesheet), chris_overhead_right_idle_anim_pointers
+	dw BANK(chris_overhead_back_left_spritesheet), chris_overhead_back_right_idle_anim_pointers
+	dw BANK(chris_left_spritesheet), chris_overhead_back_idle_anim_pointers
+	dw BANK(chris_overhead_left_spritesheet), chris_overhead_back_left_idle_anim_pointers
+	dw BANK(chris_front_left_spritesheet), chris_overhead_left_idle_anim_pointers
+	dw BANK(chris_overhead_front_left_spritesheet), chris_overhead_front_left_idle_anim_pointers
+;walk animation
+	dw BANK(chris_front_spritesheet), chris_front_walk_anim_pointers
+	dw BANK(chris_overhead_front_spritesheet), chris_front_right_walk_anim_pointers
+	dw BANK(chris_front_right_spritesheet), chris_right_walk_anim_pointers
+	dw BANK(chris_overhead_front_right_spritesheet), chris_back_right_walk_anim_pointers
+	dw BANK(chris_right_spritesheet), chris_back_walk_anim_pointers
+	dw BANK(chris_overhead_right_spritesheet), chris_back_left_walk_anim_pointers
+	dw BANK(chris_back_right_spritesheet), chris_left_walk_anim_pointers
+	dw BANK(chris_overhead_back_right_spritesheet), chris_front_left_walk_anim_pointers
+	dw BANK(chris_back_spritesheet), chris_overhead_front_walk_anim_pointers
+	dw BANK(chris_overhead_back_spritesheet), chris_overhead_front_right_walk_anim_pointers
+	dw BANK(chris_back_left_spritesheet), chris_overhead_right_walk_anim_pointers
+	dw BANK(chris_overhead_back_left_spritesheet), chris_overhead_back_right_walk_anim_pointers
+	dw BANK(chris_left_spritesheet), chris_overhead_back_walk_anim_pointers
+	dw BANK(chris_overhead_left_spritesheet), chris_overhead_back_left_walk_anim_pointers
+	dw BANK(chris_front_left_spritesheet), chris_overhead_left_walk_anim_pointers
+	dw BANK(chris_overhead_front_left_spritesheet), chris_overhead_front_left_walk_anim_pointers
+;run animation
+	dw BANK(chris_front_spritesheet), chris_front_run_anim_pointers
+	dw BANK(chris_overhead_front_spritesheet), chris_front_right_run_anim_pointers
+	dw BANK(chris_front_right_spritesheet), chris_right_run_anim_pointers
+	dw BANK(chris_overhead_front_right_spritesheet), chris_back_right_run_anim_pointers
+	dw BANK(chris_right_spritesheet), chris_back_run_anim_pointers
+	dw BANK(chris_overhead_right_spritesheet), chris_back_left_run_anim_pointers
+	dw BANK(chris_back_right_spritesheet), chris_left_run_anim_pointers
+	dw BANK(chris_overhead_back_right_spritesheet), chris_front_left_run_anim_pointers
+	dw BANK(chris_back_spritesheet), chris_overhead_front_run_anim_pointers
+	dw BANK(chris_overhead_back_spritesheet), chris_overhead_front_right_run_anim_pointers
+	dw BANK(chris_back_left_spritesheet), chris_overhead_right_run_anim_pointers
+	dw BANK(chris_overhead_back_left_spritesheet), chris_overhead_back_right_run_anim_pointers
+	dw BANK(chris_left_spritesheet), chris_overhead_back_run_anim_pointers
+	dw BANK(chris_overhead_left_spritesheet), chris_overhead_back_left_run_anim_pointers
+	dw BANK(chris_front_left_spritesheet), chris_overhead_left_run_anim_pointers
+	dw BANK(chris_overhead_front_left_spritesheet), chris_overhead_front_left_run_anim_pointers
+;gun aim animation
+	dw BANK(chris_front_spritesheet), chris_front_gun_aim_anim_pointers
+	dw BANK(chris_overhead_front_spritesheet), chris_front_right_gun_aim_anim_pointers
+	dw BANK(chris_front_right_spritesheet), chris_right_gun_aim_anim_pointers
+	dw BANK(chris_overhead_front_right_spritesheet), chris_back_right_gun_aim_anim_pointers
+	dw BANK(chris_right_spritesheet), chris_back_gun_aim_anim_pointers
+	dw BANK(chris_overhead_right_spritesheet), chris_back_left_gun_aim_anim_pointers
+	dw BANK(chris_back_right_spritesheet), chris_left_gun_aim_anim_pointers
+	dw BANK(chris_overhead_back_right_spritesheet), chris_front_left_gun_aim_anim_pointers
+	dw BANK(chris_back_spritesheet), chris_overhead_front_gun_aim_anim_pointers
+	dw BANK(chris_overhead_back_spritesheet), chris_overhead_front_right_gun_aim_anim_pointers
+	dw BANK(chris_back_left_spritesheet), chris_overhead_right_gun_aim_anim_pointers
+	dw BANK(chris_overhead_back_left_spritesheet), chris_overhead_back_right_gun_aim_anim_pointers
+	dw BANK(chris_left_spritesheet), chris_overhead_back_gun_aim_anim_pointers
+	dw BANK(chris_overhead_left_spritesheet), chris_overhead_back_left_gun_aim_anim_pointers
+	dw BANK(chris_front_left_spritesheet), chris_overhead_left_gun_aim_anim_pointers
+	dw BANK(chris_overhead_front_left_spritesheet), chris_overhead_front_left_gun_aim_anim_pointers
+;shotgun aim animation
+	dw BANK(chris_front_spritesheet), chris_front_shotgun_aim_anim_pointers
+	dw BANK(chris_overhead_front_spritesheet), chris_front_right_shotgun_aim_anim_pointers
+	dw BANK(chris_front_right_spritesheet), chris_right_shotgun_aim_anim_pointers
+	dw BANK(chris_overhead_front_right_spritesheet), chris_back_right_shotgun_aim_anim_pointers
+	dw BANK(chris_right_spritesheet), chris_back_shotgun_aim_anim_pointers
+	dw BANK(chris_overhead_right_spritesheet), chris_back_left_shotgun_aim_anim_pointers
+	dw BANK(chris_back_right_spritesheet), chris_left_shotgun_aim_anim_pointers
+	dw BANK(chris_overhead_back_right_spritesheet), chris_front_left_shotgun_aim_anim_pointers
+	dw BANK(chris_back_spritesheet), chris_overhead_front_shotgun_aim_anim_pointers
+	dw BANK(chris_overhead_back_spritesheet), chris_overhead_front_right_shotgun_aim_anim_pointers
+	dw BANK(chris_back_left_spritesheet), chris_overhead_right_shotgun_aim_anim_pointers
+	dw BANK(chris_overhead_back_left_spritesheet), chris_overhead_back_right_shotgun_aim_anim_pointers
+	dw BANK(chris_left_spritesheet), chris_overhead_back_shotgun_aim_anim_pointers
+	dw BANK(chris_overhead_left_spritesheet), chris_overhead_back_left_shotgun_aim_anim_pointers
+	dw BANK(chris_front_left_spritesheet), chris_overhead_left_shotgun_aim_anim_pointers
+	dw BANK(chris_overhead_front_left_spritesheet), chris_overhead_front_left_shotgun_aim_anim_pointers
+;knife aim animation
+	dw BANK(chris_front_spritesheet), chris_front_knife_aim_anim_pointers
+	dw BANK(chris_overhead_front_spritesheet), chris_front_right_knife_aim_anim_pointers
+	dw BANK(chris_front_right_spritesheet), chris_right_knife_aim_anim_pointers
+	dw BANK(chris_overhead_front_right_spritesheet), chris_back_right_knife_aim_anim_pointers
+	dw BANK(chris_right_spritesheet), chris_back_knife_aim_anim_pointers
+	dw BANK(chris_overhead_right_spritesheet), chris_back_left_knife_aim_anim_pointers
+	dw BANK(chris_back_right_spritesheet), chris_left_knife_aim_anim_pointers
+	dw BANK(chris_overhead_back_right_spritesheet), chris_front_left_knife_aim_anim_pointers
+	dw BANK(chris_back_spritesheet), chris_overhead_front_knife_aim_anim_pointers
+	dw BANK(chris_overhead_back_spritesheet), chris_overhead_front_right_knife_aim_anim_pointers
+	dw BANK(chris_back_left_spritesheet), chris_overhead_right_knife_aim_anim_pointers
+	dw BANK(chris_overhead_back_left_spritesheet), chris_overhead_back_right_knife_aim_anim_pointers
+	dw BANK(chris_left_spritesheet), chris_overhead_back_knife_aim_anim_pointers
+	dw BANK(chris_overhead_left_spritesheet), chris_overhead_back_left_knife_aim_anim_pointers
+	dw BANK(chris_front_left_spritesheet), chris_overhead_left_knife_aim_anim_pointers
+	dw BANK(chris_overhead_front_left_spritesheet), chris_overhead_front_left_knife_aim_anim_pointers
+;get damage animation
+	dw BANK(chris_front_spritesheet), chris_front_get_damage_anim_pointers
+	dw BANK(chris_overhead_front_spritesheet), chris_front_right_get_damage_anim_pointers
+	dw BANK(chris_front_right_spritesheet), chris_right_get_damage_anim_pointers
+	dw BANK(chris_overhead_front_right_spritesheet), chris_back_right_get_damage_anim_pointers
+	dw BANK(chris_right_spritesheet), chris_back_get_damage_anim_pointers
+	dw BANK(chris_overhead_right_spritesheet), chris_back_left_get_damage_anim_pointers
+	dw BANK(chris_back_right_spritesheet), chris_left_get_damage_anim_pointers
+	dw BANK(chris_overhead_back_right_spritesheet), chris_front_left_get_damage_anim_pointers
+	dw BANK(chris_back_spritesheet), chris_overhead_front_get_damage_anim_pointers
+	dw BANK(chris_overhead_back_spritesheet), chris_overhead_front_right_get_damage_anim_pointers
+	dw BANK(chris_back_left_spritesheet), chris_overhead_right_get_damage_anim_pointers
+	dw BANK(chris_overhead_back_left_spritesheet), chris_overhead_back_right_get_damage_anim_pointers
+	dw BANK(chris_left_spritesheet), chris_overhead_back_get_damage_anim_pointers
+	dw BANK(chris_overhead_left_spritesheet), chris_overhead_back_left_get_damage_anim_pointers
+	dw BANK(chris_front_left_spritesheet), chris_overhead_left_get_damage_anim_pointers
+	dw BANK(chris_overhead_front_left_spritesheet), chris_overhead_front_left_get_damage_anim_pointers
+;pick item animation
+	dw BANK(chris_front_spritesheet), chris_front_pick_item_anim_pointers
+	dw BANK(chris_overhead_front_spritesheet), chris_front_right_pick_item_anim_pointers
+	dw BANK(chris_front_right_spritesheet), chris_right_pick_item_anim_pointers
+	dw BANK(chris_overhead_front_right_spritesheet), chris_back_right_pick_item_anim_pointers
+	dw BANK(chris_right_spritesheet), chris_back_pick_item_anim_pointers
+	dw BANK(chris_overhead_right_spritesheet), chris_back_left_pick_item_anim_pointers
+	dw BANK(chris_back_right_spritesheet), chris_left_pick_item_anim_pointers
+	dw BANK(chris_overhead_back_right_spritesheet), chris_front_left_pick_item_anim_pointers
+	dw BANK(chris_back_spritesheet), chris_overhead_front_pick_item_anim_pointers
+	dw BANK(chris_overhead_back_spritesheet), chris_overhead_front_right_pick_item_anim_pointers
+	dw BANK(chris_back_left_spritesheet), chris_overhead_right_pick_item_anim_pointers
+	dw BANK(chris_overhead_back_left_spritesheet), chris_overhead_back_right_pick_item_anim_pointers
+	dw BANK(chris_left_spritesheet), chris_overhead_back_pick_item_anim_pointers
+	dw BANK(chris_overhead_left_spritesheet), chris_overhead_back_left_pick_item_anim_pointers
+	dw BANK(chris_front_left_spritesheet), chris_overhead_left_pick_item_anim_pointers
+	dw BANK(chris_overhead_front_left_spritesheet), chris_overhead_front_left_pick_item_anim_pointers
+;54EB
+
+chris_front_idle_anim_pointers: ;54EB
+	dw chris_front_spritesheet+IDLE_FRAME_1
+	dw chris_front_spritesheet+IDLE_FRAME_1
+	dw chris_front_spritesheet+IDLE_FRAME_1
+	dw chris_front_spritesheet+IDLE_FRAME_2
+
+chris_right_idle_anim_pointers: ;54F3
+	dw chris_front_right_spritesheet+IDLE_FRAME_1
+	dw chris_front_right_spritesheet+IDLE_FRAME_1
+	dw chris_front_right_spritesheet+IDLE_FRAME_1
+	dw chris_front_right_spritesheet+IDLE_FRAME_2
+
+chris_back_idle_anim_pointers: ;54FB
+	dw chris_right_spritesheet+IDLE_FRAME_1
+	dw chris_right_spritesheet+IDLE_FRAME_1
+	dw chris_right_spritesheet+IDLE_FRAME_1
+	dw chris_right_spritesheet+IDLE_FRAME_2
+
+chris_left_idle_anim_pointers: ;5503
+	dw chris_back_right_spritesheet+IDLE_FRAME_1
+	dw chris_back_right_spritesheet+IDLE_FRAME_1
+	dw chris_back_right_spritesheet+IDLE_FRAME_1
+	dw chris_back_right_spritesheet+IDLE_FRAME_2
+
+chris_overhead_front_idle_anim_pointers: ;550B
+	dw chris_back_spritesheet+IDLE_FRAME_1
+	dw chris_back_spritesheet+IDLE_FRAME_1
+	dw chris_back_spritesheet+IDLE_FRAME_1
+	dw chris_back_spritesheet+IDLE_FRAME_2
+
+chris_overhead_right_idle_anim_pointers: ;5513
+	dw chris_back_left_spritesheet+IDLE_FRAME_1
+	dw chris_back_left_spritesheet+IDLE_FRAME_1
+	dw chris_back_left_spritesheet+IDLE_FRAME_1
+	dw chris_back_left_spritesheet+IDLE_FRAME_2
+
+chris_overhead_back_idle_anim_pointers: ;551B
+	dw chris_left_spritesheet+IDLE_FRAME_1
+	dw chris_left_spritesheet+IDLE_FRAME_1
+	dw chris_left_spritesheet+IDLE_FRAME_1
+	dw chris_left_spritesheet+IDLE_FRAME_2
+
+chris_overhead_left_idle_anim_pointers: ;5523
+	dw chris_front_left_spritesheet+IDLE_FRAME_1
+	dw chris_front_left_spritesheet+IDLE_FRAME_1
+	dw chris_front_left_spritesheet+IDLE_FRAME_1
+	dw chris_front_left_spritesheet+IDLE_FRAME_2
+
+chris_front_right_idle_anim_pointers: ;552B
+	dw chris_overhead_front_spritesheet+IDLE_FRAME_1
+	dw chris_overhead_front_spritesheet+IDLE_FRAME_1
+	dw chris_overhead_front_spritesheet+IDLE_FRAME_1
+	dw chris_overhead_front_spritesheet+IDLE_FRAME_2
+
+chris_back_right_idle_anim_pointers: ;5533
+	dw chris_overhead_front_right_spritesheet+IDLE_FRAME_1
+	dw chris_overhead_front_right_spritesheet+IDLE_FRAME_1
+	dw chris_overhead_front_right_spritesheet+IDLE_FRAME_1
+	dw chris_overhead_front_right_spritesheet+IDLE_FRAME_2
+
+chris_back_left_idle_anim_pointers: ;553B
+	dw chris_overhead_right_spritesheet+IDLE_FRAME_1
+	dw chris_overhead_right_spritesheet+IDLE_FRAME_1
+	dw chris_overhead_right_spritesheet+IDLE_FRAME_1
+	dw chris_overhead_right_spritesheet+IDLE_FRAME_2
+
+chris_front_left_idle_anim_pointers: ;5543
+	dw chris_overhead_back_right_spritesheet+IDLE_FRAME_1
+	dw chris_overhead_back_right_spritesheet+IDLE_FRAME_1
+	dw chris_overhead_back_right_spritesheet+IDLE_FRAME_1
+	dw chris_overhead_back_right_spritesheet+IDLE_FRAME_2
+
+chris_overhead_front_right_idle_anim_pointers: ;554B
+	dw chris_overhead_back_spritesheet+IDLE_FRAME_1
+	dw chris_overhead_back_spritesheet+IDLE_FRAME_1
+	dw chris_overhead_back_spritesheet+IDLE_FRAME_1
+	dw chris_overhead_back_spritesheet+IDLE_FRAME_2
+
+chris_overhead_back_right_idle_anim_pointers: ;5553
+	dw chris_overhead_back_left_spritesheet+IDLE_FRAME_1
+	dw chris_overhead_back_left_spritesheet+IDLE_FRAME_1
+	dw chris_overhead_back_left_spritesheet+IDLE_FRAME_1
+	dw chris_overhead_back_left_spritesheet+IDLE_FRAME_2
+
+chris_overhead_back_left_idle_anim_pointers: ;555B
+	dw chris_overhead_left_spritesheet+IDLE_FRAME_1
+	dw chris_overhead_left_spritesheet+IDLE_FRAME_1
+	dw chris_overhead_left_spritesheet+IDLE_FRAME_1
+	dw chris_overhead_left_spritesheet+IDLE_FRAME_2
+
+chris_overhead_front_left_idle_anim_pointers: ;5563
+	dw chris_overhead_front_left_spritesheet+IDLE_FRAME_1
+	dw chris_overhead_front_left_spritesheet+IDLE_FRAME_1
+	dw chris_overhead_front_left_spritesheet+IDLE_FRAME_1
+	dw chris_overhead_front_left_spritesheet+IDLE_FRAME_2
+
+chris_front_walk_anim_pointers: ;556B
+	dw chris_front_spritesheet+WALK_FRAME_1
+	dw chris_front_spritesheet+WALK_FRAME_2
+	dw chris_front_spritesheet+WALK_FRAME_3
+	dw chris_front_spritesheet+WALK_FRAME_4
+	dw chris_front_spritesheet+WALK_FRAME_5
+	dw chris_front_spritesheet+WALK_FRAME_6
+	dw chris_front_spritesheet+WALK_FRAME_7
+	dw chris_front_spritesheet+WALK_FRAME_8
+
+chris_right_walk_anim_pointers: ;557B
+	dw chris_front_right_spritesheet+WALK_FRAME_1
+	dw chris_front_right_spritesheet+WALK_FRAME_2
+	dw chris_front_right_spritesheet+WALK_FRAME_3
+	dw chris_front_right_spritesheet+WALK_FRAME_4
+	dw chris_front_right_spritesheet+WALK_FRAME_5
+	dw chris_front_right_spritesheet+WALK_FRAME_6
+	dw chris_front_right_spritesheet+WALK_FRAME_7
+	dw chris_front_right_spritesheet+WALK_FRAME_8
+
+chris_back_walk_anim_pointers: ;558B
+	dw chris_right_spritesheet+WALK_FRAME_1
+	dw chris_right_spritesheet+WALK_FRAME_2
+	dw chris_right_spritesheet+WALK_FRAME_3
+	dw chris_right_spritesheet+WALK_FRAME_4
+	dw chris_right_spritesheet+WALK_FRAME_5
+	dw chris_right_spritesheet+WALK_FRAME_6
+	dw chris_right_spritesheet+WALK_FRAME_7
+	dw chris_right_spritesheet+WALK_FRAME_8
+
+chris_left_walk_anim_pointers: ;559B
+	dw chris_back_right_spritesheet+WALK_FRAME_1
+	dw chris_back_right_spritesheet+WALK_FRAME_2
+	dw chris_back_right_spritesheet+WALK_FRAME_3
+	dw chris_back_right_spritesheet+WALK_FRAME_4
+	dw chris_back_right_spritesheet+WALK_FRAME_5
+	dw chris_back_right_spritesheet+WALK_FRAME_6
+	dw chris_back_right_spritesheet+WALK_FRAME_7
+	dw chris_back_right_spritesheet+WALK_FRAME_8
+
+chris_overhead_front_walk_anim_pointers: ;55AB
+	dw chris_back_spritesheet+WALK_FRAME_1
+	dw chris_back_spritesheet+WALK_FRAME_2
+	dw chris_back_spritesheet+WALK_FRAME_3
+	dw chris_back_spritesheet+WALK_FRAME_4
+	dw chris_back_spritesheet+WALK_FRAME_5
+	dw chris_back_spritesheet+WALK_FRAME_6
+	dw chris_back_spritesheet+WALK_FRAME_7
+	dw chris_back_spritesheet+WALK_FRAME_8
+
+chris_overhead_right_walk_anim_pointers: ;55BB
+	dw chris_back_left_spritesheet+WALK_FRAME_1
+	dw chris_back_left_spritesheet+WALK_FRAME_2
+	dw chris_back_left_spritesheet+WALK_FRAME_3
+	dw chris_back_left_spritesheet+WALK_FRAME_4
+	dw chris_back_left_spritesheet+WALK_FRAME_5
+	dw chris_back_left_spritesheet+WALK_FRAME_6
+	dw chris_back_left_spritesheet+WALK_FRAME_7
+	dw chris_back_left_spritesheet+WALK_FRAME_8
+
+chris_overhead_back_walk_anim_pointers: ;55CB
+	dw chris_left_spritesheet+WALK_FRAME_1
+	dw chris_left_spritesheet+WALK_FRAME_2
+	dw chris_left_spritesheet+WALK_FRAME_3
+	dw chris_left_spritesheet+WALK_FRAME_4
+	dw chris_left_spritesheet+WALK_FRAME_5
+	dw chris_left_spritesheet+WALK_FRAME_6
+	dw chris_left_spritesheet+WALK_FRAME_7
+	dw chris_left_spritesheet+WALK_FRAME_8
+
+chris_overhead_left_walk_anim_pointers: ;55DB
+	dw chris_front_left_spritesheet+WALK_FRAME_1
+	dw chris_front_left_spritesheet+WALK_FRAME_2
+	dw chris_front_left_spritesheet+WALK_FRAME_3
+	dw chris_front_left_spritesheet+WALK_FRAME_4
+	dw chris_front_left_spritesheet+WALK_FRAME_5
+	dw chris_front_left_spritesheet+WALK_FRAME_6
+	dw chris_front_left_spritesheet+WALK_FRAME_7
+	dw chris_front_left_spritesheet+WALK_FRAME_8
+
+chris_front_right_walk_anim_pointers: ;55EB
+	dw chris_overhead_front_spritesheet+WALK_FRAME_1
+	dw chris_overhead_front_spritesheet+WALK_FRAME_2
+	dw chris_overhead_front_spritesheet+WALK_FRAME_3
+	dw chris_overhead_front_spritesheet+WALK_FRAME_4
+	dw chris_overhead_front_spritesheet+WALK_FRAME_5
+	dw chris_overhead_front_spritesheet+WALK_FRAME_6
+	dw chris_overhead_front_spritesheet+WALK_FRAME_7
+	dw chris_overhead_front_spritesheet+WALK_FRAME_8
+
+chris_back_right_walk_anim_pointers: ;55FB
+	dw chris_overhead_front_right_spritesheet+WALK_FRAME_1
+	dw chris_overhead_front_right_spritesheet+WALK_FRAME_2
+	dw chris_overhead_front_right_spritesheet+WALK_FRAME_3
+	dw chris_overhead_front_right_spritesheet+WALK_FRAME_4
+	dw chris_overhead_front_right_spritesheet+WALK_FRAME_5
+	dw chris_overhead_front_right_spritesheet+WALK_FRAME_6
+	dw chris_overhead_front_right_spritesheet+WALK_FRAME_7
+	dw chris_overhead_front_right_spritesheet+WALK_FRAME_8
+
+chris_back_left_walk_anim_pointers: ;560B
+	dw chris_overhead_right_spritesheet+WALK_FRAME_1
+	dw chris_overhead_right_spritesheet+WALK_FRAME_2
+	dw chris_overhead_right_spritesheet+WALK_FRAME_3
+	dw chris_overhead_right_spritesheet+WALK_FRAME_4
+	dw chris_overhead_right_spritesheet+WALK_FRAME_5
+	dw chris_overhead_right_spritesheet+WALK_FRAME_6
+	dw chris_overhead_right_spritesheet+WALK_FRAME_7
+	dw chris_overhead_right_spritesheet+WALK_FRAME_8
+
+chris_front_left_walk_anim_pointers: ;561B
+	dw chris_overhead_back_right_spritesheet+WALK_FRAME_1
+	dw chris_overhead_back_right_spritesheet+WALK_FRAME_2
+	dw chris_overhead_back_right_spritesheet+WALK_FRAME_3
+	dw chris_overhead_back_right_spritesheet+WALK_FRAME_4
+	dw chris_overhead_back_right_spritesheet+WALK_FRAME_5
+	dw chris_overhead_back_right_spritesheet+WALK_FRAME_6
+	dw chris_overhead_back_right_spritesheet+WALK_FRAME_7
+	dw chris_overhead_back_right_spritesheet+WALK_FRAME_8
+
+chris_overhead_front_right_walk_anim_pointers: ;562B
+	dw chris_overhead_back_spritesheet+WALK_FRAME_1
+	dw chris_overhead_back_spritesheet+WALK_FRAME_2
+	dw chris_overhead_back_spritesheet+WALK_FRAME_3
+	dw chris_overhead_back_spritesheet+WALK_FRAME_4
+	dw chris_overhead_back_spritesheet+WALK_FRAME_5
+	dw chris_overhead_back_spritesheet+WALK_FRAME_6
+	dw chris_overhead_back_spritesheet+WALK_FRAME_7
+	dw chris_overhead_back_spritesheet+WALK_FRAME_8
+
+chris_overhead_back_right_walk_anim_pointers: ;563B
+	dw chris_overhead_back_left_spritesheet+WALK_FRAME_1
+	dw chris_overhead_back_left_spritesheet+WALK_FRAME_2
+	dw chris_overhead_back_left_spritesheet+WALK_FRAME_3
+	dw chris_overhead_back_left_spritesheet+WALK_FRAME_4
+	dw chris_overhead_back_left_spritesheet+WALK_FRAME_5
+	dw chris_overhead_back_left_spritesheet+WALK_FRAME_6
+	dw chris_overhead_back_left_spritesheet+WALK_FRAME_7
+	dw chris_overhead_back_left_spritesheet+WALK_FRAME_8
+
+chris_overhead_back_left_walk_anim_pointers: ;564B
+	dw chris_overhead_left_spritesheet+WALK_FRAME_1
+	dw chris_overhead_left_spritesheet+WALK_FRAME_2
+	dw chris_overhead_left_spritesheet+WALK_FRAME_3
+	dw chris_overhead_left_spritesheet+WALK_FRAME_4
+	dw chris_overhead_left_spritesheet+WALK_FRAME_5
+	dw chris_overhead_left_spritesheet+WALK_FRAME_6
+	dw chris_overhead_left_spritesheet+WALK_FRAME_7
+	dw chris_overhead_left_spritesheet+WALK_FRAME_8
+
+chris_overhead_front_left_walk_anim_pointers: ;565B
+	dw chris_overhead_front_left_spritesheet+WALK_FRAME_1
+	dw chris_overhead_front_left_spritesheet+WALK_FRAME_2
+	dw chris_overhead_front_left_spritesheet+WALK_FRAME_3
+	dw chris_overhead_front_left_spritesheet+WALK_FRAME_4
+	dw chris_overhead_front_left_spritesheet+WALK_FRAME_5
+	dw chris_overhead_front_left_spritesheet+WALK_FRAME_6
+	dw chris_overhead_front_left_spritesheet+WALK_FRAME_7
+	dw chris_overhead_front_left_spritesheet+WALK_FRAME_8
+
+chris_front_run_anim_pointers: ;566B
+	dw chris_front_spritesheet+RUN_FRAME_1
+	dw chris_front_spritesheet+RUN_FRAME_2
+	dw chris_front_spritesheet+RUN_FRAME_3
+	dw chris_front_spritesheet+RUN_FRAME_4
+	dw chris_front_spritesheet+RUN_FRAME_5
+	dw chris_front_spritesheet+RUN_FRAME_6
+	dw chris_front_spritesheet+RUN_FRAME_7
+	dw chris_front_spritesheet+RUN_FRAME_8
+
+chris_right_run_anim_pointers: ;567B
+	dw chris_front_right_spritesheet+RUN_FRAME_1
+	dw chris_front_right_spritesheet+RUN_FRAME_2
+	dw chris_front_right_spritesheet+RUN_FRAME_3
+	dw chris_front_right_spritesheet+RUN_FRAME_4
+	dw chris_front_right_spritesheet+RUN_FRAME_5
+	dw chris_front_right_spritesheet+RUN_FRAME_6
+	dw chris_front_right_spritesheet+RUN_FRAME_7
+	dw chris_front_right_spritesheet+RUN_FRAME_8
+
+chris_back_run_anim_pointers: ;568B
+	dw chris_right_spritesheet+RUN_FRAME_1
+	dw chris_right_spritesheet+RUN_FRAME_2
+	dw chris_right_spritesheet+RUN_FRAME_3
+	dw chris_right_spritesheet+RUN_FRAME_4
+	dw chris_right_spritesheet+RUN_FRAME_5
+	dw chris_right_spritesheet+RUN_FRAME_6
+	dw chris_right_spritesheet+RUN_FRAME_7
+	dw chris_right_spritesheet+RUN_FRAME_8
+
+chris_left_run_anim_pointers: ;569B
+	dw chris_back_right_spritesheet+RUN_FRAME_1
+	dw chris_back_right_spritesheet+RUN_FRAME_2
+	dw chris_back_right_spritesheet+RUN_FRAME_3
+	dw chris_back_right_spritesheet+RUN_FRAME_4
+	dw chris_back_right_spritesheet+RUN_FRAME_5
+	dw chris_back_right_spritesheet+RUN_FRAME_6
+	dw chris_back_right_spritesheet+RUN_FRAME_7
+	dw chris_back_right_spritesheet+RUN_FRAME_8
+
+chris_overhead_front_run_anim_pointers: ;56AB
+	dw chris_back_spritesheet+RUN_FRAME_1
+	dw chris_back_spritesheet+RUN_FRAME_2
+	dw chris_back_spritesheet+RUN_FRAME_3
+	dw chris_back_spritesheet+RUN_FRAME_4
+	dw chris_back_spritesheet+RUN_FRAME_5
+	dw chris_back_spritesheet+RUN_FRAME_6
+	dw chris_back_spritesheet+RUN_FRAME_7
+	dw chris_back_spritesheet+RUN_FRAME_8
+
+chris_overhead_right_run_anim_pointers: ;56BB
+	dw chris_back_left_spritesheet+RUN_FRAME_1
+	dw chris_back_left_spritesheet+RUN_FRAME_2
+	dw chris_back_left_spritesheet+RUN_FRAME_3
+	dw chris_back_left_spritesheet+RUN_FRAME_4
+	dw chris_back_left_spritesheet+RUN_FRAME_5
+	dw chris_back_left_spritesheet+RUN_FRAME_6
+	dw chris_back_left_spritesheet+RUN_FRAME_7
+	dw chris_back_left_spritesheet+RUN_FRAME_8
+
+chris_overhead_back_run_anim_pointers: ;56CB
+	dw chris_left_spritesheet+RUN_FRAME_1
+	dw chris_left_spritesheet+RUN_FRAME_2
+	dw chris_left_spritesheet+RUN_FRAME_3
+	dw chris_left_spritesheet+RUN_FRAME_4
+	dw chris_left_spritesheet+RUN_FRAME_5
+	dw chris_left_spritesheet+RUN_FRAME_6
+	dw chris_left_spritesheet+RUN_FRAME_7
+	dw chris_left_spritesheet+RUN_FRAME_8
+
+chris_overhead_left_run_anim_pointers: ;56DB
+	dw chris_front_left_spritesheet+RUN_FRAME_1
+	dw chris_front_left_spritesheet+RUN_FRAME_2
+	dw chris_front_left_spritesheet+RUN_FRAME_3
+	dw chris_front_left_spritesheet+RUN_FRAME_4
+	dw chris_front_left_spritesheet+RUN_FRAME_5
+	dw chris_front_left_spritesheet+RUN_FRAME_6
+	dw chris_front_left_spritesheet+RUN_FRAME_7
+	dw chris_front_left_spritesheet+RUN_FRAME_8
+
+chris_front_right_run_anim_pointers: ;56EB
+	dw chris_overhead_front_spritesheet+RUN_FRAME_1
+	dw chris_overhead_front_spritesheet+RUN_FRAME_2
+	dw chris_overhead_front_spritesheet+RUN_FRAME_3
+	dw chris_overhead_front_spritesheet+RUN_FRAME_4
+	dw chris_overhead_front_spritesheet+RUN_FRAME_5
+	dw chris_overhead_front_spritesheet+RUN_FRAME_6
+	dw chris_overhead_front_spritesheet+RUN_FRAME_7
+	dw chris_overhead_front_spritesheet+RUN_FRAME_8
+
+chris_back_right_run_anim_pointers: ;56FB
+	dw chris_overhead_front_right_spritesheet+RUN_FRAME_1
+	dw chris_overhead_front_right_spritesheet+RUN_FRAME_2
+	dw chris_overhead_front_right_spritesheet+RUN_FRAME_3
+	dw chris_overhead_front_right_spritesheet+RUN_FRAME_4
+	dw chris_overhead_front_right_spritesheet+RUN_FRAME_5
+	dw chris_overhead_front_right_spritesheet+RUN_FRAME_6
+	dw chris_overhead_front_right_spritesheet+RUN_FRAME_7
+	dw chris_overhead_front_right_spritesheet+RUN_FRAME_8
+
+chris_back_left_run_anim_pointers: ;570B
+	dw chris_overhead_right_spritesheet+RUN_FRAME_1
+	dw chris_overhead_right_spritesheet+RUN_FRAME_2
+	dw chris_overhead_right_spritesheet+RUN_FRAME_3
+	dw chris_overhead_right_spritesheet+RUN_FRAME_4
+	dw chris_overhead_right_spritesheet+RUN_FRAME_5
+	dw chris_overhead_right_spritesheet+RUN_FRAME_6
+	dw chris_overhead_right_spritesheet+RUN_FRAME_7
+	dw chris_overhead_right_spritesheet+RUN_FRAME_8
+
+chris_front_left_run_anim_pointers: ;571B
+	dw chris_overhead_back_right_spritesheet+RUN_FRAME_1
+	dw chris_overhead_back_right_spritesheet+RUN_FRAME_2
+	dw chris_overhead_back_right_spritesheet+RUN_FRAME_3
+	dw chris_overhead_back_right_spritesheet+RUN_FRAME_4
+	dw chris_overhead_back_right_spritesheet+RUN_FRAME_5
+	dw chris_overhead_back_right_spritesheet+RUN_FRAME_6
+	dw chris_overhead_back_right_spritesheet+RUN_FRAME_7
+	dw chris_overhead_back_right_spritesheet+RUN_FRAME_8
+
+chris_overhead_front_right_run_anim_pointers: ;572B
+	dw chris_overhead_back_spritesheet+RUN_FRAME_1
+	dw chris_overhead_back_spritesheet+RUN_FRAME_2
+	dw chris_overhead_back_spritesheet+RUN_FRAME_3
+	dw chris_overhead_back_spritesheet+RUN_FRAME_4
+	dw chris_overhead_back_spritesheet+RUN_FRAME_5
+	dw chris_overhead_back_spritesheet+RUN_FRAME_6
+	dw chris_overhead_back_spritesheet+RUN_FRAME_7
+	dw chris_overhead_back_spritesheet+RUN_FRAME_8
+
+chris_overhead_back_right_run_anim_pointers: ;573B
+	dw chris_overhead_back_left_spritesheet+RUN_FRAME_1
+	dw chris_overhead_back_left_spritesheet+RUN_FRAME_2
+	dw chris_overhead_back_left_spritesheet+RUN_FRAME_3
+	dw chris_overhead_back_left_spritesheet+RUN_FRAME_4
+	dw chris_overhead_back_left_spritesheet+RUN_FRAME_5
+	dw chris_overhead_back_left_spritesheet+RUN_FRAME_6
+	dw chris_overhead_back_left_spritesheet+RUN_FRAME_7
+	dw chris_overhead_back_left_spritesheet+RUN_FRAME_8
+
+chris_overhead_back_left_run_anim_pointers: ;574B
+	dw chris_overhead_left_spritesheet+RUN_FRAME_1
+	dw chris_overhead_left_spritesheet+RUN_FRAME_2
+	dw chris_overhead_left_spritesheet+RUN_FRAME_3
+	dw chris_overhead_left_spritesheet+RUN_FRAME_4
+	dw chris_overhead_left_spritesheet+RUN_FRAME_5
+	dw chris_overhead_left_spritesheet+RUN_FRAME_6
+	dw chris_overhead_left_spritesheet+RUN_FRAME_7
+	dw chris_overhead_left_spritesheet+RUN_FRAME_8
+
+chris_overhead_front_left_run_anim_pointers: ;575B
+	dw chris_overhead_front_left_spritesheet+RUN_FRAME_1
+	dw chris_overhead_front_left_spritesheet+RUN_FRAME_2
+	dw chris_overhead_front_left_spritesheet+RUN_FRAME_3
+	dw chris_overhead_front_left_spritesheet+RUN_FRAME_4
+	dw chris_overhead_front_left_spritesheet+RUN_FRAME_5
+	dw chris_overhead_front_left_spritesheet+RUN_FRAME_6
+	dw chris_overhead_front_left_spritesheet+RUN_FRAME_7
+	dw chris_overhead_front_left_spritesheet+RUN_FRAME_8
+
+chris_front_gun_aim_anim_pointers: ;576B
+	dw chris_front_spritesheet+GUN_AIM_UP
+	dw chris_front_spritesheet+GUN_AIM_FRONT
+	dw chris_front_spritesheet+GUN_AIM_DOWN
+
+chris_right_gun_aim_anim_pointers: ;5771
+	dw chris_front_right_spritesheet+GUN_AIM_UP
+	dw chris_front_right_spritesheet+GUN_AIM_FRONT
+	dw chris_front_right_spritesheet+GUN_AIM_DOWN
+
+chris_back_gun_aim_anim_pointers: ;5777
+	dw chris_right_spritesheet+GUN_AIM_UP
+	dw chris_right_spritesheet+GUN_AIM_FRONT
+	dw chris_right_spritesheet+GUN_AIM_DOWN
+
+chris_left_gun_aim_anim_pointers: ;577D
+	dw chris_back_right_spritesheet+GUN_AIM_UP
+	dw chris_back_right_spritesheet+GUN_AIM_FRONT
+	dw chris_back_right_spritesheet+GUN_AIM_DOWN
+
+chris_overhead_front_gun_aim_anim_pointers: ;5783
+	dw chris_back_spritesheet+GUN_AIM_UP
+	dw chris_back_spritesheet+GUN_AIM_FRONT
+	dw chris_back_spritesheet+GUN_AIM_DOWN
+
+chris_overhead_right_gun_aim_anim_pointers: ;5789
+	dw chris_back_left_spritesheet+GUN_AIM_UP
+	dw chris_back_left_spritesheet+GUN_AIM_FRONT
+	dw chris_back_left_spritesheet+GUN_AIM_DOWN
+
+chris_overhead_back_gun_aim_anim_pointers: ;578F
+	dw chris_left_spritesheet+GUN_AIM_UP
+	dw chris_left_spritesheet+GUN_AIM_FRONT
+	dw chris_left_spritesheet+GUN_AIM_DOWN
+
+chris_overhead_left_gun_aim_anim_pointers: ;5795
+	dw chris_front_left_spritesheet+GUN_AIM_UP
+	dw chris_front_left_spritesheet+GUN_AIM_FRONT
+	dw chris_front_left_spritesheet+GUN_AIM_DOWN
+
+chris_front_right_gun_aim_anim_pointers: ;579B
+	dw chris_overhead_front_spritesheet+GUN_AIM_UP
+	dw chris_overhead_front_spritesheet+GUN_AIM_FRONT
+	dw chris_overhead_front_spritesheet+GUN_AIM_DOWN
+
+chris_back_right_gun_aim_anim_pointers: ;57A1
+	dw chris_overhead_front_right_spritesheet+GUN_AIM_UP
+	dw chris_overhead_front_right_spritesheet+GUN_AIM_FRONT
+	dw chris_overhead_front_right_spritesheet+GUN_AIM_DOWN
+
+chris_back_left_gun_aim_anim_pointers: ;57A7
+	dw chris_overhead_right_spritesheet+GUN_AIM_UP
+	dw chris_overhead_right_spritesheet+GUN_AIM_FRONT
+	dw chris_overhead_right_spritesheet+GUN_AIM_DOWN
+
+chris_front_left_gun_aim_anim_pointers: ;57AD
+	dw chris_overhead_back_right_spritesheet+GUN_AIM_UP
+	dw chris_overhead_back_right_spritesheet+GUN_AIM_FRONT
+	dw chris_overhead_back_right_spritesheet+GUN_AIM_DOWN
+
+chris_overhead_front_right_gun_aim_anim_pointers: ;57B3
+	dw chris_overhead_back_spritesheet+GUN_AIM_UP
+	dw chris_overhead_back_spritesheet+GUN_AIM_FRONT
+	dw chris_overhead_back_spritesheet+GUN_AIM_DOWN
+
+chris_overhead_back_right_gun_aim_anim_pointers: ;57B9
+	dw chris_overhead_back_left_spritesheet+GUN_AIM_UP
+	dw chris_overhead_back_left_spritesheet+GUN_AIM_FRONT
+	dw chris_overhead_back_left_spritesheet+GUN_AIM_DOWN
+
+chris_overhead_back_left_gun_aim_anim_pointers: ;57BF
+	dw chris_overhead_left_spritesheet+GUN_AIM_UP
+	dw chris_overhead_left_spritesheet+GUN_AIM_FRONT
+	dw chris_overhead_left_spritesheet+GUN_AIM_DOWN
+
+chris_overhead_front_left_gun_aim_anim_pointers: ;57C5
+	dw chris_overhead_front_left_spritesheet+GUN_AIM_UP
+	dw chris_overhead_front_left_spritesheet+GUN_AIM_FRONT
+	dw chris_overhead_front_left_spritesheet+GUN_AIM_DOWN
+
+chris_front_shotgun_aim_anim_pointers: ;57CB
+	dw chris_front_spritesheet+SHOTGUN_AIM_UP
+	dw chris_front_spritesheet+SHOTGUN_AIM_FRONT
+	dw chris_front_spritesheet+SHOTGUN_AIM_DOWN
+
+chris_right_shotgun_aim_anim_pointers: ;57D1
+	dw chris_front_right_spritesheet+SHOTGUN_AIM_UP
+	dw chris_front_right_spritesheet+SHOTGUN_AIM_FRONT
+	dw chris_front_right_spritesheet+SHOTGUN_AIM_DOWN
+
+chris_back_shotgun_aim_anim_pointers: ;57D7
+	dw chris_right_spritesheet+SHOTGUN_AIM_UP
+	dw chris_right_spritesheet+SHOTGUN_AIM_FRONT
+	dw chris_right_spritesheet+SHOTGUN_AIM_DOWN
+
+chris_left_shotgun_aim_anim_pointers: ;57DD
+	dw chris_back_right_spritesheet+SHOTGUN_AIM_UP
+	dw chris_back_right_spritesheet+SHOTGUN_AIM_FRONT
+	dw chris_back_right_spritesheet+SHOTGUN_AIM_DOWN
+
+chris_overhead_front_shotgun_aim_anim_pointers: ;57E3
+	dw chris_back_spritesheet+SHOTGUN_AIM_UP
+	dw chris_back_spritesheet+SHOTGUN_AIM_FRONT
+	dw chris_back_spritesheet+SHOTGUN_AIM_DOWN
+
+chris_overhead_right_shotgun_aim_anim_pointers: ;57E9
+	dw chris_back_left_spritesheet+SHOTGUN_AIM_UP
+	dw chris_back_left_spritesheet+SHOTGUN_AIM_FRONT
+	dw chris_back_left_spritesheet+SHOTGUN_AIM_DOWN
+
+chris_overhead_back_shotgun_aim_anim_pointers: ;57EF
+	dw chris_left_spritesheet+SHOTGUN_AIM_UP
+	dw chris_left_spritesheet+SHOTGUN_AIM_FRONT
+	dw chris_left_spritesheet+SHOTGUN_AIM_DOWN
+
+chris_overhead_left_shotgun_aim_anim_pointers: ;57F5
+	dw chris_front_left_spritesheet+SHOTGUN_AIM_UP
+	dw chris_front_left_spritesheet+SHOTGUN_AIM_FRONT
+	dw chris_front_left_spritesheet+SHOTGUN_AIM_DOWN
+
+chris_front_right_shotgun_aim_anim_pointers: ;57FB
+	dw chris_overhead_front_spritesheet+SHOTGUN_AIM_UP
+	dw chris_overhead_front_spritesheet+SHOTGUN_AIM_FRONT
+	dw chris_overhead_front_spritesheet+SHOTGUN_AIM_DOWN
+
+chris_back_right_shotgun_aim_anim_pointers: ;5801
+	dw chris_overhead_front_right_spritesheet+SHOTGUN_AIM_UP
+	dw chris_overhead_front_right_spritesheet+SHOTGUN_AIM_FRONT
+	dw chris_overhead_front_right_spritesheet+SHOTGUN_AIM_DOWN
+
+chris_back_left_shotgun_aim_anim_pointers: ;5807
+	dw chris_overhead_right_spritesheet+SHOTGUN_AIM_UP
+	dw chris_overhead_right_spritesheet+SHOTGUN_AIM_FRONT
+	dw chris_overhead_right_spritesheet+SHOTGUN_AIM_DOWN
+
+chris_front_left_shotgun_aim_anim_pointers: ;580D
+	dw chris_overhead_back_right_spritesheet+SHOTGUN_AIM_UP
+	dw chris_overhead_back_right_spritesheet+SHOTGUN_AIM_FRONT
+	dw chris_overhead_back_right_spritesheet+SHOTGUN_AIM_DOWN
+
+chris_overhead_front_right_shotgun_aim_anim_pointers: ;5813
+	dw chris_overhead_back_spritesheet+SHOTGUN_AIM_UP
+	dw chris_overhead_back_spritesheet+SHOTGUN_AIM_FRONT
+	dw chris_overhead_back_spritesheet+SHOTGUN_AIM_DOWN
+
+chris_overhead_back_right_shotgun_aim_anim_pointers: ;5819
+	dw chris_overhead_back_left_spritesheet+SHOTGUN_AIM_UP
+	dw chris_overhead_back_left_spritesheet+SHOTGUN_AIM_FRONT
+	dw chris_overhead_back_left_spritesheet+SHOTGUN_AIM_DOWN
+
+chris_overhead_back_left_shotgun_aim_anim_pointers: ;581F
+	dw chris_overhead_left_spritesheet+SHOTGUN_AIM_UP
+	dw chris_overhead_left_spritesheet+SHOTGUN_AIM_FRONT
+	dw chris_overhead_left_spritesheet+SHOTGUN_AIM_DOWN
+
+chris_overhead_front_left_shotgun_aim_anim_pointers: ;5825
+	dw chris_overhead_front_left_spritesheet+SHOTGUN_AIM_UP
+	dw chris_overhead_front_left_spritesheet+SHOTGUN_AIM_FRONT
+	dw chris_overhead_front_left_spritesheet+SHOTGUN_AIM_DOWN
+
+chris_front_knife_aim_anim_pointers: ;582B
+	dw chris_front_spritesheet+KNIFE_AIM_IDLE_1
+	dw chris_front_spritesheet+KNIFE_AIM_IDLE_2
+	dw chris_front_spritesheet+KNIFE_AIM_UP
+	dw chris_front_spritesheet+KNIFE_AIM_DOWN
+	dw chris_front_spritesheet+KNIFE_AIM_FRONT
+	dw chris_front_spritesheet+BLACK_FRAME1
+
+chris_right_knife_aim_anim_pointers: ;5837
+	dw chris_front_right_spritesheet+KNIFE_AIM_IDLE_1
+	dw chris_front_right_spritesheet+KNIFE_AIM_IDLE_2
+	dw chris_front_right_spritesheet+KNIFE_AIM_UP
+	dw chris_front_right_spritesheet+KNIFE_AIM_DOWN
+	dw chris_front_right_spritesheet+KNIFE_AIM_FRONT
+	dw chris_front_right_spritesheet+BLACK_FRAME1
+
+chris_back_knife_aim_anim_pointers: ;5843
+	dw chris_right_spritesheet+KNIFE_AIM_IDLE_1
+	dw chris_right_spritesheet+KNIFE_AIM_IDLE_2
+	dw chris_right_spritesheet+KNIFE_AIM_UP
+	dw chris_right_spritesheet+KNIFE_AIM_DOWN
+	dw chris_right_spritesheet+KNIFE_AIM_FRONT
+	dw chris_right_spritesheet+BLACK_FRAME1
+
+chris_left_knife_aim_anim_pointers: ;584F
+	dw chris_back_right_spritesheet+KNIFE_AIM_IDLE_1
+	dw chris_back_right_spritesheet+KNIFE_AIM_IDLE_2
+	dw chris_back_right_spritesheet+KNIFE_AIM_UP
+	dw chris_back_right_spritesheet+KNIFE_AIM_DOWN
+	dw chris_back_right_spritesheet+KNIFE_AIM_FRONT
+	dw chris_back_right_spritesheet+BLACK_FRAME1
+
+chris_overhead_front_knife_aim_anim_pointers: ;585B
+	dw chris_back_spritesheet+KNIFE_AIM_IDLE_1
+	dw chris_back_spritesheet+KNIFE_AIM_IDLE_2
+	dw chris_back_spritesheet+KNIFE_AIM_UP
+	dw chris_back_spritesheet+KNIFE_AIM_DOWN
+	dw chris_back_spritesheet+KNIFE_AIM_FRONT
+	dw chris_back_spritesheet+BLACK_FRAME1
+
+chris_overhead_right_knife_aim_anim_pointers: ;5867
+	dw chris_back_left_spritesheet+KNIFE_AIM_IDLE_1
+	dw chris_back_left_spritesheet+KNIFE_AIM_IDLE_2
+	dw chris_back_left_spritesheet+KNIFE_AIM_UP
+	dw chris_back_left_spritesheet+KNIFE_AIM_DOWN
+	dw chris_back_left_spritesheet+KNIFE_AIM_FRONT
+	dw chris_back_left_spritesheet+BLACK_FRAME1
+
+chris_overhead_back_knife_aim_anim_pointers: ;5873
+	dw chris_left_spritesheet+KNIFE_AIM_IDLE_1
+	dw chris_left_spritesheet+KNIFE_AIM_IDLE_2
+	dw chris_left_spritesheet+KNIFE_AIM_UP
+	dw chris_left_spritesheet+KNIFE_AIM_DOWN
+	dw chris_left_spritesheet+KNIFE_AIM_FRONT
+	dw chris_left_spritesheet+BLACK_FRAME1
+
+chris_overhead_left_knife_aim_anim_pointers: ;587F
+	dw chris_front_left_spritesheet+KNIFE_AIM_IDLE_1
+	dw chris_front_left_spritesheet+KNIFE_AIM_IDLE_2
+	dw chris_front_left_spritesheet+KNIFE_AIM_UP
+	dw chris_front_left_spritesheet+KNIFE_AIM_DOWN
+	dw chris_front_left_spritesheet+KNIFE_AIM_FRONT
+	dw chris_front_left_spritesheet+BLACK_FRAME1
+
+chris_front_right_knife_aim_anim_pointers: ;588B
+	dw chris_overhead_front_spritesheet+KNIFE_AIM_IDLE_1
+	dw chris_overhead_front_spritesheet+KNIFE_AIM_IDLE_2
+	dw chris_overhead_front_spritesheet+KNIFE_AIM_UP
+	dw chris_overhead_front_spritesheet+KNIFE_AIM_DOWN
+	dw chris_overhead_front_spritesheet+KNIFE_AIM_FRONT
+	dw chris_overhead_front_spritesheet+BLACK_FRAME1
+
+chris_back_right_knife_aim_anim_pointers: ;5897
+	dw chris_overhead_front_right_spritesheet+KNIFE_AIM_IDLE_1
+	dw chris_overhead_front_right_spritesheet+KNIFE_AIM_IDLE_2
+	dw chris_overhead_front_right_spritesheet+KNIFE_AIM_UP
+	dw chris_overhead_front_right_spritesheet+KNIFE_AIM_DOWN
+	dw chris_overhead_front_right_spritesheet+KNIFE_AIM_FRONT
+	dw chris_overhead_front_right_spritesheet+BLACK_FRAME1
+
+chris_back_left_knife_aim_anim_pointers: ;58A3
+	dw chris_overhead_right_spritesheet+KNIFE_AIM_IDLE_1
+	dw chris_overhead_right_spritesheet+KNIFE_AIM_IDLE_2
+	dw chris_overhead_right_spritesheet+KNIFE_AIM_UP
+	dw chris_overhead_right_spritesheet+KNIFE_AIM_DOWN
+	dw chris_overhead_right_spritesheet+KNIFE_AIM_FRONT
+	dw chris_overhead_right_spritesheet+BLACK_FRAME1
+
+chris_front_left_knife_aim_anim_pointers: ;58AF
+	dw chris_overhead_back_right_spritesheet+KNIFE_AIM_IDLE_1
+	dw chris_overhead_back_right_spritesheet+KNIFE_AIM_IDLE_2
+	dw chris_overhead_back_right_spritesheet+KNIFE_AIM_UP
+	dw chris_overhead_back_right_spritesheet+KNIFE_AIM_DOWN
+	dw chris_overhead_back_right_spritesheet+KNIFE_AIM_FRONT
+	dw chris_overhead_back_right_spritesheet+BLACK_FRAME1
+
+chris_overhead_front_right_knife_aim_anim_pointers: ;58BB
+	dw chris_overhead_back_spritesheet+KNIFE_AIM_IDLE_1
+	dw chris_overhead_back_spritesheet+KNIFE_AIM_IDLE_2
+	dw chris_overhead_back_spritesheet+KNIFE_AIM_UP
+	dw chris_overhead_back_spritesheet+KNIFE_AIM_DOWN
+	dw chris_overhead_back_spritesheet+KNIFE_AIM_FRONT
+	dw chris_overhead_back_spritesheet+BLACK_FRAME1
+
+chris_overhead_back_right_knife_aim_anim_pointers: ;58C7
+	dw chris_overhead_back_left_spritesheet+KNIFE_AIM_IDLE_1
+	dw chris_overhead_back_left_spritesheet+KNIFE_AIM_IDLE_2
+	dw chris_overhead_back_left_spritesheet+KNIFE_AIM_UP
+	dw chris_overhead_back_left_spritesheet+KNIFE_AIM_DOWN
+	dw chris_overhead_back_left_spritesheet+KNIFE_AIM_FRONT
+	dw chris_overhead_back_left_spritesheet+BLACK_FRAME1
+
+chris_overhead_back_left_knife_aim_anim_pointers: ;58D3
+	dw chris_overhead_left_spritesheet+KNIFE_AIM_IDLE_1
+	dw chris_overhead_left_spritesheet+KNIFE_AIM_IDLE_2
+	dw chris_overhead_left_spritesheet+KNIFE_AIM_UP
+	dw chris_overhead_left_spritesheet+KNIFE_AIM_DOWN
+	dw chris_overhead_left_spritesheet+KNIFE_AIM_FRONT
+	dw chris_overhead_left_spritesheet+BLACK_FRAME1
+
+chris_overhead_front_left_knife_aim_anim_pointers: ;58DF
+	dw chris_overhead_front_left_spritesheet+KNIFE_AIM_IDLE_1
+	dw chris_overhead_front_left_spritesheet+KNIFE_AIM_IDLE_2
+	dw chris_overhead_front_left_spritesheet+KNIFE_AIM_UP
+	dw chris_overhead_front_left_spritesheet+KNIFE_AIM_DOWN
+	dw chris_overhead_front_left_spritesheet+KNIFE_AIM_FRONT
+	dw chris_overhead_front_left_spritesheet+BLACK_FRAME1
+
+chris_front_get_damage_anim_pointers: ;58EB
+	dw chris_front_spritesheet+GET_DAMAGE_FRAME
+
+chris_right_get_damage_anim_pointers: ;58ED
+	dw chris_front_right_spritesheet+GET_DAMAGE_FRAME
+
+chris_back_get_damage_anim_pointers: ;58EF
+	dw chris_right_spritesheet+GET_DAMAGE_FRAME
+
+chris_left_get_damage_anim_pointers: ;58F1
+	dw chris_back_right_spritesheet+GET_DAMAGE_FRAME
+
+chris_overhead_front_get_damage_anim_pointers: ;58F3
+	dw chris_back_spritesheet+GET_DAMAGE_FRAME
+
+chris_overhead_right_get_damage_anim_pointers: ;58F5
+	dw chris_back_left_spritesheet+GET_DAMAGE_FRAME
+
+chris_overhead_back_get_damage_anim_pointers: ;58F7
+	dw chris_left_spritesheet+GET_DAMAGE_FRAME
+
+chris_overhead_left_get_damage_anim_pointers: ;58F9
+	dw chris_front_left_spritesheet+GET_DAMAGE_FRAME
+
+chris_front_right_get_damage_anim_pointers: ;58FB
+	dw chris_overhead_front_spritesheet+GET_DAMAGE_FRAME
+
+chris_back_right_get_damage_anim_pointers: ;58FD
+	dw chris_overhead_front_right_spritesheet+GET_DAMAGE_FRAME
+
+chris_back_left_get_damage_anim_pointers: ;58FF
+	dw chris_overhead_right_spritesheet+GET_DAMAGE_FRAME
+
+chris_front_left_get_damage_anim_pointers: ;5901
+	dw chris_overhead_back_right_spritesheet+GET_DAMAGE_FRAME
+
+chris_overhead_front_right_get_damage_anim_pointers: ;5903
+	dw chris_overhead_back_spritesheet+GET_DAMAGE_FRAME
+
+chris_overhead_back_right_get_damage_anim_pointers: ;5905
+	dw chris_overhead_back_left_spritesheet+GET_DAMAGE_FRAME
+
+chris_overhead_back_left_get_damage_anim_pointers: ;5907
+	dw chris_overhead_left_spritesheet+GET_DAMAGE_FRAME
+
+chris_overhead_front_left_get_damage_anim_pointers: ;5909
+	dw chris_overhead_front_left_spritesheet+GET_DAMAGE_FRAME
+
+chris_front_pick_item_anim_pointers: ;590B
+	dw chris_front_spritesheet+PICK_ITEM_FRAME
+	dw chris_front_spritesheet+PICK_ITEM_FRAME
+	dw chris_front_spritesheet+PICK_ITEM_FRAME
+	dw chris_front_spritesheet+PICK_ITEM_FRAME
+
+chris_right_pick_item_anim_pointers: ;5913
+	dw chris_front_right_spritesheet+PICK_ITEM_FRAME
+	dw chris_front_right_spritesheet+PICK_ITEM_FRAME
+	dw chris_front_right_spritesheet+PICK_ITEM_FRAME
+	dw chris_front_right_spritesheet+PICK_ITEM_FRAME
+
+chris_back_pick_item_anim_pointers: ;591B
+	dw chris_right_spritesheet+PICK_ITEM_FRAME
+	dw chris_right_spritesheet+PICK_ITEM_FRAME
+	dw chris_right_spritesheet+PICK_ITEM_FRAME
+	dw chris_right_spritesheet+PICK_ITEM_FRAME
+
+chris_left_pick_item_anim_pointers: ;5923
+	dw chris_back_right_spritesheet+PICK_ITEM_FRAME
+	dw chris_back_right_spritesheet+PICK_ITEM_FRAME
+	dw chris_back_right_spritesheet+PICK_ITEM_FRAME
+	dw chris_back_right_spritesheet+PICK_ITEM_FRAME
+
+chris_overhead_front_pick_item_anim_pointers: ;592B
+	dw chris_back_spritesheet+PICK_ITEM_FRAME
+	dw chris_back_spritesheet+PICK_ITEM_FRAME
+	dw chris_back_spritesheet+PICK_ITEM_FRAME
+	dw chris_back_spritesheet+PICK_ITEM_FRAME
+
+chris_overhead_right_pick_item_anim_pointers: ;5933
+	dw chris_back_left_spritesheet+PICK_ITEM_FRAME
+	dw chris_back_left_spritesheet+PICK_ITEM_FRAME
+	dw chris_back_left_spritesheet+PICK_ITEM_FRAME
+	dw chris_back_left_spritesheet+PICK_ITEM_FRAME
+
+chris_overhead_back_pick_item_anim_pointers: ;593B
+	dw chris_left_spritesheet+PICK_ITEM_FRAME
+	dw chris_left_spritesheet+PICK_ITEM_FRAME
+	dw chris_left_spritesheet+PICK_ITEM_FRAME
+	dw chris_left_spritesheet+PICK_ITEM_FRAME
+
+chris_overhead_left_pick_item_anim_pointers: ;5943
+	dw chris_front_left_spritesheet+PICK_ITEM_FRAME
+	dw chris_front_left_spritesheet+PICK_ITEM_FRAME
+	dw chris_front_left_spritesheet+PICK_ITEM_FRAME
+	dw chris_front_left_spritesheet+PICK_ITEM_FRAME
+
+chris_front_right_pick_item_anim_pointers: ;594B
+	dw chris_overhead_front_spritesheet+PICK_ITEM_FRAME
+	dw chris_overhead_front_spritesheet+PICK_ITEM_FRAME
+	dw chris_overhead_front_spritesheet+PICK_ITEM_FRAME
+	dw chris_overhead_front_spritesheet+PICK_ITEM_FRAME
+
+chris_back_right_pick_item_anim_pointers: ;5953
+	dw chris_overhead_front_right_spritesheet+PICK_ITEM_FRAME
+	dw chris_overhead_front_right_spritesheet+PICK_ITEM_FRAME
+	dw chris_overhead_front_right_spritesheet+PICK_ITEM_FRAME
+	dw chris_overhead_front_right_spritesheet+PICK_ITEM_FRAME
+
+chris_back_left_pick_item_anim_pointers: ;595B
+	dw chris_overhead_right_spritesheet+PICK_ITEM_FRAME
+	dw chris_overhead_right_spritesheet+PICK_ITEM_FRAME
+	dw chris_overhead_right_spritesheet+PICK_ITEM_FRAME
+	dw chris_overhead_right_spritesheet+PICK_ITEM_FRAME
+
+chris_front_left_pick_item_anim_pointers: ;5963
+	dw chris_overhead_back_right_spritesheet+PICK_ITEM_FRAME
+	dw chris_overhead_back_right_spritesheet+PICK_ITEM_FRAME
+	dw chris_overhead_back_right_spritesheet+PICK_ITEM_FRAME
+	dw chris_overhead_back_right_spritesheet+PICK_ITEM_FRAME
+
+chris_overhead_front_right_pick_item_anim_pointers: ;596B
+	dw chris_overhead_back_spritesheet+PICK_ITEM_FRAME
+	dw chris_overhead_back_spritesheet+PICK_ITEM_FRAME
+	dw chris_overhead_back_spritesheet+PICK_ITEM_FRAME
+	dw chris_overhead_back_spritesheet+PICK_ITEM_FRAME
+
+chris_overhead_back_right_pick_item_anim_pointers: ;5973
+	dw chris_overhead_back_left_spritesheet+PICK_ITEM_FRAME
+	dw chris_overhead_back_left_spritesheet+PICK_ITEM_FRAME
+	dw chris_overhead_back_left_spritesheet+PICK_ITEM_FRAME
+	dw chris_overhead_back_left_spritesheet+PICK_ITEM_FRAME
+
+chris_overhead_back_left_pick_item_anim_pointers: ;597B
+	dw chris_overhead_left_spritesheet+PICK_ITEM_FRAME
+	dw chris_overhead_left_spritesheet+PICK_ITEM_FRAME
+	dw chris_overhead_left_spritesheet+PICK_ITEM_FRAME
+	dw chris_overhead_left_spritesheet+PICK_ITEM_FRAME
+
+chris_overhead_front_left_pick_item_anim_pointers: ;5983
+	dw chris_overhead_front_left_spritesheet+PICK_ITEM_FRAME
+	dw chris_overhead_front_left_spritesheet+PICK_ITEM_FRAME
+	dw chris_overhead_front_left_spritesheet+PICK_ITEM_FRAME
+	dw chris_overhead_front_left_spritesheet+PICK_ITEM_FRAME
+;598B

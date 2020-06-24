@@ -1,72 +1,44 @@
 unused_original_theme_01_ch1: ;4EF5
-	db $67, $FF
-	db $69, $DC
-	branchId $00
-	db $E4, $01
-	branchId $04
-	db $E4, $01
-	branchId $04
-	db $E4, $01
-	branchId $08
-	db $E4, $01
-	branchId $0B
-	db $E4, $01
-	branchId $0E
-	db $E4, $01
-	branchId $11
-	db $E4, $01
-	branchId $14
-	db $D8, $01
-	branchId $17
-	db $E4, $01
-	db $66, $01
+	enableSound $FF
+	tempo 220
+	playBranch unusedTheme01Branches, 0, -28, 1
+	playBranch unusedTheme01Branches, 4, -28, 1
+	playBranch unusedTheme01Branches, 4, -28, 1
+	playBranch unusedTheme01Branches, 8, -28, 1
+	playBranch unusedTheme01Branches, 11, -28, 1
+	playBranch unusedTheme01Branches, 14, -28, 1
+	playBranch unusedTheme01Branches, 17, -28, 1
+	playBranch unusedTheme01Branches, 20, -40, 1
+	playBranch unusedTheme01Branches, 23, -28, 1
+	chlAction0x66 1
 	channelLoop unused_original_theme_01_ch1
 
 unused_original_theme_01_ch2: ;4F22
-	branchId $01
-	db $D8, $01
-	branchId $05
-	db $D8, $01
-	branchId $07
-	db $D8, $01
-	branchId $09
-	db $D8, $01
-	branchId $0C
-	db $D8, $01
-	branchId $0F
-	db $D8, $01
-	branchId $12
-	db $E4, $01
-	branchId $15
-	db $E4, $01
-	branchId $18
-	db $E4, $01
+	playBranch unusedTheme01Branches, 1, -40, 1
+	playBranch unusedTheme01Branches, 5, -40, 1
+	playBranch unusedTheme01Branches, 7, -40, 1
+	playBranch unusedTheme01Branches, 9, -40, 1
+	playBranch unusedTheme01Branches, 12, -40, 1
+	playBranch unusedTheme01Branches, 15, -40, 1
+	playBranch unusedTheme01Branches, 18, -28, 1
+	playBranch unusedTheme01Branches, 21, -28, 1
+	playBranch unusedTheme01Branches, 24, -28, 1
 	channelLoop unused_original_theme_01_ch2
 
 unused_original_theme_01_ch3: ;4F49
-	branchId $02
-	db $F0, $01
-	branchId $06
-	db $F0, $01
-	branchId $06
-	db $F0, $01
-	branchId $0A
-	db $F0, $01
-	branchId $0D
-	db $F0, $01
-	branchId $10
-	db $F0, $01
-	branchId $13
-	db $F0, $01
-	branchId $16
-	db $F0, $01
-	branchId $19
-	db $F0, $01
+	playBranch unusedTheme01Branches, 2, -16, 1
+	playBranch unusedTheme01Branches, 6, -16, 1
+	playBranch unusedTheme01Branches, 6, -16, 1
+	playBranch unusedTheme01Branches, 10, -16, 1
+	playBranch unusedTheme01Branches, 13, -16, 1
+	playBranch unusedTheme01Branches, 16, -16, 1
+	playBranch unusedTheme01Branches, 19, -16, 1
+	playBranch unusedTheme01Branches, 22, -16, 1
+	playBranch unusedTheme01Branches, 25, -16, 1
 	channelLoop unused_original_theme_01_ch3
 
 unused_original_theme_01_ch4: ;4F70
-	branchId $03
-	db $00, $0C
+	playBranch unusedTheme01Branches, 3, 0, 12
 	channelLoop unused_original_theme_01_ch4
 ;4F77
 

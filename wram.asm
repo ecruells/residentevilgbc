@@ -4,6 +4,7 @@ SECTION "WRAM Bank 0", WRAM0
 wWorkRamStart:: ;c000
 	ds $c100 - $c000
 
+wWRamStart::
 wButtonPressId:: ; c100
 	ds 1
 
@@ -13,34 +14,34 @@ wButtonsCombinationValue:: ;c101
 wCurrentRomBank:: ;c102
 	ds 1
 
-wHaltCpuTrigger:: ;c103
+wHaltCPUFlag:: ;c103
 	ds 1
 
-wc104:: ;c104
+; 11: gbc mode
+wInitialRegisterValue:: ;c104
 	ds 1
 
-wFadeInOutUpdate:: ;c105
-;store screen fade-out/fade-id progression
+wPaletteFadeCounter:: ;c105
 	ds 1
 
-wTilemapLookupTableLow:: ;C106
+tilemapImgStructPointerLo:: ;C106
 	ds 1
 
-wTilemapLookupTableHigh:: ;C107
+tilemapImgStructPointerHi:: ;C107
 	ds 1
 
-wVramBankSubBuffer:: ;C108
-;when wVramBankSubBuffer overflow, add carry to wVramBankBuffer
-;maybe c108 count tiles until vram bank 00 is full and change to the 01 bank
+
+wVramTilesCounter:: ;C108
 	ds 1
 
-wVramBankBuffer:: ;C109
+wVramTileAttributes:: ;C109
 	ds 1
 
-wRoomBGBankId:: ;c10A
+
+wBgCurrentPointerBankId:: ;c10A
 	ds 1
 
-wBGDataAddrBank:: ;C10B
+wBgStartBankId:: ;C10B
 	ds 1
 
 wPoliceCardXpos:: ;c10c
@@ -52,49 +53,47 @@ wPoliceCardYpos:: ;c10d
 wCursorPosId:: ;C10E
 	ds 1
 
+; 00: load game mode
+; 01: save game mode
 wLoadOrSave:: ;C10F
-;00: load game mode
-;01: save game mode
 	ds 1
 
-wUpKeyPressDown:: ;C110
+
+wPressingUpKey:: ;C110
 	ds 1
 
-wDownKeyPressDown:: ;C111
+wPressingDownKey:: ;C111
 	ds 1
 
-wFrameRate:: ;c112
+
+wFrameRateCounter:: ;c112
 	ds 1
 
-wSpriteTilesBufferLow:: ;C113
+
+wSpriteTilesBufferPointer:: ;C113
+	ds 2
+
+wLastSpriteInSortedSpritesList:: ;C115
+	ds 2
+
+
+; 00 disabled
+; 01 enabled
+wHDMAFlag:: ;C117
 	ds 1
 
-wSpriteTilesBufferHigh:: ;C114
+wCurrentSpriteHeight:: ;c118
 	ds 1
 
-wSprtPriorityTblLow:: ;C115 wSpriteC115Low
-	ds 1
-
-wSprtPriorityTblHigh:: ;C116 wSpriteC116High
-	ds 1
-
-wHDMAtrigger:: ;C117
-;00 disabled
-;01 enabled
-	ds 1
-
-wSprtPriorHeight:: ;c118
-	ds 1
-
-wc119:: ;c119 unused
+wc119:: ;c119
 	ds 1
 
 wSpriteHalfBufferSize:: ;c11a
 	ds 1
 
-wSelectedPlayer:: ;c11b
-;00 chris
-;01 jill
+; 00 chris
+; 01 jill
+wSelectedCharacter:: ;c11b
 	ds 1
 
 wc11c:: ;c11c
@@ -106,147 +105,129 @@ wc11d:: ;c11d
 wc11e:: ;c11e
 	ds 1
 
-wRoomScreen:: ;c11F
+
+wRoomCameraId:: ;c11F
 	ds 1
 
-wOAMDMAretOpcode:: ;C120
-;store the ret opcode from OAM DMA transfer hram routine
-;C9 ret or C8 ret z (if HDMA is enabled)
+;  0: $C9 default
+;  1: $CA
+wCurrentOAMBufferFlag:: ;C120
 	ds 1
+
 
 wCursorTilesWidth:: ;C121
 	ds 1
 wCursorTilesHeight:: ;C122
 	ds 1
 
-wMenuSelGridId:: ; C123
-;00 map
-;01 radio
-;02 File
-;03 Exit
-;04 item 1
-;05 item 2
-;06 item 3
-;07 item 4
-;08 item 5
-;09 item 6
-;0A item 7
-;0B item 8
-;0C File books
-;0E global map
-;0D radio
-;12 map detail
-;80 use/equip | itembox cursor
-;81 check
-;82 combine
-;84 item description
-;E0 combine grid
-;E4 combine item 1
-;E5 combine item 2
-;E6 combine item 3
-;E7 combine item 4
-;E8 combine item 5
-;E9 combine item 6
-;EA combine item 7
-;EB combine item 8
-;FF get item choice
+
+; 00 Map option
+; 01 Radio option
+; 02 File option
+; 03 Exit option
+; 04 item slot 1
+; 05 item slot 2
+; 06 item slot 3
+; 07 item slot 4
+; 08 item slot 5
+; 09 item slot 6
+; 0A item slot 7
+; 0B item slot 8
+; 0C File books
+; 0E global map
+; 0D radio
+; 12 map detail
+; 80 use/equip | itembox cursor
+; 81 check
+; 82 combine
+; 84 item description
+; E0 combine grid
+; E4 combine item 1
+; E5 combine item 2
+; E6 combine item 3
+; E7 combine item 4
+; E8 combine item 5
+; E9 combine item 6
+; EA combine item 7
+; EB combine item 8
+; FF get item choice
+wMainMenuSelectedCursorId:: ; C123
 	ds 1
 
+; 00: disable FF:enabled
 wMenuMapEnable:: ;C124
-;00: disable FF:enabled
 	ds 1
+
+; 00: disable FF:enabled
 wMenuRadioEnable:: ;C125
-;00: disable FF:enabled
 	ds 1
+
+; 00: disable FF:enabled
 wMenuFileEnable:: ;C126
-;00: disable FF:enabled
 	ds 1
+
+; 00: disable FF:enabled
 wMenuExitEnable:: ;C127
-;00: disable FF:enabled
 	ds 1
 
-wSprtPriorWidth:: ;C128
+
+wCurrentSpriteWidthId::
+wCurrentSpriteWidth:: ;C128
 	ds 1
 
-wc129:: ;c129 unused
+wc129:: ;c129
 	ds 1
 
-;camera position & rotation values
-wCameraYawY:: ;C12A
+;
+;camera position & angles values
+;
+wCameraYawSin:: ;C12A
 	ds 1
-wCameraYawX:: ;c12b
+wCameraYawCos:: ;c12b
 	ds 1
-wCameraPitchY:: ;C12C
+wCameraPitchSine:: ;C12C
 	ds 1
-wCameraPitchX:: ;C12D
+wCameraPitchCos:: ;C12D
 	ds 1
-wCameraYawAddrLow:: ;c12E
-	ds 1
-wCameraYawAddrHigh:: ;c12F
-	ds 1
-wCameraPitchAddrLow:: ;c130
-	ds 1
-wCameraPitchAddrHigh:: ;c131
-	ds 1
-wCameraXAxisLowByte:: ;c132
-	ds 1
-wCameraXAxisHighByte:: ;c133
-	ds 1
-wCameraZAxisLowByte:: ;c134
-	ds 1
-wCameraZAxisHighByte:: ;c135
-	ds 1
-wCameraYAxisLowByte:: ;c136
-	ds 1
-wCameraYAxisHighByte:: ;c137
-	ds 1
-wCameraXPaddingLowByte:: ;c138
-	ds 1
-wCameraXPaddingHighByte:: ;c139
-	ds 1
-wCameraZPaddingLowByte:: ;c13A
-	ds 1
-wCameraZPaddingHighByte:: ;c13B
-	ds 1
-wCameraYPaddingLowByte:: ;c13C
-	ds 1
-wCameraYPaddingHighByte:: ;c13D
+wCameraYawAngle:: ;c12E
+	ds 2
+wCameraPitchAngle:: ;c130
+	ds 2
+wCameraPositionX:: ;c132
+	ds 2
+wCameraPositionY:: ;c134
+	ds 2
+wCameraPositionZ:: ;c136
+	ds 2
+wCameraPositionTX:: ;c138
+	ds 2
+wCameraPositionTY:: ;c13A
+	ds 2
+wCameraPositionTZ:: ;c13C
+	ds 2
+
+wSpriteProjectedX:: ;c13E
+	ds 2
+wSpriteProjectedY:: ;c140
+	ds 2
+wSpriteProjectedZ:: ;c142
+	ds 2
+
+wSpriteRotatedX:: ;C144
+wSpriteXSizeOffset::
+	ds 2
+
+wSpritePositionTY2:: ;c146
+	ds 2
+
+wRotatedSXCZ:: ;c148
+wSpriteZSizeOffset::
+	ds 2
+
+wc14a:: ;c14a
 	ds 1
 
-wCalcSpriteScreenPosXLow:: ;c13E
-	ds 1
-wCalcSpriteScreenPosXHigh:: ;c13F
-	ds 1
-wCalcSpriteScreenPosYLow:: ;c140
-	ds 1
-wCalcSpriteScreenPosYHigh:: ;c141
-	ds 1
-wCalcSpriteZOrderLow:: ;c142
-	ds 1
-wCalcSpriteZOrderHigh:: ;c143
-	ds 1
-
-;((sprite x-pos * cam yaw x) - (sprite y-pos * cam yaw y)) / 16
-wSpritePosXYCamYawDiffLow:: ;C144
-	ds 1
-wSpritePosXYCamYawDiffHigh:: ;C145
-	ds 1
-
-wCalcSpriteScreenPosYLow2:: ;c146
-	ds 1
-wCalcSpriteScreenPosYHigh2:: ;c147
-	ds 1
-
-;((sprite x-pos * cam yaw y) + (sprite y-pos * cam yaw x)) / 64
-wSpritePosXYCamYawSumLow:: ;c148
-	ds 1
-wSpritePosXYCamYawSumHigh:: ;c149
-	ds 1
-
-wc14a:: ;c14a unused
-	ds 1
-
-wc14b:: ;c14b unused
+wc14b:: ;c14b
 	ds 1
 
 wc14c:: ;c14c
@@ -261,23 +242,21 @@ wc14e:: ;c14e
 wc14f:: ;c14f
 	ds 1
 
-wc150:: ;c150
+
+; division vars
+wDivisor:: ;c150-c151
+	ds 2
+
+wDivLoopCounter:: ;c152
 	ds 1
 
-wc151:: ;c151
-	ds 1
-
-wc152:: ;c152
-	ds 1
 
 wc153:: ;c153
 	ds 1
 
-wMultiplyLastProductLow:: ;c154
-	ds 1
-
-wMultiplyLastProductHigh:: ;c155
-	ds 1
+; previous multiplication product
+wPrevMultProduct:: ;c154
+	ds 2
 
 wc156:: ;c156
 	ds 1
@@ -297,11 +276,10 @@ wc15a:: ;c15a
 wc15b:: ;c15b
 	ds 1
 
-wDoorSpriteAddressLow:: ;C15C
-	ds 1
 
-wDoorSpriteAddressHigh:: ;C15D
-	ds 1
+; doors sprites vars
+wDoorSpriteFrameAddress:: ;C15C
+	ds 2
 
 wDoorSpriteYPos:: ;C15E
 	ds 1
@@ -309,23 +287,25 @@ wDoorSpriteYPos:: ;C15E
 wDoorSpriteXPos:: ;C15F
 	ds 1
 
-wDoorSprtTileBufferOffset:: ;C160
+wDoorSpritesUsedCounter:: ;C160
 	ds 1
 
-wc161:: ;c161
+wDoorSpritesAttributes:: ;c161
 	ds 1
 
 wDoorAnimationFrameCounter:: ;c162
 	ds 1
 
-roomItemSpriteXPos:: ;c163
+
+wRoomSpriteScreenXPos:: ;c163
 	ds 1
 
-roomItemSpriteYPos:: ;c164
+wRoomSpriteScreenYPos:: ;c164
 	ds 1
 
-wSpriteC165:: ;C165
+wSpritesOamUsedCounter:: ;C165
 	ds 1
+
 
 wc166:: ;c166
 	ds 1
@@ -342,46 +322,46 @@ wc169:: ;c169
 wc16a:: ;c16a
 	ds 1
 
-wTurnLeftTimer:: ;C16B
+
+wPressingLeftKey:: ;C16B
 	ds 1
 
-wTurnRightTimer:: ;C16C
+wPressingRightKey:: ;C16C
 	ds 1
 
+
+; player + camera facing
 wPlayerCamFacing:: ;C16D
-;player + camera facing
 	ds 1
 
+; 00 south
+; 04 south-west
+; 08 west
+; 0C north-west
+; 10 north
+; 14 north-east
+; 18 east
+; 1C south-east
 wCameraFacing:: ;c16E
-;00 south
-;04 south-west
-;08 west
-;0C north-west
-;10 north
-;14 north-east
-;18 east
-;1C south-east
 	ds 1
 
 wCameraC16F:: ;c16F
 	ds 1
 
-wLowColliderRightX:: ;c170
-	ds 1
-wHighColliderRightX:: ;c171
-	ds 1
-wLowColliderLeftX:: ;c172
-	ds 1
-wHighColliderLeftX:: ;c173
-	ds 1
-wLowColliderBottomY:: ;c174
-	ds 1
-wHighColliderBottomY:: ;c175
-	ds 1
-wLowColliderTopY:: ;c176
-	ds 1
-wHighColliderTopY:: ;c177
-	ds 1
+; colliders borders vars
+wColliderRectRightX:: ;c170
+wRoomBgTileLeftX::
+	ds 2
+wColliderRectLeftX:: ;c172
+wRoomBgTileRightX::
+	ds 2
+wColliderRectBottomY:: ;c174
+wRoomBgTileTopY::
+	ds 2
+wColliderRectTopY:: ;c176
+wRoomBgTileBottomY::
+	ds 2
+
 
 wc178:: ;c178
 	ds 1
@@ -402,14 +382,15 @@ wRoomIdHigh:: ;c17d
 	ds 1
 
 
-wButtonAEventId:: ;c17E
-;$00: nothing
-;$01: open door
-;$02: typewriter
-;$03: getting item
-;$04: item box
-;$05: normal action
+; 00: nothing
+; 01: open door
+; 02: typewriter
+; 03: getting item
+; 04: item box
+; 05: normal action
+wActionButtonEventId:: ;c17E
 	ds 1
+
 
 wCurrentSoundId:: ;C17F
 	ds 1
@@ -417,118 +398,45 @@ wCurrentSoundId:: ;C17F
 wCurrentMusicId:: ;C180
 	ds 1
 
-wSavesNumber:: ;C181
+
+wSavesCounter:: ;C181
 	ds 1
 
-wCheckEventIdA:: ;C182
+wRoomInteractionID:: ;C182
 	ds 1
 
-wCheckEventIdB:: ;C183
+wDoorInteractionID:: ;C183
 	ds 1
 
 wTigerStatueRotateDirection:: ;C184
 	ds 1
 
+; 32 item slots (00-1F)
 wSelectedItemBoxSlotId:: ;C185
-;32 item slots (00-1F)
 	ds 1
 
-wTriggerFile01:: ;C186
-	ds 1
-wTriggerFile02:: ;C187
-	ds 1
-wTriggerFile03:: ;C188
-	ds 1
-wTriggerFile04:: ;C189
-	ds 1
-wTriggerFile05:: ;C18A
-	ds 1
-wTriggerFile06:: ;C18B
-	ds 1
-wTriggerFile07:: ;C18C
-	ds 1
-wTriggerFile08:: ;C18D
-	ds 1
-wTriggerFile09:: ;C18E
-	ds 1
-wTriggerFile10:: ;C18F
-	ds 1
-wTriggerFile11:: ;C190
-	ds 1
-wTriggerFile12:: ;C191
-	ds 1
-wTriggerFile13:: ;C192
-	ds 1
-wTriggerFile14:: ;C193
-	ds 1
-wTriggerFile15:: ;C194
-	ds 1
-wTriggerFile16:: ;C195
-	ds 1
-wTriggerFile17:: ;C196
-	ds 1
-wTriggerFile18:: ;C197
-	ds 1
-wTriggerFile19:: ;C198
-	ds 1
-wTriggerFile20:: ;C199
-	ds 1
-wTriggerFile21:: ;C19A
-	ds 1
-wTriggerFile22:: ;C19B
-	ds 1
-wTriggerFile23:: ;C19C
-	ds 1
-wTriggerFile24:: ;C19D
-	ds 1
-wTriggerFile25:: ;C19E
-	ds 1
-wTriggerFile26:: ;C19F
-	ds 1
-wTriggerFile27:: ;C1A0
-	ds 1
-wTriggerFile28:: ;C1A1
-	ds 1
-wTriggerFile29:: ;C1A2
-	ds 1
-wTriggerFile30:: ;C1A3
-	ds 1
-wTriggerFile31:: ;C1A4
-	ds 1
-wTriggerFile32:: ;C1A5
-	ds 1
-wTriggerFile33:: ;C1A6
-	ds 1
-wTriggerFile34:: ;C1A7
-	ds 1
-wTriggerFile35:: ;C1A8
-	ds 1
-wTriggerFile36:: ;C1A9
-	ds 1
-wTriggerFile37:: ;C1AA
-	ds 1
-wTriggerFile38:: ;C1AB
-	ds 1
-wTriggerFile39:: ;C1AC
-	ds 1
+; 39 files flags
+wFilesFlags:: ;C186
+	ds 39
 
 wc1ad:: ;c1ad
 	ds 1
 
+
+; 13 bookmarks (0-12)
 wFileBookmarkCursorPos:: ;C1AE
-;13 bookmarks ($00 to $0C)
 	ds 1
 
-wAButtonPressDown:: ;C1AF
+wPressingAButton:: ;C1AF
 	ds 1
 
-wAnimatedRoomSpritesFrameRate:: ;c1b0
+wAnimatedRoomSpritesFrameCounter:: ;c1b0
 	ds 1
 
-wPoisonGasActivationByte:: ;C1B1
+wRoomGasActivatedFlag:: ;C1B1
 	ds 1
 
-wc1b2:: ;c1b2
+wSpiderwebKnifeCutsCounter:: ;c1b2
 	ds 1
 
 wc1b3:: ;c1b3
@@ -540,36 +448,39 @@ wc1b4:: ;c1b4
 wc1b5:: ;c1b5
 	ds 1
 
+
+; 00: single mansion door 1 (4 panels)
+; 01: single mansion door 2 (6 panels)
+; 02: single mansion door 3 (6 diamond panels)
+; 08: double mansion door 1
+; 09: double mansion door 2
+; 0A: double mansion door 3
 wDoorSpriteId:: ;C1B6
-;00: single mansion door 1 (4 panels)
-;01: single mansion door 2 (6 panels)
-;02: single mansion door 3 (6 diamond panels)
-
-;08: double mansion door 1
-;09: double mansion door 2
-;0A: double mansion door 3
-
 	ds 1
 
-wDoorPalleteId:: ;C1B7
-;00: brown
-;01: blue
-;02: light brown
+
+; 00: brown
+; 01: blue
+; 02: light brown
+wDoorPaletteId:: ;C1B7
 	ds 1
+
 
 wFoundItemId:: ;C1B8
 	ds 1
 
-wQuickSaveFlagB9:: ;C1B9
+
+wSaveGameFlag1:: ;C1B9
 	ds 1
-wQuickSaveFlagBA:: ;C1BA
+wSaveGameFlag2:: ;C1BA
 	ds 1
 
 wc1bb:: ;c1bb
 	ds 1
 
-wQuickSaveFlagBC:: ;C1BC
+wSaveGameFlag3:: ;C1BC
 	ds 1
+
 
 wc1bd:: ;c1bd
 	ds 1
@@ -577,120 +488,119 @@ wc1bd:: ;c1bd
 wc1be:: ;c1be
 	ds 1
 
-wEventId:: ;c1bf
+
+wEventSceneId:: ;c1bf
 	ds 1
 
 wScreenYPos:: ;c1c0
 	ds 1
 
-wRoomItemSpriteIdBuffer:: ;c1c1
+wRoomItemAttributes:: ;c1c1
 	ds 1
 
-wSpriteIdBuffer:: ;c1c2
+wCurrentSpriteCharId:: ;c1c2
 	ds 1
 
-wDoorAnimationType:: ;c1c3
-;door type < 7C : normal sprite doors animations
-;door type < 88 : Background type animations
+; door type < 7C : normal sprite doors animations
+; door type < 88 : Background type animations
 ;				  < 7E: stairs 1
 ;				  < 80: stairs 2
 ;				  < 82: stairs 3
 ;				  < 84: Ladder 1
 ;				  < 86: Rope
 ;				  = 14: Ladder 2
-;door type >= 88 : Elevator animations
+; door type >= 88 : Elevator animations
 ;				  < 8C: Mansion elevator
 ;				  < 90: Heliport elevator
+wDoorAnimationType:: ;c1c3
 	ds 1
 
-wFrameRateCounter:: ;c1c4
+
+wTicksCounter:: ;c1c4
 	ds 1
 
-wc1c5:: ;c1c5
+wTicksCounterHigh:: ;c1c5
 	ds 1
+
 
 wLoadEventBgImagePal:: ;C1C6
 	ds 1
 
-wItemTriggerId:: ;C1C7
+wRoomItemId:: ;C1C7
 	ds 1
 
-wSampleTempoLow:: ;c1c8
+
+wPcmTempoLo:: ;c1c8
 	ds 1
 
-wSampleTempoHigh:: ;c1c9
+wPcmTempoHi:: ;c1c9
 	ds 1
 
 wc1ca:: ;c1ca
 	ds 1
 
-wRoomMapXPosition:: ;C1CB
+; map vars
+wRoomMapRectX:: ;C1CB
 	ds 1
-wRoomMapYPosition:: ;C1CC
+wRoomMapRectY:: ;C1CC
 	ds 1
-wRoomMapWidth:: ;C1CD
+wRoomMapRectWidth:: ;C1CD
 	ds 1
-wRoomMapHeight:: ;C1CE
+wRoomMapRectHeight:: ;C1CE
 	ds 1
-wRoomMapRoomId:: ;C1CF
+wRoomMapRectId:: ;C1CF
 	ds 1
-wRoomMapRoomIdHigh:: ;C1D0
+wRoomMapRectIdHigh:: ;C1D0
 	ds 1
 wRoomMapHeightCounter:: ;C1D1
 	ds 1
 
-wBGDataAddrLow:: ;C1D2
+
+wRoomBgTilesDataPointerLo:: ;C1D2
 	ds 1
-wBGDataAddrHigh:: ;C1D3
+wRoomBgTilesDataPointerHi:: ;C1D3
 	ds 1
+
+
+; 00: filebook 1
+; 01: filebook 2
+; 02: filebook 3
 wFileBookId:: ;C1D4
-;00: filebook 1
-;01: filebook 2
-;02: filebook 3
 	ds 1
 
-wSpriteLowPosXCamX:: ;c1D5
+; unused entity sprite position vars
+wUnusedSpritePositionX:: ;c1D5
+	ds 2
+wUnusedSpritePositionY:: ;c1D7
+	ds 2
+wUnusedSpritePositionZ:: ;c1D9
+	ds 2
+
+wXScaleFactor:: ;c1DB
+	ds 2
+wYScaleFactor:: ;c1DD
+	ds 2
+wZScaleFactor:: ;c1DF
+	ds 2
+
+wCameraReverseYawSin:: ;C1E1
 	ds 1
-wSpriteHighPosXCamX:: ;c1D6
-	ds 1
-wSpriteLowPosZcamZ:: ;c1D7
-	ds 1
-wSpriteHighPosZcamZ:: ;c1D8
-	ds 1
-wSpriteLowPosYCamY:: ;c1D9
-	ds 1
-wSpriteHighPosYCamY:: ;c1DA
+wCameraReverseYawCos:: ;C1E2
 	ds 1
 
-wSpriteBaseXScaleLow:: ;c1DB
-	ds 1
-wSpriteBaseXScaleHigh:: ;c1DC
-	ds 1
-wSpriteBaseZScaleLow:: ;c1DD
-	ds 1
-wSpriteBaseZScaleHigh:: ;c1DE
-	ds 1
-wSpriteBaseYScaleLow:: ;c1DF
-	ds 1
-wSpriteBaseYScaleHigh:: ;c1E0
-	ds 1
-
-wSpriteScaleValueA:: ;C1E1
-	ds 1
-wSpriteScaleValueB:: ;C1E2
-	ds 1
-
+; 0: normal
+; 1: overhead
 wCameraType:: ;c1E3
-;0: normal
-;1: overhead
 	ds 1
+
 
 wButtonActionFacing:: ;C1E4
 	ds 1
 
-wSprtPriorScrnXPos:: ;C1E5
+
+wCurrentSpriteScreenX:: ;C1E5
 	ds 1
-wSprtPriorScrnYPos:: ;C1E6
+wCurrentSpriteScreenY:: ;C1E6
 	ds 1
 
 
@@ -710,61 +620,66 @@ wItemIdSlot7:: ;C1ED
 	ds 1
 wItemIdSlot8:: ;C1EE
 	ds 1
-wEquipedItemId:: ;C1EF
+
+wEquippedItemId:: ;C1EF
 	ds 1
 
 
 wc1f0:: ;c1f0
 	ds 1
 
-wSpriteC1F1:: ;C1F1
+; hardware sprites used counter
+wSpritesUsedCounter:: ;C1F1
 	ds 1
 
 wBgTransitionDirCounter:: ;C1F2
 	ds 1
 
-wSelectedGridId:: ;C1F3
+
+wSelectedSlotId:: ;C1F3
 	ds 1
 wSelectedItemId:: ;C1F4
 	ds 1
 
+; used to store facing value, but is never read.
 wc1f5:: ;c1f5
 	ds 1
 
-wc1f6:: ;c1f6
+
+charTileXPosition:: ;c1f6
+	ds 1
+charTileYPosition:: ;c1f7
 	ds 1
 
-wc1f7:: ;c1f7
+wTextCharTileXPos:: ;C1F8
+	ds 1
+wTextCharTileYPos:: ;C1F9
 	ds 1
 
-wMsgCharXpos:: ;C1F8
-	ds 1
-wMsgCharYpos:: ;C1F9
-	ds 1
-
+; 00: yes
+; 01: no
 wChoiceId:: ;C1FA
-;00: yes
-;01: no
 	ds 1
 
-wBButtonPressDown:: ;C1FB
+
+wPressingBButton:: ;C1FB
 	ds 1
 
 wCursorIdBuffer:: ;C1FC
 	ds 1
 
-wTypingCharsTrigger:: ;C1FD
+wTypingCharactersFlag:: ;C1FD
 	ds 1
 
 wRoomMusicId:: ;C1FE
 	ds 1
 
-wc1ff:: ;c1ff
+wDoorLockFlagId:: ;c1ff
 	ds 1
 
 
-wVisitedRoom00Trigger:: ;C200
-;19 visited rooms variables
+; 19 visited rooms variables
+wVisitedRoomsFlags:: ;C200
 	ds 19
 
 
@@ -1096,12 +1011,11 @@ wc27f:: ;c27f
 	ds 1
 
 
-
-
+;
+; item box slots, 32 slots in total
+;
 wItemBoxSlot01:: ;C280
-;item box slots, 32 slots in total
 	ds 32
-
 
 
 wC2A0:: ;C2A0
@@ -1200,60 +1114,64 @@ wc2be:: ;c2be
 wc2bf:: ;c2bf
 	ds 1
 
-wNumericPanelKey01Value:: ;C2C0
+;
+; numeric panel puzzle vars
+;
+wNumPanelKey01PressedFlag:: ;C2C0
 	ds 1
 wNumericPanelKey01PosY:: ;C2C1
 	ds 1
 wNumericPanelKey01PosX:: ;C2C2
 	ds 1
-wNumericPanelKey02Value:: ;C2C3
+wNumPanelKey02PressedFlag:: ;C2C3
 	ds 1
 wNumericPanelKey02PosY:: ;C2C4
 	ds 1
 wNumericPanelKey02PosX:: ;C2C5
 	ds 1
-wNumericPanelKey03Value:: ;C2C6
+wNumPanelKey03PressedFlag:: ;C2C6
 	ds 1
 wNumericPanelKey03PosY:: ;C2C7
 	ds 1
 wNumericPanelKey03PosX:: ;C2C8
 	ds 1
-wNumericPanelKey04Value:: ;C2C9
+wNumPanelKey04PressedFlag:: ;C2C9
 	ds 1
 wNumericPanelKey04PosY:: ;C2CA
 	ds 1
 wNumericPanelKey04PosX:: ;C2CB
 	ds 1
-wNumericPanelKey05Value:: ;C2CC
+wNumPanelKey05PressedFlag:: ;C2CC
 	ds 1
 wNumericPanelKey05PosY:: ;C2CD
 	ds 1
 wNumericPanelKey05PosX:: ;C2CE
 	ds 1
-wNumericPanelKey06Value:: ;C2CF
+wNumPanelKey06PressedFlag:: ;C2CF
 	ds 1
 wNumericPanelKey06PosY:: ;C2D0
 	ds 1
 wNumericPanelKey06PosX:: ;C2D1
 	ds 1
-wNumericPanelKey07Value:: ;C2D2
+wNumPanelKey07PressedFlag:: ;C2D2
 	ds 1
 wNumericPanelKey07PosY:: ;C2D3
 	ds 1
 wNumericPanelKey07PosX:: ;C2D4
 	ds 1
-wNumericPanelKey08Value:: ;C2D5
+wNumPanelKey08PressedFlag:: ;C2D5
 	ds 1
 wNumericPanelKey08PosY:: ;C2D6
 	ds 1
 wNumericPanelKey08PosX:: ;C2D7
 	ds 1
-wNumericPanelKey09Value:: ;C2D8
+wNumPanelKey09PressedFlag:: ;C2D8
 	ds 1
 wNumericPanelKey09PosY:: ;C2D9
 	ds 1
 wNumericPanelKey09PosX:: ;C2DA
 	ds 1
+
 
 wc2db:: ;c2db
 	ds 1
@@ -1273,20 +1191,22 @@ wc2df:: ;c2df
 
 wNumericPanelKeyId:: ;C2E0
 	ds 1
+
+; boulder rotate floor
+; 00: bottom
+; 01: medium
+; 02: left
 wRotateFloor2AnimId:: ;C2E1
-;boulder rotate floor
-;00: bottom
-;01: medium
-;02: left
 	ds 1
 
+; 00: top
+; 01: medium
+; 02: left
+; 03: medium
+; 04: below
 wRotateFloor1AnimId:: ;C2E2
-;00: top
-;01: medium
-;02: left
-;03: medium
-;04: below
 	ds 1
+
 
 wComputerKeyboardKeyId:: ;C2E3
 	ds 1
@@ -1307,15 +1227,15 @@ wComputerLoginEntered:: ;C2E8
 wLoginPasswordLastCharId:: ;C2E9
 	ds 1
 
+; 00: B2
+; 01: B3
+; 02: Cancel
 wElectronicUnlockFloorSelectId:: ;C2EA
-;00: B2
-;01: B3
-;02: Cancel
 	ds 1
 
+; 00: Login Password
+; 01: E. Locks Password
 wComputerPasswordMode:: ;C2EB
-;00: Login Password
-;01: E. Locks Password
 	ds 1
 
 wComputerLoginChar01:: ;C2EC
@@ -1340,6 +1260,7 @@ wComputerPasswordChar04:: ;C2F4
 wComputerPasswordStringEnd:: ;C2F5
 	ds 1
 
+
 wc2f6:: ;c2f6
 	ds 1
 
@@ -1350,130 +1271,124 @@ wc2f8:: ;c2f8
 	ds 1
 
 
-wOverlapMaskAddrLow:: ;C2F9
+wMaskAddressLow:: ;C2F9
+	ds 1
+wMaskAddressHigh:: ;C2FA
 	ds 1
 
-wOverlapMaskAddrHigh:: ;C2FA
+wMaskOffsetLow:: ; C2FB
+	ds 1
+wMaskOffsetHigh:: ; C2FC
 	ds 1
 
-wOverlapC2FB:: ; C2FB
+wMaskOnSpriteOffset:: ; C2FD
+	ds 1
+wMaskIntersectHeight:: ; C2FE
 	ds 1
 
-wOverlapC2FC:: ; C2FC
-	ds 1
-
-wOverlapC2FD:: ; C2FD
-	ds 1
-
-wOverlapC2FE:: ; C2FE
-	ds 1
-
-wSprtPriorZOrder:: ;C2FF
+wCurrentSpriteZOrder:: ;C2FF
 	ds 1
 
 
-wCharSpritesData:: ;c300
-; data for all character sprites (player and NPCs)
-; 32 bytes for each sprite (8 sprites max)
-; player sprite is always the first (c300), NPCs start at c320 to c3e0
-; C3X0+00: sprite state
-;		bit 7: sprite enabled
-;		bit 6: sprite visible
-; c3X0+01: Sprite Z order
-; c3X0+02: Sprite Screen X position
-; c3X0+03: Sprite Screen Y position
-; c3X0+04: Sprite Width
-; c3X0+05: Sprite Height
-; C3X0+06: sprite animation Id
-; C3X0+07: sprite animation frame Id
-; C3X0+09: sprite facing
+; Data struct list for all entities (player and NPCs)
+;
+; 32 bytes for each entity struct (8 entities max)
+;
+; player entity struct is always the first (c300), NPC entities start at c320 to c3e0
+;
+; C3X0+00: entity state
+;		bit 7: enabled
+;		bit 6: visible
+; c3X0+01: Z order
+; c3X0+02: Screen X position
+; c3X0+03: Screen Y position
+; c3X0+04: Width
+; c3X0+05: Height
+; C3X0+06: animation Id
+; C3X0+07: animation frame Id
+; C3X0+09: facing
 ; C3X0+0A: weapon firegun pause timer
-; C3X0+0B: sprite Id
-; C3X0+0C: firegun sprite frames
-; C3X0+0D: Blood sprite frames
-; C3X0+0E: health  20: full
+; C3X0+0B: Entity Id
+; C3X0+0C: firegun entity frames
+; C3X0+0D: Blood entity frames
+; C3X0+0E: health  32: full
 ; C3X0+0F: zombie/object var id
 ; C3X0+10: zombie/object var id High
-; C3X0+11-C3X0+12: sprite X pos (low-hi signed 16bit number)
-; C3X0+13-C3X0+14: sprite Z pos (low-hi signed 16bit number)
-; C3X0+15-C3X0+16: sprite map X position (low-hi signed 16bit number)
-; C3X0+17-C3X0+18: sprite map Z position (low-hi signed 16bit number)
-; C3X0+19-C3X0+1A: sprite Y position (sprite elevation) (low-hi signed 16bit number)
+; C3X0+11-C3X0+12: entity X pos (low-hi signed 16bit number)
+; C3X0+13-C3X0+14: entity Z pos (low-hi signed 16bit number)
+; C3X0+15-C3X0+16: entity map X position (low-hi signed 16bit number)
+; C3X0+17-C3X0+18: entity map Z position (low-hi signed 16bit number)
+; C3X0+19-C3X0+1A: entity Y position (entity elevation) (low-hi signed 16bit number)
 ; C3X0+1B: player input block timer
+; C3X0+1C: enemy recoil timer
+;
+wEntityStructData:: ;c300
+wEntityState:: ; c300
 	ds 1
-wSpriteZOrder:: ;c301
+wEntityZOrder:: ;c301
 	ds 1
-wSpriteScreenPosX:: ;c302
+wEntityScreenX:: ;c302
 	ds 1
-wSpriteScreenPosY:: ;c303
+wEntityScreenY:: ;c303
 	ds 1
-wSpriteWidth:: ;c304
+wEntityWidth:: ;c304
 	ds 1
-wSpriteHeight:: ;c305
+wEntityHeight:: ;c305
 	ds 1
-wSpriteAnimationId:: ;c306
+wEntityAnimationId:: ;c306
 	ds 1
-wSpriteAnimationFrameId:: ;c307
+wEntityAnimationFrameId:: ;c307
 	ds 1
-wSpriteDataC308:: ;c308
+wEntityDataC308:: ;c308
 	ds 1
-wSpriteFacing:: ;c309
+wEntityFacing:: ;c309
 	ds 1
 wWeaponBlockTimer:: ;c30A
 	ds 1
-wSpriteId:: ;c30B
+wEntityId:: ;c30B
 	ds 1
 wFiregunFramesId:: ;c30C
 	ds 1
 wBloodFramesId:: ;c30D
 	ds 1
-wCharHealth:: ;c30E
+wEntityHealth:: ;c30E
 	ds 1
 wZombieAndObjectVarId:: ;c30F object movement
 	ds 1
 wZombieAndObjectVarIdHigh:: ;c310
 	ds 1
-wSpritePositionXLow:: ;c311
-	ds 1
-wSpritePositionXHigh:: ;c312
-	ds 1
-wSpritePositionZLow:: ;c313
-	ds 1
-wSpritePositionZHigh:: ;c314
-	ds 1
-wSpriteRoomPositionXLow:: ;c315
-	ds 1
-wSpriteRoomPositionXHigh:: ;c316
-	ds 1
-wSpriteRoomPositionYLow:: ;c317
-	ds 1
-wSpriteRoomPositionYHigh:: ;c318
-	ds 1
-wSpritePositionYLow:: ;c319
-	ds 1
-wSpritePositionYHigh:: ;c31A
-	ds 1
+wEntityPositionX:: ;c311-c312
+	ds 2
+wEntityPositionZ:: ;c313-c314
+	ds 2
+wEntityRoomPositionX:: ;c315-c316
+	ds 2
+wEntityRoomPositionZ:: ;c317-c318
+	ds 2
+wEntityPositionY:: ;c319-c31a
+	ds 2
 wMoveInputBlockTimer:: ;c31B
 	ds 1
 wZombieRecoilTimer::  ;c31C zombieRecoilTimer
 	ds 1
-wSpriteDataC31D::  ;c31D
+wEntityDataC31D::  ;c31D
 	ds 1
-wSpriteDataC31E::  ;c31E
+wEntityDataC31E::  ;c31E
 	ds 1
 wStepLadderElevationMode::  ;c31F step ladder elevation mode
 	ds 1
 
-;rest of NPC sprites data
-wNPCSpritesData:: ;c320
+; rest of NPC entities data structs
+wNPCEntitiesDataStructs:: ;c320
 	ds 32 * 7
 
 ;wEndCharSpritesData:: ;C3FF
 
 
-;triggers RAM
 
-wDoorTriggers::
+; flags RAM
+
+wDoorsLocksFlags::
 wEventMsgAtMainHallDoor:: ;c400
 	ds 1
 
@@ -1531,7 +1446,7 @@ wc411:: ;c411
 wc412:: ;c412
 	ds 1
 
-wc413:: ;c413
+wBrokenShotgunPlacedByJillFlag:: ;c413
 	ds 1
 
 wc414:: ;c414
@@ -1567,10 +1482,10 @@ wShedDoorLock:: ;C41D
 wc41e:: ;c41e
 	ds 1
 
-wc41f:: ;c41f
+wBrokenShotgunPlacedByChrisFlag:: ;c41f
 	ds 1
 
-wc420:: ;c420
+wTrevorsTombMovedFlag:: ;c420
 	ds 1
 
 wc421:: ;c421
@@ -1663,7 +1578,7 @@ wc43d:: ;c43d
 wc43e:: ;c43e
 	ds 1
 
-wCourtyardElevatorPowered:: ;C43F
+wCourtyardElevatorPoweredFlag:: ;C43F
 	ds 1
 
 wc440:: ;c440
@@ -1675,7 +1590,7 @@ wc441:: ;c441
 wc442:: ;c442
 	ds 1
 
-wHeliportElevatorPowered:: ;C443
+wHeliportElevatorPoweredFlag:: ;C443
 	ds 1
 
 wc444:: ;c444
@@ -1687,13 +1602,13 @@ wc445:: ;c445
 wc446:: ;c446
 	ds 1
 
-wBoulderPassage2DoorLock:: ;C447
+wBoulderPassage2DoorUnlockFlag:: ;C447
 	ds 1
 
 wc448:: ;c448
 	ds 1
 
-wBoulderPassage1DoorLock:: ;C449
+wBoulderPassage1DoorUnlockFlag:: ;C449
 	ds 1
 
 wc44a:: ;c44a
@@ -1705,7 +1620,7 @@ wc44b:: ;c44b
 wc44c:: ;c44c
 	ds 1
 
-wLaboratoryEntranceOpened:: ;C44D
+wLabFountainEntranceOpenedFlag:: ;C44D
 	ds 1
 
 wc44e:: ;c44e
@@ -1714,10 +1629,10 @@ wc44e:: ;c44e
 wc44f:: ;c44f
 	ds 1
 
-wc450:: ;c450
+wSpiderwebRemovedFlag:: ;c450
 	ds 1
 
-wGuardhouseStatueMoved:: ;c451
+wGuardhouseStatuePlacedFlag:: ;c451
 	ds 1
 
 wc452:: ;c452
@@ -1738,7 +1653,7 @@ wc456:: ;c456
 wc457:: ;c457
 	ds 1
 
-wAquaTankStoreroomDoorUnlocked:: ;c458
+wAquaTankStoreroomDoorUnlockedFlag:: ;c458
 	ds 1
 
 wc459:: ;c459
@@ -1768,7 +1683,7 @@ wNumericPanelDoorUnlocked:: ;c460
 wc461:: ;c461
 	ds 1
 
-wc462:: ;c462
+wUnusedRedBookPlacedFlag:: ;c462
 	ds 1
 
 wc463:: ;c463
@@ -1810,13 +1725,13 @@ wc46e:: ;c46e
 wLabResearcherRoomDoorLock:: ;c46F
 	ds 1
 
-wDetentionChamberPassageDoorLock:: ;c470
+wDetentionChamberPassageDoorUnlockedFlag:: ;c470
 	ds 1
 
 wc471:: ;c471
 	ds 1
 
-wLabElevatorLock:: ;c472
+wLabElevatorUnlockedFlag:: ;c472
 	ds 1
 wc473:: ;c473
 	ds 1
@@ -1845,12 +1760,12 @@ wc47a:: ;c47a
 wc47b:: ;c47b
 	ds 1
 
-wCorridor0COneWayDoorOpen:: ;c47C
+wFShapedCorridorOneWayLockedDoorFlag:: ;c47C
 	ds 1
-wCorridor24OneWayLockedDoorOpen:: ;c47D
+wEastStaircase2FOneWayLockedDoorFlag:: ;c47D
 	ds 1
 
-wTyrantRoomDoorLock:: ;c47e
+wMainLabDoorUnlockedFlag:: ;c47e
 	ds 1
 
 wc47f:: ;c47f
@@ -1858,44 +1773,44 @@ wc47f:: ;c47f
 
 
 
-wEventsTriggers::
-wEventFirstZombieScn:: ;c480
+wEventsFlags::
+wFirstZombieEventFlag:: ;c480
 	ds 1
 
-wEventFirstDinningRoomScn:: ;c481
+wADinningRoomEventFlag:: ;c481
 	ds 1
 
-wc482:: ;c482
+wChrisMeetRebeccaFlag:: ;c482
 	ds 1
 
-wc483:: ;c483
+wDiningRoomZombieSceneFlag:: ;c483
 	ds 1
 
-wEventBackToMainHallJill:: ;c484
-	ds 1
-wPianoRoomSecretDoorTrigger:: ;c485
-;00: close
-;FF: open
+wBackToMainHallAsJillEventFlag:: ;c484
 	ds 1
 
-wc486:: ;c486
+wPianoRoomSecretDoorOpenFlag:: ;c485
 	ds 1
 
-wTriggerShieldKeyPlant:: ;c487
+wFindForestCorpseFlag:: ;c486
 	ds 1
 
-wc488:: ;c488
+wHerbicideUsedFlag:: ;c487
 	ds 1
 
-wc489:: ;c489
+wJillBarryTalkInResearcherRoomFlag:: ;c488
 	ds 1
 
-wc48a:: ;c48a
+wRichardFoundFlag:: ;c489
 	ds 1
 
-wTriggerBrokenStatue:: ;C48B
+wRichardDiesFlag:: ;c48a
 	ds 1
 
+wBrokenJewelStatueFlag:: ;C48B
+	ds 1
+
+; large gallery paintings puzzle vars
 wMidleAgeManPaintingSwitch:: ;C48C
 	ds 1
 wNewBornBabyPaintingSwitch:: ;C48D
@@ -1908,50 +1823,51 @@ wLivelyBoyPaintingSwitch:: ;C490
 	ds 1
 wOldManPaintingSwitch:: ;C491
 	ds 1
-wPaintingPuzzleSwitch:: ;C492
+wPaintingsPuzzleSolvedFlag:: ;C492
 	ds 1
 
-wMoonCrestPlaced:: ;c493
+; crests placed flags
+wMoonCrestPlacedFlag:: ;c493
 	ds 1
-wSunCrestPlaced:: ;c494
+wSunCrestPlacedFlag:: ;c494
 	ds 1
-wStarCrestPlaced:: ;c495
+wStarCrestPlacedFlag:: ;c495
 	ds 1
-wWindCrestPlaced:: ;c496
-	ds 1
-
-wc497:: ;c497
+wWindCrestPlacedFlag:: ;c496
 	ds 1
 
-wTriggerCourtyardCascade:: ;c498
+wBradRadioMsgInCourtyardFlag:: ;c497
+	ds 1
+
+wCourtyardFloodgateClosedFlag:: ;c498
 	ds 1
 
 wc499:: ;c499
 	ds 1
 
-wDorm002EventTrigger:: ;C49A
-;jill and werker conversation in werehouse
+; jill and werker conversation in werehouse
+wDorm002EventSceneFlag:: ;C49A
 	ds 1
 
-wFloodedRoomsTrigger:: ;C49B
+wFloodedRoomsDrainedWaterFlag:: ;C49B
     ds 1
-wPlant42RootsTrigger:: ;C49C
+wVJoltUsedOnPlant42Flag:: ;C49C
 	ds 1
-wDorm003WhiteBookRemoved:: ;C49D
+wDorm003WhiteBookRemovedFlag:: ;C49D
 	ds 1
-wDorm003RedBookPlaced:: ;C49E
-	ds 1
-
-wc49f:: ;c49f
+wRedBookPlacedFlag:: ;C49E
 	ds 1
 
-wc4a0:: ;c4a0
+wTalkWithWeskerInWarehouseFlag:: ;c49f
 	ds 1
 
-wc4a1:: ;c4a1
+wPlant42DefeatedFlag:: ;c4a0
 	ds 1
 
-wc4a2:: ;c4a2
+wJawnDeathSceneFLag:: ;c4a1
+	ds 1
+
+wMeetEnricoFlag:: ;c4a2
 	ds 1
 
 wc4a3:: ;c4a3
@@ -1962,113 +1878,115 @@ wc4a4:: ;c4a4
 
 wVisualDataRoomPanelButtonOpened:: ;C4A5
 	ds 1
-wLabSlideRoomPillarMoved:: ;C4A6
+wVisualDataRoomPillarMovedFlag:: ;C4A6
 	ds 1
-wMansionBathroomTubUnplug:: ;C4A7
+
+wMansionBathtubUnpluggedFlag:: ;C4A7
     ds 1
+
 wDorm001BathroomTubUnplug:: ;C4A8
 	ds 1
 
 wc4a9:: ;c4a9
 	ds 1
 
-wMoDiskPasscode01Filed:: ;C4AA
+wMoDiskPasscode01FiledFlag:: ;C4AA
 	ds 1
-wMoDiskPasscode02Filed:: ;C4AB
+wMoDiskPasscode02FiledFlag:: ;C4AB
 	ds 1
-wMoDiskPasscode03Filed:: ;C4AC
-	ds 1
-
-wBlackOutAreasPowered:: ;C4AD
-	ds 1
-wLabElevatorPowered:: ;C4AE
+wMoDiskPasscode03FiledFlag:: ;C4AC
 	ds 1
 
-wPasscode01Enter:: ;C4AF
+wBlackOutAreasPoweredFlag:: ;C4AD
 	ds 1
-wPasscode02Enter:: ;C4B0
-	ds 1
-wPasscode03Enter:: ;C4B1
+wLabElevatorPoweredUpFlag:: ;C4AE
 	ds 1
 
-wElectronicLockUnlock1:: ;C4B2
+wPasscode01CheckedFlag:: ;C4AF
 	ds 1
-wElectronicLockUnlock2:: ;C4B3
+wPasscode02CheckedFlag:: ;C4B0
 	ds 1
-
-wTyrant1Defeated: ;C4B4
-	ds 1
-
-wc4b5:: ;c4b5
+wPasscode03CheckedFlag:: ;C4B1
 	ds 1
 
-wc4b6:: ;c4b6
+wLabElectronicDoorsUnlockFlag:: ;C4B2
+	ds 1
+wLabElectronicDoors2UnlockFlag:: ;C4B3
 	ds 1
 
-wc4b7:: ;c4b7
+wTyrant1DefeatedFlag: ;C4B4
 	ds 1
 
-wc4b8:: ;c4b8
+wChrisFoundRadioFlag:: ;c4b5
 	ds 1
 
-wc4b9:: ;c4b9
+wFirstHunterKilledFlag:: ;c4b6
+	ds 1
+
+wRebeccaSavedFromDeathFlag:: ;c4b7
+	ds 1
+
+wChrisOrJillFoundInJailFlag:: ;c4b8
+	ds 1
+
+wBeforeTyrant1stBattleSceneFlag:: ;c4b9
 	ds 1
 
 wc4ba:: ;c4ba
 	ds 1
 
-wc4bb:: ;c4bb
+wAfter1stTyrantSceneFlag:: ;c4bb
 	ds 1
 
 wc4bc:: ;c4bc
 	ds 1
 
-wc4bd:: ;c4bd
+wLabAlertSceneWithChrisFlag:: ;c4bd
 	ds 1
 
-wc4be:: ;c4be
+wChrisOrJillSavedFromJailFlag:: ;c4be
 	ds 1
 
-wCandleRoomLight:: ;C4BF
+wSmallDinningRoomLittedCandleFlag:: ;C4BF
 	ds 1
 
-wTaxidermyRoomLight:: ;C4C0
+wTaxidermyRoomLightsFlag:: ;C4C0
 	ds 1
 
-wMansionStudyLights:: ;C4C1
+wCourtyardStudyLightsFlag:: ;C4C1
 	ds 1
-wCatacombStatueWallTrigger:: ;C4C2
-	ds 1
-
-wc4c3:: ;c4c3
+wCatacombCrankWallStatueFlag:: ;C4C2
 	ds 1
 
-wc4c4:: ;c4c4
+wUndergroundStatuePlacedFlag:: ;c4c3
 	ds 1
 
-wc4c5:: ;c4c5
+wAfterJailEscapeSceneFlag:: ;c4c4
 	ds 1
 
-wc4c6:: ;c4c6
+wChrisAndJillEscapingFromLabFlag:: ;c4c5
 	ds 1
 
-wc4c7:: ;c4c7
+wLabEscapeRadioMessageReceivedFlag:: ;c4c6
 	ds 1
 
-wc4c8:: ;c4c8
+wBeforeHeliportElevatorSceneFlag:: ;c4c7
 	ds 1
 
-wc4c9:: ;c4c9
+wBrokenShotgunFallCeilingFlag:: ;c4c8
 	ds 1
 
-wc4ca:: ;c4ca
+wTalkWithBarryInWarehouseRoomFlag:: ;c4c9
 	ds 1
 
-wLoungeFireplaceLitted:: ;C4CB
+wBradRadioMsgAfterWarehouseFlag:: ;c4ca
 	ds 1
-wBugCollectionButtonPushed:: ;C4CC
+
+wLoungeFireplaceLittedFlag:: ;C4CB
 	ds 1
-wLibraryStatueLightTrigger:: ;C4CD
+wBugCollectionButtonPushedFlag:: ;C4CC
+	ds 1
+wHiddenLibraryStatueLightsFlag:: ;C4CD
 	ds 1
 wFirearmsRoomDeskUnlocked:: ;C4CE
     ds 1
@@ -2088,42 +2006,44 @@ wc4d2:: ;c4d2
 wc4d3:: ;c4d3
 	ds 1
 
-wArmorsRoomGasButtonPushed:: ;C4D4
+wArmorsRoomGasButtonPushedFlag:: ;C4D4
 	ds 1
 
-wc4d5:: ;c4d5
+wDorm002ClosetMovedFlag:: ;c4d5
 	ds 1
 
-wXrayRoomBlueLight:: ;C4D6
+wXRayRoomBlueLightsFlag:: ;C4D6
 	ds 1
-wXrayRoomNormalLight:: ;C4D7
-	ds 1
-
-wLibrarySecretDoorTrigger:: ;C4D8
+wXRayRoomNormalLightsFlag:: ;C4D7
 	ds 1
 
-wWolfMedalPlaced:: ;C4D9
-	ds 1
-wEagleMedalPlaced:: ;C4DA
+wLibrarySecretDoorOpenedFlag:: ;C4D8
 	ds 1
 
-wc4db:: ;c4db
+wWolfMedalPlacedFlag:: ;C4D9
+	ds 1
+wEagleMedalPlacedFlag:: ;C4DA
 	ds 1
 
-wc4dc:: ;c4dc
+wShowRopeInTrevorsTombFlag:: ;c4db
 	ds 1
 
-wPasscodeTrigger:: ;C4DD
+wTriggerTrevorTombSceneFlag:: ;c4dc
 	ds 1
+
+wMansionPasscodeFiledFlag:: ;C4DD
+	ds 1
+
 wAquariumWoodenBoxSunken:: ;C4DE
 	ds 1
-wProjectorSlidePlaced:: ;C4DF
+
+wProjectorSlidePlacedFlag:: ;C4DF
 	ds 1
 
 wMansion1FMapStepLadderPushed:: ;C4E0
 	ds 1
 
-wLabStepLadderPushed:: ;C4E1
+wLabStepLadderPlacedFlag:: ;C4E1
 	ds 1
 
 wc4e2:: ;c4e2
@@ -2216,776 +2136,19 @@ wc4fe:: ;c4fe
 wc4ff:: ;c4ff
 	ds 1
 
-wRoomItemsTriggers::
-wTriggerInkRibbonMainHall:: ;c500
-	ds 1
-wTriggerHandgunMainHall:: ;c501
-	ds 1
-wTriggerGoldenShieldDRoom:: ;c502
-	ds 1
-
-wDinningRoomShieldKey:: ;c503
-	ds 1
-
-wTriggerJewelDinningRoom:: ;c504
-	ds 1
-
-wSafeRoomSerum:: ;c505
-	ds 1
-
-wc506:: ;c506
-	ds 1
-
-wTriggerMansion1FMap:: ;c507
-	ds 1
-
-wExhibitionRoomInkRibbon:: ;c508
-	ds 1
-
-wKennethClip1:: ;c509
-	ds 1
-
-wKennethClip2:: ;c50a
-	ds 1
-
-wc50b:: ;c50b
-	ds 1
-
-wc50c:: ;c50c
-	ds 1
-
-wc50d:: ;c50d
-	ds 1
-
-wc50e:: ;c50e
-	ds 1
-
-wc50f:: ;c50f
-	ds 1
-
-wFirearmsDeskShells:: ;c510
-	ds 1
-
-wGreenhouseArmorKey:: ;c511
-	ds 1
-
-wFirearmsClip:: ;c512
-	ds 1
-
-wPianoRoomGoldEmblemTrigger:: ;c513
-;00: removed
-;FF: placed
-	ds 1
-
-wFirearmsRoomDeskEmpty:: ;c514
-	ds 1
-
-wc515:: ;c515
-	ds 1
-
-wc516:: ;c516
-	ds 1
-
-wNorthEastCorridorHerb:: ;c517
-	ds 1
-
-wLShapedCoddidorClip:: ;c518
-	ds 1
-
-wc519:: ;c519
-	ds 1
-
-wEastStairsCorridor1FHerb:: ;c51a
-	ds 1
-
-wKeepersRoomClip:: ;c51b
-	ds 1
-
-wKeepersRoomFile:: ;c51c
-	ds 1
-
-wKeepersRoomShells:: ;c51d
-	ds 1
-
-wc51e:: ;c51e
-	ds 1
-
-wc51f:: ;c51f
-	ds 1
-
-wc520:: ;c520
-	ds 1
-
-wc521:: ;c521
-	ds 1
-
-wc522:: ;c522
-	ds 1
-
-wc523:: ;c523
-	ds 1
-
-wc524:: ;c524
-	ds 1
-
-wc525:: ;c525
-	ds 1
-
-wc526:: ;c526
-	ds 1
-
-wBlueJewelPlaced:: ;C527
-	ds 1
-wRedJewelPlaced:: ;C528
-	ds 1
-
-wShedSquareCrank:: ;c529
-	ds 1
-
-wShedSmallKey:: ;c52a
-	ds 1
-
-wMirrorRoomHerb:: ;c52b
-	ds 1
-
-wMirrorRoomInkRibbon:: ;c52c
-	ds 1
-
-wc52d:: ;c52d
-	ds 1
-
-wLivingRoomShotgunPlaced:: ;c52e
-	ds 1
-
-wDinningRoomGoldEmblemPlaced:: ;C52F
-	ds 1
-wPianoRoomWoodEmblemTrigger:: ;c530
-;00: removed
-;FF: placed
-	ds 1
-
-wBrokenShotgunPlaced:: ;c531
-	ds 1
-
-wc532:: ;c532
-	ds 1
-
-wc533:: ;c533
-	ds 1
-
-wc534:: ;c534
-	ds 1
-
-wc535:: ;c535
-	ds 1
-
-wc536:: ;c536
-	ds 1
-
-wc537:: ;c537
-	ds 1
-
-wc538:: ;c538
-	ds 1
-
-wc539:: ;c539
-	ds 1
-
-wc53a:: ;c53a
-	ds 1
-
-wc53b:: ;c53b
-	ds 1
-
-wc53c:: ;c53c
-	ds 1
-
-wc53d:: ;c53d
-	ds 1
-
-wc53e:: ;c53e
-	ds 1
-
-wc53f:: ;c53f
-	ds 1
-
-wc540:: ;c540
-	ds 1
-
-wFireplace2FMapEnabled:: ;c541
-	ds 1
-
-wLoungeHerb:: ;c542
-	ds 1
-
-wc543:: ;c543
-	ds 1
-
-wEastTerraceHallwaySmallKey:: ;c544
-	ds 1
-
-wc545:: ;c545
-	ds 1
-
-wc546:: ;c546
-	ds 1
-
-wSunCrestShowcaseOpened:: ;c547
-	ds 1
-
-w2FWesternCorridorHerb3:: ;c548
-	ds 1
-
-w2FWesternCorridorHerb2:: ;c549
-	ds 1
-
-w2FWesternCorridorHerb1:: ;c54a
-	ds 1
-
-wBedroomLighter:: ;c54b
-	ds 1
-
-wBedroomShells:: ;c54c
-	ds 1
-
-wBedroomHerb:: ;c54d
-	ds 1
-
-wc54e:: ;c54e
-	ds 1
-
-wc54f:: ;c54f
-	ds 1
-
-wc550:: ;c550
-	ds 1
-
-wc551:: ;c551
-	ds 1
-
-wAtticMoonCrest:: ;c552
-	ds 1
-
-wc553:: ;c553
-	ds 1
-
-wEastTerraceClip:: ;c554
-	ds 1
-
-wTaxidermyRoomRedJewel:: ;c555
-	ds 1
-
-wTaxidermyRoomDroppedItem:: ;c556
-	ds 1
-
-wc557:: ;c557
-	ds 1
-
-wc558:: ;c558
-	ds 1
-
-wc559:: ;c559
-	ds 1
-
-wLibraryFile:: ;c55a
-	ds 1
-
-wc55b:: ;c55b
-	ds 1
-
-wMaterialsRoomShells1:: ;c55c
-	ds 1
-
-wMaterialsRoomShells2:: ;c55d
-	ds 1
-
-wMaterialsRoomBattery:: ;c55e
-	ds 1
-
-wHelipadLookoutRoomClip:: ;c55f
-	ds 1
-
-wc560:: ;c560
-	ds 1
-
-wc561:: ;c561
-	ds 1
-
-wc562:: ;c562
-	ds 1
-
-wc563:: ;c563
-	ds 1
-
-wc564:: ;c564
-	ds 1
-
-wc565:: ;c565
-	ds 1
-
-wc566:: ;c566
-	ds 1
-
-wc567:: ;c567
-	ds 1
-
-wc568:: ;c568
-	ds 1
-
-wc569:: ;c569
-	ds 1
-
-wc56a:: ;c56a
-	ds 1
-
-wc56b:: ;c56b
-	ds 1
-
-wc56c:: ;c56c
-	ds 1
-
-wc56d:: ;c56d
-	ds 1
-
-wc56e:: ;c56e
-	ds 1
-
-wc56f:: ;c56f
-	ds 1
-
-wc570:: ;c570
-	ds 1
-
-wc571:: ;c571
-	ds 1
-
-wSouthPassageHexCrank:: ;c572
-	ds 1
-
-wc573:: ;c573
-	ds 1
-
-wc574:: ;c574
-	ds 1
-
-wc575:: ;c575
-	ds 1
-
-wc576:: ;c576
-	ds 1
-
-wc577:: ;c577
-	ds 1
-
-wc578:: ;c578
-	ds 1
-
-wc579:: ;c579
-	ds 1
-
-wc57a:: ;c57a
-	ds 1
-
-wc57b:: ;c57b
-	ds 1
-
-wc57c:: ;c57c
-	ds 1
-
-wc57d:: ;c57d
-	ds 1
-
-wc57e:: ;c57e
-	ds 1
-
-wc57f:: ;c57f
-	ds 1
-
-wc580:: ;c580
-	ds 1
-
-wc581:: ;c581
-	ds 1
-
-wc582:: ;c582
-	ds 1
-
-wc583:: ;c583
-	ds 1
-
-wc584:: ;c584
-	ds 1
-
-wc585:: ;c585
-	ds 1
-
-wc586:: ;c586
-	ds 1
-
-wc587:: ;c587
-	ds 1
-
-wc588:: ;c588
-	ds 1
-
-wc589:: ;c589
-	ds 1
-
-wc58a:: ;c58a
-	ds 1
-
-wc58b:: ;c58b
-	ds 1
-
-wc58c:: ;c58c
-	ds 1
-
-wc58d:: ;c58d
-	ds 1
-
-wc58e:: ;c58e
-	ds 1
-
-wc58f:: ;c58f
-	ds 1
-
-wc590:: ;c590
-	ds 1
-
-wDorm001Redbook:: ;c591
-	ds 1
-
-wc592:: ;c592
-	ds 1
-
-wc593:: ;c593
-	ds 1
-
-wc594:: ;c594
-	ds 1
-
-wc595:: ;c595
-	ds 1
-
-wc596:: ;c596
-	ds 1
-
-wc597:: ;c597
-	ds 1
-
-wc598:: ;c598
-	ds 1
-
-wc599:: ;c599
-	ds 1
-
-wc59a:: ;c59a
-	ds 1
-
-wc59b:: ;c59b
-	ds 1
-
-wc59c:: ;c59c
-	ds 1
-
-wDorm002File:: ;c59d
-	ds 1
-
-wc59e:: ;c59e
-	ds 1
-
-wc59f:: ;c59f
-	ds 1
-
-wc5a0:: ;c5a0
-	ds 1
-
-wc5a1:: ;c5a1
-	ds 1
-
-wc5a2:: ;c5a2
-	ds 1
-
-wc5a3:: ;c5a3
-	ds 1
-
-wc5a4:: ;c5a4
-	ds 1
-
-wc5a5:: ;c5a5
-	ds 1
-
-wc5a6:: ;c5a6
-	ds 1
-
-wc5a7:: ;c5a7
-	ds 1
-
-wAquaTankStoreroomClip1:: ;c5a8
-	ds 1
-
-wAquaTankStoreroomClip2:: ;c5a9
-	ds 1
-
-wAquaTankStoreroomShell1:: ;c5aa
-	ds 1
-
-wAquaTankStoreroomShell2:: ;c5ab
-	ds 1
-
-wAquaTankStoreroomDorm03Key:: ;c5ac
-	ds 1
-
-wc5ad:: ;c5ad
-	ds 1
-
-wc5ae:: ;c5ae
-	ds 1
-
-wc5af:: ;c5af
-	ds 1
-
-wc5b0:: ;c5b0
-	ds 1
-
-wc5b1:: ;c5b1
-	ds 1
-
-wc5b2:: ;c5b2
-	ds 1
-
-wc5b3:: ;c5b3
-	ds 1
-
-wEmergencyTunnelBattery:: ;c5b4
-	ds 1
-
-wc5b5:: ;c5b5
-	ds 1
-
-wc5b6:: ;c5b6
-	ds 1
-
-wc5b7:: ;c5b7
-	ds 1
-
-wc5b8:: ;c5b8
-	ds 1
-
-wc5b9:: ;c5b9
-	ds 1
-
-wc5ba:: ;c5ba
-	ds 1
-
-wc5bb:: ;c5bb
-	ds 1
-
-wc5bc:: ;c5bc
-	ds 1
-
-wc5bd:: ;c5bd
-	ds 1
-
-wc5be:: ;c5be
-	ds 1
-
-wc5bf:: ;c5bf
-	ds 1
-
-wc5c0:: ;c5c0
-	ds 1
-
-wc5c1:: ;c5c1
-	ds 1
-
-wc5c2:: ;c5c2
-	ds 1
-
-wc5c3:: ;c5c3
-	ds 1
-
-wc5c4:: ;c5c4
-	ds 1
-
-wc5c5:: ;c5c5
-	ds 1
-
-wc5c6:: ;c5c6
-	ds 1
-
-wc5c7:: ;c5c7
-	ds 1
-
-wEastStoreroomHerbicide:: ;c5c8
-	ds 1
-
-wEastStoreroomFAidSpray:: ;c5c9
-	ds 1
-
-wEastStoreroomShells:: ;c5ca
-	ds 1
-
-wEastStoreroomClip:: ;c5cb
-	ds 1
-
-wc5cc:: ;c5cc
-	ds 1
-
-wc5cd:: ;c5cd
-	ds 1
-
-wc5ce:: ;c5ce
-	ds 1
-
-wPaintingsRoomStarCrest:: ;c5cf
-	ds 1
-
-wc5d0:: ;c5d0
-	ds 1
-
-wc5d1:: ;c5d1
-	ds 1
-
-wc5d2:: ;c5d2
-	ds 1
-
-wc5d3:: ;c5d3
-	ds 1
-
-wc5d4:: ;c5d4
-	ds 1
-
-wc5d5:: ;c5d5
-	ds 1
-
-wc5d6:: ;c5d6
-	ds 1
-
-wc5d7:: ;c5d7
-	ds 1
-
-wc5d8:: ;c5d8
-	ds 1
-
-wc5d9:: ;c5d9
-	ds 1
-
-wc5da:: ;c5da
-	ds 1
-
-wc5db:: ;c5db
-	ds 1
-
-wc5dc:: ;c5dc
-	ds 1
-
-wc5dd:: ;c5dd
-	ds 1
-
-wc5de:: ;c5de
-	ds 1
-
-wc5df:: ;c5df
-	ds 1
-
-wc5e0:: ;c5e0
-	ds 1
-
-wc5e1:: ;c5e1
-	ds 1
-
-wc5e2:: ;c5e2
-	ds 1
-
-wc5e3:: ;c5e3
-	ds 1
-
-wc5e4:: ;c5e4
-	ds 1
-
-wc5e5:: ;c5e5
-	ds 1
-
-wc5e6:: ;c5e6
-	ds 1
-
-wc5e7:: ;c5e7
-	ds 1
-
-wc5e8:: ;c5e8
-	ds 1
-
-wc5e9:: ;c5e9
-	ds 1
-
-wc5ea:: ;c5ea
-	ds 1
-
-wc5eb:: ;c5eb
-	ds 1
-
-wc5ec:: ;c5ec
-	ds 1
-
-wc5ed:: ;c5ed
-	ds 1
-
-wc5ee:: ;c5ee
-	ds 1
-
-wc5ef:: ;c5ef
-	ds 1
-
-wc5f0:: ;c5f0
-	ds 1
-
-wc5f1:: ;c5f1
-	ds 1
-
-wc5f2:: ;c5f2
-	ds 1
-
-wc5f3:: ;c5f3
-	ds 1
-
-wc5f4:: ;c5f4
-	ds 1
-
-wc5f5:: ;c5f5
-	ds 1
-
-wc5f6:: ;c5f6
-	ds 1
-
-wc5f7:: ;c5f7
-	ds 1
-
-wc5f8:: ;c5f8
-	ds 1
-
-wc5f9:: ;c5f9
-	ds 1
-
-wc5fa:: ;c5fa
-	ds 1
-
-wc5fb:: ;c5fb
-	ds 1
-
-wc5fc:: ;c5fc
-	ds 1
-
-wc5fd:: ;c5fd
-	ds 1
-
-wc5fe:: ;c5fe
-	ds 1
-
-wc5ff:: ;c5ff
-	ds 1
-
-wEnemyAndObjectsVars:: ;c600
+;
+; room items flags
+;
+; 0: item picked
+; 1: item not picked
+wRoomsItemsFlags::
+wc500:: ;c500
+	ds 256
+
+
+wEnemiesAndObjectsFlags:: ;c600
+wEnemiesFlags::
+wc600::
 	ds 1
 
 wc601:: ;c601
@@ -3708,21 +2871,21 @@ wc6ef:: ;c6ef
 wc6f0:: ;c6f0
 	ds 1
 
-wTriggerJewelStatue2F:: ;C6F1
+wJewelStatueInDinningRoom2fFlag:: ;C6F1
 	ds 1
 
-wc6f2:: ;c6f2
+wUnsedClockNotMovedFlag:: ;c6f2
 	ds 1
 
-wc6f3:: ;c6f3
+wUnsedClockMovedFlag:: ;c6f3
 	ds 1
 
 wc6f4:: ;c6f4
 	ds 1
 
-wResearcherRoomShelfNotMoved:: ;C6F5
+wResearchersRoomShelfNotMovedFlag:: ;C6F5
 	ds 1
-wResearcherRoomShelfMoved:: ;C6F6
+wResearchersRoomShelfMovedFlag:: ;C6F6
 	ds 1
 
 wc6f7:: ;c6f7
@@ -3734,10 +2897,10 @@ wc6f8:: ;c6f8
 wc6f9:: ;c6f9
 	ds 1
 
-wc6fa:: ;c6fa
+wUnusedDorm003MovedClosetFlag1:: ;c6fa
 	ds 1
 
-wc6fb:: ;c6fb
+wUnusedDorm003MovedClosetFlag2:: ;c6fb
 	ds 1
 
 wc6fc:: ;c6fc
@@ -3756,64 +2919,71 @@ wc700:: ;c700
 	ds $100
 
 
-spritePriorityTable:: ;C800
-;stores sprites draw priority data
-;10 bytes of data per 8 chars
-;C80x + 0: Sprite Z-order
-;C80x + 1: Sprite Id
-;C80x + 2: Sprite Id High
-;C80x + 3: Sprite screen X Pos
-;C80x + 4: Sprite screen Y Pos
-;C80x + 5: Sprite width
-;C80x + 6: Sprite height
-;C80x + 7: Sprite facing
-;C80x + 8: Sprite animation frame Id
-;C80x + 9: Sprite animation Id
+; stores all sprites draw data sorted by draw priority (Y-axis or Z-order)
+; 10 bytes by sprite, 8 sprites max  (entities, room items, animation sprites)
+;
+; C80x + 0: Sprite draw priority value
+; C80x + 1: Sprite id
+; C80x + 2: Sprite id high
+; C80x + 3: Sprite screen x
+; C80x + 4: Sprite screen y
+; C80x + 5: Sprite width
+; C80x + 6: Sprite height
+; C80x + 7: Sprite facing id
+; C80x + 8: Sprite animation frame Id
+; C80x + 9: Sprite animation Id
+wSortedSpritesList:: ;C800
 	ds 10 * 8
 
-;wEndSpritePriorityTable:: ;C84F
+;wEndSortedSpritesList:: ;C84F
 
 
 
 
 
-SECTION "OAMBuffers", WRAM0 [$c900]
+SECTION "sprites oam and tiles buffers", WRAM0 [$c900]
+
+; oam buffers
 
 wOAMBufferC9:: ; c900
-	ds $CA00 - $C900
+	ds $100
 
 wOAMBufferCA:: ; cA00
-	ds $CB00 - $CA00
+	ds $100
 
-;sprites tiles buffers
+; sprites tiles buffers
 
 wSpriteTilesBuffer:: ;CB00
-	ds $CC00 - $CB00
+	ds $100
 
 wSpriteTilesBufferCC:: ;CC00
-	ds $CD00 - $CC00
+	ds $100
 
 wSpriteTilesBufferCD:: ;CD00
-	ds $CE00 - $CD00
+	ds $100
 
 wSpriteTilesBufferCE:: ;CE00
-	ds $CF00 - $CE00
+	ds $100
 
 wSpriteTilesBufferCF:: ;CF00
-	ds $D000 - $CF00
+	ds $100
 
 
-SECTION "sound RAM",WRAMX,BANK[1]
+SECTION "audio RAM",WRAMX,BANK[1]
 
 	ds $DD00 - $D000
 
-;music ram
+;================================
+; audio ram
+;================================
 
-;audio channel #1 wram
+
+; audio channel #1 wram
+;
+; channel state
+; bit 0: channel status flag (0: inactive, 1: active)
+; bit 1: channel playback flag (0: muted, 1: unmuted )
 wChannel1State:: ;DD00
-;channel status
-;bit 0: channel enabled
-;bit 1: play channel
 	ds 1
 wCh1NoteLength:: ;DD01
 	ds 1
@@ -3855,7 +3025,7 @@ wCh1BranchCounter:: ;DD13
 	ds 1
 wChl1ActionId:: ;DD14
 	ds 1
-wCh1DD15:: ;DD15
+wCh1CheckBranchPlayCounterFlag:: ;DD15
 	ds 1
 wCh1NextActionAddrLowBkp:: ;DD16
 	ds 1
@@ -3863,7 +3033,7 @@ wCh1NextActionAddrHighBkp:: ;DD17
 	ds 1
 
 
-;audio channel #2 wram
+; audio channel #2 wram
 wChannel2State:: ;DD18
 	ds 1
 wCh2NoteLength:: ;wCh2NoteLength note length counter
@@ -3906,7 +3076,7 @@ wCh2BranchCounter:: ;DD2B branch counter
 	ds 1
 wChl2ActionId:: ;DD2C or branch tsp value
 	ds 1
-wCh2DD2D:: ;DD2D
+wCh2CheckBranchPlayCounterFlag:: ;DD2D
 	ds 1
 wCh2NextActionAddrLowBkp:: ;DD2E next action adress backup low
 	ds 1
@@ -3914,7 +3084,7 @@ wCh2NextActionAddrHighBkp:: ;DD2F next action adress backup high
 	ds 1
 
 
-;audio channel #3 wram
+; audio channel #3 wram
 wChannel3State:: ;DD30
 	ds 1
 wCh3NoteLength:: ;DD31
@@ -3957,7 +3127,7 @@ wCh3BranchCounter:: ;DD43
 	ds 1
 wChl3ActionId:: ;DD44
 	ds 1
-wCh3DD45:: ;DD45
+wCh3CheckBranchPlayCounterFlag:: ;DD45
 	ds 1
 wCh3NextActionAddrLowBkp:: ;DD46
 	ds 1
@@ -3965,7 +3135,7 @@ wCh3NextActionAddrHighBkp:: ;DD47
 	ds 1
 
 
-;audio channel #4 wram
+; audio channel #4 wram
 wChannel4State:: ;DD48 enable channel
 	ds 1
 wCh4NoteLength:: ;DD49 note length counter
@@ -4008,7 +3178,7 @@ wCh4BranchCounter:: ;DD5B branch counter
 	ds 1
 wChl4ActionId:: ;DD5C
 	ds 1
-wCh4DD5D:: ;DD5D
+wCh4CheckBranchPlayCounterFlag:: ;DD5D
 	ds 1
 wCh4NextActionAddrLowBkp:: ;DD5E
 	ds 1
@@ -4035,7 +3205,7 @@ wNoisePolyCounterValue:: ;DD64
 wChannelActionId:: ;DD65
 	ds 1
 
-wDD66:: ;DD66 channel note id
+wChannelNoteId:: ;DD66 channel note id
 	ds 1
 
 wDD67:: ;DD67
@@ -4098,11 +3268,11 @@ wNR51SoundOutput:: ;DD79
 wLRSoundEnabler:: ;DD7A
 	ds 1
 
+; ch1 = 0
+; ch2 = 1
+; ch3 = 2
+; ch4 = 3
 wChannelId:: ;DD7B
-;ch1 = 0
-;ch2 = 1
-;ch3 = 2
-;ch4 = 3
 	ds 1
 
 wChl1CurrentNoteId:: ;DD7C ch1 current note id
@@ -4113,17 +3283,6 @@ wChl2CurrentNoteId:: ;DD7D ch2 current note id
 
 wChl3CurrentNoteId:: ;DD7E ch3 current note id
 	ds 1
-
-
-
-
-
-
-
-
-
-
-
 
 
 
