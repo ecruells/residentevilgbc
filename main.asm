@@ -171,7 +171,7 @@ titleScreenPalette:                 INCBIN "gfx/tilemaps/title_screen.pal" ;5790
 
 characterSelectScreenTilesData:		INCBIN "gfx/tilemaps/character_select_screen.2bpp" ;57D8
 
-policeIdCardTilemap:		        INCBIN "gfx/police_id_card.2bpp" ;5FE8
+policeIdCardTilemap:		        INCBIN "gfx/tilemaps/police_id_card.2bpp" ;5FE8
 
 characterSelectScreenTilesmap:		INCBIN "gfx/tilemaps/character_select_screen.map" ;62D8
 

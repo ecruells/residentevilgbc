@@ -9,3 +9,8 @@
 
 /tools/env/
 /tools/__pycache__
+
+# generated 2bpp image files
+/gfx/*.2bpp
+/gfx/room_items_sprites/*.2bpp
+/gfx/sprite_sheets/*/*.2bpp
