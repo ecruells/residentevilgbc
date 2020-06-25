@@ -50,9 +50,9 @@ def main():
     prev_door = ""
     for door in doors_data:
         doors_dict[door["label"]] = door
-        if door["target"]["door_label"] == 0:
+        if door["target_door_label"] == 0:
             continue
-        elif door["target"]["door_label"] != prev_door:
+        elif door["target_door_label"] != prev_door:
             door_id += 1
         # adjacent conected doors, share the same door id
         doors_table_output += "\tdw {}, DOOR_{}\r\n".format(door["label"], to_hex(door_id))
@@ -80,9 +80,9 @@ def main():
                     )
                 else:
                     actions_output += "\tdoorType {}\r\n".format(tilemap_doors[door_data["type_id"]])
-                target = door_data["target"]
-                room_cost = rooms[target["room_id"]]
-                actions_output += "\tdoorTarget {}, {}\r\n".format(room_cost, target["door_label"])
+                room_cost = rooms[door_data["room_id"]]
+                actions_output += "\tdoorRoomId {}\r\n".format(room_cost)
+                actions_output += "\tdoorTarget {}\r\n".format(door_data["target_door_label"])
                 player_pos = door_data["player_position"]
                 actions_output += "\tplayerPosition {}, {}, {}\r\n".format(
                     player_pos["x"],

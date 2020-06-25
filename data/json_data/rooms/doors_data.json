@@ -4,10 +4,8 @@
     "type": "sprite_door",
     "type_id": 8,
     "palette_id": 0,
-    "target": {
-      "room_id": 0,
-      "door_label": "door4136"
-    },
+    "room_id": 0,
+    "target_door_label": "door4136",
     "player_position": {
       "x": 976,
       "y": 64,
@@ -19,10 +17,8 @@
     "type": "sprite_door",
     "type_id": 8,
     "palette_id": 0,
-    "target": {
-      "room_id": 1,
-      "door_label": "door40E8"
-    },
+    "room_id": 1,
+    "target_door_label": "door40E8",
     "player_position": {
       "x": -912,
       "y": 0,
@@ -34,10 +30,8 @@
     "type": "sprite_door",
     "type_id": 9,
     "palette_id": 1,
-    "target": {
-      "room_id": 0,
-      "door_label": "door4257"
-    },
+    "room_id": 0,
+    "target_door_label": "door4257",
     "player_position": {
       "x": -976,
       "y": -320,
@@ -49,10 +43,8 @@
     "type": "sprite_door",
     "type_id": 9,
     "palette_id": 1,
-    "target": {
-      "room_id": 4,
-      "door_label": "door40F3"
-    },
+    "room_id": 4,
+    "target_door_label": "door40F3",
     "player_position": {
       "x": 0,
       "y": -528,
@@ -64,10 +56,8 @@
     "type": "sprite_door",
     "type_id": 2,
     "palette_id": 2,
-    "target": {
-      "room_id": 0,
-      "door_label": "door45D3"
-    },
+    "room_id": 0,
+    "target_door_label": "door45D3",
     "player_position": {
       "x": -976,
       "y": 192,
@@ -79,10 +69,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 16,
-      "door_label": "door40FE"
-    },
+    "room_id": 16,
+    "target_door_label": "door40FE",
     "player_position": {
       "x": 56,
       "y": 784,
@@ -93,10 +81,8 @@
     "label": "door4109",
     "type": "tilemap_door",
     "type_id": 0,
-    "target": {
-      "room_id": 0,
-      "door_label": "door4895"
-    },
+    "room_id": 0,
+    "target_door_label": "door4895",
     "player_position": {
       "x": 0,
       "y": -64,
@@ -107,10 +93,8 @@
     "label": "door4895",
     "type": "tilemap_door",
     "type_id": 1,
-    "target": {
-      "room_id": 29,
-      "door_label": "door4109"
-    },
+    "room_id": 29,
+    "target_door_label": "door4109",
     "player_position": {
       "x": 0,
       "y": 744,
@@ -122,10 +106,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 2,
-    "target": {
-      "room_id": 1,
-      "door_label": "door42E7"
-    },
+    "room_id": 1,
+    "target_door_label": "door42E7",
     "player_position": {
       "x": 704,
       "y": 336,
@@ -137,10 +119,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 5,
-      "door_label": "door4141"
-    },
+    "room_id": 5,
+    "target_door_label": "door4141",
     "player_position": {
       "x": 512,
       "y": -48,
@@ -152,10 +132,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 2,
-      "door_label": "door43C6"
-    },
+    "room_id": 2,
+    "target_door_label": "door43C6",
     "player_position": {
       "x": -160,
       "y": 336,
@@ -167,10 +145,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 8,
-      "door_label": "door41BB"
-    },
+    "room_id": 8,
+    "target_door_label": "door41BB",
     "player_position": {
       "x": 80,
       "y": 504,
@@ -182,10 +158,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 3,
-      "door_label": "door42F2"
-    },
+    "room_id": 3,
+    "target_door_label": "door42F2",
     "player_position": {
       "x": -832,
       "y": 960,
@@ -197,10 +171,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 3,
-      "door_label": "door4563"
-    },
+    "room_id": 3,
+    "target_door_label": "door4563",
     "player_position": {
       "x": -880,
       "y": 304,
@@ -212,10 +184,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 14,
-      "door_label": "door4209"
-    },
+    "room_id": 14,
+    "target_door_label": "door4209",
     "player_position": {
       "x": -240,
       "y": -208,
@@ -227,10 +197,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 3,
-      "door_label": "door46B3"
-    },
+    "room_id": 3,
+    "target_door_label": "door46B3",
     "player_position": {
       "x": -440,
       "y": 56,
@@ -242,10 +210,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 20,
-      "door_label": "door4214"
-    },
+    "room_id": 20,
+    "target_door_label": "door4214",
     "player_position": {
       "x": 112,
       "y": -48,
@@ -257,10 +223,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 3,
-      "door_label": "door43BB"
-    },
+    "room_id": 3,
+    "target_door_label": "door43BB",
     "player_position": {
       "x": -880,
       "y": -920,
@@ -272,10 +236,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 8,
-      "door_label": "door421F"
-    },
+    "room_id": 8,
+    "target_door_label": "door421F",
     "player_position": {
       "x": 976,
       "y": -672,
@@ -287,10 +249,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 3,
-      "door_label": "door4340"
-    },
+    "room_id": 3,
+    "target_door_label": "door4340",
     "player_position": {
       "x": 792,
       "y": -392,
@@ -302,10 +262,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 6,
-      "door_label": "door422A"
-    },
+    "room_id": 6,
+    "target_door_label": "door422A",
     "player_position": {
       "x": -520,
       "y": 272,
@@ -317,10 +275,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 4,
-      "door_label": "door44C7"
-    },
+    "room_id": 4,
+    "target_door_label": "door44C7",
     "player_position": {
       "x": -224,
       "y": 552,
@@ -332,10 +288,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 12,
-      "door_label": "door4262"
-    },
+    "room_id": 12,
+    "target_door_label": "door4262",
     "player_position": {
       "x": -592,
       "y": 488,
@@ -347,10 +301,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 5,
-      "door_label": "door4399"
-    },
+    "room_id": 5,
+    "target_door_label": "door4399",
     "player_position": {
       "x": -920,
       "y": 56,
@@ -362,10 +314,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 7,
-      "door_label": "door42FD"
-    },
+    "room_id": 7,
+    "target_door_label": "door42FD",
     "player_position": {
       "x": 464,
       "y": -520,
@@ -377,10 +327,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 5,
-      "door_label": "door45B1"
-    },
+    "room_id": 5,
+    "target_door_label": "door45B1",
     "player_position": {
       "x": -976,
       "y": -24,
@@ -392,10 +340,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 15,
-      "door_label": "door4308"
-    },
+    "room_id": 15,
+    "target_door_label": "door4308",
     "player_position": {
       "x": 400,
       "y": 208,
@@ -407,10 +353,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 8,
-      "door_label": "door4409"
-    },
+    "room_id": 8,
+    "target_door_label": "door4409",
     "player_position": {
       "x": 792,
       "y": -504,
@@ -422,10 +366,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 9,
-      "door_label": "door43D1"
-    },
+    "room_id": 9,
+    "target_door_label": "door43D1",
     "player_position": {
       "x": 56,
       "y": 208,
@@ -436,10 +378,8 @@
     "label": "door43DC",
     "type": "tilemap_door",
     "type_id": 4,
-    "target": {
-      "room_id": 8,
-      "door_label": "door4E38"
-    },
+    "room_id": 8,
+    "target_door_label": "door4E38",
     "player_position": {
       "x": -264,
       "y": 880,
@@ -450,10 +390,8 @@
     "label": "door4E38",
     "type": "tilemap_door",
     "type_id": 5,
-    "target": {
-      "room_id": 53,
-      "door_label": "door43DC"
-    },
+    "room_id": 53,
+    "target_door_label": "door43DC",
     "player_position": {
       "x": -56,
       "y": -328,
@@ -465,10 +403,8 @@
     "type": "sprite_door",
     "type_id": 2,
     "palette_id": 2,
-    "target": {
-      "room_id": 10,
-      "door_label": "door44D2"
-    },
+    "room_id": 10,
+    "target_door_label": "door44D2",
     "player_position": {
       "x": -624,
       "y": 1216,
@@ -480,10 +416,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 12,
-      "door_label": "door4436"
-    },
+    "room_id": 12,
+    "target_door_label": "door4436",
     "player_position": {
       "x": 592,
       "y": -752,
@@ -495,10 +429,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 10,
-      "door_label": "door4622"
-    },
+    "room_id": 10,
+    "target_door_label": "door4622",
     "player_position": {
       "x": -56,
       "y": 1264,
@@ -510,10 +442,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 18,
-      "door_label": "door4441"
-    },
+    "room_id": 18,
+    "target_door_label": "door4441",
     "player_position": {
       "x": -120,
       "y": -400,
@@ -525,10 +455,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 10,
-      "door_label": "door4600"
-    },
+    "room_id": 10,
+    "target_door_label": "door4600",
     "player_position": {
       "x": -24,
       "y": 736,
@@ -540,10 +468,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 17,
-      "door_label": "door444C"
-    },
+    "room_id": 17,
+    "target_door_label": "door444C",
     "player_position": {
       "x": -288,
       "y": 336,
@@ -555,10 +481,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 10,
-      "door_label": "door47AA"
-    },
+    "room_id": 10,
+    "target_door_label": "door47AA",
     "player_position": {
       "x": 48,
       "y": -280,
@@ -570,10 +494,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 25,
-      "door_label": "door4457"
-    },
+    "room_id": 25,
+    "target_door_label": "door4457",
     "player_position": {
       "x": 0,
       "y": 208,
@@ -585,10 +507,8 @@
     "type": "sprite_door",
     "type_id": 8,
     "palette_id": 0,
-    "target": {
-      "room_id": 10,
-      "door_label": "door449A"
-    },
+    "room_id": 10,
+    "target_door_label": "door449A",
     "player_position": {
       "x": -32,
       "y": -688,
@@ -600,10 +520,8 @@
     "type": "sprite_door",
     "type_id": 8,
     "palette_id": 0,
-    "target": {
-      "room_id": 11,
-      "door_label": "door4462"
-    },
+    "room_id": 11,
+    "target_door_label": "door4462",
     "player_position": {
       "x": -528,
       "y": 24,
@@ -615,10 +533,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 11,
-      "door_label": "door5A17"
-    },
+    "room_id": 11,
+    "target_door_label": "door5A17",
     "player_position": {
       "x": 440,
       "y": -80,
@@ -630,10 +546,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 111,
-      "door_label": "door4479"
-    },
+    "room_id": 111,
+    "target_door_label": "door4479",
     "player_position": {
       "x": -864,
       "y": -336,
@@ -645,10 +559,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 11,
-      "door_label": "door5AEA"
-    },
+    "room_id": 11,
+    "target_door_label": "door5AEA",
     "player_position": {
       "x": 80,
       "y": 88,
@@ -660,10 +572,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 113,
-      "door_label": "door4484"
-    },
+    "room_id": 113,
+    "target_door_label": "door4484",
     "player_position": {
       "x": 80,
       "y": 208,
@@ -675,10 +585,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 11,
-      "door_label": "door4520"
-    },
+    "room_id": 11,
+    "target_door_label": "door4520",
     "player_position": {
       "x": -128,
       "y": 88,
@@ -690,10 +598,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 13,
-      "door_label": "door448F"
-    },
+    "room_id": 13,
+    "target_door_label": "door448F",
     "player_position": {
       "x": 976,
       "y": 248,
@@ -705,10 +611,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 11,
-      "door_label": "door4691"
-    },
+    "room_id": 11,
+    "target_door_label": "door4691",
     "player_position": {
       "x": 528,
       "y": 384,
@@ -720,10 +624,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 19,
-      "door_label": "door44A5"
-    },
+    "room_id": 19,
+    "target_door_label": "door44A5",
     "player_position": {
       "x": -120,
       "y": 608,
@@ -735,10 +637,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 13,
-      "door_label": "door5A86"
-    },
+    "room_id": 13,
+    "target_door_label": "door5A86",
     "player_position": {
       "x": 200,
       "y": -288,
@@ -750,10 +650,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 112,
-      "door_label": "door452B"
-    },
+    "room_id": 112,
+    "target_door_label": "door452B",
     "player_position": {
       "x": -120,
       "y": 240,
@@ -764,10 +662,8 @@
     "label": "door4536",
     "type": "tilemap_door",
     "type_id": 4,
-    "target": {
-      "room_id": 13,
-      "door_label": "door4AAC"
-    },
+    "room_id": 13,
+    "target_door_label": "door4AAC",
     "player_position": {
       "x": -176,
       "y": 296,
@@ -778,10 +674,8 @@
     "label": "door4AAC",
     "type": "tilemap_door",
     "type_id": 5,
-    "target": {
-      "room_id": 36,
-      "door_label": "door4536"
-    },
+    "room_id": 36,
+    "target_door_label": "door4536",
     "player_position": {
       "x": -1120,
       "y": 264,
@@ -793,10 +687,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 15,
-      "door_label": "door5B39"
-    },
+    "room_id": 15,
+    "target_door_label": "door5B39",
     "player_position": {
       "x": -392,
       "y": 512,
@@ -808,10 +700,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 115,
-      "door_label": "door45BC"
-    },
+    "room_id": 115,
+    "target_door_label": "door45BC",
     "player_position": {
       "x": -568,
       "y": -384,
@@ -823,10 +713,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 16,
-      "door_label": "door4745"
-    },
+    "room_id": 16,
+    "target_door_label": "door4745",
     "player_position": {
       "x": -464,
       "y": -720,
@@ -838,10 +726,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 23,
-      "door_label": "door45C8"
-    },
+    "room_id": 23,
+    "target_door_label": "door45C8",
     "player_position": {
       "x": 336,
       "y": 272,
@@ -853,10 +739,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 19,
-      "door_label": "door46EC"
-    },
+    "room_id": 19,
+    "target_door_label": "door46EC",
     "player_position": {
       "x": 144,
       "y": -896,
@@ -868,10 +752,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 22,
-      "door_label": "door469C"
-    },
+    "room_id": 22,
+    "target_door_label": "door469C",
     "player_position": {
       "x": 0,
       "y": 208,
@@ -883,10 +765,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 21,
-      "door_label": "door4750"
-    },
+    "room_id": 21,
+    "target_door_label": "door4750",
     "player_position": {
       "x": 192,
       "y": 80,
@@ -898,10 +778,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 23,
-      "door_label": "door46E0"
-    },
+    "room_id": 23,
+    "target_door_label": "door46E0",
     "player_position": {
       "x": 304,
       "y": -336,
@@ -913,10 +791,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 24,
-      "door_label": "door47B5"
-    },
+    "room_id": 24,
+    "target_door_label": "door47B5",
     "player_position": {
       "x": 272,
       "y": -120,
@@ -928,10 +804,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 25,
-      "door_label": "door477D"
-    },
+    "room_id": 25,
+    "target_door_label": "door477D",
     "player_position": {
       "x": 208,
       "y": -96,
@@ -942,10 +816,8 @@
     "label": "door47C1",
     "type": "tilemap_door",
     "type_id": 6,
-    "target": {
-      "room_id": 26,
-      "door_label": "door4C49"
-    },
+    "room_id": 26,
+    "target_door_label": "door4C49",
     "player_position": {
       "x": 464,
       "y": 280,
@@ -956,10 +828,8 @@
     "label": "door4C49",
     "type": "tilemap_door",
     "type_id": 7,
-    "target": {
-      "room_id": 42,
-      "door_label": "door47C1"
-    },
+    "room_id": 42,
+    "target_door_label": "door47C1",
     "player_position": {
       "x": -16,
       "y": 8,
@@ -971,10 +841,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 26,
-      "door_label": "door47F9"
-    },
+    "room_id": 26,
+    "target_door_label": "door47F9",
     "player_position": {
       "x": -912,
       "y": 296,
@@ -986,10 +854,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 27,
-      "door_label": "door47CC"
-    },
+    "room_id": 27,
+    "target_door_label": "door47CC",
     "player_position": {
       "x": 808,
       "y": -336,
@@ -1001,10 +867,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 27,
-      "door_label": "door5B44"
-    },
+    "room_id": 27,
+    "target_door_label": "door5B44",
     "player_position": {
       "x": -968,
       "y": 216,
@@ -1016,10 +880,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 115,
-      "door_label": "door4804"
-    },
+    "room_id": 115,
+    "target_door_label": "door4804",
     "player_position": {
       "x": -280,
       "y": 272,
@@ -1031,10 +893,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 28,
-      "door_label": "door4874"
-    },
+    "room_id": 28,
+    "target_door_label": "door4874",
     "player_position": {
       "x": -976,
       "y": -24,
@@ -1046,10 +906,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 29,
-      "door_label": "door483C"
-    },
+    "room_id": 29,
+    "target_door_label": "door483C",
     "player_position": {
       "x": 976,
       "y": 192,
@@ -1061,10 +919,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 28,
-      "door_label": "door4E43"
-    },
+    "room_id": 28,
+    "target_door_label": "door4E43",
     "player_position": {
       "x": 864,
       "y": 336,
@@ -1076,10 +932,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 53,
-      "door_label": "door4847"
-    },
+    "room_id": 53,
+    "target_door_label": "door4847",
     "player_position": {
       "x": -296,
       "y": -976,
@@ -1091,10 +945,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 29,
-      "door_label": "door4954"
-    },
+    "room_id": 29,
+    "target_door_label": "door4954",
     "player_position": {
       "x": -976,
       "y": -528,
@@ -1106,10 +958,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 33,
-      "door_label": "door487F"
-    },
+    "room_id": 33,
+    "target_door_label": "door487F",
     "player_position": {
       "x": -320,
       "y": -48,
@@ -1121,10 +971,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 29,
-      "door_label": "door4B80"
-    },
+    "room_id": 29,
+    "target_door_label": "door4B80",
     "player_position": {
       "x": -976,
       "y": 400,
@@ -1136,10 +984,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 39,
-      "door_label": "door488A"
-    },
+    "room_id": 39,
+    "target_door_label": "door488A",
     "player_position": {
       "x": -720,
       "y": 640,
@@ -1151,10 +997,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 30,
-      "door_label": "door4B75"
-    },
+    "room_id": 30,
+    "target_door_label": "door4B75",
     "player_position": {
       "x": -464,
       "y": 416,
@@ -1166,10 +1010,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 30,
-      "door_label": "door4CA4"
-    },
+    "room_id": 30,
+    "target_door_label": "door4CA4",
     "player_position": {
       "x": 432,
       "y": -464,
@@ -1181,10 +1023,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 31,
-      "door_label": "door4A96"
-    },
+    "room_id": 31,
+    "target_door_label": "door4A96",
     "player_position": {
       "x": -160,
       "y": 208,
@@ -1196,10 +1036,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 36,
-      "door_label": "door48CE"
-    },
+    "room_id": 36,
+    "target_door_label": "door48CE",
     "player_position": {
       "x": 144,
       "y": -960,
@@ -1211,10 +1049,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 31,
-      "door_label": "door4C60"
-    },
+    "room_id": 31,
+    "target_door_label": "door4C60",
     "player_position": {
       "x": 208,
       "y": 128,
@@ -1226,10 +1062,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 43,
-      "door_label": "door48D9"
-    },
+    "room_id": 43,
+    "target_door_label": "door48D9",
     "player_position": {
       "x": -272,
       "y": 576,
@@ -1241,10 +1075,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 32,
-      "door_label": "door4D58"
-    },
+    "room_id": 32,
+    "target_door_label": "door4D58",
     "player_position": {
       "x": 440,
       "y": -896,
@@ -1256,10 +1088,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 49,
-      "door_label": "door48FB"
-    },
+    "room_id": 49,
+    "target_door_label": "door48FB",
     "player_position": {
       "x": -208,
       "y": 0,
@@ -1271,10 +1101,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 32,
-      "door_label": "door4DD3"
-    },
+    "room_id": 32,
+    "target_door_label": "door4DD3",
     "player_position": {
       "x": -136,
       "y": 224,
@@ -1286,10 +1114,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 51,
-      "door_label": "door4906"
-    },
+    "room_id": 51,
+    "target_door_label": "door4906",
     "player_position": {
       "x": -48,
       "y": 208,
@@ -1301,10 +1127,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 32,
-      "door_label": "door4AD9"
-    },
+    "room_id": 32,
+    "target_door_label": "door4AD9",
     "player_position": {
       "x": -720,
       "y": -72,
@@ -1316,10 +1140,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 37,
-      "door_label": "door4911"
-    },
+    "room_id": 37,
+    "target_door_label": "door4911",
     "player_position": {
       "x": 528,
       "y": 640,
@@ -1330,10 +1152,8 @@
     "label": "door491C",
     "type": "tilemap_door",
     "type_id": 14,
-    "target": {
-      "room_id": 32,
-      "door_label": "door5B4F"
-    },
+    "room_id": 32,
+    "target_door_label": "door5B4F",
     "player_position": {
       "x": 456,
       "y": -256,
@@ -1344,10 +1164,8 @@
     "label": "door5B4F",
     "type": "tilemap_door",
     "type_id": 15,
-    "target": {
-      "room_id": 115,
-      "door_label": "door491C"
-    },
+    "room_id": 115,
+    "target_door_label": "door491C",
     "player_position": {
       "x": 920,
       "y": -88,
@@ -1359,10 +1177,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 33,
-      "door_label": "door4CFE"
-    },
+    "room_id": 33,
+    "target_door_label": "door4CFE",
     "player_position": {
       "x": 464,
       "y": 48,
@@ -1374,10 +1190,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 47,
-      "door_label": "door495F"
-    },
+    "room_id": 47,
+    "target_door_label": "door495F",
     "player_position": {
       "x": -312,
       "y": 208,
@@ -1389,10 +1203,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 34,
-      "door_label": "door4CBA"
-    },
+    "room_id": 34,
+    "target_door_label": "door4CBA",
     "player_position": {
       "x": -288,
       "y": -272,
@@ -1404,10 +1216,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 45,
-      "door_label": "door4981"
-    },
+    "room_id": 45,
+    "target_door_label": "door4981",
     "player_position": {
       "x": -512,
       "y": -48,
@@ -1419,10 +1229,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 35,
-      "door_label": "door4B6A"
-    },
+    "room_id": 35,
+    "target_door_label": "door4B6A",
     "player_position": {
       "x": 464,
       "y": -16,
@@ -1434,10 +1242,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 39,
-      "door_label": "door49AE"
-    },
+    "room_id": 39,
+    "target_door_label": "door49AE",
     "player_position": {
       "x": 568,
       "y": -32,
@@ -1449,10 +1255,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 36,
-      "door_label": "door4B5F"
-    },
+    "room_id": 36,
+    "target_door_label": "door4B5F",
     "player_position": {
       "x": 144,
       "y": 784,
@@ -1464,10 +1268,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 36,
-      "door_label": "door4CDC"
-    },
+    "room_id": 36,
+    "target_door_label": "door4CDC",
     "player_position": {
       "x": -376,
       "y": 64,
@@ -1479,10 +1281,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 46,
-      "door_label": "door4A8B"
-    },
+    "room_id": 46,
+    "target_door_label": "door4A8B",
     "player_position": {
       "x": 144,
       "y": 0,
@@ -1494,10 +1294,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 36,
-      "door_label": "door4BAD"
-    },
+    "room_id": 36,
+    "target_door_label": "door4BAD",
     "player_position": {
       "x": -456,
       "y": 848,
@@ -1509,10 +1307,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 37,
-      "door_label": "door4E22"
-    },
+    "room_id": 37,
+    "target_door_label": "door4E22",
     "player_position": {
       "x": -312,
       "y": -376,
@@ -1524,10 +1320,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 53,
-      "door_label": "door4AE4"
-    },
+    "room_id": 53,
+    "target_door_label": "door4AE4",
     "player_position": {
       "x": -104,
       "y": 720,
@@ -1539,10 +1333,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 38,
-      "door_label": "door4CE7"
-    },
+    "room_id": 38,
+    "target_door_label": "door4CE7",
     "player_position": {
       "x": -272,
       "y": 176,
@@ -1554,10 +1346,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 46,
-      "door_label": "door4B27"
-    },
+    "room_id": 46,
+    "target_door_label": "door4B27",
     "player_position": {
       "x": -16,
       "y": -400,
@@ -1569,10 +1359,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 39,
-      "door_label": "door4BA2"
-    },
+    "room_id": 39,
+    "target_door_label": "door4BA2",
     "player_position": {
       "x": -672,
       "y": -720,
@@ -1584,10 +1372,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 40,
-      "door_label": "door4B54"
-    },
+    "room_id": 40,
+    "target_door_label": "door4B54",
     "player_position": {
       "x": -256,
       "y": 464,
@@ -1599,10 +1385,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 41,
-      "door_label": "door4CD1"
-    },
+    "room_id": 41,
+    "target_door_label": "door4CD1",
     "player_position": {
       "x": -64,
       "y": 240,
@@ -1614,10 +1398,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 46,
-      "door_label": "door4BF0"
-    },
+    "room_id": 46,
+    "target_door_label": "door4BF0",
     "player_position": {
       "x": 16,
       "y": 272,
@@ -1628,10 +1410,8 @@
     "label": "door4C54",
     "type": "tilemap_door",
     "type_id": 8,
-    "target": {
-      "room_id": 42,
-      "door_label": "door4C6B"
-    },
+    "room_id": 42,
+    "target_door_label": "door4C6B",
     "player_position": {
       "x": -16,
       "y": 336,
@@ -1642,10 +1422,8 @@
     "label": "door4C6B",
     "type": "tilemap_door",
     "type_id": 9,
-    "target": {
-      "room_id": 43,
-      "door_label": "door4C54"
-    },
+    "room_id": 43,
+    "target_door_label": "door4C54",
     "player_position": {
       "x": 208,
       "y": -360,
@@ -1657,10 +1435,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 44,
-      "door_label": "door4CAF"
-    },
+    "room_id": 44,
+    "target_door_label": "door4CAF",
     "player_position": {
       "x": -200,
       "y": 400,
@@ -1672,10 +1448,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 45,
-      "door_label": "door4C77"
-    },
+    "room_id": 45,
+    "target_door_label": "door4C77",
     "player_position": {
       "x": 88,
       "y": -336,
@@ -1687,10 +1461,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 48,
-      "door_label": "door4E2D"
-    },
+    "room_id": 48,
+    "target_door_label": "door4E2D",
     "player_position": {
       "x": 240,
       "y": 224,
@@ -1702,10 +1474,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 53,
-      "door_label": "door4D15"
-    },
+    "room_id": 53,
+    "target_door_label": "door4D15",
     "player_position": {
       "x": -56,
       "y": 64,
@@ -1717,10 +1487,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 49,
-      "door_label": "door4DA6"
-    },
+    "room_id": 49,
+    "target_door_label": "door4DA6",
     "player_position": {
       "x": 752,
       "y": -560,
@@ -1732,10 +1500,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 50,
-      "door_label": "door4D63"
-    },
+    "room_id": 50,
+    "target_door_label": "door4D63",
     "player_position": {
       "x": 464,
       "y": 128,
@@ -1747,10 +1513,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 49,
-      "door_label": "door4E00"
-    },
+    "room_id": 49,
+    "target_door_label": "door4E00",
     "player_position": {
       "x": 512,
       "y": 336,
@@ -1762,10 +1526,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 52,
-      "door_label": "door4D6E"
-    },
+    "room_id": 52,
+    "target_door_label": "door4D6E",
     "player_position": {
       "x": -48,
       "y": 272,
@@ -1777,10 +1539,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 54,
-      "door_label": "door4F00"
-    },
+    "room_id": 54,
+    "target_door_label": "door4F00",
     "player_position": {
       "x": 424,
       "y": -1104,
@@ -1792,10 +1552,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 55,
-      "door_label": "door4E70"
-    },
+    "room_id": 55,
+    "target_door_label": "door4E70",
     "player_position": {
       "x": 936,
       "y": 976,
@@ -1807,10 +1565,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 54,
-      "door_label": "door4F22"
-    },
+    "room_id": 54,
+    "target_door_label": "door4F22",
     "player_position": {
       "x": -976,
       "y": 496,
@@ -1822,10 +1578,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 56,
-      "door_label": "door4E86"
-    },
+    "room_id": 56,
+    "target_door_label": "door4E86",
     "player_position": {
       "x": 328,
       "y": 624,
@@ -1837,10 +1591,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 55,
-      "door_label": "door4F2D"
-    },
+    "room_id": 55,
+    "target_door_label": "door4F2D",
     "player_position": {
       "x": -672,
       "y": 136,
@@ -1852,10 +1604,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 56,
-      "door_label": "door4EF5"
-    },
+    "room_id": 56,
+    "target_door_label": "door4EF5",
     "player_position": {
       "x": 600,
       "y": -720,
@@ -1867,10 +1617,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 56,
-      "door_label": "door4F7C"
-    },
+    "room_id": 56,
+    "target_door_label": "door4F7C",
     "player_position": {
       "x": -720,
       "y": -448,
@@ -1882,10 +1630,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 58,
-      "door_label": "door4F38"
-    },
+    "room_id": 58,
+    "target_door_label": "door4F38",
     "player_position": {
       "x": 1024,
       "y": 1088,
@@ -1896,10 +1642,8 @@
     "label": "door4F43",
     "type": "tilemap_door",
     "type_id": 7,
-    "target": {
-      "room_id": 56,
-      "door_label": "door5073"
-    },
+    "room_id": 56,
+    "target_door_label": "door5073",
     "player_position": {
       "x": 0,
       "y": -720,
@@ -1910,10 +1654,8 @@
     "label": "door5073",
     "type": "tilemap_door",
     "type_id": 6,
-    "target": {
-      "room_id": 63,
-      "door_label": "door4F43"
-    },
+    "room_id": 63,
+    "target_door_label": "door4F43",
     "player_position": {
       "x": 312,
       "y": 848,
@@ -1924,10 +1666,8 @@
     "label": "door560D",
     "type": "tilemap_door",
     "type_id": 16,
-    "target": {
-      "room_id": 89,
-      "door_label": "door4F65"
-    },
+    "room_id": 89,
+    "target_door_label": "door4F65",
     "player_position": {
       "x": -976,
       "y": -848,
@@ -1939,10 +1679,8 @@
     "type": "sprite_door",
     "type_id": 8,
     "palette_id": 0,
-    "target": {
-      "room_id": 58,
-      "door_label": "door51FC"
-    },
+    "room_id": 58,
+    "target_door_label": "door51FC",
     "player_position": {
       "x": -800,
       "y": -976,
@@ -1954,10 +1692,8 @@
     "type": "sprite_door",
     "type_id": 8,
     "palette_id": 0,
-    "target": {
-      "room_id": 71,
-      "door_label": "door4F87"
-    },
+    "room_id": 71,
+    "target_door_label": "door4F87",
     "player_position": {
       "x": -880,
       "y": -376,
@@ -1969,10 +1705,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 59,
-      "door_label": "door5046"
-    },
+    "room_id": 59,
+    "target_door_label": "door5046",
     "player_position": {
       "x": 16,
       "y": -208,
@@ -1984,10 +1718,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 62,
-      "door_label": "door4FBF"
-    },
+    "room_id": 62,
+    "target_door_label": "door4FBF",
     "player_position": {
       "x": -200,
       "y": -24,
@@ -1999,10 +1731,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 60,
-      "door_label": "door5175"
-    },
+    "room_id": 60,
+    "target_door_label": "door5175",
     "player_position": {
       "x": -336,
       "y": -720,
@@ -2014,10 +1744,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 68,
-      "door_label": "door4FEC"
-    },
+    "room_id": 68,
+    "target_door_label": "door4FEC",
     "player_position": {
       "x": 72,
       "y": 656,
@@ -2029,10 +1757,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 61,
-      "door_label": "door5089"
-    },
+    "room_id": 61,
+    "target_door_label": "door5089",
     "player_position": {
       "x": 248,
       "y": -464,
@@ -2044,10 +1770,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 63,
-      "door_label": "door500E"
-    },
+    "room_id": 63,
+    "target_door_label": "door500E",
     "player_position": {
       "x": -432,
       "y": 848,
@@ -2059,10 +1783,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 61,
-      "door_label": "door51A2"
-    },
+    "room_id": 61,
+    "target_door_label": "door51A2",
     "player_position": {
       "x": 592,
       "y": 464,
@@ -2074,10 +1796,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 69,
-      "door_label": "door5019"
-    },
+    "room_id": 69,
+    "target_door_label": "door5019",
     "player_position": {
       "x": -336,
       "y": 32,
@@ -2089,10 +1809,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 62,
-      "door_label": "door51DA"
-    },
+    "room_id": 62,
+    "target_door_label": "door51DA",
     "player_position": {
       "x": 808,
       "y": 104,
@@ -2104,10 +1822,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 70,
-      "door_label": "door5051"
-    },
+    "room_id": 70,
+    "target_door_label": "door5051",
     "player_position": {
       "x": 976,
       "y": 0,
@@ -2119,10 +1835,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 62,
-      "door_label": "door50EE"
-    },
+    "room_id": 62,
+    "target_door_label": "door50EE",
     "player_position": {
       "x": 520,
       "y": 976,
@@ -2134,10 +1848,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 65,
-      "door_label": "door503B"
-    },
+    "room_id": 65,
+    "target_door_label": "door503B",
     "player_position": {
       "x": -464,
       "y": -248,
@@ -2149,10 +1861,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 63,
-      "door_label": "door513D"
-    },
+    "room_id": 63,
+    "target_door_label": "door513D",
     "player_position": {
       "x": 528,
       "y": 688,
@@ -2164,10 +1874,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 67,
-      "door_label": "door507E"
-    },
+    "room_id": 67,
+    "target_door_label": "door507E",
     "player_position": {
       "x": -272,
       "y": 24,
@@ -2179,10 +1887,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 64,
-      "door_label": "door51C4"
-    },
+    "room_id": 64,
+    "target_door_label": "door51C4",
     "player_position": {
       "x": -64,
       "y": 208,
@@ -2194,10 +1900,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 70,
-      "door_label": "door50A0"
-    },
+    "room_id": 70,
+    "target_door_label": "door50A0",
     "player_position": {
       "x": -928,
       "y": 112,
@@ -2209,10 +1913,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 65,
-      "door_label": "door5645"
-    },
+    "room_id": 65,
+    "target_door_label": "door5645",
     "player_position": {
       "x": 496,
       "y": 760,
@@ -2224,10 +1926,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 90,
-      "door_label": "door50E3"
-    },
+    "room_id": 90,
+    "target_door_label": "door50E3",
     "player_position": {
       "x": 248,
       "y": 592,
@@ -2239,10 +1939,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 67,
-      "door_label": "door5180"
-    },
+    "room_id": 67,
+    "target_door_label": "door5180",
     "player_position": {
       "x": 264,
       "y": 896,
@@ -2254,10 +1952,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 68,
-      "door_label": "door5148"
-    },
+    "room_id": 68,
+    "target_door_label": "door5148",
     "player_position": {
       "x": -912,
       "y": 512,
@@ -2269,10 +1965,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 67,
-      "door_label": "door516A"
-    },
+    "room_id": 67,
+    "target_door_label": "door516A",
     "player_position": {
       "x": 336,
       "y": -880,
@@ -2284,10 +1978,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 68,
-      "door_label": "door5153"
-    },
+    "room_id": 68,
+    "target_door_label": "door5153",
     "player_position": {
       "x": -712,
       "y": -856,
@@ -2299,10 +1991,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 69,
-      "door_label": "door51CF"
-    },
+    "room_id": 69,
+    "target_door_label": "door51CF",
     "player_position": {
       "x": 336,
       "y": 0,
@@ -2314,10 +2004,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 70,
-      "door_label": "door51AD"
-    },
+    "room_id": 70,
+    "target_door_label": "door51AD",
     "player_position": {
       "x": 0,
       "y": 112,
@@ -2329,10 +2017,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 71,
-      "door_label": "door53A6"
-    },
+    "room_id": 71,
+    "target_door_label": "door53A6",
     "player_position": {
       "x": 104,
       "y": 144,
@@ -2344,10 +2030,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 79,
-      "door_label": "door51E6"
-    },
+    "room_id": 79,
+    "target_door_label": "door51E6",
     "player_position": {
       "x": -624,
       "y": 808,
@@ -2359,10 +2043,8 @@
     "type": "sprite_door",
     "type_id": 8,
     "palette_id": 0,
-    "target": {
-      "room_id": 71,
-      "door_label": "door5384"
-    },
+    "room_id": 71,
+    "target_door_label": "door5384",
     "player_position": {
       "x": 592,
       "y": -568,
@@ -2374,10 +2056,8 @@
     "type": "sprite_door",
     "type_id": 8,
     "palette_id": 0,
-    "target": {
-      "room_id": 78,
-      "door_label": "door51F1"
-    },
+    "room_id": 78,
+    "target_door_label": "door51F1",
     "player_position": {
       "x": -392,
       "y": 232,
@@ -2389,10 +2069,8 @@
     "type": "sprite_door",
     "type_id": 8,
     "palette_id": 0,
-    "target": {
-      "room_id": 71,
-      "door_label": "door524A"
-    },
+    "room_id": 71,
+    "target_door_label": "door524A",
     "player_position": {
       "x": -120,
       "y": -648,
@@ -2404,10 +2082,8 @@
     "type": "sprite_door",
     "type_id": 8,
     "palette_id": 0,
-    "target": {
-      "room_id": 72,
-      "door_label": "door5207"
-    },
+    "room_id": 72,
+    "target_door_label": "door5207",
     "player_position": {
       "x": 384,
       "y": 592,
@@ -2419,10 +2095,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 71,
-      "door_label": "door52BA"
-    },
+    "room_id": 71,
+    "target_door_label": "door52BA",
     "player_position": {
       "x": -232,
       "y": -504,
@@ -2434,10 +2108,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 74,
-      "door_label": "door5212"
-    },
+    "room_id": 74,
+    "target_door_label": "door5212",
     "player_position": {
       "x": -336,
       "y": -296,
@@ -2449,10 +2121,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 72,
-      "door_label": "door5298"
-    },
+    "room_id": 72,
+    "target_door_label": "door5298",
     "player_position": {
       "x": 312,
       "y": 560,
@@ -2464,10 +2134,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 73,
-      "door_label": "door5255"
-    },
+    "room_id": 73,
+    "target_door_label": "door5255",
     "player_position": {
       "x": -176,
       "y": 208,
@@ -2479,10 +2147,8 @@
     "type": "sprite_door",
     "type_id": 8,
     "palette_id": 0,
-    "target": {
-      "room_id": 75,
-      "door_label": "door532A"
-    },
+    "room_id": 75,
+    "target_door_label": "door532A",
     "player_position": {
       "x": 976,
       "y": 64,
@@ -2494,10 +2160,8 @@
     "type": "sprite_door",
     "type_id": 8,
     "palette_id": 0,
-    "target": {
-      "room_id": 76,
-      "door_label": "door52F2"
-    },
+    "room_id": 76,
+    "target_door_label": "door52F2",
     "player_position": {
       "x": 72,
       "y": 1136,
@@ -2509,10 +2173,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 75,
-      "door_label": "door55EB"
-    },
+    "room_id": 75,
+    "target_door_label": "door55EB",
     "player_position": {
       "x": 976,
       "y": -928,
@@ -2524,10 +2186,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 88,
-      "door_label": "door52FD"
-    },
+    "room_id": 88,
+    "target_door_label": "door52FD",
     "player_position": {
       "x": -392,
       "y": 272,
@@ -2539,10 +2199,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 75,
-      "door_label": "door5592"
-    },
+    "room_id": 75,
+    "target_door_label": "door5592",
     "player_position": {
       "x": -976,
       "y": -720,
@@ -2554,10 +2212,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 87,
-      "door_label": "door5308"
-    },
+    "room_id": 87,
+    "target_door_label": "door5308",
     "player_position": {
       "x": 272,
       "y": 96,
@@ -2569,10 +2225,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 75,
-      "door_label": "door5357"
-    },
+    "room_id": 75,
+    "target_door_label": "door5357",
     "player_position": {
       "x": -976,
       "y": -464,
@@ -2584,10 +2238,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 77,
-      "door_label": "door5313"
-    },
+    "room_id": 77,
+    "target_door_label": "door5313",
     "player_position": {
       "x": -208,
       "y": 288,
@@ -2598,10 +2250,8 @@
     "label": "door531F",
     "type": "tilemap_door",
     "type_id": 6,
-    "target": {
-      "room_id": 76,
-      "door_label": "door53F4"
-    },
+    "room_id": 76,
+    "target_door_label": "door53F4",
     "player_position": {
       "x": -880,
       "y": -1040,
@@ -2612,10 +2262,8 @@
     "label": "door53F4",
     "type": "tilemap_door",
     "type_id": 7,
-    "target": {
-      "room_id": 80,
-      "door_label": "door531F"
-    },
+    "room_id": 80,
+    "target_door_label": "door531F",
     "player_position": {
       "x": -152,
       "y": -200,
@@ -2627,10 +2275,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 79,
-      "door_label": "door5490"
-    },
+    "room_id": 79,
+    "target_door_label": "door5490",
     "player_position": {
       "x": 712,
       "y": 480,
@@ -2642,10 +2288,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 82,
-      "door_label": "door53B1"
-    },
+    "room_id": 82,
+    "target_door_label": "door53B1",
     "player_position": {
       "x": -976,
       "y": 928,
@@ -2657,10 +2301,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 79,
-      "door_label": "door53DE"
-    },
+    "room_id": 79,
+    "target_door_label": "door53DE",
     "player_position": {
       "x": 880,
       "y": -616,
@@ -2672,10 +2314,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 80,
-      "door_label": "door53BC"
-    },
+    "room_id": 80,
+    "target_door_label": "door53BC",
     "player_position": {
       "x": 368,
       "y": 592,
@@ -2687,10 +2327,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 80,
-      "door_label": "door5437"
-    },
+    "room_id": 80,
+    "target_door_label": "door5437",
     "player_position": {
       "x": 312,
       "y": 448,
@@ -2702,10 +2340,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 81,
-      "door_label": "door53E9"
-    },
+    "room_id": 81,
+    "target_door_label": "door53E9",
     "player_position": {
       "x": -168,
       "y": 208,
@@ -2717,10 +2353,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 82,
-      "door_label": "door550B"
-    },
+    "room_id": 82,
+    "target_door_label": "door550B",
     "player_position": {
       "x": 136,
       "y": 656,
@@ -2732,10 +2366,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 84,
-      "door_label": "door546F"
-    },
+    "room_id": 84,
+    "target_door_label": "door546F",
     "player_position": {
       "x": 376,
       "y": 592,
@@ -2747,10 +2379,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 82,
-      "door_label": "door557B"
-    },
+    "room_id": 82,
+    "target_door_label": "door557B",
     "player_position": {
       "x": 928,
       "y": 864,
@@ -2762,10 +2392,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 86,
-      "door_label": "door547A"
-    },
+    "room_id": 86,
+    "target_door_label": "door547A",
     "player_position": {
       "x": 720,
       "y": 0,
@@ -2777,10 +2405,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 82,
-      "door_label": "door54A7"
-    },
+    "room_id": 82,
+    "target_door_label": "door54A7",
     "player_position": {
       "x": -584,
       "y": 496,
@@ -2792,10 +2418,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 83,
-      "door_label": "door5485"
-    },
+    "room_id": 83,
+    "target_door_label": "door5485",
     "player_position": {
       "x": -272,
       "y": -96,
@@ -2807,10 +2431,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 84,
-      "door_label": "door5559"
-    },
+    "room_id": 84,
+    "target_door_label": "door5559",
     "player_position": {
       "x": 312,
       "y": 512,
@@ -2822,10 +2444,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 85,
-      "door_label": "door5516"
-    },
+    "room_id": 85,
+    "target_door_label": "door5516",
     "player_position": {
       "x": -160,
       "y": 208,
@@ -2837,10 +2457,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 84,
-      "door_label": "door5570"
-    },
+    "room_id": 84,
+    "target_door_label": "door5570",
     "player_position": {
       "x": 168,
       "y": -400,
@@ -2852,10 +2470,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 86,
-      "door_label": "door5521"
-    },
+    "room_id": 86,
+    "target_door_label": "door5521",
     "player_position": {
       "x": 720,
       "y": 304,
@@ -2867,10 +2483,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 89,
-      "door_label": "door562F"
-    },
+    "room_id": 89,
+    "target_door_label": "door562F",
     "player_position": {
       "x": 976,
       "y": 880,
@@ -2882,10 +2496,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 90,
-      "door_label": "door5602"
-    },
+    "room_id": 90,
+    "target_door_label": "door5602",
     "player_position": {
       "x": -464,
       "y": 32,
@@ -2896,10 +2508,8 @@
     "label": "door563A",
     "type": "tilemap_door",
     "type_id": 7,
-    "target": {
-      "room_id": 90,
-      "door_label": "door565C"
-    },
+    "room_id": 90,
+    "target_door_label": "door565C",
     "player_position": {
       "x": -336,
       "y": 264,
@@ -2910,10 +2520,8 @@
     "label": "door565C",
     "type": "tilemap_door",
     "type_id": 6,
-    "target": {
-      "room_id": 91,
-      "door_label": "door563A"
-    },
+    "room_id": 91,
+    "target_door_label": "door563A",
     "player_position": {
       "x": 0,
       "y": 336,
@@ -2925,10 +2533,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 91,
-      "door_label": "door5673"
-    },
+    "room_id": 91,
+    "target_door_label": "door5673",
     "player_position": {
       "x": 0,
       "y": -336,
@@ -2940,10 +2546,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 92,
-      "door_label": "door5651"
-    },
+    "room_id": 92,
+    "target_door_label": "door5651",
     "player_position": {
       "x": 672,
       "y": 200,
@@ -2955,10 +2559,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 92,
-      "door_label": "door570F"
-    },
+    "room_id": 92,
+    "target_door_label": "door570F",
     "player_position": {
       "x": 120,
       "y": -408,
@@ -2970,10 +2572,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 94,
-      "door_label": "door567E"
-    },
+    "room_id": 94,
+    "target_door_label": "door567E",
     "player_position": {
       "x": -808,
       "y": -976,
@@ -2985,10 +2585,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 92,
-      "door_label": "door56CC"
-    },
+    "room_id": 92,
+    "target_door_label": "door56CC",
     "player_position": {
       "x": -640,
       "y": -440,
@@ -3000,10 +2598,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 93,
-      "door_label": "door5689"
-    },
+    "room_id": 93,
+    "target_door_label": "door5689",
     "player_position": {
       "x": -8,
       "y": 464,
@@ -3015,10 +2611,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 94,
-      "door_label": "door5768"
-    },
+    "room_id": 94,
+    "target_door_label": "door5768",
     "player_position": {
       "x": 872,
       "y": -976,
@@ -3030,10 +2624,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 95,
-      "door_label": "door5704"
-    },
+    "room_id": 95,
+    "target_door_label": "door5704",
     "player_position": {
       "x": 464,
       "y": 208,
@@ -3045,10 +2637,8 @@
     "type": "sprite_door",
     "type_id": 8,
     "palette_id": 0,
-    "target": {
-      "room_id": 94,
-      "door_label": "door57E3"
-    },
+    "room_id": 94,
+    "target_door_label": "door57E3",
     "player_position": {
       "x": -976,
       "y": -656,
@@ -3060,10 +2650,8 @@
     "type": "sprite_door",
     "type_id": 8,
     "palette_id": 0,
-    "target": {
-      "room_id": 97,
-      "door_label": "door571A"
-    },
+    "room_id": 97,
+    "target_door_label": "door571A",
     "player_position": {
       "x": -720,
       "y": -16,
@@ -3075,10 +2663,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 94,
-      "door_label": "door57A0"
-    },
+    "room_id": 94,
+    "target_door_label": "door57A0",
     "player_position": {
       "x": 288,
       "y": 760,
@@ -3090,10 +2676,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 96,
-      "door_label": "door5725"
-    },
+    "room_id": 96,
+    "target_door_label": "door5725",
     "player_position": {
       "x": -200,
       "y": 208,
@@ -3105,10 +2689,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 94,
-      "door_label": "door58D9"
-    },
+    "room_id": 94,
+    "target_door_label": "door58D9",
     "player_position": {
       "x": 976,
       "y": 824,
@@ -3120,10 +2702,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 101,
-      "door_label": "door5730"
-    },
+    "room_id": 101,
+    "target_door_label": "door5730",
     "player_position": {
       "x": 0,
       "y": -976,
@@ -3135,10 +2715,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 96,
-      "door_label": "door58EF"
-    },
+    "room_id": 96,
+    "target_door_label": "door58EF",
     "player_position": {
       "x": 384,
       "y": 208,
@@ -3150,10 +2728,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 101,
-      "door_label": "door578A"
-    },
+    "room_id": 101,
+    "target_door_label": "door578A",
     "player_position": {
       "x": 72,
       "y": -656,
@@ -3165,10 +2741,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 96,
-      "door_label": "door57AB"
-    },
+    "room_id": 96,
+    "target_door_label": "door57AB",
     "player_position": {
       "x": 120,
       "y": -224,
@@ -3180,10 +2754,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 96,
-      "door_label": "door5795"
-    },
+    "room_id": 96,
+    "target_door_label": "door5795",
     "player_position": {
       "x": -56,
       "y": -96,
@@ -3195,10 +2767,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 97,
-      "door_label": "door5853"
-    },
+    "room_id": 97,
+    "target_door_label": "door5853",
     "player_position": {
       "x": -576,
       "y": -96,
@@ -3210,10 +2780,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 99,
-      "door_label": "door57EE"
-    },
+    "room_id": 99,
+    "target_door_label": "door57EE",
     "player_position": {
       "x": 304,
       "y": 288,
@@ -3225,10 +2793,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 97,
-      "door_label": "door581B"
-    },
+    "room_id": 97,
+    "target_door_label": "door581B",
     "player_position": {
       "x": 128,
       "y": 96,
@@ -3240,10 +2806,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 98,
-      "door_label": "door57F9"
-    },
+    "room_id": 98,
+    "target_door_label": "door57F9",
     "player_position": {
       "x": -288,
       "y": 208,
@@ -3255,10 +2819,8 @@
     "type": "sprite_door",
     "type_id": 8,
     "palette_id": 0,
-    "target": {
-      "room_id": 97,
-      "door_label": "door58B7"
-    },
+    "room_id": 97,
+    "target_door_label": "door58B7",
     "player_position": {
       "x": 720,
       "y": 0,
@@ -3270,10 +2832,8 @@
     "type": "sprite_door",
     "type_id": 8,
     "palette_id": 0,
-    "target": {
-      "room_id": 100,
-      "door_label": "door5804"
-    },
+    "room_id": 100,
+    "target_door_label": "door5804",
     "player_position": {
       "x": -248,
       "y": 816,
@@ -3285,10 +2845,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 100,
-      "door_label": "door59DE"
-    },
+    "room_id": 100,
+    "target_door_label": "door59DE",
     "player_position": {
       "x": 144,
       "y": -248,
@@ -3300,10 +2858,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 109,
-      "door_label": "door58AC"
-    },
+    "room_id": 109,
+    "target_door_label": "door58AC",
     "player_position": {
       "x": -40,
       "y": 256,
@@ -3314,10 +2870,8 @@
     "label": "door58C3",
     "type": "tilemap_door",
     "type_id": 12,
-    "target": {
-      "room_id": 101,
-      "door_label": "door59C7"
-    },
+    "room_id": 101,
+    "target_door_label": "door59C7",
     "player_position": {
       "x": 888,
       "y": 208,
@@ -3328,10 +2882,8 @@
     "label": "door59C7",
     "type": "tilemap_door",
     "type_id": 13,
-    "target": {
-      "room_id": 108,
-      "door_label": "door58C3"
-    },
+    "room_id": 108,
+    "target_door_label": "door58C3",
     "player_position": {
       "x": 720,
       "y": -256,
@@ -3343,10 +2895,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 101,
-      "door_label": "door596B"
-    },
+    "room_id": 101,
+    "target_door_label": "door596B",
     "player_position": {
       "x": -1232,
       "y": -96,
@@ -3358,10 +2908,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 104,
-      "door_label": "door58CE"
-    },
+    "room_id": 104,
+    "target_door_label": "door58CE",
     "player_position": {
       "x": 56,
       "y": -720,
@@ -3373,10 +2921,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 101,
-      "door_label": "door591D"
-    },
+    "room_id": 101,
+    "target_door_label": "door591D",
     "player_position": {
       "x": 0,
       "y": 8,
@@ -3388,10 +2934,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 103,
-      "door_label": "door58E4"
-    },
+    "room_id": 103,
+    "target_door_label": "door58E4",
     "player_position": {
       "x": 256,
       "y": -208,
@@ -3403,10 +2947,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 104,
-      "door_label": "door598D"
-    },
+    "room_id": 104,
+    "target_door_label": "door598D",
     "player_position": {
       "x": 792,
       "y": 488,
@@ -3418,10 +2960,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 105,
-      "door_label": "door5976"
-    },
+    "room_id": 105,
+    "target_door_label": "door5976",
     "player_position": {
       "x": 880,
       "y": -592,
@@ -3433,10 +2973,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 105,
-      "door_label": "door59A4"
-    },
+    "room_id": 105,
+    "target_door_label": "door59A4",
     "player_position": {
       "x": 200,
       "y": 584,
@@ -3448,10 +2986,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 106,
-      "door_label": "door5998"
-    },
+    "room_id": 106,
+    "target_door_label": "door5998",
     "player_position": {
       "x": 48,
       "y": -464,
@@ -3463,10 +2999,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 108,
-      "door_label": "door59EA"
-    },
+    "room_id": 108,
+    "target_door_label": "door59EA",
     "player_position": {
       "x": -608,
       "y": 464,
@@ -3478,10 +3012,8 @@
     "type": "sprite_door",
     "type_id": 8,
     "palette_id": 0,
-    "target": {
-      "room_id": 54,
-      "door_label": "door46F7"
-    },
+    "room_id": 54,
+    "target_door_label": "door46F7",
     "player_position": {
       "x": 696,
       "y": 1152,
@@ -3493,10 +3025,8 @@
     "type": "sprite_door",
     "type_id": 8,
     "palette_id": 0,
-    "target": {
-      "room_id": 22,
-      "door_label": "door4E7B"
-    },
+    "room_id": 22,
+    "target_door_label": "door4E7B",
     "player_position": {
       "x": 0,
       "y": -208,
@@ -3508,10 +3038,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 39,
-      "door_label": "door48A1"
-    },
+    "room_id": 39,
+    "target_door_label": "door48A1",
     "player_position": {
       "x": 200,
       "y": 720,
@@ -3523,10 +3051,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 40,
-      "door_label": "door4AA1"
-    },
+    "room_id": 40,
+    "target_door_label": "door4AA1",
     "player_position": {
       "x": 400,
       "y": -376,
@@ -3538,10 +3064,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 45,
-      "door_label": "door48AC"
-    },
+    "room_id": 45,
+    "target_door_label": "door48AC",
     "player_position": {
       "x": 88,
       "y": 336,
@@ -3553,10 +3077,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 5,
-      "door_label": "door41FE"
-    },
+    "room_id": 5,
+    "target_door_label": "door41FE",
     "player_position": {
       "x": 32,
       "y": 56,
@@ -3568,10 +3090,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 39,
-      "door_label": "door4A80"
-    },
+    "room_id": 39,
+    "target_door_label": "door4A80",
     "player_position": {
       "x": 112,
       "y": -720,
@@ -3583,10 +3103,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 0,
-    "target": {
-      "room_id": 110,
-      "door_label": "door59D2"
-    },
+    "room_id": 110,
+    "target_door_label": "door59D2",
     "player_position": {
       "x": -624,
       "y": -712,
@@ -3597,10 +3115,8 @@
     "label": "door4F65",
     "type": "tilemap_door",
     "type_id": 17,
-    "target": {
-      "room_id": 57,
-      "door_label": "door560D"
-    },
+    "room_id": 57,
+    "target_door_label": "door560D",
     "player_position": {
       "x": -568,
       "y": 768,
@@ -3612,10 +3128,8 @@
     "type": "sprite_door",
     "type_id": 0,
     "palette_id": 1,
-    "target": {
-      "room_id": 0,
-      "door_label": 0
-    },
+    "room_id": 0,
+    "target_door_label": 0,
     "player_position": {
       "x": 0,
       "y": 0,

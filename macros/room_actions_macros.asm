@@ -21,9 +21,13 @@ endc
 ENDM
 
 ; 1: roomId
-; 2: target door pointer
+doorRoomId: MACRO
+    dw \1
+ENDM
+
+; 1: target door pointer
 doorTarget: MACRO
-    dw \1, \2
+    dw \1
 ENDM
 
 
