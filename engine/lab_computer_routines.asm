@@ -351,7 +351,7 @@ Label6CB6: ;01:6CB6
     ld a, [wButtonPressId]
     and a, A_INPUT
     jr nz, .B2ChoiceSelected
-    ld a, [wVisualDataRoomDoorLock]
+    ld a, [wDoorsLocksFlags+DOOR_67]
     or a
     jp nz, unlockDoorError ;jump if door is unlock
     ld a, [wComputerPasswordMode]
@@ -372,7 +372,7 @@ Label6CB6: ;01:6CB6
     ld [wLabElectronicDoorsUnlockFlag], a
 .unlockVisualDataRoomDoor
     ld a, $FF
-    ld [wVisualDataRoomDoorLock], a
+    ld [wDoorsLocksFlags+DOOR_67], a
     ld hl, text_pointer_4168 ; Verified
     ldde 4, 1
     ld a, BANK(text_pointer_4168)
@@ -388,7 +388,7 @@ B3ChoiceSelected:
     ld a, [wButtonPressId]
     and a, A_INPUT
     jr nz, B3ChoiceSelected
-    ld a, [wLabResearcherRoomDoorLock]
+    ld a, [wDoorsLocksFlags+DOOR_6F]
     or a
     jp nz, unlockDoorError ; jump if door is unlock
     ld a, [wComputerPasswordMode]
@@ -409,7 +409,7 @@ B3ChoiceSelected:
     ld [wLabElectronicDoorsUnlockFlag], a
 .unlockLabResearcherRoomDoor
     ld a, $FF
-    ld [wLabResearcherRoomDoorLock], a
+    ld [wDoorsLocksFlags+DOOR_6F], a
     ld hl, text_pointer_4168 ; Verified
     ldde 4, 1
     ld a, BANK(text_pointer_4168)

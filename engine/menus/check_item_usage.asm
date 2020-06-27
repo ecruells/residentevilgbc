@@ -129,7 +129,7 @@ checkWolfMedalUsage: ;4E8A
     or a
     jp z, finishItemUsage
     ld a, $FF
-    ld [wLabFountainEntranceOpenedFlag], a
+    ld [wDoorsLocksFlags+DOOR_4D], a
     jp finishItemUsage
 
 checkEagleMedalUsage:
@@ -149,7 +149,7 @@ checkEagleMedalUsage:
     or a
     jp z, finishItemUsage
     ld a, $FF
-    ld [wLabFountainEntranceOpenedFlag], a
+    ld [wDoorsLocksFlags+DOOR_4D], a
     jp finishItemUsage
 
 checkLighterUsage: ;4EF3
@@ -218,11 +218,11 @@ checkBrokenShotgunUsage: ;4F61
     jr z, .brokenShotgunPlacedWithChris 
 ; broken shotgun placed with Jill
     ld a, $FF
-    ld [wBrokenShotgunPlacedByJillFlag], a
+    ld [wDoorsLocksFlags+DOOR_13], a
     jp finishItemUsage
 .brokenShotgunPlacedWithChris
     ld a, $FF
-    ld [wBrokenShotgunPlacedByChrisFlag], a
+    ld [wDoorsLocksFlags+DOOR_1F], a
     jp finishItemUsage
 
 checkLabBatteryUsage: ;4FA9
@@ -243,7 +243,7 @@ Label4FB2: ;01:4FB2
     ret nc
     ld [hl], EMPTY
     ld a, $FF
-    ld [wHeliportElevatorPoweredFlag], a
+    ld [wDoorsLocksFlags+DOOR_43], a
     call scrollDownScreen
     ld hl, text_pointer_4003 ; Something has happened!
     call displayMessage
@@ -494,9 +494,9 @@ flamethrowerUsage1: ;01:51E3
 Label51FF
     ld a, $FF
     ld [wRoomsItemsFlags+ROOM46_FLAMETHROWER], a
-    ld [wBoulderPassage1DoorUnlockFlag], a
+    ld [wDoorsLocksFlags+DOOR_49], a
     xor a
-    ld [wBoulderPassage2DoorUnlockFlag], a
+    ld [wDoorsLocksFlags+DOOR_47], a
     ld [hl], EMPTY ; remove flamethrower
     jp finishItemUsage
 
@@ -509,9 +509,9 @@ flamethrowerUsage2:
     ret c
     ld a, $FF
     ld [wRoomsItemsFlags+ROOM3D_FLAMETHROWER], a
-    ld [wBoulderPassage2DoorUnlockFlag], a
+    ld [wDoorsLocksFlags+DOOR_47], a
     xor a
-    ld [wBoulderPassage1DoorUnlockFlag], a
+    ld [wDoorsLocksFlags+DOOR_49], a
     ld [hl], EMPTY ; remove flamethrower
     jp finishItemUsage
 
@@ -530,7 +530,7 @@ checkCourtyardBatteryUsage: ;523A
 Label525B
     ld [hl], EMPTY
     ld a, $FF
-    ld [wCourtyardElevatorPoweredFlag], a
+    ld [wDoorsLocksFlags+DOOR_3F], a
     call scrollDownScreen
     ld hl, text_pointer_4003 ; Something has happened!
     call displayMessage
@@ -629,7 +629,7 @@ checkAllCrestsPlaced:
     cp a, $FF
     jr nz, .allCrestNotPlaced
     ld a, $FF
-    ld [wShedDoorLock], a
+    ld [wDoorsLocksFlags+DOOR_1D], a
     ld a, CREST_PANEL_SCREEN
     ld [wRoomCameraId], a
     call loadEventRoomScreen
@@ -669,7 +669,7 @@ NotUsedRedBookUsageEvent: ;01:5382
     ld [hl], EMPTY
     ld a, $FF
     ld [wRedBookPlacedFlag], a
-    ld [wUnusedRedBookPlacedFlag], a
+    ld [wDoorsLocksFlags+DOOR_62], a
     call scrollDownScreen
     ld hl, text_pointer_4003 ; Something has happened!
     call displayMessage
@@ -704,9 +704,9 @@ closetFound:
     inc hl
     ld [hl], b
     xor a
-    ld [wUnusedDorm003MovedClosetFlag1], a
+    ld [wObjectEntitiesFlags+DORM_003_CLOSET_F1_VARID], a
     ld a, $FF
-    ld [wUnusedDorm003MovedClosetFlag2], a
+    ld [wObjectEntitiesFlags+DORM_003_CLOSET_F2_VARID], a
     jp finishItemUsage
 
 checkBlueJewelUsage: ;53EB
@@ -816,9 +816,9 @@ clockFound:
     inc hl
     ld [hl], b
     xor a
-    ld [wUnsedClockNotMovedFlag], a
+    ld [wObjectEntitiesFlags+DINNING_ROOM_CLOCK_POS1_VARID], a
     ld a, $FF
-    ld [wUnsedClockMovedFlag], a
+    ld [wObjectEntitiesFlags+DINNING_ROOM_CLOCK_POS2_VARID], a
     jp finishItemUsage
 
 checkWoodEmblemUsage: ;54F1

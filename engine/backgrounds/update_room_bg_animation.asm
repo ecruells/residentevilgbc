@@ -146,7 +146,7 @@ updateUndergroundWarehouseSpiderweb:: ;014BC6
     jp loadRoomScreenBackgroundMaskCaller
 .reloadCleanRoomBg
     ld a, $FF
-    ld [wSpiderwebRemovedFlag], a
+    ld [wDoorsLocksFlags+DOOR_50], a
     ld a, [wRoomId]
     ld l, a
     ld a, [wRoomIdHigh]

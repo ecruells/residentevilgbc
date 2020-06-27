@@ -19,7 +19,7 @@ numericPanelPuzzle:
     jr nz, .validatePanelKeysLoop
 ; if numeric panel puzzle is solved
     ld a, $FF
-    ld [wNumericPanelDoorUnlocked], a
+    ld [wDoorsLocksFlags+DOOR_60], a
     ld b, $32
     call routineDelay
     ld a, PANEL_PUZZLE_SOLVED_SFX

@@ -41,7 +41,7 @@ rotateTigerStatueLeft: ;0E:5FFA
 
 disableDinningRoomJewelStatue: ;0E:6002
     xor a
-    ld [wJewelStatueInDinningRoom2fFlag], a
+    ld [wObjectEntitiesFlags+JEWEL_STATUE_VARID], a
     ld a, $FF
     ld [wRoomsItemsFlags+ROOM01_BLUE_JEWEL], a
     ld [wBrokenJewelStatueFlag], a

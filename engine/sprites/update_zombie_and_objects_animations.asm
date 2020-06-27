@@ -79,7 +79,7 @@ setDinningRoomClockFrame: ;FC:4325
     jp nextObjectNPC
 
 updateGuardHouseStatuePosition: ;FC:4338
-    ld a, [wGuardhouseStatuePlacedFlag]
+    ld a, [wDoorsLocksFlags+DOOR_51]
     or a
     jp z, nextObjectNPC
     ld hl, wEntityPositionZ - wEntityStructData
@@ -143,7 +143,7 @@ updateWoodenBoxPosition: ;FC:4370
     jp nextObjectNPC
 
 updateOperatingRoomLadderPosition: ;FC:43B2
-    ld a, [wGuardhouseStatuePlacedFlag] ; reused var
+    ld a, [wDoorsLocksFlags+DOOR_51] ; reused var
     or a
     jp z, nextObjectNPC
     ld hl, wEntityPositionZ - wEntityStructData

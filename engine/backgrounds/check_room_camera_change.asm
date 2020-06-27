@@ -330,7 +330,7 @@ checkLabEntranceCameraChange: ;C6:430F
     changeCamOnLtXAndGteZ -28, 21, 3
 .applyCameraChange
     xor a
-    ld [wLabFountainEntranceOpenedFlag], a
+    ld [wDoorsLocksFlags+DOOR_4D], a
     ld a, [wRoomCameraId]
     cp a, c
     jr z, .cameraUnchanged
@@ -681,7 +681,7 @@ applyCameraChange31872D:
     ld a, [wTyrant1DefeatedFlag]
     or a
     jr nz, Label318768
-    ld a, [wLabElevatorUnlockedFlag]
+    ld a, [wDoorsLocksFlags+DOOR_72]
     or a
     jr z, Label31878F
     ld a, [wBeforeTyrant1stBattleSceneFlag]
@@ -702,7 +702,7 @@ Label31876A
     ld a, [wTyrant1DefeatedFlag]
     or a
     jr nz, Label31878F
-    ld a, [wLabElevatorUnlockedFlag]
+    ld a, [wDoorsLocksFlags+DOOR_72]
     or a
     jr z, Label31878F
     ld a, [wBeforeTyrant1stBattleSceneFlag]
@@ -1338,7 +1338,7 @@ checkPlant42RoomCameraChange: ;C6:4F02
     ld a, c
     ld [wRoomCameraId], a
     xor a
-    ld [wUnusedRedBookPlacedFlag], a
+    ld [wDoorsLocksFlags+DOOR_62], a
     ld a, $FF
     ld [wDoorsLocksFlags+DOOR_5F], a ; unlock door
     ld [wPlant42DefeatedFlag], a
@@ -2403,7 +2403,7 @@ checkFallingCielingRoomCameraChange: ;C6:5C94
     or a
     jr z, Label319CCC
 ; if jill
-    ld a, [wBrokenShotgunPlacedByJillFlag]
+    ld a, [wDoorsLocksFlags+DOOR_13]
     or a
     jr nz, Label319CCC
     ld a, [wBrokenShotgunFallCeilingFlag]
@@ -2416,7 +2416,7 @@ checkFallingCielingRoomCameraChange: ;C6:5C94
     ld [wEventSceneId], a
     ld a, $FF
     ld [wBrokenShotgunFallCeilingFlag], a
-    ld [wBrokenShotgunPlacedByJillFlag], a
+    ld [wDoorsLocksFlags+DOOR_13], a
 Label319CCC
     ld a, $FF
     ret
@@ -2445,11 +2445,11 @@ checkLivingRoomCameraChange: ;C6:5CD1
     jr z, Label319CFB
 ; if jill
     xor a
-    ld [wBrokenShotgunPlacedByJillFlag], a
+    ld [wDoorsLocksFlags+DOOR_13], a
     jr Label319CFF
 Label319CFB
     xor a
-    ld [wBrokenShotgunPlacedByChrisFlag], a
+    ld [wDoorsLocksFlags+DOOR_1F], a
 Label319CFF
     ld a, $FF
     ret
@@ -2914,7 +2914,7 @@ Label31A1D4
     ld a, $FF
     ld [wFirstZombieEventFlag], a
     ld a, $FF
-    ld [wEventMsgAtMainHallDoor], a
+    ld [wDoorsLocksFlags+DOOR_00], a
     ld a, $FF
     ld [wRoomsItemsFlags+ROOM00_BERRETTA], a
 Label31A1EE
@@ -3010,7 +3010,7 @@ Label31A384
     ld a, $FF
     ld [wADinningRoomEventFlag], a
     xor a
-    ld [wEventMsgAtMainHallDoor], a
+    ld [wDoorsLocksFlags+DOOR_00], a
     jr Label31A3D0
 Label31A39A
     ld a, [wChrisMeetRebeccaFlag]
@@ -3033,10 +3033,10 @@ Label31A3AC
     ld a, $FF
     ld [wDiningRoomZombieSceneFlag], a
     xor a
-    ld [wBlockDoorToFirstZombie], a
+    ld [wDoorsLocksFlags+DOOR_04], a
     ld [wEnemiesFlags+4], a ; disable first zombie active flag
     ld a, $FF
-    ld [wEventMsgAtMainHallDoor], a
+    ld [wDoorsLocksFlags+DOOR_00], a
     jr Label31A3D0
 Label31A3D0
     ld a, $FF
@@ -3113,8 +3113,8 @@ Label31A487
     ld [wEventSceneId], a
     ld a, $FF
     ld [wBackToMainHallAsJillEventFlag], a
-    ld [wEventMsgAtMainHallDoor], a
-    ld [wBlockDoorToFirstZombie], a
+    ld [wDoorsLocksFlags+DOOR_00], a
+    ld [wDoorsLocksFlags+DOOR_04], a
     jr Label31A4DC
 Label31A4BB
 ; if chris
@@ -3124,7 +3124,7 @@ Label31A4BB
     ld a, CHRIS_RETURNS_EARLY_TO_MHALL_SCENE
     ld [wEventSceneId], a
     xor a
-    ld [wEventMsgAtMainHallDoor], a
+    ld [wDoorsLocksFlags+DOOR_00], a
     jr Label31A4DC
 Label31A4CC
     ld a, [wADinningRoomEventFlag]

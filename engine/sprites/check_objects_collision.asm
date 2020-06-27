@@ -332,5 +332,5 @@ guardhouseStatuePlaced:
     positionVarGte -232, checkNextSpriteCollision
     ld [hl], LOW(-233)
     ld a, $FF
-    ld [wGuardhouseStatuePlacedFlag], a
+    ld [wDoorsLocksFlags+DOOR_51], a
     jp checkNextSpriteCollision

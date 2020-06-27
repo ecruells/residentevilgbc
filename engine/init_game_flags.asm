@@ -28,7 +28,7 @@ initGameFlags: ;C5:6273
     jr z, .Label3162C4 ; not special flags for chris
 ; init jill flags
     ld a, $FF
-    ld [wBoulderPassage1DoorUnlockFlag], a
+    ld [wDoorsLocksFlags+DOOR_49], a
     ld [wMansionBathtubUnpluggedFlag], a
 ; disable flamethrowers for jill
     xor a

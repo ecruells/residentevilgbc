@@ -131,7 +131,7 @@ checkFShapedCorridorLockedDoors: ;C5:680D
 Label316819
     ld [hl], $FF
     ld a, $FF
-    ld [wFShapedCorridorOneWayLockedDoorFlag], a
+    ld [wDoorsLocksFlags+DOOR_7C], a
     jp doorUnlocked
 Label316823
     ld a, [wEntityId]

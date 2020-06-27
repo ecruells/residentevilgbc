@@ -296,7 +296,7 @@ TigerStatueMask:: ;04:4F0A
     ld a, [wRoomsItemsFlags+ROOM01_BLUE_JEWEL]
     cp a, $FF
     ret z
-    ld a, [wJewelStatueInDinningRoom2fFlag]
+    ld a, [wObjectEntitiesFlags+JEWEL_STATUE_VARID]
     cp a, $FF
     ret z
 .Label10F4F
@@ -378,7 +378,7 @@ TombRoomMask:: ;04:4F90
     ld hl, room2A_01_rope_mask
     call loadRoomBackgroundArea
 .Label10FDE
-    ld a, [wTrevorsTombMovedFlag]
+    ld a, [wDoorsLocksFlags+DOOR_20]
     or a
     ret z
     ld a, $07
@@ -392,7 +392,7 @@ TombRoomMask:: ;04:4F90
     ld hl, room2A_01_opened_tomb_mask
     jp loadRoomBackgroundArea
 .Label10FFD
-    ld a, [wTrevorsTombMovedFlag]
+    ld a, [wDoorsLocksFlags+DOOR_20]
     or a
     ret z
     ld a, $07

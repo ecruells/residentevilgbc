@@ -143,11 +143,11 @@ shotgunFound
     jr z, Label5B35 ; if chris
 ; if jill
     ld a, $FF
-    ld [wBrokenShotgunPlacedByJillFlag], a
+    ld [wDoorsLocksFlags+DOOR_13], a
     jp scrollUpScreen
 Label5B35
     ld a, $FF
-    ld [wBrokenShotgunPlacedByChrisFlag], a
+    ld [wDoorsLocksFlags+DOOR_1F], a
     jp scrollUpScreen
 
 kennetCorpseMessage:

@@ -540,9 +540,9 @@ researchersPrivateRoomActions:
     inc hl
     ld [hl], b
     xor a
-    ld [wResearchersRoomShelfNotMovedFlag], a
+    ld [wObjectEntitiesFlags+RESEARCHER_ROOM_SHELF_P1_VARID], a
     ld a, $FF
-    ld [wResearchersRoomShelfMovedFlag], a
+    ld [wObjectEntitiesFlags+RESEARCHER_ROOM_SHELF_P2_VARID], a
     ret
 ; 5FF4
 
@@ -667,7 +667,7 @@ checkStoreroomDoorSwitch:
     ld a, [wFloodedRoomsDrainedWaterFlag]
     or a
     ret z
-    ld a, [wAquaTankStoreroomDoorUnlockedFlag]
+    ld a, [wDoorsLocksFlags+DOOR_58]
     or a
     ret nz
     call clearMessageBox
@@ -688,7 +688,7 @@ checkStoreroomDoorSwitch:
     call waitMessageForPlayerInput
     call clearMessageBox
     ld a, $FF
-    ld [wAquaTankStoreroomDoorUnlockedFlag], a
+    ld [wDoorsLocksFlags+DOOR_58], a
     jp scrollUpScreen
 
 guardhouseDorm002Actions:
@@ -1058,7 +1058,7 @@ labB3fWestCorridorActions:
     ret z
 ; unlock detention chamber passage door
     ld a, $FF
-    ld [wDetentionChamberPassageDoorUnlockedFlag], a
+    ld [wDoorsLocksFlags+DOOR_70], a
     ret
 ; 6413
 
@@ -1125,7 +1125,7 @@ labElevatorEntryActions:
     jp z, .Label6484
     ret
 .Label6484: ; 01:6484
-    ld a, [wLabElevatorUnlockedFlag]
+    ld a, [wDoorsLocksFlags+DOOR_72]
     or a
     ret nz
     call clearMessageBox
@@ -1144,7 +1144,7 @@ labElevatorEntryActions:
     call waitMessageForPlayerInput
     call clearMessageBox
     ld a, $FF
-    ld [wLabElevatorUnlockedFlag], a
+    ld [wDoorsLocksFlags+DOOR_72], a
     jp scrollUpScreen
 .labElevatorNotPowered
     ld hl, text_pointer_4111 ; There's no reaction. It has no power.
@@ -1248,7 +1248,7 @@ MainLaboratoryActions:
     call displayMessage
     call waitMessageForPlayerInput
     call clearMessageBox
-    ld a, [wMainLabDoorUnlockedFlag] ; C47E
+    ld a, [wDoorsLocksFlags+DOOR_7E] ; C47E
     or a
     jp nz, scrollUpScreen
     ld hl, text_pointer_4144 ; A door lock device. Will you unlock it?  Yes No
@@ -1268,11 +1268,11 @@ MainLaboratoryActions:
     call clearMessageBox
     ld a, $FF
     ld [wTyrant1DefeatedFlag], a
-    ld [wMainLabDoorUnlockedFlag], a
+    ld [wDoorsLocksFlags+DOOR_7E], a
     jp scrollUpScreen
 ; unused message action
 Label65D0:
-    ld a, [wMainLabDoorUnlockedFlag]
+    ld a, [wDoorsLocksFlags+DOOR_7E]
     or a
     jp nz, scrollUpScreen
     ld hl, text_pointer_4141  ; But there's no time to operate it!

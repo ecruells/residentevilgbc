@@ -42,7 +42,7 @@ Label6898: ;01:6898
     jp nz, scrollUpScreen ; return if switch not pushed
 ; if switch pushed
     ld a, $FF
-    ld [wTrevorsTombMovedFlag], a
+    ld [wDoorsLocksFlags+DOOR_20], a
     call loadRoomScreenBackgroundMaskCaller
     ld hl, text_pointer_4003 ; Something has happened!
     call displayMessage
