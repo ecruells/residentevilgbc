@@ -2,6 +2,7 @@
   {
     "label": "door40E8",
     "type": "sprite_door",
+    "door_id": 0,
     "type_id": 8,
     "palette_id": 0,
     "room_id": 0,
@@ -15,6 +16,7 @@
   {
     "label": "door4136",
     "type": "sprite_door",
+    "door_id": 0,
     "type_id": 8,
     "palette_id": 0,
     "room_id": 1,
@@ -28,6 +30,7 @@
   {
     "label": "door40F3",
     "type": "sprite_door",
+    "door_id": 1,
     "type_id": 9,
     "palette_id": 1,
     "room_id": 0,
@@ -41,6 +44,7 @@
   {
     "label": "door4257",
     "type": "sprite_door",
+    "door_id": 1,
     "type_id": 9,
     "palette_id": 1,
     "room_id": 4,
@@ -54,6 +58,7 @@
   {
     "label": "door40FE",
     "type": "sprite_door",
+    "door_id": 2,
     "type_id": 2,
     "palette_id": 2,
     "room_id": 0,
@@ -67,6 +72,7 @@
   {
     "label": "door45D3",
     "type": "sprite_door",
+    "door_id": 2,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 16,
@@ -80,6 +86,7 @@
   {
     "label": "door4109",
     "type": "tilemap_door",
+    "door_id": 3,
     "type_id": 0,
     "room_id": 0,
     "target_door_label": "door4895",
@@ -92,6 +99,7 @@
   {
     "label": "door4895",
     "type": "tilemap_door",
+    "door_id": 3,
     "type_id": 1,
     "room_id": 29,
     "target_door_label": "door4109",
@@ -104,6 +112,7 @@
   {
     "label": "door4141",
     "type": "sprite_door",
+    "door_id": 4,
     "type_id": 0,
     "palette_id": 2,
     "room_id": 1,
@@ -117,6 +126,7 @@
   {
     "label": "door42E7",
     "type": "sprite_door",
+    "door_id": 4,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 5,
@@ -130,6 +140,7 @@
   {
     "label": "door41BB",
     "type": "sprite_door",
+    "door_id": 5,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 2,
@@ -143,6 +154,7 @@
   {
     "label": "door43C6",
     "type": "sprite_door",
+    "door_id": 5,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 8,
@@ -156,6 +168,7 @@
   {
     "label": "door41FE",
     "type": "sprite_door",
+    "door_id": 6,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 3,
@@ -169,6 +182,7 @@
   {
     "label": "door4209",
     "type": "sprite_door",
+    "door_id": 7,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 3,
@@ -182,6 +196,7 @@
   {
     "label": "door4563",
     "type": "sprite_door",
+    "door_id": 7,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 14,
@@ -195,6 +210,7 @@
   {
     "label": "door4214",
     "type": "sprite_door",
+    "door_id": 8,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 3,
@@ -208,6 +224,7 @@
   {
     "label": "door46B3",
     "type": "sprite_door",
+    "door_id": 8,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 20,
@@ -221,6 +238,7 @@
   {
     "label": "door421F",
     "type": "sprite_door",
+    "door_id": 9,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 3,
@@ -234,6 +252,7 @@
   {
     "label": "door43BB",
     "type": "sprite_door",
+    "door_id": 9,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 8,
@@ -247,6 +266,7 @@
   {
     "label": "door422A",
     "type": "sprite_door",
+    "door_id": 10,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 3,
@@ -260,6 +280,7 @@
   {
     "label": "door4340",
     "type": "sprite_door",
+    "door_id": 10,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 6,
@@ -273,6 +294,7 @@
   {
     "label": "door4262",
     "type": "sprite_door",
+    "door_id": 11,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 4,
@@ -286,6 +308,7 @@
   {
     "label": "door44C7",
     "type": "sprite_door",
+    "door_id": 11,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 12,
@@ -299,6 +322,7 @@
   {
     "label": "door42FD",
     "type": "sprite_door",
+    "door_id": 12,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 5,
@@ -312,6 +336,7 @@
   {
     "label": "door4399",
     "type": "sprite_door",
+    "door_id": 12,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 7,
@@ -325,6 +350,7 @@
   {
     "label": "door4308",
     "type": "sprite_door",
+    "door_id": 13,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 5,
@@ -338,6 +364,7 @@
   {
     "label": "door45B1",
     "type": "sprite_door",
+    "door_id": 13,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 15,
@@ -351,6 +378,7 @@
   {
     "label": "door43D1",
     "type": "sprite_door",
+    "door_id": 14,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 8,
@@ -364,6 +392,7 @@
   {
     "label": "door4409",
     "type": "sprite_door",
+    "door_id": 14,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 9,
@@ -377,6 +406,7 @@
   {
     "label": "door43DC",
     "type": "tilemap_door",
+    "door_id": 15,
     "type_id": 4,
     "room_id": 8,
     "target_door_label": "door4E38",
@@ -389,6 +419,7 @@
   {
     "label": "door4E38",
     "type": "tilemap_door",
+    "door_id": 15,
     "type_id": 5,
     "room_id": 53,
     "target_door_label": "door43DC",
@@ -401,6 +432,7 @@
   {
     "label": "door4436",
     "type": "sprite_door",
+    "door_id": 16,
     "type_id": 2,
     "palette_id": 2,
     "room_id": 10,
@@ -414,6 +446,7 @@
   {
     "label": "door44D2",
     "type": "sprite_door",
+    "door_id": 16,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 12,
@@ -427,6 +460,7 @@
   {
     "label": "door4441",
     "type": "sprite_door",
+    "door_id": 17,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 10,
@@ -440,6 +474,7 @@
   {
     "label": "door4622",
     "type": "sprite_door",
+    "door_id": 17,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 18,
@@ -453,6 +488,7 @@
   {
     "label": "door444C",
     "type": "sprite_door",
+    "door_id": 18,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 10,
@@ -466,6 +502,7 @@
   {
     "label": "door4600",
     "type": "sprite_door",
+    "door_id": 18,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 17,
@@ -479,6 +516,7 @@
   {
     "label": "door4457",
     "type": "sprite_door",
+    "door_id": 19,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 10,
@@ -492,6 +530,7 @@
   {
     "label": "door47AA",
     "type": "sprite_door",
+    "door_id": 19,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 25,
@@ -505,6 +544,7 @@
   {
     "label": "door4462",
     "type": "sprite_door",
+    "door_id": 20,
     "type_id": 8,
     "palette_id": 0,
     "room_id": 10,
@@ -518,6 +558,7 @@
   {
     "label": "door449A",
     "type": "sprite_door",
+    "door_id": 20,
     "type_id": 8,
     "palette_id": 0,
     "room_id": 11,
@@ -531,6 +572,7 @@
   {
     "label": "door4479",
     "type": "sprite_door",
+    "door_id": 21,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 11,
@@ -544,6 +586,7 @@
   {
     "label": "door5A17",
     "type": "sprite_door",
+    "door_id": 21,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 111,
@@ -557,6 +600,7 @@
   {
     "label": "door4484",
     "type": "sprite_door",
+    "door_id": 22,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 11,
@@ -570,6 +614,7 @@
   {
     "label": "door5AEA",
     "type": "sprite_door",
+    "door_id": 22,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 113,
@@ -583,6 +628,7 @@
   {
     "label": "door448F",
     "type": "sprite_door",
+    "door_id": 23,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 11,
@@ -596,6 +642,7 @@
   {
     "label": "door4520",
     "type": "sprite_door",
+    "door_id": 23,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 13,
@@ -609,6 +656,7 @@
   {
     "label": "door44A5",
     "type": "sprite_door",
+    "door_id": 24,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 11,
@@ -622,6 +670,7 @@
   {
     "label": "door4691",
     "type": "sprite_door",
+    "door_id": 24,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 19,
@@ -635,6 +684,7 @@
   {
     "label": "door452B",
     "type": "sprite_door",
+    "door_id": 25,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 13,
@@ -648,6 +698,7 @@
   {
     "label": "door5A86",
     "type": "sprite_door",
+    "door_id": 25,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 112,
@@ -661,6 +712,7 @@
   {
     "label": "door4536",
     "type": "tilemap_door",
+    "door_id": 26,
     "type_id": 4,
     "room_id": 13,
     "target_door_label": "door4AAC",
@@ -673,6 +725,7 @@
   {
     "label": "door4AAC",
     "type": "tilemap_door",
+    "door_id": 26,
     "type_id": 5,
     "room_id": 36,
     "target_door_label": "door4536",
@@ -685,6 +738,7 @@
   {
     "label": "door45BC",
     "type": "sprite_door",
+    "door_id": 27,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 15,
@@ -698,6 +752,7 @@
   {
     "label": "door5B39",
     "type": "sprite_door",
+    "door_id": 27,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 115,
@@ -711,6 +766,7 @@
   {
     "label": "door45C8",
     "type": "sprite_door",
+    "door_id": 28,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 16,
@@ -724,6 +780,7 @@
   {
     "label": "door4745",
     "type": "sprite_door",
+    "door_id": 28,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 23,
@@ -737,6 +794,7 @@
   {
     "label": "door469C",
     "type": "sprite_door",
+    "door_id": 29,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 19,
@@ -750,6 +808,7 @@
   {
     "label": "door46EC",
     "type": "sprite_door",
+    "door_id": 29,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 22,
@@ -763,6 +822,7 @@
   {
     "label": "door46E0",
     "type": "sprite_door",
+    "door_id": 30,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 21,
@@ -776,6 +836,7 @@
   {
     "label": "door4750",
     "type": "sprite_door",
+    "door_id": 30,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 23,
@@ -789,6 +850,7 @@
   {
     "label": "door477D",
     "type": "sprite_door",
+    "door_id": 31,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 24,
@@ -802,6 +864,7 @@
   {
     "label": "door47B5",
     "type": "sprite_door",
+    "door_id": 31,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 25,
@@ -815,6 +878,7 @@
   {
     "label": "door47C1",
     "type": "tilemap_door",
+    "door_id": 32,
     "type_id": 6,
     "room_id": 26,
     "target_door_label": "door4C49",
@@ -827,6 +891,7 @@
   {
     "label": "door4C49",
     "type": "tilemap_door",
+    "door_id": 32,
     "type_id": 7,
     "room_id": 42,
     "target_door_label": "door47C1",
@@ -839,6 +904,7 @@
   {
     "label": "door47CC",
     "type": "sprite_door",
+    "door_id": 33,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 26,
@@ -852,6 +918,7 @@
   {
     "label": "door47F9",
     "type": "sprite_door",
+    "door_id": 33,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 27,
@@ -865,6 +932,7 @@
   {
     "label": "door4804",
     "type": "sprite_door",
+    "door_id": 34,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 27,
@@ -878,6 +946,7 @@
   {
     "label": "door5B44",
     "type": "sprite_door",
+    "door_id": 34,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 115,
@@ -891,6 +960,7 @@
   {
     "label": "door483C",
     "type": "sprite_door",
+    "door_id": 35,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 28,
@@ -904,6 +974,7 @@
   {
     "label": "door4874",
     "type": "sprite_door",
+    "door_id": 35,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 29,
@@ -917,6 +988,7 @@
   {
     "label": "door4847",
     "type": "sprite_door",
+    "door_id": 36,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 28,
@@ -930,6 +1002,7 @@
   {
     "label": "door4E43",
     "type": "sprite_door",
+    "door_id": 36,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 53,
@@ -943,6 +1016,7 @@
   {
     "label": "door487F",
     "type": "sprite_door",
+    "door_id": 37,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 29,
@@ -956,6 +1030,7 @@
   {
     "label": "door4954",
     "type": "sprite_door",
+    "door_id": 37,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 33,
@@ -969,6 +1044,7 @@
   {
     "label": "door488A",
     "type": "sprite_door",
+    "door_id": 38,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 29,
@@ -982,6 +1058,7 @@
   {
     "label": "door4B80",
     "type": "sprite_door",
+    "door_id": 38,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 39,
@@ -995,6 +1072,7 @@
   {
     "label": "door48A1",
     "type": "sprite_door",
+    "door_id": 39,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 30,
@@ -1008,6 +1086,7 @@
   {
     "label": "door48AC",
     "type": "sprite_door",
+    "door_id": 40,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 30,
@@ -1021,6 +1100,7 @@
   {
     "label": "door48CE",
     "type": "sprite_door",
+    "door_id": 41,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 31,
@@ -1034,6 +1114,7 @@
   {
     "label": "door4A96",
     "type": "sprite_door",
+    "door_id": 41,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 36,
@@ -1047,6 +1128,7 @@
   {
     "label": "door48D9",
     "type": "sprite_door",
+    "door_id": 42,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 31,
@@ -1060,6 +1142,7 @@
   {
     "label": "door4C60",
     "type": "sprite_door",
+    "door_id": 42,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 43,
@@ -1073,6 +1156,7 @@
   {
     "label": "door48FB",
     "type": "sprite_door",
+    "door_id": 43,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 32,
@@ -1086,6 +1170,7 @@
   {
     "label": "door4D58",
     "type": "sprite_door",
+    "door_id": 43,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 49,
@@ -1099,6 +1184,7 @@
   {
     "label": "door4906",
     "type": "sprite_door",
+    "door_id": 44,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 32,
@@ -1112,6 +1198,7 @@
   {
     "label": "door4DD3",
     "type": "sprite_door",
+    "door_id": 44,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 51,
@@ -1125,6 +1212,7 @@
   {
     "label": "door4911",
     "type": "sprite_door",
+    "door_id": 45,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 32,
@@ -1138,6 +1226,7 @@
   {
     "label": "door4AD9",
     "type": "sprite_door",
+    "door_id": 45,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 37,
@@ -1151,6 +1240,7 @@
   {
     "label": "door491C",
     "type": "tilemap_door",
+    "door_id": 46,
     "type_id": 14,
     "room_id": 32,
     "target_door_label": "door5B4F",
@@ -1163,6 +1253,7 @@
   {
     "label": "door5B4F",
     "type": "tilemap_door",
+    "door_id": 46,
     "type_id": 15,
     "room_id": 115,
     "target_door_label": "door491C",
@@ -1175,6 +1266,7 @@
   {
     "label": "door495F",
     "type": "sprite_door",
+    "door_id": 47,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 33,
@@ -1188,6 +1280,7 @@
   {
     "label": "door4CFE",
     "type": "sprite_door",
+    "door_id": 47,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 47,
@@ -1201,6 +1294,7 @@
   {
     "label": "door4981",
     "type": "sprite_door",
+    "door_id": 48,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 34,
@@ -1214,6 +1308,7 @@
   {
     "label": "door4CBA",
     "type": "sprite_door",
+    "door_id": 48,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 45,
@@ -1227,6 +1322,7 @@
   {
     "label": "door49AE",
     "type": "sprite_door",
+    "door_id": 49,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 35,
@@ -1240,6 +1336,7 @@
   {
     "label": "door4B6A",
     "type": "sprite_door",
+    "door_id": 49,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 39,
@@ -1253,6 +1350,7 @@
   {
     "label": "door4A80",
     "type": "sprite_door",
+    "door_id": 50,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 36,
@@ -1266,6 +1364,7 @@
   {
     "label": "door4A8B",
     "type": "sprite_door",
+    "door_id": 51,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 36,
@@ -1279,6 +1378,7 @@
   {
     "label": "door4CDC",
     "type": "sprite_door",
+    "door_id": 51,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 46,
@@ -1292,6 +1392,7 @@
   {
     "label": "door4AA1",
     "type": "sprite_door",
+    "door_id": 52,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 36,
@@ -1305,6 +1406,7 @@
   {
     "label": "door4AE4",
     "type": "sprite_door",
+    "door_id": 53,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 37,
@@ -1318,6 +1420,7 @@
   {
     "label": "door4E22",
     "type": "sprite_door",
+    "door_id": 53,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 53,
@@ -1331,6 +1434,7 @@
   {
     "label": "door4B27",
     "type": "sprite_door",
+    "door_id": 54,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 38,
@@ -1344,6 +1448,7 @@
   {
     "label": "door4CE7",
     "type": "sprite_door",
+    "door_id": 54,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 46,
@@ -1357,6 +1462,7 @@
   {
     "label": "door4B54",
     "type": "sprite_door",
+    "door_id": 55,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 39,
@@ -1370,6 +1476,7 @@
   {
     "label": "door4BA2",
     "type": "sprite_door",
+    "door_id": 55,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 40,
@@ -1383,6 +1490,7 @@
   {
     "label": "door4BF0",
     "type": "sprite_door",
+    "door_id": 56,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 41,
@@ -1396,6 +1504,7 @@
   {
     "label": "door4CD1",
     "type": "sprite_door",
+    "door_id": 56,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 46,
@@ -1409,6 +1518,7 @@
   {
     "label": "door4C54",
     "type": "tilemap_door",
+    "door_id": 57,
     "type_id": 8,
     "room_id": 42,
     "target_door_label": "door4C6B",
@@ -1421,6 +1531,7 @@
   {
     "label": "door4C6B",
     "type": "tilemap_door",
+    "door_id": 57,
     "type_id": 9,
     "room_id": 43,
     "target_door_label": "door4C54",
@@ -1433,6 +1544,7 @@
   {
     "label": "door4C77",
     "type": "sprite_door",
+    "door_id": 58,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 44,
@@ -1446,6 +1558,7 @@
   {
     "label": "door4CAF",
     "type": "sprite_door",
+    "door_id": 58,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 45,
@@ -1459,6 +1572,7 @@
   {
     "label": "door4D15",
     "type": "sprite_door",
+    "door_id": 59,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 48,
@@ -1472,6 +1586,7 @@
   {
     "label": "door4E2D",
     "type": "sprite_door",
+    "door_id": 59,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 53,
@@ -1485,6 +1600,7 @@
   {
     "label": "door4D63",
     "type": "sprite_door",
+    "door_id": 60,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 49,
@@ -1498,6 +1614,7 @@
   {
     "label": "door4DA6",
     "type": "sprite_door",
+    "door_id": 60,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 50,
@@ -1511,6 +1628,7 @@
   {
     "label": "door4D6E",
     "type": "sprite_door",
+    "door_id": 61,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 49,
@@ -1524,6 +1642,7 @@
   {
     "label": "door4E00",
     "type": "sprite_door",
+    "door_id": 61,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 52,
@@ -1537,6 +1656,7 @@
   {
     "label": "door4E70",
     "type": "sprite_door",
+    "door_id": 62,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 54,
@@ -1550,6 +1670,7 @@
   {
     "label": "door4F00",
     "type": "sprite_door",
+    "door_id": 62,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 55,
@@ -1563,6 +1684,7 @@
   {
     "label": "door4E86",
     "type": "sprite_door",
+    "door_id": 63,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 54,
@@ -1576,6 +1698,7 @@
   {
     "label": "door4F22",
     "type": "sprite_door",
+    "door_id": 63,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 56,
@@ -1589,6 +1712,7 @@
   {
     "label": "door4EF5",
     "type": "sprite_door",
+    "door_id": 64,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 55,
@@ -1602,6 +1726,7 @@
   {
     "label": "door4F2D",
     "type": "sprite_door",
+    "door_id": 64,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 56,
@@ -1615,6 +1740,7 @@
   {
     "label": "door4F38",
     "type": "sprite_door",
+    "door_id": 65,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 56,
@@ -1628,6 +1754,7 @@
   {
     "label": "door4F7C",
     "type": "sprite_door",
+    "door_id": 65,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 58,
@@ -1641,6 +1768,7 @@
   {
     "label": "door4F43",
     "type": "tilemap_door",
+    "door_id": 66,
     "type_id": 7,
     "room_id": 56,
     "target_door_label": "door5073",
@@ -1653,6 +1781,7 @@
   {
     "label": "door5073",
     "type": "tilemap_door",
+    "door_id": 66,
     "type_id": 6,
     "room_id": 63,
     "target_door_label": "door4F43",
@@ -1665,6 +1794,7 @@
   {
     "label": "door560D",
     "type": "tilemap_door",
+    "door_id": 67,
     "type_id": 16,
     "room_id": 89,
     "target_door_label": "door4F65",
@@ -1677,6 +1807,7 @@
   {
     "label": "door4F87",
     "type": "sprite_door",
+    "door_id": 68,
     "type_id": 8,
     "palette_id": 0,
     "room_id": 58,
@@ -1690,6 +1821,7 @@
   {
     "label": "door51FC",
     "type": "sprite_door",
+    "door_id": 68,
     "type_id": 8,
     "palette_id": 0,
     "room_id": 71,
@@ -1703,6 +1835,7 @@
   {
     "label": "door4FBF",
     "type": "sprite_door",
+    "door_id": 69,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 59,
@@ -1716,6 +1849,7 @@
   {
     "label": "door5046",
     "type": "sprite_door",
+    "door_id": 69,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 62,
@@ -1729,6 +1863,7 @@
   {
     "label": "door4FEC",
     "type": "sprite_door",
+    "door_id": 70,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 60,
@@ -1742,6 +1877,7 @@
   {
     "label": "door5175",
     "type": "sprite_door",
+    "door_id": 70,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 68,
@@ -1755,6 +1891,7 @@
   {
     "label": "door500E",
     "type": "sprite_door",
+    "door_id": 71,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 61,
@@ -1768,6 +1905,7 @@
   {
     "label": "door5089",
     "type": "sprite_door",
+    "door_id": 71,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 63,
@@ -1781,6 +1919,7 @@
   {
     "label": "door5019",
     "type": "sprite_door",
+    "door_id": 72,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 61,
@@ -1794,6 +1933,7 @@
   {
     "label": "door51A2",
     "type": "sprite_door",
+    "door_id": 72,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 69,
@@ -1807,6 +1947,7 @@
   {
     "label": "door5051",
     "type": "sprite_door",
+    "door_id": 73,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 62,
@@ -1820,6 +1961,7 @@
   {
     "label": "door51DA",
     "type": "sprite_door",
+    "door_id": 73,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 70,
@@ -1833,6 +1975,7 @@
   {
     "label": "door503B",
     "type": "sprite_door",
+    "door_id": 74,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 62,
@@ -1846,6 +1989,7 @@
   {
     "label": "door50EE",
     "type": "sprite_door",
+    "door_id": 74,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 65,
@@ -1859,6 +2003,7 @@
   {
     "label": "door507E",
     "type": "sprite_door",
+    "door_id": 75,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 63,
@@ -1872,6 +2017,7 @@
   {
     "label": "door513D",
     "type": "sprite_door",
+    "door_id": 75,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 67,
@@ -1885,6 +2031,7 @@
   {
     "label": "door50A0",
     "type": "sprite_door",
+    "door_id": 76,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 64,
@@ -1898,6 +2045,7 @@
   {
     "label": "door51C4",
     "type": "sprite_door",
+    "door_id": 76,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 70,
@@ -1911,6 +2059,7 @@
   {
     "label": "door50E3",
     "type": "sprite_door",
+    "door_id": 77,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 65,
@@ -1924,6 +2073,7 @@
   {
     "label": "door5645",
     "type": "sprite_door",
+    "door_id": 77,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 90,
@@ -1937,6 +2087,7 @@
   {
     "label": "door5148",
     "type": "sprite_door",
+    "door_id": 78,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 67,
@@ -1950,6 +2101,7 @@
   {
     "label": "door5180",
     "type": "sprite_door",
+    "door_id": 78,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 68,
@@ -1963,6 +2115,7 @@
   {
     "label": "door5153",
     "type": "sprite_door",
+    "door_id": 79,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 67,
@@ -1976,6 +2129,7 @@
   {
     "label": "door516A",
     "type": "sprite_door",
+    "door_id": 79,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 68,
@@ -1989,6 +2143,7 @@
   {
     "label": "door51AD",
     "type": "sprite_door",
+    "door_id": 80,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 69,
@@ -2002,6 +2157,7 @@
   {
     "label": "door51CF",
     "type": "sprite_door",
+    "door_id": 80,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 70,
@@ -2015,6 +2171,7 @@
   {
     "label": "door51E6",
     "type": "sprite_door",
+    "door_id": 81,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 71,
@@ -2028,6 +2185,7 @@
   {
     "label": "door53A6",
     "type": "sprite_door",
+    "door_id": 81,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 79,
@@ -2041,6 +2199,7 @@
   {
     "label": "door51F1",
     "type": "sprite_door",
+    "door_id": 82,
     "type_id": 8,
     "palette_id": 0,
     "room_id": 71,
@@ -2054,6 +2213,7 @@
   {
     "label": "door5384",
     "type": "sprite_door",
+    "door_id": 82,
     "type_id": 8,
     "palette_id": 0,
     "room_id": 78,
@@ -2067,6 +2227,7 @@
   {
     "label": "door5207",
     "type": "sprite_door",
+    "door_id": 83,
     "type_id": 8,
     "palette_id": 0,
     "room_id": 71,
@@ -2080,6 +2241,7 @@
   {
     "label": "door524A",
     "type": "sprite_door",
+    "door_id": 83,
     "type_id": 8,
     "palette_id": 0,
     "room_id": 72,
@@ -2093,6 +2255,7 @@
   {
     "label": "door5212",
     "type": "sprite_door",
+    "door_id": 84,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 71,
@@ -2106,6 +2269,7 @@
   {
     "label": "door52BA",
     "type": "sprite_door",
+    "door_id": 84,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 74,
@@ -2119,6 +2283,7 @@
   {
     "label": "door5255",
     "type": "sprite_door",
+    "door_id": 85,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 72,
@@ -2132,6 +2297,7 @@
   {
     "label": "door5298",
     "type": "sprite_door",
+    "door_id": 85,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 73,
@@ -2145,6 +2311,7 @@
   {
     "label": "door52F2",
     "type": "sprite_door",
+    "door_id": 86,
     "type_id": 8,
     "palette_id": 0,
     "room_id": 75,
@@ -2158,6 +2325,7 @@
   {
     "label": "door532A",
     "type": "sprite_door",
+    "door_id": 86,
     "type_id": 8,
     "palette_id": 0,
     "room_id": 76,
@@ -2171,6 +2339,7 @@
   {
     "label": "door52FD",
     "type": "sprite_door",
+    "door_id": 87,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 75,
@@ -2184,6 +2353,7 @@
   {
     "label": "door55EB",
     "type": "sprite_door",
+    "door_id": 87,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 88,
@@ -2197,6 +2367,7 @@
   {
     "label": "door5308",
     "type": "sprite_door",
+    "door_id": 88,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 75,
@@ -2210,6 +2381,7 @@
   {
     "label": "door5592",
     "type": "sprite_door",
+    "door_id": 88,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 87,
@@ -2223,6 +2395,7 @@
   {
     "label": "door5313",
     "type": "sprite_door",
+    "door_id": 89,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 75,
@@ -2236,6 +2409,7 @@
   {
     "label": "door5357",
     "type": "sprite_door",
+    "door_id": 89,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 77,
@@ -2249,6 +2423,7 @@
   {
     "label": "door531F",
     "type": "tilemap_door",
+    "door_id": 90,
     "type_id": 6,
     "room_id": 76,
     "target_door_label": "door53F4",
@@ -2261,6 +2436,7 @@
   {
     "label": "door53F4",
     "type": "tilemap_door",
+    "door_id": 90,
     "type_id": 7,
     "room_id": 80,
     "target_door_label": "door531F",
@@ -2273,6 +2449,7 @@
   {
     "label": "door53B1",
     "type": "sprite_door",
+    "door_id": 91,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 79,
@@ -2286,6 +2463,7 @@
   {
     "label": "door5490",
     "type": "sprite_door",
+    "door_id": 91,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 82,
@@ -2299,6 +2477,7 @@
   {
     "label": "door53BC",
     "type": "sprite_door",
+    "door_id": 92,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 79,
@@ -2312,6 +2491,7 @@
   {
     "label": "door53DE",
     "type": "sprite_door",
+    "door_id": 92,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 80,
@@ -2325,6 +2505,7 @@
   {
     "label": "door53E9",
     "type": "sprite_door",
+    "door_id": 93,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 80,
@@ -2338,6 +2519,7 @@
   {
     "label": "door5437",
     "type": "sprite_door",
+    "door_id": 93,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 81,
@@ -2351,6 +2533,7 @@
   {
     "label": "door546F",
     "type": "sprite_door",
+    "door_id": 94,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 82,
@@ -2364,6 +2547,7 @@
   {
     "label": "door550B",
     "type": "sprite_door",
+    "door_id": 94,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 84,
@@ -2377,6 +2561,7 @@
   {
     "label": "door547A",
     "type": "sprite_door",
+    "door_id": 95,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 82,
@@ -2390,6 +2575,7 @@
   {
     "label": "door557B",
     "type": "sprite_door",
+    "door_id": 95,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 86,
@@ -2403,6 +2589,7 @@
   {
     "label": "door5485",
     "type": "sprite_door",
+    "door_id": 96,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 82,
@@ -2416,6 +2603,7 @@
   {
     "label": "door54A7",
     "type": "sprite_door",
+    "door_id": 96,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 83,
@@ -2429,6 +2617,7 @@
   {
     "label": "door5516",
     "type": "sprite_door",
+    "door_id": 97,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 84,
@@ -2442,6 +2631,7 @@
   {
     "label": "door5559",
     "type": "sprite_door",
+    "door_id": 97,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 85,
@@ -2455,6 +2645,7 @@
   {
     "label": "door5521",
     "type": "sprite_door",
+    "door_id": 98,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 84,
@@ -2468,6 +2659,7 @@
   {
     "label": "door5570",
     "type": "sprite_door",
+    "door_id": 98,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 86,
@@ -2481,6 +2673,7 @@
   {
     "label": "door5602",
     "type": "sprite_door",
+    "door_id": 99,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 89,
@@ -2494,6 +2687,7 @@
   {
     "label": "door562F",
     "type": "sprite_door",
+    "door_id": 99,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 90,
@@ -2507,6 +2701,7 @@
   {
     "label": "door563A",
     "type": "tilemap_door",
+    "door_id": 100,
     "type_id": 7,
     "room_id": 90,
     "target_door_label": "door565C",
@@ -2519,6 +2714,7 @@
   {
     "label": "door565C",
     "type": "tilemap_door",
+    "door_id": 100,
     "type_id": 6,
     "room_id": 91,
     "target_door_label": "door563A",
@@ -2531,6 +2727,7 @@
   {
     "label": "door5651",
     "type": "sprite_door",
+    "door_id": 101,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 91,
@@ -2544,6 +2741,7 @@
   {
     "label": "door5673",
     "type": "sprite_door",
+    "door_id": 101,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 92,
@@ -2557,6 +2755,7 @@
   {
     "label": "door567E",
     "type": "sprite_door",
+    "door_id": 102,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 92,
@@ -2570,6 +2769,7 @@
   {
     "label": "door570F",
     "type": "sprite_door",
+    "door_id": 102,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 94,
@@ -2583,6 +2783,7 @@
   {
     "label": "door5689",
     "type": "sprite_door",
+    "door_id": 103,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 92,
@@ -2596,6 +2797,7 @@
   {
     "label": "door56CC",
     "type": "sprite_door",
+    "door_id": 103,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 93,
@@ -2609,6 +2811,7 @@
   {
     "label": "door5704",
     "type": "sprite_door",
+    "door_id": 104,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 94,
@@ -2622,6 +2825,7 @@
   {
     "label": "door5768",
     "type": "sprite_door",
+    "door_id": 104,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 95,
@@ -2635,6 +2839,7 @@
   {
     "label": "door571A",
     "type": "sprite_door",
+    "door_id": 105,
     "type_id": 8,
     "palette_id": 0,
     "room_id": 94,
@@ -2648,6 +2853,7 @@
   {
     "label": "door57E3",
     "type": "sprite_door",
+    "door_id": 105,
     "type_id": 8,
     "palette_id": 0,
     "room_id": 97,
@@ -2661,6 +2867,7 @@
   {
     "label": "door5725",
     "type": "sprite_door",
+    "door_id": 106,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 94,
@@ -2674,6 +2881,7 @@
   {
     "label": "door57A0",
     "type": "sprite_door",
+    "door_id": 106,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 96,
@@ -2687,6 +2895,7 @@
   {
     "label": "door5730",
     "type": "sprite_door",
+    "door_id": 107,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 94,
@@ -2700,6 +2909,7 @@
   {
     "label": "door58D9",
     "type": "sprite_door",
+    "door_id": 107,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 101,
@@ -2713,6 +2923,7 @@
   {
     "label": "door578A",
     "type": "sprite_door",
+    "door_id": 108,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 96,
@@ -2726,6 +2937,7 @@
   {
     "label": "door58EF",
     "type": "sprite_door",
+    "door_id": 108,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 101,
@@ -2739,6 +2951,7 @@
   {
     "label": "door5795",
     "type": "sprite_door",
+    "door_id": 109,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 96,
@@ -2752,6 +2965,7 @@
   {
     "label": "door57AB",
     "type": "sprite_door",
+    "door_id": 109,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 96,
@@ -2765,6 +2979,7 @@
   {
     "label": "door57EE",
     "type": "sprite_door",
+    "door_id": 110,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 97,
@@ -2778,6 +2993,7 @@
   {
     "label": "door5853",
     "type": "sprite_door",
+    "door_id": 110,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 99,
@@ -2791,6 +3007,7 @@
   {
     "label": "door57F9",
     "type": "sprite_door",
+    "door_id": 111,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 97,
@@ -2804,6 +3021,7 @@
   {
     "label": "door581B",
     "type": "sprite_door",
+    "door_id": 111,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 98,
@@ -2817,6 +3035,7 @@
   {
     "label": "door5804",
     "type": "sprite_door",
+    "door_id": 112,
     "type_id": 8,
     "palette_id": 0,
     "room_id": 97,
@@ -2830,6 +3049,7 @@
   {
     "label": "door58B7",
     "type": "sprite_door",
+    "door_id": 112,
     "type_id": 8,
     "palette_id": 0,
     "room_id": 100,
@@ -2843,6 +3063,7 @@
   {
     "label": "door58AC",
     "type": "sprite_door",
+    "door_id": 113,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 100,
@@ -2856,6 +3077,7 @@
   {
     "label": "door59DE",
     "type": "sprite_door",
+    "door_id": 113,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 109,
@@ -2869,6 +3091,7 @@
   {
     "label": "door58C3",
     "type": "tilemap_door",
+    "door_id": 114,
     "type_id": 12,
     "room_id": 101,
     "target_door_label": "door59C7",
@@ -2881,6 +3104,7 @@
   {
     "label": "door59C7",
     "type": "tilemap_door",
+    "door_id": 114,
     "type_id": 13,
     "room_id": 108,
     "target_door_label": "door58C3",
@@ -2893,6 +3117,7 @@
   {
     "label": "door58CE",
     "type": "sprite_door",
+    "door_id": 115,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 101,
@@ -2906,6 +3131,7 @@
   {
     "label": "door596B",
     "type": "sprite_door",
+    "door_id": 115,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 104,
@@ -2919,6 +3145,7 @@
   {
     "label": "door58E4",
     "type": "sprite_door",
+    "door_id": 116,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 101,
@@ -2932,6 +3159,7 @@
   {
     "label": "door591D",
     "type": "sprite_door",
+    "door_id": 116,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 103,
@@ -2945,6 +3173,7 @@
   {
     "label": "door5976",
     "type": "sprite_door",
+    "door_id": 117,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 104,
@@ -2958,6 +3187,7 @@
   {
     "label": "door598D",
     "type": "sprite_door",
+    "door_id": 117,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 105,
@@ -2971,6 +3201,7 @@
   {
     "label": "door5998",
     "type": "sprite_door",
+    "door_id": 118,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 105,
@@ -2984,6 +3215,7 @@
   {
     "label": "door59A4",
     "type": "sprite_door",
+    "door_id": 118,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 106,
@@ -2997,6 +3229,7 @@
   {
     "label": "door59D2",
     "type": "sprite_door",
+    "door_id": 119,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 108,
@@ -3010,6 +3243,7 @@
   {
     "label": "door4E7B",
     "type": "sprite_door",
+    "door_id": 120,
     "type_id": 8,
     "palette_id": 0,
     "room_id": 54,
@@ -3023,6 +3257,7 @@
   {
     "label": "door46F7",
     "type": "sprite_door",
+    "door_id": 120,
     "type_id": 8,
     "palette_id": 0,
     "room_id": 22,
@@ -3036,6 +3271,7 @@
   {
     "label": "door4B75",
     "type": "sprite_door",
+    "door_id": 121,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 39,
@@ -3049,6 +3285,7 @@
   {
     "label": "door4BAD",
     "type": "sprite_door",
+    "door_id": 122,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 40,
@@ -3062,6 +3299,7 @@
   {
     "label": "door4CA4",
     "type": "sprite_door",
+    "door_id": 123,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 45,
@@ -3075,6 +3313,7 @@
   {
     "label": "door42F2",
     "type": "sprite_door",
+    "door_id": 124,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 5,
@@ -3088,6 +3327,7 @@
   {
     "label": "door4B5F",
     "type": "sprite_door",
+    "door_id": 125,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 39,
@@ -3101,6 +3341,7 @@
   {
     "label": "door59EA",
     "type": "sprite_door",
+    "door_id": 126,
     "type_id": 0,
     "palette_id": 0,
     "room_id": 110,
@@ -3114,6 +3355,7 @@
   {
     "label": "door4F65",
     "type": "tilemap_door",
+    "door_id": 127,
     "type_id": 17,
     "room_id": 57,
     "target_door_label": "door560D",
@@ -3126,6 +3368,7 @@
   {
     "label": "door5B17",
     "type": "sprite_door",
+    "door_id": null,
     "type_id": 0,
     "palette_id": 1,
     "room_id": 0,

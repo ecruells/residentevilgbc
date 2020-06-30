@@ -46,17 +46,11 @@ def main():
     print("generating doors table")
 
     doors_dict = {}
-    door_id = -1
-    prev_door = ""
     for door in doors_data:
         doors_dict[door["label"]] = door
         if door["target_door_label"] == 0:
             continue
-        elif door["target_door_label"] != prev_door:
-            door_id += 1
-        # adjacent conected doors, share the same door id
-        doors_table_output += "\tdw {}, DOOR_{}\r\n".format(door["label"], to_hex(door_id))
-        prev_door = door["label"]
+        doors_table_output += "\tdw {}, DOOR_{}\r\n".format(door["label"], to_hex(door["door_id"]))
     doors_table_output += "\tdw 0 ; if the search reach here, the game stucks\r\n"
 
 
