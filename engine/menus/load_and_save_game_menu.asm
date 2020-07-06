@@ -113,7 +113,7 @@ loadGameAction:
     pop hl
     call resetPalettes
     call hideSprites
-    ld de, $023C ; first stack value after load game
+    ld de, restartGame ; set return pointer when exit (return) from main loop
     push de
     call displayStartGameWelcomeMessage
     ld a, UPDATE_BG_PALETTE
