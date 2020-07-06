@@ -6,6 +6,7 @@
 *.sav
 *.sn*
 *.sym
+*.pyc
 
 /tools/env/
 /tools/__pycache__
