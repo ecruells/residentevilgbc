@@ -466,7 +466,7 @@ resetAndUpdatePalette: ;00:057E
 openMainMenu: ;00:058D
     ld a, [wEntityHealth]
     or a
-    ret z ; ret if player is dead, this avoids enter the menu if a previous attack kills you before
+    ret z ; if player is dead, return back to stored restartGame pointer
     call mainMenuRoutine
     ld a, UPDATE_BG_PALETTE
     ld [wPaletteFadeCounter], a

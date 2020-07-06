@@ -41,6 +41,6 @@ takeItemMenuLoop:
     ld a, [wButtonPressId]
     and a, A_START_INPUT
     jp nz, includeFoundItem
-; continue until chose an option
+; continue until an option is chosen
     jr takeItemMenuLoop
 ;36D2

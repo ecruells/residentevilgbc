@@ -1,6 +1,9 @@
 ; load a tilemap image in vram 
 ; tilemap image has the following struct:
-; [tilesDataPointer] [tilemapIndexesPointer] [tilesDataBank] [tilemapAttributesPointer]
+; - word: tilemap tiles data address 
+; - word: tilemap map address 
+; - byte: tilemap bank
+; - word: tilemap attributes address 
 ; 
 ; params:
 ; a: tiles width

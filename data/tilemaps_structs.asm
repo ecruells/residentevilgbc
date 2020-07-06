@@ -177,8 +177,8 @@ fallingStatuePaletteStruct: ;00:2FCE
 	dw fallingStatuePalette+$40
 	db BANK(fallingStatuePalette), 0
 
-;event bg image table 2FD4
-	dw $14
+eventScenesTilemapsTable: ; 2FD4
+	dw 20 ; tilemap width
 	dw firstZombieSceneTilemapStruct ; first zombie bg img
-	db $14, $00
+	dw 20
 	dw fallingStatueTilemapStruct ; falling statue bg img
